@@ -1,0 +1,27 @@
+---
+alwaysApply: false
+---
+});
+
+const result = await firecrawl.scrapeUrl('https://example.com/product', {
+  formats: ['extract'],
+  extract: {
+    schema: schema,
+    prompt: 'Extract the product information from this page',
+  },
+});
+```
+
+## When to Use Firecrawl
+
+- **Web scraping**: Extract content from any public webpage
+- **Data extraction**: Get structured data from websites
+- **Content aggregation**: Crawl multiple pages for research
+- **Site mapping**: Discover all pages on a website
+
+## Best Practices
+
+- Use `onlyMainContent: true` to get cleaner content without navigation/ads
+- Set reasonable `limit` values when crawling to avoid excessive API usage
+- Use markdown format for LLM-friendly content
+- Use structured extraction with Zod schemas for consistent data

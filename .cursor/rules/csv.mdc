@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+- Prefer CSV over other data formats when dealing with simple data
