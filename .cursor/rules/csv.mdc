@@ -21,3 +21,5 @@ alwaysApply: true
 - Accuracy is critical and conditions are complex
 
 Always prioritize accuracy - if a query would require many LIKE clauses or complex logic in SQL, use TypeScript/Python instead.
+
+DO NOT USE JSON FOR STORING TABULAR DATA. CSV is a much better format.
