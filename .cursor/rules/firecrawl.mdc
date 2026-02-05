@@ -1,8 +1,8 @@
 ---
-alwaysApply: false
+alwaysApply: true
 ---
-});
-
+Usage:
+```
 const result = await firecrawl.scrapeUrl('https://example.com/product', {
   formats: ['extract'],
   extract: {

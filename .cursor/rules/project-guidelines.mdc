@@ -18,6 +18,8 @@ This is an AI agent playground for generating autonomous scripts and workflows. 
 6. **Stream output**: Stream output to the console. e.g. when processing CSVs, output line by line.
 7. **Never alter a file in the `data/` directory in-place**: Always either produce a copy or, if you're editing textual data, use `stdin` and `stdout` to edit the data.
 
+8. **Research vs. changes**: When the user asks for research, analysis, or "check" (e.g. check if X should be Y), present your findings only. **Do not** apply changes to the Master List, qualified list, or other master data files based on those findings unless the user explicitly asks you to make those changes. After presenting findings, ask: "Do you want me to apply these changes to [the relevant files]?"
+
 ## AI SDK
 
 To communicate with AI providers, use the Vercel AI SDK.

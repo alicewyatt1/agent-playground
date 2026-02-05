@@ -3,3 +3,21 @@ alwaysApply: true
 ---
 
 - Prefer CSV over other data formats when dealing with simple data
+- csvkit and csvsql are installed - use them when querying CSV files
+
+## Tool Selection for CSV Operations
+
+**Use csvsql when:**
+- Simple counts, filters, or aggregations
+- Straightforward WHERE clauses
+- Quick ad-hoc queries
+- Read-only operations
+
+**Use TypeScript/Python when:**
+- Complex matching logic (e.g., checking multiple columns for 50 US state names)
+- Data transformations or updates (csvsql is read-only)
+- Regex-based matching
+- Chaining multiple operations
+- Accuracy is critical and conditions are complex
+
+Always prioritize accuracy - if a query would require many LIKE clauses or complex logic in SQL, use TypeScript/Python instead.

@@ -1,0 +1,1633 @@
+[
+  {
+    "company_name": "Global Response",
+    "website": "https://www.globalresponse.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Global Response is a third-party outsourcing provider that serves over 200 external client companies across multiple industries, offering contact center and customer experience management services rather than operating an in-house contact center for its own business."
+  },
+  {
+    "company_name": "SupportYourApp",
+    "website": "https://supportyourapp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "SupportYourApp explicitly markets itself as a customer support outsourcing provider serving external clients like Calm, MacPaw, Mastercard, and others with tailored services, matching the third-party BPO definition.[1][2][3]"
+  },
+  {
+    "company_name": "TDCX",
+    "website": "www.tdcx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TDCX explicitly describes itself as an outsourced digital customer experience provider and business process outsourcing (BPO) company serving external clients across industries like fintech, gaming, e-commerce, and more, with no indication of operating captive centers for its own business.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Select VoiceCom",
+    "website": "https://selectvoicecom.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Select VoiceCom explicitly markets itself as providing outsourcing solutions, BPO services, and contact center operations to external clients across industries like law firms, e-commerce, and marketing agencies, as evidenced by client testimonials and service descriptions.[1][2][3][5][7]"
+  },
+  {
+    "company_name": "Unity Communications, LLC",
+    "website": "https://unity-connect.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Unity Communications explicitly markets itself as a BPO provider offering outsourcing services like customer service, sales support, and back-office tasks to external clients across industries such as e-commerce, healthcare, and finance, with client testimonials and case studies confirming service to other companies.[1][2][3][6]"
+  },
+  {
+    "company_name": "Remote CoWorker Inc.",
+    "website": "https://remotecoworker.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Remote CoWorker is explicitly described as a BPO provider that serves external clients across industries with services like virtual assistants, customer support, and bookkeeping, as evidenced by client testimonials and their own site descriptions of outsourcing to businesses.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Appointment Setter Online",
+    "website": "https://appointmentsetteronline.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Appointment Setter Online is a Sales Development Agency providing comprehensive sales outsourcing solutions including appointment setting and call center services to external clients across multiple industries, as evidenced by their Clutch reviews describing client satisfaction with improved bookings and sales performance.[1]"
+  },
+  {
+    "company_name": "Six Eleven Global Services & Solution, Inc.",
+    "website": "https://www.sixelevenbpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Six Eleven Global Services & Solution, Inc. explicitly positions itself as a business process outsourcing company providing CRM, call center, sales, marketing, and customer support services to external clients, with references to scaling for client needs, SLAs, and partnerships as evidenced across multiple sources including their website and CEO interviews.[1][2][6][7]"
+  },
+  {
+    "company_name": "Helpware",
+    "website": "https://helpware.io",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Helpware is a business process outsourcing company founded in 2015 that provides customer support, back office, and other services to external clients as a vendor, not an in-house operation for its own business[1][2][3]."
+  },
+  {
+    "company_name": "Callbox",
+    "website": "https://www.callbox.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Callbox provides outsourced B2B lead generation, appointment-setting, and sales support services to external clients worldwide, including Fortune 500 companies like Salesforce and AWS, acting as an extension of their marketing and sales teams.[1][2][4][5]"
+  },
+  {
+    "company_name": "Boldr, Inc.",
+    "website": "https://www.boldrimpact.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Boldr explicitly positions itself as a customer service outsourcing partner that provides scalable contact center and BPO services to external clients like eCommerce and SaaS companies, managing their customer support, as evidenced across its website and third-party profiles.[1][2][3]"
+  },
+  {
+    "company_name": "MyOutDesk",
+    "website": "https://www.myoutdesk.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "MyOutDesk provides virtual assistant and BPO services such as customer service, administrative support, and sales to external clients across industries like real estate, healthcare, and e-commerce, as evidenced by their website descriptions, client testimonials, and self-identification as a leading BPO company.[1][2][3][6]"
+  },
+  {
+    "company_name": "Go Answer",
+    "website": "https://www.goanswer.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Go Answer explicitly markets itself as a contact center outsourcing provider offering services like virtual receptionists, customer support, and IT help desk to external businesses across industries, enabling them to outsource operations rather than handling its own internal needs.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "EverHelp",
+    "website": "https://www.everhelp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "EverHelp is a third-party outsourcing vendor that provides contact center services to external clients across multiple industries, as evidenced by references to '100+ clients worldwide'[3] and service offerings explicitly marketed to businesses seeking to outsource their customer support operations[1][2][4]."
+  },
+  {
+    "company_name": "Premier NX",
+    "website": "https://premiernx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Premier NX is a tech-enabled services provider that offers contact center and BPO services to external clients across multiple industries, as evidenced by client testimonials from AMP Smart, Newberry Group, Dental Office Support, and others, making it a third-party outsourcing vendor rather than a captive operation serving only its own business.[1][2][4]"
+  },
+  {
+    "company_name": "Fusion CX",
+    "website": "https://www.fusioncx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Fusion CX explicitly markets itself as an outsourcing provider offering contact center and BPO services to external clients across industries like retail, telecom, healthcare, and SaaS, with capabilities such as right-shoring, multilingual support, and omnichannel solutions for other businesses.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Peak Support",
+    "website": "https://peaksupport.io",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Peak Support explicitly describes itself as a BPO outsourcing provider that serves external clients across industries like ecommerce, gaming, and SaaS, with client testimonials and references to partnerships confirming it handles services for other companies.[1][2][3][6]"
+  },
+  {
+    "company_name": "Go4customer",
+    "website": "https://go4customer.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Go4Customer explicitly describes itself as a BPO outsourcing company providing services like call center operations, customer support, and order taking to external clients across industries, with testimonials and client lists confirming service to other businesses[1][2][3][5][6]."
+  },
+  {
+    "company_name": "DialAmerica",
+    "website": "https://dialamerica.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe DialAmerica as a contact center outsourcing provider that serves hundreds of external clients across industries like healthcare, financial services, and government, offering services such as sales, marketing, and customer support on behalf of those clients.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Quantanite",
+    "website": "https://quantanite.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Quantanite is a third-party BPO provider that serves external clients across multiple industries—it operates customer experience centers globally and works with 1000+ clients[7], providing outsourced contact center services in customer care, customer operations, and sales to other companies rather than operating solely for its own business needs."
+  },
+  {
+    "company_name": "ROI CX Solutions",
+    "website": "https://roicallcentersolutions.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "ROI CX Solutions provides outsourcing services to external clients, as evidenced by case studies helping tech companies and health retailers scale operations, client testimonials, and descriptions of dedicated teams acting as brand extensions on their website and third-party directories.[1][2][4][5][6]"
+  },
+  {
+    "company_name": "Triniter BPO",
+    "website": "https://www.triniterbpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe Triniter BPO as a provider of outsourced BPO and call center services to external clients, including customer support solutions, flexible pricing models for businesses, and comparisons as an outsourcing vendor against competitors like Smith.ai.[2][4][5][9]"
+  },
+  {
+    "company_name": "Tri Source International",
+    "website": "https://www.trisourcebpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Tri Source International is a business process outsourcing company that provides call center, customer service, and back office services to external clients across multiple industries including financial services, hospitality, retail, and technology[1][2][4][6], operating as a vendor rather than serving only its own internal operations."
+  },
+  {
+    "company_name": "OutPLEX",
+    "website": "https://outplex.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "OutPLEX explicitly markets itself as a contact center outsourcing provider that serves external clients, such as an international cosmetics retailer, a B2B marketing company, a luxury retail goods company, and a financial technology firm, with services like call handling, sales support, and customer care[1][4][5][6]."
+  },
+  {
+    "company_name": "MixBS",
+    "website": "https://mixbs.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "MiXBS explicitly offers outsourcing services like contact center outsourcing, B2B call center support, and customer support to external clients across industries such as e-commerce, healthcare, and technology, with client testimonials confirming they serve other companies' needs[1][2][3][4][5][6]."
+  },
+  {
+    "company_name": "Firstsource Solutions Limited",
+    "website": "https://www.firstsource.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Firstsource Solutions Limited provides BPM and contact center outsourcing services to over 150 external global clients, including Fortune 500 and FTSE 100 companies across industries like banking, healthcare, and telecom, as evidenced by their company profiles and service descriptions[1][2][3][4][5][6][10]."
+  },
+  {
+    "company_name": "Sykes Enterprises, Incorporated",
+    "website": "https://www.sykes.com/",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "SYKES Enterprises provides outsourced customer experience management solutions and services to external clients such as Global 2000 and Fortune 1000 companies, enabling them to focus on core competencies while SYKES handles customer acquisition, service, and support as a trusted outsourcing partner[1][2][4][6]."
+  },
+  {
+    "company_name": "TTEC",
+    "website": "www.ttec.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TTEC provides customer care BPO, outsourcing services like customer engagement, tech support, and back-office operations to external brands and clients across industries, as evidenced by its descriptions of serving 'iconic and disruptive brands' and helping 'companies achieve higher CSAT' through global delivery centers.[2][3][6]"
+  },
+  {
+    "company_name": "MarketStar",
+    "website": "https://www.marketstar.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "MarketStar is a global sales and marketing outsourcing company that provides outsourced sales, customer success, and support solutions to external clients including companies like Pinterest, Dropbox, and Samsung[1][5], rather than operating a captive contact center for its own internal business."
+  },
+  {
+    "company_name": "Etech Global Services",
+    "website": "https://www.etechgs.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Etech Global Services explicitly positions itself as a global outsourcing provider serving over 50 external brands, including Fortune 50 companies, with case studies demonstrating services for various client companies rather than its own business.[1][2][3][4]"
+  },
+  {
+    "company_name": "Voxpro powered by TELUS International",
+    "website": "https://www.telusdigital.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Voxpro powered by TELUS International is a contact center outsourcing provider that partners with external clients like Airbnb and Google, offering services such as customer experience, tech support, and sales funnel management to other companies, as evidenced by acquisition details and service descriptions.[1][2][5]"
+  },
+  {
+    "company_name": "Direct Interactions",
+    "website": "https://directinteractions.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Direct Interactions provides customer service outsourcing solutions to external clients including government agencies, municipalities, enterprises, nonprofits, and small businesses, as stated across their website pages on services, industries, and about sections[1][2][3][4][5][8]."
+  },
+  {
+    "company_name": "Appointments Setter",
+    "website": "http://www.theappointmentsetters.com",
+    "is_captive": false,
+    "classification": "Unclear",
+    "reasoning": "The search results do not contain information about 'Appointments Setter' (theappointmentsetters.com); they reference other appointment setting service providers like Appointment Setter Online, GetCallers, and TeleDirect, making it impossible to classify the specific company you asked about."
+  },
+  {
+    "company_name": "Topcom Solutions",
+    "website": "https://topcomsolutions.net",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Topcom Solutions explicitly markets itself as a call center outsourcing provider offering services to external businesses and clients for inbound/outbound calls, emails, and chat, as stated across its services, about, and dedicated outsourcing pages.[1][2][3][9]"
+  },
+  {
+    "company_name": "Affinity Global",
+    "website": "https://www.affinityglobal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Affinity Global provides customer management, contact center, and first-party receivable services to external clients such as government systems like TraCS, DCT/LT, and BARS/IBARS across multiple states, as indicated by their client list and descriptions as a provider of multi-national customer solutions[2][7]."
+  },
+  {
+    "company_name": "Staff Outsourcing Solutions",
+    "website": "https://www.staffoutsourcing.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Staff Outsourcing Solutions explicitly describes itself as a BPO company providing outsourcing services to external clients across industries like e-commerce, IT, healthcare, and more, connecting businesses with offshore professionals to reduce costs and boost efficiency[2][3]."
+  },
+  {
+    "company_name": "RDI Corporation",
+    "website": "https://rdicorp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "RDI Corporation explicitly describes itself as providing outsourced CX, call center outsourcing, and BPO services to external clients across industries like financial services, healthcare, and telecommunications, partnering with them to handle customer interactions, as evidenced by their website and case studies[1][2][3][5][6]."
+  },
+  {
+    "company_name": "SupportZebra",
+    "website": "https://supportzebra.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "SupportZebra explicitly markets itself as a BPO and call center outsourcing provider serving external clients in SaaS, ecommerce, fintech, and healthcare, with testimonials from clients like SalesNexus and EJ Wholesale, and case studies showing dedicated teams for multiple businesses.[1][2][5]"
+  },
+  {
+    "company_name": "American Customer Care",
+    "website": "http://www.americancustomercare.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe American Customer Care as an outsourcing provider offering BPO and contact center services to external clients across various industries, such as healthcare and telecommunications, with explicit mentions of 'clients partner with us' and serving 'the world's most trusted brands' [1][3][6]."
+  },
+  {
+    "company_name": "TMP Direct",
+    "website": "https://tmpwdirect.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TMP Direct explicitly describes itself as a BPO company that works closely with external clients to provide tailored contact center solutions, omni-channel support, and services across industries like retail, e-commerce, and insurance, consistent with third-party outsourcing providers[1][2][3][5][7][8]."
+  },
+  {
+    "company_name": "NICE inContact",
+    "website": "https://www.niceincontact.com/",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "NICE inContact provides cloud-based CCaaS software and platforms like CXone for omnichannel routing, workforce management, and analytics to other businesses as clients, not operating its own in-house contact centers for internal use.[1][3][4][5]"
+  },
+  {
+    "company_name": "GeBBS Healthcare Solutions",
+    "website": "https://gebbs.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "GeBBS Healthcare Solutions explicitly positions itself as a healthcare BPO company providing outsourced revenue cycle management, medical coding, and billing services to external clients such as hospitals, healthcare organizations, and providers like Advanced MD, BioScrip, and Prospect Medical Holdings, as evidenced by their website descriptions and client testimonials.[2][4][5][6]"
+  },
+  {
+    "company_name": "Redial BPO",
+    "website": "https://redialbpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Redial BPO explicitly offers BPO and contact center services to external businesses as an outsourcing partner, with descriptions of serving clients across industries like hospitality, sales, and customer support to reduce costs and handle their operations.[1][2][4][7]"
+  },
+  {
+    "company_name": "EXL Service",
+    "website": "https://www.exlservice.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "EXL Service provides outsourcing and business process management (BPO) services to external clients across industries like insurance, healthcare, banking, and retail, as evidenced by descriptions of serving diverse clients with customer service, finance & accounting, and operational support[1][2][5]."
+  },
+  {
+    "company_name": "SourceHOV",
+    "website": "https://sourcehov.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "SourceHOV is described as an end-to-end BPS/BPO company providing outsourcing services to external clients across industries like BFSI, healthcare, and government, including a blue-chip customer base with more than half of the Fortune 100 companies[1][2][3]."
+  },
+  {
+    "company_name": "TaskUs",
+    "website": "https://www.taskus.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TaskUs is an American multinational outsourcing company that provides outsourced digital services, customer experience solutions, content moderation, and other specialized services to external clients including Facebook, DoorDash, Netflix, Zoom, and approximately 200 other companies, rather than operating as an internal function for a single parent company."
+  },
+  {
+    "company_name": "Pure Moderation",
+    "website": "https://puremoderation.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe Pure Moderation as a global BPO vendor providing tailored outsourcing services like content moderation and customer support to external clients including high-profile companies such as Snap Inc., Udemy, and Byte, distinguishing it from captive in-house operations.[1][2][5]"
+  },
+  {
+    "company_name": "Avantive Solutions",
+    "website": "https://avantivesolutions.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Avantive Solutions explicitly describes itself as a BPO partner serving external clients across industries like healthcare, fintech, and energy, offering outsourcing services such as customer care and sales to other companies, as evidenced by their website and third-party reviews.[1][2][3][4]"
+  },
+  {
+    "company_name": "Webhelp",
+    "website": "https://webhelp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Webhelp is an independent outsourcing provider that serves external clients across multiple industries, offering customer management services to approximately 1,000+ clients including Fortune Global 500 companies, rather than operating as an internal function for a single parent company."
+  },
+  {
+    "company_name": "Telvista",
+    "website": "https://www.telvista.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Telvista explicitly markets itself as providing contact center solutions, BPO services, and outsourcing to external clients across industries like telecom, with case studies and offerings for customer acquisition, support, and sales on behalf of other businesses.[1][4][6][9]"
+  },
+  {
+    "company_name": "AnswerConnect",
+    "website": "https://www.answerconnect.com/",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "AnswerConnect provides 24/7 live answering, customer care, and call center services to external businesses and clients, with plans, pricing, CRM integrations, and examples serving industries like healthcare, finance, and service providers, matching the third-party BPO model.[1][2][5]"
+  },
+  {
+    "company_name": "Five Star Call Centers",
+    "website": "https://fivestarcallcenters.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Five Star Call Centers explicitly offers outsourcing services to external clients across industries like healthcare, finance, and retail, with client testimonials, case studies, and self-description as a leader in the contact center outsourcing industry.[1][2][3][7]"
+  },
+  {
+    "company_name": "OBPO",
+    "website": "https://onebpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "OneBPO provides outsourcing services like customer service, technical support, and back-office solutions to external clients including small and mid-sized businesses from the US, Canada, UK, and Asia Pacific, as evidenced by their website descriptions, client testimonials, and YouTube video[1][2][3][5][8]."
+  },
+  {
+    "company_name": "Advensus",
+    "website": "https://advensus.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Advensus explicitly markets itself as a customer care outsourcing provider offering nearshore BPO services to external clients across industries like retail, fintech, and healthcare, with no indication of serving only its own business.[1][2][4][6]"
+  },
+  {
+    "company_name": "Collective Solution",
+    "website": "https://www.collectivesolution.net",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe Collective Solution as providing outsourced call center services to external clients like retailers, e-commerce companies, large businesses, and entrepreneurs, explicitly using terms like 'outsourced,' 'clients,' and 'customer contact outsourcer.'"
+  },
+  {
+    "company_name": "transcosmos",
+    "website": "https://www.transcosmos.com/",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Transcosmos explicitly positions itself as a global BPO partner providing comprehensive outsourcing services like contact centers, back-office operations, IT support, and e-commerce solutions to external clients across multiple industries and countries.[1][2][4][5]"
+  },
+  {
+    "company_name": "Intelassist",
+    "website": "https://www.intelassist.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Intelassist provides remote staffing and BPO services to external healthcare organizations and businesses as clients, with dedicated teams sourced from the Philippines, as evidenced by their partnerships, tailored solutions, and client-focused offerings across multiple industries.[1][2][4][6][9]"
+  },
+  {
+    "company_name": "DATAMARK, Inc.",
+    "website": "https://datamark.net",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "DATAMARK, Inc. is a third-party BPO provider that delivers contact center and business process outsourcing services to external clients across multiple industries, including Fortune 500 companies, government agencies, and enterprises, rather than operating a captive center for its own business operations."
+  },
+  {
+    "company_name": "Integreon",
+    "website": "https://integreon.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Integreon provides outsourced BPO services to external clients such as corporations and law firms like Philips, Pfizer, and Dorsey & Whitney, as stated across its website and Outsource Accelerator profile[1][2][3][4][6]."
+  },
+  {
+    "company_name": "Everise",
+    "website": "https://weareeverise.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Everise provides outsourcing services to external clients in industries like insurance and utilities, as evidenced by their website descriptions of strategic CX partnerships, support for clients' customers, and testimonials from client executives such as those from TechNova and GlobalHealth[1][2][4][5]."
+  },
+  {
+    "company_name": "NQX",
+    "website": "https://nqx.ca",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "NQX is a leading customer experience outsourcing provider that manages over 20 million customer interactions annually for external clients across multiple industries, with a team of 10,000 skilled professionals providing contact center services to iconic brands[1], clearly positioning it as a third-party BPO vendor rather than a captive operation."
+  },
+  {
+    "company_name": "Intugo",
+    "website": "https://www.intugo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Intugo provides outsourcing services to external clients by enabling them to build and manage dedicated nearshore teams in Mexico under their own control, while handling administrative support like HR, payroll, and compliance, distinguishing it from traditional third-party BPO where vendors fully manage operations but confirming it serves other companies as clients[1][2][3][5][7][8]."
+  },
+  {
+    "company_name": "BellMedEx",
+    "website": "https://bellmedex.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "BellMedEx is explicitly described across multiple sources as a full-service medical billing and Revenue Cycle Management company that provides outsourcing services to external healthcare providers, physicians, and practices, handling their billing processes for a fee, similar to third-party BPO providers.[1][2][3][4][5][7][8]"
+  },
+  {
+    "company_name": "CALLMAX",
+    "website": "https://callmaxsolutions.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe Callmax Solutions as a BPO provider offering call center, customer support, back-office, and outsourcing services to external businesses and clients across industries like healthcare, real estate, and e-commerce, with testimonials from client representatives confirming they serve other companies.[1][2][3][4]"
+  },
+  {
+    "company_name": "Fair Trade Outsourcing",
+    "website": "https://fairtradeoutsourcing.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe Fair Trade Outsourcing as a BPO company providing services like customer engagement, lead generation, and back-office support to external clients and businesses, with no indication of serving only its own operations[2][3][4]."
+  },
+  {
+    "company_name": "AgainAgain",
+    "website": "https://againagain.agency",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Again Again Agency is described as a specialized agency providing call center outsourcing, customer support, and lead generation services to external clients, such as supplements companies and others, as evidenced by client reviews and project case studies on G2 and Clutch.[1][2]"
+  },
+  {
+    "company_name": "A.R.C.E. Contact Center",
+    "website": "https://www.arcecallcenter.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "ZoomInfo explicitly describes ARCE Contact Center as 'the reliable outsourcing contact center supporting leading Ukrainian and international companies,' confirming it serves external clients as a third-party provider.[3]"
+  },
+  {
+    "company_name": "Convergys",
+    "website": "https://convergys.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Convergys is described across multiple sources as a provider of outsourced customer care, BPO, and contact center services to external clients in industries like telecommunications, financial services, and retail, with examples of serving clients such as large retail companies.[1][3][5][6][8]"
+  },
+  {
+    "company_name": "Alorica",
+    "website": "https://alorica.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Alorica's own materials repeatedly describe it as a customer service outsourcing provider serving external clients across industries, with solutions like CX2GO for plug-and-play support, case studies of client partnerships, and recognition as a leading BPO by sources like Frost & Sullivan and INSEAD.[1][2][3][4][10]"
+  },
+  {
+    "company_name": "STARTEK",
+    "website": "https://startek.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Startek is explicitly described as a customer engagement BPO services provider delivering CX solutions, analytics, and consulting to external clients across industries like telecom, healthcare, and retail in 13+ countries.[1][2][3][6]"
+  },
+  {
+    "company_name": "Conduent",
+    "website": "http://www.conduent.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Conduent is explicitly described as a global leader in business process outsourcing (BPO) services that helps external clients across sectors like healthcare, banking, and logistics with solutions such as customer care, transaction processing, and AI-driven automation, similar to peers like Concentrix.[1][2][3][5]"
+  },
+  {
+    "company_name": "TSD Global",
+    "website": "https://tsdglobal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TSD Global provides outsourced contact center services, sales, and customer support directly to external clients such as AT&T, SiriusXM, Capital One, Citibank, and Fortune 500 companies, as confirmed by multiple sources describing it as a BPO outsourcing provider[3][4][6][9]."
+  },
+  {
+    "company_name": "CBE Companies",
+    "website": "https://cbecompanies.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "CBE Companies is an established outsourcing vendor founded in 1933 that provides call center, accounts receivable management, and contact center solutions to external clients across various industries, not an internal operation serving only its own business.[1][3][5][7]"
+  },
+  {
+    "company_name": "Convergent",
+    "website": "https://www.convergent.com",
+    "is_captive": false,
+    "classification": "Unclear",
+    "reasoning": "The search results describe multiple companies named 'Convergent' or 'Convergint' with different business models (security systems integration, managed UC&C services, technology solutions), but none clearly identify as a contact center BPO provider serving external clients or operating as a captive operation."
+  },
+  {
+    "company_name": "MCI",
+    "website": "https://mci.world",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "MCI explicitly markets itself as a global BPO and CX outsourcing provider offering contact center services to external clients across industries, with client testimonials and sales contacts confirming it serves other companies[1][2][3]."
+  },
+  {
+    "company_name": "TransPerfect",
+    "website": "https://www.transperfect.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TransPerfect is described as the world's largest provider of language and technology solutions serving external clients across industries like film, gaming, law, healthcare, retail, and financial services, with top companies turning to them for translation services, matching the third-party BPO model.[1][2][3]"
+  },
+  {
+    "company_name": "Solvo Solutions, LLC",
+    "website": "https://solvoglobal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Solvo Global provides outsourcing, staffing, and BPO services such as back office support, customer service, sales, and accounting to external clients, as evidenced by their website descriptions of serving US-based companies with dedicated nearshore professionals and client testimonials on Clutch[1][2][3][4][8]."
+  },
+  {
+    "company_name": "AZPIRED",
+    "website": "https://www.azpired.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "AZPIRED explicitly describes itself as an outsourcing/BPO provider offering contact center services to external clients across multiple sectors like retail, financial, and travel, with client testimonials confirming they outsource operations to AZPIRED.[1][2][3][5]"
+  },
+  {
+    "company_name": "Flatworld Solutions",
+    "website": "https://www.flatworldsolutions.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Flatworld Solutions provides outsourced BPO and call center services to external clients such as IT companies, healthcare providers, insurance firms, and US-based businesses, as evidenced by multiple case studies and testimonials[1][2][3][4][5][6]."
+  },
+  {
+    "company_name": "eClerx Services",
+    "website": "https://www.eclerx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "eClerx provides business operations services, including customer operations and contact center optimization, to over 50 Fortune 2000 external clients such as global banks and telecom providers, as stated across multiple sources[1][3][4][5][6]."
+  },
+  {
+    "company_name": "Harte Hanks",
+    "website": "https://hartehanks.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Harte Hanks explicitly offers outsourced services like customer care, sales outsourcing, and BPO models to external clients such as B2B tech giants and market-leading partners, as evidenced by their case studies and service descriptions.[1][3][4]"
+  },
+  {
+    "company_name": "Canon Business Process Services, Inc.",
+    "website": "https://cbps.canon.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Canon Business Process Services explicitly markets itself as a leading BPO provider offering services to external clients like Fortune 1000 companies, global telecommunications firms, hospitals, and manufacturers, with flexible delivery models onsite, offsite, or offshore, distinguishing it from captive in-house operations.[1][2][3][4]"
+  },
+  {
+    "company_name": "On Demand Retail Experts",
+    "website": "https://shelflevelretail.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Shelf Level Retail Solutions offers a 'Retail Call Center' service that provides 'a direct link to store level management to talk about YOUR products' to external clients, along with other outsourced retail services like merchandising and audits, as stated on their website[1], with employee reviews confirming call center roles supporting varying vendors and clients[2][4]."
+  },
+  {
+    "company_name": "Account Management Systems",
+    "website": "https://amscollects.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Account Management Systems (AMS) is explicitly described as a national commercial debt collection agency that provides services to external clients, charging contingency fees only on successful collections for accounts placed by other businesses, with no indication of serving only its own operations.[1][2][3][7]"
+  },
+  {
+    "company_name": "Vsynergize",
+    "website": "https://vsynergize.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Vsynergize explicitly describes itself as a global BPO leader providing AI-powered contact center outsourcing solutions to over 500 global businesses and 30+ Fortune 500 clients, with client success stories like a telecommunications company, confirming it serves external clients rather than operating in-house for its own business.[4][3][7]"
+  },
+  {
+    "company_name": "RemoteReps",
+    "website": "https://remotereps.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "RemoteReps is a third-party BPO provider founded in 2013 that offers outsourcing services to external clients across multiple industries, including sales, customer support, accounting, and lead generation services[1][2][4], rather than operating a captive contact center for its own business needs."
+  },
+  {
+    "company_name": "RND OptimizAR",
+    "website": "https://rndoptimizar.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "RND OptimizAR provides medical billing, revenue cycle management, transcription, and back-office outsourcing services to external clients including hospitals, clinics, private practices, and other companies, making it a third-party BPO provider rather than a captive operation[1][3][4]."
+  },
+  {
+    "company_name": "SupportNinja",
+    "website": "https://supportninja.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "SupportNinja provides outsourcing services to external clients like tech companies and startups, as evidenced by client testimonials, partnerships (e.g., Origin, TurboPass), and descriptions of customer support outsourcing on their site and third-party reviews[1][2][3][4][6]."
+  },
+  {
+    "company_name": "SupportSave",
+    "website": "https://www.supportsave.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "SupportSave is a US-based technical support outsourcing company that provides 24/7 helpdesk services to external clients across multiple industries (telecom, healthcare, ecommerce, etc.), making it a third-party BPO provider rather than a captive operation serving only its own business."
+  },
+  {
+    "company_name": "Outsource2india",
+    "website": "https://www.outsource2india.com/",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Outsource2india explicitly offers outsourcing services such as business modeling, BPaaS, and back-office support to external clients in 160+ countries, including SMEs, mid-market, and enterprises, following a client inquiry and contracting process, consistent with third-party BPO operations.[1][2][5]"
+  },
+  {
+    "company_name": "Tata Business Support Services",
+    "website": "https://www.tatabss.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Tata Business Support Services provides outsourced contact center services to large telecommunications operators, Internet service providers, DTH service providers, online travel agencies, and other domestic and international clients, explicitly indicating it serves external clients rather than operating captively for Tata Group only.[1]"
+  },
+  {
+    "company_name": "AmeriCall",
+    "website": "https://americall.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "AmeriCall is a third-party outsourcing provider that has served external clients including Dell, Microsoft, Bank of America, and American Express since 1938, offering customized inbound and outbound call center services to businesses across the United States and globally[2]."
+  },
+  {
+    "company_name": "Pacific Global",
+    "website": "https://www.pacificglobal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Pacific Global is described as a BPO provider offering outsourcing services like medical coding, billing, and customer support to external healthcare clients and businesses, as evidenced by their listings on outsourcing directories and service descriptions emphasizing client support.[4]"
+  },
+  {
+    "company_name": "PCCI Group",
+    "website": "https://pcci-group.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "PCCI Group provides outsourcing services to external clients like MTN, Orange, and Bridge Bank, handling their customer contacts as described on their website and confirmed by Wikipedia and other sources describing it as a BPO provider for multiple industries."
+  },
+  {
+    "company_name": "Touchstone BPO",
+    "website": "https://touchstone.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Touchstone Communications operates as a third-party BPO provider serving 100+ external clients across multiple industries, offering omni-channel contact center and business process outsourcing services to other companies rather than operating exclusively for its own business needs."
+  },
+  {
+    "company_name": "CIENCE Technologies",
+    "website": "https://www.cience.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "CIENCE provides B2B lead generation, SDR teams, appointment setting, and GTM services to external clients across industries, as evidenced by their website descriptions of serving other companies and comparisons to outsourced providers[1][2][3][5]."
+  },
+  {
+    "company_name": "AllianceOne",
+    "website": "https://www.allianceone.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "AllianceOne explicitly offers contact center and collection services to external clients across industries like automotive, financial services, and telecommunications, partnering with major companies and providing outsourcing solutions, as stated on their own site and third-party descriptions."
+  },
+  {
+    "company_name": "Bluechip Call Center",
+    "website": "/",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Bluechip Call Center is explicitly described as a full-service BPO and contact center outsourcing provider that offers services like inbound/outbound calls, telemarketing, and back-office support to external clients across industries such as e-commerce, finance, and healthcare.[1][2][4][5]"
+  },
+  {
+    "company_name": "The Bosch Group",
+    "website": "https://bosch.com.cr",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Bosch Service Solutions offers customer experience services, outsourcing for business processes, and CX solutions to external customers in industries like automotive, travel, logistics, and ICT, as a dedicated division rather than solely an internal operation.[1][2]"
+  },
+  {
+    "company_name": "Answer Carolina",
+    "website": "https://answercarolina.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Answer Carolina explicitly markets itself as a provider of answering and call center services to external businesses, such as small businesses and property managers, offering outsourcing solutions like 24/7 call handling, message taking, lead generation, and cost savings by avoiding in-house staff[1][2]."
+  },
+  {
+    "company_name": "Abacus",
+    "website": "https://www.abacustech.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Abacus Outsourcing (abacus-bpo.com) explicitly markets inbound and outbound contact center services to external businesses, emphasizing cost savings, scalability, and serving '10,000+ customers' from startups to enterprises, consistent with third-party BPO operations[1][2][4]."
+  },
+  {
+    "company_name": "ASK Consulting",
+    "website": "https://askconsulting.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "ASK Consulting provides staffing and talent solutions, including admin and call center roles, to external clients such as the world's largest enterprises, customizing services like RPO and workforce solutions for their businesses, as described across their website pages[1][2][4][5][6]."
+  },
+  {
+    "company_name": "Genisys",
+    "website": "https://genisys-group.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Genisys Group offers BPO and contact center services to external clients across industries like banking, healthcare, and retail, with client testimonials demonstrating business improvements for other companies[1][3][5]."
+  },
+  {
+    "company_name": "CFT Consulting LLC",
+    "website": "https://www.cftconsulting.us",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "CFT Consulting LLC is explicitly described as a premier provider of BPO services to external clients across industries like IT, insurance, manufacturing, and financial services, with client reviews and lists confirming it serves other companies rather than operating in-house for its own business.[1][2][4]"
+  },
+  {
+    "company_name": "Momentum Worldwide",
+    "website": "https://momentumww.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Momentum Worldwide is an experiential marketing agency serving external clients like American Express, Coca-Cola, Microsoft, and others as listed in their agency profile, with no evidence of operating captive in-house contact centers solely for its own business.[2][5]"
+  },
+  {
+    "company_name": "Accenture",
+    "website": "https://www.accenture.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Accenture provides BPO services including finance and accounting, business analytics, and managed services to over 70 external clients globally, as evidenced by their brochures and IDC MarketScape recognition as a leader in BPO services[1][2][3]."
+  },
+  {
+    "company_name": "Access Healthcare",
+    "website": "https://www.accesshealthcare.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Access Healthcare is explicitly described as a BPO provider serving external clients such as health plans, healthcare systems, hospitals, physician practices, and medical billing companies, with no indication of operating solely for its own business.[1][2][5][7]"
+  },
+  {
+    "company_name": "Atento",
+    "website": "https://atento.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Atento explicitly describes itself as a provider of BPO, BTO, and CRM services to external clients, including over 400 clients across multiple sectors, as stated in its website and third-party sources like Avaya and Great Place to Work."
+  },
+  {
+    "company_name": "Centro",
+    "website": "https://www.centrocdx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Centro CDX is a global BPO provider that delivers customized outsourcing solutions to external clients across multiple industries including Healthcare, Automotive, Telecom, Retail, and Travel, operating from multiple international delivery centers and serving as a strategic partner to other businesses rather than functioning as an internal operation."
+  },
+  {
+    "company_name": "CGI",
+    "website": "https://www.cgi.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "CGI is a large independent IT and business consulting services firm that provides business process services (BPS) and managed services to external clients across multiple industries including government, financial services, healthcare, and retail[1][2][5], making it a third-party BPO provider rather than a captive operation."
+  },
+  {
+    "company_name": "CGS",
+    "website": "https://www.cgsinc.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "CGS explicitly markets itself as a provider of Business Process Outsourcing (BPO) and contact center services to external clients in industries like banking, retail, and telecom, with testimonials from companies such as 1WorldSync, Xylem, and AOL confirming it serves as their outsourcing partner.[1][3][6]"
+  },
+  {
+    "company_name": "Concentrix",
+    "website": "https://www.concentrix.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Concentrix is a third-party BPO provider that serves external clients across multiple industries, as evidenced by its client base of 2,000+ companies including 155 Fortune Global 500 brands and its business model of designing, building, and running integrated solutions for other companies rather than operating internal contact centers for its own business."
+  },
+  {
+    "company_name": "Datamatics",
+    "website": "https://www.datamatics.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Datamatics provides BPO, outsourcing, IT consulting, finance and accounting services, contact center solutions, and staff augmentation to external clients globally, as evidenced by customer lists, testimonials, and service descriptions serving other companies.[1][2][3][4][5][7][8]"
+  },
+  {
+    "company_name": "Firstsource",
+    "website": "https://www.firstsource.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Firstsource is explicitly described as a global business process management partner providing outsourcing services to external clients in sectors like healthcare, banking, and telecom, with examples of serving healthcare providers and FinTech companies, distinguishing it from captive in-house operations."
+  },
+  {
+    "company_name": "Gebbs",
+    "website": "https://www.gebbs.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "GeBBS Healthcare Solutions is a third-party BPO/outsourcing provider that delivers revenue cycle management, medical coding, billing, and extended business office services to external healthcare clients including hospitals, health systems, and physician groups[1][2][3][6], not an internal captive operation."
+  },
+  {
+    "company_name": "Genpact",
+    "website": "https://www.genpact.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Genpact is explicitly described as a business process outsourcing (BPO) provider serving multiple external clients, such as 50 procurement customers managing $50 billion in spend, with services offered on an outsourced basis to companies like MGM Resort, distinguishing it from captive operations that serve only internal business needs[1][4][5]."
+  },
+  {
+    "company_name": "HGS",
+    "website": "https://hgs.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "HGS is a third-party BPO provider that serves external clients across multiple industries; it has over 1,071 BPM, HRO, and F&A clients[1] and operates 34 delivery centers in 8 countries[1] to deliver contact center, back-office, and customer care services to other companies rather than operating as a captive center for its own parent company's internal use."
+  },
+  {
+    "company_name": "itel",
+    "website": "https://www.itelinternational.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "itel explicitly positions itself as a customer experience partner serving external clients, including Fortune 500 companies, with references to client onboarding, 81% retention rate, 5-year average tenure, and testimonials from clients like telecommunications and financial services providers[1][2][3][6]."
+  },
+  {
+    "company_name": "Itel International",
+    "website": "https://www.itelinternational.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Itel BPO is explicitly described as a provider of outsourcing and contact center services to external clients such as BTC, Flow, JPS, CarRental8, US logistics firms, and retailers, focusing on helping clients grow their business through BPO solutions.[1][2][5][7]"
+  },
+  {
+    "company_name": "iQor",
+    "website": "https://www.iqor.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "iQor explicitly describes itself as a BPO provider offering outsourced customer experience solutions to global brands and external clients across industries like telecom, retail, and e-commerce, with examples of partnerships with Fortune 500 companies and retailers as their selected outsourcing vendor.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "KM² Solutions",
+    "website": "https://km2solutions.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "KM² Solutions is a dedicated business process outsourcing provider that serves external clients across multiple industries including financial services, healthcare, telecommunications, and retail, operating contact centers in the Caribbean and Latin America as a service vendor rather than supporting its own internal operations.[1][2][4][8]"
+  },
+  {
+    "company_name": "Movate",
+    "website": "https://www.movate.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Movate's website repeatedly describes itself as a provider of outsourcing services to external clients, offering inbound call center, BPO, and CX solutions for businesses to delegate their customer service operations, as evidenced by phrases like 'outsourcing your inbound call center operations to a US provider' and recognition as a top outsourcing leader[1][2][3][5][10]."
+  },
+  {
+    "company_name": "Mplus",
+    "website": "https://www.mplusgroup.eu",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Mplus Group explicitly describes itself as a Business Process Outsourcing (BPO) and BPTO provider serving over 300 external regional and global clients from industries like telecoms, finance, and e-commerce, with no indication of operating solely for its own business.[2][4][6]"
+  },
+  {
+    "company_name": "Omega Healthcare",
+    "website": "https://www.omegahms.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Omega Healthcare provides revenue cycle management, care coordination, and other services to external clients including providers, payers, life science companies, and healthcare organizations, as evidenced by case studies of helping regional health systems, DME suppliers, and others improve operations.[1][4][5][6]"
+  },
+  {
+    "company_name": "Raya CX",
+    "website": "https://rayacx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "RAYA CX is a business process outsourcing company that provides customer experience management, contact center services, and digital solutions to external clients across multiple industries, including Fortune 500 companies, rather than operating as an internal function for a single parent company.[1][2][4][5]"
+  },
+  {
+    "company_name": "ResultsCX",
+    "website": "https://results-cx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "ResultsCX is a contact center outsourcing service provider that serves external clients across various industries, as evidenced by case studies showing work with a leading American footwear company and an entertainment streaming brand, positioning it as a vendor offering omnichannel CX solutions to other businesses rather than an internal captive operation.[1][2][3]"
+  },
+  {
+    "company_name": "Sutherland",
+    "website": "https://www.sutherlandglobal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Sutherland Global provides BPO and contact center services to external clients across industries like technology, retail, finance, and telecom, as evidenced by its business model, customer segments, and multiple case studies of serving Fortune-100 companies and conglomerates.[1][2][3][4][6]"
+  },
+  {
+    "company_name": "Tech Mahindra",
+    "website": "https://www.techmahindra.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Tech Mahindra explicitly offers Business Process Services (BPS) to external customers across multiple industries, serves over 1100 clients globally, and is described as providing outsourcing services, distinguishing it from captive operations that serve only internal needs.[1][3]"
+  },
+  {
+    "company_name": "Teleperformance",
+    "website": "https://www.tp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Teleperformance is explicitly described as a leading global outsourcing/BPO company that provides customer care, technical support, and CX services to external clients across industries like financial services, telecom, and others, with over 1,500 clients.[1][2][3][7]"
+  },
+  {
+    "company_name": "TELUS Digital",
+    "website": "https://www.telusdigital.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TELUS Digital is a third-party BPO provider that designs and delivers digital solutions and customer experience services to external global brands across multiple industries[3][4], not a captive operation serving only its parent company's internal needs."
+  },
+  {
+    "company_name": "TELUS International",
+    "website": "https://www.telusinternational.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TELUS International is explicitly described as a business process outsourcing (BPO) and customer experience (CX) provider that consolidates services for external clients, offering digital transformation partnerships, consulting, and operations to global technology clients across 30+ countries, distinguishing it from captive in-house operations.[2][4]"
+  },
+  {
+    "company_name": "TP",
+    "website": "https://www.tp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TP (Teleperformance) is explicitly described as a leading call center outsourcing company that provides services to external clients across industries like retail, finance, and healthcare, with a list of customer companies such as Albert Heijn and Frasers Group.[1][2][3][7][8]"
+  },
+  {
+    "company_name": "VEE Healthek",
+    "website": "https://www.veehealthtek.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Vee Healthtek provides revenue cycle management and BPO services to external clients such as hospitals, health systems, and providers, as evidenced by repeated mentions of 'clients,' case studies of helping specific clients clear backlogs and manage AR, and being named a Major Contender in revenue cycle management by Everest Group[1][2][3][4][5][9]."
+  },
+  {
+    "company_name": "Wipro",
+    "website": "https://www.wipro.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Wipro provides BPO and business process services to external clients across industries, managing spends for them and optimizing processes as a vendor, as evidenced by references to customers, global outsourcing, and client case studies[1][3][4][5][9]."
+  },
+  {
+    "company_name": "WNS",
+    "website": "https://www.wns.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "WNS is a leading global Business Process Management company that serves 600+ external clients across multiple industries as a third-party outsourcing provider, not a captive operation for its own business[8]."
+  },
+  {
+    "company_name": "Global Contact Service International",
+    "website": "https://gcsagents.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Global Contact Services provides BPO and contact center outsourcing services to external clients including federal agencies, governments, MTA New York City Transit, Department of Labor, and commercial entities across industries like telecommunications and banking, as evidenced by multiple client references and service descriptions[1][2][3]."
+  },
+  {
+    "company_name": "Ibex Global Solutions Philippines Inc",
+    "website": "https://www.ibex.co",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe IBEX Global Solutions Philippines Inc. as a BPO provider delivering contact center and CX outsourcing services to external clients across industries like retail, healthcare, and telecom, including 'blue chip customers' and 'world's leading companies' via long-term contracts.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Vxi Global Holdings",
+    "website": "http://www.vxi.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "VXI Global Solutions is consistently described as a BPO provider delivering customer experience, contact center services, and technology solutions tailored for external clients across industries like FinTech, food delivery, telecom, and payments, with case studies highlighting partnerships and results for these clients.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Cyberbacker",
+    "website": "https://cyberbacker.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Cyberbacker provides virtual support, administrative, and professional services to external clients and business owners across North America, UK, and worldwide, as evidenced by references to serving over 3,000 partnered business owners, establishing SLAs with clients, and offering consultations to match Cyberbackers to client needs.[1][2][3][4]"
+  },
+  {
+    "company_name": "Erc",
+    "website": "https://ercglobalcx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe ERC Global CX as a full-service BPO provider offering customer experience, contact center, and back-office services to external clients across industries like finance, insurance, and retail, with explicit references to serving 'clients' and partnerships[1][2][3][5][6]."
+  },
+  {
+    "company_name": "Stellar Bpo",
+    "website": "https://www.stellaripl.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Stellar Solutions at stellarsolutionspk.com explicitly offers BPO services like customer support, lead generation, and data entry to external businesses of all sizes, matching the third-party model, while stellaripl.com describes specialized services for businesses indicating client-facing outsourcing.[1][2][3]"
+  },
+  {
+    "company_name": "Interglobe Technologies Igt Philippines Inc",
+    "website": "https://www.igtsolutions.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe IGT as providing BPM, contact center, and customer experience services to external clients across industries like travel, hospitality, airlines, and others, including global and domestic clients, not solely for its own business.[1][2][3][4]"
+  },
+  {
+    "company_name": "Customer Frontline Solutions Inc",
+    "website": "https://www.cfsph.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Customer Frontline Solutions Inc. originated from MERALCO and BAYAD CENTER but now operates as an outsourcing provider offering contact center, tellering, and customer care services to clients, with a 'Partner with Us' section and descriptions of serving external businesses beyond just its parents.[1][3][5]"
+  },
+  {
+    "company_name": "Five9 Philippines",
+    "website": "https://www.five9.com",
+    "is_captive": false,
+    "classification": "Unclear",
+    "reasoning": "Five9 is a cloud-based CCaaS software provider that sells subscription services to external BPO clients and enterprises, including operations in the Philippines, but no search results confirm or describe a proprietary 'Five9 Philippines' contact center as either a third-party BPO serving external clients or a captive in-house operation."
+  },
+  {
+    "company_name": "The Office Gurus",
+    "website": "https://www.theofficegurus.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "The Office Gurus explicitly describes itself as a nearshore outsourcing company providing BPO and call center services to external clients worldwide, with case studies showing support for clients in industries like dermatology, HVAC, and vacation rentals, distinguishing it from captive in-house operations.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Toptal",
+    "website": "https://www.toptal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Toptal operates as a freelancing platform and service marketplace that connects businesses (external clients) with top freelance talent for consulting, development, and other services, acting as a mediator rather than an in-house operation for its own business[1][2][3]."
+  },
+  {
+    "company_name": "Jpmorgan Chase Co",
+    "website": "https://www.jpmorganchase.com",
+    "is_captive": true,
+    "classification": "Captive",
+    "reasoning": "JPMorgan Chase & Co operates its own internal contact centers and service functions to serve its banking customers across segments like Consumer & Community Banking and Commercial Banking, with no evidence of providing BPO outsourcing services to external clients.[1][2][4][6]"
+  },
+  {
+    "company_name": "Servicesource",
+    "website": "https://servicesource.org",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "ServiceSource acts as a contractor providing administrative, facilities management, and other business solutions to external clients like the federal government (e.g., Department of Defense) and commercial businesses through contracts and the AbilityOne Program, not operating in-house for its own business."
+  },
+  {
+    "company_name": "Global Healthcare Resource Philippines Inc",
+    "website": "https://www.globalhealthcareresource.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Global Healthcare Resource provides revenue cycle management, medical coding, and patient call center services to external clients such as healthcare providers, hospitals, and medical billing companies, as evidenced by their service descriptions, case studies, and client testimonials on their website and Outsource Accelerator.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Technotask Business Solutions Pvt Ltd",
+    "website": "https://technotaskglobal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Technotask explicitly describes itself as a global BPO and customer support provider serving multiple external clients across industries like e-commerce, fintech, and retail, with services such as contact center outsourcing, voice/email/chat support, and client testimonials from e-commerce giants.[1][2][3][4]"
+  },
+  {
+    "company_name": "Answer All",
+    "website": "https://answernet.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "AnswerNet operates as a third-party BPO provider serving external clients across multiple industries, as evidenced by their service offerings to 10,000+ happy clients[1], their suite of industry-specific solutions[2], and their marketing of scalable outsourcing services to businesses seeking to focus on core activities[3][4]."
+  },
+  {
+    "company_name": "Answer All 2",
+    "website": "https://answernet.com",
+    "is_captive": false,
+    "classification": "Unclear",
+    "reasoning": "The provided search results contain no information about Answer All 2 or answernet.com, making it impossible to determine whether it operates as a third-party BPO provider or captive operation."
+  },
+  {
+    "company_name": "Arise",
+    "website": "https://www.arise.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Arise provides a platform connecting independent service partners and home-based businesses to external clients like Carnival Cruise Line and Dick’s Sporting Goods for customer service outsourcing, not operating in-house centers for its own business.[2][3][5]"
+  },
+  {
+    "company_name": "Callzilla",
+    "website": "https://www.callzilla.cx",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Callzilla explicitly describes itself as a BPO provider offering outsourced contact center services to external clients across industries like healthcare, ed-tech, and CPG, with testimonials and case studies confirming service to other companies.[1][2][3][8]"
+  },
+  {
+    "company_name": "Clearsource Bpo",
+    "website": "https://www.clearsourcebpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "ClearSource BPO explicitly markets itself as a provider of outsourced customer support, back-office services, and BPO solutions to external clients across industries like healthcare, e-commerce, and gaming, positioning as a partner for businesses seeking outsourcing[1][2][3][5][6]."
+  },
+  {
+    "company_name": "Contactus Contact Center",
+    "website": "http://www.cusc.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "ContactUS Communications is a contact center services organization that provides outsourced customer care, inbound and outbound sales, technical support, and customer retention programs to external clients including Fortune 500 and Inc. 500 brands[1][4], not an internal operation serving only its own business."
+  },
+  {
+    "company_name": "Eben Telecom Pvt Ltd 2",
+    "website": "https://ebentelecom.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Eben Telecom explicitly describes itself as a BPO company providing contact center services to external clients like Federal Bank and Ageas Federal Life Insurance, with testimonials confirming they manage call centers for these partner organizations.[1][2]"
+  },
+  {
+    "company_name": "First Kontact Call Center",
+    "website": "https://www.firstkontact.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "First Kontact is a bilingual contact center service provider that offers customized inbound and outbound contact center services to external clients across multiple industries, including major corporations like airlines and Navico, making it a third-party BPO vendor rather than a captive operation.[1][4]"
+  },
+  {
+    "company_name": "Focus Services",
+    "website": "https://www.focusservices.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe Focus Services as a call center/BPO provider offering outsourced services like customer care, sales, and tech support to external clients including Fortune 500 companies, direct response marketers, and other businesses.[1][5][6]"
+  },
+  {
+    "company_name": "Genesys",
+    "website": "https://www.genesys.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Genesys provides cloud-based CX and contact center software platforms (e.g., Genesys Cloud CX) to external organizations across industries as a SaaS vendor, not operating contact centers for clients or solely for its own business[1][2][3][5][6][8][9]."
+  },
+  {
+    "company_name": "Imagenet Llc",
+    "website": "https://www.imagenetglobal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe Imagenet LLC as a BPO provider that partners with external clients like health plans, government agencies, and managed care organizations to deliver services such as contact centers, claims processing, and adjudication.[1][2][3][4][5][7]"
+  },
+  {
+    "company_name": "Infocision Management Corporation",
+    "website": "https://www.infocision.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "InfoCision Management Corporation is explicitly described as a provider of call center and BPO services to external clients including Fortune 500 companies, nonprofits, and various industries, offering outsourcing solutions rather than operating in-house for its own business.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Intellegentia",
+    "website": "https://www.intelegencia.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Intelegencia explicitly markets BPO customer services to transform client operations and announces the addition of 24 new global clients in 2024, confirming it serves external companies rather than operating in-house for its own business.[1][5]"
+  },
+  {
+    "company_name": "Interactive Response Technologies Irt",
+    "website": "http://www.callcenter.com/",
+    "is_captive": false,
+    "classification": "Unclear",
+    "reasoning": "Search results describe Interactive Response Technologies (IRT) as software/technology for clinical trials used by providers like IQVIA and Medidata to serve sponsors and CROs as clients, but no specific information confirms or refutes http://www.callcenter.com/ as a third-party BPO or captive contact center operation."
+  },
+  {
+    "company_name": "Medusind Solutions India Pvt Ltd",
+    "website": "https://www.medusind.com/",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Medusind is a dedicated revenue cycle management (RCM) service provider that serves external healthcare clients including medical practices, hospitals, dental practices, and DSOs, rather than operating an internal contact center for its own business needs."
+  },
+  {
+    "company_name": "Nearsol",
+    "website": "https://www.nearsol.us",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Nearsol provides outsourcing services, white-label customer experience, and contact center operations to external clients like Convergent and Eventus Solutions Group, with operations transferred to clients after implementation, distinguishing it from captive in-house operations.[1][2][3][4]"
+  },
+  {
+    "company_name": "Percepta",
+    "website": "https://www.percepta.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Percepta serves major automotive brands as external clients (e.g., OEMs, dealers, mobility providers) with CX services like customer care and technical support, operating as a joint venture between TTEC and Ford rather than an in-house captive for a single parent company.[1][2]"
+  },
+  {
+    "company_name": "Performant",
+    "website": "https://www.performantcorp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Performant Healthcare Solutions is a third-party BPO provider that delivers technology-enabled audit, recovery, and analytics services to external healthcare payer clients (both government and commercial plans) on a success-based fee model[2][5], not a captive operation serving only its own business needs."
+  },
+  {
+    "company_name": "Taskeu",
+    "website": "https://www.taskus.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TaskUs provides outsourcing services such as customer support, content moderation, and CX consulting to external clients including high-growth companies, tech brands like PayNearMe and MailChimp, and disruptive businesses, as described across multiple sources[1][2][3][4][5][7]."
+  },
+  {
+    "company_name": "Touchpoint Contact Centers Inc",
+    "website": "https://touchpointcontactcenters.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe TouchPoint Contact Centers as a contact center BPO outsourcing provider serving external clients and businesses as an alternative to traditional outsourcing companies, with services like customer care and lead generation offered to others.[1][2][4][8]"
+  },
+  {
+    "company_name": "Tsi",
+    "website": "https://tsico.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TSI explicitly markets itself as a 'Top-Performing Global Business Process Outsourcing Platform' offering Customer Experience/BPO services to external clients across diverse industries, with client portals like myTSI for business accounts and demos to improve recovery rates and customer satisfaction[1][2][3][5]."
+  },
+  {
+    "company_name": "Valor Global",
+    "website": "https://valorglobal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Valor Global's website repeatedly positions itself as an outsourcing partner providing customer care, BPO call center services, and scalable solutions to external businesses, such as small businesses and growing companies, rather than operating in-house for its own customers.[1][2][3][4][7]"
+  },
+  {
+    "company_name": "Vcare Corporation",
+    "website": "https://www.vcarecorporation.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe Vcare Corporation as a leading provider of BPO and call center outsourcing services to external clients across industries like retail, financial services, and technology, offering inbound/outbound support, back office, and IT services.[1][2][3][5]"
+  },
+  {
+    "company_name": "Vonage",
+    "website": "https://www.vonage.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Vonage provides cloud-based contact center software, platforms, and solutions like Vonage Contact Center and Business Communications to other businesses as clients for their operations, rather than operating captive centers solely for its own customers.[1][2][3][5][6]"
+  },
+  {
+    "company_name": "Ayuda Solutions Pvt Ltd",
+    "website": "https://www.ayudasolutions.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Ayuda Solutions is a global service provider offering customized business solutions including inbound/outbound call center services, IT services, and back-office support to external clients across diverse industry sectors, positioning it as a third-party outsourcing vendor rather than a captive internal operation."
+  },
+  {
+    "company_name": "Neusoft Corporation",
+    "website": "https://www.neusoft.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Neusoft provides BPO and contact center services to external clients including Fortune 500 companies and global firms, as evidenced by their listed typical clients, delivery centers for global projects, and awards like IAOP Global Outsourcing Top 100.[1][2][3]"
+  },
+  {
+    "company_name": "Global Healthcare Resource",
+    "website": "https://www.globalhealthcareresource.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Global Healthcare Resource provides BPO services like revenue cycle management, medical billing, coding, and patient call center outsourcing to external clients such as healthcare providers, medical billing companies, and physician groups, as evidenced by their service descriptions and case studies.[1][2][4][5][8][9]"
+  },
+  {
+    "company_name": "Office Beacon",
+    "website": "https://www.officebeacon.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Office Beacon provides call center outsourcing, virtual assistant, and remote staffing services to external clients such as Harvard University, NFL Alumni Association, and over 4,000 businesses across industries, matching the definition of a third-party BPO provider.[1][2][4][6]"
+  },
+  {
+    "company_name": "Centrecom",
+    "website": "https://centrecom.net",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Centrecom explicitly offers outsourcing services to external clients across industries like airlines, travel, finance, and e-commerce, with testimonials from clients such as eSports Technologies and the Ministry for the Family confirming they handle calls and emails for other companies.[1][2][3]"
+  },
+  {
+    "company_name": "Cat Technologies",
+    "website": "https://www.cattechnologies.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "CAT Technologies is a leading BPO and contact center provider that serves external clients across multiple industries including entertainment, banking, telecommunications, and utilities, generating and managing millions of interactions per month for these companies.[1][2]"
+  },
+  {
+    "company_name": "Eos",
+    "website": "https://eosglobe.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "EOSGlobe explicitly markets itself as providing end-to-end Business Process Outsourcing (BPO) services, including telesales, customer support, and operations management, to enterprises and businesses as clients to help them expand and achieve objectives, consistent with third-party outsourcing rather than captive in-house operations.[1][2][3]"
+  },
+  {
+    "company_name": "Netsmartz Llc",
+    "website": "https://www.netsmartz.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Netsmartz LLC is a global technology partner providing AI, software development, marketing, and SaaS solutions to external clients including startups to Fortune 500 companies, with no evidence of operating captive contact centers solely for its own business.[1][2][3][5]"
+  },
+  {
+    "company_name": "Sybrid Private Limited",
+    "website": "https://sybrid.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Sybrid explicitly offers BPO and call center outsourcing services to external clients across industries like food chains (e.g., McDonald’s UAE), healthcare, banking, and telecommunications, as described in their services, about page, and company profile[1][2][4][6]."
+  },
+  {
+    "company_name": "Nexa",
+    "website": "https://www.nexabpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Nexa BPO explicitly describes itself as a contact center and Business Process Outsourcing provider serving external clients across sectors like tourism, insurance, telecommunications, and health, with testimonials from client representatives and services such as customer experience management and sales for other companies.[2][3][4][5][7]"
+  },
+  {
+    "company_name": "Mplus Group",
+    "website": "https://mplusgroup.eu",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Mplus Group is a third-party BPO provider that serves external clients, operating as the BPTO vertical of Bosqar Invest and serving 300+ blue chip customers across multiple industries with over 700 CX experts serving more than 50 international clients[1][3][4]."
+  },
+  {
+    "company_name": "Sterling Global",
+    "website": "https://sterlingglobal.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Sterling Global provides customized contact center services such as inbound/outbound calls, customer support, and sales to external local and international clients, as stated on their website and confirmed by multiple sources describing them as a BPO provider serving businesses worldwide[1][2][4][5][6]."
+  },
+  {
+    "company_name": "Invensis Inc",
+    "website": "https://www.invensis.net",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Invensis is a business process outsourcing firm that provides extensive services including IT, finance and accounting, call center, and back office support to external clients across multiple industries, functioning as an independent outsourcing vendor rather than an internal operation for a parent company."
+  },
+  {
+    "company_name": "The Results Companies",
+    "website": "https://www.resultscx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "The Results Companies (ResultsCX) is described as a customer contact solutions provider for Fortune 500 companies and a partner to global brands, explicitly offering BPO services to external clients, matching the third-party model.[1][4][5]"
+  },
+  {
+    "company_name": "Magic",
+    "website": "https://getmagic.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Magic provides outsourcing services such as virtual assistants, sales, customer support, and bookkeeping to external businesses and individuals as clients, as evidenced by their marketing of dedicated remote teams for scaling other companies' operations.[1][3][8]"
+  },
+  {
+    "company_name": "Buwelo",
+    "website": "https://www.buwelo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Buwelo explicitly offers outsourcing services to external clients, including customer care, tech support, and sales support for brands across industries like healthcare and finance, with dedicated teams and partnerships as described on their website and profiles.[1][2][3][4][7][8]"
+  },
+  {
+    "company_name": "Ohio Digital",
+    "website": "https://www.rdicorp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "RDI Corporation is a business process outsourcer founded in 1978 that provides contact center, IT, help desk, market research, and digital strategy services to external clients ranging from mid-sized businesses to Fortune 500 companies, operating 11 locations across North America with over 3,500 employees."
+  },
+  {
+    "company_name": "Hcltech",
+    "website": "https://www.hcltech.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "HCLTech provides BPO and contact center solutions to external clients across industries like banking, healthcare, and retail, including case studies of Fortune 500 CPG and global energy companies, as a service provider rather than an in-house operation for its own business.[1][2][4]"
+  },
+  {
+    "company_name": "Ttec Agility",
+    "website": "https://www.ttec.com/agility",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TTEC Agility is explicitly described as a BPO and technology partner serving external clients, such as small and medium enterprises and hypergrowth firms, with services like CX solutions, front-line associates, and plug-and-play models[1][2][3]."
+  },
+  {
+    "company_name": "Computer Generated Solutions",
+    "website": "https://www.cgsinc.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "CGS explicitly markets itself as a provider of BPO and contact center outsourcing services to external clients in industries like banking, retail, and technology, with testimonials from clients such as 1WorldSync and Xylem confirming it serves as their outsourcing partner.[1][3][6]"
+  },
+  {
+    "company_name": "Inspiro",
+    "website": "https://www.inspiro.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Inspiro is a business process outsourcing company that provides customer experience and contact center services to external clients across multiple industries including telecoms, retail, banking, healthcare, and hospitality, operating from multiple geographic locations with 4,500+ employees to serve Fortune 1000 companies."
+  },
+  {
+    "company_name": "Rewardsco",
+    "website": "https://www.rewardsco.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Rewardsco explicitly markets itself as a BPO provider offering outsourced customer service, sales, and support services to external blue-chip clients across industries like telecommunications and finance, with phrases like 'partner with us' and 'exclusive relationships with our Blue Chip clients' confirming it serves other companies[1][2][3][5][7]."
+  },
+  {
+    "company_name": "Am Infoweb",
+    "website": "www.aminfoweb.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "AM Infoweb provides outsourcing solutions, integrated end-to-end outsourcing, and services like Health Information Management and Revenue Cycle Management to external clients, as evidenced by references to 'their clients,' 'our clients,' and generating returns for them across USA states[1][2][4][5]."
+  },
+  {
+    "company_name": "Csg Inbound Communication",
+    "website": "https://www.csgi.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "CSG is a SaaS platform company that provides customer engagement, communications, and billing solutions to external clients across multiple industries, not an in-house contact center serving only its own operations."
+  },
+  {
+    "company_name": "Ibt",
+    "website": "https://www.ibtevolve.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "IBT explicitly markets itself as a BPO company providing call center outsourcing, IT outsourcing, and customer service to external clients, with services like tailored call handling, scalability for businesses, and partnerships emphasized across multiple pages.[1][3][4]"
+  },
+  {
+    "company_name": "The Functionary",
+    "website": "https://thefunctionary.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "The Functionary provides nearshore outsourcing solutions, customer support, and contact center services to external clients like GenelQ and New Leaf, as evidenced by client testimonials and descriptions on their website and Clutch profile.[1][2][4]"
+  },
+  {
+    "company_name": "Gc Services",
+    "website": "https://www.gcserv.com/",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe GC Services as a BPO provider offering call center, customer service, and collections outsourcing to external clients across industries like banking, retail, and telecom, with named clients such as Citi Group, JP Morgan Chase, and FedEx.[1][2][4][6]"
+  },
+  {
+    "company_name": "Ctnp Corporation",
+    "website": "https://ctnp-corp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "CTNP Corporation explicitly markets itself as a BPO provider offering outsourcing services like customer support, technical support, and data entry to external clients such as small and medium enterprises, fintech startups, and eCommerce companies, with numerous references to serving 'clients' and delivering cost savings through outsourced operations[1][2][3][4][5]."
+  },
+  {
+    "company_name": "Erc Global Cx",
+    "website": "https://ercglobalcx.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe ERC Global CX as a BPO provider offering customer experience, contact center, and back-office services to external clients across industries like retail, financial services, and non-profits, with explicit mentions of serving 'clients' and launching new client partnerships[1][2][3][6]."
+  },
+  {
+    "company_name": "Agents Republic",
+    "website": "https://www.agentsrepublic.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Agents Republic explicitly markets itself as providing outsourced call center services to external clients across industries like e-commerce, healthcare, and technology, with testimonials from businesses praising their partnership for customer support[1][2][3]."
+  },
+  {
+    "company_name": "Intelegencia",
+    "website": "https://www.intelegencia.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Intelegencia provides BPO and customer support services to a diverse range of external clients including SMEs and Fortune 500 companies across multiple regions, as stated on their Great Place to Work profile and press releases[3][9]."
+  },
+  {
+    "company_name": "Anchora",
+    "website": "https://anchora.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Anchora explicitly offers business process outsourcing services to external clients across industries like FinTech, Insurance, and Healthcare, connecting global talent with other companies as described on their site and Outsource Accelerator profile.[1][6]"
+  },
+  {
+    "company_name": "Personiv",
+    "website": "https://www.personiv.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Personiv explicitly describes itself as a BPO provider offering customer care, finance, accounting, and back-office outsourcing services to external clients across industries, with case studies and testimonials from companies like Thryv, Localsearch, and Lamar Graphics.[1][2][3][5]"
+  },
+  {
+    "company_name": "Alvaria",
+    "website": "https://www.alvaria.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Alvaria provides contact center software solutions and services to external enterprise clients across industries like banking, finance, and healthcare, as evidenced by case studies of clients such as Hoist Finance, Mercado Libre, and Valley Medical Center using their platform[1][3][5]."
+  },
+  {
+    "company_name": "Km2 Solutions",
+    "website": "https://km2solutions.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Multiple sources describe KM2 Solutions as a BPO provider that operates contact centers to deliver outsourced customer service, technical support, and other solutions to external clients across industries like financial services, healthcare, and retail, with sales contact for new clients.[1][2][3][5][7]"
+  },
+  {
+    "company_name": "Virtudesk",
+    "website": "https://www.myvirtudesk.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Virtudesk provides virtual assistant and outsourcing services, including contact center functions, to external business owners and clients across industries, handling hiring, training, and management for their operations as described on their website.[1][2][4][8]"
+  },
+  {
+    "company_name": "247 Ai",
+    "website": "https://www.247.ai",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "247.ai explicitly offers customer care outsourcing services to external clients across industries like healthcare, telecom, and retail, operates contact centers that outsource voice and chat agent services, and mentions clients such as PepsiCo, confirming it serves other companies rather than its own business.[1][3][5][7][9]"
+  },
+  {
+    "company_name": "Ion Bpo",
+    "website": "https://ionbpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Ion BPO's website explicitly markets comprehensive BPO and virtual assistant services tailored to meet the unique needs of external businesses across industries, consistent with third-party outsourcing providers.[1][3][4]"
+  },
+  {
+    "company_name": "Xtendops",
+    "website": "https://www.xtendops.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "XtendOps explicitly offers BPO outsourcing solutions to external clients across industries, with services like customer experience, back office support, and sales, as described on their website and confirmed by CB Insights as a BPO provider serving various sectors.[1][2][4]"
+  },
+  {
+    "company_name": "Ubtis",
+    "website": "https://www.ubiquity.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Ubiquity provides outsourced contact center and BPO services to external clients in industries like fintech, healthcare, and insurance, as evidenced by customer examples such as BM Technologies and testimonials from client executives[1][2][6]."
+  },
+  {
+    "company_name": "Kantipur Management",
+    "website": "https://kantipurmanagement.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Kantipur Management explicitly describes itself as a BPO and HR outsourcing company providing call center management, customer support, and other services to external clients across industries like telecom, banks, and automotive, as evidenced by client testimonials and service descriptions[1][2][3]."
+  },
+  {
+    "company_name": "Kalam Cx",
+    "website": "https://www.kalam.cx",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Kalam CX offers customer experience BPO services to external businesses including startups, established companies, healthcare, real estate, and more, with tailored solutions like chat support, customer service, and HR outsourcing that integrate with clients' systems, as described across their website and confirmed by GALA as a CX BPO provider serving global clients.[1][2][3][4][5][9]"
+  },
+  {
+    "company_name": "Outsourced Staff",
+    "website": "https://www.staffoutsourcing.com",
+    "is_captive": false,
+    "classification": "Unclear",
+    "reasoning": "No search results directly reference 'Outsourced Staff' at https://www.staffoutsourcing.com, and available results describe general outsourcing/staffing firms serving external clients but do not confirm this specific company's model."
+  },
+  {
+    "company_name": "Transcure 2",
+    "website": "https://transcure.net",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Transcure provides medical billing, RCM, and outsourcing services to external healthcare clients like Idaho Kidney & Hypertension Institute and Harding Memorial Healthcare, as evidenced by client testimonials and service descriptions across multiple sources[1][2][4][5][6]."
+  },
+  {
+    "company_name": "Logix Bpo",
+    "website": "https://www.logixbpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Logix BPO explicitly offers Business Process Outsourcing and Recruitment Process Outsourcing services to external clients across industries like finance, real estate, and customer service, building and managing dedicated remote teams for organizations such as Australian finance businesses and recruitment agencies, as described in their profiles and service offerings.[1][4][7][8]"
+  },
+  {
+    "company_name": "Clark Staff",
+    "website": "https://clarkstaff.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Clark Staff explicitly markets itself as a BPO company providing call center services, remote staffing, and outsourcing solutions to external clients across multiple industries, with testimonials from clients like ASMI and Next Phase Remote confirming they serve other businesses.[1][2][4]"
+  },
+  {
+    "company_name": "Afni Philippines Inc",
+    "website": "https://www.afni.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Afni Philippines Inc., as a subsidiary of U.S.-based Afni, Inc., is explicitly described as a global BPO firm that provides customer engagement, contact center, and outsourcing services to external clients in industries like telecommunications, insurance, and financial services, including 'the world's best brands' and specific client programs.[1][2][3][4][7][8]"
+  },
+  {
+    "company_name": "Teletech",
+    "website": "https://www.ttec.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "TTEC is a third-party BPO provider that delivers customer experience services to external clients across multiple industries through its TTEC Engage and TTEC Digital divisions, operating outsourcing centers globally to serve hundreds of companies as clients.[1][3][4]"
+  },
+  {
+    "company_name": "Gear Inc 2",
+    "website": "https://www.gearinc.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Gear Inc operates as a specialized Business Process Outsourcing provider that delivers contact center solutions to external clients across various industries, as evidenced by their service offerings to other companies, case studies with client partners, and positioning as a 'trusted provider' serving diverse business sectors.[1][2][4][5][6]"
+  },
+  {
+    "company_name": "Open Access Bpo",
+    "website": "https://www.openaccessbpo.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Open Access BPO provides outsourcing services such as customer experience, back-office support, and content moderation to external clients across industries like ecommerce, fintech, and healthcare, as described on their website and confirmed by third-party sources like Outsource Accelerator and acquisition announcements[1][2][3][5][8]."
+  },
+  {
+    "company_name": "Hugo Technologies Inc",
+    "website": "https://hugoinc.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Hugo Inc. is a specialized business process outsourcing provider that builds teams and delivers customer support, technical support, data, AI, and compliance services to external clients across multiple industries including fintech, SaaS, e-commerce, and digital-native brands[1][3][4][5][6]."
+  },
+  {
+    "company_name": "Alta Resources",
+    "website": "https://www.altaresources.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Alta Resources is explicitly described as a BPO and customer service outsourcing provider that serves external clients such as movie studios, nonprofits, Fortune 500 brands, and other companies across industries, managing their customer experience, sales, e-commerce, and fulfillment.[1][2][3][4][6][8]"
+  },
+  {
+    "company_name": "Wing Assistant",
+    "website": "https://www.wingassistant.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Wing Assistant provides virtual assistant and BPO services such as customer service, sales support, and administrative functions to external enterprise clients and businesses worldwide, as evidenced by client testimonials, service plans, and explicit mentions of supporting thousands of clients globally[1][2][3][4][6]."
+  },
+  {
+    "company_name": "Aptara",
+    "website": "https://www.aptaracorp.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Aptara is a US-based media company that provides business process outsourcing (BPO) and content services to external clients including Fortune 500 companies, publishers, universities, and corporations worldwide, making it a third-party outsourcing provider rather than a captive operation.[6]"
+  },
+  {
+    "company_name": "Aucera",
+    "website": "www.aucera.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Aucera provides contact center and customer experience services to a diverse portfolio of external clients across multiple industries, such as healthcare and utilities, as evidenced by case studies and service descriptions[1][3][4]."
+  },
+  {
+    "company_name": "Civica Medical Billing And Collection",
+    "website": "https://www.civica.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Civica Medical Billing and Collection provides billing and collection services to external clients such as over 2,000 private consultants, groups, clinics, and hospitals, as described on their product pages, and is listed as an outsourcing provider serving independent healthcare entities.[1][2][3]"
+  },
+  {
+    "company_name": "Mst Holding",
+    "website": "https://www.mstholding.com",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "MST Holding explicitly offers outsourcing and contact center solutions to external clients across sectors like automotive, banking, e-commerce, and telecommunications, enabling companies to delegate customer service while focusing on their core business.[1][3][5]"
+  },
+  {
+    "company_name": "Servicefirst",
+    "website": "https://www.servicefirstcx.com/",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "ServiceFirst is a global business process outsourcing provider that delivers end-to-end outsourcing services to external clients across Customer Experience, Technical Support, Sales, Finance & Accounting, and other functions, operating delivery hubs in the Philippines and Costa Rica to serve global brands."
+  },
+  {
+    "company_name": "Corpshore Solutions",
+    "website": "https://corpshore.solutions",
+    "is_captive": false,
+    "classification": "Third-party BPO",
+    "reasoning": "Corpshore Solutions explicitly markets itself as a BPO provider offering outsourcing services to external clients including SMBs, enterprises, government organizations, and multinational corporations across various sectors, with capabilities in customer experience, contact center operations, and more[1][2][4]."
+  }
+]

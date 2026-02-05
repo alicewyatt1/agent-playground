@@ -1,0 +1,1658 @@
+[
+  {
+    "company_name": "Go Answer",
+    "website": "https://www.goanswer.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "Go Answer explicitly offers outbound calling services as part of their enterprise solutions. According to their website, they 'handle inbound and outbound calls and inquiries' and provide 'outbound calls' among their comprehensive customer support offerings[3][8]. However, there is no evidence in the search results that they offer Sales Outsourcing, B2C Telemarketing & Telesales, or Collections Recovery Services. Their service focus is primarily on inbound answering, virtual receptionist services, legal intake, appointment scheduling, and customer service support rather than proactive sales or collections activities."
+  },
+  {
+    "company_name": "PartnerHero",
+    "website": "https://partnerhero.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on PartnerHero's website, they specialize in customer support, technical support, quality assurance, trust & safety, help desk services, and content moderation[1][3][5]. While they mention 'pre-sales and upsells' through live chat engagement[2], this is reactive support during customer website visits, not proactive outbound services. The search results show no evidence of sales outsourcing, outbound calling, B2C telemarketing, telesales, or collections recovery services. PartnerHero's business model focuses on inbound customer service channels (email, phone, live chat, social media) rather than outbound sales or collections activities[6][9]."
+  },
+  {
+    "company_name": "Triniter BPO",
+    "website": "https://www.triniterbpo.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Triniter explicitly offers outbound BPO call center services, including outbound calling described as 'cold-calling' to customers[4]. They provide multilingual customer service support in up to 20 languages[3] and custom customer support teams for multichannel customer engagement[3]. However, there is no evidence in the search results of dedicated sales outsourcing teams or collections/debt recovery services. Collections services are mentioned only as a general BPO function (not specific to Triniter)[4]."
+  },
+  {
+    "company_name": "FirmsDesk",
+    "website": "https://www.firmsdesk.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Could not parse response"
+  },
+  {
+    "company_name": "Sitel",
+    "website": "https://www.sitel.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Could not parse response"
+  },
+  {
+    "company_name": "TTEC",
+    "website": "www.ttec.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "TTEC offers **Revenue Generation**, **Customer Acquisition as a Service**, **Seller Engagement**, and **Sales Excellence Accelerator**, which align with sales outsourcing, outbound services, and B2C telemarketing/telesales via contact center operations and CX outsourcing[1][3][9]. No evidence found for collections recovery services."
+  },
+  {
+    "company_name": "SupportZebra",
+    "website": "https://supportzebra.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "SupportZebra explicitly offers **Sales Outsourcing** (dedicated sales teams for lead generation, appointment setting) [4] and **Outbound Services** (Outbound Customer Support, welcome calls) [6][1]. No evidence found for **B2C Telemarketing & Telesales** or **Collections Recovery Services** across sources."
+  },
+  {
+    "company_name": "Pure Moderation",
+    "website": "https://puremoderation.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Search results from 7be.io explicitly list 'Other outbound services' (10%), 'B2C Telemarketing & telesales' (10%), and 'Collections' (5%) under Pure Moderation's Call Centers services, confirming these offerings. No evidence found for Sales Outsourcing.[2]"
+  },
+  {
+    "company_name": "Administrative Resource Options, Inc.",
+    "website": "https://www.aro.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results from ARO's website and public information, Administrative Resource Options, Inc. does not offer any of the four specified services. ARO specializes in Business Process Outsourcing (BPO) focused on workplace operations and facilities management, including mailroom management, print center services, document management, reception services, hospitality, and robotics & automation[1][2][5]. Their service portfolio contains no mention of sales outsourcing, outbound calling, telemarketing, telesales, or collections recovery services. Their offerings are centered on internal office operations optimization rather than customer-facing sales or debt collection activities."
+  },
+  {
+    "company_name": "ServiceForge",
+    "website": "https://www.serviceforge.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "ServiceForge specializes in inbound 24/7 live answering, lead qualification, scheduling, and emergency triage for contractors, with no mention of outbound calling, sales outsourcing, B2C telemarketing, or collections recovery in website content or public info.[1][2][3][4][5][6][8]"
+  },
+  {
+    "company_name": "24-7 Intouch",
+    "website": "https://www.24-7intouch.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Collections Recovery Services"
+    ],
+    "reasoning": "24-7 Intouch (IntouchCX) focuses on inbound customer service, tech support, billing, and account management via voice, chat, email, and social[1][3][4]. Explicitly offers 'collections' in Utilities/Energy and Financial Services ecosystems, and back office solutions including collections[2][4]. No evidence of sales outsourcing, outbound calling, or B2C telemarketing/telesales; services emphasize inbound and support rather than proactive outbound or sales[1][2][3][4]."
+  },
+  {
+    "company_name": "TSD Global",
+    "website": "https://tsdglobal.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "TSD Global provides outsourced sales and customer support in contact centers, including sales campaigns, as per partner directory and Indeed profiles[1][2]. No explicit mentions of B2C telemarketing/telesales specifics, outbound calling, or collections recovery services. Note: tsd.com results refer to a separate IT company."
+  },
+  {
+    "company_name": "AZPIRED",
+    "website": "https://www.azpired.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "AZPIRED explicitly lists 'Outbound Solutions' including Customer Acquisition, Upselling/Cross-selling, Lead Qualification, Appointment Setting, and Live Warm Transfers on their services page[1], confirming outbound calling and proactive contact. Video transcript mentions lead generation and sales capabilities[4], and external source lists 'Account Collections'[2], aligning with outbound telesales but not full sales outsourcing teams or dedicated collections recovery services."
+  },
+  {
+    "company_name": "eClerx Services",
+    "website": "https://www.eclerx.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "eClerx focuses on back-office operations, knowledge process outsourcing, digital analytics, customer experience support (e.g., chat, technical support), and sales/marketing analytics[1][2][6][7][8][10]. No evidence of sales outsourcing with dedicated teams, outbound calling, B2C telemarketing/telesales, or debt collections recovery services."
+  },
+  {
+    "company_name": "Harte Hanks",
+    "website": "https://hartehanks.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Harte Hanks specializes in marketing, customer care, data services, fulfillment, and logistics. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services across website pages or public sources[1][2][3][4][5][6][7][8]."
+  },
+  {
+    "company_name": "DME Service Solutions",
+    "website": "https://dmeserve.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "DME Service Solutions offers outbound document requests ('outbound document requests—coordinating with providers, patients, and payers')[1] matching Outbound Services, and patient collections ('We manage patient statements and collections end-to-end, helping you recover balances faster')[1][3] matching Collections Recovery Services. No evidence of sales outsourcing, B2B/B2C sales, or B2C telemarketing/telesales; customer engagement and inside sales are multi-channel but healthcare-focused without sales specifics[2]."
+  },
+  {
+    "company_name": "ModSquad",
+    "website": "https://www.modsquad.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "ModSquad specializes in outsourced customer support (omnichannel including phone, email, chat, social), content moderation, community management, and related CX services. No mentions of sales outsourcing, outbound calling/proactive contact, B2C telemarketing/telesales, or collections/debt recovery in website or public info[1][2][3][6][9]."
+  },
+  {
+    "company_name": "RND OptimizAR",
+    "website": "https://rndoptimizar.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "RND OptimizAR explicitly offers 24/7 outbound call support as part of their Call & Contact Service offerings[4]. However, there is no evidence in the search results that they provide Sales Outsourcing, B2C Telemarketing & Telesales, or Collections Recovery Services. Their primary focus appears to be healthcare Revenue Cycle Management[1][7], call center services[4], transcription services[2], and data processing[6]."
+  },
+  {
+    "company_name": "Motif, Inc.",
+    "website": "https://motifinc.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on available information, Motif, Inc. is a digital trust and safety services company that provides omnichannel services (voice, email, chat, and community moderation) for eCommerce marketplaces, online retailers, travel agencies, and financial services companies[7]. Their service portfolio focuses on customer care, fraud prevention and detection, back office support, and demand/acquisition services[1]. While they offer contact center services and voice capabilities, there is no evidence in the search results that they specifically offer sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services. Their services appear to be primarily inbound and community-focused rather than outbound sales or collections-oriented."
+  },
+  {
+    "company_name": "Tata Business Support Services",
+    "website": "https://www.tatabss.com",
+    "offers_outbound": "Unable to determine from available search results",
+    "tags_to_add": [],
+    "reasoning": "Search results confirm Tata BSS provides outsourced contact centre services but do not contain specific information about the four services queried (Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, or Collections Recovery Services). Direct website access or more detailed service documentation would be needed for accurate classification."
+  },
+  {
+    "company_name": "Answer Carolina",
+    "website": "https://answercarolina.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Answer Carolina provides call center technology, professional answering services, appointment scheduling, and message handling for sectors like healthcare and small businesses, primarily inbound support. No evidence in search results for sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services.[2][3][8]"
+  },
+  {
+    "company_name": "Accenture",
+    "website": "https://www.accenture.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing"
+    ],
+    "reasoning": "Accenture acquired N3, an Atlanta-based inside sales outsourcing firm, adding 2,200 employees and expanded capabilities in AI and machine learning for sales operations[1]. Accenture offers sales and commerce transformation services with focus on 'smarter selling and buying experiences'[5]. However, the search results do not provide evidence of outbound calling services, B2C telemarketing/telesales campaigns, or collections/accounts receivable recovery services. Accenture's sales offerings emphasize inside sales (remote/virtual sales via phone, email, internet) and digital sales transformation[1][5], but lack specific mention of the other three service categories."
+  },
+  {
+    "company_name": "ADEC Innovations",
+    "website": "https://www.adec-innovations.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "ADEC Innovations offers outbound engagement and training via telephone as part of their services for CDP, including outbound calling with sustainability professionals and a full-time helpdesk[7]. No evidence found for sales outsourcing, B2C telemarketing/telesales, or collections recovery services; focus is on BPO customer care, ESG, and data solutions[1][5]."
+  },
+  {
+    "company_name": "ADP",
+    "website": "https://www.adp.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on ADP's publicly available information, the company specializes in Human Capital Management (HCM) solutions including payroll, HR, benefits administration, time and attendance, talent management, and compliance services[1][2][3]. ADP does not offer sales outsourcing, outbound calling services, telemarketing, telesales, or collections recovery services. Their service portfolio is focused exclusively on employee-related HR and payroll functions, not sales or collections activities."
+  },
+  {
+    "company_name": "Alight Solutions",
+    "website": "https://www.alight.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "Alight Solutions offers call center outsourcing services, including for Medicare insurers and health plans, which typically encompass outbound calling and proactive customer contact as part of BPO operations[1][2][3]. No evidence found for sales outsourcing, B2C telemarketing/telesales, or collections recovery services."
+  },
+  {
+    "company_name": "Analytix Business Solutions",
+    "website": "https://www.analytix.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Analytix Business Solutions focuses on finance, accounting, bookkeeping, IT, technology, back-office administration, HR, virtual assistants, BPO, and business transformation services like consulting and automation. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website or public information.[1][2][3][4]"
+  },
+  {
+    "company_name": "Baker & McKenzie",
+    "website": "https://www.bakermckenzie.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Baker McKenzie is a law firm specializing in legal advice on outsourcing (e.g., ITO, BPO like finance/HR), sales & after-sales regulations (B2B/B2C), and related areas like IT services and supply chains, but does not offer operational services such as outsourced sales teams, outbound calling, telemarketing, or debt collection[1][2][3][4][9]."
+  },
+  {
+    "company_name": "Bosch Service Solutions",
+    "website": "https://www.boschservicesolutions.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Bosch Service Solutions focuses on connected services like eCall, roadside assistance, stolen vehicle services, mobility, IT/software development, and BPO for automotive/logistics using IoT and data. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website or public info.[1][2][3][5][6]"
+  },
+  {
+    "company_name": "Canon Business Process Services",
+    "website": "https://cbps.canon.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results from Canon Business Process Services' website, there is no evidence that they offer any of the four specified services. Canon's documented service offerings focus on business process outsourcing related to document processing, data capture, invoice/transaction processing, workforce management, and back-office operations for manufacturing and financial sectors[1][2][3][5][6]. The search results do not mention sales outsourcing, outbound calling, telemarketing, telesales, or collections/debt recovery services. Their core competencies are in intelligent document automation, indexing, coding, digitization, and administrative support rather than customer-facing sales or collections activities."
+  },
+  {
+    "company_name": "Centro",
+    "website": "https://www.centrocdx.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Centro CDX explicitly offers 'Sales, product usage, and billing support' and 'Customer care' services across retail, e-commerce, and technology sectors[1]. Their BPO services include 'contact center management' with '24/7 support' and 'faster resolutions'[2], and they provide 'Phone and social media support' for gaming clients[1]. However, there is no evidence in the search results of B2C Telemarketing & Telesales or Collections Recovery Services offerings."
+  },
+  {
+    "company_name": "CGS",
+    "website": "https://www.cgsinc.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "CGS explicitly offers outbound telemarketing and telesales campaigns for B2B/B2C, including proactive outbound calling, as stated on their BPO and telesales pages[1][2]. No evidence found for sales outsourcing teams or collections recovery services."
+  },
+  {
+    "company_name": "Colliers",
+    "website": "https://corporate.colliers.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Colliers is a global commercial real estate services firm offering property sales, leasing, valuation, advisory, and management services. Their website (corporate.colliers.com) and public information show no offerings in sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services, which are unrelated to their core real estate focus."
+  },
+  {
+    "company_name": "Concentrix",
+    "website": "https://www.concentrix.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Concentrix offers B2B and B2C sales outsourcing with dedicated sales teams[1][3][4]. Their B2C sales solutions include real-time customer engagement via multiple channels and customer acquisition[1]. Their comprehensive customer service outsourcing explicitly includes 'collections'[2]. While the search results don't explicitly use the term 'telesales' or 'telemarketing,' their B2C sales services encompass outbound customer engagement and acquisition strategies[1][4], which constitute outbound services and B2C sales activities typical of telesales operations."
+  },
+  {
+    "company_name": "Datamatics",
+    "website": "https://www.datamatics.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Datamatics offers multilingual call centers with 24X7 outbound and inbound operations[1], including sales and level 1/2 tech support[1]. They specifically provide AI-driven Sales Outbound solutions for growth hacking with AI-augmented agents that proactively reach out to customers[7]. Their services include demand generation services[2] and customer loyalty management with outbound calling capabilities[7]. However, no evidence of Collections Recovery Services or debt collection offerings was found in the search results."
+  },
+  {
+    "company_name": "DLA Piper",
+    "website": "https://www.dlapiper.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "DLA Piper is a law firm specializing in legal advisory for outsourcing, technology transactions, and strategic sourcing (e.g., IT, HR, finance outsourcing), not providing operational services like sales outsourcing, outbound calling, telemarketing, or debt collection.[1][2][3][5]"
+  },
+  {
+    "company_name": "Eclaro",
+    "website": "https://www.eclaro.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Eclaro specializes in staffing, custom outsourcing, strategic staffing, direct placement, and EOR services for roles like IT, financial services (including Accounts Payable & Receivables), insurance, and customer service, but no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services[1][3][5][7]."
+  },
+  {
+    "company_name": "Fidelity",
+    "website": "https://www.fidelity.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Fidelity offers HR, benefits, payroll, and workplace services outsourcing, plus investment, brokerage, and advisor support tools, but no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in the search results.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Fingent",
+    "website": "fingent.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results from Fingent's website, there is no evidence that the company offers any of the four specified services. Fingent's service portfolio focuses on custom software development, enterprise solutions, cloud computing, infrastructure services, network security, RPA, and industry-specific software (financial services, healthcare, education, etc.). The search results make no mention of sales outsourcing, outbound calling services, telemarketing, telesales, or debt collection/accounts receivable recovery services. Their service offerings are technology-oriented rather than business process outsourcing or customer contact center services."
+  },
+  {
+    "company_name": "Gebbs",
+    "website": "https://www.gebbs.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "GeBBS specializes in healthcare RCM, medical billing outsourcing, coding, denial management, data entry, eligibility verification, and patient contact solutions like pre-authorization, but no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services (distinct from healthcare billing/AR).[1][2][3][7]"
+  },
+  {
+    "company_name": "Genpact",
+    "website": "https://www.genpact.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Genpact's website confirms they offer sales and commercial services, including SMB sales enablement with outbound sales optimization[1][4]. They explicitly provide 'Cora Collections' services for debt collection and accounts receivable[2]. While their materials focus on enterprise solutions rather than B2C telemarketing specifically, their sales enablement services include outbound calling and customer contact capabilities[1]. They do not prominently advertise B2C telemarketing as a primary service offering."
+  },
+  {
+    "company_name": "GlowTouch",
+    "website": "https://www.glowtouch.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on GlowTouch's website and public information, there is no evidence they offer any of the four specified services. GlowTouch specializes in customer support outsourcing, contact center services, back office processing, and technology outsourcing[1][4]. Their service offerings include customer support, technical support, chat support, email support, QA testing, and custom software development[1][2]. While they mention 'generating revenue through presales'[6], this refers to support services that enable sales rather than dedicated sales outsourcing, outbound calling campaigns, telemarketing, or collections services. No mention of outbound dialing, sales teams, telesales, or debt collection appears in their service descriptions."
+  },
+  {
+    "company_name": "HGS",
+    "website": "https://hgs.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on available search results, HGS's service offerings focus on customer experience lifecycle, digital transformation, business process management, contact center automation, back-office processing, HR outsourcing, cybersecurity solutions, and AI services[1][4][5]. While HGS operates contact centers and offers omnichannel delivery capabilities[2], the search results do not contain specific information confirming they offer Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, or Collections Recovery Services. The contact center services mentioned emphasize AI-powered automation and customer support rather than outbound sales or collections activities[3][5]. To definitively confirm whether HGS offers these specific services, direct verification with their complete service portfolio would be necessary."
+  },
+  {
+    "company_name": "IBM",
+    "website": "https://www.ibm.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "IBM offers sales consulting, Salesforce integration, BPO for HR/procurement/customer service, and past supply chain outsourcing, but no evidence of sales outsourcing with outsourced teams, outbound calling, B2C telemarketing/telesales, or collections recovery services. Customer care BPO was sold in 2013[5]."
+  },
+  {
+    "company_name": "Infopulse",
+    "website": "https://www.infopulse.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Infopulse focuses on IT services like Software R&D, Cloud & Infrastructure, Cybersecurity, and general BPO, with mentions of 'Telecom operations and customer service' and 'Business process outsourcing' but no specific evidence of Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, or Collections Recovery Services.[1][3][4]"
+  },
+  {
+    "company_name": "Infosys BPM",
+    "website": "https://www.infosysbpm.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Sales Outsourcing"
+    ],
+    "reasoning": "Infosys BPM offers **Sales Outsourcing** through sales process management, lead management, and quote-to-cash services[1][3][4]. No evidence found for Outbound Services, B2C Telemarketing & Telesales, or Collections Recovery Services; services focus on back-end sales fulfillment, customer service, and finance rather than outbound calling, telemarketing, or debt collection[2][6]."
+  },
+  {
+    "company_name": "Iron Mountain",
+    "website": "https://www.ironmountain.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Iron Mountain focuses on information management, records storage, data centers, and intelligent business process management (iBPM) for document-centric processes like accounts payable and back-office outsourcing, primarily for B2B clients in sectors like finance. No evidence in search results supports sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services; their sales are internal for their own offerings.[1][2][3][4]"
+  },
+  {
+    "company_name": "Itel International",
+    "website": "https://www.itelinternational.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Search results describe itel International as a CX (customer experience) and BPO provider focused on nearshore/onshore outsourcing, AI-enhanced contact centers, customer support, and general CX services. No explicit mentions of sales outsourcing, outbound calling/proactive contact, B2C telemarketing/telesales, or collections/debt recovery services[1][2][3][5][6]."
+  },
+  {
+    "company_name": "Kelly",
+    "website": "https://www.kellyservices.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "Kelly offers **Contact Center Solutions** as part of Business Process Outsourcing (BPO), which typically includes outbound calling and proactive customer contact, but no explicit mentions of sales outsourcing, B2C telemarketing/telesales, or collections recovery services[1][3]. Other results focus on staffing, RPO, MSP, and general workforce solutions without matching the specific services[2][4][6][7][9]."
+  },
+  {
+    "company_name": "Mplus",
+    "website": "https://www.mplusgroup.eu",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Mplus explicitly mentions Inbound and Outbound services[2][3][5][6], including telemarketing[5], sales support[5], and collections with high rates[2]. No direct evidence of sales outsourcing or dedicated outsourced sales teams."
+  },
+  {
+    "company_name": "Newmark",
+    "website": "https://www.nmrk.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Newmark (nmrk.com) provides real estate services including capital markets, investment sales, lease administration, property management, and financing. No evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services; 'Collections' in lease administration refers to subtenant cash applications, not debt recovery.[2]"
+  },
+  {
+    "company_name": "Paychex",
+    "website": "https://www.paychex.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results from Paychex's website, the company specializes exclusively in payroll, human resources, and benefits outsourcing services. Their offerings include payroll processing, HR administration, benefits management, recruitment and onboarding support, performance management, wellness programs, and PEO (Professional Employer Organization) services. None of the search results indicate that Paychex offers sales outsourcing, outbound calling services, B2C telemarketing, telesales, or collections recovery services. Their business model is focused on HR and payroll solutions for businesses of all sizes, not customer-facing sales or debt collection services."
+  },
+  {
+    "company_name": "Quatrro Business Support Services",
+    "website": "https://www.quatrrobss.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Quatrro Business Support Services focuses on finance & accounting outsourcing, HR, technology, and back-office support[1][2][3][4][5][7]. No mentions of sales outsourcing, outbound calling, or B2C telemarketing/telesales. A testimonial references 'persistent Collection efforts' on deductions, indicating collections recovery[6]."
+  },
+  {
+    "company_name": "QX Global Group",
+    "website": "https://qxglobalgroup.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "QX Global Group's website and public information focus on finance & accounting outsourcing, strategy consulting, software services, IT support, process management, and recruitment process outsourcing. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in any search results.[1][2][3][4][5][6][7][8][9]"
+  },
+  {
+    "company_name": "Raya CX",
+    "website": "https://rayacx.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "RAYA CX offers call center outsourcing with core services including customer acquisition, cross-selling/upselling (sales outsourcing, outbound, telemarketing/telesales), and collections (recovery services), as listed in their brochure[2]. They provide inside sales channel management[6] and support B2B/B2C via multi-channel contact in various industries[1][3]."
+  },
+  {
+    "company_name": "ResultsCX",
+    "website": "https://results-cx.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing"
+    ],
+    "reasoning": "ResultsCX offers 'Outcome Driven Customer Acquisition Services' with 'Analytics-led Sales' and 'digital contact center' approaches, aligning with Sales Outsourcing; no mentions of outbound calling, B2C telemarketing/telesales, or collections recovery in the provided search results focused on CX, tech support, and healthcare.[8]"
+  },
+  {
+    "company_name": "SEBPO",
+    "website": "https://www.sebpo.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "SEBPO specializes in ad operations, back-office processing, customer support, creative services, data solutions, media planning, and quality assurance, primarily for digital advertising, tech, finance, and media industries[1][2][3][5]. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services across sources."
+  },
+  {
+    "company_name": "SPS",
+    "website": "https://www.spsglobal.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "SPS focuses on strategic B2B outsourcing, technology business solutions (e.g., data & business process management, customer communications, HR & payroll), and enterprise workplace solutions, primarily for banking, finance, insurance, and health sectors. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website content or public info.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Sutherland",
+    "website": "https://www.sutherlandglobal.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Sutherland Global Services offers Ad Sales and Operations services with contact discovery and lead prioritization capabilities[2]. They provide enterprise sales solutions across multiple verticals including IT Services, Financial Services, and Healthcare[6]. Their service portfolio includes digital interactions, omnichannel customer engagement, and sales support across retail and other industries[3][6]. However, there is no evidence in the search results of dedicated B2C Telemarketing & Telesales campaigns or Collections Recovery Services offerings."
+  },
+  {
+    "company_name": "Sutherland Global",
+    "website": "https://www.sutherlandglobal.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on Sutherland Global's website, there is no mention of sales outsourcing, outbound calling services, B2C telemarketing, telesales, or collections recovery services. Their service offerings focus on digital transformation, business process services (BPaaS), enterprise support, cloud management, AI and automation, digital customer experience design, and contact center services[1][3][4][5][6]. While they offer 'Next-Gen Contact Center as a Service'[3], this appears oriented toward inbound customer service and omnichannel customer journey management rather than outbound sales or collections activities. The search results do not provide evidence that Sutherland Global offers any of the four specified services."
+  },
+  {
+    "company_name": "Tech Mahindra",
+    "website": "https://www.techmahindra.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Tech Mahindra provides sales interactions (Sales Outsourcing), customer service including collections (Collections Recovery Services), and proactive customer contact via touch points (Outbound Services) as per their Three UK case study[1]. Partnerships enhance sales enablement[2], and they offer Sales & Marketing Outsourcing[10]. No explicit evidence for B2C Telemarketing & Telesales."
+  },
+  {
+    "company_name": "The Boston Consulting Group",
+    "website": "https://www.bcg.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "BCG provides **marketing and sales consulting**, **digital sales strategy**, and advice on **outsourcing partnerships** (e.g., co-sourcing for contact centers, tele-sales), but does not offer outsourced sales teams, outbound calling, B2C telemarketing/telesales, or collections recovery services directly. They focus on strategy and transformation, not operational execution.[1][2][3]"
+  },
+  {
+    "company_name": "UnifyCX",
+    "website": "https://www.unifycx.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Sales Outsourcing"
+    ],
+    "reasoning": "UnifyCX provides human-powered outsourcing solutions with sales-oriented teams, including presales engagement, cross-selling/upselling via live chat, and boosting sales, aligning with sales outsourcing[1][2][7]. No evidence of outbound calling, B2C telemarketing/telesales, or collections recovery services; focus is on inbound CX, support, and chat[1][2][4]."
+  },
+  {
+    "company_name": "VXI Global Solutions",
+    "website": "https://www.vxi.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "VXI offers **Sales Outsourcing** ('Sales & Retention', 'Sales effectiveness', 'Digital Sales Channels', 'Revenue Generation')[2][3]; **Outbound Services** (implied via sales, telemarketing context, AI outbound calling complement)[2][3][5]; **B2C Telemarketing & Telesales** ('Advanced Telemarketing Solutions')[5]. No evidence for **Collections Recovery Services** across sources focused on customer care, CX, and sales."
+  },
+  {
+    "company_name": "WAVESTONE",
+    "website": "https://www.wavestone.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Wavestone provides consulting in strategic sourcing, services optimization, cybersecurity, technology, and digital transformation, focusing on advisory, strategy, and optimization rather than operational outsourcing like sales teams, outbound calling, telemarketing, or debt collection services[1][2][3][4][5][7][8]."
+  },
+  {
+    "company_name": "Wipro",
+    "website": "https://www.wipro.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Wipro expanded its BPO services beyond voice-based telesales and customer support in the late 1990s[2]. The company explicitly offers sales outsourcing including outbound sales calls[2], and provides broader business process outsourcing services across multiple domains[2]. However, there is no mention of collections recovery services or debt collection in the available search results."
+  },
+  {
+    "company_name": "WNS",
+    "website": "https://www.wns.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "WNS offers customer interaction services including outbound calling via 'Next Gen Customer Service Solution' for trans-channel enhanced customer experience and campaign strategies[1][2]; provides 'Credit control and collections' explicitly listed under revenue management solutions[2]; no direct evidence for sales outsourcing, B2B/B2C sales teams, or B2C telemarketing/telesales."
+  },
+  {
+    "company_name": "Xerox",
+    "website": "https://www.shop.xerox.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Search results from shop.xerox.com focus exclusively on printer supplies, accessories, toner, ink, maintenance kits, and recycling programs; no evidence of sales outsourcing, outbound services, B2C telemarketing/telesales, or collections recovery services.[1][2][3]"
+  },
+  {
+    "company_name": "Outsourcing In The Philippines",
+    "website": "https://www.concentrix.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Concentrix explicitly offers B2C and B2B sales under customer service outsourcing[4], sales as a digital operations service[3], and collections[4]. These align with sales outsourcing, outbound services (implied in sales/telemarketing), B2C telesales, and collections recovery."
+  },
+  {
+    "company_name": "Department Of Trade And Industry Dti",
+    "website": "http://www.dti.gov.ph",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "The Department of Trade and Industry (DTI) is a Philippine government agency focused on trade policy, industry development, consumer protection, and business promotion[1][3]. The search results document its functions including policy formulation, capacity building, market development, regulatory oversight, agri-entrepreneurship programs, and consumer protection advocacy[1][2]. There is no evidence in the available information that the DTI offers commercial services such as sales outsourcing, outbound calling, telemarketing, telesales, or debt collection. These are business process outsourcing services typically provided by private companies, not government trade and industry departments. The DTI's role is regulatory and developmental, not service provision in these categories."
+  },
+  {
+    "company_name": "Ufinet",
+    "website": "http://www.ufinet.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Ufinet is a wholesale telecommunications operator focused on fiber optic connectivity, internet, dark fiber, FTTH, data centers, towering, and security services like DDoS protection and CGNAT. No evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website or public information.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Interval International",
+    "website": "https://www.intervalworld.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Interval International is a vacation ownership exchange company offering membership programs, exchange networks, and value-added services to developers like sales tools and client support, but no evidence of sales outsourcing, outbound calling, telemarketing, telesales, or collections recovery services.[1][2][4][5]"
+  },
+  {
+    "company_name": "Global Contact Service International",
+    "website": "https://gcsagents.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "Sales Outsourcing"
+    ],
+    "reasoning": "Global Contact Services' website and public information indicate they provide outbound calling capabilities and customer prospecting/acquisition services. Their service offerings explicitly include 'customer prospecting and acquisition'[1] and they describe their solutions as handling 'all your customer contact needs' with 'omnichannel options'[2]. However, the search results do not provide specific evidence that they offer B2C Telemarketing & Telesales campaigns or Collections Recovery Services. Their primary focus appears to be on inbound call center services, reservations, customer care, and general BPO solutions[3], though outbound prospecting and acquisition services are documented."
+  },
+  {
+    "company_name": "Hcca Health Connections",
+    "website": "https://www.shearwaterhealth.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Shearwater Health (formerly HCCA Health Connections) specializes in clinical process outsourcing (CPO) for healthcare, including utilization management, revenue cycle management, coding, risk adjustment, care management, and telehealth. No evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in search results.[1][2][3][4]"
+  },
+  {
+    "company_name": "Ibm Business Services",
+    "website": "https://www.ibm.com/consulting",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "IBM Consulting focuses on business transformation, technology integration, operations, strategy, AI, cloud, and customer experience consulting[1][2][3][5][6]. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website or public sources."
+  },
+  {
+    "company_name": "Vxi Global Holdings",
+    "website": "http://www.vxi.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "VXI Global Holdings offers **Sales & Retention** and **Sales effectiveness**, aligning with Sales Outsourcing and Outbound Services (proactive customer contact via contact center BPO). No evidence supports B2C Telemarketing & Telesales or Collections Recovery Services; focus is on customer care, retention, and CX.[1][3][7]"
+  },
+  {
+    "company_name": "Syntel Infotech Inc",
+    "website": "https://www.atos-syntel.net",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Syntel Infotech Inc (now Atos Syntel) specializes in IT services, application development, digital transformation, KPO, and BPO like customer experience and process digitization, but no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in search results[1][2][3][4]."
+  },
+  {
+    "company_name": "Emerson",
+    "website": "https://www.emerson.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Emerson focuses on automation, industrial engineering, sales/service channels for their own products, and consulting services like lifecycle management and supply chain optimization. No evidence of offering sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services.[1][2][3][6][7]"
+  },
+  {
+    "company_name": "Macquarie Group",
+    "website": "https://www.macquarie.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Macquarie Group is a diversified financial services firm offering asset management, banking, wealth management, advisory, and capital solutions, with no evidence of providing sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services[2][3][7]. Other results reference unrelated entities like Elite Macquarie Group[4]."
+  },
+  {
+    "company_name": "Outsource Workers",
+    "website": "https://www.alorica.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Alorica offers **Sales Outsourcing** through lead generation, acquisition, up/cross-selling, and licensed sales as detailed in their fact sheet[1]. **Outbound Services** are supported via proactive outbound calling for win-back, retention, and revenue growth[1][3]. No evidence found for **B2C Telemarketing & Telesales** or **Collections Recovery Services**."
+  },
+  {
+    "company_name": "Cyberbacker",
+    "website": "https://cyberbacker.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Cyberbacker provides virtual assistants including 'Prospect Backer' and 'Lead Backer' for lead generation, sales prospecting, and appointment setting, aligning with outsourced sales teams and outbound services like proactive contact. No evidence of B2C telemarketing campaigns or collections recovery services."
+  },
+  {
+    "company_name": "Hellorache",
+    "website": "https://hellorache.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Hello Rache provides HIPAA-compliant virtual administrative assistants for healthcare practices, focusing on tasks like scheduling appointments, EMR data entry, patient reminders, insurance verification, and virtual reception (e.g., greeting patients, handling queries, taking incoming calls)[1][2][6][10]. No evidence of sales outsourcing, outbound calling/proactive contact, B2C telemarketing/telesales, or collections/debt recovery services."
+  },
+  {
+    "company_name": "Citigroup",
+    "website": "https://www.citigroup.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Citigroup's services focus on banking, investment, asset servicing, payments, and middle/back-office outsourcing (e.g., IT, securities processing)[1][4][5][6]. No evidence found for sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services; a Malaysian entity named 'Citigroup Sales and Outsourcing Services' is dormant[7]."
+  },
+  {
+    "company_name": "Niit Technologies Philippines Inc",
+    "website": "https://www.niit-tech.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "NIIT Technologies Philippines Inc. focuses on IT services (digital, infrastructure management, application development, testing, automation), managed learning services (content design, administration, delivery, strategic sourcing), and business processes like finance/accounting and airline revenue accounting. No evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in the search results.[1][2][3][5][7]"
+  },
+  {
+    "company_name": "Interglobe Technologies Igt Philippines Inc",
+    "website": "https://www.igtsolutions.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "IGT offers 'Sales and reservations' as part of BPM services, aligning with Sales Outsourcing (outsourced sales teams, B2B/B2C sales) and Outbound Services (outbound calling via contact center). No evidence for B2C Telemarketing & Telesales or Collections Recovery Services; focus is on travel/hospitality customer support, reservations, and CX.[1][2][5]"
+  },
+  {
+    "company_name": "Customer Frontline Solutions Inc",
+    "website": "https://www.cfsph.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "Customer Frontline Solutions Inc. offers contact center solutions and comprehensive customer care services[1]. While the search results confirm they provide 'contact center solutions covering voice and non-voice support'[1] and reference both 'inbound and outbound outsourced customer management solutions'[8], the available information does not specifically detail sales outsourcing, B2C telemarketing & telesales, or collections recovery services. The company's primary focus appears to be on customer service, support, and general contact center operations rather than the specialized sales and collections services queried. To definitively confirm whether they offer Sales Outsourcing, B2C Telemarketing & Telesales, or Collections Recovery Services would require direct contact with the company, as these services are not explicitly mentioned in available public sources."
+  },
+  {
+    "company_name": "Five9 Philippines",
+    "website": "https://www.five9.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Five9 Philippines provides cloud contact center software supporting sales & telemarketing, customer services, outsourcing, and collections, enabling outbound calling, sales outsourcing via BPO solutions, telemarketing/telesales, and collections recovery[1][2][4][8]. No evidence they directly operate outsourced agent teams, but software facilitates all listed services."
+  },
+  {
+    "company_name": "Weserv Systems International Inc",
+    "website": "https://weserv.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "WeServ Systems International Inc focuses on IT services, BPO for customer management, automation, business applications, infrastructure, and Fujitsu support; no mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery in website or public sources.[1][3][4][5][6]"
+  },
+  {
+    "company_name": "Visaya Kpo",
+    "website": "https://visayakpo.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "Visaya KPO offers Contact Center and Call Center services, which typically include outbound calling and proactive customer contact as standard components of BPO contact center operations[1]. No explicit mentions of sales outsourcing, B2C telemarketing/telesales, or collections recovery services found; focus is on customer service, technical support, and finance/accounting[2][3][5]."
+  },
+  {
+    "company_name": "Spi Global Inc",
+    "website": "https://www.straive.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Straive's service portfolio focuses on content creation, Ed-Tech solutions, data services, and research publishing support. No evidence of sales outsourcing, outbound services, telemarketing/telesales, or collections recovery services in available company information."
+  },
+  {
+    "company_name": "3i Infotech",
+    "website": "https://www.3i-infotech.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results from 3i Infotech's website and public information, there is no evidence that the company offers Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, or Collections Recovery Services. The search results show that 3i Infotech specializes in Application Development & Maintenance, Business Intelligence, Enterprise Applications, Infrastructure Management, Business Process Outsourcing (general), and shared services focused on Finance & Accounting (F&A) and recruitment[1][2][4][5]. While they mention offering business process automation and shared services solutions[4], there is no specific mention of sales outsourcing, outbound calling, telemarketing, telesales, or debt collection services in any of the provided search results."
+  },
+  {
+    "company_name": "Servicesource",
+    "website": "https://servicesource.org",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "ServiceSource offers outbound programs through their operated contact center, as stated in their capabilities brochure, but no evidence found for sales outsourcing, B2C telemarketing/telesales, or collections recovery services[1][2]."
+  },
+  {
+    "company_name": "Athenahealth",
+    "website": "https://www.athenahealth.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Athenahealth offers revenue cycle management (RCM) and athenaCollector for medical billing, claims management, and collections efficiency, aligning with Collections Recovery Services. No evidence of sales outsourcing, outbound calling, or B2C telemarketing/telesales; focus is on healthcare IT, EHR, patient engagement, and advisory services.[1][3][4]"
+  },
+  {
+    "company_name": "Technotask Business Solutions Pvt Ltd",
+    "website": "https://technotaskglobal.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Website and videos explicitly mention 'outbound sales lead generation' as a service, aligning with outbound calling, proactive contact, and sales outsourcing (B2B/B2C via voice support). No mentions of B2C telemarketing campaigns/telesales specifically or collections recovery/debt collection services.[1][2][3][4]"
+  },
+  {
+    "company_name": "247 Medical Billing Services",
+    "website": "https://www.247medicalbillingservices.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Collections Recovery Services"
+    ],
+    "reasoning": "24/7 Medical Billing Services focuses on medical billing, coding, denial management, AR follow-up, payment posting, and collections within revenue cycle management (RCM), matching 'Collections Recovery Services' for accounts receivable recovery. No evidence of sales outsourcing, outbound calling, or B2C telemarketing/telesales; services are healthcare billing-specific, not general sales or telemarketing.[1][3][4][7]"
+  },
+  {
+    "company_name": "Acca Think Ahead",
+    "website": "https://www.accaglobal.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "ACCA Think Ahead, associated with ACCA Global, offers services like recruiting finance staff, training finance talent, and employer support, but none match sales outsourcing, outbound services, B2C telemarketing/telesales, or collections recovery. Search results confirm focus on accountancy profession development, not sales or collection outsourcing[1]."
+  },
+  {
+    "company_name": "Digi Texx Vietnam",
+    "website": "https://www.digi-texx.vn",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Digi Texx Vietnam specializes in digital BPO services like document processing, data annotation, invoice processing, image processing, scanning, archiving, and general business/customer support (e.g., help desk, multilingual support), but no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services.[1][2][4][6][7]"
+  },
+  {
+    "company_name": "Answer All",
+    "website": "https://answernet.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "AnswerNet offers telesales outsourcing for B2B & B2C sales[1], outbound calling and proactive contact via outbound services including lead gen and telesales[4][5], and B2C telemarketing/telesales campaigns[1][5]; no mention of collections recovery or debt collection services in any results."
+  },
+  {
+    "company_name": "Aquity Solutions India",
+    "website": "https://www.aquitysolutions.in",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Aquity Solutions India specializes in healthcare BPO services like medical transcription, coding, virtual scribing, RCM, and accounts receivable management[1][2][6][7], with no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services."
+  },
+  {
+    "company_name": "Psg Global Solutions Inc",
+    "website": "https://psgglobalsolutions.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results, PSG Global Solutions specializes exclusively in recruitment process outsourcing (RPO) and recruiting support services[1][2][3]. Their service portfolio includes sourcing, screening, background checks, credentialing, candidate engagement, and full-cycle recruiting support[2][3]. The search results contain no mention of sales outsourcing, outbound calling campaigns, telemarketing, telesales, or debt collection services. PSG's business model is centered on supporting staffing firms, employers, and healthcare organizations with hiring and talent acquisition, not sales or collections operations[1][2]."
+  },
+  {
+    "company_name": "Ascendum",
+    "website": "https://www.ascendum.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Ascendum focuses on digital transformation, AI, software engineering, mortgage/accounting outsourcing, and AR processes; [3] explicitly mentions 'Account Receivables: client invoices and collections' matching Collections Recovery Services, but no evidence of sales outsourcing, outbound calling, or telemarketing/telesales in any results."
+  },
+  {
+    "company_name": "Cw Services",
+    "website": "https://cwservices.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "C&W Services specializes in integrated facilities management, including maintenance, janitorial, cleaning, landscaping, office/mailroom support, and specialized services for sectors like government, education, and healthcare. No evidence of sales outsourcing, outbound calling, B2B/B2C telemarketing/telesales, or collections recovery services in website content or public information.[1][2][3][4][5][6]"
+  },
+  {
+    "company_name": "Clearsource Bpo",
+    "website": "https://www.clearsourcebpo.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "ClearSource BPO specializes in customer support, healthcare, e-commerce, financial services, and back-office tasks like telephone support, chat, appointment scheduling, billing, claims processing, and order processing. No evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website content or public information.[1][2][3][4][5][6]"
+  },
+  {
+    "company_name": "Contactus Contact Center",
+    "website": "http://www.cusc.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Multiple sources confirm ContactUS Communications offers 'inbound and outbound sales' and 'outbound phone services,' aligning with Sales Outsourcing (outsourced sales teams, B2B/B2C sales) and Outbound Services (outbound calling). No mentions of B2C Telemarketing & Telesales specifics or Collections Recovery Services.[2][3][4]"
+  },
+  {
+    "company_name": "Crescent",
+    "website": "https://www.crescentway.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Crescent (crescentway.com) specializes in contract packaging, parts fulfillment, kitting, assembly, warehousing, distribution, and logistics for industries like food, aerospace, and consumer goods. No mentions of sales outsourcing, outbound calling, telemarketing/telesales, or collections recovery services across website pages.[1][2][3][4][5][6]"
+  },
+  {
+    "company_name": "Cyfuture",
+    "website": "https://cyfuture.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Cyfuture offers general BPO services like multichannel customer services, customer retention (up-selling, cross-selling), and contact center solutions, but no explicit mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in the provided search results.[1][2][3]"
+  },
+  {
+    "company_name": "Dcx",
+    "website": "https://www.delegatecx.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Sales Outsourcing"
+    ],
+    "reasoning": "Delegate CX offers sales support roles including Sales Assistants, Sales Support, and inside sales support[1][2][7], which fall under Sales Outsourcing. However, there is no evidence in their public information of Outbound Services (outbound calling), B2C Telemarketing & Telesales, or Collections Recovery Services. Their focus is on supporting existing sales teams with administrative and support tasks rather than proactive outbound calling or collections work[1][2][5]."
+  },
+  {
+    "company_name": "Desicrew Solutions Pvt Ltd",
+    "website": "https://desicrew.in",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Search results describe DesiCrew's services as back-office support, customer support, technical support, software testing, IT automation, AI/ML, finance & accounting, and digitization, with no mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery[1][2][9]."
+  },
+  {
+    "company_name": "Eben Telecom Pvt Ltd 2",
+    "website": "https://ebentelecom.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "Eben Telecom explicitly offers **Outbound Operations** as part of their full-fledged call center/BPO services[3], along with inbound and non-voice operations. Their job postings mention outbound customer relation officers and sales executives involving tele-calling and lead generation[6]. Historical activities include collection and verification for telecom[7]. No direct evidence for sales outsourcing, B2C telemarketing/telesales, or collections recovery services."
+  },
+  {
+    "company_name": "Enoah Isolution India Pvt Ltd",
+    "website": "https://enoahisolution.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results provided, eNoah iSolution India Pvt Ltd does not appear to offer any of the four specified services. The company's documented service offerings focus on healthcare BPO (medical records, insurance verification, medical coding), enterprise application services (ERP implementation and support for SAP, QAD, Salesforce), IT services (application development, cloud solutions), and compliance management. There is no mention of sales outsourcing, outbound calling services, B2C telemarketing/telesales, or collections recovery services in any of the search results."
+  },
+  {
+    "company_name": "Euvic It",
+    "website": "https://www.euvic.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Euvic IT specializes in IT outsourcing, software development, infrastructure management, cloud services, AI/ML, help desk, and maintenance. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website pages or public info.[1][2][3][4][5][6]"
+  },
+  {
+    "company_name": "Genesys",
+    "website": "https://www.genesys.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "Genesys provides software platforms for BPO and contact centers supporting inbound/outbound services, including outbound dialing campaigns for sales, marketing, and collections via Genesys Outbound Dialer[2][5]. No evidence of directly offering outsourced sales teams, B2C telemarketing, or collections recovery as a service provider; they enable these through technology for BPOs[1][3][4]."
+  },
+  {
+    "company_name": "Imagenet Llc",
+    "website": "https://www.imagenetglobal.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Imagenet LLC specializes exclusively in healthcare payer operations, including digital mailroom, claims adjudication, member communications, and contact center services[2][4][5]. Their contact center services are specifically healthcare-focused, providing 'omni-channel support that integrates automation with healthcare-trained expertise' for health plans and payer organizations[2][4]. The company does not offer sales outsourcing, B2B/B2C sales teams, outbound telemarketing, telesales, or debt collection services. Their 'Outbound Contact Center Services' mentioned in their service list[1] refer to healthcare-related outbound communications, not commercial sales or collections activities."
+  },
+  {
+    "company_name": "Infinx Services Pvt Ltd Tandon",
+    "website": "https://www.infinx.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Infinx Services specializes exclusively in healthcare revenue cycle management (RCM), including medical billing, coding, eligibility verification, prior authorization, and claims management[1][2][4]. The company does not offer any of the requested services: sales outsourcing, outbound calling services, B2C telemarketing/telesales, or collections recovery. While Infinx does provide account receivable management (ARM) services[1], this is healthcare-specific and distinct from general collections recovery services. All search results consistently describe Infinx as a healthcare-focused BPO operating solely within the medical sector[5][6]."
+  },
+  {
+    "company_name": "Intarvo Technologies Pvt Limited",
+    "website": "http://www.intarvo.com/",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Search results describe inTarvo Technologies as specializing in multi-channel contact center services, lifecycle management (installation, technical helpdesk, service centers), repair/refurbishment, and field services, but none mention sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery[1][2][3][4]."
+  },
+  {
+    "company_name": "Medusind Solutions India Pvt Ltd",
+    "website": "https://www.medusind.com/",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Medusind Solutions India Pvt Ltd specializes in healthcare revenue cycle management (RCM), medical billing, coding, claims processing, and related services for medical and dental practices, with no mention of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in the provided search results.[1][2][3][4][5][6][7]"
+  },
+  {
+    "company_name": "Millennium 1 Solutions",
+    "website": "https://www.millennium1solutions.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Search results describe Millennium 1 Solutions as a BPO provider of contact center operations, credit card services, and back office processing for B2B/B2C sectors[1][4][5][6], but contain no explicit mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services."
+  },
+  {
+    "company_name": "Moldtek Technologies Ltd",
+    "website": "https://www.moldtekengineering.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Moldtek Technologies Ltd specializes exclusively in engineering and design services across mechanical, civil, structural, plant engineering, and utilities sectors[1][2][3][4][5]. Their service offerings include automotive design, steel detailing, precast design, piping systems, electrical systems, and infrastructure solutions. There is no evidence in their publicly available information of any involvement in sales outsourcing, outbound calling, telemarketing, telesales, or collections recovery services[1][2][3][4][5][6][7]."
+  },
+  {
+    "company_name": "Nearsol",
+    "website": "https://www.nearsol.us",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "NEARSOL offers BPO and call center services, including explicit mention of 'Outbound Retail/Survey Work' in a case study for a multinational electronics company[3]. No direct evidence found for sales outsourcing, B2C telemarketing/telesales, or collections recovery services; focus is on general outsourcing, seat leasing, and workforce management."
+  },
+  {
+    "company_name": "Nthrive Global Solutions Pvt Ltd E4e Healthcare Business Services",
+    "website": "https://www.finthrive.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Collections Recovery Services"
+    ],
+    "reasoning": "nThrive (formerly E4E) specializes in healthcare revenue cycle management, including 'Revenue recovery' and 'Patient finances' which align with collections recovery (debt/accounts receivable) per sources [1][6], but no evidence of sales outsourcing, outbound calling, or B2C telemarketing/telesales in healthcare-focused BPO services [1][2][3][5]."
+  },
+  {
+    "company_name": "Omnis",
+    "website": "https://www.omniinteractions.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on available search results from Omni Interactions' website, the company primarily focuses on inbound customer support services including phone, email, and chat support[1][7]. Their service offerings include back office support, data processing, document handling, and customer service representative work[1]. The platform connects independent contractors with customer service and tech support contracts[2], with work described as 'inbound phone calls and possibly chat/email, helping them with all their needs'[7]. There is no mention of sales outsourcing, outbound calling campaigns, telemarketing, telesales, or collections/debt recovery services in the provided search results. Omni's business model centers on fielding inbound customer inquiries rather than proactive outbound services."
+  },
+  {
+    "company_name": "Pega",
+    "website": "https://www.pega.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Pega provides sales automation software, CRM, BPM, and BPO software platforms for clients to manage their own sales, customer service, and processes (e.g., Pega Sales Automation for B2B/B2C, AI-guided selling)[1][2][3][5][7]. No evidence of offering outsourced sales teams, outbound calling, telemarketing campaigns, or debt collection services themselves; they supply tools to BPO providers and enterprises[1][4]."
+  },
+  {
+    "company_name": "R1 Rcm Pvt Ltd",
+    "website": "https://www.r1rcm.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Collections Recovery Services"
+    ],
+    "reasoning": "R1 RCM is a healthcare-specific revenue cycle management firm that specializes in managing patient billing, claims, coding, and denials for hospitals and physician groups[1][2][4]. While they do offer debt collection and accounts receivable recovery services as part of their RCM portfolio[1], they do not provide general sales outsourcing, outbound calling services, or B2C telemarketing/telesales. Their services are narrowly focused on healthcare revenue cycle operations, not broader commercial sales or outbound contact services[2][4][5]."
+  },
+  {
+    "company_name": "Servicesnow Group",
+    "website": "https://www.servicenow.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "ServiceNow provides a platform for IT service management, customer service management, sales and order management, and tools to configure outsourced service providers (OSPs) for case handling[1][4][5][6][8]. It does not offer sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services itself; these are third-party or partner implementations[1][2][3]."
+  },
+  {
+    "company_name": "Siglo Bpo Peru",
+    "website": "https://www.siglobpo.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Siglo BPO Peru specializes in back office outsourcing, finance & accounting, HR consulting, and recruiting per Clutch listing[2]; their sites emphasize general business process outsourcing, accounting, and management information[1][3][4], with no mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services."
+  },
+  {
+    "company_name": "Softtek",
+    "website": "https://www.softtek.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Softtek offers IT services, BPO including Digital Sales Service (focused on digital commerce, eCommerce, demand generation via digital tools), Customer Revenue Optimization, and nearshore outsourcing, but no evidence of sales outsourcing with teams, outbound calling, B2C telemarketing/telesales, or collections recovery services[1][2][3][7][10]."
+  },
+  {
+    "company_name": "Staff Boom",
+    "website": "https://www.staffboom.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Staff Boom specializes in insurance BPO, customer service outsourcing, back-office tasks (e.g., certificate processing, accounting), and operations support, but search results show no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services[1][2][3][4][6][8]."
+  },
+  {
+    "company_name": "Taskeu",
+    "website": "https://www.taskus.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing"
+    ],
+    "reasoning": "TaskUs offers **Sales as a Service** including B2B and B2C sales services such as inside sales, upsell, cross-sell, and retention management, as listed on their services page [1] and confirmed by Everest Group's 2025 PEAK Matrix recognition for B2B/B2C Sales Services [2]. No evidence found for Outbound Services, B2C Telemarketing & Telesales, or Collections Recovery Services."
+  },
+  {
+    "company_name": "Verity Global Solutions Pvt Ltd",
+    "website": "https://verityglobalsolutions.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Verity Global Solutions Pvt Ltd specializes in mortgage-related BPO services such as loan origination, servicing, title and settlement, quality control, finance/accounting, and default management (e.g., bankruptcy, loss mitigation, foreclosure). No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website content or public information[1][2][3][4][5]."
+  },
+  {
+    "company_name": "Quatrro Global Services Pvt Ltd",
+    "website": "https://www.quatrro.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Search results from Quatrro's websites (quatrro.com and quatrrobss.com) describe services in procure-to-pay, finance and accounting, HR, IT, and technology support, with no mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery[1][2][3][4][5][6]."
+  },
+  {
+    "company_name": "Vipdesk Connect",
+    "website": "https://vipdesk.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "VIPdesk Connect specializes in inbound customer service outsourcing across channels like phone, email, chat, SMS, and social media, with no mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in their website or public information[1][3][5]."
+  },
+  {
+    "company_name": "Vonage",
+    "website": "https://www.vonage.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "Vonage provides contact center solutions supporting outbound services like sales calls, cold calling, warm calling, and outbound dialers integrated with Salesforce, but does not offer sales outsourcing, B2C telemarketing/telesales, or collections recovery services itself—these are positioned as tools for clients or discussions of third-party outsourcing.[2][1]"
+  },
+  {
+    "company_name": "Neusoft Corporation",
+    "website": "https://www.neusoft.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Neusoft offers BPO services focused on IT support, back-office RPA (e.g., financial affairs, personnel, supply chain), helpdesk, and outsourcing for consulting, R&D, HR, and legal/financial affairs[1][2][4][5], but no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services."
+  },
+  {
+    "company_name": "Global Healthcare Resource",
+    "website": "https://www.globalhealthcareresource.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Global Healthcare Resource specializes in revenue cycle management (RCM), medical billing, coding, patient contact centers, and eligibility services, with mentions of call tracking, patient engagement, and call center agents[1][3][9]. No evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services; focus is on healthcare RCM, not general sales or debt collection."
+  },
+  {
+    "company_name": "Hexaware Technologies",
+    "website": "https://hexaware.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Hexaware provides business process services focused on customer experience, contact centers, marketing operations, and sales retention through virtual relationship management and upselling, but no explicit mentions of sales outsourcing with dedicated outbound teams, outbound calling, B2C telemarketing/telesales campaigns, or collections/debt recovery services in the search results.[1][2][4][7]"
+  },
+  {
+    "company_name": "Htc Global Technology Services Limited Corporation",
+    "website": "https://www.htcinc.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results from HTC Global Services' website and public information, there is no evidence that they offer any of the four specified services. HTC Global Services specializes in cloud transformation, enterprise software implementation (SAP, Oracle, Epic, Guidewire), AI and data solutions, business process services focused on finance/HR/supply chain optimization, and IT consulting[1][2][5]. Their business process services include document digitization, data extraction, and customer support enhancement, but do not include sales outsourcing, outbound calling, telemarketing, telesales, or collections recovery services[6]. The company's service portfolio is oriented toward enterprise digital transformation, not traditional sales or collections operations."
+  },
+  {
+    "company_name": "Chetu Inc",
+    "website": "https://www.chetu.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Chetu offers BPO services including sales enablement, lead generation, and customer support, but no evidence of outsourced sales teams, outbound calling, B2C telemarketing/telesales, or collections recovery services. Focus is on software development, custom sales software (e.g., auto-dialers, CTI), and general process support, not direct sales outsourcing or outbound operations[1][2][4]."
+  },
+  {
+    "company_name": "Office Beacon",
+    "website": "https://www.officebeacon.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Office Beacon offers sales outsourcing via virtual sales reps for CRM management, lead qualification, appointment setting, and outreach (B2B prospecting)[1][2]; outbound services through outbound calling, lead generation, and proactive customer contact in call center roles[5]; B2C telemarketing & telesales via telemarketing, surveys, and appointment scheduling[5]. No evidence of collections recovery or debt collection services[1-9]."
+  },
+  {
+    "company_name": "Ibridgellc",
+    "website": "https://www.ibridgellc.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "iBridge LLC focuses on digital transformation, technology services like data migration, cloud solutions, AI, software development, and managed document review for legal needs. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services across their website or public info[1][2][3][4][5][6][7][8]."
+  },
+  {
+    "company_name": "Nleague Technologies Pvt Ltd",
+    "website": "https://www.nleague.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "nLeague Technologies Pvt Ltd focuses on IT services, engineering, staffing, talent acquisition, staff augmentation, MSP/VMS solutions, healthcare staffing, and general BPO, but no search results mention sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services.[1][3][4][5]"
+  },
+  {
+    "company_name": "Servion Global Solutions",
+    "website": "https://servion.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Servion Global Solutions focuses on CX advisory, CCaaS, AI services, workforce optimization, managed services for contact centers, and platform integrations (e.g., Avaya, NICE). No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website content or public info[1][2][4][5][6]."
+  },
+  {
+    "company_name": "Osource Global Pvt Ltd",
+    "website": "https://osourceglobal.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Osource Global Pvt Ltd specializes in finance & accounting outsourcing (e.g., Accounts Payable, Receivable[1][4]), HR outsourcing, payroll, and IT/BPM solutions like Onex platforms[3][5][7]. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services across website pages or public profiles[1][2][3][4][5][6][7]."
+  },
+  {
+    "company_name": "Canon",
+    "website": "https://cbps.canon.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Canon Business Process Services (cbps.canon.com) focuses on BPO services like document digitization, data capture, indexing, transactional processing, invoice processing, and digital transformation, with no mentions of sales outsourcing, outbound calling, telemarketing/telesales, or collections recovery across all provided search results.[1][2][3][4][5]"
+  },
+  {
+    "company_name": "Eos",
+    "website": "https://eosglobe.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "EOSGlobe explicitly offers telesales (B2C Telemarketing & Telesales), outbound call center services (Outbound Services), collections services (Collections Recovery Services), and BPO stack including sales-related outsourcing (Sales Outsourcing), as stated across their website pages on BPO, outbound services, and client testimonials[1][3][4][5]."
+  },
+  {
+    "company_name": "Sybrid Private Limited",
+    "website": "https://sybrid.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Sybrid offers outbound calling services including telemarketing, sales, lead generation, and survey calls for B2B/B2C, as per their contact center page[6]. They list Sales & Marketing, Contact Centers, and Call Centers[1], supporting sales outsourcing and outbound services. No mention of debt collection or accounts receivable recovery services."
+  },
+  {
+    "company_name": "Carecloud",
+    "website": "https://carecloud.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "CareCloud provides healthcare-specific services like EHR, revenue cycle management (RCM), medical billing, telehealth, patient engagement, and managed IT, but none of the search results mention sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services (debt collection).[1][2][3][5][6]"
+  },
+  {
+    "company_name": "Mplus Group",
+    "website": "https://mplusgroup.eu",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Mplus Group explicitly offers 'Active calling' for acquisition of new customers and calling meetings for salespeople, aligning with Sales Outsourcing (new customer acquisition, lead generation) and Outbound Services (outbound calling, proactive contact). No mentions of B2C Telemarketing & Telesales specifics or Collections Recovery Services; focus is on customer care, CX, and BPO.[2]"
+  },
+  {
+    "company_name": "Solugenius 2",
+    "website": "https://www.solugenix.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Search results from Solugenix website describe IT support, platform monitoring, application maintenance, help desk, digital solutions, automation, and back-office services, but contain no mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery[1][2][3][7][8][10]."
+  },
+  {
+    "company_name": "Pointwest Technologies Corporation",
+    "website": "https://pointwest.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Pointwest Technologies Corporation specializes in IT services (e.g., application development, cloud, data analytics, RPA), BPM in healthcare (e.g., pharmacy benefits, revenue cycle, clinical trials), and staffing like recruitment process outsourcing, but no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services across all sources[1][2][3][4][5][6][7]."
+  },
+  {
+    "company_name": "Invensis Inc",
+    "website": "https://www.invensis.net",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Invensis offers outbound call center services[2] and outbound calling capabilities as part of their customer service outsourcing. They also provide collections-related services including 'Payment Collection,' 'Dispute Resolution,' 'Bad Debt Recovery,' and 'Accounts Receivable Management' through their bookkeeping and finance services[6]. However, there is no evidence in the search results that they offer dedicated sales outsourcing, B2B/B2C sales teams, or B2C telemarketing & telesales campaigns as specialized service lines."
+  },
+  {
+    "company_name": "Appleton Associates Inc",
+    "website": "https://www.appassinc.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Search result [6] from Outsource Accelerator lists Appleton Associates Inc. (appassinc.com) as providing Admin Support, Customer Service, Finance & Accounting, and Full service BPO, which aligns with sales outsourcing, outbound services (proactive customer contact), and B2C telemarketing/telesales in a BPO context; no mention of collections recovery services.[6]"
+  },
+  {
+    "company_name": "Mccs Services",
+    "website": "https://www.usmc-mccs.org",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "MCCS provides internal marketing, advertising, sponsorship, and promotional services for its own programs and facilities to military personnel and families, but offers no evidence of commercial sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services to external clients.[1][2][3][6][8][9]"
+  },
+  {
+    "company_name": "Omni Interactions",
+    "website": "https://omniinteractions.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Sales Outsourcing"
+    ],
+    "reasoning": "Omni Interactions offers 'inside sales' as part of their scalable solutions for Fortune 500 companies, aligning with Sales Outsourcing, but focuses on inbound customer service via phone, chat, and email. No evidence of outbound calling, B2C telemarketing/telesales campaigns, or collections recovery services.[1][2][5][9]"
+  },
+  {
+    "company_name": "Jindalx",
+    "website": "https://www.jindalx.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "JindalX explicitly lists 'Outbound support' under its customer support services, which aligns with Outbound Services (outbound calling, proactive customer contact). No direct mentions of sales outsourcing, B2C telemarketing/telesales, or collections recovery services in the provided sources.[1]"
+  },
+  {
+    "company_name": "Ids Infotech Ltd",
+    "website": "https://www.idsil.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "IDS Infotech Ltd focuses on software development, AI-driven digital solutions, content management, publishing, healthcare (e.g., revenue cycle management), EHS, engineering, and business process management like patent research and eDiscovery. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services across website pages or public info.[1][2][3][4][5][7]"
+  },
+  {
+    "company_name": "Buwelo",
+    "website": "https://www.buwelo.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Buwelo explicitly offers sales support services including 'outbound and inbound sales professionals and lead generation specialists'[2] and 'Accelerate your sales team with a team of outbound/inbound sales and lead generation specialists'[1]. However, there is no mention of collections recovery services or specific B2C telemarketing/telesales campaigns in the available information. Their services focus on customer care, revenue cycle management, and sales support rather than debt collection."
+  },
+  {
+    "company_name": "Ohio Digital",
+    "website": "https://www.rdicorp.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "RDI Corporation (rdicorp.com) is a BPO provider offering contact center outsourcing, omnichannel care, sales, and technical support, which aligns with outbound services and B2C telemarketing/telesales via proactive customer contact and campaigns; no evidence of sales outsourcing teams or collections recovery services[3][4][5][6]."
+  },
+  {
+    "company_name": "Hcltech",
+    "website": "https://www.hcltech.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "HCLTech offers **Sales Operations Services** including 'Focused outbound sales' and 'Proactive lead generation,' aligning with Outbound Services and Sales Outsourcing. No evidence found for B2C Telemarketing & Telesales or Collections Recovery Services; services focus on IT, digital, engineering, and B2B sales operations rather than call center or debt collection[1][4]."
+  },
+  {
+    "company_name": "Ttec Agility",
+    "website": "https://www.ttec.com/agility",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "TTEC Agility is a CX BPO partner offering front-line talent, training, CRM optimization, and agile labor/AI solutions, but no explicit mention of sales outsourcing, B2C telemarketing/telesales, or collections recovery on their site. Parent TTEC services include 'Proactive Outreach' (outbound services), applicable here.[1][2]"
+  },
+  {
+    "company_name": "Computer Generated Solutions",
+    "website": "https://www.cgsinc.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "CGS offers outbound customer inquiries as part of their multilingual customer support services in BPO[5], but no evidence found for sales outsourcing, B2C telemarketing/telesales, or collections recovery services; focus is on technical support, customer care, help desk, and IT outsourcing[1][3][4][5]."
+  },
+  {
+    "company_name": "Nashtech",
+    "website": "https://www.nashtechglobal.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "NashTech focuses on IT services, software development, cloud engineering, application management, and general business process outsourcing (e.g., HR, data processing, claims), with no mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery in website content or public info.[1][6][7]"
+  },
+  {
+    "company_name": "Analytix Solutions 2",
+    "website": "https://www.analytix.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results from Analytix Solutions' website and public information, there is no evidence that they offer any of the four specified services. Analytix specializes in finance and accounting services (bookkeeping, CFO advisory, tax, compliance), technology services (IT support, cloud management, cybersecurity, custom development), and operations support (HR, virtual assistants, business process outsourcing, back-office administration)[1][2][3]. Their service offerings focus on back-office functions and internal operations rather than customer-facing sales activities, telemarketing, or collections services[2][5]. None of their published service descriptions mention sales outsourcing, outbound calling, B2C telemarketing, telesales, or collections recovery services."
+  },
+  {
+    "company_name": "Taskforge",
+    "website": "https://www.taskforgeglobal.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Taskforgeglobal.com offers services like Customer Support (phone/email/chat), Accounting Outsourcing (Accounts Receivable/Payable), Virtual Assistance, IT Outsourcing, and others, but none match Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, or Collections Recovery Services. Customer Support is inbound-focused, and Accounts Receivable/Payable involves billing, not debt collection.[1][2]"
+  },
+  {
+    "company_name": "Ibt",
+    "website": "https://www.ibtevolve.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "IBT explicitly offers outbound calling and proactive outreach (inbound/outbound call handling, lead generation)[3][5][8]; sales services including B2B/B2C via call centers[4][7]; and debt collection[7]. No evidence of dedicated sales outsourcing teams."
+  },
+  {
+    "company_name": "The Functionary",
+    "website": "https://thefunctionary.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "The Functionary offers sales and marketing strategy including outbound telemarketing and comprehensive sales support, aligning with Sales Outsourcing and Outbound Services[1][3]. No evidence of B2C-specific telemarketing/telesales or collections recovery services."
+  },
+  {
+    "company_name": "Ctnp Corporation",
+    "website": "https://ctnp-corp.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "CTNP explicitly lists 'Inbound/Outbound' call center services, including 'Lead generation' and 'Sales/Marketing Campaigns and Promotions' under Call Center, which align with Outbound Services (outbound calling, proactive contact) and B2C Telemarketing & Telesales (campaigns, sales). No mention of sales outsourcing teams or collections recovery.[1]"
+  },
+  {
+    "company_name": "Erc Global Cx",
+    "website": "https://ercglobalcx.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "ERC Global CX offers sales services including lead generation, upselling/cross-selling (sales outsourcing, outbound, B2C telesales)[2][4]; recovery and collections explicitly listed, including debt collection for various industries[1][7][8]."
+  },
+  {
+    "company_name": "Intelegencia",
+    "website": "https://www.intelegencia.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Intelegencia's service offerings explicitly include 'Telemarketing & Outbound Services'[7][8] and 'Outbound Calling' capabilities[7]. The company provides 'Customer Support, Technology, and eCommerce services'[5] with a comprehensive BPO portfolio. However, there is no evidence in the search results of Sales Outsourcing or Collections Recovery Services offerings."
+  },
+  {
+    "company_name": "Anchora",
+    "website": "https://anchora.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "Anchora (anchora.com) offers customer experience management and off-hours management via skilled agents, aligning with outbound services through proactive customer contact[1][6]. The Anchora Group (anchoragroupllc.com) explicitly provides outbound calls and inside sales, but it is a distinct entity[2]. No evidence supports sales outsourcing, B2C telemarketing/telesales, or collections recovery services from anchora.com."
+  },
+  {
+    "company_name": "Personiv",
+    "website": "https://www.personiv.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Sales Outsourcing"
+    ],
+    "reasoning": "Personiv offers Sales Outsourcing services[6], providing dedicated sales teams to drive qualified prospects and engage customers. However, the search results do not indicate they offer Outbound Services (outbound calling), B2C Telemarketing & Telesales, or Collections Recovery Services. While Personiv does offer Order to Cash services including 'Payments Application' and 'AR Aging Monitoring,'[1] these are backend accounting functions rather than active collections recovery or telemarketing operations."
+  },
+  {
+    "company_name": "Alvaria",
+    "website": "https://www.alvaria.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Alvaria provides outbound calling solutions via Contact Center Outreach and Dialer, predictive dialing, and automated outbound campaigns for sales/marketing/service[2][4][5]. They support collections in financial services with account ownership and recovery features[8]. No evidence of sales outsourcing, B2C telemarketing/telesales, or full outsourced teams."
+  },
+  {
+    "company_name": "Km2 Solutions",
+    "website": "https://km2solutions.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "KM2 Solutions offers **Outbound Sales** and outbound customer support[1][2][3][6], **telesales**[1][2][3], sales/upsells as core outsourced services[1][2], and **Accounts Receivable Management**, **Collections**, **Receivables Management**[1][2][4][6]. All four services match their offerings in sales, outbound, telesales, and collections recovery."
+  },
+  {
+    "company_name": "Virtudesk",
+    "website": "https://www.myvirtudesk.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Virtudesk offers outbound call center services including telemarketing, customer follow-ups, surveys, and real estate outbound calling, aligning with Outbound Services and B2C Telemarketing & Telesales[1][2][4]. No evidence of sales outsourcing teams or collections recovery services."
+  },
+  {
+    "company_name": "247 Ai",
+    "website": "https://www.247.ai",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "[24]7.ai operates contact centers that outsource voice and chat agent services for sales and support[2]. The company offers sales-oriented software and services[2], and their professional services provide hands-on support for customer engagement[1]. They explicitly offer [24]7 Collections Solutions for debt recovery[10]. While they do not specifically market B2C Telemarketing & Telesales as a standalone service in their current product descriptions, their core competency in outbound voice contact center services[2] and sales outsourcing capabilities support the first three categories, with collections services confirmed."
+  },
+  {
+    "company_name": "Ion Bpo",
+    "website": "https://ionbpo.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Ion BPO offers Marketing and Sales Support including lead generation (outbound activity), appointment setting (proactive contact), sales training, CRM management, and sales automation, aligning with Sales Outsourcing and Outbound Services. No evidence of B2C Telemarketing & Telesales or Collections Recovery Services.[1][6][3]"
+  },
+  {
+    "company_name": "Ubtis",
+    "website": "https://www.ubiquity.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Ubiquity offers **sales** solutions and outsourced sales teams[1][2]; **Outbound Services** via proactive customer contact and personalized offers[2]; **Collections Recovery Services** explicitly for debt recovery and cash flow improvement[1][2]. No specific mention of **B2C Telemarketing & Telesales** campaigns."
+  },
+  {
+    "company_name": "Zimworx",
+    "website": "https://zimworx.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Zimworx provides general remote/virtual teams and executive assistants for administrative tasks like scheduling, document management, project management, marketing support, and research, primarily in sectors including Debt Consolidation. No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services on their website.[1][2][3][4]"
+  },
+  {
+    "company_name": "Trango Tech",
+    "website": "https://trangotech.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Trango Tech specializes in custom software development, digital transformation, cloud services, mobile apps, ERP/CRM, and Microsoft solutions, with no mention of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services across website pages or public profiles[1][2][3][4][6]. Note: gotrango.com [5] is a separate wireless networking company."
+  },
+  {
+    "company_name": "Iimi Intelligent Image Management Inc",
+    "website": "https://www.iimdirect.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "IIMI Intelligent Image Management Inc. specializes in back-office BPO services like data entry, conversion, scanning, software development, data labeling, medical claims processing, equity research, and financial BPO, with no mention of sales outsourcing, outbound calling, telemarketing/telesales, or collections recovery services across website content or public profiles.[1][2][5][7]"
+  },
+  {
+    "company_name": "Kantipur Management",
+    "website": "https://kantipurmanagement.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Website lists 'Outbound Call Center Service' and 'Telemarketing and Outbound Sales' under Call Center Management [1]. Outsource Accelerator confirms 'Outbound call center management' and 'Telesales campaign management' [2]. Clutch review mentions 'outbound call support' for sales [4]. No explicit debt collection or accounts receivable recovery beyond general 'Invoicing, Billing and Collections' in finance [1]."
+  },
+  {
+    "company_name": "Kalam Cx",
+    "website": "https://www.kalam.cx",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Kalam CX offers sales generation services involving prospect identification, personal engagement, lead conversion, negotiations, and follow-ups, aligning with Sales Outsourcing and Outbound Services. No evidence of B2C Telemarketing & Telesales or Collections Recovery Services; focus is on multilingual CX, interpretation, and general support.[2][1]"
+  },
+  {
+    "company_name": "Alldigi Tech",
+    "website": "https://www.alldigitech.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Based on Alldigi Tech's publicly available services, they offer Collections Recovery Services through their 'Collection Services' offering, which includes 'Improve debt recovery and prevent fraud with effective collections and chargeback management'[1] and 'Accounts Receivables Service' with 'Debit balance collections and dispute resolution services'[4]. However, there is no evidence in the search results of Sales Outsourcing, Outbound Services, or B2C Telemarketing & Telesales. While they provide 'Customer Acquisition' services[1] and 'Inbound Customer Support & Engagement'[4], these are inbound-focused rather than outbound calling or proactive outbound contact services."
+  },
+  {
+    "company_name": "Outsourced Staff",
+    "website": "https://www.staffoutsourcing.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing"
+    ],
+    "reasoning": "Website mentions 'sales' among services like customer support and back-office operations [1], but no explicit details on outbound calling, B2C telemarketing, or collections recovery. Clutch review confirms call center and customer service including inbound calls, but not outbound-specific services [9]."
+  },
+  {
+    "company_name": "Monday Com",
+    "website": "https://monday.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "monday.com offers a customizable CRM platform for managing sales pipelines, automations, and customer relationships, but does not provide outsourced sales teams, outbound calling, telemarketing, telesales, or debt collection services. It is a software tool, not a service provider for these activities."
+  },
+  {
+    "company_name": "Logix Bpo",
+    "website": "https://www.logixbpo.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Logix BPO lists services including Outbound, Telemarketing, Sales (e.g., B2B/B2C, Consumer Sales, Front Office Sales), Lead Generation, and B2B Collections/Debt Collections across industries, directly matching all four categories[2]."
+  },
+  {
+    "company_name": "Clark Staff",
+    "website": "https://clarkstaff.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Clark Staff offers remote staffing for sales representatives, customer service reps, appointment setting, and call center services including sales, which align with sales outsourcing, outbound services (proactive contact like appointment setting), and B2C telemarketing/telesales; no mention of collections recovery or debt collection services[1][3]."
+  },
+  {
+    "company_name": "Hitech Digital Solutions",
+    "website": "https://www.hitechdigital.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Hitech Digital Solutions focuses on BPM, data annotation, AI/ML, engineering, order management, and recruitment process outsourcing (RPO). No mentions of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services in website content or public profiles.[1][2][3][5][6][7]"
+  },
+  {
+    "company_name": "Ubiquity",
+    "website": "https://www.ubiquity.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "reasoning": "Ubiquity explicitly lists 'sales' and 'collections' as part of their customer care, technical support, sales, collections, and retention solutions[2]. This aligns with sales outsourcing (B2B/B2C sales), outbound services (proactive contact via live support and multichannel servicing[1][3]), and collections recovery (debt collection via collections services[2]). No specific mention of B2C telemarketing/telesales campaigns."
+  },
+  {
+    "company_name": "Teletech",
+    "website": "https://www.ttec.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "TTEC offers sales outsourcing via 'Inside Sales as a Service', 'sales outsourcing teams', and 'outbound sales'; outbound services through 'outbound calling/sales' and 'proactive customer contact' like demand acquisition; B2C telemarketing/telesales via sales reps for customer acquisition/retention. No evidence of collections recovery services.[1][2][3][4][6]"
+  },
+  {
+    "company_name": "Gear Inc 2",
+    "website": "https://www.gearinc.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Sales Outsourcing"
+    ],
+    "reasoning": "Gear Inc explicitly mentions 'Telemarketing And Sales Outsourcing' including cold calling, lead generation, and customer follow-ups in their outsourcing examples [3]. Their BPO services cover customer support via voice channels, scalable call center solutions, and financial operations like AR [1][2][4], aligning with outbound calling, telesales, and sales outsourcing, but no direct evidence of debt collections recovery."
+  },
+  {
+    "company_name": "Echo Global",
+    "website": "https://www.echo.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Echo Global Logistics specializes in freight brokerage, managed transportation, warehousing, and logistics services like truckload, LTL, intermodal, and supply chain management, with no evidence of sales outsourcing, outbound calling, B2C telemarketing/telesales, or collections recovery services on their website or in public information.[1][2][3][4][5][6]"
+  },
+  {
+    "company_name": "Hugo Technologies Inc",
+    "website": "https://hugoinc.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Hugo offers outbound call center support, lead generation/sales support, and explicitly lists outbound services in call center and BPO expertise [1][5][6]. No evidence of B2C telemarketing/telesales or collections recovery services."
+  },
+  {
+    "company_name": "Ifive Global",
+    "website": "https://ifiveglobal.com",
+    "offers_outbound": false,
+    "tags_to_add": [
+      "Collections Recovery Services"
+    ],
+    "reasoning": "iFIVE Global specializes in offshore staffing and BPO for medical, legal, financial, and IT sectors, listing roles like Collections Specialist under Financial Staffing, which aligns with collections recovery. No mentions of sales outsourcing, outbound calling, or B2C telemarketing/telesales services[1][2][3]."
+  },
+  {
+    "company_name": "Alta Resources",
+    "website": "https://www.altaresources.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "reasoning": "Alta Resources offers **sales outsourcing** with inside-sales and broker teams for B2B/B2C[1][2]; **outbound services** via fulfillment shipments and patient outreach[1][3]; **B2C telemarketing & telesales** through omni-channel sales strategies, direct sales, and licensed agents[2][3]. No mention of **collections recovery services** in any sources."
+  },
+  {
+    "company_name": "Aucera",
+    "website": "www.aucera.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "reasoning": "Aucera provides call center outsourcing with inbound and outbound sales[2], customer acquisition solutions[4], and B2B sales services[2], aligning with Sales Outsourcing and Outbound Services. No evidence for B2C Telemarketing & Telesales specifics or Collections Recovery Services."
+  },
+  {
+    "company_name": "Mst Holding",
+    "website": "https://www.mstholding.com",
+    "offers_outbound": true,
+    "tags_to_add": [
+      "Outbound Services"
+    ],
+    "reasoning": "MST Holding's website explicitly lists 'OUTBOUND' as one of their core service offerings[3]. The company specializes in multichannel customer service across various sectors including automotive, banking, and e-commerce[2][3]. However, the search results do not provide specific evidence of dedicated Sales Outsourcing, B2C Telemarketing & Telesales, or Collections Recovery Services. While their outbound services could potentially include some sales-related activities, the available information only clearly confirms outbound services as a distinct offering."
+  },
+  {
+    "company_name": "Ascent Business Solutions",
+    "website": "https://www.ascenthealthcare.com",
+    "offers_outbound": false,
+    "tags_to_add": [],
+    "reasoning": "Based on the search results, Ascent Business Solutions (ascenthealthcare.com) specializes in healthcare-specific services including revenue cycle management, patient access services, medical billing and coding, and healthcare BPO. Their service offerings focus on finance & accounting, HR, procurement, customer service, and healthcare operations—primarily patient intake, authorization, eligibility verification, and billing processes. None of the four specified services (Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, or Collections Recovery Services) are mentioned in their documented service portfolio. While they offer 'customer service' functions, these are contextualized within healthcare patient experience management rather than general sales or collections outsourcing."
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "company_name": "Five9 Philippines",
+    "delivery_model": "onshore, nearshore, offshore",
+    "onshore": "California | Texas | Canada",
+    "nearshore": "Colombia|Brazil",
+    "offshore": "Philippines|India|Australia|UK|Germany|Portugal|Spain",
+    "raw": "{\n  \"delivery_model\": \"onshore, nearshore, offshore\",\n  \"onshore_locations\": \"USA|Canada\",\n  \"nearshore_locations\": \"Colombia|Brazil\",\n  \"offshore_locations\": \"Philippines|India|Australia|UK|Germany|Portugal|Spain\"\n}"
+  },
+  {
+    "company_name": "Servicesource",
+    "delivery_model": "onshore",
+    "onshore": "Colorado | Tennessee",
+    "nearshore": "",
+    "offshore": "",
+    "raw": "I cannot provide the requested JSON response because the search results do not contain sufficient information about ServiceSource's specific delivery locations.\n\nThe search results include two different ServiceSource entities:[8][9] one focused on mail center operations for the federal government and Department of Defense, and another providing staffing and recruitment services in Ireland and the UK. Neither result specifies where ServiceSource operates contact center or BPO services, nor do they clarify whether they use onshore, nearshore, or offshore delivery models for such services.\n\nTo accurately answer your query, I would need search results that explicitly detail ServiceSource's contact center delivery locations and geographic footprint."
+  },
+  {
+    "company_name": "Answer All",
+    "delivery_model": "onshore, nearshore",
+    "onshore": "Alabama | Arizona | California | Florida | Georgia | Illinois | Iowa | Kansas | Maine | Massachusetts | Montana | North Dakota | Ohio | Oregon | Pennsylvania | Tennessee | Texas | Canada",
+    "nearshore": "",
+    "offshore": "",
+    "raw": "{\n  \"delivery_model\": \"onshore, nearshore\",\n  \"onshore_locations\": \"United States|Canada\",\n  \"nearshore_locations\": \"\",\n  \"offshore_locations\": \"\"\n}"
+  },
+  {
+    "company_name": "Answer All 2",
+    "delivery_model": "onshore",
+    "onshore": "",
+    "nearshore": "",
+    "offshore": "",
+    "raw": "{\n  \"delivery_model\": \"\",\n  \"onshore_locations\": \"\",\n  \"nearshore_locations\": \"\",\n  \"offshore_locations\": \"\"\n}"
+  },
+  {
+    "company_name": "Intellegentia",
+    "delivery_model": "onshore",
+    "onshore": "",
+    "nearshore": "",
+    "offshore": "",
+    "raw": "{\n  \"delivery_model\": \"\",\n  \"onshore_locations\": \"\",\n  \"nearshore_locations\": \"\",\n  \"offshore_locations\": \"\"\n}"
+  },
+  {
+    "company_name": "Interactive Response Technologies Irt",
+    "delivery_model": "onshore",
+    "onshore": "Florida|North Carolina",
+    "nearshore": "",
+    "offshore": "",
+    "raw": "{\n  \"delivery_model\": \"onshore\",\n  \"onshore_locations\": \"Florida|North Carolina\",\n  \"nearshore_locations\": \"\",\n  \"offshore_locations\": \"\"\n}"
+  },
+  {
+    "company_name": "Performant",
+    "delivery_model": "onshore",
+    "onshore": "California|Florida|Texas",
+    "nearshore": "",
+    "offshore": "",
+    "raw": "{\n  \"delivery_model\": \"onshore\",\n  \"onshore_locations\": \"California|Florida|Texas\",\n  \"nearshore_locations\": \"\",\n  \"offshore_locations\": \"\"\n}"
+  },
+  {
+    "company_name": "Xtendops",
+    "delivery_model": "onshore, nearshore, offshore",
+    "onshore": "California",
+    "nearshore": "Latin America|Caribbean",
+    "offshore": "Asia",
+    "raw": "{\n  \"delivery_model\": \"onshore, nearshore, offshore\",\n  \"onshore_locations\": \"United States\",\n  \"nearshore_locations\": \"Latin America|Caribbean\",\n  \"offshore_locations\": \"Asia\"\n}"
+  }
+]

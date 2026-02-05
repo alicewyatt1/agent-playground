@@ -107,10 +107,9 @@ const discrepancies = filtered.filter((row: any) => {
   return outboundInNotes.length > 0 && !hasOutboundTags;
 });
 
-// Count companies with: US presence + outbound service tags + MM/Enterprise
-console.log('=== US + OUTBOUND + MM/ENTERPRISE COUNT ===\n');
+// Count: US + MM/Enterprise + Outbound service tags (updated count)
+console.log('=== UPDATED COUNT: US + OUTBOUND + MM/ENTERPRISE ===\n');
 
-// Filter: Mid Market or Enterprise + US presence + has outbound service tags
 const outboundUSCompanies = filtered.filter((row: any) => {
   return hasOutboundServiceTags(row.service_lines || '');
 });
@@ -118,11 +117,7 @@ const outboundUSCompanies = filtered.filter((row: any) => {
 console.log('Criteria:');
 console.log('  - US presence (HQ, onshore, nearshore, or offshore)');
 console.log('  - Mid Market or Enterprise size');
-console.log('  - Has at least one outbound service tag:');
-console.log('    • Sales Outsourcing');
-console.log('    • Outbound Services');
-console.log('    • B2C Telemarketing & Telesales');
-console.log('    • Collections Recovery Services');
+console.log('  - Has at least one outbound service tag');
 console.log('');
 console.log(`Total matching companies: ${outboundUSCompanies.length}`);
 
@@ -135,7 +130,7 @@ outboundUSCompanies.forEach((r: any) => {
 });
 Object.entries(bySize).sort((a, b) => b[1] - a[1]).forEach(([k, v]) => console.log(`  ${k}: ${v}`));
 
-// Breakdown by which outbound tags they have
+// Breakdown by outbound tag
 console.log('\n--- Breakdown by Outbound Tag ---');
 const tagCounts: Record<string, number> = {
   'Sales Outsourcing': 0,
@@ -153,9 +148,3 @@ outboundUSCompanies.forEach((r: any) => {
 });
 
 Object.entries(tagCounts).sort((a, b) => b[1] - a[1]).forEach(([k, v]) => console.log(`  ${k}: ${v}`));
-
-// Sample companies
-console.log('\n--- Sample Companies (first 20) ---');
-outboundUSCompanies.slice(0, 20).forEach((r: any, i: number) => {
-  console.log(`${i + 1}. ${r.company_name} (${r.size_employee_count?.split(' ')[0]} ${r.size_employee_count?.split(' ')[1] || ''})`);
-});
