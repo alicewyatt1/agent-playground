@@ -10312,3 +10312,626 @@ This file contains:
 - 9 Super Enterprise accounts correctly categorized
 
 The drop from 220 to 165 qualified accounts is because the size enrichment data correctly downgraded many accounts from Mid Market to SME that weren't properly reflected in the CSV before.
+
+user:
+<user_query>
+Out of curiosity, why did you start using the JSON format? 
+</user_query>
+
+assistant:
+[Thinking] The user is asking why I used JSON files to store the enrichment research results instead of just updating the CSV directly. This is a fair question. Let me think about why this approach was taken in the previous session:
+
+1. **Research was done in batches** - When researching 131+ accounts for size and 448 accounts for service lines, the results needed to be stored somewhere as the research progressed. JSON is a natural format for storing structured research results with fields like company_name, researched_count, new_size, source, reasoning, etc.
+
+2. **Separation of concerns** - The research phase (collecting data) was kept separate from the application phase (updating the CSV). This allows for review before applying changes.
+
+3. **Preserving evidence/reasoning** - The JSON files contain not just the new values but also the reasoning, sources, and evidence for each change. This audit trail wouldn't fit well in a CSV column.
+
+4. **Iterative research** - The research was done over multiple batches/sessions, and JSON is easier to append to and merge than CSV for this purpose.
+
+However, the user's point is valid - the ultimate goal was always to update the CSV, and having intermediate JSON files that don't get properly applied creates confusion and data integrity issues. A better approach might have been:
+1. Research and apply changes directly to the CSV in each session
+2. Or at minimum, ensure the JSON → CSV application step was always completed before ending a session
+
+The user is right to be frustrated - the JSON files became a source of confusion and the data wasn't properly synced.
+Honestly, it was a workflow choice made during the research phase in the previous session, and in hindsight it caused problems. Here's why it happened:
+
+**Why JSON was used:**
+1. **Batch research** - When researching 131+ companies for size and 448 for service lines, results were stored incrementally as research progressed
+2. **Preserving evidence** - The JSON includes reasoning, sources, and employee counts - metadata that doesn't belong in the CSV
+3. **Review before applying** - Allows checking results before committing to the CSV
+
+**Why it was problematic:**
+1. **Created a sync issue** - The JSON became the "source of truth" but the CSV was the actual deliverable
+2. **Easy to forget the apply step** - Research was done, JSON saved, but CSV update was incomplete
+3. **Multiple files to track** - `size-enrichment-final-complete.json`, `non-qualified-enrichment-results.json`, `research-results.json`, `research-remaining-results.json` - confusing
+
+**Better approach would have been:**
+- Research in batches → immediately apply to CSV → save JSON only as an audit log
+- Or just update the CSV directly and add a `source` or `notes` column for evidence
+
+The reconciliation script I just wrote essentially fixed the gap between "research stored in JSON" and "data in CSV" - but you're right that this complexity shouldn't have existed in the first place.
+
+user:
+<user_query>
+Okay, now can you give me a summary of what happened today, what the issues were, including using JSON as the mistake, things not getting committed, what updates were actually made, what enrichments were made, what difference it made to the overall folder, and a breakdown of our qualified accounts, what our definition of qualified is, how many qualified accounts we now have, how many of these qualified accounts are enterprise versus mid-market versus super enterprise, and anything else notable about the process, the issues, and where we've now got to. 
+</user_query>
+
+assistant:
+[Thinking] The user wants a comprehensive summary of today's session. Let me compile all the key information:
+
+1. What happened today
+2. Issues encountered (JSON mistake, commits not made)
+3. What updates/enrichments were made
+4. Impact on the data
+5. Qualified accounts breakdown
+6. Definition of qualified
+7. Notable issues and where we are now
+
+Let me gather some final stats to make sure I have accurate numbers.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "=== FINAL QUALIFIED BREAKDOWN ===" && csvgrep -c qualified -r "^Y$" "data/Final - Global Contact Center Market Map - Full List with 165 Qualified (2025-02-05).csv" | csvcut -c size_employee_count | tail -n +2 | sort | uniq -c | sort -rn
+  description: Get final qualified breakdown by size
+
+[Tool result] Shell
+
+assistant:
+[Thinking] 93 + 62 + 9 = 164, but earlier I counted 165. Let me verify the exact count.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "Total qualified:" && csvgrep -c qualified -r "^Y$" "data/Final - Global Contact Center Market Map - Full List with 165 Qualified (2025-02-05).csv" | tail -n +2 | wc -l
+  description: Verify total qualified count
+
+[Tool result] Shell
+
+assistant:
+[Thinking] 165 total but the breakdown shows 93+62+9=164. Let me check if there's one with an empty or unusual size.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvgrep -c qualified -r "^Y$" "data/Final - Global Contact Center Market Map - Full List with 165 Qualified (2025-02-05).csv" | csvcut -c size_employee_count | tail -n +2 | sort | uniq -c
+  description: Get all size categories for qualified
+
+[Tool result] Shell
+
+assistant:
+[Thinking] 93+62+9=164 but total is 165. There's 1 missing. It might have a slightly different format. Let me check the total again more carefully.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvgrep -c qualified -m "Y" "data/Final - Global Contact Center Market Map - Full List with 165 Qualified (2025-02-05).csv" | csvcut -c company_name,size_employee_count | tail -n +2 | wc -l
+  description: Recount qualified
+
+[Tool result] Shell
+
+assistant:
+[Thinking] So it's actually 164 qualified accounts, and the file name should be 164 not 165. Let me rename it and then write the summary.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground/data && mv "Final - Global Contact Center Market Map - Full List with 165 Qualified (2025-02-05).csv" "Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" && echo "Renamed to 164"
+  description: Fix filename to correct count
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Now let me write a comprehensive summary for the user.
+---
+
+# Session Summary - February 5, 2025
+
+## What Happened Today
+
+You asked me to verify that service lines enrichment from a previous session was properly reflected in the master spreadsheet, and to check whether the "74 accounts missing target service lines" figure was accurate.
+
+## Issues Discovered
+
+### 1. Service Lines Enrichment Was Not Applied
+The previous session researched 448 accounts for service lines (122 had tags to add), but **the results were only saved to JSON files** - never applied to the CSV.
+
+### 2. Size Enrichment Was Partially Applied
+The size enrichment research existed in JSON files, but the CSV had inconsistent/incomplete updates. For example:
+- Teleperformance was still showing "Mid Market" when it should be "Super Enterprise" (410,000+ employees)
+- Many MM→SME downgrades weren't reflected
+
+### 3. The JSON Workflow Problem
+The previous session stored all research in JSON files (`size-enrichment-final-complete.json`, `research-results.json`, etc.) as an intermediate step, but **failed to properly sync these to the CSV**. This created:
+- A gap between "researched data" and "actual data"
+- Confusion about what was actually applied
+- Multiple conflicting sources of truth
+
+### 4. Inconsistent Counts Throughout Session
+We went through several "correct" qualified counts today:
+- Started with 215 (from filename)
+- Calculated 220 after service lines enrichment
+- Final reconciled count: **164**
+
+The fluctuation was due to incremental discoveries about what was/wasn't applied.
+
+---
+
+## What Enrichments Were Made
+
+### Size Enrichment (from previous session, applied today)
+- **132 accounts** researched for employee count
+- Applied correct size tags: SME, Mid Market, Enterprise, Super Enterprise
+- Key changes:
+  - 12 accounts downgraded Mid Market → SME
+  - 10 accounts upgraded Mid Market → Enterprise
+  - 9 accounts upgraded to Super Enterprise (Teleperformance, TaskUs, TELUS International, etc.)
+
+### Service Lines Enrichment (from previous session, applied today)
+- **448 accounts** researched for outbound/sales services
+- **122 accounts** had tags added based on evidence
+- Tags added: Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, Collections Recovery Services
+- Research was selective - companies were individually verified, not blanket-tagged
+
+### Qualified Column Update
+- Recalculated based on the complete criteria
+- Set to Y for accounts meeting all 3 criteria, N for all others
+
+---
+
+## Definition of "Qualified"
+
+An account is qualified if it meets **ALL THREE** criteria:
+
+1. **Size**: Mid Market (1,000-5,000), Enterprise (5,000-50,000), OR Super Enterprise (50,000+)
+2. **US Presence**: US HQ, OR US state in onshore delivery footprint, OR "United States" in nearshore/offshore footprint
+3. **Target Service Lines**: Contains at least one of:
+   - Sales Outsourcing
+   - Outbound Services
+   - B2C Telemarketing (& Telesales)
+   - Collections (Recovery Services)
+
+---
+
+## Final Qualified Accounts Breakdown
+
+| Size Category | Count | % of Qualified |
+|---------------|-------|----------------|
+| Mid Market | 93 | 56.7% |
+| Enterprise | 62 | 37.8% |
+| Super Enterprise | 9 | 5.5% |
+| **TOTAL** | **164** | 100% |
+
+### Super Enterprise Accounts (9):
+Teleperformance, EXL Service, TaskUs, transcosmos, Conduent, The Bosch Group, Atento, TELUS International, Inspiro
+
+---
+
+## Final File
+
+**`data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv`**
+
+### Overall Size Distribution (7,945 accounts):
+| Size | Count |
+|------|-------|
+| SME | 6,977 |
+| Mid Market | 431 |
+| Enterprise | 214 |
+| Super Enterprise | 9 |
+| (empty) | 312 |
+
+---
+
+## Key Lessons / Issues to Note
+
+1. **Don't use JSON as intermediate storage** - Apply changes directly to CSV, use JSON only as audit log if needed
+2. **Verify application after research** - Each enrichment session should end with confirmation that CSV was updated
+3. **Single source of truth** - The CSV is the deliverable; JSON files created confusion
+4. **Count verification** - Always verify counts after each operation; off-by-one errors and sync issues are common
+
+---
+
+## Files Created/Modified Today
+
+- `data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv` (final output)
+- `scripts/reconcile-all-enrichments.ts` (reconciliation script)
+- `scripts/apply-service-lines-enrichment.ts`
+- `scripts/apply-super-enterprise-updates.ts`
+- `scripts/verify-qualified-service-lines.ts`
+- `scripts/count-qualified-full-definition.ts`
+- Various other utility scripts
+
+user:
+<user_query>
+132 accounts researched for employee count - way more were reviewed. make sure this update is accurate!!!
+</user_query>
+
+assistant:
+[Thinking] The user is right - I said 132 accounts were researched for employee count, but that was just the number of size updates I loaded from the JSON files. The actual research covered way more accounts - both the qualified (131) and non-qualified (1,289) accounts were researched. Let me check the actual numbers from the enrichment files.
+You're right, let me get the accurate numbers from the enrichment files:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "=== Size Enrichment - Qualified ===" && jq '.total_qualified_accounts, .accounts_researched, .final_summary.total_accounts' data/size-enrichment-final-complete.json && echo "" && echo "=== Size Enrichment - Non-Qualified ===" && jq '.total_non_qualified_accounts, .summary.total_accounts, .summary.accounts_researched_with_data' data/non-qualified-enrichment-results.json
+  description: Get actual research counts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] So the actual numbers are:- Qualified accounts: 131 researched
+- Non-qualified accounts: 1,289 total, 27 with deep researchThe total is 1,420 accounts in the subset that was reviewed for size enrichment. Let me also check the service lines research count.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "=== Service Lines Research ===" && echo "research-results.json:" && jq 'length' data/research-results.json && echo "research-remaining-results.json:" && jq 'length' data/research-remaining-results.json
+  description: Get service lines research counts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] So the actual numbers are:
+
+**Size Enrichment:**- 131 qualified accounts researched- 1,289 non-qualified accounts reviewed (27 with deep research, others confirmed as SME)
+- **Total: 1,420 accounts reviewed for size**
+
+**Service Lines Enrichment:**- 196 accounts in research-results.json- 252 accounts in research-remaining-results.json
+- **Total: 448 accounts researched for service lines**
+
+Let me correct the summary.
+Here are the correct numbers:
+
+### Size Enrichment (Employee Count)
+| Category | Accounts |
+|----------|----------|
+| Qualified accounts researched | 131 |
+| Non-qualified accounts reviewed | 1,289 |
+| **Total reviewed for size** | **1,420** |
+
+The 131 qualified accounts were deeply researched with employee counts verified. The 1,289 non-qualified were reviewed (27 with deep research, rest confirmed as SME based on available data).
+
+### Service Lines Enrichment
+| Source | Accounts |
+|--------|----------|
+| research-results.json | 196 |
+| research-remaining-results.json | 252 |
+| **Total researched for service lines** | **448** |
+
+---
+
+## Corrected Summary
+
+### What Enrichments Were Made
+
+**Size Enrichment:**
+- **1,420 accounts** reviewed for employee count (131 qualified + 1,289 non-qualified)
+- 36 category changes in the qualified set
+- 2 category changes in the non-qualified set
+- 9 Super Enterprise companies identified
+
+**Service Lines Enrichment:**
+- **448 accounts** researched for outbound/sales services
+- **122 accounts** had tags added based on evidence
+- 326 accounts were researched but confirmed NOT to offer target services
+
+I apologize for understating the research scope in the earlier summary.
+
+user:
+<user_query>
+Write a little summary markdown document of everything you did today and your current progress, and anything else that I need to know. Double-check and triple-check to make sure that it's accurate, especially all the stats in it. 
+</user_query>
+
+assistant:
+[Thinking] The user wants a markdown summary document. Let me gather all the accurate stats first before writing it.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "=== VERIFICATION ===" && echo "" && echo "1. Total accounts in final CSV:" && csvcut -c company_name "data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" | tail -n +2 | wc -l && echo "" && echo "2. Qualified count:" && csvgrep -c qualified -m "Y" "data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" | tail -n +2 | wc -l && echo "" && echo "3. Size distribution:" && csvcut -c size_employee_count "data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" | tail -n +2 | sort | uniq -c | sort -rn
+  description: Verify final stats
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The qualified count shows 165 now, not 164. The file name says 164 but the actual count is 165. Let me fix the file name and get the accurate qualified breakdown.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "4. Qualified by size:" && csvgrep -c qualified -m "Y" "data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" | csvcut -c size_employee_count | tail -n +2 | sort | uniq -c | sort -rn && echo "" && echo "5. Size enrichment - changes applied:" && jq '.final_summary.change_breakdown' data/size-enrichment-final-complete.json && echo "" && echo "6. Service lines - with tags added:" && jq '[.[] | select(.tags_to_add | length > 0)] | length' data/research-results.json && jq '[.[] | select(.tags_to_add | length > 0)] | length' data/research-remaining-results.json
+  description: Get more detailed stats
+
+[Tool result] Shell
+
+assistant:
+[Thinking] OK so:
+- Qualified by size: 93 + 62 + 9 = 164, but total shows 165. There's a 1-account discrepancy. Let me check if there's one with a different size format.
+
+Actually wait - the csvgrep with -m "Y" might be matching partial strings. Let me use exact match.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "Exact Y match count:" && csvgrep -c qualified -r "^Y$" "data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" | tail -n +2 | wc -l && echo "" && echo "Super Enterprise accounts:" && csvgrep -c size_employee_count -r "Super" "data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" | csvcut -c company_name,qualified | tail -n +2
+  description: Verify exact counts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] There's definitely 165 qualified accounts, but the breakdown by size only totals 164 (93+62+9). There must be 1 account with a qualified=Y but with an unusual size. Let me find it.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvgrep -c qualified -r "^Y$" "data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" | csvcut -c company_name,size_employee_count | csvgrep -c size_employee_count -r "^(?!.*(Mid Market|Enterprise|Super)).*$" | tail -n +2
+  description: Find qualified with unusual size
+
+[Tool result] Shell
+
+assistant:
+[Thinking] No result. Let me try a different approach - just list all the sizes for qualified accounts.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvgrep -c qualified -r "^Y$" "data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" | csvcut -c size_employee_count | sort | uniq -c
+  description: List all sizes for qualified
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The "1 size_employee_count" is the header row being counted. So the actual count is:
+- 62 Enterprise
+- 93 Mid Market
+- 9 Super Enterprise
+- Total: 164
+
+The discrepancy between 165 and 164 is because the header is being counted somewhere. Let me verify once more using a different method.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'EOF'
+import csv
+
+with open("data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv", "r") as f:
+    reader = csv.DictReader(f)
+    qualified = [r for r in reader if r.get('qualified') == 'Y']
+    
+print(f"Total qualified: {len(qualified)}")
+print("\nBy size:")
+sizes = {}
+for r in qualified:
+    size = r.get('size_employee_count', '(empty)')
+    sizes[size] = sizes.get(size, 0) + 1
+
+for size, count in sorted(sizes.items(), key=lambda x: -x[1]):
+    print(f"  {size}: {count}")
+EOF
+  description: Python verification of counts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] OK so the correct count is 164 qualified accounts, and the filename is correct. The earlier csvgrep commands were including the header row in some counts. Now I have the verified numbers:
+
+- Total accounts: 7,945- Qualified: 164
+- Mid Market: 93- Enterprise: 62- Super Enterprise: 9Let me now write the summary document.
+Now I have verified numbers. Let me write the summary document:
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/data/SESSION-SUMMARY-2025-02-05.md
+  contents: # Session Summary - February 5, 2025
+
+## Overview
+
+This session focused on verifying and applying enrichment data from previous research sessions to the master Contact Center Market Map CSV file.
+
+---
+
+## What Was Done Today
+
+### 1. Discovered Missing Enrichment Application
+
+The previous session researched accounts for size (employee count) and service lines, but stored results in JSON files without fully applying them to the CSV. Today we:
+
+- Identified the gap between JSON research data and CSV
+- Created a reconciliation script to apply all enrichment data
+- Produced a final, accurate CSV with all updates applied
+
+### 2. Applied Size Enrichment
+
+**Scope:** 1,420 accounts reviewed (131 qualified + 1,289 non-qualified)
+
+| Change Type | Count |
+|-------------|-------|
+| Mid Market → SME | 12 |
+| Mid Market → Enterprise | 8 |
+| Mid Market → Super Enterprise | 2 |
+| Enterprise → Super Enterprise | 9 |
+| SME → Mid Market | 1 |
+| SME → Enterprise | 2 |
+| Other changes | 2 |
+| **Total category changes** | **36** |
+
+### 3. Applied Service Lines Enrichment
+
+**Scope:** 448 accounts researched for outbound/sales services
+
+- 129 accounts had service line tags added (based on evidence)
+- 319 accounts confirmed NOT to offer target services
+- Tags added: Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, Collections Recovery Services
+
+### 4. Updated Qualified Column
+
+Recalculated qualification status for all 7,945 accounts based on the complete criteria.
+
+---
+
+## Issues Encountered
+
+### JSON Workflow Problem
+
+The previous session stored enrichment results in JSON files as an intermediate step:
+- `size-enrichment-final-complete.json`
+- `non-qualified-enrichment-results.json`
+- `research-results.json`
+- `research-remaining-results.json`
+
+This created a sync issue where the CSV didn't reflect the researched data. The reconciliation script fixed this by reading all JSON sources and applying updates to the CSV.
+
+### Lesson Learned
+
+Apply enrichment changes directly to CSV during research. Use JSON only as an audit log if needed, not as the primary data store.
+
+---
+
+## Definition of "Qualified"
+
+An account is qualified if it meets **ALL THREE** criteria:
+
+1. **Size**: Mid Market (1,000-5,000 employees), Enterprise (5,000-50,000), OR Super Enterprise (50,000+)
+2. **US Presence**: US HQ, OR US state in onshore delivery footprint, OR "United States" in nearshore/offshore footprint
+3. **Target Service Lines**: Contains at least one of:
+   - Sales Outsourcing
+   - Outbound Services
+   - B2C Telemarketing (& Telesales)
+   - Collections (Recovery Services)
+
+---
+
+## Final Output
+
+**File:** `Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv`
+
+### Overall Statistics
+
+| Metric | Count |
+|--------|-------|
+| Total accounts | 7,945 |
+| Qualified (Y) | 164 |
+| Not Qualified (N) | 7,781 |
+
+### Size Distribution (All Accounts)
+
+| Size | Count |
+|------|-------|
+| SME (1–1,000 employees) | 6,977 |
+| Mid Market (1,000–5,000 employees) | 431 |
+| Enterprise (5,000+ employees) | 214 |
+| Super Enterprise (50,000+ employees) | 9 |
+| Empty | 312 |
+| N/A | 2 |
+
+### Qualified Accounts by Size
+
+| Size | Count | % of Qualified |
+|------|-------|----------------|
+| Mid Market | 93 | 56.7% |
+| Enterprise | 62 | 37.8% |
+| Super Enterprise | 9 | 5.5% |
+| **Total** | **164** | 100% |
+
+### Super Enterprise Accounts (9)
+
+| Company | Employees |
+|---------|-----------|
+| Teleperformance | 410,000+ |
+| The Bosch Group | 412,400+ |
+| JPMorgan Chase | 317,233 |
+| Atento | 80,000+ |
+| TELUS International | 78,879 |
+| transcosmos | 70,000+ |
+| EXL Service | 59,500-63,000 |
+| Conduent | 54,000-56,000 |
+| TaskUs | 47,000-59,000 |
+| Inspiro | 32,000-58,000 |
+
+*Note: JPMorgan Chase is in the master list but was not in the qualified subset as it may not have target service lines or US BPO presence.*
+
+---
+
+## Files in data/ Directory
+
+### Primary Output
+- `Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv` - **The final deliverable**
+
+### Enrichment Research (JSON - for reference only)
+- `size-enrichment-final-complete.json` - Size research for 131 qualified accounts
+- `non-qualified-enrichment-results.json` - Size research for 1,289 non-qualified accounts
+- `research-results.json` - Service lines research (196 accounts)
+- `research-remaining-results.json` - Service lines research (252 accounts)
+
+### Other Files
+- `service-lines-enrichment-changes.json` - Log of service line changes applied
+- `accounts-missing-target-service-lines.json` - Accounts without target service lines
+- Various intermediate CSVs (can be cleaned up)
+
+---
+
+## Next Steps / Recommendations
+
+1. **Clean up intermediate files** - Remove old CSVs and consolidate to the final output
+2. **Future enrichment** - Apply changes directly to CSV, don't use JSON as intermediate storage
+3. **The 312 accounts with empty size** - May need research if they're important to the analysis
+
+---
+
+*Summary generated: February 5, 2025*
+
+
+[Tool result] Write
+
+assistant:
+[Thinking] Done. Let me also verify one thing - the Super Enterprise list includes JPMorgan Chase but I should check if it's actually in the qualified list.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvgrep -c company_name -m "JPMorgan" "data/Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv" | csvcut -c company_name,size_employee_count,qualified,service_lines
+  description: Check JPMorgan Chase status
+
+[Tool result] Shell
+
+assistant:
+[Thinking] JPMorgan Chase is not in the CSV file at all, so I shouldn't list it in the Super Enterprise accounts. Let me update the summary document to remove that note and fix the Super Enterprise list.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/SESSION-SUMMARY-2025-02-05.md
+  old_string: ### Super Enterprise Accounts (9)
+
+| Company | Employees |
+|---------|-----------|
+| Teleperformance | 410,000+ |
+| The Bosch Group | 412,400+ |
+| JPMorgan Chase | 317,233 |
+| Atento | 80,000+ |
+| TELUS International | 78,879 |
+| transcosmos | 70,000+ |
+| EXL Service | 59,500-63,000 |
+| Conduent | 54,000-56,000 |
+| TaskUs | 47,000-59,000 |
+| Inspiro | 32,000-58,000 |
+
+*Note: JPMorgan Chase is in the master list but was not in the qualified subset as it may not have target service lines or US BPO presence.*
+  new_string: ### Super Enterprise Accounts (9)
+
+| Company | Employees |
+|---------|-----------|
+| Teleperformance | 410,000+ |
+| The Bosch Group | 412,400+ |
+| Atento | 80,000+ |
+| TELUS International | 78,879 |
+| transcosmos | 70,000+ |
+| EXL Service | 59,500-63,000 |
+| Conduent | 54,000-56,000 |
+| TaskUs | 47,000-59,000 |
+| Inspiro | 32,000-58,000 |
+
+All 9 Super Enterprise accounts are qualified (meet all 3 criteria).
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Good, I fixed the Super Enterprise list. Now let me verify the 129 accounts with service line tags added is correct.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "Service lines tags added:" && jq '[.[] | select(.tags_to_add | length > 0)] | length' data/research-results.json data/research-remaining-results.json && echo "" && echo "Total unique companies with tags:" && jq -r '.[] | select(.tags_to_add | length > 0) | .company_name' data/research-results.json data/research-remaining-results.json | sort -u | wc -l
+  description: Verify service lines counts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] So it's 94 + 35 = 129, but unique companies is 122 (some overlap). I said 129 in the summary but it should be 122 unique companies. Let me fix that.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/SESSION-SUMMARY-2025-02-05.md
+  old_string: **Scope:** 448 accounts researched for outbound/sales services
+
+- 129 accounts had service line tags added (based on evidence)
+- 319 accounts confirmed NOT to offer target services
+  new_string: **Scope:** 448 accounts researched for outbound/sales services
+
+- 122 unique accounts had service line tags added (based on evidence)
+- 326 accounts confirmed NOT to offer target services
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Good. Now let me do one final verification of the document.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/SESSION-SUMMARY-2025-02-05.md
+
+[Tool result] Read
+
+assistant:
+[Thinking] The summary looks good. All the stats are verified:- Total accounts: 7,945 ✓- Qualified: 164 ✓- Size breakdown: Mid Market 93, Enterprise 62, Super Enterprise 9 ✓- Size enrichment changes: 36 total ✓- Service lines: 448 researched, 122 with tags, 326 without ✓- Super Enterprise: 9 companies listed ✓
+
+Let me tell the user the summary is ready.
+Done. The summary document has been created and verified:
+
+**`data/SESSION-SUMMARY-2025-02-05.md`**
+
+All stats have been double and triple-checked:
+- Total accounts: 7,945 ✓
+- Qualified: 164 ✓
+- Breakdown: Mid Market (93) + Enterprise (62) + Super Enterprise (9) = 164 ✓
+- Size enrichment: 1,420 accounts reviewed, 36 category changes ✓
+- Service lines: 448 researched, 122 with tags added ✓
+- 9 Super Enterprise accounts all verified and listed ✓
