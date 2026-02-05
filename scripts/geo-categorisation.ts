@@ -21,10 +21,16 @@ interface Account {
   company_name: string
   company_hq: string
   size_employee_count: string
+  service_lines: string
   onshore_delivery_footprint: string
   nearshore_delivery_footprint: string
   offshore_delivery_footprint: string
   [key: string]: string
+}
+
+function hasCollectionsService(serviceLines: string): boolean {
+  if (!serviceLines) return false
+  return serviceLines.includes('Collections Recovery Services')
 }
 
 function isUSHQ(hq: string): boolean {
@@ -136,8 +142,8 @@ async function main() {
   
   console.log(`Mid Market accounts: ${midMarketAccounts.length}`)
   
-  // Process each account and add geo categorisation
-  const results: Array<Account & { geo_categorisation: string }> = []
+  // Process each account and add geo categorisation + collections flag
+  const results: Array<Account & { geo_categorisation: string; 'collections_y_n': string }> = []
   
   // Stats tracking
   const segmentCounts: Record<string, number> = {
@@ -148,14 +154,18 @@ async function main() {
     'Segment 5': 0,
     'No Segments': 0
   }
+  let collectionsYes = 0
+  let collectionsNo = 0
   
   for (const account of midMarketAccounts) {
     const segments = getGeoSegments(account)
     const geoCategorisation = segments.length > 0 ? segments.join(', ') : ''
+    const hasCollections = hasCollectionsService(account.service_lines)
     
     results.push({
       ...account,
-      geo_categorisation: geoCategorisation
+      geo_categorisation: geoCategorisation,
+      'collections_y_n': hasCollections ? 'Y' : 'N'
     })
     
     // Track stats
@@ -165,6 +175,12 @@ async function main() {
       for (const seg of segments) {
         segmentCounts[seg]++
       }
+    }
+    
+    if (hasCollections) {
+      collectionsYes++
+    } else {
+      collectionsNo++
     }
   }
   
@@ -176,6 +192,10 @@ async function main() {
   console.log(`Segment 4 (Mexico presence): ${segmentCounts['Segment 4']}`)
   console.log(`Segment 5 (Philippines presence): ${segmentCounts['Segment 5']}`)
   console.log(`No Segments: ${segmentCounts['No Segments']}`)
+  
+  console.log('\n=== COLLECTIONS DISTRIBUTION ===')
+  console.log(`Collections Recovery Services - Y: ${collectionsYes}`)
+  console.log(`Collections Recovery Services - N: ${collectionsNo}`)
   
   // Show sample of each segment
   console.log('\n=== SAMPLE ACCOUNTS BY SEGMENT ===\n')
@@ -197,8 +217,8 @@ async function main() {
   // Write output CSV
   const outputPath = '/Users/alicewyatt/Downloads/Qualified list - Mid Market with Geo Categorisation.csv'
   
-  // Get all columns from first record, then add geo_categorisation at the end
-  const columns = Object.keys(records[0]).concat(['geo_categorisation'])
+  // Get all columns from first record, then add new columns at the end
+  const columns = Object.keys(records[0]).concat(['geo_categorisation', 'collections_y_n'])
   
   const csvOutput = stringify(results, {
     header: true,

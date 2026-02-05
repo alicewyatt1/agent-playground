@@ -366,3 +366,266 @@ assistant:
   description: Run geo categorisation script
 
 [Tool result] Shell
+
+assistant:
+[Thinking] The script ran successfully. Let me commit and push as per the auto-commit rule. Let me also share a summary with the user.
+The script ran successfully. Here's the summary:
+
+---
+
+## Results Summary
+
+**Input:** 155 total accounts → **87 Mid Market accounts**
+
+### Segment Distribution
+
+| Segment | Description | Count |
+|---------|-------------|-------|
+| Segment 1 | US HQ, no US onshore delivery | 8 |
+| Segment 2 | US HQ + US onshore delivery | 54 |
+| Segment 3 | Non-US HQ, has US delivery | 25 |
+| Segment 4 | Mexico presence | 14 |
+| Segment 5 | Philippines presence | 39 |
+| No Segments | | 0 |
+
+Every Mid Market account has at least one segment assigned.
+
+### Output File
+**`/Users/alicewyatt/Downloads/Qualified list - Mid Market with Geo Categorisation.csv`**
+
+Contains all 87 Mid Market accounts with the new `geo_categorisation` column added at the end.
+
+---
+
+Let me commit and push this script.
+[Tool call] Shell
+  command: git add -A && git commit -m "$(cat <<'EOF'
+Run: geo-categorisation.ts
+
+Added script to categorise Mid Market accounts by geographic segments:
+- Segment 1: US HQ, no US onshore
+- Segment 2: US HQ + US onshore  
+- Segment 3: Non-US HQ, US delivery
+- Segment 4: Mexico presence
+- Segment 5: Philippines presence
+
+Processed 87 Mid Market accounts from qualified list
+EOF
+)" && git push
+  working_directory: /Users/alicewyatt/repos/agent-playground
+  description: Commit and push geo-categorisation script
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The script ran successfully and has been committed and pushed. The user now has the output CSV with the geo categorisation column. Let me summarize what was accomplished.
+Done! The output file is ready at `/Users/alicewyatt/Downloads/Qualified list - Mid Market with Geo Categorisation.csv` with 87 rows and the new `geo_categorisation` column.
+
+user:
+<user_query>
+ok great. nice work! next task. Add a column called Collections Y/N
+
+Search in the service lines column to see if they contain the tag 'Collections Recovery Services'. If they do, mark in the new column Y and it not then N.
+
+run this only for our focus target account list (the MM ones)
+
+Check that you understand my request then we can go ahead
+
+</user_query>
+
+assistant:
+[Thinking] The user wants me to:
+
+1. Add a new column called "Collections Y/N"
+2. Check the `service_lines` column for the tag "Collections Recovery Services"
+3. If present → "Y", if not → "N"
+4. Apply this only to the Mid Market accounts (the 87 accounts from the previous task)
+
+This is straightforward. I should modify the geo-categorisation script to add this new column, or I can create a new script. Since we already have the output file from the previous run, I should update the script to include this new column and re-run it.
+
+Let me confirm my understanding with the user first as requested.
+**My understanding:**
+
+1. Add a new column called `Collections Y/N` to the Mid Market output
+2. Check the `service_lines` column for "Collections Recovery Services"
+   - Contains "Collections Recovery Services" → **Y**
+   - Does not contain it → **N**
+3. Apply to the same 87 Mid Market accounts from the previous task
+
+I'll update the existing `geo-categorisation.ts` script to include this new column alongside the geo categorisation, then re-run it.
+
+Ready to proceed?
+
+user:
+<user_query>
+go ahead
+</user_query>
+
+assistant:
+[Thinking] Let me update the geo-categorisation script to add the Collections Y/N column.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/scripts/geo-categorisation.ts
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I need to update the script to add the "Collections Y/N" column. I'll:
+1. Add a function to check for "Collections Recovery Services" in service_lines
+2. Update the results type to include the new column
+3. Update the processing loop to add the column
+4. Add stats for the collections column
+5. Update the columns array to include the new column
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/geo-categorisation.ts
+  old_string: interface Account {
+  company_name: string
+  company_hq: string
+  size_employee_count: string
+  onshore_delivery_footprint: string
+  nearshore_delivery_footprint: string
+  offshore_delivery_footprint: string
+  [key: string]: string
+}
+  new_string: interface Account {
+  company_name: string
+  company_hq: string
+  size_employee_count: string
+  service_lines: string
+  onshore_delivery_footprint: string
+  nearshore_delivery_footprint: string
+  offshore_delivery_footprint: string
+  [key: string]: string
+}
+
+function hasCollectionsService(serviceLines: string): boolean {
+  if (!serviceLines) return false
+  return serviceLines.includes('Collections Recovery Services')
+}
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Now I need to update the results type and processing logic to include the Collections Y/N column.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/geo-categorisation.ts
+  old_string:   // Process each account and add geo categorisation
+  const results: Array<Account & { geo_categorisation: string }> = []
+  
+  // Stats tracking
+  const segmentCounts: Record<string, number> = {
+    'Segment 1': 0,
+    'Segment 2': 0,
+    'Segment 3': 0,
+    'Segment 4': 0,
+    'Segment 5': 0,
+    'No Segments': 0
+  }
+  
+  for (const account of midMarketAccounts) {
+    const segments = getGeoSegments(account)
+    const geoCategorisation = segments.length > 0 ? segments.join(', ') : ''
+    
+    results.push({
+      ...account,
+      geo_categorisation: geoCategorisation
+    })
+    
+    // Track stats
+    if (segments.length === 0) {
+      segmentCounts['No Segments']++
+    } else {
+      for (const seg of segments) {
+        segmentCounts[seg]++
+      }
+    }
+  }
+  new_string:   // Process each account and add geo categorisation + collections flag
+  const results: Array<Account & { geo_categorisation: string; 'collections_y_n': string }> = []
+  
+  // Stats tracking
+  const segmentCounts: Record<string, number> = {
+    'Segment 1': 0,
+    'Segment 2': 0,
+    'Segment 3': 0,
+    'Segment 4': 0,
+    'Segment 5': 0,
+    'No Segments': 0
+  }
+  let collectionsYes = 0
+  let collectionsNo = 0
+  
+  for (const account of midMarketAccounts) {
+    const segments = getGeoSegments(account)
+    const geoCategorisation = segments.length > 0 ? segments.join(', ') : ''
+    const hasCollections = hasCollectionsService(account.service_lines)
+    
+    results.push({
+      ...account,
+      geo_categorisation: geoCategorisation,
+      'collections_y_n': hasCollections ? 'Y' : 'N'
+    })
+    
+    // Track stats
+    if (segments.length === 0) {
+      segmentCounts['No Segments']++
+    } else {
+      for (const seg of segments) {
+        segmentCounts[seg]++
+      }
+    }
+    
+    if (hasCollections) {
+      collectionsYes++
+    } else {
+      collectionsNo++
+    }
+  }
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Now I need to update the summary output and the columns array.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/geo-categorisation.ts
+  old_string:   // Print summary
+  console.log('\n=== SEGMENT DISTRIBUTION ===')
+  console.log(`Segment 1 (US HQ, no US onshore): ${segmentCounts['Segment 1']}`)
+  console.log(`Segment 2 (US HQ + US onshore): ${segmentCounts['Segment 2']}`)
+  console.log(`Segment 3 (Non-US HQ, US delivery): ${segmentCounts['Segment 3']}`)
+  console.log(`Segment 4 (Mexico presence): ${segmentCounts['Segment 4']}`)
+  console.log(`Segment 5 (Philippines presence): ${segmentCounts['Segment 5']}`)
+  console.log(`No Segments: ${segmentCounts['No Segments']}`)
+  new_string:   // Print summary
+  console.log('\n=== SEGMENT DISTRIBUTION ===')
+  console.log(`Segment 1 (US HQ, no US onshore): ${segmentCounts['Segment 1']}`)
+  console.log(`Segment 2 (US HQ + US onshore): ${segmentCounts['Segment 2']}`)
+  console.log(`Segment 3 (Non-US HQ, US delivery): ${segmentCounts['Segment 3']}`)
+  console.log(`Segment 4 (Mexico presence): ${segmentCounts['Segment 4']}`)
+  console.log(`Segment 5 (Philippines presence): ${segmentCounts['Segment 5']}`)
+  console.log(`No Segments: ${segmentCounts['No Segments']}`)
+  
+  console.log('\n=== COLLECTIONS DISTRIBUTION ===')
+  console.log(`Collections Recovery Services - Y: ${collectionsYes}`)
+  console.log(`Collections Recovery Services - N: ${collectionsNo}`)
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Now update the columns array to include the collections_y_n column.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/geo-categorisation.ts
+  old_string:   // Get all columns from first record, then add geo_categorisation at the end
+  const columns = Object.keys(records[0]).concat(['geo_categorisation'])
+  new_string:   // Get all columns from first record, then add new columns at the end
+  const columns = Object.keys(records[0]).concat(['geo_categorisation', 'collections_y_n'])
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Now let me run the script.
+[Tool call] Shell
+  command: pnpm start scripts/geo-categorisation.ts
+  working_directory: /Users/alicewyatt/repos/agent-playground
+  description: Run updated geo-categorisation script
+
+[Tool result] Shell
