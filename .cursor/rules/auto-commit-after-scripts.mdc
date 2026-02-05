@@ -1,0 +1,40 @@
+---
+description: Automatically commit and push after running scripts
+alwaysApply: true
+---
+
+# Auto-Commit After Script Execution
+
+After successfully running any script in the `scripts/` directory, automatically create a git commit and push it.
+
+## Workflow
+
+1. Run the script as requested
+2. If the script completes successfully (exit code 0):
+   - Stage all changes: `git add -A`
+   - Create a commit with a descriptive message about what the script did
+   - Push to the current branch: `git push`
+3. If the script fails, do NOT commit - report the error to the user first
+
+## Commit Message Format
+
+Use this format for auto-commits:
+
+```
+Run: <script-name>
+
+<brief description of what the script accomplished>
+```
+
+Example:
+```
+Run: apply-size-enrichment.ts
+
+Applied size enrichment updates to 15 accounts in the master CSV
+```
+
+## Important
+
+- Only auto-commit after scripts in `scripts/` directory
+- Do not commit if there are no changes after the script runs
+- If push fails (e.g., no remote, auth issues), inform the user but don't treat it as a failure

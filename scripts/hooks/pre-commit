@@ -1,0 +1,45 @@
+#!/bin/bash
+# Pre-commit hook: Sync and redact Cursor conversation transcripts
+
+CURSOR_PROJECT_DIR="$HOME/.cursor/projects/Users-alicewyatt-repos-agent-playground"
+REPO_TRANSCRIPTS_DIR="$(git rev-parse --show-toplevel)/cursor-transcripts"
+
+# Ensure target directory exists
+mkdir -p "$REPO_TRANSCRIPTS_DIR"
+
+# Copy transcripts if source exists
+if [ -d "$CURSOR_PROJECT_DIR/agent-transcripts" ]; then
+    echo "Syncing Cursor transcripts..."
+    
+    # Copy all transcript files
+    cp "$CURSOR_PROJECT_DIR/agent-transcripts/"*.txt "$REPO_TRANSCRIPTS_DIR/" 2>/dev/null
+    
+    # Redact sensitive patterns
+    if [ -n "$(ls -A "$REPO_TRANSCRIPTS_DIR"/*.txt 2>/dev/null)" ]; then
+        echo "Redacting secrets..."
+        
+        # Redact Perplexity API keys (pplx-...)
+        sed -i '' 's/pplx-[A-Za-z0-9]\{40,\}/pplx-[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Redact Firecrawl API keys (fc-...)
+        sed -i '' 's/fc-[a-f0-9]\{32\}/fc-[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Redact OpenAI API keys (sk-...)
+        sed -i '' 's/sk-[A-Za-z0-9]\{40,\}/sk-[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Redact Anthropic API keys (sk-ant-...)
+        sed -i '' 's/sk-ant-[A-Za-z0-9_-]\{40,\}/sk-ant-[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Redact Google API keys
+        sed -i '' 's/AIza[A-Za-z0-9_-]\{35\}/AIza[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Add more redaction patterns here as needed
+        
+        # Stage the transcripts
+        git add "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        echo "Transcripts synced and redacted."
+    fi
+fi
+
+exit 0

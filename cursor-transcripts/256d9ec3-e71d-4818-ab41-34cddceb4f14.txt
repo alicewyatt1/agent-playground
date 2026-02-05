@@ -530,3 +530,81 @@ git status
   description: Check git status after revert
 
 [Tool result] Shell
+
+assistant:
+[Thinking] I see - since we moved the files back, git sees them as deleted. Now I need to:
+1. Stage the .gitkeep
+2. Make a commit - the pre-commit hook will copy and redact the transcripts
+
+Let me do this. The hook will run and add the transcripts back (redacted) as part of the commit process.
+Now let's test the hook by making a commit. The hook will copy and redact the transcripts:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && \
+git add cursor-transcripts/.gitkeep && \
+git commit -m "$(cat <<'EOF'
+Switch to pre-commit hook for transcript sync
+
+Transcripts are now copied and redacted on each commit via pre-commit hook
+instead of using symlinks. This allows for automatic secret redaction.
+EOF
+)"
+  description: Test pre-commit hook with commit
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The hook ran successfully - it synced and redacted the transcripts. Now let me push and verify everything is working.
+The hook works. Let me push and verify:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git push && \
+echo "---" && \
+ls -la cursor-transcripts/
+  description: Push and verify transcripts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Everything worked. The transcripts are synced and pushed. Let me provide a summary.One thing to note - the pre-commit hook is in `.git/hooks/` which isn't version controlled. If the user wants to keep the hook in the repo for reference, I should mention that and offer to create a copy in the repo.
+All set. Here's the summary:
+
+**Setup:**
+- Original transcripts stay in `~/.cursor/projects/.../agent-transcripts/` (Cursor writes here)
+- Pre-commit hook copies them to `cursor-transcripts/` in the repo
+- Secrets are redacted before staging
+
+**Redaction patterns currently handled:**
+- Perplexity API keys (`pplx-...`)
+- Firecrawl API keys (`fc-...`)
+- OpenAI API keys (`sk-...`)
+- Anthropic API keys (`sk-ant-...`)
+- Google API keys (`AIza...`)
+
+**One note:** The hook lives in `.git/hooks/pre-commit` which isn't version controlled. If you want to keep a backup in the repo (so you can restore it if needed), I can copy it to something like `scripts/hooks/pre-commit` that you can reference. Want me to do that?
+
+user:
+<user_query>
+Yes, go to backup to the script and then commit and push everything. 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to:
+1. Copy the pre-commit hook to a scripts directory for backup
+2. Commit and push everything
+
+Let me do that.
+[Tool call] Shell
+  command: mkdir -p /Users/alicewyatt/repos/agent-playground/scripts/hooks && \
+cp /Users/alicewyatt/repos/agent-playground/.git/hooks/pre-commit /Users/alicewyatt/repos/agent-playground/scripts/hooks/pre-commit
+  description: Backup pre-commit hook to scripts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Now let me commit and push everything including the hook backup.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && \
+git add scripts/hooks/pre-commit && \
+git status
+  description: Stage hook backup and check status
+
+[Tool result] Shell
