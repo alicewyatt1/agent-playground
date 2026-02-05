@@ -1,0 +1,368 @@
+user:
+<user_query>
+@/Users/alicewyatt/Downloads/Qualified list - Full qualified list.csv 
+
+We need you to do the following:
+1) focus only on Mid Market accounts (size - by employee count)
+of this list we want you to create a new column call Geo Categorisation
+
+We want you to look across company HQ + delivery footprints and add a one of the following tags for every account. There can be multiple segments selected for each account.
+
+Segment 1) if their HQ is US only (but they have no US onshore delivery)
+Segment 2) if their HQ is US AND they have US onshore delivery
+Segment 3) If their HQ is NOT US but they have US delivery (onshore,nearshore,or offshore)
+Segment 4) Mexico is included in any of the following: HQ, onshore, nearshore,  offshore
+Segment 5) Philippines is included in any of the following: HQ, onshore, nearshore,  offshore
+
+For each account, add 'Segment 1' or 'Segment 2' etc. If there is more than one segment, separate by column. 
+
+Now think about this request and ask me any clarification questions. 
+
+Note: US presence may be denoted as 'United States' or similar and also when they have US delivery footprint onshore, the US STATE is listed (rather than United States written). This should count as US delivery = true. 
+
+Play this request back to me, ask any clarifying questions
+
+</user_query>
+
+assistant:
+[Thinking] The user wants me to process a CSV file and add a new "Geo Categorisation" column based on geographic criteria. Let me first understand the request and then ask clarifying questions.
+
+Let me read the CSV file first to understand its structure, then I can ask informed clarifying questions.
+Let me first look at the CSV file to understand its structure, then I'll play back the request and ask clarifying questions.
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Qualified list - Full qualified list.csv
+  limit: 50
+
+[Tool result] Read
+
+assistant:
+[Thinking] Let me understand the data structure better. I can see the columns include:
+- company_name
+- company_hq
+- size_employee_count
+- onshore_delivery_footprint
+- nearshore_delivery_footprint
+- offshore_delivery_footprint
+
+Let me check what values are in the size_employee_count column to understand the Mid Market classification.
+
+From what I can see:
+- "Mid Market (1,000–5,000 employees)" is one value
+- "Enterprise (5,000+ employees)" is another
+- "Super Enterprise (50,000+ employees)" exists too
+
+Now let me understand the HQ and delivery footprint columns:
+- company_hq: Contains country or "City, Country" format (e.g., "United States", "India", "Tacoma, United States")
+- onshore_delivery_footprint: Contains US states (e.g., "California", "Delaware | Georgia | Ohio | Texas") or country names
+- nearshore_delivery_footprint: Contains countries
+- offshore_delivery_footprint: Contains countries/locations
+
+Let me also check how US locations are represented - I see:
+- "United States" in HQ or offshore columns
+- US states listed in onshore_delivery_footprint (e.g., "California", "New Jersey | Texas")
+
+Now let me play back the request and ask clarifying questions.
+Now I understand the data structure. Let me play back your request and ask some clarifying questions:
+
+---
+
+## Request Playback
+
+**Scope:** Focus only on **Mid Market** accounts (those with `size_employee_count` = "Mid Market (1,000–5,000 employees)")
+
+**Task:** Add a new column called "Geo Categorisation" with one or more of the following segment tags, separated by commas:
+
+| Segment | Condition |
+|---------|-----------|
+| **Segment 1** | HQ is US, but NO US onshore delivery |
+| **Segment 2** | HQ is US AND has US onshore delivery |
+| **Segment 3** | HQ is NOT US, but has US delivery (onshore, nearshore, or offshore) |
+| **Segment 4** | Mexico appears in any of: HQ, onshore, nearshore, or offshore |
+| **Segment 5** | Philippines appears in any of: HQ, onshore, nearshore, or offshore |
+
+**US Detection Logic:**
+- HQ: Look for "United States" or variations (e.g., "Tacoma, United States")
+- US Delivery: Check for "United States" in any delivery column, OR individual US state names in the `onshore_delivery_footprint` column (e.g., "California", "New Jersey | Texas")
+
+---
+
+## Clarifying Questions
+
+1. **Segment 1 vs Segment 2 exclusivity:** If an account's HQ is US, it should get EITHER Segment 1 OR Segment 2 (mutually exclusive based on US onshore presence), correct? These two shouldn't appear together for the same account.
+
+2. **US nearshore/offshore for Segment 2:** For Segment 2, you specifically mention "US onshore delivery." If a US-HQ company has US listed in nearshore or offshore but NOT in onshore, should that count as Segment 1 (no US onshore) or Segment 2? 
+   - My assumption: Segment 2 requires specifically **onshore** US delivery, so US in nearshore/offshore alone wouldn't trigger Segment 2.
+
+3. **Segment 3 - US delivery type:** You say "onshore, nearshore, or offshore" for non-US HQ companies. So if a non-US HQ company has US listed in ANY delivery column (or US state names in onshore), they get Segment 3?
+
+4. **Output file:** Should I create a new CSV file with just the Mid Market accounts plus the new column, or do you want the full file with the new column only populated for Mid Market accounts (blank for others)?
+
+5. **Separator:** You mentioned "separate by column" if multiple segments - did you mean **comma**? e.g., "Segment 2, Segment 4, Segment 5"
+
+user:
+<user_query>
+1 - correct
+2 - not possible - if US HQ, US wouldnt be nearshore/offshore 
+3 - yes
+4 - just run it first then we can decide
+5 - yes comma
+</user_query>
+
+assistant:
+[Thinking] The user has clarified:
+
+1. Segment 1 and Segment 2 are mutually exclusive for US HQ companies
+2. US HQ companies can't have US as nearshore/offshore (makes sense geographically)
+3. Segment 3 = non-US HQ with US in any delivery column (onshore, nearshore, or offshore)
+4. Run the script first, then decide on output format
+5. Multiple segments separated by comma
+
+Let me write a TypeScript script to:
+1. Read the CSV
+2. Filter to Mid Market accounts only
+3. For each Mid Market account, determine which segments apply
+4. Add the Geo Categorisation column
+5. Output the results
+
+I need to handle:
+- US HQ detection: "United States" or variations like "City, United States"
+- US onshore delivery: Check for US state names OR "United States" in onshore_delivery_footprint
+- Mexico/Philippines detection in any HQ or delivery column
+
+Let me look at the existing filter script to understand the patterns used.
+Got it, all clear. Let me write a script to process this.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/scripts/filter-outbound-us-presence.ts
+
+[Tool result] Read
+
+assistant:
+[Thinking] Good, I can reuse the US_STATES list and some of the logic. Now let me write a new script for the geo categorisation task.
+I can reuse the US states list. Let me write the geo categorisation script.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/geo-categorisation.ts
+  contents: import { config } from 'dotenv'
+import { parse } from 'csv-parse/sync'
+import { stringify } from 'csv-stringify/sync'
+import fs from 'fs'
+
+config()
+
+// US States list for matching onshore delivery footprint
+const US_STATES = [
+  'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
+  'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa',
+  'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan',
+  'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio',
+  'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota',
+  'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia',
+  'Wisconsin', 'Wyoming', 'District of Columbia', 'Puerto Rico'
+]
+
+interface Account {
+  company_name: string
+  company_hq: string
+  size_employee_count: string
+  onshore_delivery_footprint: string
+  nearshore_delivery_footprint: string
+  offshore_delivery_footprint: string
+  [key: string]: string
+}
+
+function isUSHQ(hq: string): boolean {
+  if (!hq) return false
+  const normalized = hq.trim().toLowerCase()
+  // Check for "United States" or variations, including "City, United States" format
+  return normalized === 'united states' || 
+         normalized === 'us' || 
+         normalized === 'usa' ||
+         normalized.endsWith(', united states') ||
+         normalized.endsWith(' united states')
+}
+
+function hasUSOnshoreDelivery(onshore: string): boolean {
+  if (!onshore) return false
+  
+  // Check for explicit "United States"
+  if (/\bUnited States\b/i.test(onshore)) return true
+  
+  // Check for any US state name
+  for (const state of US_STATES) {
+    const regex = new RegExp(`\\b${state}\\b`, 'i')
+    if (regex.test(onshore)) return true
+  }
+  return false
+}
+
+function hasUSInDelivery(onshore: string, nearshore: string, offshore: string): boolean {
+  // Check onshore for US states or "United States"
+  if (hasUSOnshoreDelivery(onshore)) return true
+  
+  // Check nearshore for "United States"
+  if (nearshore && /\bUnited States\b/i.test(nearshore)) return true
+  
+  // Check offshore for "United States"
+  if (offshore && /\bUnited States\b/i.test(offshore)) return true
+  
+  return false
+}
+
+function hasCountryPresence(country: string, hq: string, onshore: string, nearshore: string, offshore: string): boolean {
+  const regex = new RegExp(`\\b${country}\\b`, 'i')
+  
+  return regex.test(hq || '') || 
+         regex.test(onshore || '') || 
+         regex.test(nearshore || '') || 
+         regex.test(offshore || '')
+}
+
+function getGeoSegments(account: Account): string[] {
+  const segments: string[] = []
+  
+  const hq = account.company_hq || ''
+  const onshore = account.onshore_delivery_footprint || ''
+  const nearshore = account.nearshore_delivery_footprint || ''
+  const offshore = account.offshore_delivery_footprint || ''
+  
+  const usHQ = isUSHQ(hq)
+  const usOnshore = hasUSOnshoreDelivery(onshore)
+  const usDeliveryAnywhere = hasUSInDelivery(onshore, nearshore, offshore)
+  
+  // Segment 1: HQ is US, but NO US onshore delivery
+  // Segment 2: HQ is US AND has US onshore delivery
+  if (usHQ) {
+    if (usOnshore) {
+      segments.push('Segment 2')
+    } else {
+      segments.push('Segment 1')
+    }
+  }
+  
+  // Segment 3: HQ is NOT US but has US delivery (onshore, nearshore, or offshore)
+  if (!usHQ && usDeliveryAnywhere) {
+    segments.push('Segment 3')
+  }
+  
+  // Segment 4: Mexico in any of HQ, onshore, nearshore, offshore
+  if (hasCountryPresence('Mexico', hq, onshore, nearshore, offshore)) {
+    segments.push('Segment 4')
+  }
+  
+  // Segment 5: Philippines in any of HQ, onshore, nearshore, offshore
+  if (hasCountryPresence('Philippines', hq, onshore, nearshore, offshore)) {
+    segments.push('Segment 5')
+  }
+  
+  return segments
+}
+
+async function main() {
+  const csvPath = '/Users/alicewyatt/Downloads/Qualified list - Full qualified list.csv'
+  
+  console.log('Reading CSV...')
+  const csvContent = fs.readFileSync(csvPath, 'utf-8')
+  
+  const records: Account[] = parse(csvContent, {
+    columns: true,
+    skip_empty_lines: true,
+    relax_quotes: true,
+    relax_column_count: true
+  })
+  
+  console.log(`Total accounts in CSV: ${records.length}`)
+  
+  // Filter to Mid Market only
+  const midMarketAccounts = records.filter(r => 
+    r.size_employee_count?.includes('Mid Market')
+  )
+  
+  console.log(`Mid Market accounts: ${midMarketAccounts.length}`)
+  
+  // Process each account and add geo categorisation
+  const results: Array<Account & { geo_categorisation: string }> = []
+  
+  // Stats tracking
+  const segmentCounts: Record<string, number> = {
+    'Segment 1': 0,
+    'Segment 2': 0,
+    'Segment 3': 0,
+    'Segment 4': 0,
+    'Segment 5': 0,
+    'No Segments': 0
+  }
+  
+  for (const account of midMarketAccounts) {
+    const segments = getGeoSegments(account)
+    const geoCategorisation = segments.length > 0 ? segments.join(', ') : ''
+    
+    results.push({
+      ...account,
+      geo_categorisation: geoCategorisation
+    })
+    
+    // Track stats
+    if (segments.length === 0) {
+      segmentCounts['No Segments']++
+    } else {
+      for (const seg of segments) {
+        segmentCounts[seg]++
+      }
+    }
+  }
+  
+  // Print summary
+  console.log('\n=== SEGMENT DISTRIBUTION ===')
+  console.log(`Segment 1 (US HQ, no US onshore): ${segmentCounts['Segment 1']}`)
+  console.log(`Segment 2 (US HQ + US onshore): ${segmentCounts['Segment 2']}`)
+  console.log(`Segment 3 (Non-US HQ, US delivery): ${segmentCounts['Segment 3']}`)
+  console.log(`Segment 4 (Mexico presence): ${segmentCounts['Segment 4']}`)
+  console.log(`Segment 5 (Philippines presence): ${segmentCounts['Segment 5']}`)
+  console.log(`No Segments: ${segmentCounts['No Segments']}`)
+  
+  // Show sample of each segment
+  console.log('\n=== SAMPLE ACCOUNTS BY SEGMENT ===\n')
+  
+  for (const segmentName of ['Segment 1', 'Segment 2', 'Segment 3', 'Segment 4', 'Segment 5']) {
+    const samples = results.filter(r => r.geo_categorisation.includes(segmentName)).slice(0, 3)
+    console.log(`--- ${segmentName} (showing up to 3 samples) ---`)
+    for (const sample of samples) {
+      console.log(`  ${sample.company_name}`)
+      console.log(`    HQ: ${sample.company_hq}`)
+      console.log(`    Onshore: ${sample.onshore_delivery_footprint || '(none)'}`)
+      console.log(`    Nearshore: ${sample.nearshore_delivery_footprint || '(none)'}`)
+      console.log(`    Offshore: ${sample.offshore_delivery_footprint || '(none)'}`)
+      console.log(`    Geo: ${sample.geo_categorisation}`)
+      console.log('')
+    }
+  }
+  
+  // Write output CSV
+  const outputPath = '/Users/alicewyatt/Downloads/Qualified list - Mid Market with Geo Categorisation.csv'
+  
+  // Get all columns from first record, then add geo_categorisation at the end
+  const columns = Object.keys(records[0]).concat(['geo_categorisation'])
+  
+  const csvOutput = stringify(results, {
+    header: true,
+    columns: columns
+  })
+  
+  fs.writeFileSync(outputPath, csvOutput)
+  console.log(`\nOutput written to: ${outputPath}`)
+  console.log(`Total rows: ${results.length}`)
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Thinking] Now let me run the script to see the results.
+[Tool call] Shell
+  command: pnpm start scripts/geo-categorisation.ts
+  working_directory: /Users/alicewyatt/repos/agent-playground
+  description: Run geo categorisation script
+
+[Tool result] Shell

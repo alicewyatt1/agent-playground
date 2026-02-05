@@ -20,16 +20,10 @@ The previous session researched accounts for size (employee count) and service l
 
 **Scope:** 1,420 accounts reviewed (131 qualified + 1,289 non-qualified)
 
-| Change Type | Count |
-|-------------|-------|
-| Mid Market → SME | 12 |
-| Mid Market → Enterprise | 8 |
-| Mid Market → Super Enterprise | 2 |
-| Enterprise → Super Enterprise | 9 |
-| SME → Mid Market | 1 |
-| SME → Enterprise | 2 |
-| Other changes | 2 |
-| **Total category changes** | **36** |
+Key changes included:
+- 13 Mid Market accounts corrected to SME (had fewer than 1,000 employees)
+- 10 Mid Market accounts upgraded to Enterprise (had 5,000+ employees)
+- 9 accounts identified as Super Enterprise (50,000+ employees)
 
 ### 3. Applied Service Lines Enrichment
 
