@@ -1,0 +1,217 @@
+user:
+<user_query>
+I want you to setup the firecrawl api tool. Here is the api key: `fc-[REDACTED]` - Maybe add it to the .env file at the end, and then figure out if there's a firecrawl node library installer, and then maybe write a cursor rule about it. 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to:
+1. Add the Firecrawl API key to the .env file
+2. Find out if there's a Firecrawl Node.js library and install it
+3. Write a Cursor rule about using Firecrawl
+
+Let me start by reading the .env file to see its current state, and also search for information about the Firecrawl Node.js library.
+I'll help you set up the Firecrawl API tool. Let me start by reading the current .env file and searching for the Firecrawl Node.js library.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/.env
+[Tool call] WebSearch
+  search_term: firecrawl node.js npm library official 2026
+  explanation: Finding the official Firecrawl Node.js library for installation
+
+[Tool result] Read
+
+[Tool result] WebSearch
+
+assistant:
+[Thinking] I found that the official Firecrawl Node.js library is `@mendable/firecrawl-js`. Let me:
+
+1. Add the Firecrawl API key to the .env file
+2. Install the package using pnpm
+3. Create a Cursor rule for using Firecrawl
+
+Let me do these in parallel where possible.
+I found the official Firecrawl Node.js SDK is `@mendable/firecrawl-js`. Let me add the API key to your .env file and install the package.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/.env
+  old_string: PERPLEXITY_API_KEY=pplx-[REDACTED]
+  new_string: PERPLEXITY_API_KEY=pplx-[REDACTED]
+
+FIRECRAWL_API_KEY=fc-[REDACTED]
+[Tool call] Shell
+  command: pnpm add @mendable/firecrawl-js
+  description: Install Firecrawl Node.js SDK
+  working_directory: /Users/alicewyatt/repos/agent-playground
+
+[Tool result] StrReplace
+
+[Tool result] Shell
+
+assistant:
+[Thinking] pnpm is not directly available in the shell. Let me try with npx or the full path, or maybe npm.
+Let me try with npm instead.
+[Tool call] Shell
+  command: npm install @mendable/firecrawl-js
+  description: Install Firecrawl Node.js SDK via npm
+  working_directory: /Users/alicewyatt/repos/agent-playground
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The package is installed. Now let me create a Cursor rule for Firecrawl. I should create it in the `.cursor/rules/` directory.
+The package is installed. Now let me create a Cursor rule for Firecrawl.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/.cursor/rules/firecrawl.mdc
+  contents: # Firecrawl
+
+Firecrawl is a web scraping and crawling API. Use it to extract content from websites.
+
+## Installation
+
+The `@mendable/firecrawl-js` package is installed in this project.
+
+## Configuration
+
+- API key is stored in `.env` as `FIRECRAWL_API_KEY`
+- Load with dotenv: `import { config } from 'dotenv'; config();`
+
+## Basic Usage
+
+```typescript
+import Firecrawl from '@mendable/firecrawl-js';
+import { config } from 'dotenv';
+
+config();
+
+const firecrawl = new Firecrawl({ apiKey: process.env.FIRECRAWL_API_KEY });
+
+// Scrape a single URL
+const result = await firecrawl.scrapeUrl('https://example.com', {
+  formats: ['markdown', 'html'],
+});
+
+// Crawl a website (multiple pages)
+const crawlResult = await firecrawl.crawlUrl('https://example.com', {
+  limit: 10,
+  scrapeOptions: {
+    formats: ['markdown'],
+  },
+});
+
+// Map a website (get all URLs)
+const mapResult = await firecrawl.mapUrl('https://example.com');
+```
+
+## Key Methods
+
+- **`scrapeUrl(url, options)`** - Scrape a single page
+- **`crawlUrl(url, options)`** - Crawl multiple pages from a starting URL
+- **`mapUrl(url)`** - Get a list of all URLs on a website
+- **`extract(urls, options)`** - Extract structured data using prompts/schemas
+
+## Scrape Options
+
+```typescript
+{
+  formats: ['markdown', 'html', 'rawHtml', 'links', 'screenshot'],
+  onlyMainContent: true,  // Remove headers, footers, navigation
+  includeTags: ['article', 'main'],  // Only include specific tags
+  excludeTags: ['nav', 'footer'],    // Exclude specific tags
+  waitFor: 5000,  // Wait for dynamic content (ms)
+}
+```
+
+## Structured Data Extraction with Zod
+
+```typescript
+import { z } from 'zod';
+
+const schema = z.object({
+  title: z.string(),
+  price: z.number(),
+  description: z.string(),
+});
+
+const result = await firecrawl.scrapeUrl('https://example.com/product', {
+  formats: ['extract'],
+  extract: {
+    schema: schema,
+    prompt: 'Extract the product information from this page',
+  },
+});
+```
+
+## When to Use Firecrawl
+
+- **Web scraping**: Extract content from any public webpage
+- **Data extraction**: Get structured data from websites
+- **Content aggregation**: Crawl multiple pages for research
+- **Site mapping**: Discover all pages on a website
+
+## Best Practices
+
+- Use `onlyMainContent: true` to get cleaner content without navigation/ads
+- Set reasonable `limit` values when crawling to avoid excessive API usage
+- Use markdown format for LLM-friendly content
+- Use structured extraction with Zod schemas for consistent data
+
+
+[Tool result] Write
+
+assistant:
+[Thinking] I've completed all the tasks:
+1. Added the Firecrawl API key to the .env file
+2. Installed the @mendable/firecrawl-js package
+3. Created a Cursor rule with usage examples
+
+Let me summarize what was done for the user.
+Done. I've set up Firecrawl for you:
+
+1. **Added API key to `.env`** - Added `FIRECRAWL_API_KEY=fc-[REDACTED]`
+
+2. **Installed the SDK** - `@mendable/firecrawl-js` is now installed (v4.12.0)
+
+3. **Created Cursor rule** - `.cursor/rules/firecrawl.mdc` with:
+   - Basic usage examples for scraping, crawling, and mapping
+   - Structured data extraction with Zod schemas
+   - Configuration and best practices
+
+You can now use Firecrawl in your scripts like this:
+
+```typescript
+import Firecrawl from '@mendable/firecrawl-js';
+import { config } from 'dotenv';
+
+config();
+
+const firecrawl = new Firecrawl({ apiKey: process.env.FIRECRAWL_API_KEY });
+
+// Scrape a page
+const result = await firecrawl.scrapeUrl('https://example.com', {
+  formats: ['markdown'],
+});
+```
+
+user:
+<user_query>
+Can you install PnPn globally as well, please? 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to install pnpm globally. I can do this with npm install -g pnpm.
+[Tool call] Shell
+  command: npm install -g pnpm
+  description: Install pnpm globally
+
+[Tool result] Shell
+
+assistant:
+[Thinking] pnpm is now installed globally. Let me confirm it works.
+Done. pnpm is now installed globally. Let me verify it's working:
+[Tool call] Shell
+  command: pnpm --version
+  description: Verify pnpm installation
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Great, pnpm is installed and working with version 10.28.2.
+pnpm v10.28.2 is now installed globally and ready to use.

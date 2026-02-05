@@ -1,0 +1,82 @@
+user:
+<user_query>
+Write a cursor rule that automatically makes a git commit and pushes it whenever a script finishe running. 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to create a Cursor rule that automatically makes a git commit and pushes whenever a script finishes running. Let me first read the skill for creating Cursor rules to follow the proper format and best practices.
+[Tool call] Read
+  path: /Users/alicewyatt/.cursor/skills-cursor/create-rule/SKILL.md
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I understand the format for creating Cursor rules. Let me create a rule that automatically makes a git commit and pushes whenever a script finishes running.
+
+Since this should apply to all script runs (not just specific file types), I should ask the user about the scope. However, looking at their request, it seems like they want this to always apply when running scripts in the scripts/ directory. Let me clarify this with the user.
+
+Actually, looking at the context more carefully - this is about behavior when scripts finish running. This should probably be an always-apply rule since it governs behavior after script execution, not behavior when editing specific files.
+
+Let me create the rule with alwaysApply: true since it's about script execution behavior, which isn't file-pattern specific. The rule should instruct the AI to commit and push after running scripts.
+I'll create a Cursor rule that instructs the AI to automatically commit and push after running scripts. Since this applies to script execution behavior rather than specific file types, I'll set it to always apply.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/.cursor/rules/auto-commit-after-scripts.mdc
+  contents: ---
+description: Automatically commit and push after running scripts
+alwaysApply: true
+---
+
+# Auto-Commit After Script Execution
+
+After successfully running any script in the `scripts/` directory, automatically create a git commit and push it.
+
+## Workflow
+
+1. Run the script as requested
+2. If the script completes successfully (exit code 0):
+   - Stage all changes: `git add -A`
+   - Create a commit with a descriptive message about what the script did
+   - Push to the current branch: `git push`
+3. If the script fails, do NOT commit - report the error to the user first
+
+## Commit Message Format
+
+Use this format for auto-commits:
+
+```
+Run: <script-name>
+
+<brief description of what the script accomplished>
+```
+
+Example:
+```
+Run: apply-size-enrichment.ts
+
+Applied size enrichment updates to 15 accounts in the master CSV
+```
+
+## Important
+
+- Only auto-commit after scripts in `scripts/` directory
+- Do not commit if there are no changes after the script runs
+- If push fails (e.g., no remote, auth issues), inform the user but don't treat it as a failure
+
+
+[Tool result] Write
+
+assistant:
+[Thinking] I've created the rule. Let me summarize what I created for the user.
+Done. I created `.cursor/rules/auto-commit-after-scripts.mdc` with `alwaysApply: true`. 
+
+The rule instructs the AI to:
+1. Run the script as requested
+2. If it succeeds (exit code 0), automatically `git add -A`, commit with a descriptive message, and `git push`
+3. Skip committing if the script fails or if there are no changes
+
+The commit messages will follow the format:
+```
+Run: <script-name>
+
+<brief description of what the script accomplished>
+```
