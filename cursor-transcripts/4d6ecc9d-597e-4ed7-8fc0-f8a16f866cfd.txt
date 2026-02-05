@@ -10935,3 +10935,135 @@ All stats have been double and triple-checked:
 - Size enrichment: 1,420 accounts reviewed, 36 category changes ✓
 - Service lines: 448 researched, 122 with tags added ✓
 - 9 Super Enterprise accounts all verified and listed ✓
+
+user:
+<user_query>
+Remove references to JSON from the session summary. I don't want the new agent to get confused when it reads the summary tomorrow. 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to remove references to JSON files from the summary so future agents don't get confused. Let me update the summary to focus on what was done and the outcomes, without mentioning JSON as the storage mechanism.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/SESSION-SUMMARY-2025-02-05.md
+  old_string: ## Overview
+
+This session focused on verifying and applying enrichment data from previous research sessions to the master Contact Center Market Map CSV file.
+
+---
+
+## What Was Done Today
+
+### 1. Discovered Missing Enrichment Application
+
+The previous session researched accounts for size (employee count) and service lines, but stored results in JSON files without fully applying them to the CSV. Today we:
+
+- Identified the gap between JSON research data and CSV
+- Created a reconciliation script to apply all enrichment data
+- Produced a final, accurate CSV with all updates applied
+  new_string: ## Overview
+
+This session focused on verifying and applying enrichment data from previous research sessions to the master Contact Center Market Map CSV file.
+
+---
+
+## What Was Done Today
+
+### 1. Reconciled Enrichment Data
+
+The previous session researched accounts for size (employee count) and service lines, but the updates weren't fully applied to the CSV. Today we:
+
+- Identified missing updates in the CSV
+- Created a reconciliation script to apply all enrichment data
+- Produced a final, accurate CSV with all updates applied
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Now let me remove the JSON workflow problem section and the JSON references in the Files section.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/SESSION-SUMMARY-2025-02-05.md
+  old_string: ## Issues Encountered
+
+### JSON Workflow Problem
+
+The previous session stored enrichment results in JSON files as an intermediate step:
+- `size-enrichment-final-complete.json`
+- `non-qualified-enrichment-results.json`
+- `research-results.json`
+- `research-remaining-results.json`
+
+This created a sync issue where the CSV didn't reflect the researched data. The reconciliation script fixed this by reading all JSON sources and applying updates to the CSV.
+
+### Lesson Learned
+
+Apply enrichment changes directly to CSV during research. Use JSON only as an audit log if needed, not as the primary data store.
+
+---
+  new_string: ## Issues Encountered
+
+### Enrichment Sync Problem
+
+The previous session researched account data but some updates weren't fully applied to the CSV. A reconciliation script was created to ensure all researched data was properly reflected in the final output.
+
+### Lesson Learned
+
+Always verify that enrichment changes are applied directly to the CSV during research sessions.
+
+---
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Now let me remove the JSON references in the Files section.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/SESSION-SUMMARY-2025-02-05.md
+  old_string: ## Files in data/ Directory
+
+### Primary Output
+- `Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv` - **The final deliverable**
+
+### Enrichment Research (JSON - for reference only)
+- `size-enrichment-final-complete.json` - Size research for 131 qualified accounts
+- `non-qualified-enrichment-results.json` - Size research for 1,289 non-qualified accounts
+- `research-results.json` - Service lines research (196 accounts)
+- `research-remaining-results.json` - Service lines research (252 accounts)
+
+### Other Files
+- `service-lines-enrichment-changes.json` - Log of service line changes applied
+- `accounts-missing-target-service-lines.json` - Accounts without target service lines
+- Various intermediate CSVs (can be cleaned up)
+  new_string: ## Final Deliverable
+
+**File:** `Final - Global Contact Center Market Map - Full List with 164 Qualified (2025-02-05).csv`
+
+This CSV contains all enrichment updates applied and is the source of truth for the Contact Center Market Map data.
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Now let me also update the Next Steps section to remove the JSON reference.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/SESSION-SUMMARY-2025-02-05.md
+  old_string: ## Next Steps / Recommendations
+
+1. **Clean up intermediate files** - Remove old CSVs and consolidate to the final output
+2. **Future enrichment** - Apply changes directly to CSV, don't use JSON as intermediate storage
+3. **The 312 accounts with empty size** - May need research if they're important to the analysis
+  new_string: ## Next Steps / Recommendations
+
+1. **Clean up intermediate files** - Remove old CSVs and consolidate to the final output
+2. **Future enrichment** - Always apply changes directly to the master CSV during research
+3. **The 312 accounts with empty size** - May need research if they're important to the analysis
+
+[Tool result] StrReplace
+
+assistant:
+[Thinking] Good. Let me verify the updated document looks clean.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/SESSION-SUMMARY-2025-02-05.md
+
+[Tool result] Read
+
+assistant:
+[Thinking] The document looks clean now - all JSON references have been removed. The summary is focused on what was done and the outcomes without mentioning the JSON intermediate storage issue.
+Done. All JSON references have been removed from the summary. The document now focuses on what was done and the outcomes without mentioning the intermediate storage mechanism that caused confusion.
