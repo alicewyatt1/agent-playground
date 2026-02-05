@@ -1,0 +1,840 @@
+[
+  {
+    "company": "Go Answer",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling, Virtual Receptionist",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling, Virtual Receptionist, Outbound Services"
+  },
+  {
+    "company": "Triniter BPO",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services",
+    "addedTags": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Global Contact Service International",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Outbound Services, Customer Surveys & Market Research Calls, Third Party Verification",
+    "addedTags": [
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Outbound Services, Customer Surveys & Market Research Calls, Third Party Verification, Sales Outsourcing"
+  },
+  {
+    "company": "Firstsource Solutions Limited",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services",
+    "addedTags": [
+      "Outbound Services",
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Outbound Services, Sales Outsourcing"
+  },
+  {
+    "company": "TTEC",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Direct Interactions",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling, Outbound Services"
+  },
+  {
+    "company": "SupportZebra",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Pure Moderation",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling, Virtual Receptionist",
+    "addedTags": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling, Virtual Receptionist, Outbound Services, B2C Telemarketing & Telesales, Collections Recovery Services"
+  },
+  {
+    "company": "24-7 Intouch",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Collections Recovery Services"
+  },
+  {
+    "company": "Outsource Workers",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Outbound Services, B2C Telemarketing & Telesales, Collections Recovery Services",
+    "addedTags": [
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Outbound Services, B2C Telemarketing & Telesales, Collections Recovery Services, Sales Outsourcing"
+  },
+  {
+    "company": "TSD Global",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "AZPIRED",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Call Center, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "eClerx Services",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Harte Hanks",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Call Center, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "DME Service Solutions",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Outbound Services, Collections Recovery Services"
+  },
+  {
+    "company": "RND OptimizAR",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Outbound Services"
+  },
+  {
+    "company": "8x8",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Outbound Services"
+  },
+  {
+    "company": "Interglobe Technologies Igt Philippines Inc",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Tata Business Support Services",
+    "oldTags": "Not in current Clutch directories",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "Not in current Clutch directories, Collections Recovery Services"
+  },
+  {
+    "company": "Bluechip Call Center",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Outbound Services"
+  },
+  {
+    "company": "MiraMed Ajuba",
+    "oldTags": "BPO, Call Center, Inbound Services, Answering Services",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Inbound Services, Answering Services, Collections Recovery Services"
+  },
+  {
+    "company": "Answer Carolina",
+    "oldTags": "BPO, Call Center, Inbound Services, Answering Services, Inbound Appointment Scheduling, Virtual Receptionist",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Inbound Services, Answering Services, Inbound Appointment Scheduling, Virtual Receptionist, Outbound Services"
+  },
+  {
+    "company": "Five9 Philippines",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, Collections Recovery Services"
+  },
+  {
+    "company": "Accenture",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Sales Outsourcing"
+  },
+  {
+    "company": "ADEC Innovations",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Alight Solutions",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "CGS",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Outsourcing In The Philippines",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, Collections Recovery Services"
+  },
+  {
+    "company": "Datamatics",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Genpact",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, Collections Recovery Services"
+  },
+  {
+    "company": "HGS",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Infosys BPM",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Sales Outsourcing"
+  },
+  {
+    "company": "Itel International",
+    "oldTags": "BPO, Customer Service Outsourcing, Outbound Services",
+    "addedTags": [
+      "Sales Outsourcing",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Outbound Services, Sales Outsourcing, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Movate",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Mplus Group",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Quatrro Business Support Services",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Collections Recovery Services"
+  },
+  {
+    "company": "ResultsCX",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Sales Outsourcing"
+  },
+  {
+    "company": "Tech Mahindra",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, Collections Recovery Services"
+  },
+  {
+    "company": "UnifyCX",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing"
+  },
+  {
+    "company": "VEE Healthek",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Outbound Services"
+  },
+  {
+    "company": "VXI Global Solutions",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Wipro",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Cyberbacker",
+    "oldTags": "BPO, Virtual Receptionist",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Virtual Receptionist, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Customer Frontline Solutions Inc",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Visaya Kpo",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "3i Infotech",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Outbound Services"
+  },
+  {
+    "company": "Toptal",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Sales Outsourcing"
+  },
+  {
+    "company": "Servicesource",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Athenahealth",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Collections Recovery Services"
+  },
+  {
+    "company": "Technotask Business Solutions Pvt Ltd",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "247 Medical Billing Services",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Collections Recovery Services"
+  },
+  {
+    "company": "Ascendum",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Collections Recovery Services"
+  },
+  {
+    "company": "Clearsource Bpo",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Genesys",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Imagenet Llc",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Outbound Services"
+  },
+  {
+    "company": "Intelegencia",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, B2C Telemarketing & Telesales",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, B2C Telemarketing & Telesales, Outbound Services"
+  },
+  {
+    "company": "Medusind Solutions India Pvt Ltd",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Nearsol",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Nthrive Global Solutions Pvt Ltd E4e Healthcare Business Services",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Collections Recovery Services"
+  },
+  {
+    "company": "Omni Interactions",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Sales Outsourcing"
+  },
+  {
+    "company": "R1 Rcm Pvt Ltd",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Collections Recovery Services"
+  },
+  {
+    "company": "Vonage",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Outbound Services"
+  },
+  {
+    "company": "Neusoft Corporation",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Office Beacon",
+    "oldTags": "BPO, Call Center",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Call Center, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Netsmartz Llc",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Outbound Services"
+  },
+  {
+    "company": "Sybrid Private Limited",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Customer Surveys & Market Research Calls",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Customer Surveys & Market Research Calls, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Invensis Inc",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Outbound Services, Collections Recovery Services"
+  },
+  {
+    "company": "Appleton Associates Inc",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Magic",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Buwelo",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Hcltech",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Csg Inbound Communication",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Outbound Services"
+  },
+  {
+    "company": "Ibt",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services, B2C Telemarketing & Telesales, Collections Recovery Services"
+  },
+  {
+    "company": "The Functionary",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Ctnp Corporation",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Anchora",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Personiv",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Alvaria",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services, Collections Recovery Services"
+  },
+  {
+    "company": "Virtudesk",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing, Virtual Receptionist",
+    "addedTags": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Virtual Receptionist, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "247 Ai",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, Collections Recovery Services"
+  },
+  {
+    "company": "Bpo Zones",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Sales Outsourcing",
+      "B2B Business Development and Lead Generation",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Sales Outsourcing, B2B Business Development and Lead Generation, Outbound Services"
+  },
+  {
+    "company": "Ion Bpo",
+    "oldTags": "BPO, Virtual Receptionist",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Virtual Receptionist, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Ubiquity",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, Collections Recovery Services"
+  },
+  {
+    "company": "Kantipur Management",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Kalam Cx",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Alldigi Tech",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Collections Recovery Services"
+  },
+  {
+    "company": "Logix Bpo",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales, Collections Recovery Services"
+  },
+  {
+    "company": "Clark Staff",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Gear Inc 2",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services",
+      "B2C Telemarketing & Telesales",
+      "Sales Outsourcing"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Outbound Services, B2C Telemarketing & Telesales, Sales Outsourcing"
+  },
+  {
+    "company": "Hugo Technologies Inc",
+    "oldTags": "BPO, Call Center, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Call Center, Customer Service Outsourcing, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Ifive Global",
+    "oldTags": "BPO, Customer Service Outsourcing, Virtual Receptionist",
+    "addedTags": [
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Virtual Receptionist, Collections Recovery Services"
+  },
+  {
+    "company": "Alta Resources",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "B2C Telemarketing & Telesales"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Sales Outsourcing, Outbound Services, B2C Telemarketing & Telesales"
+  },
+  {
+    "company": "Aptara",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services",
+      "Collections Recovery Services"
+    ],
+    "newTags": "BPO, Sales Outsourcing, Outbound Services, Collections Recovery Services"
+  },
+  {
+    "company": "Aucera",
+    "oldTags": "BPO",
+    "addedTags": [
+      "Sales Outsourcing",
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Sales Outsourcing, Outbound Services"
+  },
+  {
+    "company": "Mst Holding",
+    "oldTags": "BPO, Customer Service Outsourcing",
+    "addedTags": [
+      "Outbound Services"
+    ],
+    "newTags": "BPO, Customer Service Outsourcing, Outbound Services"
+  }
+]

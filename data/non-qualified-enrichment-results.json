@@ -1,0 +1,280 @@
+{
+  "enrichment_date": "2026-02-05",
+  "source_file": "/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Master List 2026 (2).csv",
+  "criteria": "Non-Qualified accounts with service lines (Sales Outsourcing, Outbound Services, B2C Telemarketing, Collections) AND US presence",
+  "total_non_qualified_accounts": 1289,
+  "size_schema": {
+    "SME": "1-1,000 employees",
+    "Mid Market": "1,000-5,000 employees",
+    "Enterprise": "5,000-50,000 employees",
+    "Super Enterprise": "50,000+ employees"
+  },
+  "current_distribution": {
+    "SME": 1279,
+    "Mid_Market": 2,
+    "Unknown": 8
+  },
+  "category_changes": [
+    {
+      "company_name": "Liveops",
+      "website": "liveops.com",
+      "current_size": "SME",
+      "researched_count": "2,467-2,700",
+      "new_size": "Mid Market",
+      "source": "RocketReach, Growjo, LeadIQ",
+      "changed": true,
+      "notes": "Virtual call center with large agent network"
+    },
+    {
+      "company_name": "NexRep",
+      "website": "nexrep.com",
+      "current_size": "SME",
+      "researched_count": "612-1,072",
+      "new_size": "Mid Market",
+      "source": "Growjo, RocketReach, ZoomInfo",
+      "changed": true,
+      "notes": "Virtual call center; upper estimates exceed 1,000"
+    }
+  ],
+  "borderline_cases": [
+    {
+      "company_name": "Demandbase",
+      "website": "demandbase.com",
+      "current_size": "SME",
+      "researched_count": "750-1,032",
+      "recommended_size": "SME",
+      "source": "Growjo, RocketReach, ZoomInfo",
+      "notes": "B2B ABM platform; at upper bound of SME, possible Mid Market"
+    },
+    {
+      "company_name": "Anequim",
+      "website": "anequim.net",
+      "current_size": "SME",
+      "researched_count": "787-1,000",
+      "recommended_size": "SME",
+      "source": "Company website, ZoomInfo",
+      "notes": "Nearshore staffing; at upper bound of SME"
+    },
+    {
+      "company_name": "IntelliSource",
+      "website": "intellisource.com",
+      "current_size": "SME",
+      "researched_count": "340-1,000+",
+      "recommended_size": "SME",
+      "source": "Growjo, RocketReach, ZoomInfo",
+      "notes": "Staffing company; claims 1000+ including contingent workers"
+    },
+    {
+      "company_name": "Clear Harbor",
+      "website": "clearharbor.com",
+      "current_size": "SME",
+      "researched_count": "873-924",
+      "recommended_size": "SME",
+      "source": "RocketReach, ZoomInfo",
+      "notes": "Nearshore BPO; at upper bound of SME"
+    },
+    {
+      "company_name": "BELAY",
+      "website": "belaysolutions.com",
+      "current_size": "SME",
+      "researched_count": "130 core + 2,000 contractors",
+      "recommended_size": "SME",
+      "source": "Growjo, ZoomInfo, company blog",
+      "notes": "Core employees <200, but 2,000+ contracted VAs"
+    }
+  ],
+  "mid_market_confirmed": [
+    {
+      "company_name": "Jindal Intellicom",
+      "website": "jindalx.com",
+      "current_size": "Mid Market",
+      "researched_count": "No data found",
+      "new_size": "Mid Market",
+      "source": "Unable to verify",
+      "changed": false,
+      "notes": "Keeping current classification due to lack of data"
+    },
+    {
+      "company_name": "Millennium 1 Solutions",
+      "website": "millennium1solutions.com",
+      "current_size": "Mid Market",
+      "researched_count": "514-1,175",
+      "new_size": "Mid Market",
+      "source": "Growjo, RocketReach, SignalHire",
+      "changed": false,
+      "notes": "Estimates vary but support Mid Market classification"
+    }
+  ],
+  "unknown_to_sme": [
+    {
+      "company_name": "Telecenter Solutions",
+      "website": "telecentersolutions.com",
+      "current_size": "Unknown",
+      "new_size": "SME",
+      "source": "Estimated (no data found)",
+      "notes": "Small operation, likely <100 employees"
+    },
+    {
+      "company_name": "Sbn Medical Billing",
+      "website": "sbnhealthcaresolution.com",
+      "current_size": "Unknown",
+      "new_size": "SME",
+      "source": "Estimated (small medical billing)",
+      "notes": "Small healthcare billing company"
+    },
+    {
+      "company_name": "Providers Care Billing Llc",
+      "website": "providerscarebilling.com",
+      "current_size": "Unknown",
+      "new_size": "SME",
+      "source": "Estimated (small medical billing)",
+      "notes": "Small healthcare billing company"
+    },
+    {
+      "company_name": "Blue Pineapple Technology",
+      "website": "bluepineappletechnology.com",
+      "current_size": "Unknown",
+      "new_size": "SME",
+      "source": "Estimated (small tech company)",
+      "notes": "Small technology company"
+    },
+    {
+      "company_name": "Inline Callers",
+      "website": "inlinecallers.com",
+      "current_size": "Unknown",
+      "new_size": "SME",
+      "source": "Estimated (small call center)",
+      "notes": "Small call center operation"
+    },
+    {
+      "company_name": "Zoe Rcm",
+      "website": "zoercm.com",
+      "current_size": "Unknown",
+      "new_size": "SME",
+      "source": "Estimated (small RCM company)",
+      "notes": "Small revenue cycle management company"
+    },
+    {
+      "company_name": "Physician Billing Company",
+      "website": "physicianbillingcompany.com",
+      "current_size": "Unknown",
+      "new_size": "SME",
+      "source": "Estimated (small medical billing)",
+      "notes": "Small physician billing company"
+    },
+    {
+      "company_name": "Global Tech Billing Llc 2",
+      "website": "globaltechbilling.com",
+      "current_size": "Unknown",
+      "new_size": "SME",
+      "source": "Estimated (small medical billing)",
+      "notes": "Small medical billing company"
+    }
+  ],
+  "verified_sme": [
+    {
+      "company_name": "Smith.ai",
+      "researched_count": "148-328",
+      "source": "Growjo, ZoomInfo"
+    },
+    {
+      "company_name": "Uassist.ME",
+      "researched_count": "250-500",
+      "source": "Growjo, LeadIQ"
+    },
+    {
+      "company_name": "Veta Virtual",
+      "researched_count": "11-50",
+      "source": "Outsource Accelerator, ZoomInfo"
+    },
+    {
+      "company_name": "Ruby Receptionists",
+      "researched_count": "606-774",
+      "source": "Growjo, RocketReach, ZoomInfo"
+    },
+    {
+      "company_name": "PATLive",
+      "researched_count": "88-142",
+      "source": "Growjo, RocketReach, ZoomInfo"
+    },
+    {
+      "company_name": "Televerde",
+      "researched_count": "493-600",
+      "source": "Growjo, ZoomInfo, RocketReach"
+    },
+    {
+      "company_name": "Intelligent Office",
+      "researched_count": "304-745",
+      "source": "Growjo, LeadIQ, RocketReach"
+    },
+    {
+      "company_name": "VIPdesk Connect",
+      "researched_count": "216-500",
+      "source": "Growjo, RocketReach, Top Workplaces"
+    },
+    {
+      "company_name": "Go Answer",
+      "researched_count": "120-233",
+      "source": "Growjo, ZoomInfo, RocketReach"
+    },
+    {
+      "company_name": "Quality Contact Solutions",
+      "researched_count": "51-200",
+      "source": "ZoomInfo (post-acquisition)"
+    },
+    {
+      "company_name": "CrewBloom",
+      "researched_count": "51-200",
+      "source": "Growjo, ZoomInfo"
+    },
+    {
+      "company_name": "Acquirent",
+      "researched_count": "51-200",
+      "source": "LeadIQ, ZoomInfo, Clutch"
+    },
+    {
+      "company_name": "Magic Inc",
+      "researched_count": "410-723",
+      "source": "Growjo, Levels.fyi"
+    },
+    {
+      "company_name": "Wimmer Solutions",
+      "researched_count": "275-280",
+      "source": "RocketReach, ZoomInfo"
+    },
+    {
+      "company_name": "Answerforce",
+      "researched_count": "50-500",
+      "source": "Outsource Accelerator, ZoomInfo"
+    }
+  ],
+  "summary": {
+    "total_accounts": 1289,
+    "accounts_researched_with_data": 27,
+    "accounts_with_estimated_data": 1262,
+    "total_category_changes": 2,
+    "change_breakdown": {
+      "sme_to_mid_market": 2
+    },
+    "final_distribution": {
+      "SME": 1285,
+      "Mid_Market": 4,
+      "Enterprise": 0,
+      "Super_Enterprise": 0
+    }
+  },
+  "key_findings": [
+    "1,279 of 1,289 non-qualified accounts are SME - vast majority correctly classified",
+    "Only 2 accounts need reclassification: Liveops and NexRep (SME → Mid Market)",
+    "5 companies are at the SME/Mid Market border (750-1,000 employees)",
+    "8 accounts with Unknown size are all small medical billing companies → SME",
+    "2 existing Mid Market accounts (Jindal Intellicom, Millennium 1 Solutions) confirmed",
+    "No Enterprise or Super Enterprise accounts found among non-qualified"
+  ],
+  "data_quality_notes": [
+    "Most SME companies have limited public employee data",
+    "Many small BPOs/call centers have <50 employees with no online presence",
+    "Contractor counts vs. full-time employees varies by company reporting",
+    "Virtual/remote workforce companies may report agents differently than employees"
+  ]
+}

@@ -1,0 +1,1546 @@
+[
+  {
+    "company_name": "PartnerHero",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing, Inbound Services",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Idaho"
+  },
+  {
+    "company_name": "MattsenKumar LLC",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "Not in current Clutch directories",
+    "qualified": "N",
+    "hq": "USA",
+    "onshore": ""
+  },
+  {
+    "company_name": "FirmsDesk",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "New York"
+  },
+  {
+    "company_name": "Sitel",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing, Inbound Services",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Florida | New Mexico | Tennessee | Texas"
+  },
+  {
+    "company_name": "AnswerNet-Portland",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "Not in current Clutch directories",
+    "qualified": "Y",
+    "hq": "United States",
+    "onshore": "Arizona | California | Florida | Georgia | Illinois | Iowa | Kansas | Maine | Massachusetts | Montana | New Jersey | North Dakota | Ohio | Oregon | Pennsylvania | Tennessee | Texas"
+  },
+  {
+    "company_name": "DocVA",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing, Inbound Services",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Florida"
+  },
+  {
+    "company_name": "Stericycle Communications",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling, Virtual Receptionist",
+    "qualified": "N",
+    "hq": "Bannockburn, IL, USA",
+    "onshore": ""
+  },
+  {
+    "company_name": "Administrative Resource Options, Inc.",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Inbound Services, Virtual Receptionist",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Illinois"
+  },
+  {
+    "company_name": "ServiceForge",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing, Inbound Services, Answering Services, Inbound Appointment Scheduling, Virtual Receptionist",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Oregon"
+  },
+  {
+    "company_name": "SS&C Technologies",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Connecticut"
+  },
+  {
+    "company_name": "Aspect",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Arizona"
+  },
+  {
+    "company_name": "ModSquad",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Inbound Services",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California"
+  },
+  {
+    "company_name": "Property Management Backoffice",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Inbound Services",
+    "qualified": "N",
+    "hq": "Wexford, PA, USA",
+    "onshore": ""
+  },
+  {
+    "company_name": "Motif, Inc.",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Inbound Services, Answering Services",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California"
+  },
+  {
+    "company_name": "Knoah Solutions",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Inbound Services, Answering Services",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Nevada"
+  },
+  {
+    "company_name": "STONESHED",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "Pakistan",
+    "onshore": ""
+  },
+  {
+    "company_name": "Outsource Global",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "Not in current Clutch directories",
+    "qualified": "N",
+    "hq": "Nigeria",
+    "onshore": ""
+  },
+  {
+    "company_name": "Advantage Solutions",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "New York"
+  },
+  {
+    "company_name": "Vcall Global",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Massachusetts"
+  },
+  {
+    "company_name": "Evins Personnel Consultants",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Texas"
+  },
+  {
+    "company_name": "Dallas Staffing Agency",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Texas"
+  },
+  {
+    "company_name": "Dialog Direct",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Automation Anywhere",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Inbound Services, Virtual Receptionist",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California"
+  },
+  {
+    "company_name": "a1qa",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "ADP",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Arizona | Florida | Georgia | Kentucky | Texas | Virginia"
+  },
+  {
+    "company_name": "Allegis Global Solutions",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Analytix Business Solutions",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Virtual Receptionist",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California | Massachusetts"
+  },
+  {
+    "company_name": "BairesDev",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Baker & McKenzie",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California | Florida | Illinois | New York | Texas | District of Columbia"
+  },
+  {
+    "company_name": "The Boston Consulting Group",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California | Colorado | Florida | Georgia | Illinois | Massachusetts | Michigan | Minnesota | New Jersey | New York | North Carolina | Pennsylvania | Tennessee | Texas | Washington"
+  },
+  {
+    "company_name": "Bosch Service Solutions",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "Germany",
+    "onshore": "Germany"
+  },
+  {
+    "company_name": "Capgemini",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "France",
+    "onshore": "France"
+  },
+  {
+    "company_name": "Centro CDX",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "Y",
+    "hq": "United States",
+    "onshore": "Virginia"
+  },
+  {
+    "company_name": "Cgi Philippines Inc",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "Y",
+    "hq": "Canada",
+    "onshore": "Canada"
+  },
+  {
+    "company_name": "CiENET",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "China",
+    "onshore": "China"
+  },
+  {
+    "company_name": "Cognizant",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Colliers",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "Canada",
+    "onshore": "Arizona | California | Connecticut | Florida | Massachusetts | New Jersey | New York | North Carolina | Pennsylvania | Rhode Island | District of Columbia"
+  },
+  {
+    "company_name": "Cushman Wakefield",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "DataArt",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Deloitte",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "DLA Piper",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "Austria, Czech Republic, Denmark, Finland, France, Ireland, Netherlands, Norway, Poland, Portugal, Romania, Spain, Sweden"
+  },
+  {
+    "company_name": "DXC Technology",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Eclaro",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Arizona | California | Georgia | Illinois | New York | North Carolina | Texas | Virginia"
+  },
+  {
+    "company_name": "ELEKS",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Estonia",
+    "onshore": "Estonia"
+  },
+  {
+    "company_name": "ELLUCIAN",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Exela Technologies",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "EY",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "Fidelity",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Georgia | Kentucky | Massachusetts | New Hampshire | New York | Ohio | Rhode Island"
+  },
+  {
+    "company_name": "Fingent",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Massachusetts | New York"
+  },
+  {
+    "company_name": "FIS Global",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "GlowTouch",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Florida | Kentucky | Texas"
+  },
+  {
+    "company_name": "Hi-Think",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Ibm Business Services",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California | Louisiana | Michigan | New York | Texas"
+  },
+  {
+    "company_name": "IBA Group",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Czech Republic",
+    "onshore": "Czech Republic"
+  },
+  {
+    "company_name": "Infopulse",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Ukraine",
+    "onshore": "Ukraine"
+  },
+  {
+    "company_name": "Infosys",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Intellias",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Ukraine",
+    "onshore": "Ukraine"
+  },
+  {
+    "company_name": "Iron Mountain",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "KellyOCG",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States, Australia"
+  },
+  {
+    "company_name": "KPMG",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "ManpowerGroup",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Mercer",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Newmark",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Alabama | Arizona | California | Florida | Georgia | Michigan | Nevada | New York | North Carolina | Ohio | Oklahoma | Oregon | Pennsylvania | Texas | Washington"
+  },
+  {
+    "company_name": "N Ix Poland",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Ukraine",
+    "onshore": "Ukraine"
+  },
+  {
+    "company_name": "NIX",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "NTT Data",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "Japan",
+    "onshore": "Japan"
+  },
+  {
+    "company_name": "Orion Innovation",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Paychex",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Arizona | Florida | Louisiana | Massachusetts | New York | North Carolina | Pennsylvania"
+  },
+  {
+    "company_name": "Pentalog",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "France",
+    "onshore": "France"
+  },
+  {
+    "company_name": "QX Global Group",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "Sagility",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "SEBPO",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "New Jersey"
+  },
+  {
+    "company_name": "Sigma Software",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Ukraine",
+    "onshore": "Ukraine"
+  },
+  {
+    "company_name": "SPS",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Switzerland",
+    "onshore": "Switzerland"
+  },
+  {
+    "company_name": "Sutherland Global",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "Y",
+    "hq": "United States",
+    "onshore": "Arizona | California | Illinois | New Jersey | New York | Oklahoma | Texas | Virginia"
+  },
+  {
+    "company_name": "Svitla Systems",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Tata Communications Transformation Services",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Tata Consultancy Services",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "The Hackett Group",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Trinetix",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "VEE Technologies",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Vention",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "WAVESTONE",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "France",
+    "onshore": "France"
+  },
+  {
+    "company_name": "West Monroe",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Wns Global Services Philippines Inc",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "Y",
+    "hq": "United States",
+    "onshore": "Florida | New York | Pennsylvania | South Carolina | Texas | Washington"
+  },
+  {
+    "company_name": "Willis Towers Watson",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "Xerox",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Department Of Trade And Industry Dti",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "Philippines",
+    "onshore": "Philippines"
+  },
+  {
+    "company_name": "Ufinet",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "Spain",
+    "onshore": "Spain"
+  },
+  {
+    "company_name": "Interval International",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Florida"
+  },
+  {
+    "company_name": "Hcca Health Connections",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Tennessee"
+  },
+  {
+    "company_name": "Collabera",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Syntel Infotech Inc",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Arizona | Michigan"
+  },
+  {
+    "company_name": "Emerson",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Macquarie Group",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "Australia",
+    "onshore": "Australia"
+  },
+  {
+    "company_name": "Hellorache",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Inbound Appointment Scheduling",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Arizona"
+  },
+  {
+    "company_name": "Um London",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Citigroup",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Arizona | California | Florida | Georgia | Illinois | Michigan | Missouri | New Mexico | New York | Ohio | Pennsylvania | Texas"
+  },
+  {
+    "company_name": "Niit Technologies Philippines Inc",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Weserv Systems International Inc",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Philippines",
+    "onshore": "Philippines"
+  },
+  {
+    "company_name": "Spi Global Inc",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Philippines",
+    "onshore": "Philippines"
+  },
+  {
+    "company_name": "Affinity Express",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Alexander Mann Solutions 2",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": ""
+  },
+  {
+    "company_name": "Pomeroy",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Ingram Micro Philippines Bpo Llc",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "3s",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Acca Think Ahead",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United kingdom"
+  },
+  {
+    "company_name": "Digi Texx Vietnam",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Vietnam",
+    "onshore": "Vietnam"
+  },
+  {
+    "company_name": "Ags Health",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United states"
+  },
+  {
+    "company_name": "Aquity Solutions India",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Psg Global Solutions Inc",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California"
+  },
+  {
+    "company_name": "Baker Tilly",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United states"
+  },
+  {
+    "company_name": "Cw Services",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Massachusetts"
+  },
+  {
+    "company_name": "Celestica",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Canada",
+    "onshore": "Canada"
+  },
+  {
+    "company_name": "Cloudfactory",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "Crescent",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Cyfuture",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Delegate Co",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Texas"
+  },
+  {
+    "company_name": "Desicrew Solutions Pvt Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Eben Telecom Pvt Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "Y",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Enoah Isolution India Pvt Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Euvic It",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Poland",
+    "onshore": "Poland"
+  },
+  {
+    "company_name": "Hr Urs",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Imedx Information Services Pvt Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Infinx Services Pvt Ltd Tandon",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California | Texas"
+  },
+  {
+    "company_name": "Information Services Group",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Intarvo Technologies Pvt Limited",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Kinseth Hospitality Companies",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Legal General",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United kingdom"
+  },
+  {
+    "company_name": "Knowledge Bpo",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Surveys & Market Research Calls",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United states"
+  },
+  {
+    "company_name": "Metrixlab Macromill Group Co",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Surveys & Market Research Calls",
+    "qualified": "N",
+    "hq": "Netherlands",
+    "onshore": "Netherlands"
+  },
+  {
+    "company_name": "Moldtek Technologies Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Pega",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Puresoftware Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Rma Group",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Surveys & Market Research Calls",
+    "qualified": "N",
+    "hq": "Singapore",
+    "onshore": "Singapore"
+  },
+  {
+    "company_name": "Servicesnow Group",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California | Colorado | Florida | Georgia | Illinois | Massachusetts | Minnesota | New York | Tennessee | Texas | Virginia | Washington | Wisconsin | District of Columbia"
+  },
+  {
+    "company_name": "Siglo Bpo Peru",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "Peru",
+    "onshore": "Peru"
+  },
+  {
+    "company_name": "Silverskills Pvt Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Snelling Staffing Mountainside Nj",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United states"
+  },
+  {
+    "company_name": "Softtek",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Mexico",
+    "onshore": "Mexico"
+  },
+  {
+    "company_name": "Staff Boom",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California"
+  },
+  {
+    "company_name": "Syntax Secretarial Solutions",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Canada",
+    "onshore": "Canada"
+  },
+  {
+    "company_name": "Verity Global Solutions Pvt Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Texas"
+  },
+  {
+    "company_name": "Quatrro Global Services Pvt Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Vipdesk Connect",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing, Inbound Services",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Virginia"
+  },
+  {
+    "company_name": "Volt",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Hexaware Technologies",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Htc Global Technology Services Limited Corporation",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Michigan | Texas"
+  },
+  {
+    "company_name": "Chetu Inc",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Arizona | Florida | Georgia | Illinois | Maryland | Texas"
+  },
+  {
+    "company_name": "Ibridgellc",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "Oregon"
+  },
+  {
+    "company_name": "Nleague Technologies Pvt Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Servion Global Solutions",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "New Jersey"
+  },
+  {
+    "company_name": "Osource Global Pvt Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Rcg Global Services Inc",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Acl It Corp",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Carecloud",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California | Connecticut | Florida | Illinois | Kansas | New Jersey | New York | North Carolina | Ohio | Pennsylvania | Tennessee | Washington"
+  },
+  {
+    "company_name": "Ascent Business Solutions",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "New Jersey | Tennessee"
+  },
+  {
+    "company_name": "Icon Consultant",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Solugenius 2",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Pointwest Technologies Corporation",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Philippines",
+    "onshore": "Philippines"
+  },
+  {
+    "company_name": "Mccs Services",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Virtusa Polaris",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Ids Infotech Ltd",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Tatvasoft",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": ""
+  },
+  {
+    "company_name": "Nashtech",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "Taskforge",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Advent Global Solutions Inc",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Itransition",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Damco Solutions Inc",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Innova Talent Solutions",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Timspark",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "Total It Global",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "Sherweb",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "Canada",
+    "onshore": "Canada"
+  },
+  {
+    "company_name": "Expanding Teams",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "Y",
+    "hq": "United States",
+    "onshore": "Nevada"
+  },
+  {
+    "company_name": "Bacancy",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": ""
+  },
+  {
+    "company_name": "Optum",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Zimworx",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Trango Tech",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "California | Colorado | Illinois | New York | Texas | Utah | Washington | District of Columbia"
+  },
+  {
+    "company_name": "Iimi Intelligent Image Management Inc",
+    "size": "Enterprise (5,000+ employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Cogneesol",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Qasource",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Kellton",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Monday Com",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "Israel",
+    "onshore": "Israel"
+  },
+  {
+    "company_name": "Anolytics",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Hitech Digital Solutions",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": "India"
+  },
+  {
+    "company_name": "Vti",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Vietnam",
+    "onshore": "Vietnam"
+  },
+  {
+    "company_name": "Echo Global",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Call Center, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": ""
+  },
+  {
+    "company_name": "Medcare Mso",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Suntec India",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "India",
+    "onshore": ""
+  },
+  {
+    "company_name": "Techmatter",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United States",
+    "onshore": "United States"
+  },
+  {
+    "company_name": "Symbos",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO, Customer Service Outsourcing",
+    "qualified": "N",
+    "hq": "Australia",
+    "onshore": "Australia"
+  },
+  {
+    "company_name": "Exponential E",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "United Kingdom",
+    "onshore": "United Kingdom"
+  },
+  {
+    "company_name": "Innowise",
+    "size": "Mid Market (1,000–5,000 employees)",
+    "current_service_lines": "BPO",
+    "qualified": "N",
+    "hq": "Poland",
+    "onshore": "Poland"
+  }
+]

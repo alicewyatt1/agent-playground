@@ -1,0 +1,216 @@
+{
+  "enrichment_date": "2026-02-04",
+  "source_file": "/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Master List 2026 (2).csv",
+  "criteria": "Qualified accounts with service lines (Sales Outsourcing, Outbound Services, B2C Telemarketing, Collections) AND US presence",
+  "total_accounts": 131,
+  "accounts_researched": 25,
+  "size_schema": {
+    "SME": "1-1,000 employees",
+    "Mid Market": "1,000-5,000 employees",
+    "Enterprise": "5,000-50,000 employees",
+    "Super Enterprise": "50,000+ employees"
+  },
+  "results": [
+    {
+      "company_name": "A.R.C.E. Contact Center",
+      "website": "https://www.arcecallcenter.com",
+      "current_size": "Mid Market (1,000–5,000 employees)",
+      "researched_employee_count": "400-700",
+      "new_size": "SME (1-1,000 employees)",
+      "source": "work.ua, robota.ua - Ukrainian job sites",
+      "changed": true
+    },
+    {
+      "company_name": "Abacus",
+      "website": "https://www.abacustech.com",
+      "current_size": "Mid Market (1,000–5,000 employees)",
+      "researched_employee_count": "5,200+",
+      "new_size": "Enterprise (5,000-50,000 employees)",
+      "source": "abacus-bpo.com company website",
+      "notes": "Abacus BPO (Pakistan) - not Abacus Technology (US IT firm)",
+      "changed": true
+    },
+    {
+      "company_name": "Access Healthcare",
+      "website": "https://www.accesshealthcare.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "25,000-27,000+",
+      "new_size": "Enterprise (5,000-50,000 employees)",
+      "source": "Company press releases (2022), RocketReach",
+      "changed": false
+    },
+    {
+      "company_name": "Account Management Systems",
+      "website": "https://amscollects.com",
+      "current_size": "Mid Market (1,000–5,000 employees)",
+      "researched_employee_count": "<25",
+      "new_size": "SME (1-1,000 employees)",
+      "source": "ZoomInfo",
+      "changed": true
+    },
+    {
+      "company_name": "Advensus",
+      "website": "https://advensus.com",
+      "current_size": "Mid Market (1,000–5,000 employees)",
+      "researched_employee_count": "1,500-2,000+",
+      "new_size": "Mid Market (1,000-5,000 employees)",
+      "source": "Company website, ContactOut",
+      "notes": "6,000+ workstations but 1,500+ direct employees",
+      "changed": false
+    },
+    {
+      "company_name": "Affinity Global",
+      "website": "https://www.affinityglobal.com",
+      "current_size": "Mid Market (1,000–5,000 employees)",
+      "researched_employee_count": "361-1,000",
+      "new_size": "SME (1-1,000 employees)",
+      "source": "ZoomInfo (361 employees)",
+      "notes": "The Org says 1,001-5,000 but ZoomInfo more specific at 361",
+      "changed": true
+    },
+    {
+      "company_name": "Afni Philippines Inc",
+      "website": "https://www.afni.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "6,000-10,000",
+      "new_size": "Enterprise (5,000-50,000 employees)",
+      "source": "ZoomInfo, Outsource Accelerator",
+      "changed": false
+    },
+    {
+      "company_name": "AllianceOne",
+      "website": "https://www.allianceone.com",
+      "current_size": "Mid Market (1,000–5,000 employees)",
+      "researched_employee_count": "751-1,000",
+      "new_size": "SME (1-1,000 employees)",
+      "source": "HigherGov federal registration",
+      "changed": true
+    },
+    {
+      "company_name": "Atento",
+      "website": "https://atento.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "80,000+",
+      "new_size": "Super Enterprise (50,000+ employees)",
+      "source": "Company website, Outsource Accelerator",
+      "changed": true
+    },
+    {
+      "company_name": "Conduent",
+      "website": "http://www.conduent.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "54,000-56,000",
+      "new_size": "Super Enterprise (50,000+ employees)",
+      "source": "Wikipedia, StockAnalysis, Company press releases",
+      "changed": true
+    },
+    {
+      "company_name": "Convergys",
+      "website": "https://convergys.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "N/A - Acquired",
+      "new_size": "N/A",
+      "source": "Wikipedia - Acquired by Synnex/Concentrix in 2018",
+      "notes": "Company no longer exists as standalone entity",
+      "changed": false,
+      "flag": "ACQUIRED"
+    },
+    {
+      "company_name": "EXL Service",
+      "website": "https://www.exlservice.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "59,500-63,000",
+      "new_size": "Super Enterprise (50,000+ employees)",
+      "source": "SEC filings, StockAnalysis, Company press releases",
+      "changed": true
+    },
+    {
+      "company_name": "iQor",
+      "website": "https://www.iqor.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "40,000-47,000",
+      "new_size": "Enterprise (5,000-50,000 employees)",
+      "source": "Company website, RocketReach",
+      "changed": false
+    },
+    {
+      "company_name": "Omega Healthcare",
+      "website": "https://www.omegahms.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "35,000",
+      "new_size": "Enterprise (5,000-50,000 employees)",
+      "source": "Company website",
+      "notes": "Different from Omega Healthcare Investors (REIT with 60 employees)",
+      "changed": false
+    },
+    {
+      "company_name": "Startek",
+      "website": "https://startek.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "17,000-35,000",
+      "new_size": "Enterprise (5,000-50,000 employees)",
+      "source": "ZoomInfo, Outsource Accelerator",
+      "changed": false
+    },
+    {
+      "company_name": "TaskUs",
+      "website": "https://www.taskus.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "47,000-59,000",
+      "new_size": "Super Enterprise (50,000+ employees)",
+      "source": "Wikipedia, SEC filings, Company announcements",
+      "changed": true
+    },
+    {
+      "company_name": "TDCX",
+      "website": "www.tdcx.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "17,800-20,000+",
+      "new_size": "Enterprise (5,000-50,000 employees)",
+      "source": "Company announcements, Outsource Accelerator",
+      "changed": false
+    },
+    {
+      "company_name": "Teleperformance",
+      "website": "https://www.tp.com",
+      "current_size": "Mid Market (1,000–5,000 employees)",
+      "researched_employee_count": "360,000-500,000",
+      "new_size": "Super Enterprise (50,000+ employees)",
+      "source": "Wikipedia, Fortune, Company reports",
+      "notes": "Original classification was SEVERELY incorrect - this is one of largest BPOs globally",
+      "changed": true
+    },
+    {
+      "company_name": "TELUS International",
+      "website": "https://www.telusinternational.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "78,879",
+      "new_size": "Super Enterprise (50,000+ employees)",
+      "source": "StockAnalysis, SEC filings",
+      "changed": true
+    },
+    {
+      "company_name": "Webhelp",
+      "website": "https://webhelp.com",
+      "current_size": "Enterprise (5,000+ employees)",
+      "researched_employee_count": "N/A - Merged",
+      "new_size": "N/A",
+      "source": "Wikipedia - Merged with Concentrix in 2023",
+      "notes": "Now part of Concentrix (~125,000 combined employees)",
+      "changed": false,
+      "flag": "MERGED"
+    }
+  ],
+  "summary": {
+    "total_researched": 20,
+    "changed_category": 11,
+    "unchanged_category": 7,
+    "acquired_or_merged": 2,
+    "change_details": {
+      "mid_market_to_sme": 5,
+      "mid_market_to_enterprise": 1,
+      "enterprise_to_super_enterprise": 5,
+      "mid_market_to_super_enterprise": 1
+    }
+  }
+}
