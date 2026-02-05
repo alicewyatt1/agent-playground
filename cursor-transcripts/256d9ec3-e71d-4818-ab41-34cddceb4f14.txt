@@ -387,3 +387,146 @@ grep -c "fc-\[REDACTED\]" *.txt
   description: Verify redaction worked
 
 [Tool result] Shell
+
+assistant:
+[Thinking] Good, the keys are now redacted. Now I need to amend the commit. According to my rules:
+- I can use --amend when the commit was created by me in this conversation (yes)
+- The commit has NOT been pushed to remote (yes, push was rejected)
+- I need to verify with git log -1 --format='%an %ae' and git status shows "Your branch is ahead"
+
+Let me do this.
+API keys redacted. Now let me amend the commit with the redacted versions:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && \
+git add cursor-transcripts/ && \
+git commit --amend --no-edit && \
+git push
+  description: Amend commit with redacted keys and push
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Successfully pushed. The transcripts are now in git. I should note that future transcripts might also contain API keys, so the user may want to be aware of this for future commits.
+Done. Committed and pushed successfully.
+
+**Note:** GitHub blocked the first push because the transcripts contained your Perplexity and Firecrawl API keys (from when they were set up in previous conversations). I redacted them to `pplx-[REDACTED]` and `fc-[REDACTED]`.
+
+Going forward, you may want to be mindful that transcripts can capture sensitive info from tool calls. You could add a pre-commit hook to auto-redact patterns like API keys if this becomes a concern.
+
+user:
+<user_query>
+Okay, actually, revert that and use a different mechanism. I actually like the pre-commit hook because then we can actually add some kind of reduction policy to it. So basically just reverse what you just did with the symlinks, and then let's set up this pre-commit hook. 
+</user_query>
+
+assistant:
+[Thinking] The user wants to:
+1. Revert the symlink setup (move files back to ~/.cursor/projects/... and remove the symlink)
+2. Set up a pre-commit hook that copies transcripts and redacts secrets
+
+Let me do this step by step.
+Got it. Let me revert the symlink setup and create a pre-commit hook with redaction instead.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && \
+# Remove the symlink
+rm ~/.cursor/projects/Users-alicewyatt-repos-agent-playground/agent-transcripts && \
+# Recreate the original directory
+mkdir ~/.cursor/projects/Users-alicewyatt-repos-agent-playground/agent-transcripts && \
+# Move files back
+mv cursor-transcripts/*.txt ~/.cursor/projects/Users-alicewyatt-repos-agent-playground/agent-transcripts/ && \
+# Remove the now-empty directory from repo
+rmdir cursor-transcripts && \
+# Verify
+ls -la ~/.cursor/projects/Users-alicewyatt-repos-agent-playground/
+  description: Revert symlink setup
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Good, the files are back in the original location. Now I need to:
+1. Create the cursor-transcripts directory in the repo (for the copies)
+2. Create a pre-commit hook that copies and redacts
+
+Let me also remove the files from git staging since they're no longer in the repo.
+Now let me set up the pre-commit hook with redaction:
+[Tool call] Shell
+  command: mkdir -p /Users/alicewyatt/repos/agent-playground/cursor-transcripts
+  description: Create transcripts directory
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/.git/hooks/pre-commit
+  contents: #!/bin/bash
+# Pre-commit hook: Sync and redact Cursor conversation transcripts
+
+CURSOR_PROJECT_DIR="$HOME/.cursor/projects/Users-alicewyatt-repos-agent-playground"
+REPO_TRANSCRIPTS_DIR="$(git rev-parse --show-toplevel)/cursor-transcripts"
+
+# Ensure target directory exists
+mkdir -p "$REPO_TRANSCRIPTS_DIR"
+
+# Copy transcripts if source exists
+if [ -d "$CURSOR_PROJECT_DIR/agent-transcripts" ]; then
+    echo "Syncing Cursor transcripts..."
+    
+    # Copy all transcript files
+    cp "$CURSOR_PROJECT_DIR/agent-transcripts/"*.txt "$REPO_TRANSCRIPTS_DIR/" 2>/dev/null
+    
+    # Redact sensitive patterns
+    if [ -n "$(ls -A "$REPO_TRANSCRIPTS_DIR"/*.txt 2>/dev/null)" ]; then
+        echo "Redacting secrets..."
+        
+        # Redact Perplexity API keys (pplx-...)
+        sed -i '' 's/pplx-[A-Za-z0-9]\{40,\}/pplx-[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Redact Firecrawl API keys (fc-...)
+        sed -i '' 's/fc-[a-f0-9]\{32\}/fc-[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Redact OpenAI API keys (sk-...)
+        sed -i '' 's/sk-[A-Za-z0-9]\{40,\}/sk-[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Redact Anthropic API keys (sk-ant-...)
+        sed -i '' 's/sk-ant-[A-Za-z0-9_-]\{40,\}/sk-ant-[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Redact Google API keys
+        sed -i '' 's/AIza[A-Za-z0-9_-]\{35\}/AIza[REDACTED]/g' "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        # Add more redaction patterns here as needed
+        
+        # Stage the transcripts
+        git add "$REPO_TRANSCRIPTS_DIR"/*.txt
+        
+        echo "Transcripts synced and redacted."
+    fi
+fi
+
+exit 0
+
+
+[Tool result] Shell
+
+[Tool result] Write
+
+assistant:
+[Thinking] Now I need to make the hook executable and test it. Also, I should add a .gitkeep to the cursor-transcripts directory so it's tracked, or we can just let the hook create it.
+[Tool call] Shell
+  command: chmod +x /Users/alicewyatt/repos/agent-playground/.git/hooks/pre-commit && \
+ls -la /Users/alicewyatt/repos/agent-playground/.git/hooks/pre-commit
+  description: Make hook executable
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Good, the hook is executable. Now let me also add a .gitkeep file to the cursor-transcripts directory so the folder is tracked. Then let me update the git state - we need to remove the old cursor-transcripts from git since we removed it, and then make a new commit that:
+1. Removes the old files
+2. Has the hook run and add the new (redacted) copies
+
+Wait, actually git hooks are in .git/hooks which isn't tracked by git. The user might want the hook to be version controlled. Let me ask or provide a solution for this.
+
+Actually, let me just proceed and mention that the hook itself isn't version controlled (since it's in .git/). I can offer to create a script in the repo that can be symlinked or copied to .git/hooks/.
+Now let me update the git state and test the hook:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && \
+# Add a .gitkeep so the directory is tracked
+touch cursor-transcripts/.gitkeep && \
+git status
+  description: Check git status after revert
+
+[Tool result] Shell
