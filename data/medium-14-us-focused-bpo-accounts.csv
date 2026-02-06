@@ -1,0 +1,14 @@
+#,Company,Website URL,HQ,HQ US state,Size,delivery_model,onshore_delivery_footprint,nearshore_delivery_footprint,offshore_delivery_footprint,telemarketing and/or collections
+1,Contact Point 360,https://contactpoint360.com,"Canada (Toronto, Ontario)",,Enterprise,"onshore, nearshore, offshore","US (McAllen, TX); Canada (Toronto, Montreal)","Mexico (Monterrey); Colombia (Bogotá, Barranquilla); Jamaica (Montego Bay); El Salvador","Philippines (Cebu); India (Bengaluru, Kerala); Greece (Athens); Egypt (Cairo); South Africa (Durban)",Yes (collections/AR; sales/retention)
+2,Eastwest BPO Inc.,https://www.eastwestbpo.com,USA,"Virginia; New Jersey",SME,"onshore, offshore","US (Virginia, Atlantic City NJ)",,"Philippines (Manila, Pampanga)",Yes (telesales, retention, lead gen)
+3,"Global Integrated Contact Facilities Inc. (GICF)",https://www.gicf.ph,"Philippines (Pasig City, Metro Manila)",,MM,offshore,,,Philippines (Ortigas Center),Unclear
+4,Infinit Outsourcing Inc.,https://www.infinit-o.com,Philippines (Makati),,MM,offshore,,,"Philippines (Makati, Legazpi)",Possible (contact center, back office)
+5,Nearsol Philippines Inc.,https://nearsol.com,"USA (Coral Gables, FL)",Florida,SME,"nearshore, offshore",,"Guatemala; Colombia; Honduras; Nicaragua; Jamaica; El Salvador",Philippines (Metro Manila),Possible (CX, sales, retention)
+6,"OAMPI Inc. (Open Access BPO)",https://www.openaccessbpo.com,"USA (Las Vegas, NV)",Nevada,MM,"onshore, offshore","US (Las Vegas, NV)",,"Philippines (Makati, Davao); Taiwan (Taipei)",Yes (outbound sales, multichannel)
+7,Outsourced Quality Assured Services Inc.,https://outsourced.ph,"Philippines (Quezon City – Eastwood City)",,MM,offshore,,,Philippines (Manila-area),Unclear
+8,Penbrothers Intl,https://penbrothers.com,Philippines (Makati),,MM,offshore,,,Philippines only,No (staffing/remote teams)
+9,Pilipinas Teleserv Inc.,https://www.teleserv.ph,Philippines (Manila),,MM,offshore,,,Philippines (3 sites Metro Manila),Yes (teleservices, inbound/outbound)
+10,Sourcefit Philippines Inc.,https://sourcefit.com,"Philippines (Quezon City – Eastwood)",,MM,"nearshore, offshore",,Dominican Republic,"Philippines (Eastwood, Bridgetowne, Pampanga, Cebu); South Africa; Madagascar; Armenia",Possible (CX, back office)
+11,Global Strategic,https://www.globalstrategic.com,"USA (Burlington, NC)",North Carolina,SME,"nearshore, offshore",,Panama,"Philippines (Mandaluyong, Clark, Bacolod, Victorias, Cebu)",Yes (collections/AR; VA services)
+12,Intelogix,https://intelogix.com,"USA (Tampa, FL)",Florida,Enterprise,"onshore, nearshore, offshore",US (multiple),(likely),(global delivery),Yes (collections, ARM, recovery)
+13,ISSI Corp,https://www.issicorp.com,"Philippines (Bonifacio Global City, Taguig)",,MM,offshore,,,Philippines only,Possible (insurance, claims, customer service)
