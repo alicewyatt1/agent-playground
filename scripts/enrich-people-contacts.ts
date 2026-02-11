@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const INPUT_PATH = path.resolve(
-  '/Users/alicewyatt/Downloads/Find-people-Table-Default-view-export-1770826419870.csv'
+  '/Users/alicewyatt/Downloads/Find-people-Table-Default-view-export-1770827257407.csv'
 )
 const OUTPUT_PATH = path.resolve(__dirname, '../data/people-contacts-enriched.csv')
 

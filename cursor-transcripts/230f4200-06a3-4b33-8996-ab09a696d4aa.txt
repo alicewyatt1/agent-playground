@@ -867,3 +867,68 @@ assistant:
   working_directory: /Users/alicewyatt/repos/agent-playground
 
 [Tool result] Shell
+
+assistant:
+All three are now resolved with zero warnings. Let me commit and push.
+[Tool call] Shell
+  command: git add -A && git commit -m "$(cat <<'EOF'
+Run: enrich-people-contacts.ts
+
+Added 3 user-provided full names (Rick Capezzuto, Brittany Messina,
+Shadia Marini) and derived their work emails. All 188 contacts now
+have 7 name corrections and 19 email fills with no remaining gaps.
+EOF
+)" && git push
+  description: Commit and push updated enrichment
+  working_directory: /Users/alicewyatt/repos/agent-playground
+
+[Tool result] Shell
+
+assistant:
+Done. Here's what was updated for the three contacts:
+
+| Name | Company | Email Derived |
+|---|---|---|
+| Rick C. → **Rick Capezzuto** | Harte Hanks | `rick.capezzuto@hartehanks.com` |
+| Brittany M → **Brittany Messina** | Unity Communications | `brittany@unity-connect.com` |
+| Shadia M. → **Shadia Marini** | Buwelo | `shadiamarini@buwelo.com` |
+
+All 188 contacts now have names and emails filled -- **7 names corrected** and **19 emails derived** total, with no remaining gaps. The enriched file is at `data/people-contacts-enriched.csv`.
+
+user:
+<user_query>
+ok amazing. now i'm going to give you a new CSV which contains the same people as before just with a bit more info on the people. can you apply the updates that you have already made to this new CSV which will be our new central source of truth. Add all the new email addresses from the start of this convo and update the names where appropriate@/Users/alicewyatt/Downloads/Find-people-Table-Default-view-export-1770827257407.csv 
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Find-people-Table-Default-view-export-1770827257407.csv
+  limit: 5
+
+[Tool result] Read
+
+assistant:
+[Thinking] Good, the new CSV has two additional columns: "Company Tenure" and "Company Tenure time At Company Human". Same 188 contacts. I need to apply the same enrichments (7 name corrections, 19 email fills) to this new CSV.
+
+Let me update the script to point to the new input file and output it as the new central source of truth. Let me just update the INPUT_PATH and OUTPUT_PATH in the script.
+Same 188 contacts with two new columns (`Company Tenure`, `Company Tenure time At Company Human`). Let me update the script to use this new file as input and write it as the new source of truth.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/enrich-people-contacts.ts
+  old_string: const INPUT_PATH = path.resolve(
+  '/Users/alicewyatt/Downloads/Find-people-Table-Default-view-export-1770826419870.csv'
+)
+const OUTPUT_PATH = path.resolve(__dirname, '../data/people-contacts-enriched.csv')
+  new_string: const INPUT_PATH = path.resolve(
+  '/Users/alicewyatt/Downloads/Find-people-Table-Default-view-export-1770827257407.csv'
+)
+const OUTPUT_PATH = path.resolve(__dirname, '../data/people-contacts-enriched.csv')
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: pnpm start scripts/enrich-people-contacts.ts
+  description: Run enrichment on new CSV with tenure cols
+  working_directory: /Users/alicewyatt/repos/agent-playground
+
+[Tool result] Shell
