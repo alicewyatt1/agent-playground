@@ -768,3 +768,47 @@ assistant:
   block_until_ms: 15000
 
 [Tool result] Shell
+
+assistant:
+Now let me commit and push as per the workspace rules.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "$(cat <<'EOF'
+Run: add-linkedin-connections.ts
+
+Added LinkedIn 1st-degree connection data to priority list CSV. Found current connections at 4 accounts (CBE Companies, Contact Point 360, Open Access BPO, Sourcefit) and former employee connections at 2 accounts (Harte Hanks, Quantanite).
+EOF
+)" && git push
+  description: Commit and push the updated CSV
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"5","content":"Compile results and output updated CSV with 1st-degree connection info","status":"completed"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Done. I searched all 43 accounts on LinkedIn filtered to 1st-degree connections only. Here's the summary:
+
+### Accounts with CURRENT 1st-degree connections (4):
+
+| Company | Connection | Role |
+|---|---|---|
+| **CBE Companies** | Albert Smothers, MBA, Ph.D. | Chief People Officer |
+| **Contact Point 360** | Ramesh Nair | Sr. Manager, Strategic Alliances & Growth |
+| **Open Access BPO** | Bobby Jusayan | Head of Talent Acquisition & Development |
+| **Sourcefit Philippines Inc.** | Harris Ochoa | Director of Recruiting |
+
+### Accounts with FORMER employee 1st-degree connections (2):
+
+| Company | Connection(s) | Former Role |
+|---|---|---|
+| **Harte Hanks** | DJ Winter, Ben Manashe, Robin Adair | Former VP BD; Former Campaign Team Manager; Former Sales Executive |
+| **Quantanite** | Bazil Bibikoff-Crowley | Former Senior Account Manager |
+
+### No 1st-degree connections: 37 remaining accounts
+
+The updated CSV has been saved to `data/priority-list-with-connections.csv` with three new columns: `LinkedIn 1st Degree Connection?`, `Connection Name(s)`, and `Connection Role(s)`.
