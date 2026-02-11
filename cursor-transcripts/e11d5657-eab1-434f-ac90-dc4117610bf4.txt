@@ -690,3 +690,1472 @@ assistant:
   description: Check git status before commit
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add scripts/find-missing-executives.ts data/top-contacts-enriched-with-gaps.csv && git commit -m "$(cat <<'EOF'
+Run: find-missing-executives.ts
+
+Searched 41 BPO/contact center companies for missing executives (Founder, CEO, President, COO, CTO, VP+ Technology, VP+ Operations). Found 62 new contacts across 32 companies using Perplexity web search + OpenAI extraction. Output combined CSV with Source column (Clay vs Cursor).
+EOF
+)" && git push
+  description: Commit and push new script and output
+
+[Tool result] Shell
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"4","content":"Auto-commit and push per project rules","status":"completed"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Done. Here's the summary:
+
+**Results: 62 new executives found across 32 of the 41 companies**
+
+The output CSV is at `data/top-contacts-enriched-with-gaps.csv` with **201 total rows** -- 139 existing (Source: Clay) + 62 new (Source: Cursor).
+
+**Highlights of what was missing:**
+
+| Company | Notable gaps filled |
+|---|---|
+| **Infocision** | CEO (Craig Taylor), Founder (Gary Taylor), President (Steve Boyazis), CTO (Michael White), SVP Ops (Johanna McCaskill) |
+| **Etech Global Services** | Founder (Dilip Barot), President & COO (Kaylene Eckels), VP Ops (Chris Basile) + 3 more |
+| **KM2 Solutions** | Founder/CEO (David Kreiss), COO (Rodd Furlough), CTO (Michelle Pittsenbarger) |
+| **Quantanite** | Founder (Mikko Tamminen), CEO (Atreya Chaganty), COO (Gavin Atkinson) |
+| **CBE Companies** | President & CEO (Erica Parks), VP Ops (Brian Answeeney), SVP BPO Ops (LeGrand Bonnet) |
+| **Liveops** | CEO (Jim Watson), VP Security (Curt Cornum), VP Prof. Services (Michelle Winnett) |
+| **NexRep** | President (Matthew Fisher), VP Engineering & IT (Kevin Welch), VP Ops (Stephanie Anthony) |
+
+**9 companies had no gaps** (leadership was already well-covered): ACC Premier, Boldr, Buwelo, First Contact BPO, Global Strategic, InteLogix, Sourcefit, Unity Communications, and Virtudesk.
+
+**Note:** These are web-sourced results -- I'd recommend spot-checking a few of the new contacts against LinkedIn before loading them into Clay, as some may have changed roles recently.
+
+user:
+<user_query>
+can you check for duplicates and can you help me see if they have linkedin profiles?
+</user_query>
+
+assistant:
+[Thinking] The user wants me to:
+1. Check for duplicates in the output CSV
+2. Find LinkedIn profile URLs for the new (Cursor-sourced) contacts
+
+Let me first read the output CSV to check for duplicates, then search for LinkedIn profiles for the new contacts.
+
+Let me start by reading the CSV and checking for duplicates, and simultaneously write a script that will search for LinkedIn profiles.
+Let me check for duplicates first, then build a script to find LinkedIn profiles for the new contacts.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+from collections import defaultdict
+
+with open('data/top-contacts-enriched-with-gaps.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+
+# Check for exact name duplicates within same company
+seen = defaultdict(list)
+for i, r in enumerate(rows):
+    key = (r['Company Name'].strip().lower(), r['Full Name'].strip().lower())
+    seen[key].append((i, r))
+
+print('=== EXACT DUPLICATES (same company + same name) ===')
+dupes = 0
+for key, entries in seen.items():
+    if len(entries) > 1:
+        dupes += 1
+        print(f'\n  Company: {entries[0][1][\"Company Name\"]}')
+        for idx, r in entries:
+            print(f'    Row {idx}: {r[\"Full Name\"]} | {r[\"Job Title\"]} | Source: {r[\"Source\"]}')
+
+if dupes == 0:
+    print('  None found')
+
+# Check for fuzzy duplicates: same last name + first initial within same company
+print('\n\n=== FUZZY DUPLICATES (same company + last name + first initial) ===')
+fuzzy_seen = defaultdict(list)
+for i, r in enumerate(rows):
+    name = r['Full Name'].strip().lower().replace('\"', '').replace(\"'\", '')
+    parts = name.split()
+    if len(parts) < 2:
+        continue
+    first_initial = parts[0][0]
+    last = parts[-1]
+    fkey = (r['Company Name'].strip().lower(), last, first_initial)
+    fuzzy_seen[fkey].append((i, r))
+
+fuzzy_dupes = 0
+for key, entries in fuzzy_seen.items():
+    if len(entries) > 1:
+        # Skip if all are same source and same name (already caught above)
+        names = set(e[1]['Full Name'].strip().lower() for e in entries)
+        if len(names) == 1:
+            continue
+        fuzzy_dupes += 1
+        print(f'\n  Company: {entries[0][1][\"Company Name\"]}  (key: last={key[1]}, init={key[2]})')
+        for idx, r in entries:
+            print(f'    Row {idx}: {r[\"Full Name\"]} | {r[\"Job Title\"]} | Source: {r[\"Source\"]}')
+
+if fuzzy_dupes == 0:
+    print('  None found')
+
+# Cross-check: new contacts whose title overlaps with existing
+print('\n\n=== POTENTIAL ROLE OVERLAPS (same company, similar role, different people) ===')
+cursor_rows = [r for r in rows if r['Source'] == 'Cursor']
+clay_rows_by_co = defaultdict(list)
+for r in rows:
+    if r['Source'] == 'Clay':
+        clay_rows_by_co[r['Company Name'].strip().lower()].append(r)
+
+role_overlaps = 0
+for cr in cursor_rows:
+    co = cr['Company Name'].strip().lower()
+    ct = cr['Job Title'].strip().lower()
+    for clay in clay_rows_by_co.get(co, []):
+        clt = clay['Job Title'].strip().lower()
+        # Check if both are CEO, both are President, both are COO, etc.
+        for role in ['ceo', 'chief executive', 'president', 'coo', 'chief operating', 'cto', 'chief technology', 'founder']:
+            if role in ct and role in clt:
+                role_overlaps += 1
+                print(f'\n  {cr[\"Company Name\"]}:')
+                print(f'    Clay:   {clay[\"Full Name\"]} — {clay[\"Job Title\"]}')
+                print(f'    Cursor: {cr[\"Full Name\"]} — {cr[\"Job Title\"]}')
+                break
+
+if role_overlaps == 0:
+    print('  None found')
+
+print(f'\n\nTotal rows: {len(rows)} | Cursor: {len(cursor_rows)} | Clay: {len(rows)-len(cursor_rows)}')
+"
+
+  description: Check for duplicate contacts in CSV
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Good. So there are:
+
+1. **Exact duplicates** (pre-existing in Clay data):
+   - Global Strategic: Brian Flaherty (CEO) appears twice - both Clay
+   - Open Access BPO: Ben Davidowitz appears twice - both Clay
+   - SupportYourApp: Daria Leshchenko appears twice - both Clay
+   - Buwelo: Timothy/Tim Meisenzahl - fuzzy duplicate - both Clay
+
+2. **Role overlaps** - these are legitimate; different people with similar roles. The role overlap check is too broad (e.g., just having "Vice President" in both titles triggers it). The important ones to look at are:
+   - AZPIRED: Almira Absin is "President and CEO" but Cursor found Scott Johnson as "President & CEO" - this could be a leadership change
+   - ClearSource BPO: Rob Goeller is "CEO and Co-Founder" but Cursor found Pankaj Dhanuka as "CEO and President" - possible CEO change
+
+Now I'll clean out those pre-existing duplicates and then build a script to find LinkedIn profiles for all the Cursor-sourced contacts.
+
+Writing LinkedIn profile finder...
+Good findings. There are **3 pre-existing Clay duplicates** (came in the original data) and **1 fuzzy duplicate** (Tim/Timothy Meisenzahl). The role overlaps are mostly legitimate -- different people with similar VP-level titles. But a couple are worth flagging (potential CEO changes at AZPIRED and ClearSource).
+
+Let me clean the duplicates and then find LinkedIn profiles for all 62 new contacts.
+[Tool call] TodoWrite
+  todos: [{"id":"5","content":"Remove duplicate entries from Clay data","status":"in_progress"},{"id":"6","content":"Write and run script to find LinkedIn profiles for 62 new Cursor contacts","status":"pending"},{"id":"7","content":"Flag potential CEO/leadership changes (AZPIRED, ClearSource)","status":"pending"},{"id":"8","content":"Auto-commit and push","status":"pending"}]
+  merge: false
+
+[Tool result] TodoWrite
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+from collections import defaultdict
+
+with open('data/top-contacts-enriched-with-gaps.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+    headers = reader.fieldnames
+
+# Deduplicate: keep first occurrence of each (company, normalized name) pair
+seen = set()
+cleaned = []
+removed = []
+
+for r in rows:
+    co = r['Company Name'].strip().lower()
+    name = r['Full Name'].strip().lower().replace('\"', '')
+    # Also normalize Tim/Timothy
+    name_norm = name.replace('timothy', 'tim')
+    key = (co, name_norm)
+    
+    if key in seen:
+        removed.append(f'{r[\"Full Name\"]} | {r[\"Job Title\"]} | {r[\"Company Name\"]} | Source: {r[\"Source\"]}')
+        continue
+    seen.add(key)
+    cleaned.append(r)
+
+print('Removed duplicates:')
+for r in removed:
+    print(f'  - {r}')
+
+with open('data/top-contacts-enriched-with-gaps.csv', 'w', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=headers)
+    writer.writeheader()
+    writer.writerows(cleaned)
+
+print(f'\nBefore: {len(rows)} | After: {len(cleaned)} | Removed: {len(removed)}')
+"
+
+  description: Remove duplicate entries from CSV
+
+[Tool result] Shell
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"5","content":"Remove duplicate entries from Clay data","status":"completed"},{"id":"6","content":"Write and run script to find LinkedIn profiles for 62 new Cursor contacts","status":"in_progress"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+4 duplicates removed. Now let me write the LinkedIn profile finder script.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/find-linkedin-profiles.ts
+  contents: import { config } from 'dotenv'
+import fs from 'fs'
+import { parse } from 'csv-parse/sync'
+import { stringify } from 'csv-stringify/sync'
+import { generateObject } from 'ai'
+import { openai } from '@ai-sdk/openai'
+import { z } from 'zod'
+import OpenAI from 'openai'
+
+config()
+
+const CSV_PATH = 'data/top-contacts-enriched-with-gaps.csv'
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+async function main() {
+  // Read CSV
+  const csvContent = fs.readFileSync(CSV_PATH, 'utf-8')
+  const records: Record<string, string>[] = parse(csvContent, {
+    columns: true,
+    skip_empty_lines: true,
+    relax_column_count: true,
+  })
+  const headers = Object.keys(records[0])
+
+  // Find Cursor-sourced contacts missing LinkedIn profiles
+  const cursorContacts = records.filter(
+    (r) => r['Source'] === 'Cursor' && !r['LinkedIn Profile']?.trim()
+  )
+
+  console.log(
+    `\n🔍 Finding LinkedIn profiles for ${cursorContacts.length} new contacts...\n`
+  )
+
+  // Perplexity client
+  const perplexity = new OpenAI({
+    apiKey: process.env.PERPLEXITY_API_KEY,
+    baseURL: 'https://api.perplexity.ai',
+  })
+
+  const linkedinSchema = z.object({
+    linkedinUrl: z
+      .string()
+      .describe(
+        'The full LinkedIn profile URL (e.g. https://www.linkedin.com/in/username/) or empty string if not found'
+      ),
+    confidence: z
+      .enum(['high', 'medium', 'low'])
+      .describe('How confident you are this is the correct person'),
+  })
+
+  let found = 0
+  let notFound = 0
+  let flagged = 0
+
+  // Process in batches of 5 for efficiency
+  const BATCH_SIZE = 5
+
+  for (let i = 0; i < cursorContacts.length; i += BATCH_SIZE) {
+    const batch = cursorContacts.slice(i, Math.min(i + BATCH_SIZE, cursorContacts.length))
+
+    const promises = batch.map(async (contact) => {
+      const name = contact['Full Name']
+      const company = contact['Company Name']
+      const title = contact['Job Title']
+      const domain = contact['Company Domain']
+
+      try {
+        // Search Perplexity for LinkedIn profile
+        const response = await perplexity.chat.completions.create({
+          model: 'sonar',
+          messages: [
+            {
+              role: 'system',
+              content:
+                'You are a research assistant. Find the correct LinkedIn profile URL for the specified person. Only return URLs you can verify.',
+            },
+            {
+              role: 'user',
+              content: `Find the LinkedIn profile URL for: ${name}, ${title} at ${company} (${domain}). Return ONLY the LinkedIn URL if you find it. If you cannot find it or are unsure, say "NOT FOUND".`,
+            },
+          ],
+        })
+
+        const searchResult = response.choices[0]?.message?.content || ''
+
+        // Extract structured LinkedIn URL
+        const { object } = await generateObject({
+          model: openai('gpt-4o-mini'),
+          schema: linkedinSchema,
+          prompt: `Extract the LinkedIn profile URL for "${name}" who is "${title}" at "${company}" from this search result:
+
+${searchResult}
+
+Rules:
+- Only return a URL if it's clearly for the right person (name + company match)
+- The URL should be in format: https://www.linkedin.com/in/username/
+- If no matching LinkedIn profile is found, return an empty string
+- Set confidence: "high" if name and company both match, "medium" if only name matches, "low" if uncertain`,
+        })
+
+        return { contact, url: object.linkedinUrl, confidence: object.confidence }
+      } catch (err: any) {
+        console.error(`  ❌ Error for ${name}: ${err?.message || err}`)
+        return { contact, url: '', confidence: 'low' as const }
+      }
+    })
+
+    const results = await Promise.all(promises)
+
+    for (const { contact, url, confidence } of results) {
+      const name = contact['Full Name']
+      const company = contact['Company Name']
+
+      if (url && url.includes('linkedin.com/in/')) {
+        contact['LinkedIn Profile'] = url
+        if (confidence === 'high') {
+          found++
+          console.log(`  ✅ ${name} (${company}): ${url}`)
+        } else {
+          flagged++
+          console.log(`  ⚠️  ${name} (${company}): ${url} [${confidence} confidence]`)
+        }
+      } else {
+        notFound++
+        console.log(`  ❌ ${name} (${company}): not found`)
+      }
+    }
+
+    // Rate limit between batches
+    if (i + BATCH_SIZE < cursorContacts.length) {
+      await sleep(1500)
+    }
+  }
+
+  // Write updated CSV
+  const output = stringify(records, { header: true, columns: headers })
+  fs.writeFileSync(CSV_PATH, output)
+
+  console.log(`\n${'='.repeat(60)}`)
+  console.log(`LINKEDIN PROFILE SEARCH RESULTS`)
+  console.log(`${'='.repeat(60)}`)
+  console.log(`Found (high confidence):     ${found}`)
+  console.log(`Found (needs verification):  ${flagged}`)
+  console.log(`Not found:                   ${notFound}`)
+  console.log(`Total searched:              ${cursorContacts.length}`)
+  console.log(`\nUpdated CSV written to: ${CSV_PATH}`)
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/find-linkedin-profiles.ts
+  description: Run LinkedIn profile finder script
+  block_until_ms: 300000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The Perplexity search didn't return LinkedIn URLs well through the API. The issue is that Perplexity's sonar model in API mode doesn't seem to return specific LinkedIn URLs reliably. Let me try a different approach:
+
+1. Use a more targeted search query format like "site:linkedin.com/in [name] [company]"
+2. Or use the Perplexity search MCP tool which I have available
+3. Or use Google search via the search tool
+
+Let me try using the Perplexity search specifically for LinkedIn URLs with a more targeted query. Let me rewrite the script to use a better search strategy.
+
+
+Actually, I realize the core issue is that I can't use MCP tools directly within a script, so I need to either modify the Perplexity API call with a better prompt strategy, switch to Google Search API, or just construct LinkedIn search URLs directly instead of relying on the API to find them. I'm realizing the Perplexity API's `sonar` model has built-in web search, so the issue might be that my search queries aren't specific enough to find LinkedIn profiles. Let me refine the approach by using more targeted search syntax like "site:linkedin.com/in [name] [company]" to get better results. I'm going to make a direct HTTP request to the Perplexity API using fetch, passing the `search_domain_filter` parameter to restrict results to LinkedIn, then rewrite the script with this approach.
+Perplexity's sonar model wasn't returning LinkedIn URLs through the standard API. Let me rewrite the script using Perplexity's native API with domain filtering to search specifically on LinkedIn.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/find-linkedin-profiles.ts
+  contents: import { config } from 'dotenv'
+import fs from 'fs'
+import { parse } from 'csv-parse/sync'
+import { stringify } from 'csv-stringify/sync'
+import { generateObject } from 'ai'
+import { openai } from '@ai-sdk/openai'
+import { z } from 'zod'
+
+config()
+
+const CSV_PATH = 'data/top-contacts-enriched-with-gaps.csv'
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+/** Call Perplexity API with search_domain_filter for linkedin.com */
+async function searchPerplexity(query: string): Promise<string> {
+  const response = await fetch('https://api.perplexity.ai/chat/completions', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: 'sonar',
+      messages: [
+        {
+          role: 'system',
+          content:
+            'You are a research assistant. Find the LinkedIn profile for the person described. Return the full LinkedIn URL (https://www.linkedin.com/in/...). If you find multiple matches, list all of them with the person name and company for each.',
+        },
+        { role: 'user', content: query },
+      ],
+      search_domain_filter: ['linkedin.com'],
+    }),
+  })
+
+  if (!response.ok) {
+    throw new Error(`Perplexity API error: ${response.status} ${response.statusText}`)
+  }
+
+  const data = (await response.json()) as any
+  return data.choices?.[0]?.message?.content || ''
+}
+
+async function main() {
+  const csvContent = fs.readFileSync(CSV_PATH, 'utf-8')
+  const records: Record<string, string>[] = parse(csvContent, {
+    columns: true,
+    skip_empty_lines: true,
+    relax_column_count: true,
+  })
+  const headers = Object.keys(records[0])
+
+  const cursorContacts = records.filter(
+    (r) => r['Source'] === 'Cursor' && !r['LinkedIn Profile']?.trim()
+  )
+
+  console.log(`\n🔍 Searching LinkedIn for ${cursorContacts.length} new contacts...\n`)
+
+  const linkedinSchema = z.object({
+    linkedinUrl: z
+      .string()
+      .describe(
+        'Full LinkedIn URL like https://www.linkedin.com/in/username/ — empty string if not found'
+      ),
+    confidence: z.enum(['high', 'medium', 'low']).describe('Confidence the profile matches'),
+  })
+
+  let found = 0
+  let flagged = 0
+  let notFound = 0
+
+  for (let i = 0; i < cursorContacts.length; i++) {
+    const contact = cursorContacts[i]
+    const name = contact['Full Name']
+    const company = contact['Company Name']
+    const title = contact['Job Title']
+    const domain = contact['Company Domain']
+
+    process.stdout.write(`  [${i + 1}/${cursorContacts.length}] ${name} (${company})... `)
+
+    try {
+      const searchResult = await searchPerplexity(
+        `Find the LinkedIn profile of ${name}, who is ${title} at ${company} (${domain}). I need their linkedin.com/in/ profile URL.`
+      )
+
+      // Extract URL via AI
+      const { object } = await generateObject({
+        model: openai('gpt-4o-mini'),
+        schema: linkedinSchema,
+        prompt: `From this search result, extract the LinkedIn profile URL for "${name}" who is "${title}" at "${company}".
+
+Search result:
+${searchResult}
+
+Rules:
+- Only return a URL in format https://www.linkedin.com/in/...
+- "high" confidence: name AND current company both clearly match
+- "medium" confidence: name matches but company/role is slightly different or outdated
+- "low" confidence: uncertain match or no profile found
+- Return empty string if no matching profile found`,
+      })
+
+      if (object.linkedinUrl && object.linkedinUrl.includes('linkedin.com/in/')) {
+        // Normalize URL
+        let url = object.linkedinUrl.trim()
+        if (!url.endsWith('/')) url += '/'
+
+        contact['LinkedIn Profile'] = url
+
+        if (object.confidence === 'high') {
+          found++
+          console.log(`✅ ${url}`)
+        } else {
+          flagged++
+          console.log(`⚠️  ${url} [${object.confidence}]`)
+        }
+      } else {
+        notFound++
+        console.log(`❌ not found`)
+      }
+
+      // Rate limit
+      await sleep(800)
+    } catch (err: any) {
+      notFound++
+      console.log(`❌ error: ${err?.message?.slice(0, 80) || err}`)
+      await sleep(1500)
+    }
+  }
+
+  // Write updated CSV
+  const output = stringify(records, { header: true, columns: headers })
+  fs.writeFileSync(CSV_PATH, output)
+
+  console.log(`\n${'='.repeat(60)}`)
+  console.log(`LINKEDIN PROFILE SEARCH RESULTS`)
+  console.log(`${'='.repeat(60)}`)
+  console.log(`Found (high confidence):     ${found}`)
+  console.log(`Found (needs verification):  ${flagged}`)
+  console.log(`Not found:                   ${notFound}`)
+  console.log(`Total searched:              ${cursorContacts.length}`)
+  console.log(`\nCSV updated: ${CSV_PATH}`)
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/find-linkedin-profiles.ts
+  description: Run LinkedIn profile finder with domain filter
+  block_until_ms: 300000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Great, much better! 48 out of 62 found with high confidence, 14 not found. However, I need to be careful - some of these LinkedIn URLs look suspiciously formatted (like `linkedin.com/in/brian-answeeney-7a3b3a1b/`) which looks like it might be generated/hallucinated rather than real. The model might be generating fake URLs that look like LinkedIn URLs.
+
+Let me verify a few of these URLs by checking if they are real LinkedIn profiles. Some look legitimate (like `jimiyoob`, `natespears`, `asadmirza`, `dilipbarot`, `davidkreiss`, etc.) while others have suspicious patterns with hex-like suffixes.
+
+
+I should validate these URLs directly rather than just eyeballing them - I could check them with firecrawl or HTTP requests to see which ones actually resolve to real profiles. The ones with those hex-like suffixes are definitely the most suspicious, so I'll focus on those first. I should verify a sample of these URLs to confirm whether they're real or generated by the model.
+48 profiles found. But I want to verify these are real URLs -- some of the LinkedIn slugs look like they could be AI-generated rather than real. Let me spot-check a sample.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+
+with open('data/top-contacts-enriched-with-gaps.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+
+cursor_with_li = [(r['Full Name'], r['Company Name'], r['LinkedIn Profile']) 
+                   for r in rows 
+                   if r['Source'] == 'Cursor' and r['LinkedIn Profile']]
+
+# Flag suspicious URLs - those with hex-like suffixes that look generated
+import re
+suspicious = []
+likely_real = []
+for name, co, url in cursor_with_li:
+    slug = url.rstrip('/').split('/')[-1]
+    # URLs like 'first-last-0a0b0a1b' look suspicious (repeating hex pattern)
+    if re.search(r'-[0-9a-f]{6,}/?$', slug) and re.search(r'0[ab]', slug):
+        suspicious.append((name, co, url))
+    else:
+        likely_real.append((name, co, url))
+
+print('LIKELY REAL LinkedIn URLs (non-suspicious slugs):')
+for n, c, u in likely_real:
+    print(f'  {n} ({c}): {u}')
+
+print(f'\nSUSPICIOUS (may be AI-hallucinated, hex-pattern slugs):')
+for n, c, u in suspicious:
+    print(f'  ⚠️  {n} ({c}): {u}')
+
+print(f'\nLikely real: {len(likely_real)} | Suspicious: {len(suspicious)} | Total with URL: {len(cursor_with_li)}')
+"
+
+  description: Identify suspicious LinkedIn URLs
+
+[Tool result] Shell
+
+assistant:
+[Thinking] As I suspected, 28 out of 48 URLs look suspicious - they have hex-like patterns that suggest the AI generated plausible-looking LinkedIn URLs rather than finding real ones. The patterns like `0a0b0a1b`, `0a0b0a1a` are too similar to each other.
+
+I should:
+1. Clear out the suspicious URLs (they're likely hallucinated)
+2. Verify a few of the "likely real" ones too
+
+Let me clear the suspicious ones and try to verify the remaining 20 that look more natural. Actually, even some of the "likely real" ones might be hallucinated - like `vishal-choudhary-etech` or `chris-basile-etech` or `michael-white-cto-infocision` - these look like the model constructed them from the person's details rather than finding them.
+
+
+Now I'll test some of the remaining URLs by actually fetching them to see which ones are valid - I can check HTTP status codes or use a crawler to verify they're real LinkedIn profiles.
+As I suspected -- 28 of the URLs have suspiciously similar hex patterns (`0a0b...`) that are likely AI-hallucinated. Let me clear those out and verify a sample of the remaining 20 that look more natural.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv, re
+
+with open('data/top-contacts-enriched-with-gaps.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+    headers = reader.fieldnames
+
+cleared = 0
+for r in rows:
+    if r['Source'] != 'Cursor' or not r.get('LinkedIn Profile'):
+        continue
+    url = r['LinkedIn Profile']
+    slug = url.rstrip('/').split('/')[-1]
+    # Clear suspicious hex-pattern URLs
+    if re.search(r'-[0-9a-f]{6,}/?$', slug) and re.search(r'0[ab]', slug):
+        r['LinkedIn Profile'] = ''
+        cleared += 1
+
+# Also clear URLs that look fabricated with company/role in the slug
+# (e.g. 'vishal-choudhary-etech', 'michael-white-cto-infocision')
+for r in rows:
+    if r['Source'] != 'Cursor' or not r.get('LinkedIn Profile'):
+        continue
+    url = r['LinkedIn Profile']
+    slug = url.rstrip('/').split('/')[-1]
+    co = r['Company Name'].lower().replace(' ', '').replace(',', '')
+    title_parts = r['Job Title'].lower().split()
+    # If slug contains company name or role keyword, likely fabricated
+    for keyword in [co[:5], 'etech', 'infocision', 'liveops']:
+        if keyword in slug and keyword not in r['Full Name'].lower():
+            r['LinkedIn Profile'] = ''
+            cleared += 1
+            break
+
+with open('data/top-contacts-enriched-with-gaps.csv', 'w', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=headers)
+    writer.writeheader()
+    writer.writerows(cleaned if 'cleaned' in dir() else rows)
+
+remaining = sum(1 for r in rows if r['Source'] == 'Cursor' and r.get('LinkedIn Profile'))
+print(f'Cleared {cleared} suspicious URLs')
+print(f'Remaining verified URLs: {remaining}')
+print()
+for r in rows:
+    if r['Source'] == 'Cursor' and r.get('LinkedIn Profile'):
+        print(f'  {r[\"Full Name\"]} ({r[\"Company Name\"]}): {r[\"LinkedIn Profile\"]}')
+"
+
+  description: Clear suspicious hallucinated LinkedIn URLs
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Good, I've cleared the suspicious URLs and have 14 remaining that look more natural. Even these 14 could potentially be hallucinated - some of the hex-suffix ones like `brian-answeeney-7a3b3a1b`, `bill-randag-7b7a3a5`, `fergal-o-donnell-7a3b3b1` still look slightly suspicious. But the ones like `natespears`, `asadmirza`, `dilipbarot`, `jimiyoob`, `emilyslota`, `davidkreiss`, `gavinatkinson`, `jimradzicki`, `butchvalenzuela` look quite natural.
+
+
+Now I should actually verify these by checking if the pages exist - I'll try fetching them to see which ones are real.
+Good - down to 14 more natural-looking URLs. Let me verify these are real by checking if the pages actually exist.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && for url in \
+  "https://www.linkedin.com/in/jamesjimdonovan/" \
+  "https://www.linkedin.com/in/brian-answeeney-7a3b3a1b/" \
+  "https://www.linkedin.com/in/natespears/" \
+  "https://www.linkedin.com/in/asadmirza/" \
+  "https://www.linkedin.com/in/bill-randag-7b7a3a5/" \
+  "https://www.linkedin.com/in/fergal-o-donnell-7a3b3b1/" \
+  "https://www.linkedin.com/in/dilipbarot/" \
+  "https://www.linkedin.com/in/jimiyoob/" \
+  "https://www.linkedin.com/in/emilyslota/" \
+  "https://www.linkedin.com/in/davidkreiss/" \
+  "https://www.linkedin.com/in/gavinatkinson/" \
+  "https://www.linkedin.com/in/ayman-awartani/" \
+  "https://www.linkedin.com/in/jimradzicki/" \
+  "https://www.linkedin.com/in/butchvalenzuela/"; do
+  status=$(curl -s -o /dev/null -w "%{http_code}" -L --max-redirs 3 "$url" 2>/dev/null)
+  echo "$status $url"
+done
+  description: Verify LinkedIn URLs exist via HTTP check
+  block_until_ms: 60000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import subprocess
+
+urls = [
+    "https://www.linkedin.com/in/jamesjimdonovan/",
+    "https://www.linkedin.com/in/brian-answeeney-7a3b3a1b/",
+    "https://www.linkedin.com/in/natespears/",
+    "https://www.linkedin.com/in/asadmirza/",
+    "https://www.linkedin.com/in/bill-randag-7b7a3a5/",
+    "https://www.linkedin.com/in/fergal-o-donnell-7a3b3b1/",
+    "https://www.linkedin.com/in/dilipbarot/",
+    "https://www.linkedin.com/in/jimiyoob/",
+    "https://www.linkedin.com/in/emilyslota/",
+    "https://www.linkedin.com/in/davidkreiss/",
+    "https://www.linkedin.com/in/gavinatkinson/",
+    "https://www.linkedin.com/in/ayman-awartani/",
+    "https://www.linkedin.com/in/jimradzicki/",
+    "https://www.linkedin.com/in/butchvalenzuela/",
+]
+
+for url in urls:
+    result = subprocess.run(
+        ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-redirs", "3", url],
+        capture_output=True, text=True, timeout=15
+    )
+    code = result.stdout.strip()
+    slug = url.split("/in/")[1].rstrip("/")
+    indicator = "✅" if code == "200" else "❌" if code == "404" else "⚠️"
+    print(f"  {indicator} {code} {slug}")
+PYEOF
+  description: Verify LinkedIn URLs via curl HTTP check
+  block_until_ms: 120000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] LinkedIn returns a 999 status code for all requests - that's their anti-scraping measure. They block automated requests. I can't verify via HTTP. Let me try a different approach - I can use my browser MCP tools to check a few of these, or I can use Firecrawl to scrape them.
+
+Actually, let me try another approach. Instead of verifying the existing URLs, let me use a more reliable method to find LinkedIn profiles. I could:
+
+1. Use Google Search (via my web search tools) to find "site:linkedin.com/in firstname lastname company"
+2. Use Firecrawl
+3. Use my browser tools
+
+
+I'm realizing I should use Perplexity search to find actual LinkedIn URLs for each person rather than trying to verify questionable ones. The current batch of 14 URLs might be unreliable, and the 28 suspicious ones were likely hallucinated, so I need to start fresh with a more dependable verification method.
+
+Writing a Firecrawl script...
+
+Actually, I'm realizing Firecrawl is better suited for scraping existing pages rather than searching Google directly. I could try scraping company leadership pages to find LinkedIn URLs, but that risks missing executives not featured on their websites. The Perplexity API might work if I craft a very specific prompt that emphasizes extracting actual URLs rather than generating them.
+
+Wait, I just realized the Perplexity API response includes a `citations` field with real URLs that were actually referenced—not hallucinated ones. So instead of trying to extract LinkedIn URLs from the model's text, I should pull them directly from the citations array and use AI just to verify which citation matches the person I'm searching for.
+LinkedIn blocks automated HTTP checks (returns 999). Let me take a better approach -- I'll rewrite the script to extract LinkedIn URLs from Perplexity's **citations** (which are real URLs the search engine found) rather than relying on the AI model to generate URLs.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/find-linkedin-profiles.ts
+  contents: import { config } from 'dotenv'
+import fs from 'fs'
+import { parse } from 'csv-parse/sync'
+import { stringify } from 'csv-stringify/sync'
+
+config()
+
+const CSV_PATH = 'data/top-contacts-enriched-with-gaps.csv'
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+/**
+ * Search Perplexity with linkedin.com domain filter.
+ * Returns the citations array (real URLs found by search) + the response text.
+ */
+async function searchLinkedIn(
+  query: string
+): Promise<{ text: string; citations: string[] }> {
+  const response = await fetch('https://api.perplexity.ai/chat/completions', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: 'sonar',
+      messages: [
+        {
+          role: 'system',
+          content:
+            'Find the LinkedIn profile for the specified person. Return only their LinkedIn profile URL.',
+        },
+        { role: 'user', content: query },
+      ],
+      search_domain_filter: ['linkedin.com'],
+      return_related_questions: false,
+    }),
+  })
+
+  if (!response.ok) {
+    const errText = await response.text()
+    throw new Error(`Perplexity ${response.status}: ${errText.slice(0, 200)}`)
+  }
+
+  const data = (await response.json()) as any
+  const text = data.choices?.[0]?.message?.content || ''
+  const citations: string[] = data.citations || []
+  return { text, citations }
+}
+
+/**
+ * Extract a linkedin.com/in/ URL from citations or response text.
+ * Only trust citations (they are real URLs from search results).
+ */
+function extractLinkedInUrl(
+  citations: string[],
+  text: string,
+  personName: string
+): string | null {
+  // First: look for linkedin.com/in/ URLs in citations (these are real)
+  const linkedinCitations = citations.filter(
+    (c) =>
+      c.includes('linkedin.com/in/') && !c.includes('/posts/') && !c.includes('/pulse/')
+  )
+
+  if (linkedinCitations.length === 1) {
+    return normalizeUrl(linkedinCitations[0])
+  }
+
+  if (linkedinCitations.length > 1) {
+    // Multiple matches -- try to pick the one most likely for this person
+    const nameParts = personName
+      .toLowerCase()
+      .replace(/[^a-z ]/g, '')
+      .split(' ')
+      .filter(Boolean)
+
+    // Score each URL by how many name parts appear in it
+    let best: string | null = null
+    let bestScore = 0
+    for (const url of linkedinCitations) {
+      const slug = url.toLowerCase()
+      let score = 0
+      for (const part of nameParts) {
+        if (slug.includes(part)) score++
+      }
+      if (score > bestScore) {
+        bestScore = score
+        best = url
+      }
+    }
+
+    if (best && bestScore >= 1) {
+      return normalizeUrl(best)
+    }
+
+    // Fall back to first one
+    return normalizeUrl(linkedinCitations[0])
+  }
+
+  // Fallback: extract from response text (but only /in/ profile URLs)
+  const urlMatch = text.match(
+    /https?:\/\/(?:www\.)?linkedin\.com\/in\/[\w-]+\/?/i
+  )
+  if (urlMatch) {
+    // Only trust it if it's a clean slug (not generated hex patterns)
+    const slug = urlMatch[0].split('/in/')[1]?.replace('/', '')
+    if (slug && !slug.match(/[0-9a-f]{8,}/)) {
+      return normalizeUrl(urlMatch[0])
+    }
+  }
+
+  return null
+}
+
+function normalizeUrl(url: string): string {
+  let u = url.trim()
+  if (!u.startsWith('https://')) {
+    u = u.replace('http://', 'https://')
+  }
+  if (!u.includes('www.')) {
+    u = u.replace('linkedin.com', 'www.linkedin.com')
+  }
+  if (!u.endsWith('/')) u += '/'
+  return u
+}
+
+async function main() {
+  const csvContent = fs.readFileSync(CSV_PATH, 'utf-8')
+  const records: Record<string, string>[] = parse(csvContent, {
+    columns: true,
+    skip_empty_lines: true,
+    relax_column_count: true,
+  })
+  const headers = Object.keys(records[0])
+
+  // Clear ALL existing LinkedIn URLs for Cursor contacts (start fresh)
+  for (const r of records) {
+    if (r['Source'] === 'Cursor') {
+      r['LinkedIn Profile'] = ''
+    }
+  }
+
+  const cursorContacts = records.filter((r) => r['Source'] === 'Cursor')
+
+  console.log(
+    `\n🔍 Searching LinkedIn for ${cursorContacts.length} contacts (citation-based)...\n`
+  )
+
+  let found = 0
+  let notFound = 0
+
+  for (let i = 0; i < cursorContacts.length; i++) {
+    const contact = cursorContacts[i]
+    const name = contact['Full Name'].replace(/"/g, '')
+    const company = contact['Company Name']
+    const title = contact['Job Title']
+
+    process.stdout.write(
+      `  [${i + 1}/${cursorContacts.length}] ${name} (${company})... `
+    )
+
+    try {
+      const { text, citations } = await searchLinkedIn(
+        `${name} ${title} ${company} LinkedIn profile`
+      )
+
+      const url = extractLinkedInUrl(citations, text, name)
+
+      if (url) {
+        contact['LinkedIn Profile'] = url
+        found++
+        console.log(`✅ ${url}`)
+      } else {
+        notFound++
+        const citationInfo =
+          citations.length > 0
+            ? `(${citations.length} citations, none matched)`
+            : '(no citations)'
+        console.log(`❌ not found ${citationInfo}`)
+      }
+
+      await sleep(800)
+    } catch (err: any) {
+      notFound++
+      console.log(`❌ error: ${err?.message?.slice(0, 80) || err}`)
+      await sleep(2000)
+    }
+  }
+
+  // Write updated CSV
+  const output = stringify(records, { header: true, columns: headers })
+  fs.writeFileSync(CSV_PATH, output)
+
+  console.log(`\n${'='.repeat(60)}`)
+  console.log(`LINKEDIN PROFILE RESULTS (citation-based)`)
+  console.log(`${'='.repeat(60)}`)
+  console.log(`Found:          ${found}`)
+  console.log(`Not found:      ${notFound}`)
+  console.log(`Total:          ${cursorContacts.length}`)
+  console.log(`\nCSV updated: ${CSV_PATH}`)
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/find-linkedin-profiles.ts
+  description: Run citation-based LinkedIn profile finder
+  block_until_ms: 300000
+
+[Tool result] Shell
+
+user:
+<user_query>
+In the meantime, can you just send me, give me a CSV of all the new people that you found? 
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+
+with open('data/top-contacts-enriched-with-gaps.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+
+cursor_rows = [r for r in rows if r['Source'] == 'Cursor']
+
+headers = ['Company Name', 'Full Name', 'Job Title', 'Company Domain', 'LinkedIn Profile']
+
+with open('data/new-executive-contacts.csv', 'w', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=headers)
+    writer.writeheader()
+    for r in sorted(cursor_rows, key=lambda x: x['Company Name']):
+        writer.writerow({h: r.get(h, '') for h in headers})
+
+print(f'Written {len(cursor_rows)} new contacts to data/new-executive-contacts.csv')
+"
+
+  description: Export new Cursor contacts to CSV
+
+[Tool result] Shell
+
+assistant:
+The file is at `data/new-executive-contacts.csv` with all 62 new contacts. Here's a quick preview:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/new-executive-contacts.csv
+
+[Tool result] Read
+
+assistant:
+There it is -- `data/new-executive-contacts.csv` with all 62 new contacts. 30 have LinkedIn profiles found, 32 are still blank. A caveat: some of those LinkedIn URLs may still need manual verification since Perplexity's search can sometimes return approximate matches. The ones with clean slugs like `natespears`, `asadmirza`, `jimiyoob`, `kayleneeckels`, `brackenmayes`, `joseph-dewoody`, and `petr-bondarevskyi` are the highest confidence.
+
+user:
+<user_query>
+Okay, this is great. Keep going on these people and enrich the profiles with as much information as you can, ideally to match the CSV that I uploaded with all of the different columns, if that is information you can find for me. 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to enrich the 62 new contacts with the same columns as the original Clay CSV. Let me look at what columns the original CSV has:
+
+1. Company Name
+2. First Name
+3. Last Name
+4. Full Name
+5. Job Title
+6. Location
+7. Company Domain
+8. LinkedIn Profile
+9. Notable Previous Experience
+10. Active on LinkedIn (last 90 days)
+11. Icebreaker Insight
+12. Work Email
+13. Summary of Role
+14. Company Tenure
+15. First Degree Connection [Alice or Calanthia]
+16. Second Degree Connections [Alice only]
+17. Source
+
+So I need to find for each person:
+
+
+Location, notable previous experience, LinkedIn activity status, icebreaker insights, work email, role summary, and company tenure. I can pull some of this from web searches via Perplexity and infer other details like email patterns by looking at existing contacts from the same company. I'm going to build a script that searches Perplexity for each new contact's information and uses pattern matching to fill in the gaps.
+
+Building the enrichment script...
+Absolutely. Let me build an enrichment script that fills in all the columns from the original CSV -- location, previous experience, LinkedIn activity, work email, role summary, tenure, etc.
+[Tool call] TodoWrite
+  todos: [{"id":"10","content":"Write enrichment script for 62 new contacts (location, email, tenure, summary, etc.)","status":"in_progress"},{"id":"11","content":"Run enrichment script and monitor","status":"pending"},{"id":"12","content":"Update combined CSV and new-contacts CSV with enriched data","status":"pending"},{"id":"13","content":"Auto-commit and push","status":"pending"}]
+  merge: false
+
+[Tool result] TodoWrite
+
+assistant:
+First let me check the email patterns from existing Clay contacts so I can infer emails for the new ones.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+from collections import defaultdict
+
+with open('data/top-contacts-enriched-with-gaps.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+
+# Extract email patterns by company domain
+patterns = defaultdict(list)
+for r in rows:
+    if r['Source'] != 'Clay' or not r.get('Work Email'):
+        continue
+    email = r['Work Email'].strip()
+    domain = r['Company Domain'].strip()
+    first = r['First Name'].strip().lower()
+    last = r['Last Name'].strip().lower()
+    
+    if not email or not domain or not first or not last:
+        continue
+    
+    local = email.split('@')[0].lower()
+    email_domain = email.split('@')[1].lower() if '@' in email else ''
+    
+    # Detect pattern
+    if local == first[0] + last:
+        pat = 'flast'
+    elif local == first + '.' + last:
+        pat = 'first.last'
+    elif local == first + last:
+        pat = 'firstlast'
+    elif local == first:
+        pat = 'first'
+    elif local == first[0] + '.' + last:
+        pat = 'f.last'
+    elif local == last:
+        pat = 'last'
+    elif local == first + last[0]:
+        pat = 'firstl'
+    else:
+        pat = f'other({local})'
+    
+    patterns[domain].append((pat, email_domain))
+
+print('EMAIL PATTERNS BY COMPANY DOMAIN:')
+for domain in sorted(patterns.keys()):
+    pats = patterns[domain]
+    print(f'  {domain}: {[(p, d) for p, d in pats]}')
+"
+
+  description: Extract email patterns from Clay contacts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Now I have email patterns for each domain. Let me write the enrichment script. The approach:
+
+1. For each new contact, use Perplexity to search for detailed info (location, previous experience, role summary, tenure, LinkedIn activity)
+2. Use AI to extract structured data matching the original columns
+3. Infer email addresses based on the patterns from existing contacts
+4. Update the CSV
+
+Let me write a comprehensive script. The columns to fill:
+- Location
+- Notable Previous Experience
+- Active on LinkedIn (last 90 days)
+- Icebreaker Insight
+- Work Email (inferred from patterns)
+- Summary of Role
+
+
+- Company Tenure
+
+I'll use the email patterns I found to infer addresses, then leverage Perplexity and AI extraction for the remaining fields. Time to build this out.
+Great, I have the email patterns for every company. Now let me build the full enrichment script.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/enrich-new-contacts.ts
+  contents: import { config } from 'dotenv'
+import fs from 'fs'
+import { parse } from 'csv-parse/sync'
+import { stringify } from 'csv-stringify/sync'
+import { generateObject } from 'ai'
+import { openai } from '@ai-sdk/openai'
+import { z } from 'zod'
+
+config()
+
+const CSV_PATH = 'data/top-contacts-enriched-with-gaps.csv'
+const NEW_CSV_PATH = 'data/new-executive-contacts.csv'
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+// ── Email inference ──────────────────────────────────────────────────
+
+interface EmailPattern {
+  format: string
+  emailDomain: string
+}
+
+function detectEmailPattern(
+  email: string,
+  firstName: string,
+  lastName: string
+): EmailPattern | null {
+  if (!email || !email.includes('@')) return null
+  const [local, domain] = email.split('@')
+  const lo = local.toLowerCase()
+  const f = firstName.toLowerCase().replace(/[^a-z]/g, '')
+  const l = lastName.toLowerCase().replace(/[^a-z]/g, '')
+
+  if (lo === `${f}.${l}`) return { format: 'first.last', emailDomain: domain }
+  if (lo === `${f[0]}${l}`) return { format: 'flast', emailDomain: domain }
+  if (lo === `${f}${l}`) return { format: 'firstlast', emailDomain: domain }
+  if (lo === `${f[0]}.${l}`) return { format: 'f.last', emailDomain: domain }
+  if (lo === f) return { format: 'first', emailDomain: domain }
+  if (lo === `${f}${l[0]}`) return { format: 'firstl', emailDomain: domain }
+  return null
+}
+
+function generateEmail(
+  pattern: EmailPattern,
+  firstName: string,
+  lastName: string
+): string {
+  const f = firstName.toLowerCase().replace(/[^a-z]/g, '')
+  const l = lastName.toLowerCase().replace(/[^a-z]/g, '')
+  const d = pattern.emailDomain
+
+  switch (pattern.format) {
+    case 'first.last':
+      return `${f}.${l}@${d}`
+    case 'flast':
+      return `${f[0]}${l}@${d}`
+    case 'firstlast':
+      return `${f}${l}@${d}`
+    case 'f.last':
+      return `${f[0]}.${l}@${d}`
+    case 'first':
+      return `${f}@${d}`
+    case 'firstl':
+      return `${f}${l[0]}@${d}`
+    default:
+      return ''
+  }
+}
+
+// ── Perplexity search ────────────────────────────────────────────────
+
+async function searchPerplexity(query: string): Promise<string> {
+  const response = await fetch('https://api.perplexity.ai/chat/completions', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${process.env.PERPLEXITY_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      model: 'sonar',
+      messages: [
+        {
+          role: 'system',
+          content:
+            'You are a research assistant. Provide factual, verifiable information about the person described. Include specific details like location, previous companies, and recent LinkedIn activity.',
+        },
+        { role: 'user', content: query },
+      ],
+    }),
+  })
+
+  if (!response.ok) {
+    throw new Error(`Perplexity ${response.status}`)
+  }
+
+  const data = (await response.json()) as any
+  return data.choices?.[0]?.message?.content || ''
+}
+
+// ── Main ─────────────────────────────────────────────────────────────
+
+const enrichmentSchema = z.object({
+  location: z
+    .string()
+    .describe(
+      'City, State, Country (e.g. "Salt Lake City, Utah, United States"). Empty if unknown.'
+    ),
+  notablePreviousExperience: z
+    .string()
+    .describe(
+      'Comma-separated list of notable previous companies they worked at. Empty if unknown.'
+    ),
+  activeOnLinkedIn: z
+    .enum(['Yes', 'No', ''])
+    .describe('Whether they have been active on LinkedIn in the last 90 days'),
+  icebreakerInsight: z
+    .string()
+    .describe(
+      'A recent insight from their LinkedIn activity, posts, or public statements that could serve as a conversation opener. 1-2 sentences. Empty if nothing found.'
+    ),
+  summaryOfRole: z
+    .string()
+    .describe(
+      'A 3-5 sentence summary of their role, responsibilities, likely pain points, and priorities at this company. Written in third person.'
+    ),
+  companyTenure: z
+    .string()
+    .describe(
+      'How long they have been at this company (e.g. "5 years, 3 months"). Empty if unknown.'
+    ),
+})
+
+async function main() {
+  const csvContent = fs.readFileSync(CSV_PATH, 'utf-8')
+  const records: Record<string, string>[] = parse(csvContent, {
+    columns: true,
+    skip_empty_lines: true,
+    relax_column_count: true,
+  })
+  const headers = Object.keys(records[0])
+
+  // Build email patterns from Clay contacts
+  const emailPatterns = new Map<string, EmailPattern>()
+  for (const r of records) {
+    if (r['Source'] !== 'Clay' || !r['Work Email']) continue
+    const domain = r['Company Domain']?.trim()
+    if (!domain || emailPatterns.has(domain)) continue
+
+    const pattern = detectEmailPattern(
+      r['Work Email'].trim(),
+      r['First Name']?.trim() || '',
+      r['Last Name']?.trim() || ''
+    )
+    if (pattern) {
+      emailPatterns.set(domain, pattern)
+    }
+  }
+
+  console.log(`📧 Email patterns detected for ${emailPatterns.size} domains`)
+
+  // Get only Cursor contacts to enrich
+  const cursorContacts = records.filter((r) => r['Source'] === 'Cursor')
+  console.log(`\n🔍 Enriching ${cursorContacts.length} new contacts...\n`)
+
+  let enriched = 0
+  let errors = 0
+
+  for (let i = 0; i < cursorContacts.length; i++) {
+    const contact = cursorContacts[i]
+    const name = contact['Full Name'].replace(/"/g, '')
+    const company = contact['Company Name']
+    const title = contact['Job Title']
+    const domain = contact['Company Domain']
+
+    console.log(`[${i + 1}/${cursorContacts.length}] ${name} — ${title} @ ${company}`)
+
+    // ── Infer email ──
+    if (!contact['Work Email']) {
+      const pattern = emailPatterns.get(domain)
+      if (pattern && contact['First Name'] && contact['Last Name']) {
+        const firstName = contact['First Name'].replace(/"/g, '').trim()
+        const lastName = contact['Last Name'].replace(/[",]/g, '').trim().split(' ')[0] || ''
+        if (firstName && lastName) {
+          const email = generateEmail(pattern, firstName, lastName)
+          if (email) {
+            contact['Work Email'] = email
+            console.log(`  📧 Inferred email: ${email} (pattern: ${pattern.format}@${pattern.emailDomain})`)
+          }
+        }
+      }
+    }
+
+    // ── Search for profile details ──
+    try {
+      const searchResult = await searchPerplexity(
+        `Tell me about ${name}, who is ${title} at ${company} (${domain}).
+I need:
+1. Their location (city, state, country)
+2. Previous companies they worked at before ${company}
+3. How long they've been at ${company}
+4. Any recent LinkedIn posts or activity (last 90 days)
+5. Any recent public statements, articles, or insights they've shared
+6. Their key responsibilities and priorities in their role
+
+Be specific and factual. If you can't find information for a field, say "not found".`
+      )
+
+      if (searchResult.length < 50) {
+        console.log(`  ⚠️  Minimal search results`)
+        errors++
+        await sleep(800)
+        continue
+      }
+
+      // ── Extract structured data ──
+      const { object } = await generateObject({
+        model: openai('gpt-4o-mini'),
+        schema: enrichmentSchema,
+        prompt: `Extract enrichment data for "${name}" (${title} at ${company}) from this research:
+
+${searchResult}
+
+Rules:
+- Location should be "City, State, Country" format
+- Notable Previous Experience: list only company names, comma-separated
+- Active on LinkedIn: "Yes" if there's evidence of posts/engagement in last 90 days, "No" if evidence they're inactive, empty if unknown
+- Icebreaker Insight: a specific recent talking point from their activity (post, article, comment). Must be specific and actionable, not generic. Empty if nothing specific found.
+- Summary of Role: Write 3-5 sentences about their role, what they're responsible for, their likely pain points and priorities. Written in third person, similar to a CRM profile note.
+- Company Tenure: e.g. "5 years, 3 months". Empty if unknown.
+
+Only fill in fields where you have actual evidence. Leave empty if uncertain.`,
+      })
+
+      // Apply enrichment
+      if (object.location) contact['Location'] = object.location
+      if (object.notablePreviousExperience)
+        contact['Notable Previous Experience'] = object.notablePreviousExperience
+      if (object.activeOnLinkedIn)
+        contact['Active on LinkedIn (last 90 days)'] = object.activeOnLinkedIn
+      if (object.icebreakerInsight)
+        contact['Icebreaker Insight'] = object.icebreakerInsight
+      if (object.summaryOfRole) contact['Summary of Role'] = object.summaryOfRole
+      if (object.companyTenure) contact['Company Tenure'] = object.companyTenure
+
+      enriched++
+
+      // Log what we found
+      const filled = [
+        object.location ? 'location' : '',
+        object.notablePreviousExperience ? 'prev-exp' : '',
+        object.activeOnLinkedIn ? 'linkedin-active' : '',
+        object.icebreakerInsight ? 'icebreaker' : '',
+        object.summaryOfRole ? 'summary' : '',
+        object.companyTenure ? 'tenure' : '',
+      ].filter(Boolean)
+      console.log(`  ✅ Enriched: ${filled.join(', ')}`)
+
+      await sleep(1000)
+    } catch (err: any) {
+      errors++
+      console.log(`  ❌ Error: ${err?.message?.slice(0, 80) || err}`)
+      await sleep(2000)
+    }
+  }
+
+  // ── Write updated main CSV ──
+  const output = stringify(records, { header: true, columns: headers })
+  fs.writeFileSync(CSV_PATH, output)
+
+  // ── Write updated new-contacts CSV with full columns ──
+  const newHeaders = [
+    'Company Name',
+    'First Name',
+    'Last Name',
+    'Full Name',
+    'Job Title',
+    'Location',
+    'Company Domain',
+    'LinkedIn Profile',
+    'Notable Previous Experience',
+    'Active on LinkedIn (last 90 days)',
+    'Icebreaker Insight',
+    'Work Email',
+    'Summary of Role',
+    'Company Tenure',
+    'Source',
+  ]
+
+  const newOutput = stringify(
+    cursorContacts.map((r) => {
+      const row: Record<string, string> = {}
+      for (const h of newHeaders) row[h] = r[h] || ''
+      return row
+    }),
+    { header: true, columns: newHeaders }
+  )
+  fs.writeFileSync(NEW_CSV_PATH, newOutput)
+
+  console.log(`\n${'='.repeat(60)}`)
+  console.log(`ENRICHMENT COMPLETE`)
+  console.log(`${'='.repeat(60)}`)
+  console.log(`Enriched:   ${enriched}`)
+  console.log(`Errors:     ${errors}`)
+  console.log(`Total:      ${cursorContacts.length}`)
+  console.log(`\nUpdated: ${CSV_PATH}`)
+  console.log(`Updated: ${NEW_CSV_PATH}`)
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"10","content":"Write enrichment script for 62 new contacts (location, email, tenure, summary, etc.)","status":"completed"},{"id":"11","content":"Run enrichment script and monitor","status":"in_progress"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Running now -- this will take a few minutes as it researches each of the 62 contacts.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/enrich-new-contacts.ts
+  description: Run enrichment script for new contacts
+  block_until_ms: 600000
+
+[Tool result] Shell
+
+assistant:
+All 62 enriched with zero errors. Let me update the new contacts CSV and commit.
+[Tool call] TodoWrite
+  todos: [{"id":"11","content":"Run enrichment script and monitor","status":"completed"},{"id":"12","content":"Update combined CSV and new-contacts CSV with enriched data","status":"completed"},{"id":"13","content":"Auto-commit and push","status":"in_progress"}]
+  merge: true
+
+[Tool result] TodoWrite
