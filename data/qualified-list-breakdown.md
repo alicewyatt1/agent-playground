@@ -43,6 +43,4 @@ US = United States, USA, US, or any US state. Onshore = typically US state names
 | US HQ only | 11 | 5.2% |
 | US HQ + nearshore/offshore only (no US onshore) | 4 | 1.9% |
 | Other US combination | 4 | 1.9% |
-| US in onshore only (not in HQ) | 0 | 0.0% |
-
-*Note: "US in onshore only (not in HQ)" = 0 — no qualified account has US only in onshore_delivery_footprint without US in HQ or in nearshore/offshore.*
+| US in onshore only (not in HQ) | 0 | 0.0% |*Note: "US in onshore only (not in HQ)" = 0 — no qualified account has US only in onshore_delivery_footprint without US in HQ or in nearshore/offshore.*
