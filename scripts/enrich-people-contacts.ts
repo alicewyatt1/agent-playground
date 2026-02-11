@@ -20,6 +20,21 @@ const NAME_CORRECTIONS: Record<
   string,
   { firstName?: string; lastName: string; fullName: string }
 > = {
+  // LinkedIn URL: rick-c-60606a9 (last name provided by user)
+  'https://www.linkedin.com/in/rick-c-60606a9/': {
+    lastName: 'Capezzuto',
+    fullName: 'Rick Capezzuto',
+  },
+  // LinkedIn URL: brittany-m-69946844 (last name provided by user)
+  'https://www.linkedin.com/in/brittany-m-69946844/': {
+    lastName: 'Messina',
+    fullName: 'Brittany Messina',
+  },
+  // LinkedIn URL: shadia-m-0b67a038 (last name provided by user)
+  'https://www.linkedin.com/in/shadia-m-0b67a038/': {
+    lastName: 'Marini',
+    fullName: 'Shadia Marini',
+  },
   // LinkedIn URL: jeff-nocero-2026075b
   'https://www.linkedin.com/in/jeff-nocero-2026075b/': {
     firstName: 'Jeff',

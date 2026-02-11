@@ -779,3 +779,91 @@ Now let me auto-commit and push per the project rules.
   working_directory: /Users/alicewyatt/repos/agent-playground
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: git commit -m "$(cat <<'EOF'
+Run: enrich-people-contacts.ts
+
+Enriched 188 BPO people contacts: corrected 4 abbreviated names
+(Jeff Nocero, Cameron Symonds, Liliana Lopez, Ali Karim) and filled
+16 missing work emails by deriving patterns from existing contacts at
+each company. 3 contacts remain unresolvable (Rick C., Brittany M,
+Shadia M.) due to hidden LinkedIn last names.
+EOF
+)" && git push
+  description: Commit and push enrichment results
+  working_directory: /Users/alicewyatt/repos/agent-playground
+
+[Tool result] Shell
+
+assistant:
+Done. Here's a summary of what was enriched:
+
+**Names corrected (4):**
+| Original | Corrected | Source |
+|---|---|---|
+| Jeff N. | Jeff Nocero | LinkedIn URL slug |
+| Cameron S. | Cameron Symonds | LinkedIn URL slug |
+| Liliana L. | Liliana Lopez | Existing email pattern |
+| Ali K. | Ali Karim | Existing email pattern |
+
+**Emails filled (16):**
+Derived from company email patterns observed across existing contacts -- e.g. `firstname.lastname@hartehanks.com`, `firstname@unity-connect.com`, `firstnamelastname@buwelo.com`, etc. Key fills include Elliott Peterson, Juanita Cosper, Terry Lee, Tess Rieppel, Bucky Cline, Chris Fong, Julie Anderson, Demond Moore, Karl Morgan, Cameron Symonds, Jeff Nocero, and others.
+
+**Still unresolvable (3):**
+- **Rick C.** (Harte Hanks) -- last name hidden on LinkedIn, no email derivable
+- **Brittany M** (Unity Communications) -- last name hidden on LinkedIn
+- **Shadia M.** (Buwelo) -- last name hidden on LinkedIn
+
+These three people have deliberately restricted their last name visibility on LinkedIn. You'd need a 1st-degree connection or a tool like Sales Navigator to see their full names. The enriched file is at `data/people-contacts-enriched.csv`.
+
+user:
+<user_query>
+this is Rick's full name: Rick Capezzuto
+Brittany Messina
+Shadia Marini
+
+can you update on their profiles and update their email addresses
+</user_query>
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/enrich-people-contacts.ts
+  old_string:   // LinkedIn URL: jeff-nocero-2026075b
+  'https://www.linkedin.com/in/jeff-nocero-2026075b/': {
+    firstName: 'Jeff',
+    lastName: 'Nocero',
+    fullName: 'Jeff Nocero',
+  },
+  new_string:   // LinkedIn URL: rick-c-60606a9 (last name provided by user)
+  'https://www.linkedin.com/in/rick-c-60606a9/': {
+    lastName: 'Capezzuto',
+    fullName: 'Rick Capezzuto',
+  },
+  // LinkedIn URL: brittany-m-69946844 (last name provided by user)
+  'https://www.linkedin.com/in/brittany-m-69946844/': {
+    lastName: 'Messina',
+    fullName: 'Brittany Messina',
+  },
+  // LinkedIn URL: shadia-m-0b67a038 (last name provided by user)
+  'https://www.linkedin.com/in/shadia-m-0b67a038/': {
+    lastName: 'Marini',
+    fullName: 'Shadia Marini',
+  },
+  // LinkedIn URL: jeff-nocero-2026075b
+  'https://www.linkedin.com/in/jeff-nocero-2026075b/': {
+    firstName: 'Jeff',
+    lastName: 'Nocero',
+    fullName: 'Jeff Nocero',
+  },
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: pnpm start scripts/enrich-people-contacts.ts
+  description: Re-run enrichment with 3 new names
+  working_directory: /Users/alicewyatt/repos/agent-playground
+
+[Tool result] Shell
