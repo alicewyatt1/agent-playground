@@ -1,0 +1,692 @@
+user:
+<user_query>
+@/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts.csv these accounts have been pulled from Clay but clay just uses linkedin to find contacts. 
+
+can you do a search for the accounts in this list and find anyone who may be missing from this list of executives? looking on their leadership team. We want:
+
+Founder
+CEO
+President
+COO
+CTO
+VP and above in Technology
+VP and above in Operations
+
+can you do this?
+</user_query>
+
+assistant:
+[Thinking] The user wants me to:
+1. Read the CSV file from their Downloads folder to understand what accounts and contacts are already there
+2. For each account, search the web to find executives/leadership team members who might be missing
+3. They want specific roles: Founder, CEO, President, COO, CTO, VP+ in Technology, VP+ in Operations
+
+Let me start by reading the CSV file to understand the data structure and what accounts/contacts are already listed.
+
+Let me also read the enriched contacts file to understand the current state.
+Let me start by reading the CSV file to understand what accounts and contacts are already there.
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts.csv
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/people-contacts-enriched.csv
+
+[Tool result] Read
+
+[Tool result] Read
+
+assistant:
+Both files are large. Let me read the headers and first portion of the Clay CSV to understand its structure, and also get the list of unique accounts.
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts.csv
+  offset: 1
+  limit: 30
+[Tool call] Shell
+  command: csvcut -c "Company" "/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts.csv" 2>/dev/null | sort -u | head -60
+  description: Get unique company names from CSV
+[Tool call] Shell
+  command: wc -l "/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts.csv"
+  description: Count rows in the CSV
+
+[Tool result] Read
+
+[Tool result] Shell
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Let me get the column names properly and extract unique companies. The csvcut didn't work - let me try a different approach.
+Let me get the full list of unique companies and the contacts already present for each.
+[Tool call] Shell
+  command: head -1 "/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts.csv" | tr ',' '\n' | head -20
+  description: Get CSV column headers
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts.csv
+  offset: 30
+  limit: 110
+
+[Tool result] Shell
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I have a good understanding of the data. Let me extract the unique companies from this CSV file. The file has 139 rows (138 contacts + 1 header). Let me get all unique company names and understand what we're working with.
+
+Let me write a script that will:
+1. Parse the CSV to get unique companies and existing contacts per company
+2. Search the web for each company's leadership team
+3. Identify missing executives (Founder, CEO, President, COO, CTO, VP+ in Technology, VP+ in Operations)
+
+Let me first get the list of unique companies.
+Now I have a clear picture. This CSV has 138 contacts across many BPO/contact center companies. Let me extract the unique companies and their existing contacts, then search for missing executives.
+
+Let me first get a clean list of unique companies and what roles are already covered.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+from collections import defaultdict
+
+companies = defaultdict(list)
+with open('/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        name = row['Company Name'].strip()
+        title = row['Job Title'].strip()
+        full = row['Full Name'].strip()
+        companies[name].append((full, title))
+
+for co in sorted(companies.keys()):
+    print(f'\n=== {co} ===')
+    for full, title in companies[co]:
+        print(f'  {full} - {title}')
+print(f'\n\nTotal companies: {len(companies)}')
+"
+
+  description: Extract unique companies and contacts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Now I have 41 companies. This is a significant research task. Let me plan this out.
+
+For each company, I need to search the web to find their leadership team and identify anyone missing from the list in these roles:
+- Founder
+- CEO
+- President
+- COO
+- CTO
+- VP and above in Technology
+- VP and above in Operations
+
+This is a large task. Let me think about how to approach it efficiently.
+
+I should write a TypeScript script that uses web search to find leadership teams for each company. But actually, the project guidelines say I should come up with a plan first and ask for permission before executing.
+
+Let me present my plan to the user first.
+Great, I now have a clear picture. There are **41 companies** with **138 existing contacts**. Here's my plan:
+
+**Plan:**
+I'll write a TypeScript script that, for each of the 41 companies:
+1. Searches the web for their leadership/executive team page
+2. Compares what's found against the contacts already in the Clay CSV
+3. Identifies missing executives in these target roles: **Founder, CEO, President, COO, CTO, VP+ Technology, VP+ Operations**
+4. Outputs a report of potentially missing contacts
+
+The script will use the Vercel AI SDK to intelligently parse leadership page results and match them against the target roles.
+
+**Key observations from the current data:**
+- Some companies seem well-covered (e.g., Buwelo has 5 contacts, CBE Companies has 6, InfoCision has 7)
+- Several companies only have 1 contact (ADEC Innovations, AZPIRED, Contact Point 360, Nearsol, Quantanite, Sourcefit, SupportZebra, Virtudesk, Visaya KPO) -- these are most likely to be missing executives
+- Some companies may not have certain roles (e.g., smaller companies may not have a CTO)
+
+Shall I go ahead and execute this plan? I'll search each company's leadership page and compile a gap analysis.
+
+user:
+<user_query>
+perfect. can you also add a column that says Source: Clay (for everything existing) then Cursor - for these new contacts 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to:
+
+1. Search the web for each of the 41 companies' leadership teams
+2. Find missing executives in the target roles (Founder, CEO, President, COO, CTO, VP+ Technology, VP+ Operations)
+3. Output a combined CSV with:
+   - All existing contacts from the Clay CSV with a "Source: Clay" column
+   - New contacts found with a "Source: Cursor" column
+
+This is a big task. Let me write a TypeScript script that:
+1. Parses the existing Clay CSV
+2. For each company, searches the web for their leadership team
+3. Uses AI to extract executives from search results
+4. Compares against existing contacts
+
+
+5. Outputs a combined CSV
+
+I'll use the Vercel AI SDK with a model to help extract leadership info from web search results, then build a script that parses the CSV, searches for each company's leadership page, extracts names and titles using AI, compares against what's already in the list, and generates the final combined output.
+
+Let me check what API keys and packages are available, then decide between using Firecrawl to scrape leadership pages directly or querying an AI model with web search results to find the gaps. I'm checking what tools and APIs are available in the project setup to determine the most efficient approach for gathering leadership data across these 41 companies.
+Let me check what's available in the project setup, then build the script.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/package.json
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/.env
+
+[Tool result] Read
+
+[Tool result] Read
+
+assistant:
+[Thinking] I have all the API keys I need:
+- OpenAI API key
+- Perplexity API key
+- Firecrawl API key
+- Anthropic (via AI SDK)
+- Google AI
+
+Now let me write the script. My approach:
+
+1. Read the Clay CSV and extract company names + existing contacts
+2. For each company, use Perplexity API to search for their leadership team
+3. Use AI (OpenAI or Anthropic) to extract executives and compare
+4. Output a combined CSV with Source column
+
+Actually, for the Perplexity search, I could either:
+
+
+- Use the Perplexity API directly (via their REST API)
+- Use the OpenAI compatible API that Perplexity provides
+
+Since the OpenAI SDK is already installed and Perplexity has an OpenAI-compatible API, I'll use that for the search step. For the extraction and comparison, I'll use the Vercel AI SDK with OpenAI.
+
+Actually, the simplest approach would be to use Firecrawl to scrape each company's website for their about/leadership/team pages, then use AI to extract the executives from that content.
+
+But I think the Perplexity approach is cleaner—I can query "What are the executives at [Company]?" to get web-grounded answers, parse the response for names and titles, then compare against what I already have. I'll use the OpenAI SDK pointing to Perplexity's endpoint since it's straightforward.
+
+For the implementation, I'll need CSV handling with `csv-parse` and `csv-stringify`, the `openai` package configured for Perplexity's API endpoint, and the Vercel AI SDK with OpenAI provider.
+
+Setting up the script structure...
+
+I'm configuring the Perplexity API client through OpenAI's SDK, then querying it for each company's executive roster with specific roles and titles. After getting the response, I'll parse it using the AI SDK's structured output to normalize the data into a consistent format before combining everything into the final CSV.
+
+I need to account for rate limiting across 41 companies with delays between requests, and I'm thinking through the output structure—keeping all existing Clay contacts as-is while adding new Cursor-sourced contacts with only the fields I can populate (company name, names, title, domain, and source).
+
+Building the script now... Setting up the output file path and defining the target roles I want to match on—founder, CEO, president, and various VP/SVP/EVP titles in technology and operations. I'm also creating a Contact interface to structure the data I'll be working with.
+
+Now I'm reading the CSV file and parsing it into records, then grouping all the contacts by their company name so I can work with them as organized batches.
+
+Setting up the Perplexity API client...
+
+I'm configuring the API request to search for company leadership, with a system prompt that ensures the assistant only returns verified information from web sources and won't fabricate names or titles. The user message asks for a comprehensive list of executives across key roles like CEO, CTO, VPs in technology and operations, tailored to the specific company and domain.
+
+Now I'm logging the search result length and then using structured extraction to parse out the executives from the response, filtering for only those in relevant leadership positions like founders, C-suite, and senior VPs in technology or operations.
+
+I'm checking each extracted executive against the existing contacts list to avoid duplicates, using fuzzy name matching to catch variations like "Bill" for "William".
+
+Still writing duplicate detection logic... Logging the new contact and adding a rate limit between requests, then building the CSV output with all the necessary headers for the contact data. Writing CSV output and summary...
+
+Now I'm thinking about the duplicate detection logic more carefully—the AI model should handle most of it, but I should probably add a fallback mechanism to catch edge cases.
+
+For the output file, I need to follow the project rule about not altering files in the `data/` directory in-place, so I'll write to a new file like `data/top-contacts-with-gaps.csv`. I should also add better error handling and progress tracking throughout the script.
+
+I'm considering using Perplexity API for the leadership lookups, though I'm aware it might struggle with smaller companies—I could add firecrawl as a backup to scrape company leadership pages directly, but that might be overcomplicating things. Perplexity should work well enough for most cases, and I can just note which ones don't return results.
+
+I also need to make sure the Source column header is clear and consistent in the output.
+
+Writing the script now...
+Good - I have all the API keys I need (Perplexity, OpenAI, Firecrawl). Let me build the script.
+[Tool call] TodoWrite
+  todos: [{"id":"1","content":"Write TypeScript script to search for missing executives across 41 companies","status":"in_progress"},{"id":"2","content":"Run the script and monitor results","status":"pending"},{"id":"3","content":"Review output CSV and present findings","status":"pending"},{"id":"4","content":"Auto-commit and push per project rules","status":"pending"}]
+  merge: false
+
+[Tool result] TodoWrite
+
+assistant:
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/find-missing-executives.ts
+  contents: import { config } from 'dotenv'
+import fs from 'fs'
+import { parse } from 'csv-parse/sync'
+import { stringify } from 'csv-stringify/sync'
+import { generateObject } from 'ai'
+import { openai } from '@ai-sdk/openai'
+import { z } from 'zod'
+import OpenAI from 'openai'
+
+config()
+
+const INPUT_CSV =
+  '/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts.csv'
+const OUTPUT_CSV = 'data/top-contacts-enriched-with-gaps.csv'
+
+const HEADERS = [
+  'Company Name',
+  'First Name',
+  'Last Name',
+  'Full Name',
+  'Job Title',
+  'Location',
+  'Company Domain',
+  'LinkedIn Profile',
+  'Notable Previous Experience',
+  'Active on LinkedIn (last 90 days)',
+  'Icebreaker Insight',
+  'Work Email',
+  'Summary of Role',
+  'Company Tenure',
+  'First Degree Connection [Alice or Calanthia]',
+  'Second Degree Connections [Alice only]',
+  'Source',
+]
+
+// ── helpers ──────────────────────────────────────────────────────────
+
+function normalize(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z ]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+/** Rough duplicate check: shares a last-name token AND first-name initial */
+function isDuplicate(candidate: string, existingNames: string[]): boolean {
+  const norm = normalize(candidate)
+  const parts = norm.split(' ')
+  if (parts.length < 2) return false
+  const firstInitial = parts[0][0]
+  const lastToken = parts[parts.length - 1]
+
+  return existingNames.some((existing) => {
+    const ep = normalize(existing).split(' ')
+    if (ep.length < 2) return false
+    const eFirst = ep[0][0]
+    const eLast = ep[ep.length - 1]
+    return eLast === lastToken && eFirst === firstInitial
+  })
+}
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+// ── main ─────────────────────────────────────────────────────────────
+
+async function main() {
+  // 1. Parse the Clay CSV
+  const csvContent = fs.readFileSync(INPUT_CSV, 'utf-8')
+  const records: Record<string, string>[] = parse(csvContent, {
+    columns: true,
+    skip_empty_lines: true,
+    relax_column_count: true,
+  })
+
+  // 2. Group contacts by company
+  const companies = new Map<string, { domain: string; contacts: Record<string, string>[] }>()
+  for (const row of records) {
+    const name = row['Company Name']?.trim()
+    if (!name) continue
+    if (!companies.has(name)) {
+      companies.set(name, { domain: row['Company Domain']?.trim() || '', contacts: [] })
+    }
+    companies.get(name)!.contacts.push(row)
+  }
+
+  console.log(`\n📋 Loaded ${records.length} existing contacts across ${companies.size} companies\n`)
+
+  // 3. Perplexity client for web search
+  const perplexity = new OpenAI({
+    apiKey: process.env.PERPLEXITY_API_KEY,
+    baseURL: 'https://api.perplexity.ai',
+  })
+
+  // Schema for AI extraction
+  const executiveSchema = z.object({
+    executives: z.array(
+      z.object({
+        fullName: z.string().describe('Full name of the executive'),
+        jobTitle: z.string().describe('Exact job title'),
+        isTargetRole: z
+          .boolean()
+          .describe(
+            'True ONLY if this person is a Founder, CEO, President, COO, CTO, or VP/SVP/EVP in Technology/IT/Engineering or Operations'
+          ),
+      })
+    ),
+  })
+
+  const allNewContacts: {
+    companyName: string
+    firstName: string
+    lastName: string
+    fullName: string
+    jobTitle: string
+    companyDomain: string
+  }[] = []
+
+  let companyIndex = 0
+  const totalCompanies = companies.size
+
+  for (const [companyName, { domain, contacts }] of companies) {
+    companyIndex++
+    const existingNames = contacts.map((c) => c['Full Name']?.trim()).filter(Boolean)
+    const existingRoles = contacts.map((c) => c['Job Title']?.trim().toLowerCase()).filter(Boolean)
+
+    console.log(
+      `[${companyIndex}/${totalCompanies}] ${companyName} (${domain}) — ${contacts.length} existing contacts`
+    )
+    console.log(`  Existing: ${existingNames.join(', ')}`)
+
+    try {
+      // Search via Perplexity
+      const response = await perplexity.chat.completions.create({
+        model: 'sonar',
+        messages: [
+          {
+            role: 'system',
+            content:
+              'You are a factual research assistant. Only return information you can verify from web sources. Do not fabricate names or titles.',
+          },
+          {
+            role: 'user',
+            content: `Who are the current executives at "${companyName}" (website: ${domain})? I specifically need anyone in these roles:
+
+1. Founder(s) / Co-Founder(s)
+2. CEO / Chief Executive Officer
+3. President
+4. COO / Chief Operating Officer
+5. CTO / Chief Technology Officer
+6. VP or above (VP, SVP, EVP) in Technology, IT, Engineering, or Information Systems
+7. VP or above (VP, SVP, EVP) in Operations
+
+For each person, give their full name and exact current job title. Only include people currently at this company as of 2025-2026.`,
+          },
+        ],
+      })
+
+      const searchResult = response.choices[0]?.message?.content || ''
+
+      if (searchResult.length < 30) {
+        console.log(`  ⚠️  No meaningful results found`)
+        continue
+      }
+
+      // Extract structured data via OpenAI
+      const { object } = await generateObject({
+        model: openai('gpt-4o-mini'),
+        schema: executiveSchema,
+        prompt: `Extract executives from this research about "${companyName}".
+
+ONLY include people whose role is one of: Founder, CEO, President, COO, CTO, or VP/SVP/EVP in Technology/IT/Engineering or Operations.
+Do NOT include VP of Sales, VP of Marketing, VP of HR, VP of Client Services, VP of Finance, CFO, General Counsel, or similar non-target roles.
+
+Here are the people ALREADY in our database for this company (do NOT include any of them):
+${existingNames.map((n, i) => `- ${n} (${contacts[i]['Job Title']})`).join('\n')}
+
+Research text:
+${searchResult}
+
+Return ONLY genuinely new people not already listed above. If no new people are found, return an empty array.
+Match names loosely — "Bill" = "William", "Bob" = "Robert", "Mike" = "Michael", etc.`,
+      })
+
+      let newCount = 0
+      for (const exec of object.executives) {
+        if (!exec.isTargetRole) continue
+        if (isDuplicate(exec.fullName, existingNames)) {
+          console.log(`  ⏭️  Already exists: ${exec.fullName} — ${exec.jobTitle}`)
+          continue
+        }
+
+        const nameParts = exec.fullName.trim().split(/\s+/)
+        const firstName = nameParts[0] || ''
+        const lastName = nameParts.slice(1).join(' ') || ''
+
+        allNewContacts.push({
+          companyName,
+          firstName,
+          lastName,
+          fullName: exec.fullName.trim(),
+          jobTitle: exec.jobTitle.trim(),
+          companyDomain: domain,
+        })
+
+        newCount++
+        console.log(`  ✅ NEW: ${exec.fullName} — ${exec.jobTitle}`)
+      }
+
+      if (newCount === 0) {
+        console.log(`  ✔️  No missing executives found`)
+      }
+
+      // Rate limit: wait between requests
+      await sleep(1200)
+    } catch (err: any) {
+      console.error(`  ❌ Error: ${err?.message || err}`)
+      await sleep(2000)
+    }
+  }
+
+  // 4. Build combined output CSV
+  const outputRows: Record<string, string>[] = []
+
+  // Add existing contacts with Source = Clay
+  for (const row of records) {
+    const newRow: Record<string, string> = {}
+    for (const h of HEADERS) newRow[h] = row[h] || ''
+    newRow['Source'] = 'Clay'
+    outputRows.push(newRow)
+  }
+
+  // Add new contacts with Source = Cursor
+  for (const contact of allNewContacts) {
+    const newRow: Record<string, string> = {}
+    for (const h of HEADERS) newRow[h] = ''
+    newRow['Company Name'] = contact.companyName
+    newRow['First Name'] = contact.firstName
+    newRow['Last Name'] = contact.lastName
+    newRow['Full Name'] = contact.fullName
+    newRow['Job Title'] = contact.jobTitle
+    newRow['Company Domain'] = contact.companyDomain
+    newRow['Source'] = 'Cursor'
+    outputRows.push(newRow)
+  }
+
+  // Sort by company name then source (Clay first)
+  outputRows.sort((a, b) => {
+    const cmp = a['Company Name'].localeCompare(b['Company Name'])
+    if (cmp !== 0) return cmp
+    return a['Source'].localeCompare(b['Source']) // Clay before Cursor
+  })
+
+  const output = stringify(outputRows, { header: true, columns: HEADERS })
+  fs.writeFileSync(OUTPUT_CSV, output)
+
+  // 5. Summary
+  console.log(`\n${'='.repeat(60)}`)
+  console.log(`SUMMARY`)
+  console.log(`${'='.repeat(60)}`)
+  console.log(`Existing contacts (Clay):     ${records.length}`)
+  console.log(`New contacts found (Cursor):  ${allNewContacts.length}`)
+  console.log(`Total in output:              ${records.length + allNewContacts.length}`)
+  console.log(`Output written to:            ${OUTPUT_CSV}`)
+  console.log()
+
+  // Print new contacts grouped by company
+  if (allNewContacts.length > 0) {
+    console.log(`\nNEW CONTACTS BY COMPANY:`)
+    console.log(`${'─'.repeat(60)}`)
+    const grouped = new Map<string, typeof allNewContacts>()
+    for (const c of allNewContacts) {
+      if (!grouped.has(c.companyName)) grouped.set(c.companyName, [])
+      grouped.get(c.companyName)!.push(c)
+    }
+    for (const [company, people] of grouped) {
+      console.log(`\n${company}:`)
+      for (const p of people) {
+        console.log(`  • ${p.fullName} — ${p.jobTitle}`)
+      }
+    }
+  }
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"1","content":"Write TypeScript script to search for missing executives across 41 companies","status":"completed"},{"id":"2","content":"Run the script and monitor results","status":"in_progress"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Now let me run it. This will take a few minutes as it searches 41 companies with rate limiting.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/find-missing-executives.ts
+  description: Run missing executives search script
+  block_until_ms: 300000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The script ran successfully. Let me now clean up the output - there are a few issues I noticed:
+
+1. "Unnamed individual — Co-Founder & President" for Open Access BPO - this should be removed
+2. Some entries from Nearsol and Office Beacon are Director-level, which is below VP - those should probably be filtered out
+3. Spencer Jenson at Buwelo is "Chief Revenue Officer" - not one of our target roles
+4. Some titles got truncated (AZPIRED's Christian Emmanuel Enriquez)
+
+Let me check the output CSV and clean it up. Actually, let me first read the CSV to see the full state, then clean up the issues.
+
+
+I'll filter out the bad entries, present the cleaned results, and then auto-commit and push the changes.
+The script completed successfully -- found **72 potentially missing executives** across the 41 companies. Let me clean up a few issues I noticed (some Director-level entries that are below VP, an "Unnamed individual", and a CRO which isn't in our target roles).
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+
+# Read the output CSV
+with open('data/top-contacts-enriched-with-gaps.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+    headers = reader.fieldnames
+
+# Filter out bad entries
+cleaned = []
+removed = []
+for row in rows:
+    if row['Source'] != 'Cursor':
+        cleaned.append(row)
+        continue
+    
+    title = row['Job Title'].lower()
+    name = row['Full Name']
+    
+    # Remove unnamed
+    if 'unnamed' in name.lower():
+        removed.append(f'{name} - {row[\"Job Title\"]} ({row[\"Company Name\"]})')
+        continue
+    
+    # Remove Director-level (below VP)
+    if 'director' in title and 'vp' not in title and 'vice president' not in title and 'svp' not in title and 'evp' not in title:
+        removed.append(f'{name} - {row[\"Job Title\"]} ({row[\"Company Name\"]})')
+        continue
+    
+    # Remove CRO (not target role)
+    if 'chief revenue' in title:
+        removed.append(f'{name} - {row[\"Job Title\"]} ({row[\"Company Name\"]})')
+        continue
+
+    # Remove GM (not VP+)
+    if title.startswith('gm ') or 'general manager' in title:
+        removed.append(f'{name} - {row[\"Job Title\"]} ({row[\"Company Name\"]})')
+        continue
+    
+    # Remove Chief AI Officer (not target role exactly, but interesting)
+    # Actually keep - it's tech leadership
+
+    cleaned.append(row)
+
+print('REMOVED entries:')
+for r in removed:
+    print(f'  - {r}')
+
+print(f'\nKept: {len([r for r in cleaned if r[\"Source\"] == \"Cursor\"])} new contacts')
+print(f'Removed: {len(removed)} non-qualifying entries')
+
+# Write cleaned CSV
+with open('data/top-contacts-enriched-with-gaps.csv', 'w', newline='') as f:
+    writer = csv.DictWriter(f, fieldnames=headers)
+    writer.writeheader()
+    writer.writerows(cleaned)
+    
+print(f'Total rows in output: {len(cleaned)}')
+"
+
+  description: Clean up non-qualifying entries from CSV
+
+[Tool result] Shell
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"2","content":"Run the script and monitor results","status":"completed"},{"id":"3","content":"Review output CSV and present findings","status":"in_progress"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Let me verify the final output looks good.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+from collections import defaultdict
+
+with open('data/top-contacts-enriched-with-gaps.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+
+cursor_rows = [r for r in rows if r['Source'] == 'Cursor']
+clay_rows = [r for r in rows if r['Source'] == 'Clay']
+
+print(f'Total: {len(rows)} | Clay: {len(clay_rows)} | Cursor: {len(cursor_rows)}')
+print()
+
+by_company = defaultdict(list)
+for r in cursor_rows:
+    by_company[r['Company Name']].append(r)
+
+for co in sorted(by_company.keys()):
+    people = by_company[co]
+    print(f'{co} ({len(people)} new):')
+    for p in people:
+        print(f'  + {p[\"Full Name\"]} — {p[\"Job Title\"]}')
+    print()
+
+# Show companies with no gaps found
+all_companies = set(r['Company Name'] for r in rows)
+gap_companies = set(r['Company Name'] for r in cursor_rows)
+no_gaps = all_companies - gap_companies
+print(f'Companies with no missing executives found ({len(no_gaps)}):')
+for c in sorted(no_gaps):
+    print(f'  ✔️  {c}')
+"
+
+  description: Final summary of output CSV
+
+[Tool result] Shell
+
+assistant:
+Now let me auto-commit and push per the project rules.
+[Tool call] TodoWrite
+  todos: [{"id":"3","content":"Review output CSV and present findings","status":"completed"},{"id":"4","content":"Auto-commit and push per project rules","status":"in_progress"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git status && git log --oneline -5
+  description: Check git status before commit
+
+[Tool result] Shell
