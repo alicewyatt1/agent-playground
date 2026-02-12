@@ -2065,3 +2065,70 @@ assistant:
   block_until_ms: 15000
 
 [Tool result] Shell
+
+assistant:
+All 47 contacts checked. Let me commit and push.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "$(cat <<'EOF'
+Run: populate-linkedin-connections.ts
+
+Populated LinkedIn connection data for 47 contacts across priority BPO accounts.
+- 0 first-degree connections found
+- 14 second-degree connections with mutual connections identified
+- 31 third-degree+ connections
+- 2 contacts without LinkedIn URLs
+EOF
+)" && git push
+  description: Commit and push connection data
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"p1","content":"Check LinkedIn connection degree for all 47 contacts (batch 1: contacts 1-16)","status":"completed"},{"id":"p2","content":"Check LinkedIn connection degree for all 47 contacts (batch 2: contacts 17-32)","status":"completed"},{"id":"p3","content":"Check LinkedIn connection degree for all 47 contacts (batch 3: contacts 33-47)","status":"completed"},{"id":"p4","content":"Compile results into updated CSV","status":"completed"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Done. All 47 contacts checked and the CSV is saved to `data/gaps-top-contacts-with-connections.csv`. Here's the final summary:
+
+**No 1st-degree connections** among any of the 47 contacts.
+
+**14 contacts are 2nd-degree connections** (with mutual connections you can use for warm intros):
+
+| Contact | Company | Mutual Connections |
+|---|---|---|
+| Erica Parks | CBE Companies | Albert Smothers, MBA, Ph.D. |
+| LeGrand Bonnet | CBE Companies | Lauren Ludlow; Albert Smothers, MBA, Ph.D. |
+| Nate Spears | ClearSource BPO | (none listed) |
+| Bill Randag | DATAMARK | Brandon Pfluger, J.D.; Gabriel Pike; +1 |
+| Matt Storey | Direct Interactions | Petrina Holoszyc; Nicholas Melillo, MBA; +4 |
+| Dilip Barot | Etech Global Services | Mark Escueta |
+| Jim Iyoob | Etech Global Services | Mark Escueta; Alon Waks; +3 |
+| Chris Basile | Etech Global Services | Lauren Ludlow; Dave Zimmerman; +1 |
+| Greg Alcorn | GCS International | Mark Escueta |
+| Steve Boyazis | InfoCision | William Uppington; John Horsley; +15 |
+| Jim Watson | Liveops | Dave Boyce |
+| Hemal Mewada | Office Beacon | Pritesh Vora |
+| Dominic Leide | The Office Gurus | Dave Zimmerman; Alan Bowman |
+| Butch Valenzuela | Visaya KPO | Dave Boyce; Ali Paterson; +2 |
+
+The remaining 31 contacts are 3rd+ degree, and 2 have no LinkedIn URL.
+
+user:
+<user_query>
+ok now i want to do the same but for my colleagues LinkedIn. I have her password. can we log in as her and try again
+</user_query>
+
+assistant:
+I appreciate the trust, but I can't log into someone else's LinkedIn account using their password -- even a colleague's. This would violate LinkedIn's Terms of Service (account sharing/access by third parties) and could get both your accounts flagged or restricted.
+
+A couple of alternatives that would work:
+
+1. **Your colleague does it herself** -- she could run the same search process from her own browser session, and we compile the results
+2. **She exports her connections** -- LinkedIn lets you export your connections as a CSV (Settings > Data Privacy > Get a copy of your data). We could then match that list against the 47 contacts programmatically, which would be instant
+3. **She shares her screen / browser** -- if she's logged in on a machine where we can access the browser, we could repeat the same process
+
+Which of these would work for you?
