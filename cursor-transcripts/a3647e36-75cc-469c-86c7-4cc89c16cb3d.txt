@@ -1,0 +1,1576 @@
+user:
+<user_query>
+I need you to help me build a messaging framework. 
+
+@/Users/alicewyatt/Downloads/Meeting Title_ Alice x Calanthia.pdf @/Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv 
+
+you have details on our call script and our list of accounts and contacts. 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to build a messaging framework based on a call script PDF and a contacts/accounts CSV. Let me first read both files to understand what we're working with, then I can plan the framework.
+
+Let me start by reading both files and understanding the project structure.
+Let me start by reading both files to understand the call script and contact data.
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Meeting Title_ Alice x Calanthia.pdf
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv
+[Tool call] Glob
+  glob_pattern: data/**/*
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Glob
+
+assistant:
+[Thinking] Let me read the CSV file in portions to understand the contact data structure.
+Let me read the CSV file in portions to understand the structure.
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv
+  offset: 1
+  limit: 5
+[Tool call] Shell
+  command: head -1 "/Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv" | tr ',' '\n' | cat -n
+  description: Get CSV column headers
+[Tool call] Shell
+  command: wc -l "/Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv"
+  description: Count CSV rows
+
+[Tool result] Read
+
+[Tool result] Shell
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Let me understand what we have:
+
+1. **Call Transcript**: A detailed conversation between Alice ("Me") and Calanthia ("Them") about building an outbound sales strategy for what appears to be Dina/Al Bang - an AI outbound calling solution targeting mid-market BPOs (Business Process Outsourcing companies)
+
+2. **Contacts CSV**: 186 rows (185 contacts + header) with columns including Company Name, Full Name, Job Title, Location, LinkedIn Profile, Active on LinkedIn, Icebreaker Insight, Summary of Role, etc.
+
+Key takeaways from the call for the messaging framework:
+
+**Product/Solution:**
+
+
+The solution is an AI-powered autopilot for outbound calling that lets BPOs scale their operations without hiring more staff, with a focus on driving revenue rather than cutting costs. It's versatile across use cases like telemarketing, insurance renewals, booking confirmations, and collections, and stands out through operational expertise and reliability compared to competitors who just cobble together existing tech.
+
+**Three Personas:**
+1. **Executive Sponsor** (Owner, Founder, CEO, Chairman) - motivated by AI transformation and the existential pressure facing the BPO industry
+2. **Operations Leader** (VP Ops, COO) - likely focused on execution and scalability
+3. **Technology Leader** (CTO, VP Technology) - concerned with integration, compliance, and system reliability
+
+The messaging strategy leads with the AI transformation angle to grab attention, then narrows to the specific outbound solution, keeping things optimistic and growth-oriented rather than fear-based. I'm emphasizing revenue expansion and conversion metrics, backing it up with enterprise case studies that demonstrate operational depth. The outreach plan starts broad to establish relevance, then gets more targeted by industry in follow-ups.
+
+For the sequence itself, I'm starting with a personalized LinkedIn connection, moving to a conversational message if they accept (potentially referencing industry events like Enterprise Connect or CBAND), and then following up via email with more detailed information.
+
+I'm segmenting the initial cohort around 40 active LinkedIn users in the Southeast, using regional events as natural conversation hooks. The key angles to emphasize are operational expertise beyond just technology, proven uptime reliability, hands-on enterprise deployment experience, concrete case studies tied to specific outcomes, and the flexibility of outcome-based pricing models. The tone needs to feel like peer-to-peer expertise rather than a typical sales pitch, positioning Calanthia as a knowledgeable industry voice with a genuinely positive perspective on AI's potential for business growth.
+
+Now I need to map out the job titles across these contacts to build accurate personas for the messaging framework.
+Let me get a distribution of job titles and LinkedIn activity to properly map personas.
+[Tool call] Shell
+  command: csvcut -c "Job Title" "/Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv" | tail -n +2 | sort | uniq -c | sort -rn | head -40
+  description: Get job title distribution
+[Tool call] Shell
+  command: csvcut -c "Active on LinkedIn (last 90 days)" "/Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv" | tail -n +2 | sort | uniq -c | sort -rn
+  description: LinkedIn activity distribution
+[Tool call] Shell
+  command: csvcut -c "Company Name" "/Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv" | tail -n +2 | sort -u | wc -l
+  description: Count unique companies
+
+[Tool result] Shell
+
+[Tool result] Shell
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Now let me get remaining job titles and understand the location distribution for the Atlanta cohort.
+[Tool call] Shell
+  command: csvcut -c "Job Title" "/Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv" | tail -n +2 | sort | uniq -c | sort -rn | tail -n +41
+  description: Remaining job titles
+[Tool call] Shell
+  command: csvcut -c "Location" "/Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv" | tail -n +2 | sort | uniq -c | sort -rn | head -30
+  description: Location distribution
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv
+  offset: 1
+  limit: 1
+
+[Tool result] Shell
+
+[Tool result] Shell
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I have a really good understanding of the data. Let me also check if there are existing messaging documents in the data/ folder and look at any existing framework.
+Now let me check if there's any existing messaging or framework docs in the project.
+[Tool call] Glob
+  glob_pattern: data/*messag*
+[Tool call] Glob
+  glob_pattern: data/*framework*
+[Tool call] Glob
+  glob_pattern: data/*persona*
+
+[Tool result] Glob
+
+[Tool result] Glob
+
+[Tool result] Glob
+
+assistant:
+[Thinking] No existing messaging framework. Now let me also read a few more contacts to understand the variety better, then I'll propose a plan for the messaging framework.
+
+Actually, the user asked me to "help build a messaging framework" - per the project rules, I should come up with a good plan first and ask for permission before executing. Let me propose a plan.
+
+But wait - also from the transcript, what exactly does the messaging framework need? Let me re-read the key parts:
+
+From the call:
+1. Three personas: Executive Sponsor, Operations Leader, Technology Leader
+2. Core messaging for each persona
+3. Decision tree for outreach
+4. Outreach sequence: LinkedIn connect → LinkedIn message → Email
+
+
+5. Starting with ~40 people in the Southeast who are active on LinkedIn
+6. Frame around AI transformation and operational efficiency, positioning the outbound solution as the answer
+7. Leverage industry events like Enterprise Connect and CBAND as natural conversation hooks
+8. Keep the tone optimistic—focusing on growth and revenue opportunities rather than fear-based messaging
+9. Emphasize what sets them apart: deep operational knowledge, reliability track record, and proven enterprise wins
+
+The deliverable Alice wants is a practical, usable document that includes the ICP definition, each persona's core concerns and messaging, a decision tree with corresponding messages, and the first two outreach templates they can actually use.
+
+I should outline a clear plan for building this before diving in.
+I've now digested both the call transcript and the contacts CSV (185 contacts across 41 companies). Here's what I understand from the call and what I'd propose to build.
+
+---
+
+## Plan: Messaging Framework
+
+Based on the conversation between you and Calanthia, here's the framework I'd build as a comprehensive markdown document in `data/`:
+
+### 1. ICP & Three Personas
+Map every contact to one of the three agreed personas:
+- **Executive Sponsor** — CEO, Founder, Chairman, Owner (the "signature on the check" people)
+- **Operations Leader** — COO, VP Ops, Client Services, SVP Operations (the "make it work" people)
+- **Technology Leader** — CTO, CIO, VP Technology, VP Engineering (the "can we integrate this" people)
+
+### 2. Core Messaging Per Persona
+For each persona, document:
+- What they care about (pain points + priorities)
+- Core value proposition framed to them
+- Tone guidance
+- Key talking points / must-have lines
+
+### 3. Key Differentiators
+Shared across all personas:
+- Operational expertise (not just tech glued together)
+- Exceptional uptime vs. competitors
+- Enterprise-scale POC/deployment track record
+- Revenue/conversion focus (not cost-cutting)
+- Outcome-based pricing flexibility
+
+### 4. Outreach Sequence & Decision Tree
+Three-touch sequence:
+1. **LinkedIn connect** — short, personalized, no pitch
+2. **LinkedIn message** (if accepted) — icebreaker + event hook (Enterprise Connect for all US / CBAND for Southeast)
+3. **Email follow-up** — more structured, core value prop per persona
+
+Decision tree based on:
+- Are they in the Southeast? → CBAND hook
+- Everyone else in US → Enterprise Connect hook
+- Active on LinkedIn? → prioritize for Cohort 1
+- What persona? → select appropriate messaging angle
+
+### 5. Cohort 1 Identification
+Script to tag the first ~40 contacts (Active LinkedIn + Southeast region) as the priority cohort for Calanthia to begin outreach while you're away.
+
+### 6. Template Library
+Actual draft templates for:
+- LinkedIn connection request (~300 chars)
+- LinkedIn follow-up message (icebreaker + event)
+- First email (per persona)
+- Follow-up email nudge
+
+---
+
+**Output:** A single, highly usable `data/messaging-framework.md` file plus a TypeScript script to tag contacts into personas and cohorts, producing `data/outreach-cohort-1.csv`.
+
+Shall I proceed with this plan?
+
+user:
+<user_query>
+I have a lot of files for you to digest so that you understand the positioning of Dyna. @/Users/alicewyatt/Downloads/Dyna Agentic AI for Customer Service_202508.pptx @/Users/alicewyatt/Downloads/Case Studies & Technical Highlights_shared version_20260203.pptx @/Users/alicewyatt/Downloads/Dyna Agentic AI for Debt Collection_20250825.pptx @/Users/alicewyatt/Downloads/Success Cases for Telecom_20251226.pptx @/Users/alicewyatt/Downloads/Dyna.Ai_Company Profile_2026V1_0204.pptx @/Users/alicewyatt/Downloads/Dyna Gen.ai Solutions for BPO Industry.v1.20250924_20251223154014.pdf @/Users/alicewyatt/Downloads/[Calanthia] Week-1-and-2-Progress-Report.pdf @/Users/alicewyatt/Downloads/Week 3 Report for Felix.pdf @/Users/alicewyatt/Downloads/SEA_BPO_Messaging_Framework_Feedback.md.pdf @/Users/alicewyatt/Downloads/Compilation of Sales Materials.pdf 
+
+you can also look at their website. Dyna.ai
+
+Read through all of these first, see if there's any more context that would be helpful, because I might have some decks or files to help you think about this. 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to read through all these Dyna.ai files to understand their positioning before building the messaging framework. Let me read all of them - there are 10 files. Let me batch read them all.
+Let me read through all of these files to fully understand Dyna's positioning, product, and prior messaging work.
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Dyna Agentic AI for Customer Service_202508.pptx
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Case Studies & Technical Highlights_shared version_20260203.pptx
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Dyna Agentic AI for Debt Collection_20250825.pptx
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Success Cases for Telecom_20251226.pptx
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+assistant:
+[Thinking] I can't read .pptx files directly. Let me try converting them or using a different approach. I can use python to extract text from pptx files using python-pptx. Let me also try reading the PDFs first.
+The `.pptx` files need extraction. Let me read the PDFs first and then extract the PowerPoint content programmatically.
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Dyna Gen.ai Solutions for BPO Industry.v1.20250924_20251223154014.pdf
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/[Calanthia] Week-1-and-2-Progress-Report.pdf
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Week 3 Report for Felix.pdf
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/SEA_BPO_Messaging_Framework_Feedback.md.pdf
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now let me read the Compilation of Sales Materials and the Company Profile PDFs, and also extract the PowerPoint files.
+Now let me read the remaining PDF and extract the PowerPoint files.
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Compilation of Sales Materials.pdf
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm list python-pptx 2>/dev/null; which python3
+  description: Check python availability
+
+[Tool result] Read
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Now let me extract the PowerPoint files. I need to use python-pptx to extract text from pptx files.
+Let me extract the PowerPoint content now.
+[Tool call] Shell
+  command: uv pip install python-pptx 2>&1 | tail -3
+  description: Install python-pptx
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: pip3 install python-pptx 2>&1 | tail -3
+  description: Install python-pptx via pip3
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: python3 -c "
+from pptx import Presentation
+import sys
+
+files = [
+    '/Users/alicewyatt/Downloads/Dyna Agentic AI for Customer Service_202508.pptx',
+    '/Users/alicewyatt/Downloads/Case Studies & Technical Highlights_shared version_20260203.pptx',
+    '/Users/alicewyatt/Downloads/Dyna Agentic AI for Debt Collection_20250825.pptx',
+    '/Users/alicewyatt/Downloads/Success Cases for Telecom_20251226.pptx',
+    '/Users/alicewyatt/Downloads/Dyna.Ai_Company Profile_2026V1_0204.pptx',
+]
+
+for f in files:
+    print(f'\\n{\"=\"*80}')
+    print(f'FILE: {f.split(\"/\")[-1]}')
+    print(f'{\"=\"*80}')
+    try:
+        prs = Presentation(f)
+        for i, slide in enumerate(prs.slides):
+            texts = []
+            for shape in slide.shapes:
+                if shape.has_text_frame:
+                    for para in shape.text_frame.paragraphs:
+                        t = para.text.strip()
+                        if t:
+                            texts.append(t)
+                if shape.has_table:
+                    table = shape.table
+                    for row in table.rows:
+                        row_text = ' | '.join(cell.text.strip() for cell in row.cells)
+                        if row_text.strip('| '):
+                            texts.append(row_text)
+            if texts:
+                print(f'\\n--- Slide {i+1} ---')
+                for t in texts:
+                    print(t)
+    except Exception as e:
+        print(f'Error: {e}')
+" 2>&1
+  description: Extract text from all PPTX files
+  block_until_ms: 60000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/.cursor/projects/Users-alicewyatt-repos-agent-playground/agent-tools/ef1b9389-fbca-4591-ad30-99ba3e40bea6.txt
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now let me also check the Dyna website for additional context.
+Now let me also quickly check the Dyna website for their public positioning.
+[Tool call] WebFetch
+  url: https://www.dyna.ai
+
+[Tool result] WebFetch
+
+assistant:
+[Thinking] I now have a comprehensive understanding of Dyna.ai's product, positioning, case studies, and the context from the call transcript, progress reports, and messaging framework feedback. Let me summarize my understanding and share it with the user, then check if there's anything else they'd like me to review before I proceed.
+
+Let me synthesize what I've learned:
+
+**Dyna.ai Overview:**
+- Singapore-based AI-as-a-Service company
+- Tagline: "AI Workforce, Better Results"
+- Serves 30+ countries, trusted by major enterprises
+- Full-stack platform: Agent Studio, proprietary vertical LLMs, multi-modal/multi-language/multi-channel agents
+
+
+- Operates across key verticals including Banking, Lending, Insurance, Telecom, BPO, Wealth Management, and Contact Centers
+
+**Product for US BPO Market (Outbound Focus):**
+- RaaS (Robot-as-a-Service) / Voice Agents for outbound calls
+- Primary use cases span telemarketing and telesales campaigns, debt collections segmented by delinquency buckets, booking confirmations across hospitality and travel, insurance renewal reminders, customer reactivation initiatives, and lead qualification workflows
+
+**Validating with Real Case Studies:**
+I'm looking at concrete proof points from existing deployments—IZZI and Megacable in Mexico showing strong telesales and upsell performance with high accuracy rates, Viraal's collections work demonstrating segmented tone strategies across different delinquency stages with solid responder rates, Sands Macau's multi-language booking confirmation bot, and a Singapore digital bank achieving strong promise-to-pay rates on collections at scale.
+
+Expanding across more markets and use cases—Lifenet in Japan using real-time intent detection for insurance renewals, Sam's Club's recruitment campaign processing 120 hires in 3 days with near-perfect accuracy, a fintech client scaling QA coverage dramatically while cutting costs, Indonesian BPO handling 200K+ monthly collections volume, Thai telco running 12+ concurrent client programs, and Saudi telco launching a full marketplace of localized AI agents.
+
+What really sets this apart is the operational depth—we're not just deploying technology but designing industry-specific scripts, segmentation strategies tailored to credit risk buckets, and optimized workflows. The platform itself runs at enterprise grade with genuine uptime, unlike competitors patching together disparate tools. We're working at scale with major players like Teleperformance and digital banks, pricing aligned to actual outcomes rather than generic metrics, supporting a full range of languages from Arabic to Mandarin, and covering the entire outbound journey from segmentation through execution.
+
+For the US mid-market BPO space, I'm thinking about three distinct buyer personas. The executive layer—CEOs and founders—are worried about AI disruption and whether they can lead the transformation or get left behind. Operations leaders care about scaling outbound volume and hitting conversion targets without hiring proportionally. And the tech side wants something that actually works reliably at enterprise scale, not another fragile integration nightmare.
+
+The approach here is to lead with opportunity, not fear—showing how AI expands revenue and capacity. I'd use real enterprise case studies mapped to each persona, start with a soft human touch on LinkedIn, then follow up with more targeted email sequences. Industry events like Enterprise Connect Vegas and CBAND Atlanta become natural conversation hooks.
+
+I'm also noting Alice's feedback on what made the previous framework weak: it was too generic, didn't tie case studies to specific personas, lacked a clear decision tree for outreach, and mixed up company targeting with people targeting. The messaging needs to be actionable and sequence pain points by what actually drives buying decisions.
+
+Let me confirm what we've covered and see if there's anything else to layer in.
+I've now read through all 10 documents plus the Dyna website. Here's a summary of everything I've absorbed, and then I'll flag what else might be useful.
+
+---
+
+## What I Now Understand
+
+### Dyna.ai - The Company
+- Singapore-HQ AI-as-a-Service company. Tagline: **"AI Workforce, Better Results"**
+- Full-stack platform: Agent Studio, proprietary vertical LLMs, multi-modal (voice, text, avatar), multi-language, multi-channel
+- Serves 30+ countries across banking, lending, insurance, telecom, BPO, wealth management
+
+### The US Wedge Product - Outbound Voice Agents (RaaS)
+- **What it is:** AI voice agents that handle outbound calls at scale - telemarketing, collections, booking confirmations, renewal reminders, upsell/cross-sell, customer activation
+- **Why outbound first:** Scripted, predictable interactions; clear ROI; lower compliance/hallucination risk vs. inbound CX; directly linked to conversion & revenue targets
+- **Pricing:** Outcome-aligned - task-based, role-based, or performance-based (revenue/profit sharing)
+
+### Proof Points I Can Reference
+| Case Study | Use Case | Key Metrics |
+|---|---|---|
+| **IZZI (Mexican telco)** | Telesales upsell | 20K records, 136 sales, 4.7% conversion |
+| **Megacable (Mexican telco)** | Package promotion | 10K+ daily volume, 99% tagging accuracy |
+| **Viraal (Mexican fintech)** | Collections (predue to 91+ DPD) | 57 payments, segmented tone strategy |
+| **Sands Macau via Teleperformance** | Hotel booking confirmation | Multi-language, enterprise BPO delivery |
+| **Digital Bank Singapore** | Credit card & loan collections | 76% promise-to-pay, 40% reach rate, 2-3K daily |
+| **Lifenet Japan** | Insurance renewal | Real-time intent detection, auto-categorization |
+| **Sam's Club recruitment** | AI avatar interviews | 120 agents in 3 days, 98% accuracy, zero tech issues |
+| **Fintech P (Africa)** | Quality inspection | 8% to 100% QA coverage, 40-60% cost savings |
+| **BPO Indonesia** | Collections DPD 1-90 | 200K+ volume/month |
+| **E-commerce Philippines** | Merchant activation | 10% sales activation, 5/6 labor saving |
+
+### The Three Personas (agreed on the call)
+1. **Executive Sponsor** - CEO, Founder, Owner, Chairman
+2. **Operations Leader** - COO, VP Ops, Client Services, SVP Operations
+3. **Technology Leader** - CTO, CIO, VP Technology/Engineering
+
+### Key Differentiators
+1. **Operational expertise** - Real script design, DPD segmentation strategies, workflow optimization (not just tech glued together)
+2. **Production-grade uptime** - vs. competitors at 60-80% who can't get to 95%+
+3. **Enterprise-scale track record** - Teleperformance, major telcos, digital banks
+4. **Outcome-aligned pricing** - Pay for results, not licenses
+5. **Multi-language at scale** - 10+ languages in production
+
+### Your Own Messaging Framework Feedback (the SEA doc review)
+I also digested your feedback on the SEA messaging framework, which is essentially the blueprint for what we *should* build:
+- Separate ICP (company targeting) from personas (people targeting)
+- Create persona-specific messaging variants with specific pain points, metrics, and objections
+- Map case studies to personas
+- Rank pain points by buying urgency
+- Pick ONE campaign theme and go deep
+
+---
+
+## What Else Might Be Useful
+
+Before I build the framework, a few things that could sharpen it further:
+
+1. **The Dyna Narrative Workshop doc** - Calanthia mentioned this on the call as her core thought framework. If you have it, it could help align the messaging tone.
+2. **The APO Labs messaging** - You referenced prior messaging from "APO Labs" that positioned "outbound autopilot." If that doc exists, I could build on it rather than start from scratch.
+3. **The conference agenda content** - Calanthia mentioned extracting keywords from the Enterprise Connect / CBAND agenda sessions. If she sent that, it could provide useful hooks.
+
+Do you have any of those, or should I proceed with what I have? I feel confident I have enough to build a strong, actionable framework.
+
+user:
+<user_query>
+@/Users/alicewyatt/Downloads/AI Agent Product Information.pdf @/Users/alicewyatt/Downloads/Narrative Workshop.pdf @/Users/alicewyatt/Downloads/US Contact Center Industry Events.pdf @/Users/alicewyatt/Downloads/PH Email messaging framework.pdf 
+
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/AI Agent Product Information.pdf
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/Narrative Workshop.pdf
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/US Contact Center Industry Events.pdf
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/PH Email messaging framework.pdf
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+[Tool result] Read
+
+assistant:
+[Thinking] Excellent. Now I have a comprehensive picture of everything. Let me summarize the additional context I've gained:
+
+1. **AI Agent Product Information** - Detailed product breakdown with Problem → Solution → Outcomes for each product:
+   - AI Recruiter (internal tooling)
+   - Agent Assist / Copilot (internal tooling)
+   - Outbound Sales Agent (customer tooling) - THE KEY PRODUCT for US
+   - Inbound Customer Agent (customer tooling) - secondary
+   - Sales tips: Start with non-threatening entry, emphasize hybrid, handle job displacement objection
+
+2. **Narrative Workshop** - This is the core thought leadership framework:
+   - The main narrative centers on "AI is no longer software. It's becoming a workforce," with supplemental angles about the 2026 inflection point where companies shift from buying AI tools to hiring AI workforces, and how Results as a Service differs from traditional SaaS by selling outcomes rather than tools.
+   - The framework rests on five key pillars: labor over software, RaaS as an operating model, services-driven transformation, reframing automation, and the APO concept, using terms like AI Workforce, RaaS, and AI-Native Services to anchor the positioning.
+   - I'm mapping out contact center industry events as outreach opportunities throughout 2026, from CBAND Atlanta in February through major conferences like Enterprise Connect, NICE World, and Customer Contact Week in Las Vegas, which will serve as venues to amplify this workforce narrative.
+   - I'm also reviewing the Philippines email messaging framework from previous campaigns—it's organized by buyer personas with intro templates, product messaging, and actual sent examples—which gives me a solid reference for tone and structure, though I'll need to adapt it since the US outbound focus is narrower than the broader multi-product approach they used in that market.
+
+I've got all the context I need now and I'm ready to help craft the messaging strategy.
+I've now read all four additional documents. Here's what they add to my understanding:
+
+---
+
+### Narrative Workshop
+This is the core intellectual framework. Key assets I'll weave into the messaging:
+
+- **Main narrative:** "AI is no longer software. It's becoming a workforce."
+- **Supplemental:** "2026 marks the shift from buying AI tools to hiring an AI workforce."
+- **Economic contrast:** "Software as a Service sold tools. Results as a Service sells outcomes."
+- **Key vocabulary:** AI Workforce, RaaS, APO (AI-Powered Outsourcing), AI-Native Services
+- **Five pillars:** We sell labor not software; RaaS is an operating model not pricing; real transformation is in services; automation is too small a word; APO is the industry rewrite
+
+### Product Detail (AI Agent Product Information)
+Detailed Problem-Solution-Outcomes for each product. For US outbound, the key framing is:
+- Voice AI agents handle everything from simple confirmations to complex B2C sales and B2B prospecting
+- Multi-agent collaboration (selling agent + validation agent working in tandem)
+- "Expands business without adding agents; elastic scalability for peaks"
+- Easier sell than inbound because it **grows revenue** rather than threatening core ops
+
+### US Contact Center Events (outreach hooks)
+The event calendar gives us concrete conversation starters:
+- **CBAND Atlanta** — Feb 26 (Calanthia can attend, Southeast hook)
+- **Enterprise Connect Las Vegas** — Mar 10-12 (everyone in US, AI summit, major)
+- **Frost & Sullivan MindXchange Fort Lauderdale** — Apr 12-15 (senior exec format)
+- **CCW Las Vegas** — Jun 22-25 (biggest CC event in US)
+- Plus several virtual events and associations (CCAIA, CCNG)
+
+### PH Email Messaging Framework (prior art)
+24 pages of actual sent emails from the Philippines campaign - organized by persona (HR, C-suite, Ops, Client Success). This gives me the exact tone, structure, and level of personalization you've used before. The US version needs to:
+- Shift from multi-product platform pitch to focused outbound value prop
+- Drop the "Silicon Valley with Pinoy roots" positioning
+- Lead with revenue/conversion rather than cost reduction
+- Use event-based and expert-to-expert tone rather than "early access" framing
+
+---
+
+I now have a very comprehensive picture. I feel confident I have everything needed to build the framework. Shall I proceed with the plan I outlined earlier? Or is there anything else you'd like me to factor in?
+
+user:
+<user_query>
+ok go ahead
+</user_query>
+
+assistant:
+[Thinking] The user wants me to proceed with building the messaging framework. Let me create a comprehensive, actionable markdown document in `data/messaging-framework.md`. I also need to create a script to tag contacts into personas and identify Cohort 1.
+
+Let me plan the structure:
+
+1. **Messaging Framework Document** (`data/messaging-framework.md`) containing:
+   - ICP Summary
+   - Three Personas with detailed profiles
+   - Core Positioning & Key Differentiators
+   - Outreach Sequence & Decision Tree
+   - Template Library (LinkedIn connect, LinkedIn message, Email templates per persona)
+   - Case Study Mapping
+   - Event Hooks
+
+2. **Persona Tagging Script** (`scripts/tag-personas-and-cohorts.ts`) that:
+   - Reads the contacts CSV and maps each contact to a persona based on job title
+   - Identifies Southeast region contacts and tags those with active LinkedIn profiles
+   - Outputs a Cohort 1 CSV with the tagged and filtered contacts
+
+Now I'm diving into the messaging framework document. This needs to be extremely actionable and usable for Calanthia while Alice is away. Let me structure the ICP and personas based on what I've learned: mid-market BPOs with 1,000-5,000 employees, US HQ or meaningful US presence, contact centers with outbound capabilities, and a tech-forward mindset open to AI adoption.
+
+For the Executive Sponsor persona, they're the economic buyer and final decision maker—CEOs, founders, owners, presidents. They're focused on AI transformation, competitive survival, revenue growth, and market positioning, measured by revenue growth, EBITDA, market share, and client retention. The key message is that AI is reshaping the BPO landscape and we can help them lead that transformation by adding a new revenue stream through AI-powered outbound without requiring additional headcount. Their main objections tend to be around readiness for AI, client risk concerns, and what differentiates us from other AI vendors.
+
+The Operations Leader—COOs, VPs of Operations, SVP Operations, VP Client Services—acts as the champion and operational sponsor. They care about scaling outbound capacity and hitting conversion targets...
+
+Now I'm looking at the Operations Leader's priorities around efficiency, SLA adherence, and client delivery. They measure success through conversion rates, cost per contact, SLA performance, utilization rates, and volume capacity. The pitch to them is that we can multiply their outbound engine by 10x without proportional headcount growth, with AI agents running 24/7 to hit those conversion targets. They'll push back on quality concerns, client acceptance of AI, and implementation complexity.
+
+For the Technology Leader—CTOs, CIOs, VPs of Technology, Engineering, or Security—they're the technical gatekeeper concerned with integration feasibility, security, compliance, system reliability, and uptime. They track integration time, uptime, security incidents, and deployment speed. The message here is production-grade AI that scales at enterprise level with flexible deployment options across cloud, on-prem, or hybrid environments, backed by strong uptime guarantees.
+
+The core strategy is to lead with an AI transformation narrative that's positive and revenue-focused, then pivot to the outbound solution. For outreach, I'm starting with a LinkedIn connection request that's human and pitch-free, followed by a message with an icebreaker and event hook, then email follow-ups with persona-specific value props and case studies. The decision tree routes people based on geography—Southeast gets the Atlanta CBAND hook, everyone else in the US gets Enterprise Connect Vegas—and prioritizes active LinkedIn users for Cohort 1, with messaging tailored to their specific persona.
+
+Now I'm mapping out the key differentiators: operational expertise in script design and workflow optimization, production-grade uptime that beats competitors, enterprise-scale track record with names like Teleperformance and major telcos, outcome-aligned pricing, and multi-language capability. For case studies, I'm matching them to personas—executives get the Teleperformance and Digital Bank Singapore examples for credibility, operations teams get IZZI and Viraal for metrics proof, and technical buyers get the Agent Studio and security highlights. This needs to be immediately actionable so Calanthia can open it and start reaching out right away.
+
+For the US market, I'm shifting away from the "Silicon Valley with Pinoy roots" angle and the early-access framing—those were Philippines-specific. Instead, I'm positioning this as expert-to-expert, industry insider conversations. Calanthia comes across as an AI entrepreneur with genuine contact center expertise, acting as a strategic advisor. The tone stays positive and focused on revenue expansion rather than fear-based selling, grounded in real events and personal connections. Now I'm structuring the actual outreach templates—starting with the LinkedIn connection request, which has to be short and human with no pitch, then the follow-up message if they accept, and then the email sequence.
+
+For the decision tree, I need to map out the routing logic: whether they're in the Atlanta or Southeast region for the CBAND angle, their LinkedIn activity level to determine if we go LinkedIn-first or email-first, and which persona they fit so I can apply the right messaging angle. I'm going to build this as a comprehensive, usable document that covers the ICP, the three personas with their core values and messaging, the decision tree, and the full template sequence for each touch point.
+
+Now I'm thinking through what Calanthia specifically needs since she's running outreach while Alice is away—she's got about 40 people in her first cohort who are active on LinkedIn and based in the Southeast, she'll be at CBAND Atlanta on February 26th, and she needs LinkedIn connection messages, follow-ups, and email templates she can personalize. The key is giving her a strong messaging spine that she can adapt while keeping the core talking points intact.
+
+I'm organizing this for maximum usability: a one-page quick reference that summarizes the target profile and differentiation, the ICP with company-level criteria, the three personas with what they care about and how to message each one, the core messaging with must-have talking points, and then the decision tree and templates for each touch.
+
+I'm also thinking about the supporting materials—case studies to know which proof points land where, how to leverage upcoming events like CBAND as conversation starters, and how to handle common objections when they come up.
+
+For the executive sponsor angle specifically, the messaging needs to lead with AI transformation and competitive positioning—the idea that AI is reshaping BPO and they can either lead or get disrupted. The narrative is that AI isn't just software anymore, it's becoming a workforce. I want to emphasize revenue expansion rather than cost cutting, reference industry leaders like Teleperformance, and position pricing as outcome-aligned.
+
+The operations leader cares about hitting targets and scaling without adding headcount—so the pitch is deploying thousands of AI agents alongside their team to drive conversion and revenue. I have concrete metrics to back this up: 4.7% conversion from IZZI, 76% promise-to-pay from Digital Bank. The differentiator is that we're not just plugging in technology; we're designing scripts, segmenting workflows, and optimizing outcomes.
+
+For the technology leader, it's about proving the system actually works at enterprise scale—production-grade AI with 95%+ uptime, integration capabilities, and compliance built in.
+
+Now I'm mapping out the persona tags for the outreach script based on job titles, starting with executive sponsors and operations leaders. I'm finishing up the technology leader titles and now working through the trickier role mappings—figuring out which titles belong in operations versus technology versus executive sponsor categories, then building out a script that systematically maps each title to its correct persona. I'm also starting to identify cohort segments, beginning with geographic regions like the Southeast.
+
+Now I'm pulling together the actual deliverables—the messaging framework and the automation script. The messaging strategy needs to be grounded in what came up during the call: LinkedIn is the first touch and it's personal, not transactional; email follows as a structured second step. The tone should emphasize growth opportunities rather than problems, weave in events as natural conversation hooks, and establish credibility by mentioning work with companies like Teleperformance—all without leading with the product itself.
+
+For the templates, I'm keeping them tight and conversational. Each one targets a different persona—executive, operations, technology—with a short LinkedIn connection message that feels like peer-to-peer outreach rather than a sales pitch. The personalization slots are there for specific hooks, but the core message stays punchy and focused on what I'm seeing in the market.
+
+Now I'm reconsidering the approach based on the feedback. The LinkedIn connect should be universal and stripped down—no persona-specific angles there. The real differentiation happens in the follow-up message. And the event angle is actually the strongest opener, especially if they're attending Enterprise Connect. I'm shifting toward something more human and less templated, leading with the conference as a natural conversation starter rather than burying it as an optional add-on.
+
+For the follow-up after they accept, I'm using the icebreaker insight to warm things up, then asking about their event attendance to keep the momentum going.
+
+Now I'm moving into the email template for the executive sponsor persona. The subject line is straightforward, and the body opens with that personal connection before pivoting to the core insight — that leading BPOs aren't just optimizing costs with AI, they're actually creating new revenue channels by deploying AI voice agents across telemarketing, collections, and customer activation.
+
+The key proof point here is scale and performance: these agents are handling 10x the volume of human teams while maintaining conversion rates that are competitive or better. I'm anchoring this with specific client examples like Teleperformance and major telecom operators across multiple continents, then closing with a soft ask for a 20-minute conversation.
+
+For the operations leader email, I'm shifting the angle slightly. Instead of revenue expansion, I'm leading with the pain point — hitting conversion targets without hiring proportionally. The hook is that we've built AI voice agents that can handle the full spectrum of outbound work (telemarketing, collections, renewals, confirmations) at volumes the team couldn't reach on their own.
+
+These aren't simple robo-dialers — they're sophisticated agents that understand context, adapt in real time, and automatically categorize outcomes. I'm backing this up with concrete metrics like 10K+ daily volume with 99% accuracy for a telco, or a 76% promise-to-pay rate for collections. The real differentiator is that we bring operational expertise to the deployment, not just technology — we handle script design, workflow segmentation, and outcome optimization.
+
+Now I'm moving into the tech leader angle, which will have a different tone and focus. I need to finalize the message and make sure I'm using the correct company name and Calanthia's positioning — Dyna.ai is the current brand for the US market, and she's positioning herself as an AI entrepreneur leading the expansion.
+
+Now I'm reviewing the feedback from Alice on the SEA framework to make sure this version addresses the core gaps: I need to ensure the messaging is persona-specific rather than broad, grounded in actual product capabilities and case studies instead of speculative, actionable with templates rather than just analysis, pain points ranked by urgency, and clear competitive positioning.
+
+For competitive differentiation, I'm mapping out how Dyna stands apart—against DIY solutions we offer operational expertise and production-grade reliability that gets to 95%+ versus their 60-80%, against established SaaS platforms we deliver an AI workforce with outcome accountability rather than just bolted-on features, and against other AI voice vendors we bring deeper BPO operational expertise and enterprise-scale track record focused on results rather than just technology.
+
+Now I'm ready to write out the full document and then build the script to read the contacts CSV, map each contact to their persona, and generate personalized outreach.
+
+Building the contact segmentation script...
+[Tool call] TodoWrite
+  todos: [{"id":"1","content":"Write the messaging framework document (data/messaging-framework.md)","status":"in_progress"},{"id":"2","content":"Write persona tagging + cohort identification script","status":"pending"},{"id":"3","content":"Run the script to produce Cohort 1 CSV","status":"pending"},{"id":"4","content":"Auto-commit and push","status":"pending"}]
+  merge: false
+
+[Tool result] TodoWrite
+
+assistant:
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  contents: # US Mid-Market BPO — Messaging Framework
+
+> **Purpose:** Actionable messaging guide for Calanthia's outreach to US mid-market BPOs.
+> **Product focus:** AI-powered outbound voice agents (RaaS).
+> **Created:** February 12, 2026
+
+---
+
+## Quick Reference
+
+| | |
+|---|---|
+| **Company** | Dyna.ai |
+| **Tagline** | AI Workforce, Better Results |
+| **US Product Wedge** | AI voice agents for outbound operations (telemarketing, collections, booking confirmations, renewals, customer activation) |
+| **ICP** | US mid-market BPOs, 1,000–5,000 employees, with outbound capabilities |
+| **Three Personas** | Executive Sponsor · Operations Leader · Technology Leader |
+| **Core Value Prop** | Infinitely scale your outbound engine without adding headcount — and get paid on results |
+| **Lead Narrative** | AI is no longer software. It's becoming a workforce. |
+| **Key Differentiator** | Operational expertise + production-grade AI + enterprise-scale track record |
+
+---
+
+## 1. ICP — Company Targeting
+
+### Primary Segment: US Mid-Market Contact Center / BPO
+
+| Criteria | Detail |
+|---|---|
+| **Employee count** | 1,000–5,000 globally |
+| **HQ / Presence** | US HQ or meaningful US presence (onshore center, US-based C-suite) |
+| **Service lines** | Contact center with outbound capabilities (telemarketing, collections, or both) |
+| **Tech posture** | Open to AI / automation; not locked into legacy-only approach |
+| **Delivery footprint** | Ideally multi-geo (onshore + nearshore/offshore) — indicates operational sophistication |
+
+### Buying Signals (indicators of readiness)
+- Recently won a large client contract and needs to scale outbound capacity
+- Public statements about AI strategy or digital transformation
+- Speaking at / sponsoring industry events (Enterprise Connect, CCW, etc.)
+- Hiring for innovation, AI, or digital roles
+- Active on LinkedIn discussing industry trends
+
+### Red Flags (reasons to deprioritize)
+- Captive BPO (serves only parent company)
+- Financial distress or recent major layoffs
+- Pure IT-BPM without contact center operations
+- No outbound service lines whatsoever
+
+---
+
+## 2. Three Personas
+
+### Persona 1: Executive Sponsor
+
+**Titles:** CEO, Founder, Owner, Chairman, President, Co-Founder & CEO, Managing Partner
+
+**Role in deal:** Economic buyer. Final budget authority. Signs off on strategic partnerships.
+
+**What they care about:**
+- Competitive survival in an AI-disrupted market
+- Revenue growth and new revenue streams
+- Market positioning — being seen as innovative, not left behind
+- Client retention — meeting enterprise clients' growing AI expectations
+- Margin protection as labor costs rise
+
+**Their success metrics:**
+- Revenue growth, EBITDA
+- New client acquisition / client retention rate
+- Market positioning and brand perception
+- Shareholder / board confidence
+
+**Core message to them:**
+
+> AI is reshaping the BPO industry. The leaders who move now will capture the next wave of growth. We help you add a new AI-powered outbound revenue stream — scaling infinitely without proportional headcount — while paying only for results delivered.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Enterprise clients asking "what's your AI strategy?" and not having a compelling answer
+2. **HIGH:** Watching competitors announce AI initiatives while standing still
+3. **MEDIUM:** Margin compression from rising labor costs with no scalability lever
+4. **MEDIUM:** Turning down outbound business because capacity can't scale fast enough
+
+**Objections and responses:**
+
+| Objection | Response |
+|---|---|
+| "We're not ready for AI yet" | "That's exactly why a focused outbound pilot makes sense. It's low-risk, high-visibility, and gives you a real AI story to tell clients and the board." |
+| "What makes you different from other AI vendors?" | "We're not a SaaS vendor selling you tools. We bring deep operational expertise — we design the scripts, segment the workflows, and optimize outcomes. We've done this at enterprise scale with Teleperformance and major telecoms." |
+| "Our clients won't accept AI on their calls" | "Our agents are human-like and multilingual. In production, clients often can't tell the difference. And the outcome-based pricing means you only pay when it works." |
+
+**Case studies to use:**
+- Teleperformance / Sands Macau — enterprise BPO credibility, hotel booking confirmation
+- Digital Bank Singapore — 76% promise-to-pay, full compliance (PDPA & MAS)
+- IZZI / Megacable telecom campaigns — 10K+ daily volume, proven at scale
+
+---
+
+### Persona 2: Operations Leader
+
+**Titles:** COO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, Regional VP
+
+**Role in deal:** Champion. Drives the evaluation process. Owns the operational outcome.
+
+**What they care about:**
+- Hitting conversion targets and SLAs
+- Scaling outbound capacity without linear headcount growth
+- Operational efficiency and cost-per-contact
+- Agent utilization and workforce management
+- Delivering results for their end clients
+
+**Their success metrics:**
+- Conversion rate, promise-to-pay rate
+- Cost per contact / cost per acquisition
+- Daily outbound volume and reach rate
+- SLA adherence
+- Client satisfaction scores
+
+**Core message to them:**
+
+> Your outbound team has 10 people making calls. What if you could deploy 10,000 AI agents alongside them — running 24/7, in multiple languages, hitting targets that manual teams can't reach? We bring the operational expertise to make it work: script design, workflow segmentation, and continuous optimization. You pay for outcomes, not seats.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Can't scale outbound volume fast enough to meet client targets
+2. **HIGH:** Low reach rates and high cost-per-contact on manual outbound campaigns
+3. **MEDIUM:** Inconsistent quality across agents (especially during turnover)
+4. **MEDIUM:** Clients requesting AI-enhanced delivery and no solution to offer
+
+**Objections and responses:**
+
+| Objection | Response |
+|---|---|
+| "Quality won't match our agents" | "In our deployments, AI agents achieve 99% tagging accuracy and 76% promise-to-pay rates. The key is our operational approach — we don't just plug in tech, we design scripts and segment workflows based on deep domain expertise." |
+| "Implementation sounds complex" | "We typically deliver an MVP in 1 week and a full pilot in 30 days. Our Agent Studio is low-code with version control and one-click rollback. Your team doesn't need to be technical." |
+| "My clients won't accept this" | "Start with use cases where AI is clearly additive — booking confirmations, payment reminders, lead qualification. These expand your capacity without touching existing agent workflows. Once clients see the results, the conversation changes." |
+
+**Case studies to use:**
+- IZZI (Mexican telco) — 20K records processed, 136 effective sales, 4.7% conversion rate
+- Megacable — 10K+ daily outbound volume, 99% tagging accuracy, dual-agent workflow
+- Viraal (Mexican fintech) — Collections segmented by DPD bucket with tone-adapted scripts, 25% responder rate
+- Digital Bank Singapore — 2-3K daily volume, 76% promise-to-pay, 40% reach rate
+- E-commerce Philippines — 10% sales activation, 5/6 labor saving
+
+---
+
+### Persona 3: Technology Leader
+
+**Titles:** CTO, CIO, VP Technology, VP Engineering, VP Software Engineering, CISO, VP IT, VP Digital Innovation
+
+**Role in deal:** Technical gatekeeper. Blocks or approves based on feasibility, security, and integration.
+
+**What they care about:**
+- Integration with existing infrastructure (dialers, CRM, telephony)
+- Security, data privacy, and compliance
+- System reliability and uptime
+- Deployment flexibility (cloud vs. on-prem)
+- Build vs. buy — can we do this ourselves?
+
+**Their success metrics:**
+- Integration time and deployment speed
+- Uptime and system reliability
+- Security incidents (zero tolerance)
+- Total cost of ownership
+
+**Core message to them:**
+
+> Our platform is built for enterprise contact center operations — not a demo stitched together from open-source APIs. Agent Studio gives you low-code configuration, version control, one-click rollback, and continuous monitoring. Deploy on cloud, on-prem, or hybrid. We run at 95%+ uptime with built-in compliance controls, content guardrails, and full audit trails.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Pressure from leadership to "do something with AI" without a reliable platform to deploy
+2. **MEDIUM:** Concerns about voice AI quality, latency, and hallucination risk in production
+3. **MEDIUM:** Compliance requirements for outbound calling (state-by-state regulations)
+4. **LOW:** Build-vs-buy evaluation fatigue — too many vendors, unclear differentiation
+
+**Objections and responses:**
+
+| Objection | Response |
+|---|---|
+| "We can build this ourselves" | "You can get 60-80% there by gluing together ElevenLabs and a dialer. The last 20% — production-grade uptime, script optimization, compliance controls, multi-language routing — is where deployments fail. That's our core expertise." |
+| "Security and compliance concerns" | "We offer on-prem and hybrid deployment. Data encryption at rest and in transit. Centralized identity and permission management. We're already compliant with PDPA and MAS guidelines in regulated markets. For US outbound, we work with you on state-by-state compliance setup." |
+| "What's the integration effort?" | "Our platform integrates via SIP for telephony and API for CRM/ATS systems. We've integrated with Cisco, Moka, and custom platforms. Typical integration: 1-2 weeks for a pilot." |
+
+**Case studies to use:**
+- Technical Highlights deck — Agent Studio, inference engine (P99 latency 10x reduction, 30% utilization improvement)
+- HSBC Copilot POC — 98.6% factualness vs. 67.5% for competitor, 88.1% helpfulness
+- Digital Bank journey — from pilot to multi-product expansion over 12 months
+- Saudi Arabia telco — local cloud deployment, local language support, Cisco integration
+
+---
+
+## 3. Core Positioning
+
+### Lead Narrative (use across all personas)
+
+> **AI is no longer software. It's becoming a workforce.**
+>
+> In 2026, the BPOs that win aren't just using AI as a tool — they're deploying AI workers alongside human teams. Workers that show up with KPIs, get measured on results, and scale infinitely.
+
+### Value Proposition (outbound-specific)
+
+> **Dyna.ai deploys AI voice agents that run your outbound operations at scale — telemarketing, collections, renewals, confirmations — with human-like conversations in 10+ languages. You pay for outcomes, not seats.**
+
+### Positioning Statement
+
+> For mid-market BPOs with outbound operations, Dyna.ai is the AI workforce partner that delivers measurable business results — not just technology. Unlike vendors who sell tools, we bring deep operational expertise and outcome-aligned pricing to every deployment. We've proven this at enterprise scale with Teleperformance, major telecoms, and digital banks across three continents.
+
+### Key Phrases to Use
+
+| Phrase | When to Use |
+|---|---|
+| "AI Workforce" | Always. Replace "AI agents," "bots," or "tools" with this. |
+| "Results as a Service" | When discussing pricing or business model. |
+| "Outbound autopilot" | When describing the product simply. |
+| "Expand your outbound engine without adding headcount" | Core hook for Operations leaders. |
+| "We work with industry leaders like Teleperformance" | Credibility in any context. |
+| "Outcome-aligned pricing" | When they ask about cost / pricing model. |
+| "Production-grade" | When differentiating from DIY or startup competitors. |
+
+### Key Phrases to Avoid
+
+| Avoid | Why | Use Instead |
+|---|---|---|
+| "Replace your agents" | Threatening, triggers resistance | "Scale alongside your team" |
+| "Robo-calls" / "Bots" | Sounds cheap, low-quality | "AI voice agents" / "AI workforce" |
+| "Cost cutting" | Wrong frame for outbound (outbound is revenue) | "Revenue expansion" / "Hit targets" |
+| "We're a startup" | Undermines credibility | "We've deployed at enterprise scale" |
+| "Our technology" | Too tech-focused | "Our operational expertise" |
+| "SaaS platform" | Old model | "AI workforce partner" |
+
+---
+
+## 4. Key Differentiators
+
+### Why Dyna vs. Competitors
+
+**1. Operational Expertise (Primary Differentiator)**
+We don't just deploy technology — we design the call scripts, segment the workflows (e.g., DPD 30/60/90 day collection strategies with tone-adapted agents), and continuously optimize outcomes. Our team comes from BPO operations, not just software engineering.
+
+**2. Production-Grade Reliability**
+Competitors gluing together open-source stacks (ElevenLabs + dialer + basic prompting) typically reach 60-80% quality. Our purpose-built platform delivers 95%+ uptime with enterprise-grade monitoring, failover, and continuous agent optimization.
+
+**3. Enterprise-Scale Track Record**
+We run AI agents in production for Teleperformance, major telecoms (Saudi Arabia, Thailand, Mexico), digital banks, and insurance companies. 200K+ outbound calls per month in some deployments.
+
+**4. Outcome-Aligned Pricing**
+We offer task-based, role-based, or performance-based pricing. Clients can pay per call, per outcome, or through revenue sharing. This aligns our incentives and removes the risk for buyers.
+
+**5. Multi-Language at Scale**
+10+ languages in production today including English, Spanish, Arabic, Thai, Singlish, Mandarin, Cantonese, Japanese, Indonesian, and more. Multi-agent orchestration with automatic language detection and routing.
+
+### Competitive Positioning
+
+| Competitor Type | Their Pitch | Our Counter |
+|---|---|---|
+| **DIY (BPO builds internally)** | "We can do this ourselves with ElevenLabs + a dialer" | "You'll get to 80%. The last 20% — uptime, script optimization, compliance, multi-language — is where it fails. We've already solved that." |
+| **CCaaS adding AI features** (NICE, Five9, Genesys) | "We're adding AI to your existing platform" | "They're adding features to a legacy platform. We're purpose-built for AI-first operations. Different architecture, different outcomes." |
+| **Pure AI voice vendors** (Vapi, PolyAI) | "We have the best voice tech" | "Voice quality is table stakes. The difference is operational expertise — knowing how to design scripts, segment audiences, and optimize for real business outcomes. We run full outbound operations, not just tech." |
+
+---
+
+## 5. Outreach Sequence
+
+### Decision Tree
+
+```
+START: Is this contact in our Top Contacts list?
+  │
+  ├─ YES → Check: Active on LinkedIn?
+  │    │
+  │    ├─ YES (Cohort 1A - Priority) ──────────────────────┐
+  │    │                                                     │
+  │    └─ NO → Check: Southeast region?                      │
+  │         │                                                │
+  │         ├─ YES (Cohort 1B - Atlanta)────────────────────┤
+  │         │                                                │
+  │         └─ NO (Cohort 2 - Later) ─── Park for email     │
+  │                                       sequence when      │
+  │                                       Alice is back      │
+  │                                                          │
+  └──────────────────────────────────────────────────────────┘
+                          │
+               COHORT 1 (≈40 people)
+                          │
+          ┌───────────────┼───────────────┐
+          │               │               │
+     Southeast?      Everyone else    Persona?
+          │               │               │
+    CBAND Atlanta    Enterprise       Select
+    hook (Feb 26)    Connect hook     messaging
+                     (Mar 10-12)      angle
+```
+
+### Touch Sequence
+
+| Touch | Channel | Timing | Purpose |
+|---|---|---|---|
+| **Touch 1** | LinkedIn connection request | Day 1 | Get connected. No pitch. Human. |
+| **Touch 2** | LinkedIn message | Day 2-3 (after accept) | Icebreaker + event hook + soft ask |
+| **Touch 3** | Email | Day 5-7 | Persona-specific value prop + ask for call |
+| **Touch 4** | Email nudge | Day 12-14 | Case study / proof point + lighter ask |
+| **Touch 5** | LinkedIn comment/engage | Ongoing | Like/comment on their posts. Stay visible. |
+
+---
+
+### Touch 1: LinkedIn Connection Request
+
+**Goal:** Get accepted. That's it. No pitch. No product. Just be human.
+
+**Character limit:** 300 characters (LinkedIn limit with note).
+
+#### If they might attend Enterprise Connect (default for all US):
+> Hi [First Name] — heading to Enterprise Connect in Vegas next month. Great to meet fellow contact center leaders. Would love to connect!
+
+#### If they're in the Southeast / CBAND Atlanta:
+> Hi [First Name] — I'll be at the CCNG event in Atlanta on Feb 26. Would love to connect if you're in the area!
+
+#### If neither event applies (fallback):
+> Hi [First Name] — I spend my days working with BPO leaders on AI strategy for outbound ops. Would love to connect and compare notes.
+
+---
+
+### Touch 2: LinkedIn Message (after they accept)
+
+**Goal:** Build rapport. Reference something personal. Plant the event seed. Offer value, not a pitch.
+
+**Length:** 3-5 sentences. Conversational.
+
+#### Template:
+
+> Thanks for connecting, [First Name]!
+>
+> [ICEBREAKER — 1-2 sentences. Use the Icebreaker Insight column, or reference something from their profile/company. Be specific and genuine.]
+>
+> I've been spending a lot of time with mid-market BPO leaders exploring how AI voice agents are transforming outbound operations. Fascinating space right now.
+>
+> [EVENT HOOK — choose one:]
+> - Are you planning to be at Enterprise Connect next month? Would be great to meet in person.
+> - I'll be at the CCNG event in Atlanta on the 26th — would love to grab coffee if you're nearby.
+> - Would love to share some of what I'm learning if you're ever up for a quick call.
+
+#### Example (Operations Leader, Southeast):
+
+> Thanks for connecting, Mike!
+>
+> I noticed you've been at ACC Premier for over a decade — that kind of tenure in this industry says a lot. Impressive.
+>
+> I've been working with contact center ops leaders on something I think you'd find interesting — AI voice agents that handle outbound campaigns at scale. Seeing some really compelling results.
+>
+> I'll be at the CCNG event in Atlanta on Feb 26 — any chance you're in the area? Would love to compare notes.
+
+---
+
+### Touch 3: Email — Persona-Specific
+
+**Goal:** Deliver the core value proposition tailored to their role. Ask for a call.
+
+**Length:** 6-8 sentences. Clear, direct, no fluff.
+
+---
+
+#### Email Template: Executive Sponsor
+
+**Subject lines** (choose one):
+- AI + outbound at [Company]
+- How [Company] could 10x outbound without headcount
+- A different approach to AI for BPOs
+
+> Hi [First Name],
+>
+> [ICEBREAKER or reference LinkedIn connection: "Great connecting on LinkedIn" / "I noticed [Company] was recognized as one of the top outsourcing providers this year — well deserved."]
+>
+> I'll keep this brief. The BPOs that are getting ahead in 2026 aren't just cutting costs with AI — they're building entirely new outbound revenue streams with it.
+>
+> We deploy AI voice agents that run telemarketing, collections, and customer activation campaigns at 10x the volume of human teams — with conversion rates that match or beat manual outreach. Unlike vendors selling tools, we bring deep operational expertise and align our pricing to your outcomes. You pay for results, not seats.
+>
+> We've done this at enterprise scale with operators like Teleperformance and major telecoms across three continents. Happy to share what we're learning.
+>
+> Would you be open to a 20-minute call?
+>
+> Best,
+> Calanthia
+
+---
+
+#### Email Template: Operations Leader
+
+**Subject lines** (choose one):
+- Scaling outbound without scaling headcount
+- 10K outbound calls/day — without adding agents
+- Your outbound capacity, uncapped
+
+> Hi [First Name],
+>
+> [ICEBREAKER or reference LinkedIn connection]
+>
+> I work with contact center ops leaders who need to hit outbound targets without proportional headcount growth. If that sounds familiar, I think you'll find this interesting.
+>
+> We deploy AI voice agents that handle outbound campaigns end-to-end — telemarketing, collections, payment reminders, booking confirmations. These aren't robo-dialers. They're human-like, multilingual agents that detect intent in real time, adapt their script, and tag outcomes automatically.
+>
+> A few recent results:
+> - 10K+ daily outbound calls with 99% tagging accuracy (major telco)
+> - 76% promise-to-pay rate on credit card collections (digital bank)
+> - 4.7% conversion rate on telesales upsell campaign (telecom, 20K records)
+>
+> The difference: we don't just plug in tech. We design scripts, segment workflows (e.g., DPD 30/60/90 with tone-adapted agents), and optimize continuously based on your outcomes.
+>
+> Would a 20-minute call make sense to see if this fits [Company]?
+>
+> Best,
+> Calanthia
+
+---
+
+#### Email Template: Technology Leader
+
+**Subject lines** (choose one):
+- Production-grade voice AI for outbound
+- Enterprise AI agents — not another demo
+- The 60-80% problem in voice AI
+
+> Hi [First Name],
+>
+> [ICEBREAKER or reference LinkedIn connection]
+>
+> I lead the US expansion for Dyna.ai — we build production-grade AI voice agents for contact center operations. I wanted to reach out because our approach to deployment might interest you.
+>
+> Most teams that try to build outbound AI internally — gluing together ElevenLabs, a dialer, and some prompting — get to about 60-80% quality. The last 20% (uptime, multi-language routing, script optimization, compliance controls) is where deployments fail in production.
+>
+> That's what we've solved. Our platform, Agent Studio, is purpose-built:
+> - Flexible deployment: cloud, on-prem, or hybrid
+> - 95%+ uptime with automatic failover
+> - Low-code agent config with version control and one-click rollback
+> - 10+ languages in production with automatic detection and routing
+> - Built-in compliance controls, content guardrails, full audit trails
+>
+> We run voice agents at scale for Teleperformance, major telecoms, and digital banks across three continents.
+>
+> I'd value your perspective on what matters most for [Company]. Would you be open to a technical conversation?
+>
+> Best,
+> Calanthia
+
+---
+
+### Touch 4: Email Nudge (if no reply)
+
+**Goal:** Lighter touch. Lead with a proof point. Create curiosity.
+
+**Subject:** Re: [original subject]
+
+> Hi [First Name],
+>
+> Quick follow-up — thought this might be interesting context.
+>
+> [INSERT ONE RELEVANT PROOF POINT — choose based on persona and company:]
+>
+> **For Executive:** "One of the enterprise BPOs we work with went from a single collections pilot to deploying AI voice agents across three product lines in under 12 months. The conversation started exactly like this one."
+>
+> **For Operations:** "We recently helped a telecom run a 20,000-record upsell campaign with a dual-agent model (promotion agent + validation agent). 136 closed sales — fully automated, no human intervention during the call."
+>
+> **For Technology:** "Our inference engine reduced P99 latency by 10x and increased throughput by 3x compared to standard deployments. Happy to share the technical architecture if you're evaluating options."
+>
+> No pressure — just thought it might be useful. Happy to chat whenever timing works.
+>
+> Best,
+> Calanthia
+
+---
+
+## 6. Case Study Quick Reference
+
+Use this to select the right proof point for each conversation.
+
+| Case Study | Use Case | Key Metrics | Best For Persona | Best For Industry |
+|---|---|---|---|---|
+| **Teleperformance / Sands Macau** | Hotel booking confirmation | Multi-language voice bot, enterprise BPO delivery | Executive | Hospitality, BPO |
+| **Digital Bank Singapore** | Credit card + loan collections | 76% promise-to-pay, 40% reach rate, 2-3K daily | Operations, Executive | Financial services |
+| **IZZI (Mexican telco)** | Telesales upsell | 20K records, 136 sales, 4.7% conversion | Operations | Telecom, general outbound |
+| **Megacable (Mexican telco)** | Package promotion | 10K+ daily, 99% tagging accuracy, dual-agent | Operations, Technology | Telecom |
+| **Viraal (Mexican fintech)** | Collections (predue to 91+ DPD) | Segmented tone strategy, 57 payments, 25% responder | Operations | Collections, financial services |
+| **Lifenet Japan** | Insurance renewal | Real-time intent detection, auto-categorization | Operations | Insurance |
+| **Sam's Club recruitment** | AI avatar interviews | 120 agents in 3 days, 98% accuracy, zero tech issues | Executive | BPO (non-outbound proof of platform) |
+| **BPO Indonesia** | Collections DPD 1-90 | 200K+ volume/month, 3 voice agents | Operations | Collections |
+| **E-commerce Philippines** | Merchant activation | 10% sales activation, 5/6 labor saving | Operations | Retail, e-commerce |
+| **HSBC Copilot** | Knowledge base + agent assist | 98.6% accuracy vs 67.5% competitor | Technology | Financial services |
+| **Airline Saudi Arabia** | Flight booking + reschedule | 85%+ success rate, 4K+ daily, 40% labor cost reduction | Operations | Travel, hospitality |
+
+### When to Reference Teleperformance
+
+Teleperformance is the biggest name we can drop. Use it:
+- In the first email to Executive Sponsors (establishes enterprise credibility)
+- When a prospect says "have you worked with anyone like us?"
+- When they question whether AI can work at BPO scale
+- **Note:** We can use the Teleperformance name and logo per contractual permission
+
+---
+
+## 7. Event Hooks
+
+### Upcoming Events for Outreach
+
+| Event | Date | Location | Use As Hook For |
+|---|---|---|---|
+| **CCNG / CBAND Atlanta** | Feb 26, 2026 | Atlanta, GA | Southeast contacts. Calanthia attending. |
+| **Enterprise Connect** | Mar 10-12, 2026 | Las Vegas, NV | All US contacts. Major vendor-neutral event. |
+| **ICMI Digital Experience** | Apr 8, 2026 | Virtual (free) | Lighter hook. "Are you tuning into ICMI next month?" |
+| **Frost & Sullivan MindXchange** | Apr 12-15, 2026 | Fort Lauderdale, FL | Senior execs. Invite-style format. |
+| **Customer Contact Week (CCW)** | Jun 22-25, 2026 | Las Vegas, NV | Biggest CC event. Use after initial contact established. |
+
+### How to Use Events in Messaging
+
+**LinkedIn connect:** Mention the event directly. "Heading to [Event] — would love to connect."
+
+**LinkedIn message:** Ask if they're going. Offer to meet. "I'll be at Enterprise Connect next month — are you planning to go? Would be great to grab coffee."
+
+**If they're going:** "Looking forward to seeing you there. Let's find 20 minutes to meet."
+
+**If they're NOT going:** "I don't blame you — Vegas in March is a lot. Would you be up for a call instead? I can share my takeaways from the event afterwards."
+
+**If they don't respond to the event hook:** Drop it. Move to email with persona-specific value prop.
+
+---
+
+## 8. Calanthia's Positioning
+
+### LinkedIn Profile Positioning
+- **Title:** AI Entrepreneur | Contact Center & BPO Transformation
+- **Experience:** Strategic Advisor at Dyna.ai (backdate to show tenure)
+- **About section:** Weave in narrative workshop language — AI workforce, real services transformation, operational expertise
+
+### How Calanthia Should Position Herself in Messages
+- **Not:** "I'm a salesperson for an AI company"
+- **Instead:** "I'm an AI entrepreneur who works with BPO leaders on outbound transformation"
+- Tone: senior executive, industry expert, genuinely curious
+- She's offering insights and perspective, not pitching a product
+- She's in New York — that carries credibility in the US market
+
+### Signature Block
+
+```
+Calanthia Mei
+AI Entrepreneur | Strategic Advisor, Dyna.ai
+New York, NY
+calanthia@dyna.ai
+```
+
+---
+
+## 9. Objection Handling Quick Reference
+
+| Objection | Type | Response Framework |
+|---|---|---|
+| "We're already doing AI" | Deflection | "That's great — most BPOs we talk to have started with internal tools or copilots. Where we see the biggest gap is in outbound production. Are you running AI agents on live outbound campaigns today?" |
+| "We're not ready for AI" | Timing | "That's actually the best time to start a pilot. A focused outbound deployment takes 30 days and gives you real data to build your AI strategy around — not theory." |
+| "Send me some information" | Soft no | "Of course. But the most valuable thing I can share is what we're learning from deployments with operators like yours. Can we do 15 minutes so I can tailor what I send?" |
+| "We tried AI and it didn't work" | Past failure | "That's more common than you'd think. Most pilots fail because of execution, not technology. Our approach is operationally led — we design the scripts and workflows, not just plug in tech. What did you try before?" |
+| "We build our own tech" | DIY | "We see a lot of that. Teams usually get to 60-80% quality. The last 20% — uptime, compliance, multi-language, continuous optimization — is where it breaks in production. Happy to show you where the gap typically is." |
+| "What's it cost?" | Premature pricing | "It depends on the use case and volume. We offer outcome-aligned pricing — you can pay per call, per successful outcome, or through revenue sharing. The point is you don't pay unless it works." |
+| "I need to talk to my team" | Buying process | "Absolutely. Would it help if I put together a brief with the relevant case studies so you have something concrete to share? Who else would typically be involved in evaluating something like this?" |
+
+---
+
+## Appendix A: Industry Context for Conversations
+
+### Talking Points About the Market
+
+Use these when establishing credibility in conversations. Don't recite them — weave them naturally.
+
+- **"Nearly 53% of contact centers with outbound capabilities already do telemarketing."** This isn't a niche offering — it's where the industry already operates. AI just removes the scaling constraint.
+
+- **"The US controls global BPO distribution."** 83.7% of your priority accounts are US-HQ'd. Decisions are made here. AI adoption will be driven from here.
+
+- **"Small and mid-market BPOs serve enterprise clients."** 92.7% of mid-market BPOs (1K-5K employees) report enterprise client relationships. These are sophisticated operators, not call shops.
+
+- **"Outbound is directly linked to conversion targets."** Unlike inbound (which is about CSAT and cost), outbound speaks the language of revenue, targets, and metrics. This makes the ROI case much cleaner.
+
+- **"AI agents get performance reviews now."** This line (from the Narrative Workshop) is sticky and memorable. Use it when people ask "but how do you ensure quality?" The answer: the same way you manage human agents — KPIs, monitoring, continuous optimization.
+
+### Conference Agenda Keywords (for credibility in conversations)
+
+These topics dominate the 2026 US contact center conference circuit. Using them signals that you're plugged into the industry:
+
+- AI acceleration — from pilot to pervasive
+- The economics of AI to improve CX while reducing costs
+- Where are the humans in the contact center of the future?
+- Micro wins vs. moonshots in AI deployment
+- Journey orchestration beyond the contact center
+- Build vs. buy in AI strategy
+- Integrations replacing monolithic systems
+
+---
+
+## Appendix B: Do's and Don'ts
+
+### Do
+- Lead with **AI transformation** narrative, then pivot to **outbound specifically**
+- Frame outbound AI as **revenue expansion** (positive), not cost cutting (negative)
+- Reference **working with industry leaders like Teleperformance** early
+- Use **events as conversation starters** — human, not salesy
+- Personalize every message — use the **Icebreaker Insight column** from the contact list
+- Position Calanthia as a **senior industry expert**, not a salesperson
+- Mention **outcome-aligned pricing** — removes risk for the buyer
+- Keep LinkedIn messages **short and conversational**
+- Keep emails **under 150 words** for the first touch
+
+### Don't
+- Don't lead with product features or a demo offer
+- Don't send the same message to all three personas
+- Don't use "early access" framing (this was PH positioning — doesn't work for US)
+- Don't position as "Silicon Valley startup" (US BPO leaders are skeptical of tech vendors)
+- Don't mention compliance as a selling point yet (still being set up for US)
+- Don't batch-send identical emails through HubSpot for the first cohort (personalize each one)
+- Don't pitch inbound AI or the full platform — stay focused on **outbound**
+- Don't use the term "APO Labs" — we are **Dyna.ai** in the US market
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"1","content":"Write the messaging framework document (data/messaging-framework.md)","status":"completed"},{"id":"2","content":"Write persona tagging + cohort identification script","status":"in_progress"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Now let me write the script that tags personas and identifies Cohort 1.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/package.json
+
+[Tool result] Read
+
+assistant:
+Good, `csv-parse` and `csv-stringify` are already installed.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/tag-personas-and-cohorts.ts
+  contents: import { config } from 'dotenv'
+import fs from 'fs'
+import path from 'path'
+import { parse } from 'csv-parse/sync'
+import { stringify } from 'csv-stringify/sync'
+import { fileURLToPath } from 'url'
+
+config()
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+// ── Persona mapping by job title keywords ──
+
+function classifyPersona(title: string): string {
+  const t = title.toLowerCase()
+
+  // Executive Sponsor — the decision makers
+  const execPatterns = [
+    /\bceo\b/,
+    /\bchief executive/,
+    /\bfounder\b/,
+    /\bco-founder\b/,
+    /\bowner\b/,
+    /\bchairman\b/,
+    /\bpresident\b(?!.*operations)/,
+    /\bmanaging partner\b/,
+    /\bsenior partner\b/,
+    /\bchief financial officer\b/,
+    /\bcfo\b/,
+    /\bchief corporate development\b/,
+    /\bchief strategic partnership\b/,
+    /\bchief business officer\b/,
+  ]
+
+  // Technology Leader — the technical gatekeepers
+  const techPatterns = [
+    /\bcto\b/,
+    /\bcio\b/,
+    /\bciso\b/,
+    /\bchief technology/,
+    /\bchief technical/,
+    /\bchief information/,
+    /\bchief security officer/,
+    /\bvp.*technology/,
+    /\bvice president.*technology/,
+    /\bvp.*engineering/,
+    /\bvice president.*engineering/,
+    /\bvp.*software/,
+    /\bvice president.*software/,
+    /\bvp.*it\b/,
+    /\bvice president.*information technology/,
+    /\bvp.*digital innovation/,
+    /\bvice president.*digital innovation/,
+    /\bvp.*product management/,
+    /\bvice president.*application development/,
+    /\bavp.*technology/,
+    /\bavp.*enterprise technology/,
+    /\bassistant vice president.*information technology/,
+    /\bvp.*call center technologies/,
+    /\bproduct owner\b/,
+    /\bvp hugo labs\b/,
+    /\bglobal cio\b/,
+    /\bchief data officer\b/,
+    /\bchief customer officer.*chief data/,
+  ]
+
+  // Operations Leader — the operational champions (checked last as catch-all for VP+)
+  const opsPatterns = [
+    /\bcoo\b/,
+    /\bchief operating/,
+    /\bchief experience officer/,
+    /\bchief customer officer\b/,
+    /\bvp.*operations/,
+    /\bvice president.*operations/,
+    /\bsvp.*operations/,
+    /\bsenior vice president.*operations/,
+    /\bevp.*operations/,
+    /\bexecutive vice president.*operations/,
+    /\bvp.*client/,
+    /\bvice president.*client/,
+    /\bsenior vice president.*client/,
+    /\bsvp.*client/,
+    /\bvp.*customer/,
+    /\bvice president.*customer/,
+    /\bvp.*business operations/,
+    /\bvice president.*business operations/,
+    /\bvp.*continuous improvement/,
+    /\bsenior vice president.*continuous improvement/,
+    /\bavp.*operational excellence/,
+    /\bassistant director.*operations/,
+    /\bvice president.*strategic/,
+    /\bvp.*strategic/,
+    /\bvice president.*corporate support/,
+    /\bregional vice president/,
+    /\bvp.*organizational development/,
+    /\bvice president.*professional services/,
+    /\bvice president.*project management/,
+    /\bvice president.*marketing/,
+    /\bvp.*global client development/,
+    /\bvp.*enterprise solutions/,
+    /\bsenior vice president.*bpo/,
+    /\bglobal vice president.*cx/,
+    /\bsr\.?\s*vice president/,
+    /\bsr\.?\s*vp/,
+    /\bsenior vice president\b(?!.*technology)/,
+    /\bexecutive vice president\b(?!.*operations)/,
+    /\bvice president\b(?!.*(?:technology|engineering|software|it\b|information|digital innovation|application|call center tech|product management))/,
+    /\bvp\b(?!.*(?:technology|engineering|software|it\b|information|digital innovation|application|call center tech|product management|hugo labs))/,
+    /\bvp solutions services/,
+    /\bvice president.*general counsel/,
+  ]
+
+  // Check in order: exec first, then tech, then ops
+  for (const pattern of execPatterns) {
+    if (pattern.test(t)) return 'Executive Sponsor'
+  }
+  for (const pattern of techPatterns) {
+    if (pattern.test(t)) return 'Technology Leader'
+  }
+  for (const pattern of opsPatterns) {
+    if (pattern.test(t)) return 'Operations Leader'
+  }
+
+  // Fallback — some titles that contain "president" + "operations" go to Operations
+  if (/president.*(?:coo|operating|operations)/i.test(t)) return 'Operations Leader'
+  if (/president/i.test(t)) return 'Executive Sponsor'
+
+  return 'Unclassified'
+}
+
+// ── Southeast US states for CBAND Atlanta cohort ──
+
+const SOUTHEAST_STATES = [
+  'georgia',
+  'florida',
+  'alabama',
+  'tennessee',
+  'south carolina',
+  'north carolina',
+  'virginia',
+  'mississippi',
+  'louisiana',
+  'arkansas',
+  'kentucky',
+]
+
+function isSoutheast(location: string): boolean {
+  const loc = location.toLowerCase()
+  return SOUTHEAST_STATES.some((state) => loc.includes(state))
+}
+
+// ── Main ──
+
+async function main() {
+  const inputPath = '/Users/alicewyatt/Downloads/Persona Mapping - Top Contacts.csv'
+  const outputPath = path.join(__dirname, '..', 'data', 'outreach-cohort-1.csv')
+
+  const raw = fs.readFileSync(inputPath, 'utf-8')
+  const records = parse(raw, { columns: true, skip_empty_lines: true, relax_column_count: true })
+
+  console.log(`\nLoaded ${records.length} contacts from Top Contacts CSV\n`)
+
+  // Classify each contact
+  interface Contact {
+    'Company Name': string
+    'First Name': string
+    'Last Name': string
+    'Full Name': string
+    'Job Title': string
+    Location: string
+    'LinkedIn Profile': string
+    'Active on LinkedIn (last 90 days)': string
+    'Icebreaker Insight': string
+    'Work Email': string
+    Persona: string
+    'Southeast Region': string
+    Cohort: string
+    'Event Hook': string
+    [key: string]: string
+  }
+
+  const enriched: Contact[] = records.map((r: Contact) => {
+    const persona = classifyPersona(r['Job Title'] || '')
+    const southeast = isSoutheast(r['Location'] || '')
+    const activeLinkedIn = (r['Active on LinkedIn (last 90 days)'] || '').trim().toLowerCase() === 'yes'
+
+    let cohort = 'Cohort 2 — Later'
+    if (activeLinkedIn || southeast) {
+      cohort = 'Cohort 1 — Priority'
+    }
+
+    let eventHook = 'Enterprise Connect (Mar 10-12, Las Vegas)'
+    if (southeast) {
+      eventHook = 'CBAND Atlanta (Feb 26)'
+    }
+
+    return {
+      ...r,
+      Persona: persona,
+      'Southeast Region': southeast ? 'Yes' : 'No',
+      Cohort: cohort,
+      'Event Hook': eventHook,
+    }
+  })
+
+  // Stats
+  const personaCounts: Record<string, number> = {}
+  const cohortCounts: Record<string, number> = {}
+  let activeLinkedInCount = 0
+  let southeastCount = 0
+
+  for (const c of enriched) {
+    personaCounts[c.Persona] = (personaCounts[c.Persona] || 0) + 1
+    cohortCounts[c.Cohort] = (cohortCounts[c.Cohort] || 0) + 1
+    if (c['Southeast Region'] === 'Yes') southeastCount++
+    if ((c['Active on LinkedIn (last 90 days)'] || '').trim().toLowerCase() === 'yes')
+      activeLinkedInCount++
+  }
+
+  console.log('=== Persona Distribution ===')
+  for (const [persona, count] of Object.entries(personaCounts).sort((a, b) => b[1] - a[1])) {
+    console.log(`  ${persona}: ${count}`)
+  }
+
+  console.log('\n=== Cohort Distribution ===')
+  for (const [cohort, count] of Object.entries(cohortCounts).sort((a, b) => b[1] - a[1])) {
+    console.log(`  ${cohort}: ${count}`)
+  }
+
+  console.log(`\n=== Breakdown ===`)
+  console.log(`  Active on LinkedIn: ${activeLinkedInCount}`)
+  console.log(`  Southeast region: ${southeastCount}`)
+  console.log(`  Total contacts: ${enriched.length}`)
+
+  // Filter Cohort 1 and output
+  const cohort1 = enriched.filter((c) => c.Cohort === 'Cohort 1 — Priority')
+
+  // Select the columns for the output CSV
+  const outputColumns = [
+    'Company Name',
+    'Full Name',
+    'Job Title',
+    'Persona',
+    'Location',
+    'Southeast Region',
+    'Event Hook',
+    'Active on LinkedIn (last 90 days)',
+    'Icebreaker Insight',
+    'LinkedIn Profile',
+    'Work Email',
+    'Summary of Role',
+  ]
+
+  const csvOutput = stringify(cohort1, {
+    header: true,
+    columns: outputColumns,
+  })
+
+  fs.writeFileSync(outputPath, csvOutput)
+  console.log(`\n✓ Wrote ${cohort1.length} Cohort 1 contacts to ${outputPath}`)
+
+  // Print Cohort 1 summary
+  console.log('\n=== Cohort 1 Summary ===')
+  const c1Personas: Record<string, number> = {}
+  for (const c of cohort1) {
+    c1Personas[c.Persona] = (c1Personas[c.Persona] || 0) + 1
+  }
+  for (const [persona, count] of Object.entries(c1Personas).sort((a, b) => b[1] - a[1])) {
+    console.log(`  ${persona}: ${count}`)
+  }
+
+  // List Cohort 1 contacts
+  console.log('\n=== Cohort 1 Contacts ===')
+  for (const c of cohort1) {
+    const activeTag =
+      (c['Active on LinkedIn (last 90 days)'] || '').trim().toLowerCase() === 'yes' ? 'LI' : ''
+    const seTag = c['Southeast Region'] === 'Yes' ? 'SE' : ''
+    const tags = [activeTag, seTag].filter(Boolean).join('+')
+    console.log(`  [${c.Persona.padEnd(18)}] ${c['Full Name'].padEnd(25)} @ ${c['Company Name'].padEnd(25)} (${tags})`)
+  }
+}
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(console.error)
+}
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"2","content":"Write persona tagging + cohort identification script","status":"completed"},{"id":"3","content":"Run the script to produce Cohort 1 CSV","status":"in_progress"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/tag-personas-and-cohorts.ts
+  description: Run persona tagging script
+  block_until_ms: 30000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The script ran successfully. 58 Cohort 1 contacts identified (slightly more than the estimated 40, because there's overlap between LinkedIn active and Southeast, plus some additional Southeast contacts we hadn't counted before).
+
+Let me now verify the output CSV looks good, then commit and push.
+Script ran successfully. 58 Cohort 1 contacts identified across 42 Executive Sponsors, 14 Operations Leaders, and 2 Technology Leaders. Let me verify the output looks clean.
+[Tool call] Shell
+  command: head -3 /Users/alicewyatt/repos/agent-playground/data/outreach-cohort-1.csv
+  description: Verify output CSV
+
+[Tool result] Shell
+
+assistant:
+Output looks clean. Now let me commit and push.
+[Tool call] TodoWrite
+  todos: [{"id":"3","content":"Run the script to produce Cohort 1 CSV","status":"completed"},{"id":"4","content":"Auto-commit and push","status":"in_progress"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git status
+  description: Check git status
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git log --oneline -5
+  description: Check recent commits
+
+[Tool result] Shell
+
+[Tool result] Shell

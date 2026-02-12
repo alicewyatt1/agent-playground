@@ -2067,3 +2067,46 @@ assistant:
   description: Verify updated CSV with full names
 
 [Tool result] Shell
+
+assistant:
+All mutual connections now have full first and last names. Let me commit and push.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "$(cat <<'EOF'
+Run: add-calanthia-connections.ts
+
+Updated mutual connection names from first-name-only to full first and last names.
+Verified each 2nd degree contact's mutual connections by clicking through to LinkedIn search results.
+EOF
+)" && git push
+  description: Auto-commit and push updated CSV
+
+[Tool result] Shell
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"4","content":"Revisit all 25 second-degree contacts to get full names of mutual connections","status":"completed"},{"id":"5","content":"Update output CSV with full mutual connection names","status":"completed"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Done! The CSV at `data/gaps-top-contacts-with-calanthia-connections.csv` has been updated with full first and last names for all mutual connections. Here's a summary of the key ones:
+
+- **LeGrand Bonnet** - Rich Bowen; Ken Gold
+- **Nate Spears** - Brandon Delgrosso
+- **Bill Randag** - Aaron Anderson
+- **Matt Storey** - David Shanahan; Jonathan G. Blanco; Danielle Noket; Emily Tan; Aaron Anderson
+- **Jim Iyoob** - Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson
+- **Kaylene Eckels** - Tzvika Agassi
+- **Chris Basile** - Chase Watts
+- **Emily Slota** - Efi Dahan; Josh Schoonmaker
+- **David Fisher** - Stephanie Corliss
+- **David Kreiss** - Karla M. Cosgalla
+- **Jim Watson** - Amir Kazemi
+- **Curt Cornum** - Lisa Glover; Dominic Cameron
+- **Michelle Winnett** - Alex Rosen; Josh DiDomenico
+- **Stephanie Anthony** - Stephanie Foster; Kate Gardiner; Dylani Herath
+- **Vidya Ravichandran** - Gayla Burks; Maria Karaivanova; Jonny Price
+- **Butch Valenzuela** - Zack Holland; Jeielle Jea Paguntalan; Mark Del Rosario; Simon Sandoval; Karen Batungbacal; Julian Kyle Lizares Valenzuela
+
+Aaron Anderson appears as a mutual connection most frequently (5 contacts).
