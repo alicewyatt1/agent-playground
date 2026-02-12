@@ -2159,3 +2159,44 @@ All 62 enriched with zero errors. Let me update the new contacts CSV and commit.
   merge: true
 
 [Tool result] TodoWrite
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add scripts/enrich-new-contacts.ts scripts/find-linkedin-profiles.ts data/top-contacts-enriched-with-gaps.csv data/new-executive-contacts.csv && git commit -m "$(cat <<'EOF'
+Run: enrich-new-contacts.ts
+
+Enriched 62 new executive contacts with location, inferred work emails, previous experience, LinkedIn activity, icebreaker insights, role summaries, and company tenure. Also added LinkedIn profile finder and deduplication.
+EOF
+)" && git push
+  description: Commit and push enrichment results
+
+[Tool result] Shell
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"13","content":"Auto-commit and push","status":"completed"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Done. Here's what was enriched for all 62 contacts:
+
+**What's filled in:**
+
+| Column | Filled | Notes |
+|---|---|---|
+| **Work Email** | 62/62 | Inferred from existing email patterns at each company (e.g., CBE uses `first.last@cbecompanies.com`) |
+| **Summary of Role** | 62/62 | 3-5 sentence profile on responsibilities, pain points, priorities |
+| **Location** | 58/62 | City, State, Country |
+| **Active on LinkedIn** | 48/62 | Yes/No based on recent activity evidence |
+| **Company Tenure** | 42/62 | Duration at current company |
+| **Notable Previous Experience** | 30/62 | Previous companies |
+| **Icebreaker Insight** | 22/62 | Specific recent talking points from posts/articles |
+| **LinkedIn Profile** | 30/62 | From earlier search (some still need manual lookup) |
+
+Both files are updated:
+- `data/new-executive-contacts.csv` -- just the 62 new contacts with all enrichment
+- `data/top-contacts-enriched-with-gaps.csv` -- the full combined list (135 Clay + 62 Cursor = 197 total)
+
+**Note on emails:** These are pattern-inferred (not verified). They follow each company's observed format from the existing Clay contacts, so they should be accurate for most but I'd recommend verifying before outreach.
