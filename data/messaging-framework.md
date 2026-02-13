@@ -178,7 +178,7 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 
 **Core message to them:**
 
-> US onshore contact centers run at 5-8% EBITDA. Nearshore gets you 20-30%. Offshore, 40-55%. AI autopilot changes this math entirely — one AI-first services company is already running at 40% EBITDA with 40% annual growth, using per-outcome pricing. We deploy AI autopilot for outbound and inbound that replaces manual call volume at a fraction of the cost per productive hour. You don't pay for seats or licenses. You pay per outcome. Your margin improves structurally, not incrementally.
+> Wherever you deliver — onshore at 5-8% EBITDA, nearshore at 20-30%, or offshore at 40-55% — your clients are demanding more for less. AI autopilot changes the math at every tier. One AI-first services company is already running at 40% EBITDA with 40% annual growth, using per-outcome pricing. We deploy AI autopilot for outbound and inbound that replaces manual call volume at a fraction of the cost per productive hour. You don't pay for seats or licenses. You pay per outcome. Whether you're protecting thin onshore margins or scaling beyond what offshore labor can deliver — this is the next lever.
 
 **Pain points (ranked by urgency):**
 1. **HIGH:** Onshore EBITDA at 5-8% is unsustainable — one bad staffing month destroys quarterly margin
@@ -328,6 +328,50 @@ We offer task-based, role-based, or performance-based pricing. Clients can pay p
 | **DIY (BPO builds internally)** | "We can do this ourselves with ElevenLabs + a dialer" | "You'll get to 80%. The last 20% — uptime, script optimization, compliance, multi-language — is where it fails. We've already solved that." |
 | **CCaaS adding AI features** (NICE, Five9, Genesys) | "We're adding AI to your existing platform" | "They're adding features to a legacy platform. We're purpose-built for AI-first operations. Different architecture, different outcomes." |
 | **Pure AI voice vendors** (Vapi, PolyAI) | "We have the best voice tech" | "Voice quality is table stakes. The difference is operational expertise — knowing how to design scripts, segment audiences, and optimize for real business outcomes. We run full outbound operations, not just tech." |
+
+### Tailoring by Delivery Model
+
+Not all US-HQ BPOs operate the same way. ~54% are onshore-heavy; the rest deliver primarily through offshore (Philippines, India, South Africa) or nearshore (LATAM). The core templates work for both, but **swap in the right hook lines** based on their delivery footprint.
+
+**How to tell:** Check the account's delivery footprint in the master list (onshore/nearshore/offshore columns). If unclear, their website usually says "offices in Manila" or "US-based agents" — that tells you.
+
+#### Onshore-Heavy BPOs (US-based delivery, maybe some nearshore)
+
+**Their reality:** Thin margins (5-8% EBITDA). Expensive US labor ($40-50K/seat/year). Every staffing mistake hurts. Clients demanding cost reductions they can't deliver without AI.
+
+**The hook:** AI autopilot **fixes a broken margin structure.** This is existential for them.
+
+Swap-in lines for Finance Leader:
+> - "US onshore margins at 5-8% EBITDA don't leave room for error. AI autopilot transforms the unit economics of your onshore programs."
+> - "You're paying $40-50K per seat per year onshore. Per-outcome AI runs at a fraction of that."
+
+Swap-in lines for Operations Leader:
+> - "Scaling onshore means opening new sites, hiring at US wages, and hoping attrition doesn't kill your ramp. AI autopilot eliminates that constraint."
+> - "Your US-based team can focus on high-value, relationship-driven calls. AI handles the volume work."
+
+#### Offshore-Heavy BPOs (Philippines, India, South Africa delivery)
+
+**Their reality:** Healthy margins (20-55% EBITDA) from labor arbitrage. But clients are demanding AI-enhanced delivery. Competitors are offering AI. The threat isn't broken margins — it's **obsolescence**.
+
+**The hook:** AI autopilot **protects your position and scales beyond what labor arbitrage can deliver.** If you don't offer AI, your clients will go to someone who does — or go direct to AI vendors.
+
+Swap-in lines for Finance Leader:
+> - "Labor arbitrage got you to 40% EBITDA. AI autopilot is the next lever — it scales volume without headcount, handles peaks without overtime, and gives clients the AI capability they're starting to demand."
+> - "Your clients are evaluating whether to buy AI themselves and cut out the BPO entirely. Offering AI autopilot as part of your service is how you stay in the value chain."
+
+Swap-in lines for Operations Leader:
+> - "Even at offshore rates, 20-30% attrition means constant hiring and retraining. AI autopilot handles your most repetitive campaigns without turnover risk."
+> - "Your offshore team handles the complex, relationship-driven work. AI autopilot takes the high-volume, scripted campaigns — collections reminders, booking confirmations, lead qualification — off their plate entirely."
+
+#### Mixed Delivery (Onshore + Offshore)
+
+**Their reality:** Sophisticated operators managing complex cross-border delivery. They already think in terms of optimizing which work goes where. AI is just another "delivery layer."
+
+**The hook:** AI autopilot is a **third delivery tier** alongside onshore and offshore — the lowest cost, highest scale option for defined workflows.
+
+Swap-in lines (any persona):
+> - "You already optimize work across onshore and offshore. AI autopilot is the third tier — zero labor cost, infinite scale, per-outcome pricing. Route your most repetitive outbound and inbound workflows there."
+> - "Think of AI autopilot as your most cost-effective site: it runs 24/7, never churns, speaks 10+ languages, and costs a fraction of even your offshore seats."
 
 ---
 
@@ -497,9 +541,9 @@ START: Is this contact in our Top Contacts list?
 >
 > [ICEBREAKER or reference LinkedIn connection]
 >
-> I'll get straight to the numbers. US onshore contact centers run at 5-8% EBITDA. Clients are writing 20% cost reductions into their next contracts. The math doesn't work with human-only models.
+> I'll get straight to the numbers. Clients are writing 20% cost reductions into their next contracts. Whether you're running onshore, offshore, or a mix — that math gets harder every year with human-only models.
 >
-> We deploy AI autopilot for outbound and inbound contact center operations — telemarketing, collections, customer service, booking confirmations. Full autonomous agents, not copilots. The difference in margin structure is significant: one AI-first services company is already running at 40% EBITDA with per-outcome pricing.
+> We deploy AI autopilot for outbound and inbound contact center operations — telemarketing, collections, customer service, booking confirmations. Full autonomous agents, not copilots. One AI-first services company is already running at 40% EBITDA with per-outcome pricing. [USE DELIVERY-MODEL SWAP-IN LINE — see "Tailoring by Delivery Model" section]
 >
 > Our pricing is outcome-aligned — per call, per successful outcome, or revenue share. No platform fees. No seat licenses. You pay when results are delivered.
 >
