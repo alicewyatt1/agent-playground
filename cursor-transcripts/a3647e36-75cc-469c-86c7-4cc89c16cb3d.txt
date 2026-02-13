@@ -1574,3 +1574,661 @@ assistant:
 [Tool result] Shell
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add data/messaging-framework.md data/outreach-cohort-1.csv scripts/tag-personas-and-cohorts.ts && git commit -m "$(cat <<'EOF'
+Run: tag-personas-and-cohorts.ts
+
+Built US mid-market BPO messaging framework with persona-specific templates,
+outreach sequence, decision tree, and case study mapping. Tagged 186 contacts
+into 3 personas (Executive Sponsor, Operations Leader, Technology Leader) and
+identified 58 Cohort 1 priority contacts (Active LinkedIn + Southeast region).
+EOF
+)" && git push
+  description: Commit and push messaging framework
+  block_until_ms: 30000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"4","content":"Auto-commit and push","status":"completed"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Everything is committed and pushed. Here's a summary of what was delivered:
+
+---
+
+## Deliverables
+
+### 1. `data/messaging-framework.md` — The Full Messaging Framework
+
+A comprehensive, immediately usable guide containing:
+
+- **Quick Reference** — one-glance summary of ICP, personas, value prop, and lead narrative
+- **ICP** — company-level targeting criteria with buying signals and red flags
+- **Three Personas** — each with role in deal, what they care about, success metrics, core message, ranked pain points, objection handling, and mapped case studies:
+  - **Executive Sponsor** (121 contacts) — AI transformation + new revenue stream
+  - **Operations Leader** (46 contacts) — scale outbound without headcount + operational expertise
+  - **Technology Leader** (19 contacts) — production-grade platform + enterprise reliability
+- **Core Positioning** — lead narrative, value prop, positioning statement, key phrases to use and avoid
+- **Key Differentiators** — operational expertise, production-grade reliability, enterprise track record, outcome-aligned pricing, multi-language
+- **Competitive Positioning** — vs. DIY, vs. CCaaS (NICE/Five9/Genesys), vs. pure AI voice vendors
+- **Outreach Sequence** — decision tree + 4-touch sequence with actual templates:
+  - Touch 1: LinkedIn connection request (3 variants by event hook)
+  - Touch 2: LinkedIn follow-up message (with icebreaker template)
+  - Touch 3: Email per persona (Executive, Ops, Tech — each fully drafted)
+  - Touch 4: Email nudge per persona
+- **Case Study Quick Reference** — which proof point for which persona and industry
+- **Event Hooks** — how to use CBAND Atlanta, Enterprise Connect, CCW, etc. in messaging
+- **Calanthia's Positioning** — LinkedIn profile guidance, signature block, how to present herself
+- **Objection Handling** — 7 common objections with response frameworks
+- **Do's and Don'ts** — practical guardrails
+
+### 2. `data/outreach-cohort-1.csv` — The Priority Contact List
+
+**58 Cohort 1 contacts** tagged with:
+- Persona classification (Executive Sponsor / Operations Leader / Technology Leader)
+- Southeast region flag
+- Event hook recommendation (CBAND Atlanta or Enterprise Connect)
+- LinkedIn profile, email, icebreaker insight, and role summary
+
+### 3. `scripts/tag-personas-and-cohorts.ts` — Reusable Script
+
+Can be re-run as new contacts are added to re-tag personas and refresh the cohort.
+
+---
+
+The framework is designed so Calanthia can open `messaging-framework.md`, reference `outreach-cohort-1.csv`, and start outreach immediately — beginning with LinkedIn connections this week, then messages after acceptance, then emails as follow-up.
+
+user:
+<user_query>
+Incredible. Can you give me the messaging framework in a way that I can easily get it into Google Docs? 
+</user_query>
+
+assistant:
+[Thinking] The user wants to get the messaging framework into Google Docs easily. The best approach is to convert the markdown to a well-formatted HTML file that they can open in a browser and copy-paste into Google Docs (which preserves formatting from HTML much better than from markdown). Or I could convert it to a .docx file using pandoc if available.
+
+Let me check if pandoc is installed, as that would be the cleanest route to a Google Docs-compatible format.
+Let me convert it to a clean HTML file that you can open in your browser and copy-paste directly into Google Docs — it'll preserve all the formatting, tables, and structure.
+[Tool call] Shell
+  command: which pandoc
+  description: Check if pandoc is installed
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: brew install pandoc 2>&1 | tail -3
+  description: Install pandoc
+  block_until_ms: 60000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/messaging-framework.md -f markdown -t docx -o /Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx --reference-doc="" 2>&1; echo "Exit: $?"
+  description: Convert markdown to docx
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/messaging-framework.md -f markdown -t docx -o /Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx
+  description: Convert markdown to docx
+
+[Tool result] Shell
+
+assistant:
+Done. I've created a `.docx` file at:
+
+**`/Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx`**
+
+You can open it directly in Google Docs by either:
+
+1. **Upload to Google Drive** — go to drive.google.com, drag the file in, then right-click → "Open with Google Docs"
+2. **Google Docs directly** — go to docs.google.com, File → Open → Upload tab → select the file
+
+All the headings, tables, bold text, and structure will carry over cleanly. The decision tree diagram (which was ASCII art in markdown) may need a small tidy-up in Docs, but everything else should look great.
+
+user:
+<user_query>
+@/Users/alicewyatt/Downloads/GLG Expert meeting.pdf 
+
+had anything changed about your output based on this call with this GLG expert?
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/GLG Expert meeting.pdf
+
+[Tool result] Read
+
+assistant:
+[Thinking] This is a really interesting expert interview. Let me extract the key insights and see what changes to the messaging framework:
+
+**Key Insights from the GLG Expert Interview (Donald):**
+
+1. **Market sizing:** ~$80B US contact center industry, growing 2-5% per year
+
+2. **Market segmentation by revenue:**
+   - Small: $10M-$100M revenue, 3-6 call centers, 200-250 seats each
+   - Mid: $100M-$700M revenue, 20-40 clients
+   - Top 10: $1.5B-$10B+ (Teleperformance, Concentrix)
+   
+   This is a critical distinction—what Donald calls "mid-market" is actually much larger than Dyna's current target. Our 1,000-5,000 employee sweet spot would be positioned as small to niche players in his framework.
+
+3. **Revenue per seat per year varies significantly by geography:** US onshore generates $40-50K per seat annually, nearshore operations in LATAM and the Caribbean pull in $25-30K, while offshore centers in the Philippines and South Africa operate at $18-25K per seat.
+
+4. **EBITDA margins follow geography too:** US onshore sits at 5-8%, with nearshore operations somewhere in between.
+
+The margin structure is stark—offshore operations hit 40-55% EBITDA margins, which completely reframes the economics and urgency around AI adoption. This is the real pressure point for messaging.
+
+5. **AI is already reshaping the industry across multiple fronts:** Digital-first channels like chat and email are already being handled entirely by AI in about a quarter of the market. Copilot and agent assist tools are working well, cutting average call times from 15 minutes down to 8. Voice translation and moderation tech is emerging and pushing agents toward lower-cost geographies. Full agentic AI for complex calls is still a ways out, but simple transactions are ready to go now.
+
+6. **The buying committee is CEO, CFO, and COO at the top**, with the CTO playing a more supporting role focused on infrastructure and security rather than business strategy.
+
+7. **The CFO is particularly important here**—Donald emphasized that CFO decisions are fundamentally driven by margin ownership and close collaboration with ops on staffing costs. This is a persona we should be targeting directly.
+
+8. **BPOs have shifted their approach to AI over the past few years.** They went from being overwhelmed by vendor pitches two or three years ago to being much more selective now, looking for proven solutions. Large BPOs tend to build internally or buy from established vendors like Amazon Connect or Zendesk. Mid-sized BPOs lack the capital to build and need external solutions—they're actually the most vulnerable and most in need of what we're offering.
+
+9. **Outcome-based pricing is already validated.** The expert mentioned a company running 40% margins on per-result pricing for digital AI, which proves the model works.
+
+10. **The real driver is cost reduction over the next three years.** Clients are pushing their contact centers hard to cut costs, and that's what's driving contract negotiations today.
+
+11. **The competitive landscape includes IBEX, IGT Solutions, Intelogix, and TaskUs.** These are the major players—ranging from billion-dollar public companies to mid-tier firms doing acquisitions and potentially heading to market soon.
+
+12. **CCW is the biggest conference, and Frost & Sullivan attracts a more serious crowd.**
+
+13. **The standard tech stack includes Genesys for infrastructure, Zendesk for mid-market CRM, and Amazon Connect for large enterprises.**
+
+Now looking at what Calanthia and Alice are taking away from this call...
+
+The messaging needs to lean heavily into Dyna's autopilot capabilities—that's where we have real differentiation. We should position autopilot front and center, but also mention it handles both inbound and outbound to cast a wider net. Adding CFO as a target persona makes sense since they care about the same things as COOs—margin and efficiency—but we need to hammer the EBITDA impact even harder for them. I should drop client services and BD people from the target list. The core insight here is that C-suite executives don't care about headcount replacement; they care about margin improvement. That's the message that lands. Mid-market companies can't build AI solutions themselves, so they're the right entry point for us. the messaging framework with these additions - incorporating the CFO persona, emphasizing autopilot as the core differentiator, and weaving in the market data and mid-market vulnerability angle that makes this compelling for finance leaders.
+This is a really valuable expert interview. Yes, there are several meaningful changes to incorporate. Let me summarize what shifts and then update the framework.
+
+## Key Changes from the GLG Expert Call
+
+1. **Add CFO as a persona** — Donald explicitly called out CFO as a key decision maker focused on margin. Calanthia agreed to use the same messaging as COO but lean harder into EBITDA/margin language.
+
+2. **Lead with Autopilot, not just "AI agents"** — Calanthia's takeaway was that Dyna should own the "autopilot" positioning front and center, since they're one of the few that can actually do full autopilot.
+
+3. **Mention inbound too (but emphasize outbound)** — First touchpoint should cast a wider net: "Our autopilot handles both inbound and outbound. Here are specific outbound use cases." This catches prospects where inbound is the majority of their business.
+
+4. **Lean harder into margin/EBITDA language** — The expert confirmed C-suite cares about margin, not about protecting jobs. EBITDA margins of 5-8% onshore vs. 40-55% offshore show the pressure. Be direct about financial impact.
+
+5. **Remove client services/BD people from the target list** — Agreed on the call.
+
+6. **Add market context** — $80B industry, revenue-per-seat economics, mid-market vulnerability (can't build their own AI like Teleperformance can).
+
+Let me update the framework now.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+
+[Tool result] Read
+
+assistant:
+Now let me apply the updates based on the GLG expert call.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: > **Purpose:** Actionable messaging guide for Calanthia's outreach to US mid-market BPOs.
+> **Product focus:** AI-powered outbound voice agents (RaaS).
+> **Created:** February 12, 2026
+  new_string: > **Purpose:** Actionable messaging guide for Calanthia's outreach to US mid-market BPOs.
+> **Product focus:** AI autopilot for outbound (primary) and inbound (secondary) voice operations.
+> **Created:** February 12, 2026 | **Updated:** February 13, 2026 (post GLG expert interview)
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: | **US Product Wedge** | AI voice agents for outbound operations (telemarketing, collections, booking confirmations, renewals, customer activation) |
+| **ICP** | US mid-market BPOs, 1,000–5,000 employees, with outbound capabilities |
+| **Three Personas** | Executive Sponsor · Operations Leader · Technology Leader |
+| **Core Value Prop** | Infinitely scale your outbound engine without adding headcount — and get paid on results |
+| **Lead Narrative** | AI is no longer software. It's becoming a workforce. |
+| **Key Differentiator** | Operational expertise + production-grade AI + enterprise-scale track record |
+  new_string: | **US Product Wedge** | AI autopilot for voice operations — outbound (primary: telemarketing, collections, renewals, activation) + inbound (secondary: customer service, booking, order handling) |
+| **ICP** | US mid-market BPOs, 1,000–5,000 employees, with contact center operations |
+| **Four Personas** | Executive Sponsor · Operations & Finance Leader · Technology Leader |
+| **Core Value Prop** | Full autopilot for your contact center — outbound and inbound. Replace manual volume with AI agents that run 24/7 and get measured on results. |
+| **Lead Narrative** | AI is no longer software. It's becoming a workforce. |
+| **Key Differentiator** | One of the few companies that can deliver true autopilot at production scale — not copilots, not tools, full execution. |
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: | **Service lines** | Contact center with outbound capabilities (telemarketing, collections, or both) |
+  new_string: | **Service lines** | Contact center operations (outbound preferred, but inbound-heavy also qualifies) |
+
+[Tool result] StrReplace
+
+assistant:
+Now let me add the market economics context from the expert, and update the ICP section.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ### Red Flags (reasons to deprioritize)
+- Captive BPO (serves only parent company)
+- Financial distress or recent major layoffs
+- Pure IT-BPM without contact center operations
+- No outbound service lines whatsoever
+  new_string: ### Red Flags (reasons to deprioritize)
+- Captive BPO (serves only parent company)
+- Financial distress or recent major layoffs
+- Pure IT-BPM without contact center operations
+
+### Why Mid-Market Is the Right Entry Point (GLG Expert Validation)
+
+An industry expert with 35 years of experience (former executive at Sitel/Synnex, Transcom) confirmed:
+
+- **The ~$80B US contact center market** is growing at 2-5% per year
+- **Mid-market BPOs are the most vulnerable** to AI disruption: they lack the capital to build their own AI (unlike Teleperformance, which committed $185M to internal AI), but their clients are actively demanding AI-enhanced delivery and writing 20% cost reductions into contracts over the next 3 years
+- **Mid-market operators NEED external AI partners** — this is our entry point
+- **Revenue per seat per year:** US onshore ~$40-50K | Nearshore ~$25-30K | Offshore ~$18-25K
+- **EBITDA margins by geography:** US onshore 5-8% | Nearshore 20-30% | Offshore 40-55%
+- **AI autopilot can fundamentally reshape these economics** — one AI-first digital services company is running at 40% EBITDA margins with 40% annual growth, using per-outcome pricing
+
+These economics are powerful ammunition in conversations with CFOs and COOs.
+
+[Tool result] StrReplace
+
+assistant:
+Now update the personas section — change "Three Personas" to "Four Personas", add CFO, and update the emphasis on autopilot.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ## 2. Three Personas
+
+### Persona 1: Executive Sponsor
+
+**Titles:** CEO, Founder, Owner, Chairman, President, Co-Founder & CEO, Managing Partner
+
+**Role in deal:** Economic buyer. Final budget authority. Signs off on strategic partnerships.
+
+**What they care about:**
+- Competitive survival in an AI-disrupted market
+- Revenue growth and new revenue streams
+- Market positioning — being seen as innovative, not left behind
+- Client retention — meeting enterprise clients' growing AI expectations
+- Margin protection as labor costs rise
+
+**Their success metrics:**
+- Revenue growth, EBITDA
+- New client acquisition / client retention rate
+- Market positioning and brand perception
+- Shareholder / board confidence
+
+**Core message to them:**
+
+> AI is reshaping the BPO industry. The leaders who move now will capture the next wave of growth. We help you add a new AI-powered outbound revenue stream — scaling infinitely without proportional headcount — while paying only for results delivered.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Enterprise clients asking "what's your AI strategy?" and not having a compelling answer
+2. **HIGH:** Watching competitors announce AI initiatives while standing still
+3. **MEDIUM:** Margin compression from rising labor costs with no scalability lever
+4. **MEDIUM:** Turning down outbound business because capacity can't scale fast enough
+  new_string: ## 2. Four Personas
+
+### Persona 1: Executive Sponsor
+
+**Titles:** CEO, Founder, Owner, Chairman, President, Co-Founder & CEO, Managing Partner
+
+**Role in deal:** Economic buyer. Final budget authority. Signs off on strategic partnerships.
+
+**What they care about:**
+- Competitive survival — clients are writing AI-driven cost reductions into contracts
+- Revenue growth and new revenue streams through AI-powered delivery
+- Market positioning — being seen as AI-forward, not left behind
+- Client retention — enterprise clients are demanding AI or threatening to go direct to AI vendors
+- EBITDA expansion — AI autopilot can transform their margin structure
+
+**Their success metrics:**
+- Revenue growth, EBITDA margin
+- New client acquisition / client retention rate
+- AI strategy credibility with clients and board
+- Shareholder / board confidence
+
+**Core message to them:**
+
+> Your clients are writing 20% cost reductions into their next contracts. The BPOs that deliver AI autopilot — not just copilots or tools, but full autonomous execution — will win those renewals and capture the next wave of growth. We deploy AI autopilot for outbound and inbound operations, scaling infinitely without headcount. You pay for outcomes, not seats.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Clients demanding AI-enhanced delivery and threatening to buy AI directly, bypassing the BPO entirely
+2. **HIGH:** Watching competitors announce AI initiatives while standing still — can't afford to be last
+3. **HIGH:** Margin compression with no scalability lever (US onshore EBITDA at 5-8% is unsustainable)
+4. **MEDIUM:** Turning down business because capacity can't scale fast enough
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ### Persona 2: Operations Leader
+
+**Titles:** COO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, Regional VP
+
+**Role in deal:** Champion. Drives the evaluation process. Owns the operational outcome.
+
+**What they care about:**
+- Hitting conversion targets and SLAs
+- Scaling outbound capacity without linear headcount growth
+- Operational efficiency and cost-per-contact
+- Agent utilization and workforce management
+- Delivering results for their end clients
+
+**Their success metrics:**
+- Conversion rate, promise-to-pay rate
+- Cost per contact / cost per acquisition
+- Daily outbound volume and reach rate
+- SLA adherence
+- Client satisfaction scores
+
+**Core message to them:**
+
+> Your outbound team has 10 people making calls. What if you could deploy 10,000 AI agents alongside them — running 24/7, in multiple languages, hitting targets that manual teams can't reach? We bring the operational expertise to make it work: script design, workflow segmentation, and continuous optimization. You pay for outcomes, not seats.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Can't scale outbound volume fast enough to meet client targets
+2. **HIGH:** Low reach rates and high cost-per-contact on manual outbound campaigns
+3. **MEDIUM:** Inconsistent quality across agents (especially during turnover)
+4. **MEDIUM:** Clients requesting AI-enhanced delivery and no solution to offer
+  new_string: ### Persona 2: Operations & Finance Leader
+
+> **Note:** COO and CFO share the same core messaging. Both are margin owners who work together daily on staffing, utilization, and cost management. The CFO cares about EBITDA impact; the COO cares about operational execution. Same message, slightly different emphasis.
+
+**Titles:** COO, CFO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, VP Finance, Regional VP
+
+**Role in deal:** COO = Champion who drives evaluation and owns operational outcome. CFO = Margin owner who validates the business case and approves spend.
+
+**What they care about:**
+- **EBITDA margin** — this is the #1 concern. US onshore margins are 5-8%; AI autopilot can transform this.
+- Hitting conversion targets and SLAs for clients
+- Scaling capacity (outbound AND inbound) without linear headcount growth
+- Staffing correctly — overstaffing kills margin, understaffing kills SLAs
+- Reducing cost-per-contact and cost-per-agent-hour
+- Delivering on client contracts that now demand annual cost reductions
+
+**Their success metrics:**
+- EBITDA margin (by site, by client, by program)
+- Cost per productive hour / cost per contact
+- Conversion rate, promise-to-pay rate, resolution rate
+- Daily volume capacity and utilization rate
+- Client contract renewal rate
+
+**Core message to them:**
+
+> US onshore contact centers run at 5-8% EBITDA. Your clients are demanding 20% cost reductions over the next three years. The only way to hit those numbers without destroying quality is AI autopilot — not copilots that shave minutes off calls, but full autonomous agents that handle entire campaigns. We deploy AI autopilot for outbound and inbound, with outcome-based pricing. Your margin improves, your capacity scales, and you pay only for results.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Client contracts demanding annual cost reductions (typically 20% over 3 years) with no way to deliver without AI
+2. **HIGH:** Onshore EBITDA margins squeezed to 5-8% — every staffing mistake destroys profitability
+3. **HIGH:** Can't scale outbound or inbound volume fast enough without proportional headcount
+4. **MEDIUM:** Inconsistent quality across agents (especially during turnover — 20-30% attrition is normal)
+5. **MEDIUM:** Competitors offering AI-enhanced delivery at lower price points
+
+[Tool result] StrReplace
+
+assistant:
+Now update the ops objection handling and case studies.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: | "Quality won't match our agents" | "In our deployments, AI agents achieve 99% tagging accuracy and 76% promise-to-pay rates. The key is our operational approach — we don't just plug in tech, we design scripts and segment workflows based on deep domain expertise." |
+| "Implementation sounds complex" | "We typically deliver an MVP in 1 week and a full pilot in 30 days. Our Agent Studio is low-code with version control and one-click rollback. Your team doesn't need to be technical." |
+| "My clients won't accept this" | "Start with use cases where AI is clearly additive — booking confirmations, payment reminders, lead qualification. These expand your capacity without touching existing agent workflows. Once clients see the results, the conversation changes." |
+
+**Case studies to use:**
+- IZZI (Mexican telco) — 20K records processed, 136 effective sales, 4.7% conversion rate
+- Megacable — 10K+ daily outbound volume, 99% tagging accuracy, dual-agent workflow
+- Viraal (Mexican fintech) — Collections segmented by DPD bucket with tone-adapted scripts, 25% responder rate
+- Digital Bank Singapore — 2-3K daily volume, 76% promise-to-pay, 40% reach rate
+- E-commerce Philippines — 10% sales activation, 5/6 labor saving
+  new_string: | "Quality won't match our agents" | "In our deployments, AI agents achieve 99% tagging accuracy and 76% promise-to-pay rates. The key is our operational approach — we don't just plug in tech, we design scripts and segment workflows based on deep domain expertise." |
+| "Implementation sounds complex" | "We typically deliver an MVP in 1 week and a full pilot in 30 days. Our Agent Studio is low-code with version control and one-click rollback. Your team doesn't need to be technical." |
+| "My clients won't accept this" | "Start with use cases where AI is clearly additive — booking confirmations, payment reminders, lead qualification. These expand your capacity without touching existing agent workflows. Once clients see the results, the conversation changes." |
+| "How does this impact our margin?" | "Think about it this way: you're paying $40-50K/seat/year onshore for a human agent. Our AI autopilot runs at a fraction of that cost, with outcome-based pricing. One digital-first BPO is already running at 40% EBITDA using per-outcome AI — that's the margin structure AI autopilot unlocks." |
+
+**Case studies to use:**
+- IZZI (Mexican telco) — 20K records processed, 136 effective sales, 4.7% conversion rate
+- Megacable — 10K+ daily outbound volume, 99% tagging accuracy, dual-agent workflow
+- Viraal (Mexican fintech) — Collections segmented by DPD bucket with tone-adapted scripts, 25% responder rate
+- Digital Bank Singapore — 2-3K daily volume, 76% promise-to-pay, 40% reach rate
+- E-commerce Philippines — 10% sales activation, 5/6 labor saving
+- Airline Saudi Arabia — 85%+ booking success rate, 4K+ daily, 40% labor cost reduction (good inbound proof point)
+
+[Tool result] StrReplace
+
+assistant:
+Now update the core positioning section to emphasize autopilot and mention inbound.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ### Lead Narrative (use across all personas)
+
+> **AI is no longer software. It's becoming a workforce.**
+>
+> In 2026, the BPOs that win aren't just using AI as a tool — they're deploying AI workers alongside human teams. Workers that show up with KPIs, get measured on results, and scale infinitely.
+
+### Value Proposition (outbound-specific)
+
+> **Dyna.ai deploys AI voice agents that run your outbound operations at scale — telemarketing, collections, renewals, confirmations — with human-like conversations in 10+ languages. You pay for outcomes, not seats.**
+
+### Positioning Statement
+
+> For mid-market BPOs with outbound operations, Dyna.ai is the AI workforce partner that delivers measurable business results — not just technology. Unlike vendors who sell tools, we bring deep operational expertise and outcome-aligned pricing to every deployment. We've proven this at enterprise scale with Teleperformance, major telecoms, and digital banks across three continents.
+  new_string: ### Lead Narrative (use across all personas)
+
+> **AI is no longer software. It's becoming a workforce.**
+>
+> In 2026, the BPOs that win aren't just using AI as a copilot — they're deploying full AI autopilot. Not tools that assist agents. Autonomous AI workers that handle entire calls, entire campaigns, entire workflows — and get measured on results.
+
+### Value Proposition (autopilot-led)
+
+> **Dyna.ai delivers AI autopilot for contact center operations — outbound (telemarketing, collections, renewals, activation) and inbound (customer service, bookings, order handling). Human-like voice agents in 10+ languages, running 24/7. You pay for outcomes, not seats.**
+
+### Positioning Statement
+
+> For mid-market BPOs under pressure to deliver AI-enhanced service, Dyna.ai is the AI autopilot partner that replaces manual call volume with autonomous agents — not copilots, not tools, full execution. We bring deep operational expertise and outcome-aligned pricing to every deployment. We've proven this at enterprise scale with Teleperformance, major telecoms, and digital banks across three continents.
+
+### Why "Autopilot" Matters (GLG Expert Insight)
+
+The industry is moving through three distinct phases:
+1. **Digital AI** (chat/email/text) — already being fully automated. 25-30% of industry volume.
+2. **Copilot / Agent Assist** — cuts call time in half. Helpful but doesn't change the cost structure.
+3. **Full Autopilot** (agentic AI) — complete replacement of human calls for defined workflows.
+
+Most vendors are stuck at phase 2. **Dyna is one of the few companies that can deliver phase 3 at production scale.** This should be front and center in all messaging.
+
+[Tool result] StrReplace
+
+assistant:
+Now update the Key Phrases and email templates.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: | "AI Workforce" | Always. Replace "AI agents," "bots," or "tools" with this. |
+| "Results as a Service" | When discussing pricing or business model. |
+| "Outbound autopilot" | When describing the product simply. |
+| "Expand your outbound engine without adding headcount" | Core hook for Operations leaders. |
+| "We work with industry leaders like Teleperformance" | Credibility in any context. |
+| "Outcome-aligned pricing" | When they ask about cost / pricing model. |
+| "Production-grade" | When differentiating from DIY or startup competitors. |
+  new_string: | "AI Autopilot" | **Primary term.** Use this instead of "AI agents" or "copilots." It signals full execution, not just assistance. |
+| "AI Workforce" | When talking about the broader vision. Replace "bots" or "tools" with this. |
+| "Results as a Service" | When discussing pricing or business model. |
+| "Full autopilot for outbound and inbound" | When describing what we do in one line. Mention both, emphasize outbound. |
+| "Expand your capacity without adding headcount" | Core hook for COO/CFO. |
+| "Transform your margin structure" | Core hook for CFO. Reference the 5-8% onshore EBITDA problem. |
+| "We work with industry leaders like Teleperformance" | Credibility in any context. |
+| "Outcome-aligned pricing" | When they ask about cost / pricing model. |
+| "Production-grade" | When differentiating from DIY or startup competitors. |
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: | "Replace your agents" | Threatening, triggers resistance | "Scale alongside your team" |
+| "Robo-calls" / "Bots" | Sounds cheap, low-quality | "AI voice agents" / "AI workforce" |
+| "Cost cutting" | Wrong frame for outbound (outbound is revenue) | "Revenue expansion" / "Hit targets" |
+| "We're a startup" | Undermines credibility | "We've deployed at enterprise scale" |
+| "Our technology" | Too tech-focused | "Our operational expertise" |
+| "SaaS platform" | Old model | "AI workforce partner" |
+  new_string: | "Copilot" / "Agent assist" | Undersells us — we do full autopilot | "AI autopilot" / "Full autonomous execution" |
+| "Replace your agents" | Threatening, triggers resistance | "Handle more volume without adding headcount" |
+| "Robo-calls" / "Bots" | Sounds cheap, low-quality | "AI autopilot" / "AI workforce" |
+| "Cost cutting" (as the lead) | Too narrow — frame it as margin transformation | "Transform your margin structure" / "EBITDA expansion" |
+| "We're a startup" | Undermines credibility | "We've deployed at enterprise scale" |
+| "Our technology" | Too tech-focused | "Our operational expertise" |
+| "SaaS platform" | Old model | "AI autopilot partner" |
+
+[Tool result] StrReplace
+
+assistant:
+Now update the email templates to reflect autopilot + inbound mention.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: > I'll keep this brief. The BPOs that are getting ahead in 2026 aren't just cutting costs with AI — they're building entirely new outbound revenue streams with it.
+>
+> We deploy AI voice agents that run telemarketing, collections, and customer activation campaigns at 10x the volume of human teams — with conversion rates that match or beat manual outreach. Unlike vendors selling tools, we bring deep operational expertise and align our pricing to your outcomes. You pay for results, not seats.
+>
+> We've done this at enterprise scale with operators like Teleperformance and major telecoms across three continents. Happy to share what we're learning.
+  new_string: > I'll keep this brief. Your clients are demanding AI-enhanced delivery. Your competitors are investing. The BPOs that move to full AI autopilot now — not copilots or tools, but autonomous AI that executes entire campaigns — will win the next wave of contracts.
+>
+> We deploy AI autopilot for both outbound and inbound operations — telemarketing, collections, customer service, booking confirmations — at 10x the volume of human teams. Unlike vendors selling tools, we deliver full autonomous execution with outcome-aligned pricing. You pay for results, not seats.
+>
+> We've done this at enterprise scale with Teleperformance and major telecoms across three continents. Happy to share what we're learning.
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: > I work with contact center ops leaders who need to hit outbound targets without proportional headcount growth. If that sounds familiar, I think you'll find this interesting.
+>
+> We deploy AI voice agents that handle outbound campaigns end-to-end — telemarketing, collections, payment reminders, booking confirmations. These aren't robo-dialers. They're human-like, multilingual agents that detect intent in real time, adapt their script, and tag outcomes automatically.
+  new_string: > I work with contact center ops and finance leaders who need to hit targets without proportional headcount growth — while protecting margin. If that sounds familiar, I think you'll find this interesting.
+>
+> We deploy AI autopilot that handles outbound and inbound operations end-to-end — telemarketing, collections, payment reminders, customer service, booking confirmations. Not copilots. Full autonomous agents that detect intent in real time, adapt their script, and tag outcomes automatically.
+
+[Tool result] StrReplace
+
+assistant:
+Now add an Operations/Finance email subject line option about margin.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: #### Email Template: Operations Leader
+
+**Subject lines** (choose one):
+- Scaling outbound without scaling headcount
+- 10K outbound calls/day — without adding agents
+- Your outbound capacity, uncapped
+  new_string: #### Email Template: Operations & Finance Leader
+
+**Subject lines** (choose one):
+- Scaling capacity without scaling headcount
+- 10K calls/day — without adding agents
+- From 5% EBITDA to 40%: the AI autopilot math
+- Your contact center capacity, uncapped
+
+[Tool result] StrReplace
+
+assistant:
+Now update the Appendix B Do's and Don'ts.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ### Do
+- Lead with **AI transformation** narrative, then pivot to **outbound specifically**
+- Frame outbound AI as **revenue expansion** (positive), not cost cutting (negative)
+- Reference **working with industry leaders like Teleperformance** early
+- Use **events as conversation starters** — human, not salesy
+- Personalize every message — use the **Icebreaker Insight column** from the contact list
+- Position Calanthia as a **senior industry expert**, not a salesperson
+- Mention **outcome-aligned pricing** — removes risk for the buyer
+- Keep LinkedIn messages **short and conversational**
+- Keep emails **under 150 words** for the first touch
+
+### Don't
+- Don't lead with product features or a demo offer
+- Don't send the same message to all three personas
+- Don't use "early access" framing (this was PH positioning — doesn't work for US)
+- Don't position as "Silicon Valley startup" (US BPO leaders are skeptical of tech vendors)
+- Don't mention compliance as a selling point yet (still being set up for US)
+- Don't batch-send identical emails through HubSpot for the first cohort (personalize each one)
+- Don't pitch inbound AI or the full platform — stay focused on **outbound**
+- Don't use the term "APO Labs" — we are **Dyna.ai** in the US market
+  new_string: ### Do
+- Lead with **AI autopilot** — own this word. It's the strongest positioning we have.
+- Mention **both outbound and inbound** capabilities, but **emphasize outbound** with specific use cases
+- Talk about **margin and EBITDA** directly with COO and CFO — they care about numbers, not vision
+- Frame AI as **margin transformation** (positive), not just cost cutting
+- Reference **working with industry leaders like Teleperformance** early
+- Use **events as conversation starters** — human, not salesy
+- Personalize every message — use the **Icebreaker Insight column** from the contact list
+- Position Calanthia as a **senior industry expert**, not a salesperson
+- Mention **outcome-aligned pricing** — removes risk for the buyer
+- Keep LinkedIn messages **short and conversational**
+- Keep emails **under 150 words** for the first touch
+
+### Don't
+- Don't position as "copilot" or "agent assist" — that undersells us. We do **full autopilot**.
+- Don't lead with product features or a demo offer
+- Don't send the same message to all four personas
+- Don't use "early access" framing (this was PH positioning — doesn't work for US)
+- Don't position as "Silicon Valley startup" (US BPO leaders are skeptical of tech vendors)
+- Don't mention compliance as a selling point yet (still being set up for US)
+- Don't batch-send identical emails through HubSpot for the first cohort (personalize each one)
+- Don't shy away from talking about **replacing manual volume** — C-suite doesn't care about protecting jobs, they care about margin (GLG expert confirmed)
+- Don't use the term "APO Labs" — we are **Dyna.ai** in the US market
+
+[Tool result] StrReplace
+
+assistant:
+Now update the industry context appendix with GLG expert data.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ### Talking Points About the Market
+
+Use these when establishing credibility in conversations. Don't recite them — weave them naturally.
+
+- **"Nearly 53% of contact centers with outbound capabilities already do telemarketing."** This isn't a niche offering — it's where the industry already operates. AI just removes the scaling constraint.
+
+- **"The US controls global BPO distribution."** 83.7% of your priority accounts are US-HQ'd. Decisions are made here. AI adoption will be driven from here.
+
+- **"Small and mid-market BPOs serve enterprise clients."** 92.7% of mid-market BPOs (1K-5K employees) report enterprise client relationships. These are sophisticated operators, not call shops.
+
+- **"Outbound is directly linked to conversion targets."** Unlike inbound (which is about CSAT and cost), outbound speaks the language of revenue, targets, and metrics. This makes the ROI case much cleaner.
+
+- **"AI agents get performance reviews now."** This line (from the Narrative Workshop) is sticky and memorable. Use it when people ask "but how do you ensure quality?" The answer: the same way you manage human agents — KPIs, monitoring, continuous optimization.
+  new_string: ### Talking Points About the Market
+
+Use these when establishing credibility in conversations. Don't recite them — weave them naturally.
+
+- **"The US contact center market is ~$80 billion and growing."** This is a massive industry. Not a niche. (GLG expert confirmed.)
+
+- **"US onshore EBITDA margins are 5-8%. Nearshore is 20-30%. Offshore is 40-55%."** AI autopilot can reshape these economics entirely. One AI-first BPO is already running at 40% EBITDA margins. (GLG expert data.)
+
+- **"Clients are writing 20% cost reductions into contracts over 3 years."** BPOs MUST find AI solutions or they can't meet contractual obligations. This creates urgency. (GLG expert confirmed.)
+
+- **"25-30% of industry volume is digital (chat/email/text) and is already being automated."** Klarna eliminated 700 agent positions and saved $40M/year. This shocked the industry. Voice is next. (GLG expert example.)
+
+- **"Mid-market BPOs can't build AI like Teleperformance can."** TP committed $185M to AI. Mid-market operators don't have that capital. They need external partners. That's us. (GLG expert insight.)
+
+- **"Nearly 53% of contact centers with outbound capabilities already do telemarketing."** This isn't a niche offering — it's where the industry already operates. AI just removes the scaling constraint.
+
+- **"The US controls global BPO distribution."** 83.7% of your priority accounts are US-HQ'd. Decisions are made here.
+
+- **"AI autopilot gets performance reviews now."** This line (from the Narrative Workshop) is sticky and memorable. Use it when people ask "but how do you ensure quality?" The answer: the same way you manage human agents — KPIs, monitoring, continuous optimization.
+
+[Tool result] StrReplace
+
+assistant:
+Now regenerate the docx and commit.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/messaging-framework.md -f markdown -t docx -o /Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx
+  description: Regenerate docx with updates
+
+[Tool result] Shell
