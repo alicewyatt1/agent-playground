@@ -3813,3 +3813,68 @@ assistant:
 - **Avoiding operational disruption** — Any new technology or process change must not jeopardize existing SLAs or client relationships. Innovation is welcome, but not at the cost of delivery stability.
 
 [Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/messaging-framework.md -f markdown -t docx -o /Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx && git add -A && git commit -m "Refine Ops & Finance 'what they care about' per Alice's input" && git push
+  description: Commit refined persona
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+Updated. Five clean priorities that reflect how a COO/CFO at a mid-market BPO actually thinks:
+
+1. **Service quality** — SLAs and conversion targets. Non-negotiable.
+2. **Protecting EBITDA** — Labor is ~2/3 of the budget, so every efficiency gain matters.
+3. **Staffing correctly** — The overstaffing/understaffing tightrope, made worse by 20-30%+ attrition.
+4. **Forecast accuracy** — Workforce planning against unpredictable volumes.
+5. **Avoiding operational disruption** — New tech can't break what's working.
+
+The last one is important for us — it's an implicit objection we need to address. Any pitch to this persona has to feel low-risk and non-disruptive to existing operations.
+
+user:
+<user_query>
+Persona 2
+Operations Leader (+ finance)
+Titles
+COO, CFO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, VP Finance, Regional VP
+Role in deal
+COO = champion who drives evaluation and owns operational outcome
+
+CFO = margin holder who validates the business case and approves spend
+What they care about
+Service quality: Hitting client SLAs and conversion targets
+
+Protecting EBITDA: Improving margins and reducing spend
+
+Staffing correctly: Overstaffing kills margin, understaffing kills SLAs; constant challenge given high annual attrition (20–30%+ is typical in the industry
+Forecast accuracy: Aligning workforce planning with unpredictable call / outbound volumes
+Avoiding operational disruption: Ensuring any new innovation must not jeopardize existing SLAs or client relationships.
+
+ok and can you update the 'core message to them' based on this
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  offset: 127
+  limit: 5
+
+[Tool result] Read
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  offset: 130
+  limit: 3
+
+[Tool result] Read
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: > You're losing 37% of your agents every year and spending $10-35K to replace each one — just to maintain capacity, not grow it. AI autopilot breaks that cycle. We deploy full autonomous agents for outbound and inbound that handle entire campaigns — telemarketing, collections, payment reminders, customer service, booking confirmations. No attrition. No ramp time. No staffing gambles. They run 24/7, in multiple languages, and you pay per outcome, not per seat. Your margin improves because you're replacing your most expensive, least predictable cost line with a variable cost tied to results.
+  new_string: > AI autopilot gives you capacity that doesn't churn, doesn't need ramping, and doesn't miss SLAs. We deploy full autonomous agents for outbound and inbound — telemarketing, collections, payment reminders, customer service, booking confirmations — that run 24/7, in multiple languages, alongside your existing team. You keep your staffing lean, protect your margin, and scale when you need to without the hiring gamble. You pay per outcome, not per seat — so your cost flexes with volume instead of sitting on your P&L whether the phones ring or not.
+
+[Tool result] StrReplace

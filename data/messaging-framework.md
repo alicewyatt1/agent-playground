@@ -129,7 +129,7 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 
 **Core message to them:**
 
-> You're losing 37% of your agents every year and spending $10-35K to replace each one — just to maintain capacity, not grow it. AI autopilot breaks that cycle. We deploy full autonomous agents for outbound and inbound that handle entire campaigns — telemarketing, collections, payment reminders, customer service, booking confirmations. No attrition. No ramp time. No staffing gambles. They run 24/7, in multiple languages, and you pay per outcome, not per seat. Your margin improves because you're replacing your most expensive, least predictable cost line with a variable cost tied to results.
+> AI autopilot gives you capacity that doesn't churn, doesn't need ramping, and doesn't miss SLAs. We deploy full autonomous agents for outbound and inbound — telemarketing, collections, payment reminders, customer service, booking confirmations — that run 24/7, in multiple languages, alongside your existing team. You keep your staffing lean, protect your margin, and scale when you need to without the hiring gamble. You pay per outcome, not per seat — so your cost flexes with volume instead of sitting on your P&L whether the phones ring or not.
 
 **Pain points (ranked by urgency):**
 1. **HIGH:** Agent attrition bleeding money — ~37% annual turnover, $10-35K per replacement, constant cycle of hiring and retraining that never ends
