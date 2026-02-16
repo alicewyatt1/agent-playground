@@ -3477,3 +3477,87 @@ Now regenerate the docx and commit.
   description: Regenerate docx
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "$(cat <<'EOF'
+Merge COO and CFO into single Operations & Finance persona
+
+Per Calanthia's explicit preference to keep one messaging track for both
+roles to avoid extra complexity. Single persona combines operational
+capacity language with EBITDA/margin math. One email template with both
+proof points (volume metrics + margin impact). Keeps strongest CFO
+elements (pricing model, ROI objection, EBITDA numbers) baked in.
+EOF
+)" && git push
+  description: Commit and push merge
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+Done. COO and CFO are now merged back into one **Operations & Finance Leader** persona. The merged version keeps the best of both:
+
+- **From the COO side:** volume metrics (10K daily calls, 99% accuracy), operational proof points, quality/implementation objections
+- **From the CFO side:** EBITDA numbers (5-8% onshore), per-outcome pricing explanation, ROI objection handling, "clients writing 20% reductions into contracts"
+- **One email template** that opens with the margin pressure (resonates with CFO), delivers operational proof points (resonates with COO), and closes with outcome-based pricing (both)
+
+Three personas, three email templates, three sets of objection handling. Clean for Calanthia to use.
+
+Updated docx at `/Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx`.
+
+user:
+<user_query>
+How do you know that clients are writing AI-driven cost reductions into contracts? Where is that from? Can you show me all the context around that? 
+</user_query>
+
+assistant:
+That comes from the GLG expert interview (Donald, Feb 13). Here's the exact passage:
+
+```326:336:/Users/alicewyatt/Downloads/GLG Expert meeting.pdf
+So, yeah, I would say that most clients now
+are. Are pushing their cost center agents to help them reduce their cost and even claiming
+contracts today. Over the next three years, what, you'll reduce your cost by 20%? Meaning that
+they have to find ways to do new technology and new processes to reduce the client, that their
+rates contracts here are going to go down each year. Until they get to 20% less.
+```
+
+So the expert is saying that **end clients (the brands/enterprises)** are writing cost reduction clauses into their BPO contracts — requiring the BPO to reduce rates by 20% over the next three years. The BPO then has to find AI and process improvements to deliver on that contractual commitment or lose margin.
+
+He's not saying the cost reductions are explicitly labeled "AI-driven" — he's saying clients are demanding cost reductions that can only realistically be achieved through AI/automation, because there's no other lever available at that scale.
+
+In the framework I phrased it as "clients are writing 20% cost reductions into their next contracts" which is accurate to what he said. The "AI-driven" qualifier I used in my earlier summary to you was my interpretation — the framework itself doesn't use that phrase. Want me to adjust any of the wording to be more precise about this?
+
+user:
+<user_query>
+Where exactly did the experts say that? Pull out the quote. 
+</user_query>
+
+assistant:
+The exact quote from the transcript:
+
+> "most clients now are. Are pushing their cost center agents to help them reduce their cost and even claiming contracts today. Over the next three years, what, you'll reduce your cost by 20%? Meaning that they have to find ways to do new technology and new processes to reduce the client, that their rates contracts here are going to go down each year. Until they get to 20% less."
+
+It's a messy transcript so let me parse what he's actually saying: End clients (the brands) are **claiming in contracts** that the BPO will reduce costs by 20% over the next three years — meaning the contract rates go down each year until they hit 20% less. The BPO has to figure out how (through technology, new processes, etc.).
+
+One caveat: this is one expert's characterization, not a published data point. He's speaking from his experience at Sitel/Synnex and Transcom and his current advisory work. He says "most clients" are doing this, but we don't have independent verification that 20% over 3 years is standard across the industry.
+
+If you want to be more careful in the framework, I could soften it from "clients are writing 20% cost reductions into their next contracts" to something like "we're hearing that clients are increasingly building cost reduction expectations into BPO contracts" — directionally the same but doesn't cite a specific number as fact. Want me to make that change?
+
+user:
+<user_query>
+yes on that basis can you soften this becuase not ALL clients are writing in cost reductions:
+
+Core message to them:
+Your clients are writing 20% cost reductions into their next contracts. The BPOs that deliver AI autopilot — not just copilots or tools, but full autonomous execution — will win those renewals and capture the next wave of growth. We deploy AI autopilot for outbound and inbound operations, scaling infinitely without headcount. You pay for outcomes, not seats.
+
+just update this bit
+</user_query>
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: > Your clients are writing 20% cost reductions into their next contracts. The BPOs that deliver AI autopilot — not just copilots or tools, but full autonomous execution — will win those renewals and capture the next wave of growth. We deploy AI autopilot for outbound and inbound operations, scaling infinitely without headcount. You pay for outcomes, not seats.
+  new_string: > Your clients are increasingly expecting AI-enhanced delivery — and some are building cost reduction targets directly into contracts. The BPOs that deliver AI autopilot — not just copilots or tools, but full autonomous execution — will win those renewals and capture the next wave of growth. We deploy AI autopilot for outbound and inbound operations, scaling infinitely without headcount. You pay for outcomes, not seats.
+
+[Tool result] StrReplace

@@ -83,7 +83,7 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 
 **Core message to them:**
 
-> Your clients are writing 20% cost reductions into their next contracts. The BPOs that deliver AI autopilot — not just copilots or tools, but full autonomous execution — will win those renewals and capture the next wave of growth. We deploy AI autopilot for outbound and inbound operations, scaling infinitely without headcount. You pay for outcomes, not seats.
+> Your clients are increasingly expecting AI-enhanced delivery — and some are building cost reduction targets directly into contracts. The BPOs that deliver AI autopilot — not just copilots or tools, but full autonomous execution — will win those renewals and capture the next wave of growth. We deploy AI autopilot for outbound and inbound operations, scaling infinitely without headcount. You pay for outcomes, not seats.
 
 **Pain points (ranked by urgency):**
 1. **HIGH:** Clients demanding AI-enhanced delivery and threatening to buy AI directly, bypassing the BPO entirely
