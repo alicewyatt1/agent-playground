@@ -113,33 +113,32 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 **Role in deal:** COO = Champion who drives the evaluation and owns operational outcome. CFO = Margin owner who validates the business case and approves spend. They work hand-in-hand daily on staffing, utilization, and cost management. Same messaging works for both.
 
 **What they care about:**
-- **EBITDA margin** — US onshore margins are 5-8%; nearshore 20-30%; offshore 40-55%. Every staffing decision hits the bottom line.
-- Scaling capacity (outbound AND inbound) without linear headcount growth
-- Hitting conversion targets, SLAs, and quality benchmarks for clients
-- Staffing correctly — overstaffing kills margin, understaffing kills SLAs (20-30% annual attrition makes this a constant battle)
-- Cost-per-productive-hour — this is how BPO contracts are priced and how margin is made or lost
-- Client contracts that now demand annual cost reductions (20% over 3 years is common)
-- Risk transfer — outcome-based pricing shifts risk from the BPO to the AI vendor
+- **Agent attrition and the cost of turnover** — Mid-market contact centers face ~37% annual attrition. Each replacement costs $10-35K (recruiting, training, ramp time). Agents leave after 3-6 months. This is the single biggest operational and financial drain.
+- **Labor cost management** — Labor is approximately two-thirds of the contact center budget. Overstaffing destroys margin. Understaffing destroys SLAs and client relationships. Getting this right is the daily balancing act.
+- **Scaling capacity without proportional headcount** — Demand spikes, new client wins, seasonal peaks all require more agents. Adding headcount is slow, expensive, and compounds the attrition cycle.
+- **Quality and consistency across distributed teams** — Fragmented tech stacks, inconsistent agent performance, and constant retraining of new hires. Only a fraction of calls get quality-reviewed (typically 1-3% with manual QA).
+- **Client delivery pressure** — Clients expecting faster resolution, lower cost per contact, omnichannel capability, and increasingly asking what the BPO's automation strategy is.
+- **Margin protection** — EBITDA varies dramatically by delivery model (onshore 5-8%, nearshore 20-30%, offshore 40-55%). Every staffing mistake directly impacts the bottom line. The CFO and COO work together daily on this.
 
 **Their success metrics:**
 - EBITDA margin (by site, by client, by program)
-- Conversion rate, promise-to-pay rate, resolution rate
+- Agent attrition rate and time-to-fill
 - Cost per productive hour / cost per contact
-- Revenue per seat per year (US: $40-50K, nearshore: $25-30K, offshore: $18-25K)
-- Daily volume capacity and utilization rate
-- SLA adherence and client contract renewal rate
+- Conversion rate, promise-to-pay rate, first call resolution
+- Schedule adherence and utilization rate
+- SLA performance and client contract renewal rate
 
 **Core message to them:**
 
-> Wherever you deliver — onshore at 5-8% EBITDA, nearshore at 20-30%, or offshore at 40-55% — your clients are demanding more for less. AI autopilot changes the math at every tier. We deploy full autopilot for outbound and inbound that handles entire campaigns — telemarketing, collections, payment reminders, customer service, booking confirmations. Not copilots that shave minutes off calls. Autonomous agents that replace manual call volume entirely. One AI-first services company is already running at 40% EBITDA with per-outcome pricing. You don't pay for seats or licenses. You pay per outcome.
+> You're losing 37% of your agents every year and spending $10-35K to replace each one — just to maintain capacity, not grow it. AI autopilot breaks that cycle. We deploy full autonomous agents for outbound and inbound that handle entire campaigns — telemarketing, collections, payment reminders, customer service, booking confirmations. No attrition. No ramp time. No staffing gambles. They run 24/7, in multiple languages, and you pay per outcome, not per seat. Your margin improves because you're replacing your most expensive, least predictable cost line with a variable cost tied to results.
 
 **Pain points (ranked by urgency):**
-1. **HIGH:** Client contracts demanding 20% cost reductions over 3 years — impossible to deliver with human-only models
-2. **HIGH:** EBITDA margins under pressure — onshore at 5-8% is unsustainable, and even offshore margins are compressing
-3. **HIGH:** Can't scale outbound or inbound volume fast enough without proportional headcount
-4. **HIGH:** No capital to build AI internally (unlike Teleperformance's $185M AI investment) — need a partner
-5. **MEDIUM:** Inconsistent quality across agents (especially during turnover — 20-30% attrition is normal)
-6. **MEDIUM:** Competitors offering AI-enhanced delivery at lower price points
+1. **HIGH:** Agent attrition bleeding money — ~37% annual turnover, $10-35K per replacement, constant cycle of hiring and retraining that never ends
+2. **HIGH:** Can't scale capacity fast enough — demand spikes and new client wins require headcount they can't add quickly enough, leading to missed SLAs and lost business
+3. **HIGH:** Margin pressure from labor costs — labor is ~2/3 of the budget, and onshore delivery in particular runs at razor-thin EBITDA (5-8%)
+4. **MEDIUM:** Quality inconsistency — new agents underperform, manual QA only covers 1-3% of calls, and distributed teams are hard to monitor consistently
+5. **MEDIUM:** Clients asking about automation capabilities — not universal yet at mid-market, but increasingly part of RFPs and contract renewals
+6. **MEDIUM:** Competitors who adopt AI early will undercut on price and win on delivery speed
 
 **Objections and responses:**
 

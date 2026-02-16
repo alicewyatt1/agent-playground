@@ -3561,3 +3561,179 @@ assistant:
   new_string: > Your clients are increasingly expecting AI-enhanced delivery — and some are building cost reduction targets directly into contracts. The BPOs that deliver AI autopilot — not just copilots or tools, but full autonomous execution — will win those renewals and capture the next wave of growth. We deploy AI autopilot for outbound and inbound operations, scaling infinitely without headcount. You pay for outcomes, not seats.
 
 [Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/messaging-framework.md -f markdown -t docx -o /Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx && git add -A && git commit -m "Soften cost reduction claim in Executive Sponsor core message" && git push
+  description: Update docx, commit and push
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+Done. Changed from a blanket claim to "Your clients are increasingly expecting AI-enhanced delivery — and some are building cost reduction targets directly into contracts." Directionally the same pressure, but doesn't overstate it.
+
+user:
+<user_query>
+are they really expecting AI enhanced delivery? Do their clients just want it cheaper? Like, make sure this is super expensive and definitely relevant to mid-market BPOs
+</user_query>
+
+assistant:
+[Thinking] The user is pushing back on the phrasing "clients are increasingly expecting AI-enhanced delivery." They're questioning whether end clients actually care about AI specifically, or whether they just want cheaper service. This is an important distinction, especially for mid-market BPOs.
+
+Let me think about what the expert actually said:
+
+1. The expert said clients are "claiming contracts today" with 20% cost reductions over 3 years
+2. He said BPOs are looking at "what AI solution can I implement to get out to my clients now because they're looking for those solutions. Rather than having them do it themselves, completely bypass me."
+3. He talked about larger companies (Teleperformance) investing $185M in AI, and big clients like Cigna and Capital One "looking at their own solutions" and saying "I'm going to buy it directly from the AI company"
+
+
+4. For mid-market BPOs, the dynamics are different—their clients likely aren't sophisticated enough to specifically demand AI-enhanced delivery, they just want cost savings and efficiency, and the threat of clients bypassing them for direct AI solutions is more acute for larger BPOs with enterprise clients.
+
+From the Calanthia call, there's a note that their C-suite doesn't prioritize replacing humans, which seems to be a key factor in how they're approaching this.
+
+The real pressure on mid-market BPOs comes from cost-conscious clients pushing their agents to reduce expenses, combined with capital constraints that prevent them from investing heavily in new AI technology while competitors move faster—so they're losing deals to BPOs offering AI-enhanced services at lower prices.
+You're right to push on this. Let me be honest about what the evidence actually supports for mid-market BPOs specifically.
+
+What the GLG expert actually said about mid-market:
+- Their clients want it **cheaper** — contracts with cost reduction clauses
+- Mid-market BPOs "don't have the capital to invest in AI technology"
+- "Their customers will probably be moving to new technologies quicker, and so they'll be less and less in that space"
+- The "AI-enhanced delivery" demand was more about large enterprise clients (Cigna, Capital One) considering going direct to AI vendors — that's a big BPO problem, not necessarily a mid-market one
+
+For mid-market BPOs, the real pressure is simpler and more blunt:
+1. **Clients want it cheaper.** Period.
+2. **Competitors will offer AI-enhanced delivery at lower prices.** The mid-market BPO loses on cost.
+3. **They can't build AI themselves.** No capital, no tech team.
+
+"AI-enhanced delivery expectations" is probably overstating it for mid-market. Their clients might not even know what that means. They just want lower rates and better results.
+
+Here's a more honest rewrite:
+
+> Your clients want it cheaper — and your competitors are starting to use AI to deliver on that. The BPOs that move to AI autopilot now will win on cost and keep those contracts. We deploy AI autopilot for outbound and inbound operations, scaling infinitely without headcount. You pay for outcomes, not seats.
+
+Want me to use that instead?
+
+user:
+[Image]
+<image_files>
+The following images were provdied by the user and saved to the workspace for future use:
+1. /Users/alicewyatt/.cursor/projects/Users-alicewyatt-repos-agent-playground/assets/image-2f3ddb32-cda0-40bf-9037-f8de56d00f7a.png
+
+These images can be copied for use in other locations.
+</image_files>
+<user_query>
+I'm happy with what they care about for the executive sponsor, but it seems a bit weak for operation leader plus finance. I want it to be super tight. I think you're overcorrecting on this third people asking for less money off their contracts. That's like from one person. You can also look at the web to see what these personas care about in BPOs in the US, specifically against our target market. Just make sure it's super tight and accurate I think you haven't over-corrected for this document on a couple of datasets. 
+</user_query>
+
+assistant:
+[Thinking] The user is saying:
+1. Executive Sponsor "what they care about" is good
+2. Operations & Finance Leader "what they care about" is weak and needs to be tighter
+3. I've been over-relying on the GLG expert data (one person's perspective) and over-correcting
+4. They want me to do web research on what COO/CFO personas at US mid-market BPOs actually care about
+5. Make it accurate and grounded, not just based on one or two data points
+
+Let me do some web research on what operations and finance leaders at mid-market US BPOs care about, and then tighten up that persona section. Let me search for real data points.
+Good call — let me ground this properly. I'll research what COO/CFO personas at US mid-market BPOs actually care about in 2026, then tighten the persona.
+[Tool call] user-perplexity-ask-perplexity_ask
+  messages: [{"role":"user","content":"What are the top priorities and challenges for COO and VP Operations at mid-market US BPOs and contact centers (1,000-5,000 employees) in 2025-2026? Focus on operational priorities, not just AI. What do they actually spend their days worrying about?"}]
+  search_context_size: high
+[Tool call] user-perplexity-ask-perplexity_ask
+  messages: [{"role":"user","content":"What are the top priorities and challenges for CFOs at US BPO and contact center companies in 2025-2026? What financial metrics do they focus on? What keeps them up at night?"}]
+  search_context_size: high
+[Tool call] user-perplexity-ask-perplexity_ask
+  messages: [{"role":"user","content":"What are the biggest operational challenges facing US contact centers in 2025 and 2026? Include agent attrition rates, workforce management issues, quality management challenges, and client delivery pressure. Focus on mid-market operators not the largest enterprises."}]
+  search_context_size: high
+
+[Tool result] user-perplexity-ask-perplexity_ask
+
+[Tool result] user-perplexity-ask-perplexity_ask
+
+[Tool result] user-perplexity-ask-perplexity_ask
+
+assistant:
+[Thinking] Good, now I have solid research-backed data. Let me synthesize what I've learned and tighten the Operations & Finance Leader persona.
+
+Key findings from the research:
+
+**Operations Leader (COO/VP Ops) at mid-market BPOs care about:**
+1. **Agent attrition** — 37% annual attrition for mid-market, costs $10K-$35K per replacement, agents leaving after 3-6 months. This is their #1 daily headache.
+2. **Workforce management** — Scheduling across channels, managing hybrid/remote, avoiding overstaffing (kills margin) and understaffing (kills SLAs). Labor is 2/3 of the budget.
+
+
+3. **Quality consistency** — Fragmented tech stacks and poor knowledge management create inconsistent service across channels and agents.
+4. **Scaling capacity** — Demand spikes expose the inability to ramp headcount quickly, resulting in 34% longer hold times during peaks.
+5. **Performance measurement** — Moving away from legacy metrics like AHT toward modern indicators like FCR and CSAT.
+6. **Omnichannel complexity** — Unifying data across voice, chat, email, SMS, and social while preserving conversation context.
+7. **Client delivery pressure** — Balancing rising volume and personalization demands against cost constraints from clients.
+
+**Finance Leader (CFO) at**
+
+Agent attrition and replacement costs are the biggest operational and financial drain—37% annual turnover at mid-market BPOs means $10-35K per agent replacement. Labor represents roughly two-thirds of the contact center budget, so the margin impact of overstaffing or understaffing is severe. Scaling capacity for demand spikes and new client wins requires adding headcount quickly, which is slow, expensive, and compounds attrition risk. Maintaining consistent quality across distributed teams with fragmented tech and high turnover is a constant struggle. Clients are demanding more capabilities—omnichannel, AI, faster resolution—while pushing for lower costs.
+Good research back. The data gives a much clearer picture of what mid-market ops and finance leaders actually worry about day-to-day. Let me update the persona now.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: **What they care about:**
+- **EBITDA margin** — US onshore margins are 5-8%; nearshore 20-30%; offshore 40-55%. Every staffing decision hits the bottom line.
+- Scaling capacity (outbound AND inbound) without linear headcount growth
+- Hitting conversion targets, SLAs, and quality benchmarks for clients
+- Staffing correctly — overstaffing kills margin, understaffing kills SLAs (20-30% annual attrition makes this a constant battle)
+- Cost-per-productive-hour — this is how BPO contracts are priced and how margin is made or lost
+- Client contracts that now demand annual cost reductions (20% over 3 years is common)
+- Risk transfer — outcome-based pricing shifts risk from the BPO to the AI vendor
+
+**Their success metrics:**
+- EBITDA margin (by site, by client, by program)
+- Conversion rate, promise-to-pay rate, resolution rate
+- Cost per productive hour / cost per contact
+- Revenue per seat per year (US: $40-50K, nearshore: $25-30K, offshore: $18-25K)
+- Daily volume capacity and utilization rate
+- SLA adherence and client contract renewal rate
+  new_string: **What they care about:**
+- **Agent attrition and the cost of turnover** — Mid-market contact centers face ~37% annual attrition. Each replacement costs $10-35K (recruiting, training, ramp time). Agents leave after 3-6 months. This is the single biggest operational and financial drain.
+- **Labor cost management** — Labor is approximately two-thirds of the contact center budget. Overstaffing destroys margin. Understaffing destroys SLAs and client relationships. Getting this right is the daily balancing act.
+- **Scaling capacity without proportional headcount** — Demand spikes, new client wins, seasonal peaks all require more agents. Adding headcount is slow, expensive, and compounds the attrition cycle.
+- **Quality and consistency across distributed teams** — Fragmented tech stacks, inconsistent agent performance, and constant retraining of new hires. Only a fraction of calls get quality-reviewed (typically 1-3% with manual QA).
+- **Client delivery pressure** — Clients expecting faster resolution, lower cost per contact, omnichannel capability, and increasingly asking what the BPO's automation strategy is.
+- **Margin protection** — EBITDA varies dramatically by delivery model (onshore 5-8%, nearshore 20-30%, offshore 40-55%). Every staffing mistake directly impacts the bottom line. The CFO and COO work together daily on this.
+
+**Their success metrics:**
+- EBITDA margin (by site, by client, by program)
+- Agent attrition rate and time-to-fill
+- Cost per productive hour / cost per contact
+- Conversion rate, promise-to-pay rate, first call resolution
+- Schedule adherence and utilization rate
+- SLA performance and client contract renewal rate
+
+[Tool result] StrReplace
+
+assistant:
+Now update the pain points to match — grounded in research, not over-indexed on one expert's view.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: **Pain points (ranked by urgency):**
+1. **HIGH:** Client contracts demanding 20% cost reductions over 3 years — impossible to deliver with human-only models
+2. **HIGH:** EBITDA margins under pressure — onshore at 5-8% is unsustainable, and even offshore margins are compressing
+3. **HIGH:** Can't scale outbound or inbound volume fast enough without proportional headcount
+4. **HIGH:** No capital to build AI internally (unlike Teleperformance's $185M AI investment) — need a partner
+5. **MEDIUM:** Inconsistent quality across agents (especially during turnover — 20-30% attrition is normal)
+6. **MEDIUM:** Competitors offering AI-enhanced delivery at lower price points
+  new_string: **Pain points (ranked by urgency):**
+1. **HIGH:** Agent attrition bleeding money — ~37% annual turnover, $10-35K per replacement, constant cycle of hiring and retraining that never ends
+2. **HIGH:** Can't scale capacity fast enough — demand spikes and new client wins require headcount they can't add quickly enough, leading to missed SLAs and lost business
+3. **HIGH:** Margin pressure from labor costs — labor is ~2/3 of the budget, and onshore delivery in particular runs at razor-thin EBITDA (5-8%)
+4. **MEDIUM:** Quality inconsistency — new agents underperform, manual QA only covers 1-3% of calls, and distributed teams are hard to monitor consistently
+5. **MEDIUM:** Clients asking about automation capabilities — not universal yet at mid-market, but increasingly part of RFPs and contract renewals
+6. **MEDIUM:** Competitors who adopt AI early will undercut on price and win on delivery speed
+
+[Tool result] StrReplace
+
+assistant:
+Now update the core message to align — lead with the real pain (attrition, scaling, margin), not with a speculative market claim.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: > Wherever you deliver — onshore at 5-8% EBITDA, nearshore at 20-30%, or offshore at 40-55% — your clients are demanding more for less. AI autopilot changes the math at every tier. We deploy full autopilot for outbound and inbound that handles entire campaigns — telemarketing, collections, payment reminders, customer service, booking confirmations. Not copilots that shave minutes off calls. Autonomous agents that replace manual call volume entirely. One AI-first services company is already running at 40% EBITDA with per-outcome pricing. You don't pay for seats or licenses. You pay per outcome.
+  new_string: > You're losing 37% of your agents every year and spending $10-35K to replace each one — just to maintain capacity, not grow it. AI autopilot breaks that cycle. We deploy full autonomous agents for outbound and inbound that handle entire campaigns — telemarketing, collections, payment reminders, customer service, booking confirmations. No attrition. No ramp time. No staffing gambles. They run 24/7, in multiple languages, and you pay per outcome, not per seat. Your margin improves because you're replacing your most expensive, least predictable cost line with a variable cost tied to results.
+
+[Tool result] StrReplace
