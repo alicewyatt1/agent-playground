@@ -113,12 +113,11 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 **Role in deal:** COO = Champion who drives the evaluation and owns operational outcome. CFO = Margin owner who validates the business case and approves spend. They work hand-in-hand daily on staffing, utilization, and cost management. Same messaging works for both.
 
 **What they care about:**
-- **Agent attrition and the cost of turnover** — Mid-market contact centers face ~37% annual attrition. Each replacement costs $10-35K (recruiting, training, ramp time). Agents leave after 3-6 months. This is the single biggest operational and financial drain.
-- **Labor cost management** — Labor is approximately two-thirds of the contact center budget. Overstaffing destroys margin. Understaffing destroys SLAs and client relationships. Getting this right is the daily balancing act.
-- **Scaling capacity without proportional headcount** — Demand spikes, new client wins, seasonal peaks all require more agents. Adding headcount is slow, expensive, and compounds the attrition cycle.
-- **Quality and consistency across distributed teams** — Fragmented tech stacks, inconsistent agent performance, and constant retraining of new hires. Only a fraction of calls get quality-reviewed (typically 1-3% with manual QA).
-- **Client delivery pressure** — Clients expecting faster resolution, lower cost per contact, omnichannel capability, and increasingly asking what the BPO's automation strategy is.
-- **Margin protection** — EBITDA varies dramatically by delivery model (onshore 5-8%, nearshore 20-30%, offshore 40-55%). Every staffing mistake directly impacts the bottom line. The CFO and COO work together daily on this.
+- **Service quality** — Hitting client SLAs and conversion targets. This is the baseline requirement. Miss it and you lose the contract.
+- **Protecting EBITDA** — Improving margins and reducing cost-per-contact. Labor is ~2/3 of the contact center budget, so every efficiency gain or cost reduction flows almost directly to the bottom line.
+- **Staffing correctly** — Overstaffing kills margin. Understaffing kills SLAs. This is a constant balancing act made significantly harder by high annual attrition (20-30%+ is typical in the industry, with mid-market averaging ~37%). Each replacement costs $10-35K in recruiting, training, and ramp time.
+- **Forecast accuracy** — Aligning workforce planning with unpredictable call volumes and outbound campaign demands. Getting this wrong in either direction is expensive.
+- **Avoiding operational disruption** — Any new technology or process change must not jeopardize existing SLAs or client relationships. Innovation is welcome, but not at the cost of delivery stability.
 
 **Their success metrics:**
 - EBITDA margin (by site, by client, by program)

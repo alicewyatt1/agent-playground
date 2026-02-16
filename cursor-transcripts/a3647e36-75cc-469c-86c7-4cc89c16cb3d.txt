@@ -3737,3 +3737,79 @@ Now update the core message to align — lead with the real pain (attrition, sca
   new_string: > You're losing 37% of your agents every year and spending $10-35K to replace each one — just to maintain capacity, not grow it. AI autopilot breaks that cycle. We deploy full autonomous agents for outbound and inbound that handle entire campaigns — telemarketing, collections, payment reminders, customer service, booking confirmations. No attrition. No ramp time. No staffing gambles. They run 24/7, in multiple languages, and you pay per outcome, not per seat. Your margin improves because you're replacing your most expensive, least predictable cost line with a variable cost tied to results.
 
 [Tool result] StrReplace
+
+assistant:
+Now regenerate the docx and commit.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/messaging-framework.md -f markdown -t docx -o /Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx && git add -A && git commit -m "$(cat <<'EOF'
+Tighten Ops & Finance persona with research-backed data
+
+Grounded in industry research, not over-indexed on single expert view:
+- Agent attrition: 37% annual at mid-market, $10-35K per replacement
+- Labor = ~2/3 of contact center budget
+- Manual QA covers only 1-3% of calls
+- Pain points ranked by what ops/finance leaders actually face daily
+- Core message leads with attrition cost, not speculative market claims
+- Softened client AI demand language to be accurate for mid-market
+EOF
+)" && git push
+  description: Commit tightened persona
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+Done. Here's what changed for the Operations & Finance persona:
+
+**Before (over-indexed on GLG expert):**
+- Led with EBITDA margins and client contract cost reductions
+- Pain points centered on claims from one interview
+
+**After (research-grounded):**
+
+**What they care about** — now based on industry data across multiple sources:
+1. **Agent attrition** — 37% annual at mid-market, $10-35K per replacement, agents leaving after 3-6 months. The #1 operational and financial drain.
+2. **Labor cost management** — ~2/3 of the budget. The daily overstaffing vs. understaffing balancing act.
+3. **Scaling without headcount** — demand spikes, new client wins, seasonal peaks.
+4. **Quality consistency** — fragmented tech, constant retraining, manual QA only covers 1-3% of calls.
+5. **Client delivery pressure** — faster, cheaper, omnichannel, and increasingly asking about automation.
+6. **Margin protection** — EBITDA varies by delivery model, every staffing mistake hits the bottom line.
+
+**Core message** — now leads with attrition (their #1 real pain) instead of speculative market claims:
+
+> "You're losing 37% of your agents every year and spending $10-35K to replace each one — just to maintain capacity, not grow it. AI autopilot breaks that cycle..."
+
+The EBITDA economics from the GLG expert are still in the framework (they're valid data), but they're context, not the lead. Updated docx at the usual location.
+
+user:
+<user_query>
+Service quality: Hitting client SLAs and conversion targets
+
+Protecting EBITDA: Improving margins and reducing spend
+
+Staffing correctly: Overstaffing kills margin, understaffing kills SLAs; constant challenge given high annual attrition (20–30%+ is typical in the industry
+Forecast accuracy: Aligning workforce planning with unpredictable call / outbound volumes
+Avoiding operational disruption: Ensuring any new innovation must not jeopardize existing SLAs or client relationships.
+
+make this beter
+</user_query>
+
+assistant:
+[Thinking] The user has provided their own version of "what they care about" for the Operations & Finance Leader persona and wants me to improve it. Let me refine these points - they're actually quite good and more accurate than what I had. They're focused on what a COO/CFO at a mid-market BPO actually thinks about day-to-day. Let me make them tighter, add supporting data where appropriate, and make them punchy.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: **What they care about:**
+- **Agent attrition and the cost of turnover** — Mid-market contact centers face ~37% annual attrition. Each replacement costs $10-35K (recruiting, training, ramp time). Agents leave after 3-6 months. This is the single biggest operational and financial drain.
+- **Labor cost management** — Labor is approximately two-thirds of the contact center budget. Overstaffing destroys margin. Understaffing destroys SLAs and client relationships. Getting this right is the daily balancing act.
+- **Scaling capacity without proportional headcount** — Demand spikes, new client wins, seasonal peaks all require more agents. Adding headcount is slow, expensive, and compounds the attrition cycle.
+- **Quality and consistency across distributed teams** — Fragmented tech stacks, inconsistent agent performance, and constant retraining of new hires. Only a fraction of calls get quality-reviewed (typically 1-3% with manual QA).
+- **Client delivery pressure** — Clients expecting faster resolution, lower cost per contact, omnichannel capability, and increasingly asking what the BPO's automation strategy is.
+- **Margin protection** — EBITDA varies dramatically by delivery model (onshore 5-8%, nearshore 20-30%, offshore 40-55%). Every staffing mistake directly impacts the bottom line. The CFO and COO work together daily on this.
+  new_string: **What they care about:**
+- **Service quality** — Hitting client SLAs and conversion targets. This is the baseline requirement. Miss it and you lose the contract.
+- **Protecting EBITDA** — Improving margins and reducing cost-per-contact. Labor is ~2/3 of the contact center budget, so every efficiency gain or cost reduction flows almost directly to the bottom line.
+- **Staffing correctly** — Overstaffing kills margin. Understaffing kills SLAs. This is a constant balancing act made significantly harder by high annual attrition (20-30%+ is typical in the industry, with mid-market averaging ~37%). Each replacement costs $10-35K in recruiting, training, and ramp time.
+- **Forecast accuracy** — Aligning workforce planning with unpredictable call volumes and outbound campaign demands. Getting this wrong in either direction is expensive.
+- **Avoiding operational disruption** — Any new technology or process change must not jeopardize existing SLAs or client relationships. Innovation is welcome, but not at the cost of delivery stability.
+
+[Tool result] StrReplace
