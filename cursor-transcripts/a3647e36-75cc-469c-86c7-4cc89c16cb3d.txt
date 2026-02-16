@@ -2853,3 +2853,627 @@ Now regenerate the docx and commit.
   description: Regenerate docx
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "$(cat <<'EOF'
+Add delivery model tailoring (onshore vs offshore vs mixed)
+
+Finance and Operations messaging now includes swap-in lines for three
+delivery models: onshore-heavy (margin fix), offshore-heavy (protect
+position + scale beyond labor arbitrage), and mixed (AI as third delivery
+tier). Core email templates made delivery-model-agnostic so they work
+regardless of footprint.
+EOF
+)" && git push
+  description: Commit and push delivery model update
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+Done. Here's how it works now:
+
+The core email templates are **delivery-model-agnostic** — they don't assume onshore. There's a new **"Tailoring by Delivery Model"** section in the framework with swap-in lines for three scenarios:
+
+| Delivery Model | Their Reality | The Hook | Example Swap-In |
+|---|---|---|---|
+| **Onshore-heavy** | 5-8% EBITDA, expensive labor, thin margins | AI fixes a broken margin structure | "You're paying $40-50K/seat/year. Per-outcome AI runs at a fraction." |
+| **Offshore-heavy** | 20-55% EBITDA, healthy margins from labor arbitrage | AI protects your position and scales beyond labor | "Your clients are evaluating buying AI directly and cutting out the BPO. Offering AI autopilot is how you stay in the value chain." |
+| **Mixed delivery** | Sophisticated multi-geo operators | AI is a third delivery tier alongside onshore and offshore | "Think of AI autopilot as your most cost-effective site: zero labor cost, infinite scale, per-outcome pricing." |
+
+Calanthia checks the account's delivery footprint, picks the right swap-in line, and drops it into the template. Simple to use, no extra templates to manage.
+
+Updated docx is at `/Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx`.
+
+user:
+<user_query>
+Meeting Title: Alice x Calanthia
+Date: Feb 16
+Meeting participants: Calanthia Mei
+
+Transcript:
+ 
+Them: Just don't want to make your life too complicated.  
+Me: Okay, perfect.  
+Them: By.  
+Me: That was my only question. The other self explanatory.  
+Them: Just mark that down and then I think this part is quite self explanatory. Let me know if you have any questions or anything.  
+Me: In which you contact. People.  
+Them: I can explain the last one. It could be confusing.  
+Me: Okay, coolant. There's LinkedIn signal reconnection. And then company information to the top contact list. Yes. Good.  
+Them: So over the weekend I figure out pop swap. It took me a few back and forth to get the right permission, but it is done. I don't think your permission is up to date, but you should have received an invitation in your Dyna email as well. No need to worry about it because I've got the right permission, you're going offline anyway. So I can all the importing of HubSpot. So in HubSpot, one file can populate both context and companies, which are two different kind of entity types. So in order to do that, I think it makes best sense to treat contact as the core unit. And then add company information to it. And here's what I meant.  
+Me: Okay? O. Kay, fine. Yeah.  
+Them: I'll show you. So when I upload, I can upload this list, but I would need to add a few company columns on this list.  
+Me: Okay, cool.  
+Them: So I can use it to map. Because contact is a smaller unit, it HubSpot will be able to understand it a little bit better. And then I did try to map out different kind of company space. We don't have space for everything, but for the time being, for simplicity, I think we can just do a cursor exercise of getting all the columns. Over to contacts. Does that make sense?  
+Me: Yes. So, ideally, would you have all of the company. Attributes for every person put in, or how would you see that?  
+Them: Y. Eah. So realistically, I'm not able to create new fields in HubSpot, so I rely upon what existing fields I have for context. We can do the following.  
+Me: Yeah.  
+Them: Actually try to map out everything yesterday. So company name, obviously first name yes last name, job title, location all yes LinkedIn profile yes contact email yes Notable previous experience yes active on LinkedIn I have no space for that. And then icebreaker inside I have free tags Problem I can fill this. In summary of the role I can fill that in, but then I wouldn't have additional free text for the. I think it's fine. We can just keep it in our own notes. So that's for context for company. Company name, yes. Website? Yes. Those location details? Yes. Those are three separate columns. Prospecting notes, Yes. I can add it to. Quick contacts usps. I can add it to business description language, yes? AI, yes. I can add it to about us and then the rest of them. I don't have space. I can add delivery model to description as well, but for Grasshopper detail I'm running out of the free text columns, which is fine. I think we can just keep it in our internal nodes. I don't think HubSpot needs to be perfect. We're probably the most diligent HubSpot people of the entire company right now. In any ways. So once the company detail is being added to the contact list. Detail? I've already figured. Out how to map them to HubSpot, then I'll be able to start organizing contacts within HubSpot for outreach, touch points, etc.  
+Me: Fine. Yeah, fine. Yeah. Fine. Yeah. So for each contact, we add in company name, company description, notable company, whatever those fields, for each. So there'll be duplicate company records for each one. We're fine with that. Right? Okay, cool.  
+Them: Yes. Yeah, yeah, we're fine with that. And for simplicity, I think we can just merge everything over. You don't need to care about which ones I can map to HubSpot, which one I cannot, because there'll be too much work, to be honest.  
+Me: Okay? Of this list. So we basically want where a company has ADEC Innovations.  
+Them: Yes.  
+Me: That all of that gets added to their profile for all of those people. Okay. Yeah, I think we can do that.  
+Them: Exactly. Exactly. Yes, that should be relatively straightforward. And then I can, in the upload it imported list, I can figure out which fields can be mapped to a HubSpot field, which cannot. HubSpot can just do not import those fields. There's like a function for that as well.  
+Me: Perfect. Puppet.  
+Them: So relatively easy.  
+Me: Cool. Great.  
+Them: Okay. That's meant. Awesome. And then this we already talked about. Let me know if you have any questions about the Persona. I imagine when we get into it, we'll have.  
+Me: Yeah. Then I have more questions. But all good for now.  
+Them: Okay. Great Hob soil setup. We talked about it. Ready? I got registration permissioning. Done field. I did analysis last night, and then once it's merged, I'll be able to do the uploading. Actually do the uploading. And once we've done everything, once you're gone, I can start make LinkedIn. Outreach, and then I'll reach out to the Southeast regional folks for the upcoming Atlanta event. And then I would love to start posting on LinkedIn as well to beef it up before I start reaching out to people. So this is a file you can review for my file.  
+Me: Yep, definitely. Priority wise. Should I do that? Would that be helpful for me to do that this morning or today?  
+Them: It's up to you. It's actually relatively easy. It's just like a one page, and I've written everything already. You don't need to do super deep edit.  
+Me: Cool. All right, I'll have a scan thread today, then.  
+Them: Yeah. Quick scan will be more than enough.  
+Me: Perfect.  
+Them: Great. Okay. And then I have been spending so much time in my evening getting the CCAP thing all the across a finish line. I'm going to design marketing because the entire most of the team is off for Chinese New year till the 24th, so I'm going to moonlight as a designer.  
+Me: Oh, my God. Love it.  
+Them: Again. So I'm going to do some figma work today for this one. But pretty straightforward. I'll get it done.  
+Me: Okay?  
+Them: All right. So down to the interesting, fun stuff. They're two random things I want to ask you about. So one event that Donald told us is going to be very high quality and helpful is solvent event for Lauderdale. In April. I was wondering if you want to come with me to the event. I think this one is more for senior executives. I attach the agenda here. Feel free to take a look and check your calendar to see if you want to join me.  
+Me: Interesting. Perfect. I'll have a look. We are going to Mexico City for a wedding, which is on the 15th, so I guess we'll be traveling on the 14th. Fort Lauderdale. But let me have a look, because I could possibly fly do the Sunday and Monday and then fly straight to Mexico City.  
+Them: Yeah. It's very close as well, because for Lordao is also very down south.  
+Me: It's not far. Yeah, if I can make it work, I'd love to come. I'll just see if it just makes logistical sense. But I appreciate the invite.  
+Them: And then check out the agenda on the 15th. I think that events are a little bit more sparse. You can also leave early. I think on 15th it's just like a. Interesting enough. There's a women focused leadership workshop. I thought it would be great for networking, but yeah, you can also legally, the wedding starts on 15th. Floor is 16th.  
+Me: Oh, interesting. It starts on the 15th, so I need to be there on the 14th.  
+Them: Okay? Got it? Yeah. Take a look and let me know.  
+Me: All right, I'll have a look. Awesome.  
+Them: Yeah.  
+Me: And it starts on the 12th. Okay, cool.  
+Them: It's multi. Yeah, it starts on 12, which is, funny enough, a weekend.  
+Me: That's funny. Okay?  
+Them: And then the first day is just networking day. We can get a lot of networking done on that day.  
+Me: Okay, perfect. All right.  
+Them: Okay?  
+Me: I click.  
+Them: And then the second thing is a new thing I'm thinking about. So, Diana, I don't know if you've heard of Mobile World Congress. I don't know if you have ever attended that during your E Com and payments days.  
+Me: I thought I have. I'm here. Look, I didn't think I ever, ever went, but we probably sent people.  
+Them: Yeah, I've heard of it, but I've never went myself.  
+Me: Yeah, I don't think I went.  
+Them: It's huge in more telecom kind of world, but it's like a mega tech expo nowadays.  
+Me: Yeah.  
+Them: So did I, is having a very big presence at the Barcelona conference in early March, and someone brought it to my attention that I should check out whether any of our contact centers are attending, which I thought is a really good idea. So there are two lists we can look into. Oh, by the way, because there's a lot of Dynam people attending. If we find any targets going, I can reach out to Target via their app and then we can assign it to someone from Dina who's a meeting, which I thought will be very.  
+Me: Nice. That's awesome. Will it be that Mexico City team going or other teams?  
+Them: Other teams like.  
+Me: Sorry. This is for the wild congress. Yeah. Okay.  
+Them: They're probably setting a big team, and then they also have a big booth. Spend a lot of money anyways.  
+Me: Bunch of people. Oh, this is really helpful. Okay.  
+Them: Yeah. So there are two things. The first thing is that I received the exhibitor list, and then I already checked that against our global market.  
+Me: Nice. What's the verdict?  
+Them: Yeah, not a lot of global BPOs are exhibiting, which is, to be honest, expected. We have the big consulting firms, which are not our target. We have one ITBPM and then we have a small Latvia contact center which is not going to be replicable applicable to us. So I was like, okay, they're not exhibiting. Understood, but more of them might be attending, especially their BPO serving telecom industry. So seeing their clients. However, I cannot download a list of attendees. The only way is that you can access the attendee through their mobile app. They don't have a web. It's called.  
+Me: Okay? Okay?  
+Them: Series mobile app. You can the iOS version.  
+Me: Nice.  
+Them: I did manage to get two shared, yeah.  
+Me: O. H, you genius.  
+Them: So if you want to try it out.  
+Me: Oh, my God.  
+Them: Go to the App Store, download it, and then there's a tab called Attendees who Can Filter by United States.  
+Me: Does.  
+Them: Yeah. And then this conference. I don't think we should apply any other filter because BPO is not an industry that's being marked. So I don't want to filter out any potential prospects. I'm just trying to think of if there's any smart. Hm. Take way to extract the LinkedIn. Yeah, it's a mobile app, so I don't know if it's more complex or not.  
+Me: Scrape the list. I'll ask Alex. Yeah. I'll ask him. Okay?  
+Them: Great. Yeah, I think this would be really interesting, and I think we should check it against our master list and our priority list. If we find anyone who's relevant, I can use the app to send them email or send them a message asking, and then I can assign someone who's attending to meet with them. They all have their meeting lead gen KPIs when they go to the conference, so it's helping them.  
+Me: That's a good idea. Nice. Yeah. Perfect. Okay, that could be really great. Okay, so the action on the first one, I'll just have a look and see. Dates wise, if I can make that work. And then the second one specifically, to see if we can scrape the list of attendees.  
+Them: Yeah. Exactly.  
+Me: Perfect. Cool. Have you glanced through? Do you think there's good, decent people?  
+Them: Great. To glance through because it's literally just a mobile app of analysts scrolling. And it's like, loading, loading. Loading is really hard.  
+Me: Great. Fine. Okay. All right, I'll try to add it, see what we can do.  
+Them: After I scroll the first 10 screens, I gave up, basically.  
+Me: Yeah, perfect.  
+Them: Yeah. And then one last thing, just an FYI only is that when you're away, I'm going to try to attend those two events. The first event is Atlanta Complex.  
+Me: Oh, nice.  
+Them: Talking about. It's a small workshop. I hope someone is going. And then the second one. If the first one proves to be helpful, I may go to the second one. This is a massive expo with a lot of AI conferences, so I'll go there as well, try to see.  
+Me: Yeah. I know you love Vegas. Any excuse to get back to Vegas. While you're taking one. Taking one for the team here, okay?  
+Them: Oh, my God. Love.  
+Me: Cool. That could be amazing to actually get out there and start taking this reality.  
+Them: Yeah. Because we don't know if how people are responding to outbound. So I want to try everything we have at our disposal. Yeah, I'm also going to talk to the relationship owner at Dinah for teleperformance concentrics and a third large BPO called attento and then see at what point we should get introduced to their US team? I would imagine that's a stage two kind of go instead of stage one. I feel very unprepared to get introduced to a super enterprise BPO without any real deployment in the US right now.  
+Me: Yes. So good. Nice. Okay? Y. Eah, yeah.  
+Them: I want to wait and see, but I want to talk to internal team members first to see if we can make it happen.  
+Me: Perfect.  
+Them: The one last thing is that the call was just on right now was with the product lead for at Dina for different kind of deployments. And then he had mentioned to me the restaurant ordering Pilot with American SaaS Company is very well that reminds me that during our prospecting process I wonder if we should do one more filter of any contact center that serves the restaurant and the QSR industry.  
+Me: O.  
+Them: Because they are not only doing food ordering, which is a very complex inbound task that very few AI companies can do.  
+Me: H.  
+Them: They're also going live with reservation as a use case very soon. So, for example, you can call to make a reservation. I'll be able to automate the entire interaction, which is really cool.  
+Me: That's really cool.  
+Them: Yeah. So I don't know if that's something that we can use Cursor to do a quick scan through, because even though they don't list restaurant and QSR as a real industry, sometimes it's hidden in the case study that we can dig out using AI.  
+Me: Yeah. Are we looking? Are we gonna. Is the. Is the request to take our list right now and just call out if they offer that or to scan to get additional BPOs that focus on that?  
+Them: Yeah. Yeah. I don't know, because to be honest, We should probably do both because this is a use case that's in the UI that's live today. That's something that we can tap into. And I just heard that Dina is actually working with Pizza Hut in Thailand to do food ordering. I was like this great brand name. Everyone knows what a Pizza Hut is.  
+Me: 's. Cool. Everyone knows pizza hut.  
+Them: Yeah, I will try to get setting file from them as well.  
+Me: That's cool.  
+Them: I'm really upset. Don't share all the information very freely. But also, every time when I have a conversation, I have surprise findings like this. I was like, you're not telling the entire world that you're working with Pizza Hut and why. But now we know, and this is great. I think any BPO would probably be curious to take an AI company's call. Who works with a Pizza Hut? Doesn't matter whether it's in Canada, it really doesn't matter. I think.  
+Me: Yeah, so that's kind of fun. Yeah. Yeah. Yeah, okay. Okay, cool. So I'll ask it to look for any additional presumably still within our definition of mid market. Not. Not donald.  
+Them: Yeah, I think maybe I'm just thinking out loud live right now.  
+Me: What do you think?  
+Them: We can either. Scan it. Just scan our priority list, maybe. Let's start from there and see if there's anyone who does anything. If it's like, fewer than three bpo, which will be too few, than we expand the list to.  
+Me: Yeah, fine. Perfect. That's a good plan. Okay? All right. I think I've got my to do list sorted.  
+Them: Great.  
+Me: I'm gonna get cracking. I'll keep you posted. I'll send you an update at end of day.  
+Them: Amazing. Yeah. One last thing is that I actually managed to. Philip received another batch of geology people.  
+Me: Yeah. Credit. Oh, my gosh.  
+Them: And then because Philip can only do Friday, unfortunately, we won't be able to have you this time around. But I would very deconnose and share it.  
+Me: Oh, thank you. Oh, my gosh, that would be amazing.  
+Them: I fund someone. Who? Well, I didn't. GLG found someone who works at 247 AI, which is literally the first company on the full qualified list.  
+Me: Oh, my gosh.  
+Them: The first company because it starts with a number.  
+Me: Oh, yes, because it's such a number. That's incredible. And I think, yeah, so.  
+Them: This person. Senior, though. It's like a VP of operations who used to run customer services, but still, I think it's helpful.  
+Me: I'm just looking at their services. Oh, my gosh, it's perfect.  
+Them: Yeah.  
+Me: I also think it would be helpful because I don't want to be too skewed. I think Donald made mostly I agree with what he said, but we should get as many views as we can, so that's really good news.  
+Them: For sure. For sure.  
+Me: Okay? Amazing. All right, well, let me know. I'll read the notes. I'll wake up on Saturday morning and I'll check it out. That's so good. And thanks to Philip.  
+Them: All right. Of course. Let me know. Feel free to text me throughout the day. I'm just going to get on my test on my side as well.  
+Me: Per. Fect. Cool. Perfect. All right, see you later. Bye. Bye.  
+Them: Yeah. Bye. 
+
+Has anything changed about your suggestions for the messaging framework based on this conversation with Calanthia? 
+</user_query>
+
+assistant:
+[Thinking] Let me analyze this conversation carefully to see if there are any changes needed to the messaging framework.
+
+Key points from the call:
+
+1. **HubSpot Setup** — Calanthia is importing contacts into HubSpot and needs company information merged onto each contact row. This is a data preparation task, not a messaging framework change.
+
+2. **LinkedIn Outreach Starting Soon** — Calanthia will start LinkedIn outreach while Alice is away, focusing on Southeast regional folks for the Atlanta event. This aligns with what we have.
+
+3. **LinkedIn Content** — Calanthia wants to post on LinkedIn before outreach to "beef it up." She has a file for Alice to review. This is execution, not framework change.
+
+
+4. **Frost & Sullivan Fort Lauderdale and Mobile World Congress Barcelona** — Both are potential event hooks, though MWC is primarily for the Barcelona team to identify target BPOs and coordinate meetings through the app. 5. **Atlanta CBAND + Enterprise Connect** — Already in our framework. 6. **Large BPO relationships** — Calanthia sees outreach to Teleperformance, Concentrix, and Atento as stage 2 work, requiring conversations with Dyna's internal relationship owners first. 7. **Restaurant/QSR use case** — This is genuinely new and worth messaging on: Dyna's working with a Pizza Hut pilot in Thailand for food ordering, reservation handling is launching soon, and Pizza Hut could be a strong proof point if we identify BPOs serving the restaurant industry on our priority list. 8. **New GLG expert** — Adding a VP of Operations from 247.ai to our expert network.
+
+The messaging framework itself is mostly solid and doesn't need major changes. The restaurant/QSR use case could eventually fit into the case studies or industry-specific delivery model section, but it's too early to lock it in—we should wait until there's a proper case study ready. MWC Barcelona isn't really relevant to our US contact center messaging.
+No, I don't think the messaging framework needs material changes based on this conversation. This call was primarily about **execution logistics** (HubSpot import, LinkedIn prep, event attendance, MWC scraping) rather than strategic messaging decisions.
+
+Here's what I picked up and my assessment on each:
+
+**Already covered in the framework:**
+- LinkedIn outreach to Southeast contacts with CBAND Atlanta hook — already in Touch 1
+- Enterprise Connect attendance — already in events section
+- Frost & Sullivan Fort Lauderdale (Apr 12-15) — already listed, and Donald's endorsement just reinforces it
+
+**New but not a framework change:**
+- **HubSpot import** — This is a data task (merging company columns onto the contacts CSV). I can help with this separately if you'd like.
+- **MWC Barcelona** — Smart move for Calanthia to leverage Dyna's booth presence, but this is a telco event, not a US contact center outreach hook. Doesn't change the messaging.
+- **Teleperformance / Concentrix / Atento internal introductions** — Stage 2 strategic planning. Doesn't affect current framework.
+- **New GLG expert (247.ai VP Ops)** — Hasn't happened yet. We can update after that call if anything new surfaces.
+
+**One thing to watch: the Pizza Hut / restaurant QSR use case.** This is interesting — Dyna working with Pizza Hut Thailand on food ordering, plus a US SaaS restaurant pilot, plus reservation handling going live soon. Pizza Hut is a strong brand name that any BPO exec would recognize. But I'd hold off adding it to the framework until Calanthia gets the case study file from Dyna. Once she does, it would slot in as:
+- A new proof point in the case study table
+- A potential industry-specific hook for BPOs serving hospitality/QSR
+- A good "by the way" in conversation: "We're also live with Pizza Hut on food ordering automation"
+
+Want me to help with any of the execution tasks from this call — like the HubSpot data merge (adding company columns to each contact row) or the MWC attendee scraping?
+
+user:
+<user_query>
+What about her feedback about merging the CFO and COO personas? 
+</user_query>
+
+assistant:
+[Thinking] Let me re-read the relevant part of the transcript more carefully:
+
+"Them: Okay. That's meant. Awesome. And then this we already talked about. Let me know if you have any questions about the Persona. I imagine when we get into it, we'll have.
+Me: Yeah. Then I have more questions. But all good for now."
+
+Hmm, this is a brief mention. Calanthia says "let me know if you have any questions about the Persona" and Alice says "I have more questions but all good for now." That's not really feedback about merging.
+
+Let me look at the earlier part of the transcript again more carefully...
+
+"Them: So relatively easy.
+
+
+Me: Cool. Great.
+Them: Okay. That's meant. Awesome. And then this we already talked about. Let me know if you have any questions about the Persona. I imagine when we get into it, we'll have."
+
+Actually, I think the user (Alice) is referring to the original call transcript (the first one from Feb 12), where Calanthia explicitly said:
+
+"Them: Yeah. Yeah, I think the messaging can be the same for both COO and cfo, because it seems like they both care about margin, care about efficiency, care about cost. Let's just like lean heavily into it. And then with coo, a CEO, we can talk"
+
+more like fluffy innovation, AI kind of kind of stuff. And then CTO just talk about, like, Numbers? I don't know. I think let's include cfo, but still use the same messaging framework so that way we don't have to create another step for them."
+
+And Alice agreed: "Me: Yeah. Okay, perfect."
+
+So Calanthia's explicit preference from the Feb 12 GLG expert debrief was to MERGE COO and CFO into the same messaging. She said "the messaging can be the same for both COO and CFO" and "let's include CFO but still use the same messaging framework so that way we don't have to create another step for them."
+
+Then in this Feb 16 call, Calanthia references the persona section and says "we already talked about" - seemingly referring to this earlier decision.
+
+And the user (Alice) asked ME whether to split
+
+I'm realizing Calanthia was referencing the Feb 12 decision where she explicitly wanted to consolidate COO and CFO messaging around shared priorities like margin and efficiency, while keeping CTO separate with a numbers-focused approach. When she says "we already talked about" on the Feb 16 call, she's pointing back to that earlier agreement to merge those two personas rather than create duplicate messaging frameworks.
+You're right — I should have weighted that more heavily. In the post-GLG debrief on Feb 12, Calanthia explicitly said:
+
+> "I think the messaging can be the same for both COO and CFO, because it seems like they both care about margin, care about efficiency, care about cost. Let's just lean heavily into it... let's include CFO but still use the same messaging framework so that way we don't have to create another step for them."
+
+And you agreed. She's the one using this framework daily, and she specifically said she didn't want extra steps. I recommended splitting them, but her preference is clear and practical — she's already managing four personas, events, delivery model variants, and LinkedIn outreach. Another template adds cognitive load.
+
+Want me to merge them back into one **Operations & Finance Leader** persona with a single email template, but keep the margin/EBITDA language strong throughout so it resonates with both COO and CFO? I'd keep the best financial lines (the unit economics, the 5-8% EBITDA hook, the per-outcome pricing pitch) baked into the one template rather than in a separate track.
+
+user:
+<user_query>
+how different are they?
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  offset: 108
+  limit: 110
+
+[Tool result] Read
+
+assistant:
+Honestly, they're quite similar. Here's a side-by-side of the actual differences:
+
+| | Operations Leader | Finance Leader |
+|---|---|---|
+| **Core message lead** | "Deploy 10,000 AI agents, 24/7, multiple languages" | "5-8% EBITDA onshore, clients demanding 20% reductions" |
+| **Language** | Volume, capacity, campaigns, quality | EBITDA, cost-per-productive-hour, margin structure |
+| **Unique pain points** | Attrition (20-30%), inconsistent quality | No capital to build AI, revenue-per-seat declining |
+| **Unique objections** | "Quality won't match agents", "Clients won't accept" | "What's the ROI?", "How does pricing work?" |
+
+The pain points and objections are actually the most distinct part — the CFO has ROI/pricing objections that the COO doesn't, and the COO has quality/implementation concerns that the CFO doesn't. But the core message is really just the same story told through two lenses.
+
+Given Calanthia explicitly said she wants one template to avoid extra steps, I'd recommend merging them back but **keeping the strongest CFO elements baked in** — specifically the EBITDA numbers, the pricing explanation, and the ROI objection handling. That way when she's talking to a CFO, the margin language is already there; when she's talking to a COO, the operational specifics are already there too.
+
+Want me to merge them?
+
+user:
+<user_query>
+ok let's do that then. merge them
+</user_query>
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: | **Four Personas** | Executive Sponsor · Operations Leader · Finance Leader · Technology Leader |
+  new_string: | **Three Personas** | Executive Sponsor · Operations & Finance Leader · Technology Leader |
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ### Persona 2: Operations Leader
+
+**Titles:** COO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, Regional VP
+
+**Role in deal:** Champion. Drives the evaluation process. Owns the operational outcome and delivery quality.
+
+**What they care about:**
+- Scaling capacity (outbound AND inbound) without linear headcount growth
+- Hitting conversion targets, SLAs, and quality benchmarks for clients
+- Staffing correctly — overstaffing kills margin, understaffing kills SLAs (20-30% annual attrition makes this a constant battle)
+- Reducing cost-per-contact and cost-per-agent-hour
+- Delivering on client contracts that now demand annual cost reductions
+- Offering AI-enhanced delivery to retain and win clients
+
+**Their success metrics:**
+- Conversion rate, promise-to-pay rate, resolution rate
+- Cost per productive hour / cost per contact
+- Daily volume capacity and utilization rate
+- SLA adherence and quality scores
+- Client satisfaction and contract renewal rate
+
+**Core message to them:**
+
+> Your team has 10 people making outbound calls. What if you could deploy 10,000 AI agents alongside them — running 24/7, in multiple languages, hitting targets that manual teams can't reach? And the same autopilot handles inbound volume too. We bring the operational expertise to make it work: script design, workflow segmentation, and continuous optimization. Not a copilot that shaves minutes off calls — full autopilot that handles entire campaigns. You pay for outcomes, not seats.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Client contracts demanding annual cost reductions (typically 20% over 3 years) with no way to deliver without AI
+2. **HIGH:** Can't scale outbound or inbound volume fast enough without proportional headcount
+3. **HIGH:** Inconsistent quality across agents (especially during turnover — 20-30% attrition is normal)
+4. **MEDIUM:** Competitors offering AI-enhanced delivery at lower price points
+5. **MEDIUM:** Clients threatening to buy AI directly, bypassing the BPO
+
+**Objections and responses:**
+
+| Objection | Response |
+|---|---|
+| "Quality won't match our agents" | "In our deployments, AI agents achieve 99% tagging accuracy and 76% promise-to-pay rates. The key is our operational approach — we don't just plug in tech, we design scripts and segment workflows based on deep domain expertise." |
+| "Implementation sounds complex" | "We typically deliver an MVP in 1 week and a full pilot in 30 days. Our Agent Studio is low-code with version control and one-click rollback. Your team doesn't need to be technical." |
+| "My clients won't accept this" | "Start with use cases where AI is clearly additive — booking confirmations, payment reminders, lead qualification. These expand your capacity without touching existing agent workflows. Once clients see the results, the conversation changes." |
+
+**Case studies to use:**
+- IZZI (Mexican telco) — 20K records processed, 136 effective sales, 4.7% conversion rate
+- Megacable — 10K+ daily outbound volume, 99% tagging accuracy, dual-agent workflow
+- Viraal (Mexican fintech) — Collections segmented by DPD bucket with tone-adapted scripts, 25% responder rate
+- Digital Bank Singapore — 2-3K daily volume, 76% promise-to-pay, 40% reach rate
+- E-commerce Philippines — 10% sales activation, 5/6 labor saving
+- Airline Saudi Arabia — 85%+ booking success rate, 4K+ daily, 40% labor cost reduction (good inbound proof point)
+
+---
+
+### Persona 3: Finance Leader
+
+**Titles:** CFO, Chief Financial Officer, VP Finance, Chief Financial Officer and COO
+
+**Role in deal:** Margin owner. Validates the business case. Approves or blocks spend based on financial impact. Works hand-in-hand with the COO daily to manage staffing costs against revenue.
+
+**What they care about:**
+- **EBITDA margin above all else.** US onshore margins are 5-8%. Every staffing decision directly hits the bottom line.
+- Cost-per-productive-hour — this is how BPO contracts are priced and how margin is made or lost
+- Contract economics — client contracts increasingly demand annual cost reductions (20% over 3 years is now common)
+- Risk transfer — outcome-based pricing shifts risk from the BPO to the AI vendor
+- Capital allocation — investing in AI vs. investing in more seats/sites
+
+**Their success metrics:**
+- EBITDA margin (by site, by client, by program)
+- Cost per productive hour / cost per agent FTE
+- Revenue per seat per year (US: $40-50K, nearshore: $25-30K, offshore: $18-25K)
+- Operating leverage — can revenue grow without proportional cost growth?
+- Client contract margin preservation
+
+**Core message to them:**
+
+> Wherever you deliver — onshore at 5-8% EBITDA, nearshore at 20-30%, or offshore at 40-55% — your clients are demanding more for less. AI autopilot changes the math at every tier. One AI-first services company is already running at 40% EBITDA with 40% annual growth, using per-outcome pricing. We deploy AI autopilot for outbound and inbound that replaces manual call volume at a fraction of the cost per productive hour. You don't pay for seats or licenses. You pay per outcome. Whether you're protecting thin onshore margins or scaling beyond what offshore labor can deliver — this is the next lever.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Onshore EBITDA at 5-8% is unsustainable — one bad staffing month destroys quarterly margin
+2. **HIGH:** Client contracts demanding 20% cost reductions over 3 years — impossible to deliver with human-only models
+3. **HIGH:** No capital to build AI internally (unlike Teleperformance's $185M AI investment) — need a partner
+4. **MEDIUM:** Revenue per seat declining as clients push for lower rates
+5. **MEDIUM:** Evaluating AI investments but unclear ROI — too many vendors, not enough production evidence
+
+**Objections and responses:**
+
+| Objection | Response |
+|---|---|
+| "What's the ROI?" | "Let's do the math together. You're paying $40-50K/seat/year onshore. Our AI autopilot runs at a fraction of that, with per-outcome pricing — you only pay when a call achieves its objective. One of our clients went from 10% to 40% EBITDA on AI-handled volume." |
+| "How does pricing work?" | "Three options: per-task (per call), per-role (benchmarked to human labor cost), or per-outcome (revenue/profit sharing). We align to what makes your P&L work. The point is you're not buying software — you're buying results." |
+| "We can't afford a big AI investment right now" | "That's exactly the point. This isn't a capital investment. It's an operating expense that only kicks in when it delivers. No upfront platform fees. No multi-year commitment. Start with a 30-day pilot on one campaign and measure the margin impact directly." |
+| "How does this impact our margin?" | "Think about it this way: copilots shave minutes off calls. That's incremental. AI autopilot replaces the call entirely. That's structural. When you eliminate the human cost on a campaign and pay per-outcome instead, your margin structure transforms from 5-8% to something fundamentally different." |
+
+**Case studies to use:**
+- Digital Bank Singapore — 76% promise-to-pay, outcome-based collections at fraction of human cost
+- IZZI / Megacable — 136 closed sales, fully automated dual-agent workflow (no human in the loop)
+- Airline Saudi Arabia — 40% labor cost reduction, 4K+ daily volume
+- Klarna example (industry context) — eliminated 700 agent positions, saved $40M/year, stock rallied (use as market context, not Dyna case)
+  new_string: ### Persona 2: Operations & Finance Leader
+
+**Titles:** COO, CFO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, VP Finance, Regional VP
+
+**Role in deal:** COO = Champion who drives the evaluation and owns operational outcome. CFO = Margin owner who validates the business case and approves spend. They work hand-in-hand daily on staffing, utilization, and cost management. Same messaging works for both.
+
+**What they care about:**
+- **EBITDA margin** — US onshore margins are 5-8%; nearshore 20-30%; offshore 40-55%. Every staffing decision hits the bottom line.
+- Scaling capacity (outbound AND inbound) without linear headcount growth
+- Hitting conversion targets, SLAs, and quality benchmarks for clients
+- Staffing correctly — overstaffing kills margin, understaffing kills SLAs (20-30% annual attrition makes this a constant battle)
+- Cost-per-productive-hour — this is how BPO contracts are priced and how margin is made or lost
+- Client contracts that now demand annual cost reductions (20% over 3 years is common)
+- Risk transfer — outcome-based pricing shifts risk from the BPO to the AI vendor
+
+**Their success metrics:**
+- EBITDA margin (by site, by client, by program)
+- Conversion rate, promise-to-pay rate, resolution rate
+- Cost per productive hour / cost per contact
+- Revenue per seat per year (US: $40-50K, nearshore: $25-30K, offshore: $18-25K)
+- Daily volume capacity and utilization rate
+- SLA adherence and client contract renewal rate
+
+**Core message to them:**
+
+> Wherever you deliver — onshore at 5-8% EBITDA, nearshore at 20-30%, or offshore at 40-55% — your clients are demanding more for less. AI autopilot changes the math at every tier. We deploy full autopilot for outbound and inbound that handles entire campaigns — telemarketing, collections, payment reminders, customer service, booking confirmations. Not copilots that shave minutes off calls. Autonomous agents that replace manual call volume entirely. One AI-first services company is already running at 40% EBITDA with per-outcome pricing. You don't pay for seats or licenses. You pay per outcome.
+
+**Pain points (ranked by urgency):**
+1. **HIGH:** Client contracts demanding 20% cost reductions over 3 years — impossible to deliver with human-only models
+2. **HIGH:** EBITDA margins under pressure — onshore at 5-8% is unsustainable, and even offshore margins are compressing
+3. **HIGH:** Can't scale outbound or inbound volume fast enough without proportional headcount
+4. **HIGH:** No capital to build AI internally (unlike Teleperformance's $185M AI investment) — need a partner
+5. **MEDIUM:** Inconsistent quality across agents (especially during turnover — 20-30% attrition is normal)
+6. **MEDIUM:** Competitors offering AI-enhanced delivery at lower price points
+
+**Objections and responses:**
+
+| Objection | Response |
+|---|---|
+| "Quality won't match our agents" | "In our deployments, AI agents achieve 99% tagging accuracy and 76% promise-to-pay rates. The key is our operational approach — we don't just plug in tech, we design scripts and segment workflows based on deep domain expertise." |
+| "Implementation sounds complex" | "We typically deliver an MVP in 1 week and a full pilot in 30 days. Our Agent Studio is low-code with version control and one-click rollback. Your team doesn't need to be technical." |
+| "My clients won't accept this" | "Start with use cases where AI is clearly additive — booking confirmations, payment reminders, lead qualification. These expand your capacity without touching existing agent workflows. Once clients see the results, the conversation changes." |
+| "What's the ROI?" | "Let's do the math together. You're paying $40-50K/seat/year onshore. Our AI autopilot runs at a fraction of that, with per-outcome pricing — you only pay when a call achieves its objective. One of our clients went from 10% to 40% EBITDA on AI-handled volume." |
+| "How does pricing work?" | "Three options: per-task (per call), per-role (benchmarked to human labor cost), or per-outcome (revenue/profit sharing). We align to what makes your P&L work. The point is you're not buying software — you're buying results." |
+| "We can't afford a big AI investment right now" | "That's exactly the point. This isn't a capital investment. It's an operating expense that only kicks in when it delivers. No upfront platform fees. No multi-year commitment. Start with a 30-day pilot on one campaign and measure the margin impact directly." |
+
+**Case studies to use:**
+- IZZI (Mexican telco) — 20K records processed, 136 effective sales, 4.7% conversion rate
+- Megacable — 10K+ daily outbound volume, 99% tagging accuracy, dual-agent workflow
+- Viraal (Mexican fintech) — Collections segmented by DPD bucket with tone-adapted scripts, 25% responder rate
+- Digital Bank Singapore — 2-3K daily volume, 76% promise-to-pay, 40% reach rate, outcome-based collections
+- E-commerce Philippines — 10% sales activation, 5/6 labor saving
+- Airline Saudi Arabia — 85%+ booking success rate, 4K+ daily, 40% labor cost reduction
+- Klarna example (industry context) — eliminated 700 agent positions, saved $40M/year (use as market context, not Dyna case)
+
+[Tool result] StrReplace
+
+assistant:
+Now update the Technology Leader to be Persona 3 again.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ### Persona 4: Technology Leader
+  new_string: ### Persona 3: Technology Leader
+
+[Tool result] StrReplace
+
+assistant:
+Now merge the two separate email templates into one.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  offset: 467
+  limit: 70
+
+[Tool result] Read
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: #### Email Template: Operations Leader
+
+**Subject lines** (choose one):
+- Scaling capacity without scaling headcount
+- 10K calls/day — without adding agents
+- Your contact center capacity, uncapped
+- Full autopilot for outbound and inbound
+
+> Hi [First Name],
+>
+> [ICEBREAKER or reference LinkedIn connection]
+>
+> I work with contact center ops leaders who need to hit targets without proportional headcount growth. If that sounds familiar, I think you'll find this interesting.
+>
+> We deploy AI autopilot that handles outbound and inbound operations end-to-end — telemarketing, collections, payment reminders, customer service, booking confirmations. Not copilots. Full autonomous agents that detect intent in real time, adapt their script, and tag outcomes automatically.
+>
+> A few recent results:
+> - 10K+ daily outbound calls with 99% tagging accuracy (major telco)
+> - 76% promise-to-pay rate on credit card collections (digital bank)
+> - 4.7% conversion rate on telesales upsell campaign (telecom, 20K records)
+>
+> The difference: we don't just plug in tech. We design scripts, segment workflows (e.g., DPD 30/60/90 with tone-adapted agents), and optimize continuously based on your outcomes.
+>
+> Would a 20-minute call make sense to see if this fits [Company]?
+>
+> Best,
+> Calanthia
+
+---
+
+#### Email Template: Finance Leader
+
+**Subject lines** (choose one):
+- The margin math on AI autopilot
+- From 5-8% EBITDA to 40%: what AI changes
+- Your cost per productive hour, reimagined
+- Outcome-based AI: you pay when it works
+
+> Hi [First Name],
+>
+> [ICEBREAKER or reference LinkedIn connection]
+>
+> I'll get straight to the numbers. Clients are writing 20% cost reductions into their next contracts. Whether you're running onshore, offshore, or a mix — that math gets harder every year with human-only models.
+>
+> We deploy AI autopilot for outbound and inbound contact center operations — telemarketing, collections, customer service, booking confirmations. Full autonomous agents, not copilots. One AI-first services company is already running at 40% EBITDA with per-outcome pricing. [USE DELIVERY-MODEL SWAP-IN LINE — see "Tailoring by Delivery Model" section]
+>
+> Our pricing is outcome-aligned — per call, per successful outcome, or revenue share. No platform fees. No seat licenses. You pay when results are delivered.
+>
+> A few proof points:
+> - 76% promise-to-pay rate on collections (digital bank, fully autonomous)
+> - 136 closed sales on 20K-record telesales campaign (no human intervention)
+> - 40% labor cost reduction on inbound bookings (airline, 4K+ daily volume)
+>
+> Would 20 minutes make sense to walk through the unit economics for [Company]?
+>
+> Best,
+> Calanthia
+  new_string: #### Email Template: Operations & Finance Leader
+
+**Subject lines** (choose one):
+- Scaling capacity without scaling headcount
+- The margin math on AI autopilot
+- 10K calls/day — without adding agents
+- Outcome-based AI: you pay when it works
+
+> Hi [First Name],
+>
+> [ICEBREAKER or reference LinkedIn connection]
+>
+> Clients are writing 20% cost reductions into their next contracts. Hitting those numbers with human-only models is getting harder every year. If that pressure sounds familiar, I think you'll find this interesting.
+>
+> We deploy AI autopilot for outbound and inbound contact center operations — telemarketing, collections, payment reminders, customer service, booking confirmations. Not copilots. Full autonomous agents that detect intent in real time, adapt their script, and tag outcomes automatically. You pay per outcome — no seat fees, no platform licenses.
+>
+> A few recent results:
+> - 10K+ daily outbound calls with 99% tagging accuracy (major telco)
+> - 76% promise-to-pay rate on credit card collections (digital bank)
+> - 4.7% conversion rate on telesales upsell campaign (telecom, 20K records)
+> - 40% labor cost reduction on inbound bookings (airline, 4K+ daily volume)
+>
+> The difference: we don't just plug in tech. We design scripts, segment workflows (e.g., DPD 30/60/90 with tone-adapted agents), and optimize continuously. [USE DELIVERY-MODEL SWAP-IN LINE — see "Tailoring by Delivery Model" section]
+>
+> Would a 20-minute call make sense to walk through how this could work for [Company]?
+>
+> Best,
+> Calanthia
+
+[Tool result] StrReplace
+
+assistant:
+Now update the email nudge section — merge the Operations and Finance proof points.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: > **For Operations:** "We recently helped a telecom run a 20,000-record upsell campaign with a dual-agent model (promotion agent + validation agent). 136 closed sales — fully automated, no human intervention during the call."
+>
+> **For Finance:** "Quick math: if you're running US onshore at $40-50K/seat/year and 5-8% EBITDA, replacing even 20% of manual call volume with AI autopilot on per-outcome pricing changes the margin structure of those programs entirely. Happy to walk through the model."
+  new_string: > **For Operations/Finance:** "We recently helped a telecom run a 20,000-record upsell campaign with a dual-agent model (promotion agent + validation agent). 136 closed sales — fully automated, no human intervention during the call. On per-outcome pricing, the margin impact was immediate."
+
+[Tool result] StrReplace
+
+assistant:
+Update the case study table.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: | **Digital Bank Singapore** | Credit card + loan collections | 76% promise-to-pay, 40% reach rate, 2-3K daily | Operations, Finance, Executive | Financial services |
+| **IZZI (Mexican telco)** | Telesales upsell | 20K records, 136 sales, 4.7% conversion | Operations, Finance | Telecom, general outbound |
+  new_string: | **Digital Bank Singapore** | Credit card + loan collections | 76% promise-to-pay, 40% reach rate, 2-3K daily | Ops/Finance, Executive | Financial services |
+| **IZZI (Mexican telco)** | Telesales upsell | 20K records, 136 sales, 4.7% conversion | Ops/Finance | Telecom, general outbound |
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: | **Airline Saudi Arabia** | Flight booking + reschedule | 85%+ success rate, 4K+ daily, 40% labor cost reduction | Operations, Finance | Travel, hospitality |
+| **Klarna (industry context)** | Digital CX automation | 700 positions eliminated, $40M/year saved, stock rallied | Finance, Executive | Use as market context only |
+  new_string: | **Airline Saudi Arabia** | Flight booking + reschedule | 85%+ success rate, 4K+ daily, 40% labor cost reduction | Ops/Finance | Travel, hospitality |
+| **Klarna (industry context)** | Digital CX automation | 700 positions eliminated, $40M/year saved, stock rallied | Ops/Finance, Executive | Use as market context only |
+
+[Tool result] StrReplace
+
+assistant:
+Update the Don'ts section.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: - Don't send the same message to all four personas — especially CFO vs. COO (margin math vs. operational capacity)
+  new_string: - Don't send the same message to all three personas
+
+[Tool result] StrReplace
+
+assistant:
+Update the "Four Personas" heading.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ## 2. Four Personas
+  new_string: ## 2. Three Personas
+
+[Tool result] StrReplace
+
+assistant:
+Now regenerate the docx and commit.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/messaging-framework.md -f markdown -t docx -o /Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx && echo "Done"
+  description: Regenerate docx
+
+[Tool result] Shell

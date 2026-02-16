@@ -14,7 +14,7 @@
 | **Tagline** | AI Workforce, Better Results |
 | **US Product Wedge** | AI autopilot for voice operations — outbound (primary: telemarketing, collections, renewals, activation) + inbound (secondary: customer service, booking, order handling) |
 | **ICP** | US mid-market BPOs, 1,000–5,000 employees, with contact center operations |
-| **Four Personas** | Executive Sponsor · Operations Leader · Finance Leader · Technology Leader |
+| **Three Personas** | Executive Sponsor · Operations & Finance Leader · Technology Leader |
 | **Core Value Prop** | Full autopilot for your contact center — outbound and inbound. Replace manual volume with AI agents that run 24/7 and get measured on results. |
 | **Lead Narrative** | AI is no longer software. It's becoming a workforce. |
 | **Key Differentiator** | One of the few companies that can deliver true autopilot at production scale — not copilots, not tools, full execution. |
@@ -60,7 +60,7 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 
 ---
 
-## 2. Four Personas
+## 2. Three Personas
 
 ### Persona 1: Executive Sponsor
 
@@ -106,37 +106,40 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 
 ---
 
-### Persona 2: Operations Leader
+### Persona 2: Operations & Finance Leader
 
-**Titles:** COO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, Regional VP
+**Titles:** COO, CFO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, VP Finance, Regional VP
 
-**Role in deal:** Champion. Drives the evaluation process. Owns the operational outcome and delivery quality.
+**Role in deal:** COO = Champion who drives the evaluation and owns operational outcome. CFO = Margin owner who validates the business case and approves spend. They work hand-in-hand daily on staffing, utilization, and cost management. Same messaging works for both.
 
 **What they care about:**
+- **EBITDA margin** — US onshore margins are 5-8%; nearshore 20-30%; offshore 40-55%. Every staffing decision hits the bottom line.
 - Scaling capacity (outbound AND inbound) without linear headcount growth
 - Hitting conversion targets, SLAs, and quality benchmarks for clients
 - Staffing correctly — overstaffing kills margin, understaffing kills SLAs (20-30% annual attrition makes this a constant battle)
-- Reducing cost-per-contact and cost-per-agent-hour
-- Delivering on client contracts that now demand annual cost reductions
-- Offering AI-enhanced delivery to retain and win clients
+- Cost-per-productive-hour — this is how BPO contracts are priced and how margin is made or lost
+- Client contracts that now demand annual cost reductions (20% over 3 years is common)
+- Risk transfer — outcome-based pricing shifts risk from the BPO to the AI vendor
 
 **Their success metrics:**
+- EBITDA margin (by site, by client, by program)
 - Conversion rate, promise-to-pay rate, resolution rate
 - Cost per productive hour / cost per contact
+- Revenue per seat per year (US: $40-50K, nearshore: $25-30K, offshore: $18-25K)
 - Daily volume capacity and utilization rate
-- SLA adherence and quality scores
-- Client satisfaction and contract renewal rate
+- SLA adherence and client contract renewal rate
 
 **Core message to them:**
 
-> Your team has 10 people making outbound calls. What if you could deploy 10,000 AI agents alongside them — running 24/7, in multiple languages, hitting targets that manual teams can't reach? And the same autopilot handles inbound volume too. We bring the operational expertise to make it work: script design, workflow segmentation, and continuous optimization. Not a copilot that shaves minutes off calls — full autopilot that handles entire campaigns. You pay for outcomes, not seats.
+> Wherever you deliver — onshore at 5-8% EBITDA, nearshore at 20-30%, or offshore at 40-55% — your clients are demanding more for less. AI autopilot changes the math at every tier. We deploy full autopilot for outbound and inbound that handles entire campaigns — telemarketing, collections, payment reminders, customer service, booking confirmations. Not copilots that shave minutes off calls. Autonomous agents that replace manual call volume entirely. One AI-first services company is already running at 40% EBITDA with per-outcome pricing. You don't pay for seats or licenses. You pay per outcome.
 
 **Pain points (ranked by urgency):**
-1. **HIGH:** Client contracts demanding annual cost reductions (typically 20% over 3 years) with no way to deliver without AI
-2. **HIGH:** Can't scale outbound or inbound volume fast enough without proportional headcount
-3. **HIGH:** Inconsistent quality across agents (especially during turnover — 20-30% attrition is normal)
-4. **MEDIUM:** Competitors offering AI-enhanced delivery at lower price points
-5. **MEDIUM:** Clients threatening to buy AI directly, bypassing the BPO
+1. **HIGH:** Client contracts demanding 20% cost reductions over 3 years — impossible to deliver with human-only models
+2. **HIGH:** EBITDA margins under pressure — onshore at 5-8% is unsustainable, and even offshore margins are compressing
+3. **HIGH:** Can't scale outbound or inbound volume fast enough without proportional headcount
+4. **HIGH:** No capital to build AI internally (unlike Teleperformance's $185M AI investment) — need a partner
+5. **MEDIUM:** Inconsistent quality across agents (especially during turnover — 20-30% attrition is normal)
+6. **MEDIUM:** Competitors offering AI-enhanced delivery at lower price points
 
 **Objections and responses:**
 
@@ -145,66 +148,22 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 | "Quality won't match our agents" | "In our deployments, AI agents achieve 99% tagging accuracy and 76% promise-to-pay rates. The key is our operational approach — we don't just plug in tech, we design scripts and segment workflows based on deep domain expertise." |
 | "Implementation sounds complex" | "We typically deliver an MVP in 1 week and a full pilot in 30 days. Our Agent Studio is low-code with version control and one-click rollback. Your team doesn't need to be technical." |
 | "My clients won't accept this" | "Start with use cases where AI is clearly additive — booking confirmations, payment reminders, lead qualification. These expand your capacity without touching existing agent workflows. Once clients see the results, the conversation changes." |
+| "What's the ROI?" | "Let's do the math together. You're paying $40-50K/seat/year onshore. Our AI autopilot runs at a fraction of that, with per-outcome pricing — you only pay when a call achieves its objective. One of our clients went from 10% to 40% EBITDA on AI-handled volume." |
+| "How does pricing work?" | "Three options: per-task (per call), per-role (benchmarked to human labor cost), or per-outcome (revenue/profit sharing). We align to what makes your P&L work. The point is you're not buying software — you're buying results." |
+| "We can't afford a big AI investment right now" | "That's exactly the point. This isn't a capital investment. It's an operating expense that only kicks in when it delivers. No upfront platform fees. No multi-year commitment. Start with a 30-day pilot on one campaign and measure the margin impact directly." |
 
 **Case studies to use:**
 - IZZI (Mexican telco) — 20K records processed, 136 effective sales, 4.7% conversion rate
 - Megacable — 10K+ daily outbound volume, 99% tagging accuracy, dual-agent workflow
 - Viraal (Mexican fintech) — Collections segmented by DPD bucket with tone-adapted scripts, 25% responder rate
-- Digital Bank Singapore — 2-3K daily volume, 76% promise-to-pay, 40% reach rate
+- Digital Bank Singapore — 2-3K daily volume, 76% promise-to-pay, 40% reach rate, outcome-based collections
 - E-commerce Philippines — 10% sales activation, 5/6 labor saving
-- Airline Saudi Arabia — 85%+ booking success rate, 4K+ daily, 40% labor cost reduction (good inbound proof point)
+- Airline Saudi Arabia — 85%+ booking success rate, 4K+ daily, 40% labor cost reduction
+- Klarna example (industry context) — eliminated 700 agent positions, saved $40M/year (use as market context, not Dyna case)
 
 ---
 
-### Persona 3: Finance Leader
-
-**Titles:** CFO, Chief Financial Officer, VP Finance, Chief Financial Officer and COO
-
-**Role in deal:** Margin owner. Validates the business case. Approves or blocks spend based on financial impact. Works hand-in-hand with the COO daily to manage staffing costs against revenue.
-
-**What they care about:**
-- **EBITDA margin above all else.** US onshore margins are 5-8%. Every staffing decision directly hits the bottom line.
-- Cost-per-productive-hour — this is how BPO contracts are priced and how margin is made or lost
-- Contract economics — client contracts increasingly demand annual cost reductions (20% over 3 years is now common)
-- Risk transfer — outcome-based pricing shifts risk from the BPO to the AI vendor
-- Capital allocation — investing in AI vs. investing in more seats/sites
-
-**Their success metrics:**
-- EBITDA margin (by site, by client, by program)
-- Cost per productive hour / cost per agent FTE
-- Revenue per seat per year (US: $40-50K, nearshore: $25-30K, offshore: $18-25K)
-- Operating leverage — can revenue grow without proportional cost growth?
-- Client contract margin preservation
-
-**Core message to them:**
-
-> Wherever you deliver — onshore at 5-8% EBITDA, nearshore at 20-30%, or offshore at 40-55% — your clients are demanding more for less. AI autopilot changes the math at every tier. One AI-first services company is already running at 40% EBITDA with 40% annual growth, using per-outcome pricing. We deploy AI autopilot for outbound and inbound that replaces manual call volume at a fraction of the cost per productive hour. You don't pay for seats or licenses. You pay per outcome. Whether you're protecting thin onshore margins or scaling beyond what offshore labor can deliver — this is the next lever.
-
-**Pain points (ranked by urgency):**
-1. **HIGH:** Onshore EBITDA at 5-8% is unsustainable — one bad staffing month destroys quarterly margin
-2. **HIGH:** Client contracts demanding 20% cost reductions over 3 years — impossible to deliver with human-only models
-3. **HIGH:** No capital to build AI internally (unlike Teleperformance's $185M AI investment) — need a partner
-4. **MEDIUM:** Revenue per seat declining as clients push for lower rates
-5. **MEDIUM:** Evaluating AI investments but unclear ROI — too many vendors, not enough production evidence
-
-**Objections and responses:**
-
-| Objection | Response |
-|---|---|
-| "What's the ROI?" | "Let's do the math together. You're paying $40-50K/seat/year onshore. Our AI autopilot runs at a fraction of that, with per-outcome pricing — you only pay when a call achieves its objective. One of our clients went from 10% to 40% EBITDA on AI-handled volume." |
-| "How does pricing work?" | "Three options: per-task (per call), per-role (benchmarked to human labor cost), or per-outcome (revenue/profit sharing). We align to what makes your P&L work. The point is you're not buying software — you're buying results." |
-| "We can't afford a big AI investment right now" | "That's exactly the point. This isn't a capital investment. It's an operating expense that only kicks in when it delivers. No upfront platform fees. No multi-year commitment. Start with a 30-day pilot on one campaign and measure the margin impact directly." |
-| "How does this impact our margin?" | "Think about it this way: copilots shave minutes off calls. That's incremental. AI autopilot replaces the call entirely. That's structural. When you eliminate the human cost on a campaign and pay per-outcome instead, your margin structure transforms from 5-8% to something fundamentally different." |
-
-**Case studies to use:**
-- Digital Bank Singapore — 76% promise-to-pay, outcome-based collections at fraction of human cost
-- IZZI / Megacable — 136 closed sales, fully automated dual-agent workflow (no human in the loop)
-- Airline Saudi Arabia — 40% labor cost reduction, 4K+ daily volume
-- Klarna example (industry context) — eliminated 700 agent positions, saved $40M/year, stock rallied (use as market context, not Dyna case)
-
----
-
-### Persona 4: Technology Leader
+### Persona 3: Technology Leader
 
 **Titles:** CTO, CIO, VP Technology, VP Engineering, VP Software Engineering, CISO, VP IT, VP Digital Innovation
 
@@ -499,60 +458,31 @@ START: Is this contact in our Top Contacts list?
 
 ---
 
-#### Email Template: Operations Leader
+#### Email Template: Operations & Finance Leader
 
 **Subject lines** (choose one):
 - Scaling capacity without scaling headcount
-- 10K calls/day — without adding agents
-- Your contact center capacity, uncapped
-- Full autopilot for outbound and inbound
-
-> Hi [First Name],
->
-> [ICEBREAKER or reference LinkedIn connection]
->
-> I work with contact center ops leaders who need to hit targets without proportional headcount growth. If that sounds familiar, I think you'll find this interesting.
->
-> We deploy AI autopilot that handles outbound and inbound operations end-to-end — telemarketing, collections, payment reminders, customer service, booking confirmations. Not copilots. Full autonomous agents that detect intent in real time, adapt their script, and tag outcomes automatically.
->
-> A few recent results:
-> - 10K+ daily outbound calls with 99% tagging accuracy (major telco)
-> - 76% promise-to-pay rate on credit card collections (digital bank)
-> - 4.7% conversion rate on telesales upsell campaign (telecom, 20K records)
->
-> The difference: we don't just plug in tech. We design scripts, segment workflows (e.g., DPD 30/60/90 with tone-adapted agents), and optimize continuously based on your outcomes.
->
-> Would a 20-minute call make sense to see if this fits [Company]?
->
-> Best,
-> Calanthia
-
----
-
-#### Email Template: Finance Leader
-
-**Subject lines** (choose one):
 - The margin math on AI autopilot
-- From 5-8% EBITDA to 40%: what AI changes
-- Your cost per productive hour, reimagined
+- 10K calls/day — without adding agents
 - Outcome-based AI: you pay when it works
 
 > Hi [First Name],
 >
 > [ICEBREAKER or reference LinkedIn connection]
 >
-> I'll get straight to the numbers. Clients are writing 20% cost reductions into their next contracts. Whether you're running onshore, offshore, or a mix — that math gets harder every year with human-only models.
+> Clients are writing 20% cost reductions into their next contracts. Hitting those numbers with human-only models is getting harder every year. If that pressure sounds familiar, I think you'll find this interesting.
 >
-> We deploy AI autopilot for outbound and inbound contact center operations — telemarketing, collections, customer service, booking confirmations. Full autonomous agents, not copilots. One AI-first services company is already running at 40% EBITDA with per-outcome pricing. [USE DELIVERY-MODEL SWAP-IN LINE — see "Tailoring by Delivery Model" section]
+> We deploy AI autopilot for outbound and inbound contact center operations — telemarketing, collections, payment reminders, customer service, booking confirmations. Not copilots. Full autonomous agents that detect intent in real time, adapt their script, and tag outcomes automatically. You pay per outcome — no seat fees, no platform licenses.
 >
-> Our pricing is outcome-aligned — per call, per successful outcome, or revenue share. No platform fees. No seat licenses. You pay when results are delivered.
->
-> A few proof points:
-> - 76% promise-to-pay rate on collections (digital bank, fully autonomous)
-> - 136 closed sales on 20K-record telesales campaign (no human intervention)
+> A few recent results:
+> - 10K+ daily outbound calls with 99% tagging accuracy (major telco)
+> - 76% promise-to-pay rate on credit card collections (digital bank)
+> - 4.7% conversion rate on telesales upsell campaign (telecom, 20K records)
 > - 40% labor cost reduction on inbound bookings (airline, 4K+ daily volume)
 >
-> Would 20 minutes make sense to walk through the unit economics for [Company]?
+> The difference: we don't just plug in tech. We design scripts, segment workflows (e.g., DPD 30/60/90 with tone-adapted agents), and optimize continuously. [USE DELIVERY-MODEL SWAP-IN LINE — see "Tailoring by Delivery Model" section]
+>
+> Would a 20-minute call make sense to walk through how this could work for [Company]?
 >
 > Best,
 > Calanthia
@@ -604,9 +534,7 @@ START: Is this contact in our Top Contacts list?
 >
 > **For Executive:** "One of the enterprise BPOs we work with went from a single collections pilot to deploying AI voice agents across three product lines in under 12 months. The conversation started exactly like this one."
 >
-> **For Operations:** "We recently helped a telecom run a 20,000-record upsell campaign with a dual-agent model (promotion agent + validation agent). 136 closed sales — fully automated, no human intervention during the call."
->
-> **For Finance:** "Quick math: if you're running US onshore at $40-50K/seat/year and 5-8% EBITDA, replacing even 20% of manual call volume with AI autopilot on per-outcome pricing changes the margin structure of those programs entirely. Happy to walk through the model."
+> **For Operations/Finance:** "We recently helped a telecom run a 20,000-record upsell campaign with a dual-agent model (promotion agent + validation agent). 136 closed sales — fully automated, no human intervention during the call. On per-outcome pricing, the margin impact was immediate."
 >
 > **For Technology:** "Our inference engine reduced P99 latency by 10x and increased throughput by 3x compared to standard deployments. Happy to share the technical architecture if you're evaluating options."
 >
@@ -624,8 +552,8 @@ Use this to select the right proof point for each conversation.
 | Case Study | Use Case | Key Metrics | Best For Persona | Best For Industry |
 |---|---|---|---|---|
 | **Teleperformance / Sands Macau** | Hotel booking confirmation | Multi-language voice bot, enterprise BPO delivery | Executive | Hospitality, BPO |
-| **Digital Bank Singapore** | Credit card + loan collections | 76% promise-to-pay, 40% reach rate, 2-3K daily | Operations, Finance, Executive | Financial services |
-| **IZZI (Mexican telco)** | Telesales upsell | 20K records, 136 sales, 4.7% conversion | Operations, Finance | Telecom, general outbound |
+| **Digital Bank Singapore** | Credit card + loan collections | 76% promise-to-pay, 40% reach rate, 2-3K daily | Ops/Finance, Executive | Financial services |
+| **IZZI (Mexican telco)** | Telesales upsell | 20K records, 136 sales, 4.7% conversion | Ops/Finance | Telecom, general outbound |
 | **Megacable (Mexican telco)** | Package promotion | 10K+ daily, 99% tagging accuracy, dual-agent | Operations, Technology | Telecom |
 | **Viraal (Mexican fintech)** | Collections (predue to 91+ DPD) | Segmented tone strategy, 57 payments, 25% responder | Operations | Collections, financial services |
 | **Lifenet Japan** | Insurance renewal | Real-time intent detection, auto-categorization | Operations | Insurance |
@@ -633,8 +561,8 @@ Use this to select the right proof point for each conversation.
 | **BPO Indonesia** | Collections DPD 1-90 | 200K+ volume/month, 3 voice agents | Operations | Collections |
 | **E-commerce Philippines** | Merchant activation | 10% sales activation, 5/6 labor saving | Operations | Retail, e-commerce |
 | **HSBC Copilot** | Knowledge base + agent assist | 98.6% accuracy vs 67.5% competitor | Technology | Financial services |
-| **Airline Saudi Arabia** | Flight booking + reschedule | 85%+ success rate, 4K+ daily, 40% labor cost reduction | Operations, Finance | Travel, hospitality |
-| **Klarna (industry context)** | Digital CX automation | 700 positions eliminated, $40M/year saved, stock rallied | Finance, Executive | Use as market context only |
+| **Airline Saudi Arabia** | Flight booking + reschedule | 85%+ success rate, 4K+ daily, 40% labor cost reduction | Ops/Finance | Travel, hospitality |
+| **Klarna (industry context)** | Digital CX automation | 700 positions eliminated, $40M/year saved, stock rallied | Ops/Finance, Executive | Use as market context only |
 
 ### When to Reference Teleperformance
 
@@ -765,7 +693,7 @@ These topics dominate the 2026 US contact center conference circuit. Using them 
 ### Don't
 - Don't position as "copilot" or "agent assist" — that undersells us. We do **full autopilot**.
 - Don't lead with product features or a demo offer
-- Don't send the same message to all four personas — especially CFO vs. COO (margin math vs. operational capacity)
+- Don't send the same message to all three personas
 - Don't use "early access" framing (this was PH positioning — doesn't work for US)
 - Don't position as "Silicon Valley startup" (US BPO leaders are skeptical of tech vendors)
 - Don't mention compliance as a selling point yet (still being set up for US)
