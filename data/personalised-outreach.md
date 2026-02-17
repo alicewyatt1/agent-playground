@@ -11,6 +11,34 @@
 | **Company** | Etech Global Services |
 | **Title** | President, ETSLabs |
 | **Persona** | Executive Sponsor |
+| **Location** | San Antonio, TX |
+| **Location** | Bradenton, FL |
+| **Location** | Nacogdoches, TX |
+| **Location** | Boca Raton, FL |
+| **Location** | Salisbury, NC |
+| **Location** | El Paso, TX |
+| **Location** | El Paso, TX |
+| **Location** | United States |
+| **Location** | Asheville, NC |
+| **Location** | Tampa, FL |
+| **Location** | Jacksonville, NC |
+| **Location** | Elon, NC |
+| **Location** | Rochester, NY |
+| **Location** | Miami, FL |
+| **Location** | Clarksville, TN |
+| **Location** | Atlanta, GA |
+| **Location** | Tampa, FL |
+| **Location** | Boynton Beach, FL |
+| **Location** | Nashville, TN |
+| **Location** | Houston, TX |
+| **Location** | Salisbury, NC |
+| **Location** | Miami, FL |
+| **Location** | Atlanta, GA |
+| **Location** | Atlanta, GA |
+| **Location** | Alpharetta, GA |
+| **Location** | Miami, FL |
+| **Location** | Salisbury, NC |
+| **Location** | Cleveland, OH |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/jimiyoob |
 | **Email** | jim.iyoob@etechgs.com |

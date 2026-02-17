@@ -13952,3 +13952,81 @@ PYEOF
   description: Update speaker topics in hooks and messaging
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md /Users/alicewyatt/Downloads/Personalised-Outreach.md && cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Add specific speaker topics to outreach hooks and messaging" && git push && echo "Done"
+  description: Copy, commit, push
+
+[Tool result] Shell
+
+assistant:
+Updated — **`~/Downloads/Personalised-Outreach.md`** now has specific speaker topics. Here's what each confirmed speaker is presenting on:
+
+| Person | Event | Topic |
+|---|---|---|
+| **Jim Iyoob** | Call Center Campus Symposium (May 17-20) | "Prickly Truths: Leadership Readiness in the Age of AI" |
+| **Jim Iyoob** | CCW Las Vegas workshop (Jun 23) | Turning CX challenges into growth using AI, analytics, and human intelligence |
+| **Ali Karim** | Frost & Sullivan MindXchange East (Apr 12-15) | "AI That Works: Inside the Customer and Employee Experience" + roundtable "Cut Through the CX Hype: Pick the Right Tech, Every Time" |
+| **Benjamin Alpert** | Customer Connect Expo (Apr 2025, past) | "Balancing AI and Human Agents — The Future of Contact Centers" |
+| **Brian Flaherty** | Mortgage AI Conference (Oct 2026) | "Staff vs AI vs Virtual Assistants: How You Can Manage The AI/Human Balance" |
+| **Liliana Lopez** | CCW Orlando (Jan 2026, past) | AI Maturity Workshop — operationalizing AI, "promising to proven" |
+
+These are now in the outreach hooks so you can reference the actual topic when you rework the messaging. The .md file is ready for Google Docs upload.
+
+user:
+<user_query>
+great. the final thing i need is their location added to the doc
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+content = open('data/personalised-outreach.md', 'r').read()
+
+# Location data for all 28 prospects (from the CSV)
+locations = {
+    "Jim Iyoob": "San Antonio, TX",
+    "Benjamin Alpert": "Bradenton, FL",
+    "Matt Rocco": "Nacogdoches, TX",
+    "David Kreiss": "Boca Raton, FL",
+    "Greg Alcorn": "Salisbury, NC",
+    "Bill Randag": "El Paso, TX",
+    "Ali Karim": "El Paso, TX",
+    "Liliana Lopez": "United States",
+    "Nanette Harrell": "Asheville, NC",
+    "Dominic Leide": "Tampa, FL",
+    "Kenneth Loggins": "Jacksonville, NC",
+    "Brian Flaherty": "Elon, NC",
+    "Bill Trocano": "Rochester, NY",
+    "Pablo Paz Hernandez": "Miami, FL",
+    "Amanda Jones": "Clarksville, TN",
+    "Donny Jackson": "Atlanta, GA",
+    "John Yanez": "Tampa, FL",
+    "Ken Braatz": "Boynton Beach, FL",
+    "Youssef Hannat": "Nashville, TN",
+    "James Nelson": "Houston, TX",
+    "Bryan Overcash": "Salisbury, NC",
+    "Erika Garcia": "Miami, FL",
+    "Keith Hansen": "Atlanta, GA",
+    "Mark D'Angola": "Atlanta, GA",
+    "Nitesh Kumar": "Alpharetta, GA",
+    "Rob Porges": "Miami, FL",
+    "Cathy Sexton": "Salisbury, NC",
+    "Aaron Brooks": "Cleveland, OH",
+}
+
+# Add location row after Delivery row for each prospect
+for name, loc in locations.items():
+    content = content.replace(
+        f"| **Delivery**",
+        f"| **Location** | {loc} |\n| **Delivery**",
+        1  # only first occurrence per prospect
+    )
+
+open('data/personalised-outreach.md', 'w').write(content)
+print(f"Added locations for {len(locations)} prospects")
+PYEOF
+  description: Add location to all context cards
+
+[Tool result] Shell
