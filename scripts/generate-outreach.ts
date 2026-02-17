@@ -34,6 +34,39 @@ interface Prospect {
   notableExperience: string;
   firstDegree: string;
   calanthiaFirstDegree: string;
+  deliveryModel: string;
+  clientIndustries: string;
+}
+
+function loadDeliveryData(): Map<string, { deliveryModel: string; clientIndustries: string }> {
+  const masterPath = path.join(__dirname, "..", "data", "Global Contact Center Market Map - Master List (enriched).csv");
+  if (!fs.existsSync(masterPath)) return new Map();
+  const raw = fs.readFileSync(masterPath, "utf-8");
+  const records = parse(raw, { columns: true, skip_empty_lines: true });
+  const map = new Map<string, { deliveryModel: string; clientIndustries: string }>();
+  for (const r of records) {
+    const name = (r.company_name || "").trim().toLowerCase();
+    if (name) {
+      map.set(name, {
+        deliveryModel: r.delivery_model || "",
+        clientIndustries: r.client_industries || "",
+      });
+    }
+  }
+  return map;
+}
+
+function classifyDeliveryFootprint(model: string): string {
+  const m = model.toLowerCase();
+  const hasOnshore = m.includes("onshore");
+  const hasNearshore = m.includes("nearshore");
+  const hasOffshore = m.includes("offshore");
+  if (hasOnshore && !hasNearshore && !hasOffshore) return "Onshore-heavy";
+  if (!hasOnshore && hasOffshore) return "Offshore-heavy";
+  if (hasOnshore && (hasNearshore || hasOffshore)) return "Mixed delivery";
+  if (hasNearshore && hasOffshore) return "Offshore-heavy (nearshore + offshore)";
+  if (hasNearshore && !hasOffshore) return "Nearshore";
+  return "Unknown";
 }
 
 function assignPersona(title: string): string {
@@ -90,7 +123,7 @@ async function generateMessaging(prospect: Prospect): Promise<string> {
     ? `\nConnection: ${prospect.firstDegree ? "Alice is a 1st degree connection" : ""}${prospect.calanthiaFirstDegree ? "Calanthia is a 1st degree connection" : ""}`
     : "";
 
-  const prompt = `You are writing LinkedIn and email outreach for Calanthia Mei, an AI entrepreneur and Strategic Advisor at Dyna.ai, reaching out to US mid-market BPO leaders.
+  const prompt = `You are writing LinkedIn and email outreach for Calanthia Mei. She is an AI entrepreneur, founder-level executive, and Strategic Advisor at Dyna.ai. She spends her days working with BPO leaders — including Teleperformance — on AI strategy for voice operations. She is an EXPERT, not a salesperson. She has valuable insights from working with the biggest names in the industry and is offering to share them.
 
 PROSPECT:
 - Name: ${prospect.fullName} (first name: ${prospect.firstName})
@@ -102,44 +135,60 @@ PROSPECT:
 ${prospect.companyTenure ? `- Tenure: ${prospect.companyTenure}` : ""}
 ${prospect.notableExperience ? `- Notable experience: ${prospect.notableExperience}` : ""}
 ${hasIcebreaker ? `- Icebreaker insight: ${prospect.icebreaker}` : "- No icebreaker insight available."}
+- Delivery footprint: ${classifyDeliveryFootprint(prospect.deliveryModel)} (${prospect.deliveryModel || "unknown"})
+- Client industries served: ${prospect.clientIndustries || "Not specified"}
 ${prospect.summaryOfRole ? `- Role summary: ${prospect.summaryOfRole}` : ""}
 
-KEY MESSAGING (use these themes in Touch 3):
-- Dyna deploys fully automated voice AI — true end-to-end voice automation, not copilots or agent-assist tools. One of the few AI providers globally capable of this at enterprise scale.
-- The core Teleperformance hook for mid-market: "Your clients are demanding higher service quality at lower cost, and the biggest BPOs are beginning to use AI to deliver both. Don't have Teleperformance's budget and internal AI team? We bring the same Teleperformance-proven team and expertise to you."
-- Dyna designs bespoke solutions — script design, workflow implementation, continuous monitoring and optimisation are standard practices. No internal AI team required.
-- Multi-industry coverage built for BPOs — telecom, travel, insurance, and more. One AI partner covering your clients' industries.
-- Enterprise clients include Teleperformance, Toyota, Pizza Hut, major telecoms, global insurers, digital banks.
-- You pay for results — every call tracked, every conversion measured, every result tied to revenue.
-- Proof points: 10K+ daily outbound calls with 99% tagging accuracy (telco); 76% promise-to-pay on collections (digital bank); 4.7% conversion on telesales upsell with 20K records; 40% labour cost reduction on inbound bookings (airline).
+CALANTHIA'S VOICE AND TONE:
+- She positions herself as an expert who's been in rooms with Teleperformance, major telecoms, Toyota, digital banks
+- She's offering to SHARE what she's learning from other leaders, not pitching a product
+- Warm, confident, generous with insights. Think: "I'd be happy to share what I'm seeing from other BPO leaders"
+- She asks genuine questions — she's curious about what THEY'RE doing too
+- Never salesy, never corporate buzzwords. Writes like a real person having a conversation
+- Sign-off is "Warm regards, Calanthia" or just "Calanthia"
+
+CASE STUDIES she can reference (use 1-2 relevant ones in Touch 3 based on what industries this BPO likely serves):
+- Telecom: Major Mexican telco — 10K+ daily outbound calls, 99% tagging accuracy, 4.7% conversion on telesales upsell across 20K records. Fully automated dual-agent model.
+- Collections/Financial services: Digital bank in Singapore — 76% promise-to-pay rate, 40% reach rate, 2-3K daily volume, fully compliant in regulated environment. Expanded from pilot to multi-product in 12 months.
+- Travel/Hospitality: Sands Macau hotel booking confirmation via Teleperformance — multi-language voice bot (English, Mandarin, Cantonese). Major Middle East airline — 85%+ booking success, 4K+ daily, 40% labour cost reduction.
+- Insurance: Leading Japanese insurer — real-time intent detection, automated categorisation for renewals.
+- Restaurant/QSR: Pizza Hut pilot in Thailand for food ordering. Restaurant tech platform for inbound ordering.
+- Collections/Fintech: Mexican fintech lender — tone-adapted collections by delinquency stage (friendly→firm), 25% responder rate, 57 payments recovered.
+
+KEY MESSAGING for Touch 3:
+- Your clients are demanding higher service quality at lower cost. The biggest BPOs are beginning to use AI to deliver both.
+- Don't have Teleperformance's budget and internal AI team? We bring the same Teleperformance-proven team and expertise to you.
+- Dyna delivers true end-to-end voice automation — not copilots or agent-assist tools.
+- We design bespoke solutions: script design, workflow implementation, continuous monitoring. No internal AI team required.
+- One AI partner covering multiple industries (telecom, travel, insurance, collections, etc.) — built for BPOs.
+- Every call tracked, every conversion measured, every result tied to revenue. You pay for results.
 
 RULES:
-- Tone: peer-to-peer, senior executive to senior executive. Calanthia is NOT selling. She's genuinely curious and offering value.
-- Never mention Dyna.ai or any product in Touch 1 or Touch 2. These should feel like a peer connecting, not a vendor approaching.
-- Never pitch in Touch 1 or Touch 2. Touch 3 (email) is where the value prop goes.
-- Be specific — no generic compliments like "your company has a great reputation." If you have an icebreaker insight, use something concrete from it. If you don't have one, reference something specific about the company's work or specialty.
-- Do NOT use phrases like "leveraging AI", "navigating competitive pressures", "exploring synergies", or other corporate buzzwords. Write like a real person.
-- Keep Touch 1 under 300 characters including the name.
-- Keep Touch 2 to 3-5 sentences. Conversational. End with a question.
-- Keep Touch 3 (email) to 100-150 words for the body. Tight, direct, no fluff.
-- For Touch 3, match the persona:
-  - Executive Sponsor: Lead with the Teleperformance hook — clients demanding higher quality at lower cost, biggest BPOs using AI, "don't have Teleperformance's budget? We bring the same team to you." Fully automated AI agents, 24/7, scale without headcount.
-  - Operations & Finance Leader: Lead with margin pressure and the capital gap — "Teleperformance can throw $185M at building AI. You don't have to." Fully automated agents, bespoke script design, proof points (10K daily, 99% accuracy, 76% promise-to-pay, 40% cost reduction). You pay for results.
-  - Technology Leader: Lead with the 60-80% problem — teams building internally get stuck at 60-80% quality. Dyna's platform is purpose-built for end-to-end voice automation: cloud/on-prem/SaaS, enterprise-grade uptime, 10+ languages, compliance controls, scales from pilot to production without re-architecting.
+- Touch 1: NEVER mention Dyna, AI products, or anything that sounds like a pitch. This is just a human connecting with another human. Under 300 characters.
+- Touch 2: NEVER pitch. Position Calanthia as an expert spending time with BPO leaders. She's sharing what she's learning, comparing notes. She's curious about their world. 3-5 sentences, warm and conversational.
+- Touch 3: This is where the value prop comes in, but framed as sharing insights — "I've been working closely with BPO leaders on this exact challenge" not "we sell AI software." Weave in 1-2 relevant case studies naturally. Match the persona:
+  - Executive Sponsor: The Teleperformance hook — biggest BPOs using AI, you don't need their budget, we bring the same team to you. Scale without headcount.
+  - Operations & Finance Leader: Margin pressure, the capital gap, bespoke solutions, specific proof points from case studies. You pay for results.
+  - Technology Leader: The 60-80% problem, purpose-built platform, deployment flexibility, compliance, scales from pilot to production.
+- ALSO tailor by delivery footprint:
+  - Onshore-heavy: Margins are thin (5-8% EBITDA). AI transforms the unit economics. "You're paying $40-50K per seat onshore. AI runs at a fraction."
+  - Offshore-heavy: Healthy margins from labour arbitrage, but threat is obsolescence. Clients demanding AI. "AI protects your position and scales beyond what labour arbitrage can deliver."
+  - Mixed delivery: AI is a third delivery tier alongside onshore and offshore. "Zero labour cost, infinite scale, per-outcome pricing."
 
 Write exactly three pieces:
 
 TOUCH 1 — LINKEDIN CONNECTION REQUEST (under 300 chars):
-${hasIcebreaker ? "Use a personal hook drawn from the icebreaker insight. Be specific — reference a particular post, milestone, or opinion." : hasEvent ? `Use the event hook: ${eventName}. Keep it natural.` : "Use an industry peer approach — something specific to what they do."}
+${hasIcebreaker ? "Use a personal hook from the icebreaker insight." : hasEvent ? `Use the event: ${eventName}.` : "Position as an expert: 'I spend my days working with BPO leaders on AI strategy.'"}
 
-TOUCH 2 — LINKEDIN FOLLOW-UP MESSAGE (after they accept, 3-5 sentences):
-${hasIcebreaker && hasEvent ? "Open with a specific icebreaker, then mention the event." : hasIcebreaker ? "Open with a specific icebreaker, then offer to share what you're learning." : hasEvent ? "Compliment something specific about their company, then mention the event." : "Compliment something specific about their company, then offer to share what you're learning."}
-End with a question — either about the event ("are you going?") or about their world ("how is [Company] thinking about AI for voice operations?").
+TOUCH 2 — LINKEDIN FOLLOW-UP MESSAGE (3-5 sentences, warm):
+Start with "Great to connect, [First Name]." then ${hasIcebreaker ? "a genuine, specific icebreaker" : "a specific compliment about their company's work"}.
+Then position Calanthia as spending time with BPO leaders exploring AI.
+${hasEvent ? `End with: are you going to ${eventName}?` : "End with: would love to share what I'm learning if that's useful."}
 
 TOUCH 3 — EMAIL (persona: ${prospect.persona}):
-Include a subject line, then the email body. Reference the LinkedIn connection briefly ("Great connecting on LinkedIn"). Use the persona-appropriate value prop from the key messaging above. Include 2-3 specific proof points. End with a call to action asking for a 20-minute call.
+Subject line + email body. Open with a warm reference to the LinkedIn connection. Share perspective like an expert. Weave in the Teleperformance hook and 1-2 relevant case studies naturally. Close with: "I'd be happy to share more of what I'm seeing — would you be interested in a conversation?" Keep to 120-160 words.
 
-Format your response EXACTLY like this (no other text):
+Format EXACTLY like this (no other text):
 
 **Touch 1 — Connection Request**
 [the message]
@@ -150,7 +199,7 @@ Format your response EXACTLY like this (no other text):
 **Touch 3 — Email**
 Subject: [subject line]
 
-[email body including "Best, Calanthia" sign-off]`;
+[email body ending with "Warm regards, Calanthia"]`;
 
   const result = await generateText({
     model: openai("gpt-4o"),
@@ -170,6 +219,22 @@ async function main() {
   const raw = fs.readFileSync(filePath, "utf-8");
   const records = parse(raw, { columns: true, skip_empty_lines: true });
 
+  const deliveryData = loadDeliveryData();
+
+  // Manual overrides for companies not in master list by exact name
+  const manualDelivery: Record<string, { deliveryModel: string; clientIndustries: string }> = {
+    "focus services": { deliveryModel: "onshore, nearshore", clientIndustries: "Consumer, Telecom, Healthcare" },
+    "global strategic": { deliveryModel: "onshore, offshore", clientIndustries: "Financial Services, Healthcare, Technology" },
+    "intelogix": { deliveryModel: "onshore, nearshore", clientIndustries: "Consumer, Financial Services, Healthcare, Technology" },
+    "flatworld solutions": { deliveryModel: "onshore, nearshore, offshore", clientIndustries: "Financial Services, Healthcare, Technology" },
+    "first contact bpo": { deliveryModel: "nearshore, offshore", clientIndustries: "Consumer, Healthcare, Technology" },
+  };
+
+  function getDelivery(company: string) {
+    const key = company.trim().toLowerCase();
+    return deliveryData.get(key) || manualDelivery[key] || { deliveryModel: "Unknown", clientIndustries: "" };
+  }
+
   const prospects: Prospect[] = records
     .filter((r: Record<string, string>) => {
       const name = (r["Full Name"] || "").trim();
@@ -182,12 +247,14 @@ async function main() {
       const fullName = r["Full Name"].trim();
       const firstName = r["First Name"]?.trim() || fullName.split(" ")[0];
       const lastName = r["Last Name"]?.trim() || "";
+      const company = r["Company Name"] || "";
+      const delivery = getDelivery(company);
       return {
         fullName,
         firstName,
         lastName,
         jobTitle: r["Job Title"] || "",
-        company: r["Company Name"] || "",
+        company,
         location: r["Location"] || "",
         persona: assignPersona(r["Job Title"] || ""),
         eventHook: assignEventHook(r["Location"] || ""),
@@ -201,6 +268,8 @@ async function main() {
         notableExperience: r["Notable Previous Experience"] || "",
         firstDegree: r["First Degree Connection [Alice or Calanthia]"] || "",
         calanthiaFirstDegree: r["Calanthia First Degree"] || "",
+        deliveryModel: delivery.deliveryModel,
+        clientIndustries: delivery.clientIndustries,
       };
     });
 
@@ -223,15 +292,23 @@ async function main() {
     try {
       const messaging = await generateMessaging(p);
 
+      const footprint = classifyDeliveryFootprint(p.deliveryModel);
+      const hasIB = p.icebreaker.trim().length > 10;
+
       lines.push(`## ${i + 1}. ${p.fullName}`);
       lines.push("");
       lines.push(`| | |`);
       lines.push(`|---|---|`);
-      lines.push(`| **Title** | ${p.jobTitle} |`);
       lines.push(`| **Company** | ${p.company} |`);
+      lines.push(`| **Title** | ${p.jobTitle} |`);
       lines.push(`| **Persona** | ${p.persona} |`);
+      lines.push(`| **Active on LinkedIn** | ${p.activeLinkedIn ? "Yes" : "No"} |`);
+      lines.push(`| **Event** | ${p.eventHook} |`);
+      lines.push(`| **Delivery footprint** | ${footprint} (${p.deliveryModel || "unknown"}) |`);
+      lines.push(`| **Client industries** | ${p.clientIndustries || "Not specified"} |`);
+      lines.push(`| **Icebreaker available** | ${hasIB ? "Yes" : "No"} |`);
+      if (hasIB) lines.push(`| **Icebreaker** | ${p.icebreaker.substring(0, 200)}${p.icebreaker.length > 200 ? "..." : ""} |`);
       lines.push(`| **Location** | ${p.location} |`);
-      lines.push(`| **Event hook** | ${p.eventHook} |`);
       lines.push(`| **LinkedIn** | ${p.linkedinProfile} |`);
       lines.push(`| **Email** | ${p.email} |`);
       lines.push("");
