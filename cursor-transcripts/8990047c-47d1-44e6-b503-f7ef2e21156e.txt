@@ -2714,3 +2714,41 @@ assistant:
   block_until_ms: 15000
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "$(cat <<'EOF'
+Run: populate-calanthia-connections.ts
+
+Populated Calanthia's LinkedIn 2nd-degree connection data for 147 Clay/blank-source contacts across 41 companies. Found 8 contacts with 2nd-degree connections at 6 companies (Boldr, ClearSource, Direct Interactions, Etech, GCS, NexRep).
+EOF
+)" && git push
+  description: Commit and push Calanthia connection data
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] TodoWrite
+  todos: [{"id":"c4","content":"Write script to compile results and output updated CSV","status":"completed"}]
+  merge: true
+
+[Tool result] TodoWrite
+
+assistant:
+Done. Searched all 41 companies logged in as Calanthia. CSV saved to `data/top-contacts-with-calanthia-connections.csv`.
+
+**Calanthia has 2nd-degree connections with 8 contacts across 6 companies:**
+
+| Contact | Company | Mutual Connections |
+|---|---|---|
+| David Sudolsky | Boldr, Inc. | Meredith Sweeney; Casey Lawlor; +12 others |
+| Mari Parker | Boldr, Inc. | Erica Wenger; Karen Batungbacal, FICD; +1 |
+| Rob Goeller | ClearSource BPO | Sterling Snow; Brandon Delgrosso; +5 others |
+| Chris Fong | Direct Interactions | Leslie Padrick; Jeremy Jonker; +7 others |
+| Matt Rocco | Etech Global Services | Ian Harriman; Tzvika Agassi |
+| Jim Iyoob | Etech Global Services | Ian Harriman; Tzvika Agassi; +2 others |
+| Bryan Overcash | GCS International | Ian Harriman |
+| Teddy Liaw | NexRep | Bob Wu; Jake Gibson; +7 others |
+
+The remaining ~139 Clay/blank-source contacts have no 2nd-degree connection for Calanthia.

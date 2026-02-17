@@ -8618,3 +8618,25 @@ Now add delivery-model tailoring instructions to the prompt.
   - Mixed delivery: AI is a third delivery tier alongside onshore and offshore. "Zero labour cost, infinite scale, per-outcome pricing."
 
 [Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/generate-outreach.ts
+  description: Regenerate outreach with delivery model + expert tone
+  block_until_ms: 400000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  limit: 75
+
+[Tool result] Read
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/personalised-outreach.md -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && echo "Done"
+  description: Convert final outreach to docx
+
+[Tool result] Shell
