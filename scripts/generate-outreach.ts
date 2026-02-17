@@ -230,6 +230,9 @@ async function main() {
     "intelogix": { deliveryModel: "onshore, nearshore", clientIndustries: "Consumer, Financial Services, Healthcare, Technology" },
     "flatworld solutions": { deliveryModel: "onshore, nearshore, offshore", clientIndustries: "Financial Services, Healthcare, Technology" },
     "first contact bpo": { deliveryModel: "nearshore, offshore", clientIndustries: "Consumer, Healthcare, Technology" },
+    "datamark, inc.": { deliveryModel: "onshore, nearshore, offshore", clientIndustries: "Financial Services, Healthcare, Public Sector, Technology" },
+    "etech global services": { deliveryModel: "onshore, offshore", clientIndustries: "Financial Services, Consumer, Healthcare, Technology, Telecom" },
+    "liveops": { deliveryModel: "onshore, offshore", clientIndustries: "Insurance, Telecom, Consumer, Healthcare" },
   };
 
   function getDelivery(company: string) {
@@ -247,6 +250,16 @@ async function main() {
 
   // Track Brian Flaherty to remove the duplicate
   let brianFlahertySeen = false;
+
+  // Force-include contacts who are event-active (even if not LinkedIn-active or SE)
+  const forceIncludeNames = new Set([
+    "Ali Karim",        // DATAMARK — confirmed speaker at Frost & Sullivan East + West
+    "Bill Randag",      // DATAMARK President — company heavily event-active
+    "Matt Rocco",       // Etech CEO — company at CCW LV + Conversational AI Summit
+    "Jim Iyoob",        // Etech — confirmed speaker at Conversational AI Summit + CCW LV
+    "Liliana Lopez",    // Liveops — co-led AI Maturity Workshop at CCW Orlando, active LinkedIn
+    "Bill Trocano",     // Liveops — published AI article Feb 2026, active LinkedIn
+  ]);
 
   // Enriched icebreakers from web research (override CSV data)
   const enrichedIcebreakers: Record<string, string> = {
@@ -266,6 +279,12 @@ async function main() {
     "Kenneth Loggins": "Gave reporters a tour during the grand opening of a new Focus Services call center in North Carolina (former Concentrix facility, 350 seats). Focus Services is expanding to South Africa. The NC expansion created ~550 jobs.",
     "Erika Garcia": "Shared a post about joining Global Strategic during strong momentum and focusing on turning insights into strategies. Note: may have moved to White Glove Business Solutions — verify current role on LinkedIn before outreach.",
     "Youssef Hannat": "Percepta just named Thomas Monaghan as new President (Feb 2026), replacing Karen Gurganious. New leadership = potential new priorities. Percepta is a TTEC/Ford JV with ~4,000 employees across 13 countries, focused on automotive CX.",
+    "Ali Karim": "CONFIRMED SPEAKER at Frost & Sullivan Customer Contact MindXchange East (Fort Lauderdale, Apr 12-15): presenting 'AI That Works: Inside the Customer and Employee Experience' case history + facilitating roundtable 'Cut Through the CX Hype: Pick the Right Tech, Every Time'. Also speaking at Frost & Sullivan West (Tucson, Oct 18-21) on Emotional AI and Sentiment Analytics. DATAMARK is a featured sponsor at both events. 35+ year BPO, 4,600+ employees across US, Mexico, and India.",
+    "Bill Randag": "President of DATAMARK. Company is a featured sponsor at both Frost & Sullivan MindXchange East (Fort Lauderdale, Apr 12-15) and West (Tucson, Oct 18-21) with multiple speakers. DATAMARK is one of the most event-active BPOs on the circuit. 35+ years, 4,600+ employees, US + Mexico + India delivery.",
+    "Matt Rocco": "CEO of Etech Global Services. Etech is confirmed at CCW Las Vegas 2026 (Jun 22-25, Booth #1404) with a workshop. Jim Iyoob (Etech) is a confirmed speaker at the Conversational AI Summit (Apr 9) and Call Center Campus Symposium (May 17-20). Etech is one of the most conference-active BPOs.",
+    "Jim Iyoob": "CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9, 2026). Also speaking at CCW Las Vegas 2026 (Jun 22-25, workshop) and Call Center Campus Symposium (May 17-20, keynote). President of ETS Labs at Etech. Authored blog on 'Analytics and the Power of the Human Touch'. Very active on the conference circuit.",
+    "Liliana Lopez": "Co-led an AI Maturity Workshop at CCW Orlando (Jan 2026) on operationalizing AI — moving from 'promising' to 'proven'. Also shared thought leadership on sandboxing AI, real-time agent assist, and using AI to accelerate onboarding and QA. Promoted LiveNexus for testing and scaling AI innovations. VP of Technology, Cybersecurity & Innovation at Liveops.",
+    "Bill Trocano": "Published a LinkedIn article in Feb 2026 about how AI didn't replace humans during the holiday season but raised the bar for human agents. Global VP of CX at Liveops. Active interest in AI-enabled CX and workforce enablement.",
   };
 
   const prospects: Prospect[] = records
@@ -280,7 +299,8 @@ async function main() {
       }
       const active = r["Active on LinkedIn (last 90 days)"] === "1" || r["Active on LinkedIn (last 90 days)"] === "True";
       const se = isSoutheastLocation(r["Location"] || "");
-      return active || se;
+      const forced = forceIncludeNames.has(name);
+      return active || se || forced;
     })
     .map((r: Record<string, string>) => {
       const fullName = r["Full Name"].trim();

@@ -1,7 +1,7 @@
 # Personalised Outreach — Cohort 1
 
 > Generated: 17 February 2026
-> Total prospects: 20
+> Total prospects: 26
 
 ---
 
@@ -23,19 +23,17 @@
 | **Email** | markdangola@buwelo.com |
 
 **Touch 1 — Connection Request**  
-Hi Mark, noticed your impressive work at Buwelo overseeing call centers with 5M+ customers annually. Would love to connect and share insights from my work with leaders in similar spaces.
+Hi Mark, impressed by Buwelo's 94% client retention and low attrition. Would love to connect and exchange insights on AI in BPO operations.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Mark. Impressive how Buwelo maintains a 94% client retention rate and low attrition. I've been discussing AI strategies with BPO leaders like Teleperformance. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Mark. Your experience with managing call centers for 5M+ customers annually is impressive. I've been spending a lot of time with BPO leaders discussing AI strategies for voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from Top BPO Leaders
+Subject: Insights on AI Strategies in BPO Operations
 
 Hi Mark,
 
-Great to connect on LinkedIn! I've been working closely with BPO leaders like those at Teleperformance on integrating AI to enhance service quality and reduce costs. For instance, a major Mexican telco achieved 99% tagging accuracy and a 4.7% conversion rate with an automated model. Similarly, a digital bank in Singapore saw a 76% promise-to-pay rate, expanding rapidly across products.
-
-I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn. I've been working closely with BPO leaders like those at Teleperformance, exploring how AI can drive service levels while managing costs. For instance, a major Mexican telco achieved a 99% tagging accuracy and 4.7% telesales upsell conversion. Similarly, a digital bank in Singapore expanded from pilot to multi-product in 12 months with a 76% promise-to-pay rate. These examples show AI's potential beyond just labor arbitrage. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
@@ -60,24 +58,168 @@ Calanthia
 | **Email** | amanda.jones@cbecompanies.com |
 
 **Touch 1 — Connection Request**  
-Hi Amanda, congrats on CBE's BBB Torch Award! I'd love to connect and hear more about the CBE Cares initiative. Warm regards, Calanthia
+Hi Amanda, congrats on the BBB Torch Award for Ethics! I'd love to connect and hear more about your success with CBE Cares and your new Philippines office.  
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Amanda. Winning the BBB Torch Award speaks volumes about CBE's commitment to ethics. I've been spending time with BPO leaders, exploring AI's role in transforming operations. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Amanda. The recognition CBE Companies received for its ethical practices and community initiatives is impressive! I've been spending time with BPO leaders, exploring how AI is reshaping voice operations. Are you going to the CCNG event in Atlanta on Feb 26?  
 
 **Touch 3 — Email**  
-Subject: Insights from AI in BPO Operations
+Subject: Insights from BPO Leaders on AI and Operational Efficiency  
 
-Hi Amanda,
+Hi Amanda,  
 
-Thanks for connecting on LinkedIn. I've been working closely with BPO leaders like those at Teleperformance, helping them navigate AI's role in enhancing operations. For example, a digital bank in Singapore achieved a 76% promise-to-pay rate using AI in collections, expanding rapidly from pilot to full-scale. Your clients are likely expecting high service quality at reduced costs; AI can bridge that gap even without a massive budget. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn! I've been collaborating closely with BPO leaders like Teleperformance, focusing on AI strategies that enhance service quality while managing costs. For instance, a digital bank in Singapore achieved a 76% promise-to-pay rate, expanding from pilot to multi-product within a year. These insights are reshaping how operations are optimized. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?  
+
+Warm regards,  
+Calanthia  
+
+---
+
+## 3. Ali Karim
+
+| | |
+|---|---|
+| **Company** | DATAMARK, Inc. |
+| **Title** | Vice President |
+| **Persona** | Operations & Finance Leader |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | None |
+| **Event** | Enterprise Connect (Mar 10-12, Las Vegas) |
+| **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
+| **Client industries** | Financial Services, Insurance, Telecom, Consumer, Healthcare, Public Sector |
+| **Icebreaker** | CONFIRMED SPEAKER at Frost & Sullivan Customer Contact MindXchange East (Fort Lauderdale, Apr 12-15): presenting 'AI That Works: Inside the Customer and Employee Experience' case history + facilitatin... |
+| **Location** | El Paso, Texas, United States |
+| **LinkedIn** | https://www.linkedin.com/in/mohammadalikarim/ |
+| **Email** | ali.karim@datamark.net |
+
+**Touch 1 — Connection Request**  
+Hi Ali, noticed you're speaking at Frost & Sullivan on AI in CX. Impressive! Let's connect.
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, Ali. Your upcoming talk on AI in CX sounds fascinating. I've been spending a lot of time with BPO leaders, sharing what they're doing with AI. Are you going to Enterprise Connect in Las Vegas next month?
+
+**Touch 3 — Email**  
+Subject: Exploring AI Insights for BPOs
+
+Hi Ali,
+
+It was great connecting on LinkedIn. I've been working closely with BPO leaders like Teleperformance on leveraging AI for operational efficiency. For instance, a digital bank in Singapore achieved a 76% promise-to-pay rate with AI-driven operations. Similarly, a major Mexican telco saw a 4.7% conversion on telesales upsells using automated solutions.
+
+AI is becoming essential for mixed delivery models, acting as a third tier alongside onshore and offshore. It transforms unit economics, offering zero labor costs and infinite scalability. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 3. Pablo Paz Hernandez
+## 4. Bill Randag
+
+| | |
+|---|---|
+| **Company** | DATAMARK, Inc. |
+| **Title** | President |
+| **Persona** | Executive Sponsor |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | Calanthia 1st degree; Alice 2nd degree (Brandon Pfluger, J.D.; Gabriel Pike; +1 other); Calanthia 2nd degree (Aaron Anderson) |
+| **Event** | Enterprise Connect (Mar 10-12, Las Vegas) |
+| **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
+| **Client industries** | Financial Services, Insurance, Telecom, Consumer, Healthcare, Public Sector |
+| **Icebreaker** | President of DATAMARK. Company is a featured sponsor at both Frost & Sullivan MindXchange East (Fort Lauderdale, Apr 12-15) and West (Tucson, Oct 18-21) with multiple speakers. DATAMARK is one of the ... |
+| **Location** | El Paso, Texas, United States |
+| **LinkedIn** | https://www.linkedin.com/in/billrandag |
+| **Email** | bill.randag@datamark.net |
+
+**Touch 1 — Connection Request**  
+Hi Bill, I noticed DATAMARK is active at events like Frost & Sullivan MindXchange. Impressive! Let's connect.
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, Bill. It's fascinating to see how active DATAMARK is on the event circuit. I'm spending time with BPO leaders exploring AI's impact on mixed delivery models. Are you going to Enterprise Connect in Las Vegas next month?
+
+**Touch 3 — Email**  
+Subject: Insights from Teleperformance-Level AI Strategies
+
+Hi Bill,
+
+It was great connecting on LinkedIn. As someone who collaborates with BPO leaders like Teleperformance, I've seen how AI can transform service delivery. For example, a major Mexican telco achieved 99% tagging accuracy with an AI-driven model. Similarly, a digital bank in Singapore expanded its operations by leveraging AI for a 76% promise-to-pay rate. You don't need Teleperformance's budget to reach these results; we can bring the same expertise to DATAMARK.
+
+I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,  
+Calanthia
+
+---
+
+## 5. Matt Rocco
+
+| | |
+|---|---|
+| **Company** | Etech Global Services |
+| **Title** | Chief Executive Officer |
+| **Persona** | Executive Sponsor |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | None |
+| **Event** | Enterprise Connect (Mar 10-12, Las Vegas) |
+| **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
+| **Client industries** | Not specified |
+| **Icebreaker** | CEO of Etech Global Services. Etech is confirmed at CCW Las Vegas 2026 (Jun 22-25, Booth #1404) with a workshop. Jim Iyoob (Etech) is a confirmed speaker at the Conversational AI Summit (Apr 9) and Ca... |
+| **Location** | Nacogdoches, Texas, United States |
+| **LinkedIn** | https://www.linkedin.com/in/matt-rocco-728ab46/ |
+| **Email** | matt.rocco@etechgs.com |
+
+**Touch 1 — Connection Request**  
+Hi Matt, I noticed Etech's impressive presence at industry events like CCW Las Vegas. I'd love to connect and share insights from my work with other BPO leaders.
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, Matt. I admire Etech's active role in industry events, especially with Jim Iyoob's upcoming talks. I've been deep in discussions with BPO leaders about AI in voice operations. Are you going to Enterprise Connect in Las Vegas next month?
+
+**Touch 3 — Email**  
+Subject: Insights on AI-Driven BPO Success
+
+Hi Matt,
+
+It was great connecting on LinkedIn. I've been working closely with leaders at Teleperformance and others, exploring AI's impact on BPOs. The biggest players are using AI to deliver exceptional service at reduced costs. For example, a major Mexican telco saw a 4.7% conversion on telesales upsells using AI-driven solutions. Similarly, a Singaporean digital bank achieved a 76% promise-to-pay rate. These insights could be valuable in enhancing Etech's operations without the need for Teleperformance's budget. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,  
+Calanthia
+
+---
+
+## 6. Jim Iyoob
+
+| | |
+|---|---|
+| **Company** | Etech Global Services |
+| **Title** | President, ETSLabs |
+| **Persona** | Executive Sponsor |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | Calanthia 1st degree; Alice 2nd degree (Mark Escueta; Alon Waks; +3 others); Calanthia 2nd degree (Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson) |
+| **Event** | Enterprise Connect (Mar 10-12, Las Vegas) |
+| **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
+| **Client industries** | Not specified |
+| **Icebreaker** | CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9, 2026). Also speaking at CCW Las Vegas 2026 (Jun 22-25, workshop) and Call Center Campus Symposium (May 17-20,... |
+| **Location** | San Antonio, TX, US |
+| **LinkedIn** | https://www.linkedin.com/in/jimiyoob |
+| **Email** | jim.iyoob@etechgs.com |
+
+**Touch 1 — Connection Request**  
+Hi Jim, enjoyed your blog on the human touch in analytics. I'm keen to hear more about your insights at the upcoming Conversational AI Summit. Let's connect!
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, Jim. I recently read your piece on the power of the human touch in analytics — it resonated with my work with BPO leaders on integrating AI. Are you going to Enterprise Connect in Las Vegas next month?
+
+**Touch 3 — Email**  
+Subject: Insights from Top BPO Leaders
+
+Hi Jim,
+
+It was great connecting on LinkedIn! I've been working closely with BPO leaders like Teleperformance to explore AI strategies that elevate service quality while lowering costs. One standout example is our work with a major Mexican telco achieving 99% tagging accuracy with a fully automated dual-agent model. Similarly, a digital bank in Singapore expanded from pilot to multi-product success within a year. These insights might resonate with your goals at Etech. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,  
+Calanthia
+
+---
+
+## 7. Pablo Paz Hernandez
 
 | | |
 |---|---|
@@ -95,26 +237,26 @@ Calanthia
 | **Email** | pablo@firstcontactbpo.com |
 
 **Touch 1 — Connection Request**  
-Hi Pablo, impressed by First Contact BPO's 2,500% growth in just a year! Looking forward to connecting and sharing insights.
+Hi Pablo, impressed by your phenomenal growth at First Contact BPO! As an AI strategist working with leaders like Teleperformance, I'd love to connect and share insights. - Calanthia
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Pablo. I’m amazed by how First Contact BPO skyrocketed since 2023. I spend a lot of time with BPO leaders discussing AI strategies, and I'm curious about your experiences. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Pablo. The 2,500% growth at First Contact BPO is remarkable! I've been spending a lot of time with BPO leaders exploring AI strategies — it's fascinating how the landscape is evolving. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Scaling Success with AI Insights from Industry Leaders
+Subject: Insights from Top BPO Leaders  
 
-Hi Pablo,
+Hi Pablo,  
 
-It was great to connect on LinkedIn. I've been spending time with BPO leaders like those at Teleperformance, exploring how AI is reshaping the industry. The biggest players are achieving higher service quality at a lower cost through AI. For example, a major Mexican telecom is using AI for 10K+ daily outbound calls with a 99% tagging accuracy. Similarly, a digital bank in Singapore expanded its AI pilot to a multi-product solution, achieving a 76% promise-to-pay rate.
+It was great connecting on LinkedIn. Your success at First Contact BPO is truly inspiring. I've been working closely with leaders at Teleperformance on how AI is transforming voice operations without needing their massive budget. For instance, a major Mexican telco achieved 99% tagging accuracy and a 4.7% conversion on telesales — fully automated. AI's potential to scale efficiently is immense, especially in offshore-heavy models like yours.  
 
-You don't need Teleperformance's budget to access these insights. We bring the same expertise to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+I'd be happy to share more of what I'm seeing — would you be interested in a conversation?  
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 4. Rob Porges
+## 8. Rob Porges
 
 | | |
 |---|---|
@@ -132,24 +274,26 @@ Calanthia
 | **Email** | rob.porges@flatworldsolutions.com |
 
 **Touch 1 — Connection Request**  
-Hi Rob, enjoyed Flatworld's 'Tech in Mortgage' podcast on AI-driven automation. Let's connect!
+Hi Rob, enjoyed Flatworld's 'Tech in Mortgage' podcast on AI-driven automation. Let's connect and share insights on AI in voice operations.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Rob. I found Flatworld's showcase of MSuite at the MBA Servicing Conference intriguing, especially in how you're leveraging AI in mortgage automation. I've been spending time with BPO leaders exploring similar innovations. Are you going to the CBAND event in Atlanta on Feb 26?
+Great to connect, Rob. Your podcast on AI-driven mortgage automation was really insightful. I'm spending time with BPO leaders exploring AI strategies for voice operations. Are you going to the CBAND event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from Leading BPOs on AI Strategy
+Subject: Exploring AI Strategies in BPO Operations
 
 Hi Rob,
 
-I’m glad we connected on LinkedIn. It's fascinating to see Flatworld's strides in AI, especially with the launch of Flatworld.ai. I've been working closely with BPO leaders on challenges like margin compression and scaling AI, much like Teleperformance. For instance, a digital bank in Singapore used AI to achieve a 76% promise-to-pay rate, expanding from pilot to multi-product in a year. AI is becoming a third delivery tier — "zero labour cost, infinite scale, per-outcome pricing." I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn. As someone who spends time with leading BPOs, I've seen how AI is transforming voice operations—just like Teleperformance does. For instance, a digital bank in Singapore achieved a 76% promise-to-pay rate with AI-driven collections. Similarly, a Mexican telco automated thousands of daily calls, improving conversion rates.
+
+Your clients expect high service quality at lower costs, and AI can help achieve this. I'd be happy to share more of what I'm seeing—would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 5. Nitesh Kumar
+## 9. Nitesh Kumar
 
 | | |
 |---|---|
@@ -167,24 +311,24 @@ Calanthia
 | **Email** | nitesh.kumar@flatworldsolutions.com |
 
 **Touch 1 — Connection Request**  
-Hi Nitesh, I noticed your involvement in 'The AI Walk' series. AI's impact on frontline agents is fascinating. Let's connect!
+Hi Nitesh, I noticed your involvement in 'The AI Walk' series and your insights on empowering frontline agents with AI. Would love to connect and exchange some ideas.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Nitesh. I loved hearing your thoughts on how AI empowers frontline agents during 'The AI Walk' series. I'm spending a lot of time with BPO leaders exploring AI's role in voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Nitesh. I’m intrigued by your work on 'The AI Walk' series and how AI is reshaping contact center efficiency. I spend a lot of time with BPO leaders, learning and sharing insights on AI strategies. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights on AI Strategy in BPOs
+Subject: Insights from BPO Leaders on AI Transformation
 
 Hi Nitesh,
 
-It was great connecting on LinkedIn. I've been collaborating with BPO leaders, including Teleperformance, on AI strategies for enhancing service quality while reducing costs. For example, a digital bank in Singapore achieved a 76% promise-to-pay rate using fully compliant AI solutions. Similarly, a Mexican fintech improved collections with a 25% responder rate. These cases show how AI can optimize operations without needing a large internal team. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It's great to connect on LinkedIn. Your insights from 'The AI Walk' series truly resonate with what I'm hearing from other BPO leaders. Many are leveraging AI to enhance service quality while reducing costs, a balance even the largest players like Teleperformance are navigating. For instance, a digital bank in Singapore saw a 76% promise-to-pay rate with AI-driven solutions, and a Mexican fintech lender improved collections with tone-adapted strategies. These examples show AI's potential in diverse sectors, similar to Flatworld's mixed delivery model. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 6. Kenneth Loggins
+## 10. Kenneth Loggins
 
 | | |
 |---|---|
@@ -202,26 +346,24 @@ Calanthia
 | **Email** | kenneth@focusservices.com |
 
 **Touch 1 — Connection Request**  
-Hi Kenneth, I saw you gave reporters a tour of the new Focus Services call center in NC. Exciting expansion! I'd love to connect and share insights from my work with BPO leaders.
+Hi Kenneth, I admired your leadership during the opening of the new NC call center. Exciting times as Focus Services expands! Would love to connect and share insights on AI trends in BPO.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Kenneth. Your expansion in North Carolina and upcoming move to South Africa are impressive! I spend a lot of time with BPO leaders exploring AI strategies. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Kenneth. Your work on the new NC facility is impressive—bringing 550 jobs to the area is no small feat. I've been spending time with BPO leaders on AI strategies to enhance operations and am curious about your experiences. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from AI Strategy with BPO Leaders
+Subject: Scaling Efficiently with AI Insights
 
 Hi Kenneth,
 
-It was great to connect on LinkedIn. I've been working closely with leaders at Teleperformance and other major BPOs on AI strategies that enhance service quality while reducing costs. For example, a major Mexican telco achieved a 99% tagging accuracy and a 4.7% conversion rate on telesales across 20K records with a fully automated model. Similar solutions are possible even without Teleperformance's budget, offering bespoke, results-driven approaches tailored to your needs.
-
-I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn! With your role at Focus Services, I thought you might find it interesting that the biggest BPOs like Teleperformance are leveraging AI to enhance service quality and reduce costs. For example, a major Mexican telco achieved a 99% tagging accuracy and 4.7% conversion rate using AI. Similarly, a Singapore digital bank saw a 76% promise-to-pay rate. You don't need their budget—our team can bring similar expertise to you, transforming operational efficiency without increasing headcount. I'd be happy to share more of what I'm seeing—would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 7. Bryan Overcash
+## 11. Bryan Overcash
 
 | | |
 |---|---|
@@ -239,24 +381,24 @@ Calanthia
 | **Email** | bryan.overcash@gcsagents.com |
 
 **Touch 1 — Connection Request**  
-Hi Bryan, I see you co-founded GCS and played a key role in managing the COVID Hotline for MTA NYC. Impressive! Let's connect.
+Hi Bryan, I admire your work with Forward Rowan and the impressive impact GCS had with the COVID Hotline. Let's connect and share insights from our BPO experiences.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Bryan. I’m fascinated by your work with the Forward Rowan initiative. I spend my days with BPO leaders, sharing what I’m learning about AI in voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Bryan. I find your role in Forward Rowan fascinating and commendable. I've been spending my days with BPO leaders, exploring how AI can elevate operations. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from BPO Leaders on AI Strategy
+Subject: Scaling GCS with AI Insights from Teleperformance
 
 Hi Bryan,
 
-Thanks for connecting on LinkedIn. Working with leaders like Teleperformance, I've seen how the largest BPOs are leveraging AI for service quality and cost efficiency. A major Mexican telco achieved 99% tagging accuracy and 4.7% conversion on telesales upsells with our approach. You don’t need their budget; we bring the same expertise to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+Following our LinkedIn connection, I wanted to share some insights from my work with leading BPOs like Teleperformance. The biggest players are leveraging AI to enhance service quality while reducing costs. For instance, a major Mexican telco achieved a 99% tagging accuracy and a 4.7% conversion rate on telesales upsell with automated solutions. These strategies don’t require a huge budget or internal AI team — my team brings the same Teleperformance-proven expertise to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 8. Bucky Cline
+## 12. Bucky Cline
 
 | | |
 |---|---|
@@ -274,26 +416,24 @@ Calanthia
 | **Email** | bucky.cline@gcsagents.com |
 
 **Touch 1 — Connection Request**  
-Hi Bucky, saw that you're attending the CCNG event in Atlanta on Feb 26. I'd love to connect and share insights from my work with BPO leaders. Looking forward to connecting!
+Hi Bucky, I noticed we'll both be at the CCNG event in Atlanta on Feb 26. I'd love to connect and share insights from my work with BPO leaders. Looking forward to it! — Calanthia
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Bucky. I've always admired how Global Contact Service emphasizes associate training and process-driven management. I've been spending time with BPO leaders exploring AI strategies for voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Bucky. I've heard impressive things about GCS's F.E.E.D. program and its focus on soft skills and empathy. I've been spending time with BPO leaders exploring AI strategies for voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from BPO Leaders on AI Strategies
+Subject: Exploring AI in BPOs Together
 
 Hi Bucky,
 
-I hope this finds you well. It was a pleasure connecting on LinkedIn. I've been closely working with BPO leaders like Teleperformance to tackle the challenge of delivering higher service quality at lower costs. One of our initiatives with a major Mexican telco has resulted in 99% tagging accuracy and a 4.7% conversion rate on telesales upsell. These are the types of results we’re seeing across industries, including technology, insurance, and more.  
-
-I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn! I've been working closely with BPO leaders, including Teleperformance, on leveraging AI to meet the rising demand for higher service quality at lower costs. You might find it interesting that a digital bank in Singapore achieved a 76% promise-to-pay rate with AI-driven voice operations. Similarly, a major Mexican telco saw a 4.7% conversion on telesales upsells. These examples highlight how AI can transform the economics of onshore-heavy operations like yours. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 9. Greg Alcorn
+## 13. Greg Alcorn
 
 | | |
 |---|---|
@@ -311,24 +451,24 @@ Calanthia
 | **Email** | greg.alcorn@gcsagents.com |
 
 **Touch 1 — Connection Request**  
-Hi Greg, I'm inspired by your work with ApSeed and its impact on literacy. Let's connect!
+Hi Greg, I admire your work with ApSeed and its impact on literacy. I'd love to connect and share insights from my work with BPO leaders. Warm regards, Calanthia
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Greg. Your ApSeed initiative is truly remarkable, and the literacy improvements are impressive. I've been spending time with BPO leaders to explore AI's role in enhancing service quality. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Greg. Your initiative with ApSeed is inspiring, and it's amazing to see such a profound impact on literacy. I spend a lot of time with BPO leaders exploring AI strategies for voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from BPO Leaders on AI and Service Quality
+Subject: Insights from BPO Leaders on AI Strategies
 
 Hi Greg,
 
-It was wonderful to connect on LinkedIn. I've been working with BPO leaders like Teleperformance on AI strategies to enhance service quality without escalating costs. For instance, a major Mexican telco achieved 99% tagging accuracy and a 4.7% conversion rate through automated calls. These insights might be valuable for your onshore-heavy delivery model. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting with you on LinkedIn. I've been closely working with BPO leaders, including those at Teleperformance, on how AI can enhance service quality while reducing costs. For instance, a major Mexican telecom achieved a 99% tagging accuracy and a 4.7% conversion rate on telesales upsell using automated models. You don't need a big budget or internal AI team to achieve similar results — we bring the same expertise to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 10. Brian Flaherty
+## 14. Brian Flaherty
 
 | | |
 |---|---|
@@ -346,24 +486,24 @@ Calanthia
 | **Email** | brian.flaherty@globalstrategic.com |
 
 **Touch 1 — Connection Request**  
-Hi Brian, I saw you're speaking at the Mortgage AI conference on AI/Human balance. I'd love to connect and exchange insights on AI in voice operations.
+Hi Brian, I noticed you'll be speaking at the Mortgage AI conference on managing AI/human balance. I'd love to connect and hear more about your insights on this topic.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Brian. Your insights on managing the AI/Human balance are timely. I've been spending my days with BPO leaders like Teleperformance, exploring AI strategies for voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Brian. I'm intrigued by your upcoming talk on AI vs. human balance in mortgage operations. I'm spending a lot of time with BPO leaders exploring AI strategies for voice ops. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from AI Strategy with BPO Leaders
+Subject: Scaling AI in BPO with Insights from Industry Leaders
 
 Hi Brian,
 
-It was great connecting on LinkedIn and hearing about your work on AI/Human balance. I've been working closely with BPO giants like Teleperformance, helping them leverage AI for voice operations. One fascinating case was a digital bank in Singapore achieving a 76% promise-to-pay rate with AI-driven solutions. This kind of result shows that you don't need Teleperformance's budget to benefit from similar AI advancements. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn. I've been working closely with BPO leaders like Teleperformance to navigate AI-driven service quality improvements without the massive budgets. For instance, a digital bank in Singapore achieved a 76% promise-to-pay rate using AI in a regulated environment. This approach scales beyond traditional labor models, adding a new delivery tier alongside onshore and offshore. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 11. Erika Garcia
+## 15. Erika Garcia
 
 | | |
 |---|---|
@@ -381,24 +521,24 @@ Calanthia
 | **Email** | erika.garcia@globalstrategic.com |
 
 **Touch 1 — Connection Request**  
-Hi Erika, I loved your post about turning insights into strategies at Global Strategic. Excited to connect and share experiences from the BPO world!
+Hi Erika, noticed your post about turning insights into strategies at Global Strategic. Excited to connect and share ideas on AI and operations!
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Erika. I was inspired by your focus on turning insights into actionable strategies at Global Strategic. I've been spending time with BPO leaders exploring how AI is reshaping voice operations. Are you going to the CBAND event in Atlanta on Feb 26?
+Great to connect, Erika. I was intrigued by your focus on transforming insights into strategies at Global Strategic. I spend my days with BPO leaders discussing AI's role in operations. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from BPO Leaders Like Teleperformance
+Subject: AI Insights for Operations Leaders
 
 Hi Erika,
 
-I hope you enjoyed our LinkedIn connection. I've been collaborating closely with BPO leaders like Teleperformance, and it's clear clients demand higher service quality at lower costs. For instance, a digital bank in Singapore achieved a 76% promise-to-pay rate through AI-driven solutions. These insights are reshaping standard practices and I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn! I've been working closely with BPO leaders like Teleperformance on AI strategies for voice operations. Many are finding it challenging to balance service quality with cost, using AI to bridge that gap. For example, a digital bank in Singapore expanded their AI collections to a multi-product environment within a year, achieving a 76% promise-to-pay rate. At Teleperformance, we've seen similar success with a major telecom automating 10K+ daily calls. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 12. Donny Jackson
+## 16. Donny Jackson
 
 | | |
 |---|---|
@@ -416,24 +556,26 @@ Calanthia
 | **Email** | donny.jackson@helpware.com |
 
 **Touch 1 — Connection Request**  
-Hi Donny, congrats on your RVP promotion at Helpware! Your leadership role in restructuring caught my eye. Let's connect.
+Hi Donny, noticed your recent promotion during Helpware's leadership restructuring. Impressive move! Excited to connect and share insights from the AI world.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Donny. Your journey from Conduent to Helpware is impressive. I spend my days with BPO leaders diving deep into AI strategy for voice operations. Are you going to the CBAND event in Atlanta on Feb 26?
+Great to connect, Donny. Your promotion at Helpware during the leadership restructuring caught my eye—exciting times! I've been spending time with BPO leaders discussing AI strategies. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from Top BPO Leaders
+Subject: Insights on AI Strategies for BPO Leaders
 
 Hi Donny,
 
-Thanks for connecting on LinkedIn. I've been closely working with BPO leaders, including those at Teleperformance, on integrating AI to enhance service quality at reduced costs. Recently, a digital bank in Singapore leveraged AI for collections, achieving a 76% promise-to-pay rate, while a major Mexican telco automated their outbound calls, reaching a 99% tagging accuracy. These insights could be valuable as Helpware navigates AI integration. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn. I've been working closely with BPO leaders like Teleperformance on AI integration for voice operations. Many are facing similar challenges—clients demanding more for less, and AI is becoming a crucial component. For instance, a digital bank in Singapore expanded from a pilot to multi-product in just 12 months with AI, achieving a 76% promise-to-pay rate. Another case with a major Mexican telco saw 99% tagging accuracy and significant telesales conversion through automation.
+
+I'd be happy to share more of what I'm seeing—would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 13. Nanette Harrell
+## 17. Nanette Harrell
 
 | | |
 |---|---|
@@ -450,27 +592,27 @@ Calanthia
 | **LinkedIn** | https://www.linkedin.com/in/nanetteharrell |
 | **Email** | n.harrell@helpware.com |
 
-**Touch 1 — Connection Request**  
-Hi Nanette, congrats on Helpware's recognition in Clutch's Top 100 Fastest-Growing Companies for 2025! Your expansion and innovation are inspiring. Looking forward to connecting.
+**Touch 1 — Connection Request**
+Hi Nanette, congrats on Helpware being named one of Clutch's Top 100 Fastest-Growing Companies for 2025! I'd love to connect and exchange insights on AI strategies in voice operations.
 
-**Touch 2 — LinkedIn Message**  
-Great to connect, Nanette. Helpware's global expansion and tech focus are impressive! I've been spending time with BPO leaders discussing AI's role in evolving voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
+**Touch 2 — LinkedIn Message**
+Great to connect, Nanette. It's impressive to see Helpware's growth and expansion across multiple continents. I've been spending a lot of time with BPO leaders discussing AI's role in voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
 
-**Touch 3 — Email**  
-Subject: How BPO Leaders Like Teleperformance Are Leveraging AI
+**Touch 3 — Email**
+Subject: AI Insights from BPO Leaders
 
 Hi Nanette,
 
-I hope this finds you well. It was great connecting on LinkedIn and hearing about Helpware's impressive growth. I've been working closely with BPO leaders, including those at Teleperformance, on integrating AI to enhance service quality and reduce costs. For example, a digital bank in Singapore achieved a 76% promise-to-pay rate using AI-driven solutions. Similarly, a major Mexican telco saw a 4.7% conversion on telesales upsell with automated systems.
+Thanks for connecting on LinkedIn. It's inspiring to see Helpware's remarkable growth and expansion. I've been working closely with BPO leaders, including those at Teleperformance, on integrating AI to enhance service quality while managing costs. For instance, a digital bank in Singapore saw a 76% promise-to-pay rate using voice automation, expanding from a pilot to multi-product in just 12 months. You don't need Teleperformance's budget to achieve similar outcomes — we bring the same expertise to you.
 
-These insights might be valuable as Helpware continues to expand its global footprint. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 14. John Yanez
+## 18. John Yanez
 
 | | |
 |---|---|
@@ -488,24 +630,24 @@ Calanthia
 | **Email** | john.yanez@intelogix.com |
 
 **Touch 1 — Connection Request**  
-Hi John, congrats on your promotion to COO and the AI Breakthrough Award for LogixAssist! I'd love to connect and share insights on AI strategies in BPO. Best, Calanthia
+Hi John, congrats on your promotion at InteLogix and the AI Breakthrough Award! I'd love to connect and share insights from my work with BPO leaders like Teleperformance.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, John. I was impressed by InteLogix’s win at the AI Breakthrough Awards. I've been spending time with BPO leaders discussing AI's role in voice operations and would love to compare notes. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, John. I was impressed by InteLogix's LogixAssist success and the Pioneer CX acquisition. I've been spending time with BPO leaders, exploring AI strategies for operational efficiency and CX modernization. Are you going to the CBAND event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Exploring AI Strategies in BPO
+Subject: Insights from AI Strategies with BPO Leaders
 
 Hi John,
 
-Thanks for connecting on LinkedIn. I’ve been working closely with BPO leaders like Teleperformance on AI strategies that drive operational efficiency and customer satisfaction. The biggest players are leveraging AI to meet the demand for higher service quality at lower costs. For instance, a digital bank in Singapore saw a 76% promise-to-pay rate with AI-powered solutions. You don’t need Teleperformance’s budget to achieve similar results — we bring the same expertise to you. I'd be happy to share more of what I’m seeing — would you be interested in a conversation?
+Thanks for connecting on LinkedIn. As someone who's been in rooms with leaders like Teleperformance, I've seen how AI is reshaping BPOs. Your achievements at InteLogix remind me of a digital bank in Singapore we helped: 76% promise-to-pay rate, fully compliant, and expanded in 12 months. AI is becoming a third delivery tier alongside onshore and offshore, offering zero labor cost and infinite scale. I'd be happy to share more of what I'm seeing—would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 15. Keith Hansen
+## 19. Keith Hansen
 
 | | |
 |---|---|
@@ -522,18 +664,18 @@ Calanthia
 | **LinkedIn** | https://www.linkedin.com/in/keith-hansen-16313ab6/ |
 | **Email** | keith.hansen@km2solutions.com |
 
-**Touch 1 — Connection Request**  
-Hi Keith, I saw you'll be at the CCNG event in Atlanta on Feb 26. I’d love to connect and exchange insights on AI strategy for voice operations.
+**Touch 1 — Connection Request**
+Hi Keith, I noticed we're both attending the CCNG event in Atlanta on Feb 26. I'd love to connect and share insights from my work with BPO leaders. Looking forward to it!
 
-**Touch 2 — LinkedIn Message**  
-Great to connect, Keith. I admire KM² Solutions' commitment to delivering diverse service offerings across industries. I've been spending time with BPO leaders exploring innovative AI strategies. Are you going to the CCNG event in Atlanta on Feb 26?
+**Touch 2 — LinkedIn Message**
+Great to connect, Keith. I've been impressed by KM² Solutions' ability to deliver diverse service offerings with such efficiency. I spend my days exploring AI strategies with BPO leaders and would love to hear your thoughts. Are you going to the CCNG event in Atlanta on Feb 26?
 
-**Touch 3 — Email**  
-Subject: Enhancing Operational Efficiency with AI Insights
+**Touch 3 — Email**
+Subject: Insights from BPO Leaders on AI Strategy
 
 Hi Keith,
 
-Thanks for connecting on LinkedIn. I've been working closely with BPO leaders to tackle challenges like margin pressure and the capital gap. The biggest names, like Teleperformance, are leveraging AI to meet client demands for higher service quality at lower costs. For instance, a major Mexican telco achieved a 4.7% conversion rate on telesales upsells using a fully automated model. Similarly, a digital bank in Singapore expanded its operations to multiple products within a year by maintaining compliance and achieving a 76% promise-to-pay rate.
+It was great connecting with you on LinkedIn. From my experience working with leaders at Teleperformance and others, I've seen a growing demand for higher service quality at lower costs. AI is a game-changer here. For instance, a major Mexican telco achieved 99% tagging accuracy and a 4.7% conversion on telesales upsells through fully automated solutions. Similarly, a digital bank in Singapore expanded from pilot to multi-product in 12 months with impressive promise-to-pay rates.
 
 I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
@@ -542,7 +684,7 @@ Calanthia
 
 ---
 
-## 16. David Kreiss
+## 20. David Kreiss
 
 | | |
 |---|---|
@@ -560,24 +702,98 @@ Calanthia
 | **Email** | david.kreiss@km2solutions.com |
 
 **Touch 1 — Connection Request**  
-Hi David, congrats on KM² Solutions' expansion in the Caribbean! Impressive growth and impact. Would love to connect and share insights from my work with BPO leaders.
+Hi David, congrats on KM²'s Caribbean expansion! Fascinating move. Let's connect.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, David. Your expansion in Grenada is truly inspiring. I've been spending a lot of time with BPO leaders, diving into AI strategies for voice operations. Curious about your thoughts on the future of AI in BPOs. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, David. Impressive growth in the Caribbean — 1,250 new jobs is no small feat! I've been spending time with BPO leaders exploring AI for voice ops. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Scaling AI in BPOs Without the Teleperformance Budget
+Subject: Expanding AI Strategies for BPO Success
 
 Hi David,
 
-Wonderful connecting with you on LinkedIn! Your recent expansion in the Caribbean is a testament to KM² Solutions' leadership. I've been working closely with BPO leaders, like those at Teleperformance, who are leveraging AI for enhanced service quality. For instance, a digital bank in Singapore expanded their AI pilot to a multi-product solution within a year, achieving a 76% promise-to-pay rate. You don't need Teleperformance's budget to scale AI solutions — we bring the expertise to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+Wonderful connecting on LinkedIn. Your expansion in Grenada is truly inspiring. I've been working closely with BPO leaders like Teleperformance, helping them leverage AI to meet client demands for high-quality service at lower costs. For example, a major Mexican telco achieved 99% tagging accuracy and significant conversion rates through AI-driven voice automation. Similarly, a digital bank in Singapore expanded its operations with a 76% promise-to-pay rate. You don't need a massive budget to achieve these results; we bring that expertise to you.
+
+I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 17. Youssef Hannat
+## 21. Liliana Lopez
+
+| | |
+|---|---|
+| **Company** | Liveops |
+| **Title** | Vice President of Technology | Cybersecurity | Innovation |
+| **Persona** | Technology Leader |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | None |
+| **Event** | Enterprise Connect (Mar 10-12, Las Vegas) |
+| **Delivery footprint** | Mixed delivery (onshore, offshore) |
+| **Client industries** | Insurance, Telecom, Consumer, Healthcare |
+| **Icebreaker** | Co-led an AI Maturity Workshop at CCW Orlando (Jan 2026) on operationalizing AI — moving from 'promising' to 'proven'. Also shared thought leadership on sandboxing AI, real-time agent assist, and usin... |
+| **Location** | United States |
+| **LinkedIn** | https://www.linkedin.com/in/liliana-l-92035441/ |
+| **Email** | liliana.lopez@liveops.com |
+
+**Touch 1 — Connection Request**  
+Hi Liliana, I’m impressed by your leadership at Liveops, especially your insights on operationalizing AI from CCW Orlando. Would love to connect and share more on AI strategies for BPOs.
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, Liliana. Your work on AI maturity and scaling innovations at Liveops is inspiring. I've been spending time with BPO leaders on similar AI strategies and would love to compare notes. Are you going to Enterprise Connect in Las Vegas next month?
+
+**Touch 3 — Email**  
+Subject: AI Insights from Industry Leaders
+
+Hi Liliana,
+
+I’m glad we connected on LinkedIn. Your passion for operationalizing AI at Liveops resonates deeply with what I see across BPOs. Working closely with leaders like those at Teleperformance, I've noticed the transformative power of AI, even without their budget. For instance, a major Mexican telco has achieved 99% tagging accuracy and a 4.7% conversion rate on telesales. This kind of success is attainable for BPOs of all sizes, serving diverse industries like insurance and telecom.
+
+I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,  
+Calanthia
+
+---
+
+## 22. Bill Trocano
+
+| | |
+|---|---|
+| **Company** | Liveops |
+| **Title** | Global Vice President, CX |
+| **Persona** | Operations & Finance Leader |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | Alice 2nd degree (Dave Zimmerman) |
+| **Event** | Enterprise Connect (Mar 10-12, Las Vegas) |
+| **Delivery footprint** | Mixed delivery (onshore, offshore) |
+| **Client industries** | Insurance, Telecom, Consumer, Healthcare |
+| **Icebreaker** | Published a LinkedIn article in Feb 2026 about how AI didn't replace humans during the holiday season but raised the bar for human agents. Global VP of CX at Liveops. Active interest in AI-enabled CX ... |
+| **Location** | Rochester, New York, United States |
+| **LinkedIn** | https://www.linkedin.com/in/bill-trocano-9888891a/ |
+| **Email** | bill.trocano@liveops.com |
+
+**Touch 1 — Connection Request**  
+Hi Bill, I loved your article on AI enhancing human agents during the holidays. I'd be thrilled to connect and share insights from my work with BPO leaders on AI strategy.
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, Bill. Your perspective on AI not replacing but elevating human agents was refreshing. I've been spending a lot of time with BPO leaders, diving into AI strategies for voice operations. Are you going to Enterprise Connect in Las Vegas next month?
+
+**Touch 3 — Email**  
+Subject: Elevating CX with AI Insights
+
+Hi Bill,
+
+I enjoyed our LinkedIn connection and your insights on AI's role in enhancing CX. I've been collaborating with leaders at Teleperformance and others on leveraging AI to drive efficiency in voice operations. One example is a major Mexican telco achieving a 99% tagging accuracy with AI-driven processes. Another is a leading Japanese insurer using real-time intent detection for renewals. These strategies are transforming margins by integrating AI as a third delivery tier, alongside traditional methods. I'd be happy to share more of what I'm seeing — would you be interested in a conversation? 
+
+Warm regards,  
+Calanthia
+
+---
+
+## 23. Youssef Hannat
 
 | | |
 |---|---|
@@ -595,26 +811,24 @@ Calanthia
 | **Email** | youssef.hannat@percepta.com |
 
 **Touch 1 — Connection Request**  
-Hi Youssef, congrats on Thomas Monaghan's appointment as President at Percepta. Exciting times with new leadership! I'd love to connect and share insights from my work with BPO leaders.
+Hi Youssef, noticed Percepta's leadership shift with Thomas Monaghan stepping in. Exciting times! Would love to connect.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Youssef. With Thomas Monaghan stepping in at Percepta, it seems like an interesting time for new strategies. I've been spending time with BPO leaders discussing AI's role in operations. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Youssef. Percepta's new leadership with Thomas Monaghan must be setting fresh priorities. I've been spending time with BPO leaders discussing AI innovations in voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights on AI for BPO Leaders
+Subject: Exploring AI Strategies in BPO
 
 Hi Youssef,
 
-Thanks for connecting on LinkedIn. As Percepta navigates new leadership, I've been working closely with BPO leaders like Teleperformance, who are leveraging AI to meet demanding service quality at lower costs. One relevant example is a digital bank in Singapore achieving a 76% promise-to-pay rate in a regulated environment, all without an internal AI team. Similarly, a major Middle East airline saw a 40% labor cost reduction through AI.
-
-I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn! I've been collaborating with BPO leaders like those at Teleperformance, focusing on delivering higher service quality at reduced costs through AI. For example, a major Mexican telco achieved a 99% tagging accuracy with our solution. Similarly, a digital bank in Singapore saw a 76% promise-to-pay rate expansion. The beauty is, you don't need Teleperformance's budget for these results; we bring the same expertise to you. I'd be happy to share more of what I'm seeing—would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 18. Ken Braatz
+## 24. Ken Braatz
 
 | | |
 |---|---|
@@ -631,18 +845,18 @@ Calanthia
 | **LinkedIn** | https://www.linkedin.com/in/ken-braatz-16580438/ |
 | **Email** | ken@supportninja.com |
 
-**Touch 1 — Connection Request**
-Hi Ken, I noticed you led the launch of NinjaAI at SupportNinja. As someone deeply involved in AI strategies, I'd love to connect and share insights. Best, Calanthia
+**Touch 1 — Connection Request**  
+Hi Ken, impressed by your launch of NinjaAI QA at SupportNinja! Let's connect and exchange insights on AI-powered QA and voice operations.
 
-**Touch 2 — LinkedIn Message**
-Great to connect, Ken. I'm impressed by your work on NinjaAI, particularly the QA innovations. I've been spending time with BPO leaders exploring AI's impact on voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
+**Touch 2 — LinkedIn Message**  
+Great to connect, Ken. Your work on NinjaAI QA is truly innovative — reviewing 100% of interactions is no small feat! I'm spending a lot of time with BPO leaders discussing AI's impact on voice ops. Are you going to the CCNG event in Atlanta on Feb 26?
 
-**Touch 3 — Email**
-Subject: Scaling AI in Voice Operations
+**Touch 3 — Email**  
+Subject: Insights on AI in Voice Ops
 
 Hi Ken,
 
-It was great connecting on LinkedIn. Your leadership in launching NinjaAI is inspiring. I've been working closely with BPO leaders like those at Teleperformance on similar challenges, seeing how AI can transform operations. For example, a digital bank in Singapore achieved a 76% promise-to-pay rate by expanding from a pilot to a multi-product solution within a year. Similarly, a Mexican fintech improved collections with tailored tone adaptation strategies.
+Thanks for connecting on LinkedIn. Your leadership in launching NinjaAI QA at SupportNinja is impressive. I've been working closely with BPO leaders like Teleperformance on AI challenges. For example, a digital bank in Singapore scaled from pilot to multi-product within 12 months, achieving a 76% promise-to-pay rate. AI transforms onshore economics — paying $40-50K per seat can be daunting, but AI runs at a fraction.
 
 I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
@@ -651,7 +865,7 @@ Calanthia
 
 ---
 
-## 19. Benjamin Alpert
+## 25. Benjamin Alpert
 
 | | |
 |---|---|
@@ -669,24 +883,24 @@ Calanthia
 | **Email** | balpert@theofficegurus.com |
 
 **Touch 1 — Connection Request**  
-Hi Benjamin, I enjoyed your talk at Customer Connect Expo on balancing AI and human agents. I'd love to connect and share insights from my work with BPO leaders.
+Hi Benjamin, I enjoyed your Customer Connect Expo session on AI & human agents. Would love to connect and share insights from my work with BPO leaders.
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Benjamin. I was impressed by The Office Gurus' GuruAssist AI platform launch. I've been spending time with BPO leaders, exploring AI's role in enhancing CX. Are you going to the CCNG event in Atlanta on Feb 26?
+Great to connect, Benjamin. Your work on GuruAssist AI and the #1 Best Place to Work recognition in El Salvador is impressive. I've been spending a lot of time with BPO leaders discussing AI strategy. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Insights from AI in BPOs
+Subject: Scaling AI in Contact Centers
 
 Hi Benjamin,
 
-Thanks for connecting on LinkedIn. Your work on balancing AI with human agents at The Office Gurus is impressive. I've been working closely with BPO leaders like Teleperformance on similar challenges. For instance, a digital bank in Singapore expanded from a pilot to a multi-product AI offering in just 12 months. AI is becoming a third delivery tier alongside onshore and offshore, providing zero labor cost and infinite scale. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great to connect on LinkedIn. I've been working closely with BPO leaders like Teleperformance to navigate AI-driven transformation. For instance, a digital bank in Singapore saw a 76% promise-to-pay rate using our strategies. AI isn’t just for the big players; it can be a game-changer for mixed delivery models like yours, adding a third tier of zero-labor cost and infinite scale. I'd be happy to share more of what I'm seeing—would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
 
 ---
 
-## 20. Dominic Leide
+## 26. Dominic Leide
 
 | | |
 |---|---|
@@ -704,19 +918,17 @@ Calanthia
 | **Email** | dleide@theofficegurus.com |
 
 **Touch 1 — Connection Request**  
-Hi Dominic, I'll be at the CCNG event in Atlanta on Feb 26. Would love to connect and perhaps chat more about the exciting things happening in BPO and AI. Best, Calanthia
+Hi Dominic, I noticed we'll both be at the CCNG event in Atlanta on Feb 26. I'd love to connect and share insights from my work with BPO leaders. Looking forward to it!
 
 **Touch 2 — LinkedIn Message**  
-Great to connect, Dominic. I'm impressed by The Office Gurus' growth and commitment to excellence. I've been spending a lot of time with BPO leaders discussing AI strategies. Are you planning to attend the CCNG event in Atlanta on Feb 26?
+Great to connect, Dominic. I've been impressed with The Office Gurus' growth and your leadership in contact center solutions. I spend my days with BPO leaders, exploring AI's role in voice operations. Are you going to the CCNG event in Atlanta on Feb 26?
 
 **Touch 3 — Email**  
-Subject: Scaling BPO Excellence with AI Insights
+Subject: Scaling BPO Operations with AI Insights
 
 Hi Dominic,
 
-I’m delighted to connect with you on LinkedIn. Having worked closely with leaders at Teleperformance and other BPO giants, I've seen how AI is transforming our industry. For instance, a major telecom in Mexico achieved a 99% tagging accuracy and 4.7% conversion on telesales upsell with an automated model. You don’t need Teleperformance’s budget to leverage similar expertise — Dyna's team offers scalable solutions for mixed delivery models like yours.
-
-I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+It was great connecting on LinkedIn! I often work with BPO leaders, including Teleperformance, to explore AI's potential in voice operations. The biggest players are using AI to enhance service quality without the hefty budget. For example, a major Mexican telco achieved 99% tagging accuracy with a fully automated model. Similarly, a digital bank in Singapore improved its promise-to-pay rate by 76% in a compliant environment. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,  
 Calanthia
