@@ -172,42 +172,46 @@ Do I have an icebreaker?
 |                           |                                       | for contact centre operations.        | AI voice agents for contact centre    |
 |                           |                                       |                                       | operations.                           |
 +---------------------------+---------------------------------------+---------------------------------------+---------------------------------------+
-| **Value proposition**     | Your clients are demanding            | Clients are writing cost              | Most teams that try to build          |
-|                           | higher quality at lower cost,         | reductions into their next            | outbound AI internally — gluing       |
-|                           | and your competitors are              | contracts. Hitting those numbers      | together ElevenLabs, a dialer,        |
-|                           | beginning to use AI to deliver        | with human-only models is getting     | and some prompting — get to about     |
-|                           | both. The BPOs that move to           | harder every year — rising labour     | 60–80% quality. The last 20%          |
-|                           | full AI autopilot now — not           | costs, 20–30% annual attrition,       | (uptime, multi-language routing,      |
-|                           | copilots or tools, but                | and demand that doesn't flex on       | script optimisation, compliance       |
-|                           | autonomous AI that executes           | your timeline.                        | controls) is where deployments        |
-|                           | entire campaigns — will win           |                                       | fail in production.                   |
-|                           | the next wave of contracts.           | We deploy fully autonomous agents     |                                       |
-|                           |                                       | for outbound and inbound — they       | That's what we've solved. Our         |
-|                           | We deploy AI autopilot for            | detect intent in real time, adapt     | platform, Agent Studio, is            |
-|                           | outbound and inbound                  | their script, and tag outcomes        | purpose-built:                        |
-|                           | operations at 10x the volume          | automatically. You pay per            |                                       |
-|                           | of human teams. Unlike vendors        | outcome — no seat fees, no            | - Cloud, on-prem, or hybrid           |
-|                           | selling tools, we deliver full        | platform licences.                    | - Enterprise-grade uptime with        |
-|                           | autonomous execution with             |                                       |   automatic failover                  |
-|                           | outcome-aligned pricing. You          | We don't just plug in tech. We        | - Low-code agent config with          |
-|                           | pay for results, not seats.           | design scripts, segment workflows     |   version control and rollback        |
-|                           |                                       | (e.g. DPD 30/60/90 with              | - 10+ languages with automatic        |
-|                           |                                       | tone-adapted agents), and             |   detection and routing               |
-|                           |                                       | optimise continuously.                | - Built-in compliance controls,       |
-|                           |                                       |                                       |   content guardrails, audit trails    |
+| **Value proposition**     | Your clients are demanding            | Clients are demanding higher          | Most teams that try to build          |
+|                           | higher service quality at             | service quality at lower cost,        | outbound AI internally — gluing       |
+|                           | lower cost, and the biggest           | and hitting those numbers with        | together ElevenLabs, a dialer,        |
+|                           | BPOs are beginning to use AI          | human-only models is getting          | and some prompting — get to about     |
+|                           | to deliver both.                      | harder every year — rising            | 60–80% quality. The last 20%          |
+|                           |                                       | labour costs, 20–30% annual           | (uptime, multi-language routing,      |
+|                           | Don't have Teleperformance's          | attrition, and demand that            | script optimisation, compliance       |
+|                           | budget and internal AI team?          | doesn't flex on your timeline.        | controls) is where deployments        |
+|                           | That's exactly why we exist.          |                                       | fail in production.                   |
+|                           | We bring the same                     | Teleperformance can throw             |                                       |
+|                           | Teleperformance-proven team           | $185M at building AI internally.      | That's what we've solved. Our         |
+|                           | and expertise to you —                | You don't have to. We bring           | platform is purpose-built for         |
+|                           | fully automated AI agents             | the same Teleperformance-proven       | end-to-end voice automation:          |
+|                           | for outbound and inbound              | team and expertise to you —           |                                       |
+|                           | that operate 24/7, allowing           | fully automated agents for            | - Cloud, on-prem, or SaaS            |
+|                           | you to scale on demand                | outbound and inbound that detect      | - Enterprise-grade uptime with        |
+|                           | without headcount. Every              | intent, adapt scripts, and tag        |   automatic failover                  |
+|                           | call tracked, every                   | outcomes automatically. Every         | - Low-code agent config with          |
+|                           | conversion measured, every            | call tracked, every result tied       |   version control and rollback        |
+|                           | result tied directly to               | to revenue. You pay for results.      | - 10+ languages with automatic        |
+|                           | revenue.                              |                                       |   detection and routing               |
+|                           |                                       | We design bespoke scripts,            | - Built-in compliance controls,       |
+|                           |                                       | segment workflows (e.g. DPD           |   content guardrails, audit trails    |
+|                           |                                       | 30/60/90 with tone-adapted            | - Scales from pilot to production     |
+|                           |                                       | agents), and continuously             |   without re-architecting             |
+|                           |                                       | monitor and optimise.                 |                                       |
+|                           |                                       |                                       |                                       |
 |                           |                                       | [SWAP IN DELIVERY-MODEL LINE          |                                       |
 |                           |                                       | — see Section 5]                      |                                       |
 +---------------------------+---------------------------------------+---------------------------------------+---------------------------------------+
-| **Proof points**          | We've done this at enterprise         | A few recent results:                 | We run voice agents at scale for      |
-|                           | scale with Teleperformance            |                                       | Teleperformance, major telecoms,      |
-|                           | and major telecoms across             | - 10K+ daily outbound calls,          | and digital banks across three        |
-|                           | three continents. Happy to            |   99% tagging accuracy (telco)        | continents.                           |
-|                           | share what we're learning.            | - 76% promise-to-pay rate on          |                                       |
-|                           |                                       |   collections (digital bank)          |                                       |
-|                           |                                       | - 4.7% conversion on telesales        |                                       |
-|                           |                                       |   upsell (20K records)                |                                       |
-|                           |                                       | - 40% labour cost reduction on        |                                       |
-|                           |                                       |   inbound bookings (airline)          |                                       |
+| **Proof points**          | We deploy the same enterprise         | A few recent results:                 | We deploy the same enterprise-        |
+|                           | AI solutions used by                  |                                       | grade platform used by                |
+|                           | Teleperformance, Toyota,              | - 10K+ daily outbound calls,          | Teleperformance, major telecoms,      |
+|                           | major telecoms, and consumer          |   99% tagging accuracy (telco)        | global insurers, and consumer         |
+|                           | giants — across telecom,              | - 76% promise-to-pay rate on          | brands — across three continents.     |
+|                           | travel, insurance, and more.          |   collections (digital bank)          |                                       |
+|                           | One AI partner covering your          | - 4.7% conversion on telesales        | Whether your clients are in           |
+|                           | clients' industries. Happy to         |   upsell (20K records)                | telecom, travel, insurance, or        |
+|                           | share what we're learning.            | - 40% labour cost reduction on        | other sectors, we have proven         |
+|                           |                                       |   inbound bookings (airline)          | deployments in each.                  |
 +---------------------------+---------------------------------------+---------------------------------------+---------------------------------------+
 | **Call to action**        | Would you be open to a                | Would a 20-minute call make           | I'd value your perspective on         |
 |                           | 20-minute call?                       | sense to walk through how this        | what matters most for [Company].      |
@@ -331,8 +335,9 @@ Check the account's delivery footprint. Swap the right line into the Ops/Finance
 +---------------------------------------+---------------------------------------+
 | **Do**                                | **Don't**                             |
 +=======================================+=======================================+
-| Lead with **AI autopilot**            | Don't say "copilot" or "agent         |
-|                                       | assist" — we do full autopilot        |
+| Lead with **fully automated           | Don't say "copilot" or "agent         |
+| voice AI**                            | assist" — we do true end-to-end       |
+|                                       | voice automation                      |
 +---------------------------------------+---------------------------------------+
 | Mention both outbound and inbound,    | Don't lead with product features      |
 | emphasise outbound                    | or a demo offer                       |
@@ -340,8 +345,9 @@ Check the account's delivery footprint. Swap the right line into the Ops/Finance
 | Talk margin and EBITDA directly       | Don't send the same message to        |
 | with COO/CFO                          | all three personas                    |
 +---------------------------------------+---------------------------------------+
-| Reference Teleperformance early       | Don't use "early access" framing      |
-| for credibility                       | (PH positioning, not for US)          |
+| Reference enterprise clients:         | Don't use "early access" framing      |
+| Teleperformance, Toyota, Pizza        | (PH positioning, not for US)          |
+| Hut (written); HSBC (verbal only)     |                                       |
 +---------------------------------------+---------------------------------------+
 | Use events as conversation starters   | Don't position as a startup           |
 +---------------------------------------+---------------------------------------+
