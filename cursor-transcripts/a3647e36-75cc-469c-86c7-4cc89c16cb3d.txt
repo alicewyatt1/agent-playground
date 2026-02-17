@@ -13604,3 +13604,222 @@ print('Done')
   description: Remove LinkedIn connection field from all cards
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/personalised-outreach.md -f markdown-yaml_metadata_block -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && git add -A && git commit -m "Remove LinkedIn connection field from context cards (covered in outreach hooks)" && git push && echo "Done"
+  description: Convert, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — LinkedIn connection field removed from all 28 context cards. `~/Downloads/Personalised-Outreach.docx` updated.
+
+user:
+<user_query>
+First of all, the formatting of the document is really not good. Secondly, I really don't like the messaging that you've written. It should really be, not, hi, I see you're speaking at this event, touch one, and then touch two, hi, I see you're speaking at another event. These messages should flow from one to another. Also, don't just name drop random contacts. Just be smarter in the way that you're doing this messaging. Look at what they are speaking about at these conferences and say, like, given you're speaking on this topic at this conference, I'm actually doing speak, like, know a lot about this topic from speaking to BPOs. We'd love to compare notes. I'll be at the event. That kind of thing. Just be smart about it. Otherwise, this is going to take me hours and I should just do it myself. Like, are you actually well qualified to do a messaging outreach, or should I use a different tool? Or should we use a different model? We're currently using Opus 4.6. 
+</user_query>
+
+assistant:
+[Tool call] SwitchMode
+  target_mode_id: plan
+  explanation: The messaging quality hasn't been meeting your standards despite multiple iterations. Before doing another pass, I want to step back and align on exactly what good looks like — then we can decide whether to use a different approach (different model, manual examples first, etc.) rather than keep iterating blindly.
+
+[Tool result] SwitchMode
+
+assistant:
+You're right to be frustrated. Let me be honest about what's going wrong and what we should do.
+
+**The problem:** I've been generating messaging by sending each prospect to GPT-4o independently with a long prompt. Each call produces generic, disconnected messages because the model doesn't have your voice or real context about how these touches should flow together. No amount of prompt engineering is going to fix that — the model writes like a model, not like Calanthia.
+
+**What I think we should do:**
+
+1. **You write 2-3 examples by hand** — pick your warmest prospects (Jim Iyoob, Greg Alcorn, Benjamin Alpert) and write what YOU think Touch 1, 2, 3 should actually say. This gives me your real voice and shows how the touches flow.
+
+2. **I use those as few-shot examples** to generate the rest, with a much better model (Claude over GPT-4o — Claude is significantly better at tone matching and following nuanced instructions).
+
+3. **Better formatting** — I'll fix the .docx output so the context card and messaging are clearly separated and scannable.
+
+Alternatively, if you'd rather just do it yourself at this point, I can give you a clean spreadsheet with just the context cards (company, title, persona, delivery footprint, outreach hooks) and you and Calanthia write the messaging directly. That might be faster than another round of AI generation that doesn't hit the mark.
+
+What would you prefer?
+
+user:
+<user_query>
+Let's try better formatting to make it really clear, maybe even in a table format, just like proper clarity and easy to use then i'll have a go at reworking the messaging
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 8
+  limit: 35
+
+[Tool result] Read
+
+assistant:
+Let me restructure the whole document into a clean table format — one table per prospect with the context card on top and messaging rows below.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/reformat-tables.ts
+  contents: /**
+ * Reformat the outreach doc into clean grid tables.
+ * Each prospect gets one table with context + messaging.
+ */
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const filePath = path.join(__dirname, "..", "data", "personalised-outreach.md");
+const content = fs.readFileSync(filePath, "utf-8");
+
+const parts = content.split(/(?=^## \d+\.)/m);
+const header = parts[0];
+const sections = parts.slice(1);
+
+const output: string[] = [
+  "# Personalised Outreach — Cohort 1\n\n",
+  "> 28 prospects, ranked by outreach warmth (warmest first)\n\n",
+  "---\n\n",
+];
+
+for (const section of sections) {
+  const lines = section.split("\n");
+
+  // Extract heading
+  const nameMatch = lines[0].match(/^## (\d+)\.\s+(.+)/);
+  if (!nameMatch) continue;
+  const num = nameMatch[1];
+  const name = nameMatch[2].trim();
+
+  // Extract fields from table
+  const getField = (label: string): string => {
+    const line = lines.find(l => l.includes(`**${label}**`));
+    if (!line) return "";
+    const match = line.match(/\*\*[^*]+\*\*\s*\|\s*(.*?)\s*\|?\s*$/);
+    return match ? match[1].trim() : "";
+  };
+
+  const company = getField("Company");
+  const title = getField("Title");
+  const persona = getField("Persona");
+  const delivery = getField("Delivery footprint");
+  const hooks = getField("Outreach hooks");
+  const linkedin = getField("LinkedIn");
+  const email = getField("Email");
+
+  // Extract messaging
+  const getText = (marker: string, endMarkers: string[]): string => {
+    const startIdx = lines.findIndex(l => l.includes(marker));
+    if (startIdx < 0) return "";
+    const textLines: string[] = [];
+    for (let i = startIdx + 1; i < lines.length; i++) {
+      if (endMarkers.some(m => lines[i].includes(m))) break;
+      if (lines[i] === "---") break;
+      textLines.push(lines[i]);
+    }
+    return textLines.join("\n").trim();
+  };
+
+  const touch1 = getText("Touch 1", ["Touch 2", "Touch 3"]);
+  const touch2 = getText("Touch 2", ["Touch 3"]);
+  const touch3 = getText("Touch 3", ["---"]);
+
+  // Clean up hooks — split numbered items onto separate lines
+  const hooksCleaned = hooks
+    .replace(/\s*(\d+)\.\s*\*\*/g, "\n$1. **")
+    .trim();
+
+  // Build the section
+  output.push(`## ${num}. ${name}\n\n`);
+
+  // Context card as a simple key-value table
+  output.push(`| | |\n`);
+  output.push(`|---|---|\n`);
+  output.push(`| **Company** | ${company} |\n`);
+  output.push(`| **Title** | ${title} |\n`);
+  output.push(`| **Persona** | ${persona} |\n`);
+  output.push(`| **Delivery** | ${delivery} |\n`);
+  output.push(`| **LinkedIn** | ${linkedin} |\n`);
+  output.push(`| **Email** | ${email} |\n`);
+  output.push(`\n`);
+
+  // Outreach hooks as a separate block
+  output.push(`**Outreach hooks:**\n\n`);
+  output.push(`${hooksCleaned}\n\n`);
+
+  // Messaging as a 3-column table
+  output.push(`| Touch | Channel | Message |\n`);
+  output.push(`|---|---|---|\n`);
+
+  // Touch 1
+  const t1Clean = touch1.replace(/\n/g, " ").trim();
+  output.push(`| **1** | LinkedIn connect | ${t1Clean} |\n`);
+
+  // Touch 2
+  const t2Clean = touch2
+    .replace(/^Hi /, "")
+    .replace(/\nWarm regards,?\s*\n?Calanthia\s*$/i, "")
+    .replace(/\nBest,?\s*\n?Calanthia\s*$/i, "")
+    .replace(/\nLooking forward.*\n?Calanthia\s*$/i, "")
+    .replace(/\n/g, " ")
+    .trim();
+  output.push(`| **2** | LinkedIn message | ${t2Clean} |\n`);
+
+  // Touch 3
+  const t3Lines = touch3.split("\n");
+  const subjectLine = t3Lines.find(l => l.startsWith("Subject:"))?.replace("Subject: ", "").trim() || "";
+  const t3Body = t3Lines
+    .filter(l => !l.startsWith("Subject:") && !l.startsWith("Hi ") || t3Lines.indexOf(l) > 2)
+    .join(" ")
+    .replace(/\s*Warm regards,?\s*Calanthia\s*$/i, "")
+    .replace(/\s*Best,?\s*Calanthia\s*$/i, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  output.push(`| **3** | Email: "${subjectLine}" | ${t3Body} |\n`);
+
+  output.push(`\n---\n\n`);
+}
+
+fs.writeFileSync(filePath, output.join(""), "utf-8");
+console.log(`Reformatted ${sections.length} prospects into table format`);
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/reformat-tables.ts
+  description: Reformat into clean table layout
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 1
+  limit: 50
+
+[Tool result] Read
+
+assistant:
+The Touch 2 has some leftover formatting artifacts. Let me clean those up.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+content = open('data/personalised-outreach.md', 'r').read()
+# Clean up Touch 2 artifacts - remove "**Touch 2 — LinkedIn Message**" from inside table cells
+content = content.replace("**Touch 2 — LinkedIn Message**  ", "")
+content = content.replace("**Touch 2 — LinkedIn Message** ", "")
+content = content.replace("**Touch 2 — LinkedIn Message**", "")
+# Remove "Hi [Name]," from start of Touch 2 messages in table (already clear who it's to)
+# Remove leftover "Already connected on LinkedIn — skip to Touch 2." from Touch 1 cells  
+content = content.replace("Already connected on LinkedIn — skip to Touch 2.", "Already connected — skip to Touch 2")
+# Clean up double spaces
+import re
+content = re.sub(r'  +', ' ', content)
+open('data/personalised-outreach.md', 'w').write(content)
+print("Cleaned")
+PYEOF
+  description: Clean up table formatting artifacts
+
+[Tool result] Shell
