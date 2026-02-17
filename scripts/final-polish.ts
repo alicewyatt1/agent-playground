@@ -101,16 +101,26 @@ ${isFirstDegree ? "NOTE: Calanthia is ALREADY CONNECTED to this person on Linked
 OUTREACH HOOKS (ranked by strength, use #1 first):
 ${hooks}
 
+WHO IS CALANTHIA (use her credentials to build credibility):
+- Serial entrepreneur. Raised $20M as a founder. Helped scale a Stripe-backed fintech to $130M and three exits.
+- Former PayPal Ventures investor — invested $250M in global fintech. Former HSBC Investment Banking.
+- Georgetown University, Magna Cum Laude. Featured in Forbes, CNBC, NYSE, NASDAQ TV.
+- Spoken at nearly 100 events across US, Asia, Europe. Currently building AI agents for contact centres.
+- She's NOT a salesperson. She's a serious operator who has been in rooms with Teleperformance, Toyota, and major enterprise BPOs.
+- You don't need to mention ALL credentials — pick 1-2 that are most relevant to this person and weave them naturally.
+
 CRITICAL TONE RULES:
+- Build FOMO. Use phrases like: "Since I'm meeting with a number of your peers at [event]..." / "Several BPO leaders have been reaching out about their outbound AI strategy — I thought you might also be interested" / "I thought you might be interested in hearing what your peers are doing to evolve"
 - Calanthia sounds like a peer sharing insights, NOT a vendor pitching
-- NEVER say: "I hope this message finds you well", "explore synergies", "leverage AI", "navigate challenges", "I was thrilled", "I'd love to explore how we might work together", "our solutions"
+- NEVER say: "I hope this message finds you well", "explore synergies", "leverage AI", "navigate challenges", "I was thrilled", "I'd love to explore how we might work together", "our solutions", "explore opportunities", "I recently came across"
 - NEVER use two case studies in one email — pick ONE or just reference Teleperformance
-- Every message should feel like it could ONLY have been sent to this one person
-- Touch 1 and 2: NO mention of Dyna, AI products, or anything that sounds like a pitch
-- Touch 3: Position as sharing what she's learning, not selling. Frame insights around outbound operations (telesales, collections, campaigns). What the persona cares about:
-  - Executive Sponsor: competitive positioning, scale, Teleperformance credibility. Can just reference Teleperformance without a specific case study.
-  - Operations & Finance Leader: ONE proof point (outbound volume, conversion, cost impact). Focus on what they'd measure.
-  - Technology Leader: Be the AI leader. Enterprise-grade, no internal AI team needed, deployed by experts. Battle-tested.
+- Every message should feel like it could ONLY have been sent to this one person. No corporate chat.
+- Touch 1: Under 300 chars. "Hey [first name], I spend my days working with BPO leaders on their AI strategy. Great to connect" is the baseline energy. Keep it that simple.
+- Touch 2: NO pitch. Build rapport. FOMO. "I'm meeting with BPO leaders at [event] — will you also be there?" / "[Company] has a great reputation for [X] — I thought you'd be interested in hearing what your peers are doing to evolve." 3-5 sentences max.
+- Touch 3: Frame as sharing what she's learning. Focus on OUTBOUND AUTOPILOT (telesales, campaigns, outbound calls). Only mention collections if the company explicitly does collections (these companies do collections: Unity Communications, Helpware, Etech, DATAMARK, The Office Gurus, Valor Global). Everyone else = outbound telesales focus.
+  - Executive Sponsor: competitive positioning, FOMO, "the biggest BPOs are moving." Teleperformance hook.
+  - Operations & Finance Leader: ONE outbound proof point (10K daily calls, 99% accuracy, 4.7% conversion). FOMO. "Several operators I work with are seeing..."
+  - Technology Leader: Be the AI leader. Enterprise-grade, battle-tested. "I work with Teleperformance's team on this."
 - CTA: Use this specific CTA at the end of Touch 3: "${cta}"
 - Sign off: "Warm regards, Calanthia" (Touch 2 and 3)
 
