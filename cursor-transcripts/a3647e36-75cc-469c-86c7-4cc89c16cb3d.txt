@@ -11550,3 +11550,223 @@ assistant:
   block_until_ms: 120000
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/personalised-outreach.md -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && git add -A && git commit -m "$(cat <<'EOF'
+Rank prospects by outreach warmth, fix 1st-degree messaging
+
+Reordered all 27 prospects warmest-first (Tier A→D). Fixed messaging for 7 Calanthia 1st-degree connections: Touch 1 now says "already connected — skip to Touch 2", Touch 2 is a warm reconnection leading with strongest hook.
+EOF
+)" && git push && echo "Done"
+  description: Convert, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.docx`** is now ranked and messaging-aligned.
+
+**What changed:**
+
+**Ranked warmest first:**
+
+| Rank | Tier | Name | Why warm |
+|---|---|---|---|
+| 1 | A | Jim Iyoob | Confirmed speaker + Calanthia 1st degree |
+| 2 | A | Benjamin Alpert | Spoke at Customer Connect Expo + 2nd degree |
+| 3 | A | Matt Rocco | Company at CCW LV + 2nd degree |
+| 4 | A | David Kreiss | Calanthia 1st degree + Caribbean expansion |
+| 5 | A | Greg Alcorn | Calanthia 1st degree + ApSeed |
+| 6 | A | Bill Randag | Calanthia 1st degree + DATAMARK events |
+| 7 | A | Ali Karim | Confirmed speaker at Frost & Sullivan |
+| 8 | A | Liliana Lopez | Co-led CCW Orlando workshop |
+| 9 | A | Nanette Harrell | Calanthia 1st degree + Clutch Top 100 |
+| 10-11 | B | Dominic Leide, Kenneth Loggins | Calanthia 1st degree |
+| 12 | B | Brian Flaherty | Speaking at Mortgage AI conference |
+| ... | C-D | Rest | Insights or location only |
+
+**Fixed messaging for the 7 Calanthia 1st-degree connections:**
+- **Touch 1** now says "Already connected on LinkedIn — skip to Touch 2" (no point sending a connection request to someone you're already connected to)
+- **Touch 2** is a warm reconnection leading with the strongest hook (speaking engagement, expansion news, awards)
+- **Touch 3** still leads with the strongest personalisation point before the Teleperformance hook
+
+user:
+<user_query>
+smart. thank you!!!
+</user_query>
+
+assistant:
+You're welcome! To recap what you now have ready for Calanthia:
+
+1. **US BPO Persona Map** (finalised, in Google Docs) — the approved ICP and three personas
+2. **Messaging Playbook** (`Messaging-Playbook.docx`) — templates, delivery-model swap-in lines, objection handling, case studies, do's/don'ts
+3. **Personalised Outreach** (`Personalised-Outreach.docx`) — 27 prospects ranked warmest-first, with context cards, outreach hooks, and Touch 1/2/3 ready to go
+
+Calanthia can start at the top of the outreach doc and work down. The warmest ones (Jim Iyoob, Benjamin Alpert, David Kreiss, Greg Alcorn, Bill Randag) she's already connected to or they're confirmed speakers — those should be the easiest conversations to start.
+
+Let me know when you're ready for the next phase!
+
+user:
+<user_query>
+I don't think we need the messaging playbook if you've got the personalised outreach. What do you think? Isn't that what the personalised outreach is for? Otherwise, what's the point in the messaging playbook? 
+</user_query>
+
+assistant:
+You're mostly right. The personalised outreach doc is what Calanthia uses day-to-day — it has the actual messages she's sending to actual people. That's the working document.
+
+The playbook is useful for two things the personalised outreach *doesn't* cover:
+
+1. **Objection handling** — when someone replies and says "we're already doing AI" or "send me some information," the personalised outreach doesn't tell her how to respond. The playbook has the 8 common objections with responses.
+
+2. **New prospects** — when you add someone to the list who isn't in the 27, the playbook has the templates and decision trees so Calanthia (or you) can write messaging for them without needing to run the script again.
+
+If you think Calanthia won't need those (or you'll just handle new prospects by running the script again), then you're right — ditch the playbook and keep things simple. One document is always better than two.
+
+Alternatively, I could just append the objection handling table to the bottom of the personalised outreach doc as a quick-reference appendix. Best of both worlds — one document, everything she needs.
+
+What do you prefer?
+
+user:
+<user_query>
+Nearsol — Active QSR client; case study with "#1 Pizza Delivery Restaurant" (global fast service food delivery)
+Hugo Inc — Food & Beverage clients; content references restaurants, pizza, drive-thru
+Quantanite — Dedicated "Food Ordering & Delivery" vertical; "restaurant to doorstep"
+American Customer Care — Food & Beverage listed as a dedicated industry vertical
+InfoCision — Explicitly lists "Restaurants" and "Food & Beverages" as industries served
+
+We have a couple of case studies coming out with QSRs, for example, Pizza Hut Thailand. I think, well, if there are any other any prospects in our top accounts that are in one of these five accounts, if so, maybe we could add something into either the icebreaker or the messaging that says, like, given your focus on or given the use of QSR, I thought this case study might be interesting. 
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+
+qsr_companies = ['Nearsol', 'Hugo', 'Quantanite', 'American Customer Care', 'InfoCision', 'Infocision']
+with open('/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv', 'r') as f:
+    for row in csv.DictReader(f):
+        fn = row.get('First Name','').strip()
+        ln = row.get('Last Name','').strip()
+        company = row.get('Company Name','').strip()
+        title = row.get('Job Title','').strip()
+        loc = row.get('Location','').strip()
+        active = row.get('Active on LinkedIn (last 90 days)','').strip()
+        icebreaker = row.get('Icebreaker Insight','').strip()[:100]
+        linkedin = row.get('LinkedIn Profile','').strip()
+        if fn and ln and any(q.lower() in company.lower() for q in qsr_companies):
+            se_states = ['georgia','atlanta','florida','north carolina','south carolina','tennessee','alabama','virginia','louisiana']
+            is_se = any(s in loc.lower() for s in se_states)
+            is_active = active in ('1','True','Y','Yes','TRUE')
+            tier1 = 'TIER 1' if (is_active or is_se) else 'Tier 2'
+            print(f'{fn} {ln} | {title} | {company} | {loc} | Active: {active} | {tier1}')
+            if icebreaker:
+                print(f'  Icebreaker: {icebreaker}')
+            print()
+"
+  description: Find contacts at QSR-focused BPOs
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Now let me check which of these are already in the personalised outreach document.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && for name in "Aaron Brooks" "Suzanne Eberhard" "Craig Taylor" "Emily Slota" "Gabriel Grover" "Victor Pereda"; do grep -q "$name" data/personalised-outreach.md && echo "IN OUTREACH: $name" || echo "NOT IN OUTREACH: $name"; done
+  description: Check which QSR contacts are in outreach
+
+[Tool result] Shell
+
+assistant:
+None of them are in the current outreach. Here's the picture:
+
+**Tier 1 (qualify for priority outreach):**
+
+| Person | Title | Company | QSR angle | Why Tier 1 |
+|---|---|---|---|---|
+| **Aaron Brooks** | VP Call Center Technologies | InfoCision | Restaurants & Food & Beverages as named verticals | Active on LinkedIn |
+| **Suzanne Eberhard** | VP Business Operations | InfoCision | Same company | Active on LinkedIn |
+
+**Tier 2 (not active LinkedIn, not Southeast):**
+
+| Person | Title | Company | QSR angle |
+|---|---|---|---|
+| Emily Slota | President | Hugo Technologies | Food & Beverage clients |
+| Gabriel Grover | VP Customer Solutions | Quantanite | Dedicated Food Ordering & Delivery vertical |
+| Victor Pereda | CEO | Nearsol | Active QSR client, "#1 Pizza Delivery" case study |
+| + 12 more InfoCision people | Various | InfoCision | Various |
+
+**Note on Suzanne Eberhard:** Her icebreaker says she's "on the lookout for her next professional home" — she may be leaving InfoCision. Worth checking before adding.
+
+**My suggestion:** Add **Aaron Brooks** (VP Call Center Technologies, InfoCision) — he's a Technology Leader persona, active on LinkedIn, and InfoCision explicitly serves restaurants. The Pizza Hut Thailand case study would be a natural hook for his Touch 3. 
+
+Suzanne Eberhard is risky if she's leaving. The Tier 2 people (Hugo, Quantanite, Nearsol) don't qualify for priority outreach but could be added to a future cohort.
+
+Want me to add Aaron Brooks with the QSR/Pizza Hut angle?
+
+user:
+<user_query>
+yes find add Aaron
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+with open('/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv', 'r') as f:
+    for row in csv.DictReader(f):
+        if row.get('First Name','').strip() == 'Aaron' and row.get('Last Name','').strip() == 'Brooks':
+            for k,v in row.items():
+                print(f'{k}: {v}')
+"
+  description: Get Aaron Brooks full data
+
+[Tool result] Shell
+
+assistant:
+[Tool call] user-perplexity-ask-perplexity_ask
+  messages: [{"role":"user","content":"Who is Aaron Brooks, Vice President Call Center Technologies at InfoCision Management Corporation? What is his background? Any recent LinkedIn posts, news, or speaking engagements? InfoCision is based in Akron, Ohio."}]
+
+[Tool result] user-perplexity-ask-perplexity_ask
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && cat >> data/personalised-outreach.md << 'ENDOFFILE'
+
+## 28. Aaron Brooks
+
+| | |
+|---|---|
+| **Company** | InfoCision Management Corporation |
+| **Title** | Vice President, Call Center Technologies |
+| **Persona** | Technology Leader |
+| **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
+| **LinkedIn connection** | None |
+| **Outreach hooks** | 1. **Insight:** 24-year tenure at InfoCision — rose from IT Manager to VP. Focuses on transforming call center tech for scalability and productivity. InfoCision explicitly serves Restaurants & Food & Beverages verticals — strong match for Dyna's Pizza Hut Thailand case study. 2. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
+| **LinkedIn** | https://www.linkedin.com/in/aaron-brooks-5377097/ |
+| **Email** | aaron.brooks@infocision.com |
+
+**Touch 1 — Connection Request**
+Hi Aaron, 24 years at InfoCision is impressive — that kind of tenure in call center technology says a lot. Would love to connect and compare notes on AI in voice operations.
+
+**Touch 2 — LinkedIn Message**
+Great to connect, Aaron. Your long tenure leading call center tech at InfoCision is rare and says a lot about the impact you've had. I've been spending time with BPO technology leaders exploring how AI is changing voice operations — particularly in verticals like QSR and restaurants. Would love to share what I'm learning if that's useful.
+
+**Touch 3 — Email**
+Subject: AI for Restaurant & QSR Voice Operations
+
+Hi Aaron,
+
+Great connecting on LinkedIn. Given InfoCision's work in the restaurant and food & beverage space, I thought this might resonate. We've just completed a pilot with Pizza Hut in Thailand — fully automated AI voice agents handling inbound food ordering, end to end. High conversion (callers are ready to order), per-successful-order pricing, multi-language support.
+
+For a technology leader, the architecture is worth a look: enterprise-grade AI designed and deployed by dedicated industry experts — SaaS, private cloud, or on-prem. No internal AI team needed. Multi-agent orchestration across voice and text, battle-tested by Teleperformance, Toyota, and major telecoms.
+
+I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,
+Calanthia
+
+---
+ENDOFFILE
+echo "Done"
+  description: Add Aaron Brooks to outreach
+
+[Tool result] Shell

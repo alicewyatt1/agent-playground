@@ -1,7 +1,7 @@
 # Personalised Outreach — Cohort 1
 
 > Generated: 17 February 2026
-> Total prospects: 27 — ranked by outreach warmth (warmest first)
+> Total prospects: 28 — ranked by outreach warmth (warmest first)
 
 ---
 
@@ -895,6 +895,41 @@ Hi Cathy,
 Great connecting on LinkedIn. In my work with BPO leaders like Teleperformance, I've been seeing how fully automated AI agents are transforming the economics of financial services operations. A digital bank in Singapore achieved a 76% promise-to-pay rate on collections using AI — fully compliant in a regulated environment, expanded from pilot to multi-product in 12 months.
 
 For mixed delivery operations like Harte Hanks, AI becomes a third delivery tier alongside onshore and offshore — zero labour cost, infinite scale, per-outcome pricing. Don't have Teleperformance's budget? We bring the same proven team to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,
+Calanthia
+
+---
+
+## 28. Aaron Brooks
+
+| | |
+|---|---|
+| **Company** | InfoCision Management Corporation |
+| **Title** | Vice President, Call Center Technologies |
+| **Persona** | Technology Leader |
+| **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
+| **LinkedIn connection** | None |
+| **Outreach hooks** | 1. **Insight:** 24-year tenure at InfoCision — rose from IT Manager to VP. Focuses on transforming call center tech for scalability and productivity. InfoCision explicitly serves Restaurants & Food & Beverages verticals — strong match for Dyna's Pizza Hut Thailand case study. 2. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
+| **LinkedIn** | https://www.linkedin.com/in/aaron-brooks-5377097/ |
+| **Email** | aaron.brooks@infocision.com |
+
+**Touch 1 — Connection Request**
+Hi Aaron, 24 years at InfoCision is impressive — that kind of tenure in call center technology says a lot. Would love to connect and compare notes on AI in voice operations.
+
+**Touch 2 — LinkedIn Message**
+Great to connect, Aaron. Your long tenure leading call center tech at InfoCision is rare and says a lot about the impact you've had. I've been spending time with BPO technology leaders exploring how AI is changing voice operations — particularly in verticals like QSR and restaurants. Would love to share what I'm learning if that's useful.
+
+**Touch 3 — Email**
+Subject: AI for Restaurant & QSR Voice Operations
+
+Hi Aaron,
+
+Great connecting on LinkedIn. Given InfoCision's work in the restaurant and food & beverage space, I thought this might resonate. We've just completed a pilot with Pizza Hut in Thailand — fully automated AI voice agents handling inbound food ordering, end to end. High conversion (callers are ready to order), per-successful-order pricing, multi-language support.
+
+For a technology leader, the architecture is worth a look: enterprise-grade AI designed and deployed by dedicated industry experts — SaaS, private cloud, or on-prem. No internal AI team needed. Multi-agent orchestration across voice and text, battle-tested by Teleperformance, Toyota, and major telecoms.
+
+I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
 
 Warm regards,
 Calanthia
