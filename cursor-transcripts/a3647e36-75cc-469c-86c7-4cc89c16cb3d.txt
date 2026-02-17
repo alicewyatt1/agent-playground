@@ -13823,3 +13823,132 @@ PYEOF
   description: Clean up table formatting artifacts
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/personalised-outreach.md -f markdown-yaml_metadata_block -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && git add -A && git commit -m "Reformat outreach doc: clean tables, hooks as numbered list, messaging in 3-col table" && git push && echo "Done"
+  description: Convert, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.docx`** is reformatted. Each prospect now looks like:
+
+**Context card** (simple key-value table):
+
+| | |
+|---|---|
+| **Company** | Etech Global Services |
+| **Title** | President, ETSLabs |
+| **Persona** | Executive Sponsor |
+| **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
+| **LinkedIn** | [url] |
+| **Email** | [email] |
+
+**Outreach hooks** (numbered list, ranked):
+
+1. **Speaking/event:** Confirmed speaker at Conversational AI Summit (Apr 9)
+2. **Mutual connection:** Calanthia 1st degree
+3. **Insight:** Also speaking at CCW LV and Call Center Campus
+4. **Near event:** Enterprise Connect (Mar 10-12)
+
+**Messaging** (3-column table):
+
+| Touch | Channel | Message |
+|---|---|---|
+| **1** | LinkedIn connect | [message] |
+| **2** | LinkedIn message | [message] |
+| **3** | Email: "[subject line]" | [message body] |
+
+The messaging is still the same content — now it's your turn to rework it with the right tone. The structure should make it much easier to scan and edit.
+
+user:
+<user_query>
+Why don't you try sharing it with me in markdown, so that I can easily upload it to Google Docs and it's really easy for me to edit and use the table function, etc. 
+</user_query>
+
+assistant:
+The markdown file is already at `data/personalised-outreach.md` in the repo. Let me copy it to your Downloads so you can upload it directly to Google Docs.
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md /Users/alicewyatt/Downloads/Personalised-Outreach.md && echo "Done — $(wc -l < /Users/alicewyatt/Downloads/Personalised-Outreach.md) lines"
+  description: Copy markdown to Downloads
+
+[Tool result] Shell
+
+assistant:
+**`~/Downloads/Personalised-Outreach.md`** is ready. 
+
+To get it into Google Docs with tables intact: open Google Docs, go to **File → Open → Upload**, and drop the .md file in. Google Docs will render the markdown tables as actual tables you can edit directly.
+
+Alternatively if Google Docs doesn't render the tables well from .md, you can paste it into [StackEdit](https://stackedit.io/) or [Dillinger](https://dillinger.io/) first to preview, then copy-paste into Google Docs with formatting.
+
+user:
+<user_query>
+Okay, that's a much better idea. Okay, could you also, is it possible for you to, when people are speakers, tell me what topic they're speaking on and help weave that into the messaging? 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to find the specific topics that speakers are presenting on at their conferences, and weave that into the messaging. Let me check who the confirmed speakers are and what topics they're covering.
+
+From our earlier research:
+1. **Jim Iyoob** — Speaker at Conversational AI Summit (Apr 9) — need to find his topic
+2. **Ali Karim** — Speaker at Frost & Sullivan East (Apr 12-15) — presenting "AI That Works: Inside the Customer and Employee Experience" + facilitating roundtable "Cut Through the CX Hype: Pick the Right Tech, Every Time"
+3. **Benjamin Alpert** — Spoke at Customer Connect Expo (Apr 2025) — "Balancing AI and Human Agents — The Future of Contact Centers"
+
+
+4. **Brian Flaherty** — Speaking at Mortgage AI conference (Oct 2026) — "Staff vs AI vs Virtual Assistants: How You Can Manage The AI/Human Balance"
+5. **Liliana Lopez** — Co-led workshop at CCW Orlando (Jan 2026) — AI Maturity Workshop on operationalizing AI, moving from "promising" to "proven"
+
+Now I need to track down Jim Iyoob's topic at the Conversational AI Summit to complete the speaker lineup.
+Let me look up the specific topics for each speaker. I already have some from earlier research — let me fill in the gaps.
+[Tool call] user-perplexity-ask-perplexity_ask
+  messages: [{"role":"user","content":"Jim Iyoob Etech Global Services speaking at Conversational AI & Contact Center Innovation Summit April 2026. What topic is he presenting on? Also what is he presenting at CCW Las Vegas 2026 and Call Center Campus Symposium 2026?"}]
+
+[Tool result] user-perplexity-ask-perplexity_ask
+
+assistant:
+Good. Now let me update the outreach hooks and messaging for each speaker with their specific topics.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+content = open('data/personalised-outreach.md', 'r').read()
+
+# Jim Iyoob — update hooks and messaging with specific topics
+content = content.replace(
+    '1. **Speaking/event:** CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9, 2026).\n2. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Mark Escueta; Alon Waks; +3 others); Calanthia 2nd degree (Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson)\n3. **Insight:** speaking at CCW Las Vegas 2026 (Jun 22-25, workshop) and Call Center Campus Symposium (May 17-20,...\n4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.',
+    '1. **Speaking/event:** CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9). Also keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." Also leading CCW Las Vegas workshop (Jun 23) on turning CX challenges into growth using AI, analytics, and human intelligence.\n2. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Mark Escueta; Alon Waks; +3 others)\n3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) — Calanthia attending.'
+)
+
+# Jim Iyoob — update Touch 2 messaging to reference his actual topic
+content = content.replace(
+    "I saw you're speaking at the Conversational AI Summit in April",
+    "I saw you're keynoting on 'Leadership Readiness in the Age of AI' at the Call Center Campus Symposium"
+)
+
+# Ali Karim — hooks already have the topic ("AI That Works: Inside the Customer and Employee Experience")
+# Just update messaging to reference it
+content = content.replace(
+    "Congrats on your Frost & Sullivan presentation on 'AI That Works.'",
+    "Your Frost & Sullivan presentation on 'AI That Works: Inside the Customer and Employee Experience' looks like a great session."
+)
+
+# Benjamin Alpert — already has topic ("Balancing AI and Human Agents — The Future of Contact Centers")
+# Messaging already references it — good
+
+# Brian Flaherty — already has topic ("Staff vs AI vs Virtual Assistants: How You Can Manage The AI/Human Balance")
+# Messaging already references it — good
+
+# Liliana Lopez — already has topic (AI Maturity Workshop, "promising to proven")
+# Messaging already references it — good
+
+# Matt Rocco — update hooks to reference Etech's specific CCW workshop topic
+content = content.replace(
+    '1. **Speaking/event:** confirmed speaker at the Conversational AI Summit (Apr 9) and Ca.',
+    '1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. Jim Iyoob keynoting Call Center Campus Symposium on "Leadership Readiness in the Age of AI."'
+)
+
+open('data/personalised-outreach.md', 'w').write(content)
+print("Updated speaker topics")
+PYEOF
+  description: Update speaker topics in hooks and messaging
+
+[Tool result] Shell

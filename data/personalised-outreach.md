@@ -17,15 +17,14 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9, 2026).
-2. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Mark Escueta; Alon Waks; +3 others); Calanthia 2nd degree (Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson)
-3. **Insight:** speaking at CCW Las Vegas 2026 (Jun 22-25, workshop) and Call Center Campus Symposium (May 17-20,...
-4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
+1. **Speaking/event:** CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9). Also keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." Also leading CCW Las Vegas workshop (Jun 23) on turning CX challenges into growth using AI, analytics, and human intelligence.
+2. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Mark Escueta; Alon Waks; +3 others)
+3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) — Calanthia attending.
 
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | |
-| **2** | LinkedIn message | Hi Jim, I saw you're speaking at the Conversational AI Summit in April — your perspective on AI in CX is always worth hearing. Given our mutual connections like Mark Escueta and Alon Waks, it seems we move in similar circles. I'm curious, what trends are catching your interest heading into the conference circuit this year? |
+| **2** | LinkedIn message | Hi Jim, I saw you're keynoting on 'Leadership Readiness in the Age of AI' at the Call Center Campus Symposium — your perspective on AI in CX is always worth hearing. Given our mutual connections like Mark Escueta and Alon Waks, it seems we move in similar circles. I'm curious, what trends are catching your interest heading into the conference circuit this year? |
 | **3** | Email: "Insights on Outbound Operations from Teleperformance" | I saw you're speaking at the Conversational AI Summit next month — I'll be at Enterprise Connect and Frost & Sullivan around the same time. I've been spending a lot of time with BPO leaders — including the team at Teleperformance — on what's actually working in outbound voice operations. The gap between the hype and what delivers in production is worth understanding. I'd love to compare notes over coffee if you're open to it. |
 
 ---
@@ -69,7 +68,7 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** confirmed speaker at the Conversational AI Summit (Apr 9) and Ca.
+1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. Jim Iyoob keynoting Call Center Campus Symposium on "Leadership Readiness in the Age of AI."
 2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi)
 3. **Insight:** CEO of Etech Global Services. Etech is confirmed at CCW Las Vegas 2026 (Jun 22-25, Booth #1404) with a workshop. Jim Iyoob (Etech) is a ..
 4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
