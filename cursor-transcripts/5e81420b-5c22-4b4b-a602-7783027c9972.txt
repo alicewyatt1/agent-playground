@@ -1,0 +1,654 @@
+user:
+<user_query>
+https://www.adec-innovations.com
+http://www.americancustomercare.com
+https://www.azpired.com
+https://www.boldrimpact.com
+https://www.buwelo.com
+https://cbecompanies.com
+https://clarkoutsourcing.com/
+https://www.clearsourcebpo.com
+https://contactpoint360.com
+https://datamark.net
+https://directinteractions.com
+https://www.etechgs.com
+https://www.firstcontactbpo.com/
+https://www.flatworldsolutions.com
+https://focusservices.com
+https://gcsagents.com/
+https://www.globalstrategic.com
+https://www.goanswer.ai
+https://hartehanks.com
+https://helpware.com/
+https://hugoinc.com
+https://www.infocision.com
+https://intelogix.com
+https://km2solutions.com
+https://liveops.com
+https://www.marketstar.com
+https://nearsol.com
+https://nexrep.com
+https://www.openaccessbpo.com
+https://www.officebeacon.com
+https://www.percepta.com
+https://quantanite.com
+https://sourcefit.com
+https://supportninja.com
+https://supportyourapp.com
+https://supportzebra.com
+https://thefunctionary.com
+https://www.theofficegurus.com
+https://www.unifycx.com
+https://unity-connect.com
+https://valorglobal.com
+https://www.myvirtudesk.com
+https://visayakpo.com
+https://www.altaresources.com
+https://www.integraglobalsolutions.com/
+
+Im interested in seeing which of these accounts serve the restaurant & QSR industry. can you check for me?
+</user_query>
+
+assistant:
+[Thinking] The user wants me to research which of these 45 BPO/outsourcing companies serve the restaurant & QSR (Quick Service Restaurant) industry. This is a research task - I should present findings only and not modify any data files.
+
+Let me plan this out. I need to check each website to see if they mention restaurant/QSR as an industry they serve. This is a lot of URLs to check. Let me use a systematic approach.
+
+I'll use multiple parallel tasks to research these companies efficiently. Let me batch them into groups and use subagents to research them.
+
+Actually, the most efficient approach would be to use Perplexity search or web search for each company, or use Firecrawl to scrape each site. 
+
+With 45 URLs to check, I need to decide between running parallel research tasks, writing a script to automate the scraping, or using a search API. Given the volume and the preference for executable scripts over manual approaches, I should write a TypeScript script that uses Firecrawl to batch-process these URLs and extract mentions of restaurant or QSR services. I see the project guidelines prefer using web_search and browsermcp tools, so let me pivot to launching 4 parallel agents to divide the 45 URLs and systematically check each site for restaurant or QSR industry indicators.
+I'll research these 45 companies to find which ones serve the restaurant & QSR industry. Let me check your project setup first and then run parallel research tasks.
+[Tool call] Glob
+  glob_pattern: package.json
+[Tool call] Glob
+  glob_pattern: .env
+
+[Tool result] Glob
+
+[Tool result] Glob
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/package.json
+
+[Tool result] Read
+
+assistant:
+[Thinking] Good - Firecrawl is available. Let me write a quick TypeScript script that scrapes each URL and looks for restaurant/QSR-related keywords. This will be much more efficient than doing 45 individual searches.
+
+Actually, let me think about this. Firecrawl has rate limits and scraping 45 sites will take time. An alternative would be to use Perplexity to batch-search for this information. Let me try a more efficient approach.
+
+Actually, the most practical approach might be to use 4 parallel Task agents, each researching ~11 companies using web search. That way we can parallelize the research.
+
+
+But I think going back to the Firecrawl script is the better move - it'll be more systematic and reliable than relying on search results. I'll write a script that scrapes each company's website and checks for restaurant or QSR keywords on the page.
+
+Writing the Firecrawl script...
+Good, Firecrawl is available. Let me write a quick script to systematically check all 45 websites for restaurant/QSR industry mentions.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/check-restaurant-qsr.ts
+  contents: import { config } from 'dotenv'
+import FirecrawlApp from '@mendable/firecrawl-js'
+
+config()
+
+const urls = [
+  'https://www.adec-innovations.com',
+  'http://www.americancustomercare.com',
+  'https://www.azpired.com',
+  'https://www.boldrimpact.com',
+  'https://www.buwelo.com',
+  'https://cbecompanies.com',
+  'https://clarkoutsourcing.com/',
+  'https://www.clearsourcebpo.com',
+  'https://contactpoint360.com',
+  'https://datamark.net',
+  'https://directinteractions.com',
+  'https://www.etechgs.com',
+  'https://www.firstcontactbpo.com/',
+  'https://www.flatworldsolutions.com',
+  'https://focusservices.com',
+  'https://gcsagents.com/',
+  'https://www.globalstrategic.com',
+  'https://www.goanswer.ai',
+  'https://hartehanks.com',
+  'https://helpware.com/',
+  'https://hugoinc.com',
+  'https://www.infocision.com',
+  'https://intelogix.com',
+  'https://km2solutions.com',
+  'https://liveops.com',
+  'https://www.marketstar.com',
+  'https://nearsol.com',
+  'https://nexrep.com',
+  'https://www.openaccessbpo.com',
+  'https://www.officebeacon.com',
+  'https://www.percepta.com',
+  'https://quantanite.com',
+  'https://sourcefit.com',
+  'https://supportninja.com',
+  'https://supportyourapp.com',
+  'https://supportzebra.com',
+  'https://thefunctionary.com',
+  'https://www.theofficegurus.com',
+  'https://www.unifycx.com',
+  'https://unity-connect.com',
+  'https://valorglobal.com',
+  'https://www.myvirtudesk.com',
+  'https://visayakpo.com',
+  'https://www.altaresources.com',
+  'https://www.integraglobalsolutions.com/',
+]
+
+const KEYWORDS = [
+  'restaurant',
+  'qsr',
+  'quick service restaurant',
+  'food service',
+  'foodservice',
+  'food & beverage',
+  'food and beverage',
+  'fast food',
+  'dining',
+  'hospitality',
+  'food delivery',
+  'pizza',
+  'franchise',
+]
+
+const firecrawl = new FirecrawlApp({
+  apiKey: process.env.FIRECRAWL_API_KEY!,
+})
+
+interface Result {
+  url: string
+  company: string
+  hasRestaurantQSR: boolean
+  matchedKeywords: string[]
+  context: string[]
+}
+
+function extractCompanyName(url: string): string {
+  const hostname = new URL(url).hostname
+    .replace(/^www\./, '')
+    .replace(/\.(com|net|ai|io).*$/, '')
+  return hostname
+}
+
+function findKeywordMatches(
+  text: string
+): { keywords: string[]; contexts: string[] } {
+  const lower = text.toLowerCase()
+  const keywords: string[] = []
+  const contexts: string[] = []
+
+  for (const kw of KEYWORDS) {
+    const idx = lower.indexOf(kw)
+    if (idx !== -1) {
+      keywords.push(kw)
+      const start = Math.max(0, idx - 60)
+      const end = Math.min(text.length, idx + kw.length + 60)
+      const snippet = text.slice(start, end).replace(/\n/g, ' ').trim()
+      contexts.push(`...${snippet}...`)
+    }
+  }
+
+  return { keywords: [...new Set(keywords)], contexts: [...new Set(contexts)] }
+}
+
+async function scrapeUrl(url: string): Promise<Result> {
+  const company = extractCompanyName(url)
+  try {
+    const response = await firecrawl.scrapeUrl(url, {
+      formats: ['markdown'],
+      onlyMainContent: true,
+      timeout: 30000,
+    })
+
+    if (!response.success || !response.markdown) {
+      return {
+        url,
+        company,
+        hasRestaurantQSR: false,
+        matchedKeywords: [],
+        context: ['(scrape failed or no content)'],
+      }
+    }
+
+    const { keywords, contexts } = findKeywordMatches(response.markdown)
+
+    return {
+      url,
+      company,
+      hasRestaurantQSR: keywords.length > 0,
+      matchedKeywords: keywords,
+      context: contexts.length > 0 ? contexts : ['(no matches found)'],
+    }
+  } catch (err) {
+    return {
+      url,
+      company,
+      hasRestaurantQSR: false,
+      matchedKeywords: [],
+      context: [`(error: ${(err as Error).message})`],
+    }
+  }
+}
+
+async function main() {
+  console.log(
+    `Checking ${urls.length} companies for restaurant/QSR industry mentions...\n`
+  )
+
+  const results: Result[] = []
+
+  // Process in batches of 5 to respect rate limits
+  const batchSize = 5
+  for (let i = 0; i < urls.length; i += batchSize) {
+    const batch = urls.slice(i, i + batchSize)
+    console.log(
+      `Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(urls.length / batchSize)}...`
+    )
+    const batchResults = await Promise.all(batch.map((url) => scrapeUrl(url)))
+    results.push(...batchResults)
+
+    for (const r of batchResults) {
+      const status = r.hasRestaurantQSR ? '✅' : '❌'
+      console.log(`  ${status} ${r.company} ${r.hasRestaurantQSR ? `[${r.matchedKeywords.join(', ')}]` : ''}`)
+    }
+  }
+
+  // Summary
+  const matches = results.filter((r) => r.hasRestaurantQSR)
+  const noMatches = results.filter((r) => !r.hasRestaurantQSR)
+
+  console.log('\n' + '='.repeat(80))
+  console.log('RESULTS SUMMARY')
+  console.log('='.repeat(80))
+
+  console.log(
+    `\n✅ COMPANIES WITH RESTAURANT/QSR MENTIONS (${matches.length}):\n`
+  )
+  for (const r of matches) {
+    console.log(`  • ${r.company} (${r.url})`)
+    console.log(`    Keywords: ${r.matchedKeywords.join(', ')}`)
+    for (const ctx of r.context.slice(0, 2)) {
+      console.log(`    Context: ${ctx}`)
+    }
+    console.log()
+  }
+
+  console.log(`\n❌ NO RESTAURANT/QSR MENTIONS FOUND (${noMatches.length}):\n`)
+  for (const r of noMatches) {
+    console.log(`  • ${r.company} (${r.url})`)
+    if (r.context[0]?.includes('error') || r.context[0]?.includes('failed')) {
+      console.log(`    Note: ${r.context[0]}`)
+    }
+  }
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/check-restaurant-qsr.ts
+  description: Run restaurant/QSR industry check script
+  block_until_ms: 180000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The Firecrawl API call is failing. Let me check the Firecrawl version and API. The error is "firecrawl.scrapeUrl is not a function". Let me check the correct API for the installed version.
+The Firecrawl API has changed. Let me check the correct method name and fix the script.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && node -e "const F = require('@mendable/firecrawl-js'); const f = new F.default({apiKey:'test'}); console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(f)))"
+  description: Check Firecrawl API methods
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && node -e "const F = require('@mendable/firecrawl-js'); const f = new F.default({apiKey:'test'}); console.log(Object.getOwnPropertyNames(Object.getPrototypeOf(f.v1 || {})))"
+  description: Check Firecrawl v1 methods
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The Firecrawl API has a `v1` property with the `scrapeUrl` method. But actually, there's also a `batchScrapeUrls` method which would be even more efficient! Let me update the script to use `firecrawl.v1.scrapeUrl` or better yet, `firecrawl.v1.batchScrapeUrls`.
+
+Actually, let me just fix the scrapeUrl call to use `firecrawl.v1.scrapeUrl`. But wait - batchScrapeUrls would be much more efficient for 45 URLs. Let me use that instead.
+
+
+I'm going to stick with the straightforward approach using `firecrawl.v1.scrapeUrl` for now, since batch scraping might have different behavior that I need to account for.
+The methods are under `firecrawl.v1`. Let me fix the script to use `batchScrapeUrls` for efficiency.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/check-restaurant-qsr.ts
+  old_string: const firecrawl = new FirecrawlApp({
+  apiKey: process.env.FIRECRAWL_API_KEY!,
+})
+
+interface Result {
+  url: string
+  company: string
+  hasRestaurantQSR: boolean
+  matchedKeywords: string[]
+  context: string[]
+}
+
+function extractCompanyName(url: string): string {
+  const hostname = new URL(url).hostname
+    .replace(/^www\./, '')
+    .replace(/\.(com|net|ai|io).*$/, '')
+  return hostname
+}
+
+function findKeywordMatches(
+  text: string
+): { keywords: string[]; contexts: string[] } {
+  const lower = text.toLowerCase()
+  const keywords: string[] = []
+  const contexts: string[] = []
+
+  for (const kw of KEYWORDS) {
+    const idx = lower.indexOf(kw)
+    if (idx !== -1) {
+      keywords.push(kw)
+      const start = Math.max(0, idx - 60)
+      const end = Math.min(text.length, idx + kw.length + 60)
+      const snippet = text.slice(start, end).replace(/\n/g, ' ').trim()
+      contexts.push(`...${snippet}...`)
+    }
+  }
+
+  return { keywords: [...new Set(keywords)], contexts: [...new Set(contexts)] }
+}
+
+async function scrapeUrl(url: string): Promise<Result> {
+  const company = extractCompanyName(url)
+  try {
+    const response = await firecrawl.scrapeUrl(url, {
+      formats: ['markdown'],
+      onlyMainContent: true,
+      timeout: 30000,
+    })
+
+    if (!response.success || !response.markdown) {
+      return {
+        url,
+        company,
+        hasRestaurantQSR: false,
+        matchedKeywords: [],
+        context: ['(scrape failed or no content)'],
+      }
+    }
+
+    const { keywords, contexts } = findKeywordMatches(response.markdown)
+
+    return {
+      url,
+      company,
+      hasRestaurantQSR: keywords.length > 0,
+      matchedKeywords: keywords,
+      context: contexts.length > 0 ? contexts : ['(no matches found)'],
+    }
+  } catch (err) {
+    return {
+      url,
+      company,
+      hasRestaurantQSR: false,
+      matchedKeywords: [],
+      context: [`(error: ${(err as Error).message})`],
+    }
+  }
+}
+
+async function main() {
+  console.log(
+    `Checking ${urls.length} companies for restaurant/QSR industry mentions...\n`
+  )
+
+  const results: Result[] = []
+
+  // Process in batches of 5 to respect rate limits
+  const batchSize = 5
+  for (let i = 0; i < urls.length; i += batchSize) {
+    const batch = urls.slice(i, i + batchSize)
+    console.log(
+      `Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(urls.length / batchSize)}...`
+    )
+    const batchResults = await Promise.all(batch.map((url) => scrapeUrl(url)))
+    results.push(...batchResults)
+
+    for (const r of batchResults) {
+      const status = r.hasRestaurantQSR ? '✅' : '❌'
+      console.log(`  ${status} ${r.company} ${r.hasRestaurantQSR ? `[${r.matchedKeywords.join(', ')}]` : ''}`)
+    }
+  }
+
+  // Summary
+  const matches = results.filter((r) => r.hasRestaurantQSR)
+  const noMatches = results.filter((r) => !r.hasRestaurantQSR)
+
+  console.log('\n' + '='.repeat(80))
+  console.log('RESULTS SUMMARY')
+  console.log('='.repeat(80))
+
+  console.log(
+    `\n✅ COMPANIES WITH RESTAURANT/QSR MENTIONS (${matches.length}):\n`
+  )
+  for (const r of matches) {
+    console.log(`  • ${r.company} (${r.url})`)
+    console.log(`    Keywords: ${r.matchedKeywords.join(', ')}`)
+    for (const ctx of r.context.slice(0, 2)) {
+      console.log(`    Context: ${ctx}`)
+    }
+    console.log()
+  }
+
+  console.log(`\n❌ NO RESTAURANT/QSR MENTIONS FOUND (${noMatches.length}):\n`)
+  for (const r of noMatches) {
+    console.log(`  • ${r.company} (${r.url})`)
+    if (r.context[0]?.includes('error') || r.context[0]?.includes('failed')) {
+      console.log(`    Note: ${r.context[0]}`)
+    }
+  }
+}
+  new_string: const app = new FirecrawlApp({
+  apiKey: process.env.FIRECRAWL_API_KEY!,
+})
+const firecrawl = app.v1
+
+interface Result {
+  url: string
+  company: string
+  hasRestaurantQSR: boolean
+  matchedKeywords: string[]
+  context: string[]
+}
+
+function extractCompanyName(url: string): string {
+  const hostname = new URL(url).hostname
+    .replace(/^www\./, '')
+    .replace(/\.(com|net|ai|io).*$/, '')
+  return hostname
+}
+
+function findKeywordMatches(
+  text: string
+): { keywords: string[]; contexts: string[] } {
+  const lower = text.toLowerCase()
+  const keywords: string[] = []
+  const contexts: string[] = []
+
+  for (const kw of KEYWORDS) {
+    const idx = lower.indexOf(kw)
+    if (idx !== -1) {
+      keywords.push(kw)
+      const start = Math.max(0, idx - 80)
+      const end = Math.min(text.length, idx + kw.length + 80)
+      const snippet = text.slice(start, end).replace(/\n/g, ' ').trim()
+      contexts.push(`...${snippet}...`)
+    }
+  }
+
+  return { keywords: [...new Set(keywords)], contexts: [...new Set(contexts)] }
+}
+
+async function scrapeUrl(url: string): Promise<Result> {
+  const company = extractCompanyName(url)
+  try {
+    const response = await firecrawl.scrapeUrl(url, {
+      formats: ['markdown'],
+      onlyMainContent: true,
+      timeout: 30000,
+    })
+
+    if (!response.success || !response.markdown) {
+      return {
+        url,
+        company,
+        hasRestaurantQSR: false,
+        matchedKeywords: [],
+        context: ['(scrape failed or no content)'],
+      }
+    }
+
+    const { keywords, contexts } = findKeywordMatches(response.markdown)
+
+    return {
+      url,
+      company,
+      hasRestaurantQSR: keywords.length > 0,
+      matchedKeywords: keywords,
+      context: contexts.length > 0 ? contexts : ['(no matches found)'],
+    }
+  } catch (err) {
+    return {
+      url,
+      company,
+      hasRestaurantQSR: false,
+      matchedKeywords: [],
+      context: [`(error: ${(err as Error).message})`],
+    }
+  }
+}
+
+async function main() {
+  console.log(
+    `Checking ${urls.length} companies for restaurant/QSR industry mentions...\n`
+  )
+
+  const results: Result[] = []
+
+  // Process in batches of 5 to respect rate limits
+  const batchSize = 5
+  for (let i = 0; i < urls.length; i += batchSize) {
+    const batch = urls.slice(i, i + batchSize)
+    console.log(
+      `Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(urls.length / batchSize)}...`
+    )
+    const batchResults = await Promise.all(batch.map((url) => scrapeUrl(url)))
+    results.push(...batchResults)
+
+    for (const r of batchResults) {
+      const status = r.hasRestaurantQSR ? '✅' : '❌'
+      console.log(`  ${status} ${r.company} ${r.hasRestaurantQSR ? `[${r.matchedKeywords.join(', ')}]` : ''}`)
+    }
+  }
+
+  // Summary
+  const matches = results.filter((r) => r.hasRestaurantQSR)
+  const noMatches = results.filter((r) => !r.hasRestaurantQSR)
+
+  console.log('\n' + '='.repeat(80))
+  console.log('RESULTS SUMMARY')
+  console.log('='.repeat(80))
+
+  console.log(
+    `\n✅ COMPANIES WITH RESTAURANT/QSR MENTIONS (${matches.length}):\n`
+  )
+  for (const r of matches) {
+    console.log(`  • ${r.company} (${r.url})`)
+    console.log(`    Keywords: ${r.matchedKeywords.join(', ')}`)
+    for (const ctx of r.context.slice(0, 2)) {
+      console.log(`    Context: ${ctx}`)
+    }
+    console.log()
+  }
+
+  console.log(`\n❌ NO RESTAURANT/QSR MENTIONS FOUND (${noMatches.length}):\n`)
+  for (const r of noMatches) {
+    console.log(`  • ${r.company} (${r.url})`)
+    if (r.context[0]?.includes('error') || r.context[0]?.includes('failed')) {
+      console.log(`    Note: ${r.context[0]}`)
+    }
+  }
+}
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/check-restaurant-qsr.ts
+  description: Run fixed restaurant/QSR check script
+  block_until_ms: 300000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Good results! However, I should note a few things:
+
+1. The homepage-only scrape only checks the main page. Some of these companies might mention restaurant/QSR on subpages (like an "Industries" page). Let me check the ones that had stronger matches vs weaker ones.
+
+2. Some matches are for "hospitality" which is a broad category that includes hotels, travel, etc. - not necessarily restaurant/QSR specifically. I should note this distinction.
+
+3. The strongest matches for restaurant/QSR specifically seem to be:
+- **InfoCision** - explicitly lists "Restaurants" as an industry
+- **Quantanite** - mentions "Food Ordering & Delivery" with restaurant-to-doorstep
+
+
+- **American Customer Care** - mentions "Food & Beverage" as a specific industry
+
+The "hospitality" matches are more ambiguous - they could be travel & hospitality rather than restaurant specifically. **ContactPoint360**, **Hugo Inc**, **LiveOps**, **Office Beacon**, **Sourcefit**, and **The Office Gurus** all have hospitality mentions, but these are either too broad or contextually unrelated to restaurant operations (like Office Beacon's SoFi Stadium events work).
+
+I should note that this homepage scan only scratches the surface - checking industry-specific pages would likely reveal more restaurant clients. I'll present these findings transparently, distinguishing between companies with direct restaurant/QSR mentions versus those with broader hospitality references, and I won't modify any data based on this research.
+Here are the results from scanning all 45 company websites. I've organized them by strength of match — distinguishing between companies that explicitly mention **restaurant/QSR/food service** vs. those that only mention the broader **"hospitality"** category (which often means travel/hotels, not restaurants specifically).
+
+---
+
+**Direct Restaurant / QSR / Food & Beverage mentions (3):**
+
+| Company | URL | Evidence |
+|---------|-----|----------|
+| **InfoCision** | infocision.com | Explicitly lists **"Restaurants"** as an industry vertical |
+| **Quantanite** | quantanite.com | Has a **"Food Ordering & Delivery"** industry page — "real-time orchestration from restaurant to doorstep" |
+| **American Customer Care** | americancustomercare.com | Lists **"Food & Beverage"** as a dedicated industry with CPG/consumer products focus |
+
+**Food & Beverage + Hospitality mentions (1):**
+
+| Company | URL | Evidence |
+|---------|-----|----------|
+| **Hugo Inc** | hugoinc.com | Has a **Food & Beverage** industry client and mentions hospitality (FIFA '26 Hospitality Director) |
+
+**Broader "Hospitality" only — may be travel/hotels, not restaurant-specific (5):**
+
+| Company | URL | Evidence |
+|---------|-----|----------|
+| **ContactPoint360** | contactpoint360.com | Has a dedicated "Hospitality Call Center Outsourcing" page |
+| **LiveOps** | liveops.com | "Travel and Hospitality" industry page |
+| **Sourcefit** | sourcefit.com | Case study for a "hospitality technology SaaS platform" |
+| **The Office Gurus** | theofficegurus.com | "Travel & Hospitality" industry page |
+| **Office Beacon** | officebeacon.com | Mentions "hospitality" but in context of SoFi Stadium suite events — not industry-specific |
+
+**No matches found (36 companies)** — the remaining companies don't mention restaurant, QSR, food service, or hospitality on their homepages.
+
+---
+
+**Important caveat:** This scan only checked each company's **homepage content**. Some companies may list restaurant/QSR on deeper subpages (like `/industries` or `/solutions` pages) that weren't captured. If you want me to do a deeper crawl on any specific companies, let me know.
+
+The strongest matches for restaurant & QSR specifically are **InfoCision**, **Quantanite**, and **American Customer Care**. The "hospitality" mentions on the others are worth investigating further but may refer to travel/hotel rather than restaurant/QSR.

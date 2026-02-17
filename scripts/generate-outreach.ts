@@ -217,8 +217,8 @@ Subject: [subject line]
 }
 
 async function main() {
-  const csvPath = path.join(__dirname, "..", "Downloads", "Top Contacts 2026 - Top Contacts.csv");
-  const altPath = "/Users/alicewyatt/Downloads/Top Contacts 2026 - Top Contacts.csv";
+  const csvPath = path.join(__dirname, "..", "Downloads", "Final top contacts - Top Contacts.csv");
+  const altPath = "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv";
   const filePath = fs.existsSync(csvPath) ? csvPath : altPath;
 
   const raw = fs.readFileSync(filePath, "utf-8");
@@ -243,12 +243,13 @@ async function main() {
     return deliveryData.get(key) || manualDelivery[key] || { deliveryModel: "Unknown", clientIndustries: "" };
   }
 
-  // Exclusions: removed after web verification
+  // Exclusions: removed after web verification or dropped from master list
   const excludeNames = new Set([
     "Pankaj Dhanuka",    // Wrong company — at Fusion CX, not ClearSource
     "Demond Moore",      // Can't verify at Percepta
     "Daniel Aristimuno", // Title unverifiable — listed as Site Director elsewhere
     "Rodd Furlough",     // Can't verify at KM² Solutions
+    "Bucky Cline",       // Removed from master list
   ]);
 
   // Track Brian Flaherty to remove the duplicate
@@ -262,6 +263,8 @@ async function main() {
     "Jim Iyoob",        // Etech — confirmed speaker at Conversational AI Summit + CCW LV
     "Liliana Lopez",    // Liveops — co-led AI Maturity Workshop at CCW Orlando, active LinkedIn
     "Bill Trocano",     // Liveops — published AI article Feb 2026, active LinkedIn
+    "James Nelson",     // Percepta — new addition, active LinkedIn, Exec Dir of Operations
+    "Cathy Sexton",     // Harte Hanks — new addition, SVP Financial Services, Salisbury NC (SE)
   ]);
 
   // Enriched icebreakers from web research (override CSV data)
@@ -288,27 +291,37 @@ async function main() {
     "Jim Iyoob": "CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9, 2026). Also speaking at CCW Las Vegas 2026 (Jun 22-25, workshop) and Call Center Campus Symposium (May 17-20, keynote). President of ETS Labs at Etech. Authored blog on 'Analytics and the Power of the Human Touch'. Very active on the conference circuit.",
     "Liliana Lopez": "Co-led an AI Maturity Workshop at CCW Orlando (Jan 2026) on operationalizing AI — moving from 'promising' to 'proven'. Also shared thought leadership on sandboxing AI, real-time agent assist, and using AI to accelerate onboarding and QA. Promoted LiveNexus for testing and scaling AI innovations. VP of Technology, Cybersecurity & Innovation at Liveops.",
     "Bill Trocano": "Published a LinkedIn article in Feb 2026 about how AI didn't replace humans during the holiday season but raised the bar for human agents. Global VP of CX at Liveops. Active interest in AI-enabled CX and workforce enablement.",
+    "James Nelson": "Executive Director of Operations at Percepta since Oct 2021, based in Houston, TX. Previously COO at District Photo Inc. Percepta just named Thomas Monaghan as new President (Feb 2026), replacing Karen Gurganious — new leadership means potential new priorities and openness to partnerships. Percepta is a TTEC/Ford JV with ~4,000 employees across 13 countries, focused on automotive CX.",
+    "Cathy Sexton": "SVP Financial Services at Harte Hanks since 2007, based in Salisbury, NC. 45+ years in direct marketing and financial services. Catawba College alumna (English & Psychology). Harte Hanks is a publicly traded (NYSE: HHS) direct marketing company with contact center operations in Texas and UK. Interesting: Greg Alcorn (GCS International, also in our outreach) is also Catawba College connected and also in Salisbury, NC.",
   };
+
+  const seenKeys = new Set<string>();
 
   const prospects: Prospect[] = records
     .filter((r: Record<string, string>) => {
-      const name = (r["Full Name"] || "").trim();
-      if (!name) return false;
-      if (excludeNames.has(name)) return false;
+      const fn = (r["First Name"] || "").trim();
+      const ln = (r["Last Name"] || "").trim();
+      if (!fn || !ln) return false;
+      const realName = `${fn} ${ln}`;
+      if (excludeNames.has(realName)) return false;
       // Remove duplicate Brian Flaherty
-      if (name === "Brian Flaherty") {
+      if (realName === "Brian Flaherty") {
         if (brianFlahertySeen) return false;
         brianFlahertySeen = true;
       }
-      const active = r["Active on LinkedIn (last 90 days)"] === "1" || r["Active on LinkedIn (last 90 days)"] === "True";
+      // Deduplicate by first+last+company
+      const dedupeKey = `${realName}|${(r["Company Name"] || "").trim()}`;
+      if (seenKeys.has(dedupeKey)) return false;
+      seenKeys.add(dedupeKey);
+      const active = ["1", "True", "Y", "Yes", "TRUE"].includes(r["Active on LinkedIn (last 90 days)"] || "");
       const se = isSoutheastLocation(r["Location"] || "");
-      const forced = forceIncludeNames.has(name);
+      const forced = forceIncludeNames.has(realName);
       return active || se || forced;
     })
     .map((r: Record<string, string>) => {
-      const fullName = r["Full Name"].trim();
-      const firstName = r["First Name"]?.trim() || fullName.split(" ")[0];
+      const firstName = r["First Name"]?.trim() || "";
       const lastName = r["Last Name"]?.trim() || "";
+      const fullName = `${firstName} ${lastName}`.trim();
       const company = r["Company Name"] || "";
       const delivery = getDelivery(company);
       const icebreaker = enrichedIcebreakers[fullName] || r["Icebreaker Insight"] || "";

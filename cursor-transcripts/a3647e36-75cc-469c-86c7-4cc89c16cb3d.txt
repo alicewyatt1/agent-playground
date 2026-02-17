@@ -9857,3 +9857,1067 @@ assistant:
   block_until_ms: 500000
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/personalised-outreach.md -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && git add -A && git commit -m "$(cat <<'EOF'
+Run: generate-outreach.ts
+
+Regenerated all 26 prospects with finalised persona map v2: updated Persona 2 cost-reduction language, new Persona 3 aspirational hook ("Be the tech leader"), multi-channel (voice + text), battle-tested messaging.
+EOF
+)" && git push && echo "Done"
+  description: Convert, commit and push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.docx`** is updated to match the finalised persona map.
+
+**What changed in the messages:**
+
+**For Operations & Finance Leaders** (Mark D'Angola, Amanda Jones, Bryan Overcash, Keith Hansen, etc.):
+- Now uses "reduce labor costs" and "expand capacity" language directly, instead of the softer "keep staffing lean, protect your margin"
+- Includes "industry competitive pressure to improve EBITDA margin" angle
+
+**For Technology Leaders** (Ken Braatz, Liliana Lopez):
+- Now leads with the aspirational hook — "Be the tech leader who leads your contact center into the AI era" — instead of the old "60-80% build problem" opening
+- Emphasises "no internal AI team needed — enterprise experts design and deploy for you"
+- Now mentions **voice and text** (multi-channel), not just voice
+- "Battle-tested by enterprise" with name-drops
+
+**For Executive Sponsors** (Greg Alcorn, Brian Flaherty, Pablo Paz Hernandez, etc.):
+- Full Teleperformance hook: "Don't have Teleperformance's budget? Don't worry, we bring Teleperformance-proven team and expertise to you"
+- "Automate outbound and inbound calls from end to end"
+
+All 26 prospects regenerated with the finalised framework. This should be the version Calanthia works from.
+
+user:
+<user_query>
+ok great. now I have a bit more work for you to do. we have removed some people from the target account list and we have added some people in too. I need you to remove anyone from our persona messaging who has now been deleted from the master list, and then I need you to look at all the new contacts (most of them are the finance persona) and I want you to see if they fit into our qualification critera for our tier 1 priority outreach accounts. If they do, I want you to tell me who they are and then we can decide if we're going to add them into our messaging doc.
+</user_query>
+
+assistant:
+[Tool call] AskQuestion
+  questions: [{"id":"file","prompt":"Can you share the updated master list? Is it a new file in Downloads, or has the existing one been updated?","options":[{"id":"new_download","label":"It's a new file in my Downloads folder"},{"id":"same_csv","label":"It's the same Top Contacts CSV but updated"},{"id":"other","label":"It's a different file — let me share it"}]}]
+
+[Tool result] AskQuestion
+
+user:
+<user_query>
+@/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv 
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: head -1 "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv" | tr ',' '\n' | nl
+  description: Check new CSV headers
+[Tool call] Shell
+  command: wc -l "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv"
+  description: Count rows in new CSV
+
+[Tool result] Shell
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvsql --query "SELECT \"Full Name\", \"Job Title\", \"Company Name\" FROM stdin WHERE \"Full Name\" != '' ORDER BY \"Company Name\", \"Full Name\"" < "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv" 2>/dev/null > /tmp/new_contacts.csv && csvsql --query "SELECT \"Full Name\", \"Job Title\", \"Company Name\" FROM stdin WHERE \"Full Name\" != '' ORDER BY \"Company Name\", \"Full Name\"" < "/Users/alicewyatt/Downloads/Top Contacts 2026 - Top Contacts.csv" 2>/dev/null > /tmp/old_contacts.csv && echo "New: $(wc -l < /tmp/new_contacts.csv) rows, Old: $(wc -l < /tmp/old_contacts.csv) rows"
+  description: Extract both lists for comparison
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "=== REMOVED (in old but not in new) ===" && csvjoin --left --no-inference -c "Full Name,Company Name" /tmp/old_contacts.csv /tmp/new_contacts.csv 2>/dev/null | csvsql --query "SELECT \"Full Name\", \"Job Title\", \"Company Name\" FROM stdin WHERE \"Job Title2\" IS NULL" 2>/dev/null | csvlook
+  description: Find removed contacts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] That's a LOT of removed contacts. Let me also find the ADDED contacts (in new but not in old).
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "=== ADDED (in new but not in old) ===" && csvjoin --left --no-inference -c "Full Name,Company Name" /tmp/new_contacts.csv /tmp/old_contacts.csv 2>/dev/null | csvsql --query "SELECT \"Full Name\", \"Job Title\", \"Company Name\" FROM stdin WHERE \"Job Title2\" IS NULL" 2>/dev/null | csvlook
+  description: Find added contacts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The csvjoin approach isn't working well because the same names appear in both old and new. The issue is that the new file has the same people PLUS new finance contacts where the "Full Name" field is just the job title (like "Chief Financial Officer"). Let me take a different approach — find the truly NEW entries (contacts that exist in the new file but not the old file).
+
+Let me look at it differently — find contacts where the Full Name is a job title (these are the new finance additions where the actual name wasn't provided).
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvsql --query "SELECT \"Full Name\", \"Job Title\", \"Company Name\", \"Location\" FROM stdin WHERE \"Full Name\" LIKE '%Chief%' OR \"Full Name\" LIKE '%Director%' OR \"Full Name\" LIKE '%Vice President%' OR \"Full Name\" LIKE '%Senior Vice%' OR \"Full Name\" LIKE '%Executive Director%' OR \"Full Name\" LIKE '%President &%'" < "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv" 2>/dev/null | csvlook -l
+  description: Find new finance contacts (name = title)
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "=== Other new contacts not in old file ===" && csvsql --query "SELECT n.\"Full Name\", n.\"Job Title\", n.\"Company Name\", n.\"Location\" FROM stdin AS n WHERE n.\"Full Name\" NOT IN (SELECT \"Full Name\" FROM stdin WHERE \"Full Name\" != '') AND n.\"Full Name\" != ''" < "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv" 2>/dev/null | csvlook 2>/dev/null; echo "---"; echo "Checking for name changes..."; diff <(csvsql --query "SELECT DISTINCT \"Full Name\" FROM stdin WHERE \"Full Name\" != '' ORDER BY \"Full Name\"" < "/Users/alicewyatt/Downloads/Top Contacts 2026 - Top Contacts.csv" 2>/dev/null) <(csvsql --query "SELECT DISTINCT \"Full Name\" FROM stdin WHERE \"Full Name\" != '' ORDER BY \"Full Name\"" < "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv" 2>/dev/null) 2>/dev/null | head -60
+  description: Find truly new contacts
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Now I can see clearly what changed:
+
+**Removed people (in old but not in new):**
+- Angella Kitandwe Kakumirizi (Helpware)
+- Benjamin Johnson (Etech)
+- Bucky Cline (GCS International)
+- Daniel Aristimuno (KM² Solutions)
+- Garland Hawk (Etech)
+- George Huang (Flatworld)
+- Hemal Mewada (Office Beacon)
+- Jeffrey Heiner (MarketStar)
+- Kirill Pesterev (Hugo Technologies)
+
+
+- Pankaj Dhanuka (Clearsource BPO)
+- Rodd Furlough (KM² Solutions)
+- Terry Lee (Focus Services)
+- Vishal Choudhary (Etech)
+
+On the flip side, we've added a bunch of finance personas—mostly CFO titles across multiple companies like CBE, Direct Interactions, Flatworld, Focus Services, Helpware, Harte Hanks, Intelogix, MarketStar, and Nearsol, though I need to verify which company the first CFO entry belongs to.
+
+Beyond that, I'm seeing several other finance and operations roles: a CFO and Senior Financial Advisor at Boldr, a COO/CFO combo at SupportNinja that's actually Jacob Moelter who's already on our list, Bryan Overcash at a company as Co-founder/CFO/COO (also already listed), plus Directors and VPs of Finance across DATAMARK, CBE Companies, NexRep, and UnifyCX, along with an Executive Director of Operations at Percepta and a Senior VP of Financial Services at Harte Hanks—though I still need to pin down which company that VP of FP&A belongs to.
+
+Now I'm cross-referencing these new finance contacts against our tier 1 criteria to see which ones have active LinkedIn profiles or are based in the Southeast, and I'm also checking whether we've already captured entries for a CFO and VP of Financial Planning and Analysis. At the same time, I'm verifying which of our current 26 outreach prospects are still showing up in the updated master list—so far Mark D'Angola, Amanda Jones, Ali Karim, Bill Randag, Matt Rocco, Jim Iyoob, and Pablo Paz Hernandez are all still there, though I need to finish checking the rest.
+
+I'm realizing the join operation created some noise because it was matching on both Full Name and Company Name, so minor formatting variations caused false positives for removals and additions. Let me just directly scan through our 26 current prospects against the new file to see who's actually missing.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && echo "=== Checking which of our 26 outreach prospects are still in the new file ===" && for name in "Mark D'Angola" "Amanda Jones" "Ali Karim" "Bill Randag" "Matt Rocco" "Jim Iyoob" "Pablo Paz Hernandez" "Rob Porges" "Nitesh Kumar" "Kenneth Loggins" "Bryan Overcash" "Bucky Cline" "Greg Alcorn" "Brian Flaherty" "Erika Garcia" "Donny Jackson" "Nanette Harrell" "John Yanez" "Keith Hansen" "David Kreiss" "Liliana Lopez" "Bill Trocano" "Youssef Hannat" "Ken Braatz" "Benjamin Alpert" "Dominic Leide"; do count=$(rg -c "$name" "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv" 2>/dev/null || echo "0"); if [ "$count" = "0" ]; then echo "REMOVED: $name"; fi; done
+  description: Check which outreach prospects were removed
+
+[Tool result] Shell
+
+assistant:
+[Thinking] That can't be right - all 26 removed? The rg might be having issues with special characters. Let me check differently.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvsql --query "SELECT \"Full Name\" FROM stdin WHERE \"Full Name\" IN ('Amanda Jones', 'Ali Karim', 'Bill Randag', 'Greg Alcorn', 'Brian Flaherty', 'Ken Braatz', 'Benjamin Alpert', 'Dominic Leide', 'David Kreiss', 'John Yanez', 'Keith Hansen', 'Nanette Harrell', 'Donny Jackson', 'Matt Rocco', 'Jim Iyoob', 'Kenneth Loggins', 'Erika Garcia', 'Youssef Hannat', 'Liliana Lopez', 'Bill Trocano', 'Pablo Paz Hernandez', 'Rob Porges', 'Nitesh Kumar', 'Bryan Overcash')" < "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv" 2>/dev/null | csvlook
+  description: Verify outreach prospects in new file
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+targets = {'Amanda Jones','Ali Karim','Bill Randag','Greg Alcorn','Brian Flaherty','Ken Braatz','Benjamin Alpert','Dominic Leide','David Kreiss','John Yanez','Keith Hansen','Nanette Harrell','Donny Jackson','Matt Rocco','Jim Iyoob','Kenneth Loggins','Erika Garcia','Youssef Hannat','Liliana Lopez','Bill Trocano','Pablo Paz Hernandez','Rob Porges','Nitesh Kumar','Bryan Overcash','Mark D\'Angola','Bucky Cline'}
+found = set()
+with open('/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv', 'r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        name = row.get('Full Name','').strip()
+        if name in targets:
+            found.add(name)
+missing = targets - found
+print('STILL IN NEW FILE:', sorted(found))
+print()
+print('REMOVED FROM NEW FILE:', sorted(missing))
+"
+  description: Python check for outreach prospects
+
+[Tool result] Shell
+
+assistant:
+Good — only **Bucky Cline** was removed. Now let me find the truly new contacts (the finance personas).
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+
+old_names = set()
+with open('/Users/alicewyatt/Downloads/Top Contacts 2026 - Top Contacts.csv', 'r') as f:
+    for row in csv.DictReader(f):
+        name = row.get('Full Name','').strip()
+        if name:
+            old_names.add((name, row.get('Company Name','').strip()))
+
+new_contacts = []
+with open('/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv', 'r') as f:
+    for row in csv.DictReader(f):
+        name = row.get('Full Name','').strip()
+        company = row.get('Company Name','').strip()
+        if name and (name, company) not in old_names:
+            new_contacts.append({
+                'name': name,
+                'title': row.get('Job Title','').strip(),
+                'company': company,
+                'location': row.get('Location','').strip(),
+                'linkedin_active': row.get('Active on LinkedIn (last 90 days)','').strip(),
+                'icebreaker': row.get('Icebreaker Insight','').strip()[:80],
+                'linkedin': row.get('LinkedIn Profile','').strip(),
+                'email': row.get('Contact Email','').strip(),
+            })
+
+print(f'Found {len(new_contacts)} NEW contacts:')
+print()
+for c in new_contacts:
+    se = any(s in c['location'].lower() for s in ['georgia','atlanta','florida','north carolina','south carolina','tennessee','alabama','virginia','louisiana'])
+    active = c['linkedin_active'] in ('1','True')
+    tier1 = 'YES' if (active or se) else 'No'
+    print(f\"{c['name']} | {c['title']} | {c['company']} | {c['location']} | LinkedIn active: {c['linkedin_active']} | SE: {se} | Tier 1: {tier1}\")
+    if c['icebreaker']:
+        print(f\"  Icebreaker: {c['icebreaker']}...\")
+    print()
+"
+  description: Find all truly new contacts with tier 1 check
+
+[Tool result] Shell
+
+assistant:
+Here's what I found:
+
+**Removed from outreach:** Only **Bucky Cline** (GCS International) — he's been removed from the master list. Everyone else in our current 26 is still there.
+
+**24 new contacts added** — almost all finance personas (CFOs, VPs Finance, Directors of Finance). Most don't have actual names yet — just job titles as placeholders.
+
+**Of the 24, only 3 qualify for Tier 1 priority outreach** (active LinkedIn OR Southeast location):
+
+| Contact | Title | Company | Why Tier 1 |
+|---|---|---|---|
+| **Co-founder, CFO & COO** | CFO & COO | Global Contact Service International | Salisbury, NC (Southeast) — this is **Bryan Overcash**, already in our outreach |
+| **SupportNinja COO/CFO** | COO and CFO | SupportNinja | Active on LinkedIn — this is **Jacob Moelter**, already in our contacts list but not in outreach |
+| **SVP Financial Services** | SVP Financial Services | Harte Hanks | Salisbury, NC (Southeast) — **new, not yet in outreach** |
+| **President & CFO** | President & CFO | CBE Companies | Active on LinkedIn — **new, not yet in outreach** |
+| **CFO** | CFO | Flatworld Solutions | Active on LinkedIn — **new, not yet in outreach** |
+
+The remaining 19 are NOT Tier 1 — they're not active on LinkedIn and not in the Southeast.
+
+**My recommendation:**
+1. **Remove Bucky Cline** from the outreach doc
+2. **Consider adding** these 3 genuinely new Tier 1 finance contacts:
+   - **Harte Hanks SVP Financial Services** (Salisbury, NC — CBAND hook)
+   - **CBE Companies President & CFO** (Active on LinkedIn)
+   - **Flatworld Solutions CFO** (Active on LinkedIn)
+3. **Consider adding Jacob Moelter** (SupportNinja COO/CFO, active LinkedIn) — he was in the old contacts but wasn't in our outreach
+
+Note: None of these have actual names in the CSV — just job titles. We'd need to identify who they are before adding them. Want me to look them up?
+
+user:
+<user_query>
+no they do all have names. they are all in the final top contacts doc. they have first and last name
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+
+old_names = set()
+with open('/Users/alicewyatt/Downloads/Top Contacts 2026 - Top Contacts.csv', 'r') as f:
+    for row in csv.DictReader(f):
+        fn = row.get('First Name','').strip()
+        ln = row.get('Last Name','').strip()
+        company = row.get('Company Name','').strip()
+        if fn and ln:
+            old_names.add((fn, ln, company))
+
+new_contacts = []
+with open('/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv', 'r') as f:
+    for row in csv.DictReader(f):
+        fn = row.get('First Name','').strip()
+        ln = row.get('Last Name','').strip()
+        company = row.get('Company Name','').strip()
+        full = row.get('Full Name','').strip()
+        title = row.get('Job Title','').strip()
+        loc = row.get('Location','').strip()
+        active = row.get('Active on LinkedIn (last 90 days)','').strip()
+        icebreaker = row.get('Icebreaker Insight','').strip()
+        linkedin = row.get('LinkedIn Profile','').strip()
+        email = row.get('Contact Email','').strip()
+        if fn and ln and (fn, ln, company) not in old_names:
+            se_states = ['georgia','atlanta','florida','north carolina','south carolina','tennessee','alabama','virginia','louisiana']
+            is_se = any(s in loc.lower() for s in se_states)
+            is_active = active in ('1','True','Y','Yes','TRUE')
+            tier1 = is_active or is_se
+            new_contacts.append({
+                'name': f'{fn} {ln}',
+                'full_name_field': full,
+                'title': title,
+                'company': company,
+                'location': loc,
+                'active': active,
+                'is_se': is_se,
+                'tier1': tier1,
+                'icebreaker': icebreaker[:100],
+                'linkedin': linkedin,
+                'email': email,
+            })
+
+print(f'Found {len(new_contacts)} truly new contacts:')
+print()
+for c in new_contacts:
+    t1 = 'TIER 1' if c['tier1'] else 'Tier 2'
+    reason = []
+    if c['active'] in ('1','True','Y','Yes','TRUE'): reason.append('LinkedIn active')
+    if c['is_se']: reason.append('Southeast')
+    r = ' (' + ', '.join(reason) + ')' if reason else ''
+    print(f\"{c['name']} | {c['title']} | {c['company']} | {c['location']} | {t1}{r}\")
+    if c['icebreaker']:
+        print(f\"  Icebreaker: {c['icebreaker']}\")
+    if c['linkedin']:
+        print(f\"  LinkedIn: {c['linkedin']}\")
+    if c['email']:
+        print(f\"  Email: {c['email']}\")
+    print()
+"
+  description: Find new contacts using first+last name matching
+
+[Tool result] Shell
+
+assistant:
+Here are the 18 new contacts. **Only 2 qualify for Tier 1:**
+
+| Person | Title | Company | Location | Why Tier 1 |
+|---|---|---|---|---|
+| **James Nelson** | Executive Director of Operations | Percepta | Houston, TX | Active on LinkedIn |
+| **Cathy Sexton** | SVP Financial Services | Harte Hanks | Salisbury, NC | Southeast (CBAND hook) |
+
+The other 16 are Tier 2 — not active on LinkedIn and not in the Southeast. They're all finance personas (CFOs, VPs Finance, Directors of Finance) spread across companies like MarketStar, NexRep, Boldr, UnifyCX, Intelogix, DATAMARK, Helpware, CBE, Infocision, Nearsol, and Harte Hanks.
+
+**Also need to remove from outreach:** **Bucky Cline** (GCS International) — only person dropped from the master list who was in our outreach.
+
+**Summary:**
+- **Remove:** Bucky Cline (1 person)
+- **Potential adds:** James Nelson (Percepta, Ops persona, LinkedIn active) and Cathy Sexton (Harte Hanks, Finance persona, Southeast/NC)
+
+Want me to add James Nelson and Cathy Sexton to the outreach doc and remove Bucky Cline?
+
+user:
+<user_query>
+yes. do that. 
+</user_query>
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:   // Exclusions: removed after web verification
+  const excludeNames = new Set([
+    "Pankaj Dhanuka",    // Wrong company — at Fusion CX, not ClearSource
+    "Demond Moore",      // Can't verify at Percepta
+    "Daniel Aristimuno", // Title unverifiable — listed as Site Director elsewhere
+    "Rodd Furlough",     // Can't verify at KM² Solutions
+  ]);
+  new_string:   // Exclusions: removed after web verification or dropped from master list
+  const excludeNames = new Set([
+    "Pankaj Dhanuka",    // Wrong company — at Fusion CX, not ClearSource
+    "Demond Moore",      // Can't verify at Percepta
+    "Daniel Aristimuno", // Title unverifiable — listed as Site Director elsewhere
+    "Rodd Furlough",     // Can't verify at KM² Solutions
+    "Bucky Cline",       // Removed from master list
+  ]);
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:   // Force-include contacts who are event-active (even if not LinkedIn-active or SE)
+  const forceIncludeNames = new Set([
+    "Ali Karim",        // DATAMARK — confirmed speaker at Frost & Sullivan East + West
+    "Bill Randag",      // DATAMARK President — company heavily event-active
+    "Matt Rocco",       // Etech CEO — company at CCW LV + Conversational AI Summit
+    "Jim Iyoob",        // Etech — confirmed speaker at Conversational AI Summit + CCW LV
+    "Liliana Lopez",    // Liveops — co-led AI Maturity Workshop at CCW Orlando, active LinkedIn
+    "Bill Trocano",     // Liveops — published AI article Feb 2026, active LinkedIn
+  ]);
+  new_string:   // Force-include contacts who are event-active (even if not LinkedIn-active or SE)
+  const forceIncludeNames = new Set([
+    "Ali Karim",        // DATAMARK — confirmed speaker at Frost & Sullivan East + West
+    "Bill Randag",      // DATAMARK President — company heavily event-active
+    "Matt Rocco",       // Etech CEO — company at CCW LV + Conversational AI Summit
+    "Jim Iyoob",        // Etech — confirmed speaker at Conversational AI Summit + CCW LV
+    "Liliana Lopez",    // Liveops — co-led AI Maturity Workshop at CCW Orlando, active LinkedIn
+    "Bill Trocano",     // Liveops — published AI article Feb 2026, active LinkedIn
+    "James Nelson",     // Percepta — new addition, active LinkedIn, Exec Dir of Operations
+    "Cathy Sexton",     // Harte Hanks — new addition, SVP Financial Services, Salisbury NC (SE)
+  ]);
+
+[Tool result] StrReplace
+
+assistant:
+Now add enriched icebreakers for the two new contacts. Let me quickly research them.
+[Tool call] user-perplexity-ask-perplexity_ask
+  messages: [{"role":"user","content":"Who is James Nelson, Executive Director of Operations at Percepta? What is his background? Percepta is a BPO joint venture between TTEC and Ford Motor Company. Any recent news about him or Percepta?"}]
+[Tool call] user-perplexity-ask-perplexity_ask
+  messages: [{"role":"user","content":"Who is Cathy Sexton, Senior Vice President Financial Services at Harte Hanks in Salisbury North Carolina? What is her background? Any recent news about Harte Hanks or Cathy Sexton?"}]
+
+[Tool result] user-perplexity-ask-perplexity_ask
+
+[Tool result] user-perplexity-ask-perplexity_ask
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:     "Bill Trocano": "Published a LinkedIn article in Feb 2026 about how AI didn't replace humans during the holiday season but raised the bar for human agents. Global VP of CX at Liveops. Active interest in AI-enabled CX and workforce enablement.",
+  };
+  new_string:     "Bill Trocano": "Published a LinkedIn article in Feb 2026 about how AI didn't replace humans during the holiday season but raised the bar for human agents. Global VP of CX at Liveops. Active interest in AI-enabled CX and workforce enablement.",
+    "James Nelson": "Executive Director of Operations at Percepta since Oct 2021, based in Houston, TX. Previously COO at District Photo Inc. Percepta just named Thomas Monaghan as new President (Feb 2026), replacing Karen Gurganious — new leadership means potential new priorities and openness to partnerships. Percepta is a TTEC/Ford JV with ~4,000 employees across 13 countries, focused on automotive CX.",
+    "Cathy Sexton": "SVP Financial Services at Harte Hanks since 2007, based in Salisbury, NC. 45+ years in direct marketing and financial services. Catawba College alumna (English & Psychology). Harte Hanks is a publicly traded (NYSE: HHS) direct marketing company with contact center operations in Texas and UK. Interesting: Greg Alcorn (GCS International, also in our outreach) is also Catawba College connected and also in Salisbury, NC.",
+  };
+
+[Tool result] StrReplace
+
+assistant:
+Now update the script to read from the new Final top contacts CSV.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:   const csvPath = path.join(__dirname, "..", "Downloads", "Top Contacts 2026 - Top Contacts.csv");
+  const altPath = "/Users/alicewyatt/Downloads/Top Contacts 2026 - Top Contacts.csv";
+  new_string:   const csvPath = path.join(__dirname, "..", "Downloads", "Final top contacts - Top Contacts.csv");
+  const altPath = "/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv";
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/generate-outreach.ts
+  description: Regenerate: remove Bucky, add James + Cathy
+  block_until_ms: 500000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] I see an issue — the script is picking up the new contacts by their "Full Name" field, which has the job title instead of the actual name. For "James Nelson" and "Cathy Sexton", the Full Name field in the CSV is their job title, not their actual name. The script uses "Full Name" to identify people, so it's not finding them by name in the forceInclude set.
+
+Let me check — the force include has "James Nelson" and "Cathy Sexton", but the CSV has "Executive Director of Operations" and "Senior Vice President, Financial Services" as the Full Name. The actual names are in the First Name and Last Name columns.
+
+
+Looking at the actual data, I'm seeing duplicates and mismatches — Bryan Overcash appears twice, and Cathy Sexton is showing up with her job title instead of her name. James Nelson isn't being matched at all because the force-include logic is comparing against the Full Name field, which contains his job title. I need to modify the script to construct the name from First Name and Last Name columns instead of relying on the Full Name field for matching.
+I see issues — the new contacts have job titles in the "Full Name" field, so the script isn't matching them properly. Let me fix the name handling and deduplication.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:       const name = (r["Full Name"] || "").trim();
+      if (!name) return false;
+      if (excludeNames.has(name)) return false;
+      // Remove duplicate Brian Flaherty
+      if (name === "Brian Flaherty") {
+        if (brianFlahertySeen) return false;
+        brianFlahertySeen = true;
+      }
+      const active = r["Active on LinkedIn (last 90 days)"] === "1" || r["Active on LinkedIn (last 90 days)"] === "True";
+      const se = isSoutheastLocation(r["Location"] || "");
+      const forced = forceIncludeNames.has(name);
+      return active || se || forced;
+  new_string:       const fn = (r["First Name"] || "").trim();
+      const ln = (r["Last Name"] || "").trim();
+      if (!fn || !ln) return false;
+      const realName = `${fn} ${ln}`;
+      if (excludeNames.has(realName)) return false;
+      // Remove duplicate Brian Flaherty
+      if (realName === "Brian Flaherty") {
+        if (brianFlahertySeen) return false;
+        brianFlahertySeen = true;
+      }
+      // Deduplicate by first+last+company
+      const dedupeKey = `${realName}|${(r["Company Name"] || "").trim()}`;
+      if (seenKeys.has(dedupeKey)) return false;
+      seenKeys.add(dedupeKey);
+      const active = ["1", "True", "Y", "Yes", "TRUE"].includes(r["Active on LinkedIn (last 90 days)"] || "");
+      const se = isSoutheastLocation(r["Location"] || "");
+      const forced = forceIncludeNames.has(realName);
+      return active || se || forced;
+
+[Tool result] StrReplace
+
+assistant:
+Add the `seenKeys` Set before the filter, and fix the name resolution in the map.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:   const prospects: Prospect[] = records
+    .filter((r: Record<string, string>) => {
+  new_string:   const seenKeys = new Set<string>();
+
+  const prospects: Prospect[] = records
+    .filter((r: Record<string, string>) => {
+
+[Tool result] StrReplace
+
+assistant:
+Now fix the `.map()` to always use First Name + Last Name as the real name.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:     .map((r: Record<string, string>) => {
+      const fullName = r["Full Name"].trim();
+      const firstName = r["First Name"]?.trim() || fullName.split(" ")[0];
+      const lastName = r["Last Name"]?.trim() || "";
+  new_string:     .map((r: Record<string, string>) => {
+      const firstName = r["First Name"]?.trim() || "";
+      const lastName = r["Last Name"]?.trim() || "";
+      const fullName = `${firstName} ${lastName}`.trim();
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/generate-outreach.ts
+  description: Regenerate with fixed name handling
+  block_until_ms: 500000
+
+[Tool result] Shell
+
+user:
+<user_query>
+k what's happening here
+</user_query>
+
+assistant:
+The command got aborted — likely a timeout or interruption. Let me just re-run it.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/generate-outreach.ts
+  description: Regenerate outreach with fixed names
+  block_until_ms: 500000
+
+[Tool result] Shell
+
+user:
+<user_query>
+what exactly are you doing? it wasnt a huge task that i set you
+</user_query>
+
+assistant:
+[Thinking] The user is right — the task was simple: remove Bucky Cline, add James Nelson and Cathy Sexton. Instead of re-running the entire LLM generation for all 27 prospects (which takes ~2.5 minutes and costs money), I should just:
+
+1. Edit the existing `personalised-outreach.md` to remove Bucky Cline's section
+2. Generate messaging for just the 2 new contacts (James Nelson and Cathy Sexton)
+3. Add them to the existing document
+4. Rebuild the .docx
+
+That's much simpler and faster. Let me do that.
+You're right — I was overcomplicating it by re-running the entire 27-person generation. I just need to:
+
+1. Remove Bucky Cline's section from the existing doc
+2. Generate messaging for only James Nelson and Cathy Sexton
+3. Add them in
+
+Let me do that directly.
+[Tool call] Grep
+  pattern: Bucky Cline
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  -B: 2
+  -A: 1
+
+[Tool result] Grep
+
+assistant:
+[Tool call] Grep
+  pattern: Bucky
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+
+[Tool result] Grep
+
+assistant:
+Bucky Cline was already excluded from the last run. Now let me just generate the 2 new contacts and append them.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && wc -l data/personalised-outreach.md
+  description: Check current doc length
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: -5
+
+[Tool result] Read
+
+assistant:
+Good — the doc ends cleanly. Now let me generate messaging for just James Nelson and Cathy Sexton.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && node -e "
+const { config } = require('dotenv'); config();
+const { generateText } = require('ai');
+const { openai } = require('@ai-sdk/openai');
+
+async function gen(prospect) {
+  const result = await generateText({
+    model: openai('gpt-4o'),
+    prompt: prospect.prompt,
+    maxTokens: 800,
+    temperature: 0.7,
+  });
+  return result.text;
+}
+
+async function main() {
+  const prospects = [
+    {
+      name: 'James Nelson',
+      card: [
+        '| **Company** | Percepta |',
+        '| **Title** | Executive Director of Operations |',
+        '| **Persona** | Operations & Finance Leader |',
+        '| **Active on LinkedIn** | Yes |',
+        '| **LinkedIn connection** | None |',
+        '| **Event** | Enterprise Connect (Mar 10-12, Las Vegas) |',
+        '| **Delivery footprint** | Onshore-heavy (onshore) |',
+        '| **Client industries** | Automotive |',
+        '| **Icebreaker** | Percepta just named Thomas Monaghan as new President (Feb 2026). New leadership = new priorities. Previously COO at District Photo Inc. |',
+        '| **Location** | Houston, Texas, United States |',
+        '| **LinkedIn** | https://www.linkedin.com/in/james-nelson-0292b713/ |',
+        '| **Email** | james.nelson@percepta.com |',
+      ].join('\n'),
+      prompt: \`You are writing LinkedIn and email outreach for Calanthia Mei, an AI entrepreneur and Strategic Advisor at Dyna.ai. She is an EXPERT who spends her days with BPO leaders like Teleperformance. Warm, confident, generous.
+
+PROSPECT: James Nelson, Executive Director of Operations at Percepta (TTEC/Ford JV, ~4,000 employees, automotive CX). Houston, TX. Percepta just named Thomas Monaghan as new President (Feb 2026) — new leadership, potential new priorities. Previously COO at District Photo Inc.
+Persona: Operations & Finance Leader. Delivery: Onshore-heavy. Event: Enterprise Connect (Mar 10-12).
+
+RULES:
+- Touch 1: Under 300 chars. No Dyna mention. Peer connecting with peer.
+- Touch 2: 3-5 sentences. No pitch. Calanthia as expert sharing insights. End with question.
+- Touch 3: 120-160 words. Lead with reducing labor costs, expanding capacity. Teleperformance hook. Include proof points (10K daily calls 99% accuracy, 76% promise-to-pay, 40% cost reduction). "Warm regards, Calanthia"
+
+Format EXACTLY:
+**Touch 1 — Connection Request**
+[message]
+
+**Touch 2 — LinkedIn Message**
+[message]
+
+**Touch 3 — Email**
+Subject: [subject]
+
+[body ending with "Warm regards, Calanthia"]\`
+    },
+    {
+      name: 'Cathy Sexton',
+      card: [
+        '| **Company** | Harte Hanks |',
+        '| **Title** | Senior Vice President, Financial Services |',
+        '| **Persona** | Operations & Finance Leader |',
+        '| **Active on LinkedIn** | No |',
+        '| **LinkedIn connection** | None |',
+        '| **Event** | CBAND Atlanta (Feb 26) |',
+        '| **Delivery footprint** | Mixed delivery (onshore, offshore) |',
+        '| **Client industries** | Financial Services, Healthcare, Technology |',
+        '| **Icebreaker** | 45+ years in direct marketing and financial services. At Harte Hanks since 2007. Catawba College alumna. Based in Salisbury, NC (same city as Greg Alcorn/GCS). |',
+        '| **Location** | Salisbury, North Carolina, United States |',
+        '| **LinkedIn** | https://www.linkedin.com/in/cathy-sexton-5b119b2/ |',
+        '| **Email** | cathy.sexton@hartehanks.com |',
+      ].join('\n'),
+      prompt: \`You are writing LinkedIn and email outreach for Calanthia Mei, an AI entrepreneur and Strategic Advisor at Dyna.ai. She is an EXPERT who spends her days with BPO leaders like Teleperformance. Warm, confident, generous.
+
+PROSPECT: Cathy Sexton, SVP Financial Services at Harte Hanks. Salisbury, NC. 45+ years in direct marketing and financial services. At Harte Hanks since 2007. Catawba College alumna. Harte Hanks is publicly traded, with contact center operations in Texas and UK. Financial services, healthcare, technology clients.
+Persona: Operations & Finance Leader. Delivery: Mixed (onshore + offshore). Event: CBAND Atlanta (Feb 26).
+
+RULES:
+- Touch 1: Under 300 chars. No Dyna mention. Peer connecting with peer.
+- Touch 2: 3-5 sentences. No pitch. Calanthia as expert sharing insights. End with question about CBAND Atlanta event.
+- Touch 3: 120-160 words. Lead with reducing labor costs, expanding capacity. Teleperformance hook. Financial services case study (digital bank Singapore 76% promise-to-pay). AI as third delivery tier. "Warm regards, Calanthia"
+
+Format EXACTLY:
+**Touch 1 — Connection Request**
+[message]
+
+**Touch 2 — LinkedIn Message**
+[message]
+
+**Touch 3 — Email**
+Subject: [subject]
+
+[body ending with "Warm regards, Calanthia"]\`
+    }
+  ];
+
+  for (const p of prospects) {
+    console.log('Generating: ' + p.name);
+    const msg = await gen(p);
+    console.log('===CARD_START:' + p.name + '===');
+    console.log(p.card);
+    console.log('===MSG===');
+    console.log(msg);
+    console.log('===END===');
+  }
+}
+main().catch(console.error);
+" 2>/dev/null
+  description: Generate messaging for 2 new contacts only
+  block_until_ms: 60000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/gen-two.ts
+  contents: import { config } from "dotenv";
+import { generateText } from "ai";
+import { openai } from "@ai-sdk/openai";
+config();
+
+async function gen(prompt: string) {
+  const result = await generateText({
+    model: openai("gpt-4o"),
+    prompt,
+    maxTokens: 800,
+    temperature: 0.7,
+  });
+  return result.text;
+}
+
+async function main() {
+  const james = await gen(`You are writing LinkedIn and email outreach for Calanthia Mei, an AI entrepreneur and Strategic Advisor at Dyna.ai. She is an EXPERT who spends her days with BPO leaders like Teleperformance. Warm, confident, generous.
+
+PROSPECT: James Nelson, Executive Director of Operations at Percepta (TTEC/Ford JV, ~4,000 employees, automotive CX). Houston, TX. Percepta just named Thomas Monaghan as new President (Feb 2026) — new leadership, potential new priorities. Previously COO at District Photo Inc.
+Persona: Operations & Finance Leader. Delivery: Onshore-heavy. Event: Enterprise Connect (Mar 10-12).
+
+RULES:
+- Touch 1: Under 300 chars. No Dyna mention. Peer connecting with peer.
+- Touch 2: 3-5 sentences. No pitch. Calanthia as expert sharing insights. End with question.
+- Touch 3: 120-160 words. Lead with reducing labor costs, expanding capacity. Teleperformance hook. Include proof points (10K daily calls 99% accuracy, 76% promise-to-pay, 40% cost reduction). End with "Warm regards, Calanthia"
+
+Format EXACTLY:
+**Touch 1 — Connection Request**
+[message]
+
+**Touch 2 — LinkedIn Message**
+[message]
+
+**Touch 3 — Email**
+Subject: [subject]
+
+[body ending with "Warm regards, Calanthia"]`);
+
+  console.log("===JAMES===");
+  console.log(james);
+
+  const cathy = await gen(`You are writing LinkedIn and email outreach for Calanthia Mei, an AI entrepreneur and Strategic Advisor at Dyna.ai. She is an EXPERT who spends her days with BPO leaders like Teleperformance. Warm, confident, generous.
+
+PROSPECT: Cathy Sexton, SVP Financial Services at Harte Hanks. Salisbury, NC. 45+ years in direct marketing and financial services. At Harte Hanks since 2007. Catawba College alumna. Harte Hanks is publicly traded, with contact center operations in Texas and UK. Financial services, healthcare, technology clients.
+Persona: Operations & Finance Leader. Delivery: Mixed (onshore + offshore). Event: CBAND Atlanta (Feb 26).
+
+RULES:
+- Touch 1: Under 300 chars. No Dyna mention. Peer connecting with peer.
+- Touch 2: 3-5 sentences. No pitch. Calanthia as expert sharing insights. End with question about CBAND Atlanta event.
+- Touch 3: 120-160 words. Lead with reducing labor costs, expanding capacity. Teleperformance hook. Financial services case study (digital bank Singapore 76% promise-to-pay). AI as third delivery tier. End with "Warm regards, Calanthia"
+
+Format EXACTLY:
+**Touch 1 — Connection Request**
+[message]
+
+**Touch 2 — LinkedIn Message**
+[message]
+
+**Touch 3 — Email**
+Subject: [subject]
+
+[body ending with "Warm regards, Calanthia"]`);
+
+  console.log("===CATHY===");
+  console.log(cathy);
+}
+
+main().catch(console.error);
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/gen-two.ts
+  description: Generate messaging for James and Cathy
+  block_until_ms: 60000
+
+[Tool result] Shell
+
+assistant:
+Now let me append both to the outreach doc and rebuild the .docx.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 3
+  limit: 2
+
+[Tool result] Read
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  old_string: > Total prospects: 27
+  new_string: > Total prospects: 27 (updated: removed Bucky Cline, added James Nelson + Cathy Sexton)
+
+[Tool result] StrReplace
+
+assistant:
+Now remove the duplicate entries (entries 26 and 27 from the bad run — "Co-founder, CFO & COO" and "Senior Vice President, Financial Services").
+[Tool call] Grep
+  pattern: ## 26\.|## 27\.
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  -A: 1
+
+[Tool result] Grep
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 905
+
+[Tool result] Read
+
+assistant:
+The previous run already generated entries for both — entry 26 is Bryan Overcash (duplicate, already #7) and entry 27 is Cathy Sexton (but with no name, just title). Let me replace entry 26 with James Nelson, and fix entry 27 to show Cathy Sexton's actual name with better messaging.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  old_string: ## 26. Co-founder, CFO & COO
+
+| | |
+|---|---|
+| **Company** | Global Contact Service International |
+| **Title** | Co-founder, CFO & COO |
+| **Persona** | Executive Sponsor |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | None |
+| **Event** | CBAND Atlanta (Feb 26) |
+| **Delivery footprint** | Onshore-heavy (onshore) |
+| **Client industries** | Technology |
+| **Icebreaker** |  |
+| **Location** | Salisbury, North Carolina, United States |
+| **LinkedIn** | https://www.linkedin.com/in/bryanovercash/ |
+| **Email** | bovercash@gcsagents.com |
+
+**Touch 1 — Connection Request**  
+Hi Bryan, I noticed you'll be at the CCNG event in Atlanta on Feb 26. I'd love to connect and share insights from my work with BPO leaders.
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, Bryan. I've heard impressive things about Global Contact Service International's work in the tech industry. I spend my days with BPO leaders exploring AI strategies, and it's fascinating to see the innovations. Are you going to the CCNG event in Atlanta on Feb 26?
+
+**Touch 3 — Email**  
+Subject: Insights from the AI Frontier in BPO
+
+Hi Bryan,
+
+It was great connecting on LinkedIn. I've been working closely with BPO leaders like Teleperformance, and it's clear the biggest players are leveraging AI to enhance service quality while reducing costs. For instance, a major Mexican telco uses AI for automated dual-agent models, achieving 99% tagging accuracy and a 4.7% conversion rate on telesales. 
+
+Don't worry about having Teleperformance's budget or internal AI team; we offer proven expertise to scale both inbound and outbound operations. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,  
+Calanthia
+
+---
+
+## 27. Senior Vice President, Financial Services
+
+| | |
+|---|---|
+| **Company** | Harte Hanks |
+| **Title** | Senior Vice President, Financial Services |
+| **Persona** | Operations & Finance Leader |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | None |
+| **Event** | CBAND Atlanta (Feb 26) |
+| **Delivery footprint** | Mixed delivery (onshore, offshore) |
+| **Client industries** | Financial Services, Healthcare, Technology |
+| **Icebreaker** |  |
+| **Location** | Salisbury, North Carolina, United States |
+| **LinkedIn** | https://www.linkedin.com/in/cathy-sexton-5b119b2/ |
+| **Email** | cathy.sexton@hartehanks.com |
+
+**Touch 1 — Connection Request**  
+Hi Cathy, I saw you're attending the CCNG event in Atlanta on Feb 26. Looking forward to connecting and exchanging insights on AI in the financial services sector.
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, Cathy. I've always admired Harte Hanks' innovative approach in leveraging mixed delivery for client success. I spend my days with BPO leaders exploring AI strategies. Are you going to the CCNG event in Atlanta on Feb 26?
+
+**Touch 3 — Email**  
+Subject: Insights from BPO Leaders on AI Strategy  
+
+Hi Cathy,  
+
+Thanks for connecting on LinkedIn. I've been closely collaborating with BPO leaders like Teleperformance to integrate AI into their operations, achieving remarkable efficiency. For instance, a digital bank in Singapore saw a 76% promise-to-pay rate with AI-enhanced collections. With labor costs rising, fully automated AI agents enable scaling on demand, optimizing operations and reducing expenses. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?  
+
+Warm regards,  
+Calanthia  
+
+---
+  new_string: ## 26. James Nelson
+
+| | |
+|---|---|
+| **Company** | Percepta |
+| **Title** | Executive Director of Operations |
+| **Persona** | Operations & Finance Leader |
+| **Active on LinkedIn** | Yes |
+| **LinkedIn connection** | None |
+| **Event** | Enterprise Connect (Mar 10-12, Las Vegas) |
+| **Delivery footprint** | Onshore-heavy (onshore) |
+| **Client industries** | Automotive |
+| **Icebreaker** | Percepta just named Thomas Monaghan as new President (Feb 2026), replacing Karen Gurganious. New leadership = potential new priorities. Previously COO at District Photo Inc. |
+| **Location** | Houston, Texas, United States |
+| **LinkedIn** | https://www.linkedin.com/in/james-nelson-0292b713/ |
+| **Email** | james.nelson@percepta.com |
+
+**Touch 1 — Connection Request**  
+Hi James, congratulations on Thomas Monaghan's appointment at Percepta! Exciting time for the business. Would love to connect with a fellow operations leader.
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, James. With the leadership change at Percepta, it's an interesting time for the business. I've been working closely with BPO leaders like Teleperformance and seeing some impactful shifts in how AI is transforming CX operations. How are you thinking about what comes next?
+
+**Touch 3 — Email**  
+Subject: Enhancing Efficiency in Automotive CX
+
+Hi James,
+
+Great connecting on LinkedIn. With Percepta's new leadership in place, I imagine there's fresh thinking about how to drive operational efficiency. In my work with BPO leaders like Teleperformance, I've seen how fully automated AI agents can reduce labor costs significantly while expanding capacity — handling 10K daily calls with 99% accuracy and achieving a 76% promise-to-pay rate in collections. One airline client saw a 40% cost reduction on inbound bookings.
+
+Don't have Teleperformance's budget and internal AI team? That's exactly why we exist — we bring the same proven team and expertise to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,  
+Calanthia
+
+---
+
+## 27. Cathy Sexton
+
+| | |
+|---|---|
+| **Company** | Harte Hanks |
+| **Title** | Senior Vice President, Financial Services |
+| **Persona** | Operations & Finance Leader |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | None |
+| **Event** | CBAND Atlanta (Feb 26) |
+| **Delivery footprint** | Mixed delivery (onshore, offshore) |
+| **Client industries** | Financial Services, Healthcare, Technology |
+| **Icebreaker** | 45+ years in direct marketing and financial services. At Harte Hanks since 2007. Catawba College alumna. Based in Salisbury, NC. |
+| **Location** | Salisbury, North Carolina, United States |
+| **LinkedIn** | https://www.linkedin.com/in/cathy-sexton-5b119b2/ |
+| **Email** | cathy.sexton@hartehanks.com |
+
+**Touch 1 — Connection Request**  
+Hi Cathy, I'll be at the CCNG event in Atlanta on Feb 26. Would love to connect with a fellow financial services leader. Hope to see you there.
+
+**Touch 2 — LinkedIn Message**  
+Great to connect, Cathy. With nearly two decades at Harte Hanks and your deep experience in financial services, I imagine you've seen the industry evolve considerably. I've been spending a lot of time with BPO leaders exploring how AI is changing the economics of contact center operations. Are you planning to be at the CBAND event in Atlanta on Feb 26?
+
+**Touch 3 — Email**  
+Subject: AI and the Economics of Financial Services CX
+
+Hi Cathy,
+
+Great connecting on LinkedIn. In my work with BPO leaders like Teleperformance, I've been seeing how fully automated AI agents are transforming the economics of financial services operations. A digital bank in Singapore achieved a 76% promise-to-pay rate on collections using AI — fully compliant in a regulated environment, expanded from pilot to multi-product in 12 months.
+
+For mixed delivery operations like Harte Hanks, AI becomes a third delivery tier alongside onshore and offshore — zero labour cost, infinite scale, per-outcome pricing. Don't have Teleperformance's budget? We bring the same proven team to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,  
+Calanthia
+
+---
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 905
+  limit: 5
+
+[Tool result] Read
+
+assistant:
+The issue is trailing whitespace. Let me just rewrite the end of the file from line 905 onward.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 1
+  limit: 906
+
+[Tool result] Read
+
+assistant:
+[Thinking] OK I can see the full file. The entries at 907-978 are the problematic ones (26. Co-founder, CFO & COO and 27. Senior Vice President, Financial Services). I need to replace those with the corrected James Nelson and Cathy Sexton entries. The issue with StrReplace was whitespace. Let me try using a more targeted match.
+Let me just rewrite the file from the clean section (lines 1-905) plus the new entries.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 1
+  limit: 906
+
+[Tool result] Read
+
+assistant:
+Now let me just truncate at line 906 and append the two new correct entries.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && head -906 data/personalised-outreach.md > /tmp/outreach-clean.md && wc -l /tmp/outreach-clean.md
+  description: Truncate file to clean section
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cat >> /tmp/outreach-clean.md << 'ENDOFFILE'
+
+## 26. James Nelson
+
+| | |
+|---|---|
+| **Company** | Percepta |
+| **Title** | Executive Director of Operations |
+| **Persona** | Operations & Finance Leader |
+| **Active on LinkedIn** | Yes |
+| **LinkedIn connection** | None |
+| **Event** | Enterprise Connect (Mar 10-12, Las Vegas) |
+| **Delivery footprint** | Onshore-heavy (onshore) |
+| **Client industries** | Automotive |
+| **Icebreaker** | Percepta just named Thomas Monaghan as new President (Feb 2026). New leadership = potential new priorities. Previously COO at District Photo Inc. |
+| **Location** | Houston, Texas, United States |
+| **LinkedIn** | https://www.linkedin.com/in/james-nelson-0292b713/ |
+| **Email** | james.nelson@percepta.com |
+
+**Touch 1 — Connection Request**
+Hi James, congratulations on Thomas Monaghan's appointment at Percepta! Exciting time for the business. Would love to connect with a fellow operations leader.
+
+**Touch 2 — LinkedIn Message**
+Great to connect, James. With the leadership change at Percepta, it's an interesting time for the business. I've been working closely with BPO leaders like Teleperformance and seeing some impactful shifts in how AI is transforming CX operations. How are you thinking about what comes next?
+
+**Touch 3 — Email**
+Subject: Enhancing Efficiency in Automotive CX
+
+Hi James,
+
+Great connecting on LinkedIn. With Percepta's new leadership in place, I imagine there's fresh thinking about how to drive operational efficiency. In my work with BPO leaders like Teleperformance, I've seen how fully automated AI agents can reduce labor costs significantly while expanding capacity — handling 10K daily calls with 99% accuracy and achieving a 76% promise-to-pay rate in collections. One airline client saw a 40% cost reduction on inbound bookings.
+
+Don't have Teleperformance's budget and internal AI team? That's exactly why we exist — we bring the same proven team and expertise to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,
+Calanthia
+
+---
+
+## 27. Cathy Sexton
+
+| | |
+|---|---|
+| **Company** | Harte Hanks |
+| **Title** | Senior Vice President, Financial Services |
+| **Persona** | Operations & Finance Leader |
+| **Active on LinkedIn** | No |
+| **LinkedIn connection** | None |
+| **Event** | CBAND Atlanta (Feb 26) |
+| **Delivery footprint** | Mixed delivery (onshore, offshore) |
+| **Client industries** | Financial Services, Healthcare, Technology |
+| **Icebreaker** | 45+ years in direct marketing and financial services. At Harte Hanks since 2007. Catawba College alumna. Based in Salisbury, NC. |
+| **Location** | Salisbury, North Carolina, United States |
+| **LinkedIn** | https://www.linkedin.com/in/cathy-sexton-5b119b2/ |
+| **Email** | cathy.sexton@hartehanks.com |
+
+**Touch 1 — Connection Request**
+Hi Cathy, I'll be at the CCNG event in Atlanta on Feb 26. Would love to connect with a fellow financial services leader. Hope to see you there.
+
+**Touch 2 — LinkedIn Message**
+Great to connect, Cathy. With nearly two decades at Harte Hanks and your deep experience in financial services, I imagine you've seen the industry evolve considerably. I've been spending a lot of time with BPO leaders exploring how AI is changing the economics of contact center operations. Are you planning to be at the CBAND event in Atlanta on Feb 26?
+
+**Touch 3 — Email**
+Subject: AI and the Economics of Financial Services CX
+
+Hi Cathy,
+
+Great connecting on LinkedIn. In my work with BPO leaders like Teleperformance, I've been seeing how fully automated AI agents are transforming the economics of financial services operations. A digital bank in Singapore achieved a 76% promise-to-pay rate on collections using AI — fully compliant in a regulated environment, expanded from pilot to multi-product in 12 months.
+
+For mixed delivery operations like Harte Hanks, AI becomes a third delivery tier alongside onshore and offshore — zero labour cost, infinite scale, per-outcome pricing. Don't have Teleperformance's budget? We bring the same proven team to you. I'd be happy to share more of what I'm seeing — would you be interested in a conversation?
+
+Warm regards,
+Calanthia
+
+---
+ENDOFFILE
+echo "Done: $(wc -l < /tmp/outreach-clean.md) lines"
+  description: Append James Nelson and Cathy Sexton
+
+[Tool result] Shell
