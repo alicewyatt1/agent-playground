@@ -33,7 +33,9 @@ interface Prospect {
   companyTenure: string;
   notableExperience: string;
   firstDegree: string;
+  secondDegree: string;
   calanthiaFirstDegree: string;
+  calanthiaSecondDegree: string;
   deliveryModel: string;
   clientIndustries: string;
 }
@@ -267,7 +269,9 @@ async function main() {
         companyTenure: r["Company Tenure"] || "",
         notableExperience: r["Notable Previous Experience"] || "",
         firstDegree: r["First Degree Connection [Alice or Calanthia]"] || "",
+        secondDegree: r["Second Degree Connections [Alice only]"] || "",
         calanthiaFirstDegree: r["Calanthia First Degree"] || "",
+        calanthiaSecondDegree: r["Calanthia Second Degree"] || "",
         deliveryModel: delivery.deliveryModel,
         clientIndustries: delivery.clientIndustries,
       };
@@ -293,7 +297,14 @@ async function main() {
       const messaging = await generateMessaging(p);
 
       const footprint = classifyDeliveryFootprint(p.deliveryModel);
-      const hasIB = p.icebreaker.trim().length > 10;
+
+      // Build LinkedIn connection string
+      const connections: string[] = [];
+      if (p.firstDegree && p.firstDegree.toLowerCase() === "true") connections.push("Alice 1st degree");
+      if (p.calanthiaFirstDegree && p.calanthiaFirstDegree.toLowerCase() !== "false" && p.calanthiaFirstDegree.trim()) connections.push("Calanthia 1st degree");
+      if (p.secondDegree && p.secondDegree.trim()) connections.push(`Alice 2nd degree (${p.secondDegree.trim()})`);
+      if (p.calanthiaSecondDegree && p.calanthiaSecondDegree.trim() && !p.calanthiaSecondDegree.includes("No LinkedIn")) connections.push(`Calanthia 2nd degree (${p.calanthiaSecondDegree.trim()})`);
+      const connectionStr = connections.length > 0 ? connections.join("; ") : "None";
 
       lines.push(`## ${i + 1}. ${p.fullName}`);
       lines.push("");
@@ -303,11 +314,11 @@ async function main() {
       lines.push(`| **Title** | ${p.jobTitle} |`);
       lines.push(`| **Persona** | ${p.persona} |`);
       lines.push(`| **Active on LinkedIn** | ${p.activeLinkedIn ? "Yes" : "No"} |`);
+      lines.push(`| **LinkedIn connection** | ${connectionStr} |`);
       lines.push(`| **Event** | ${p.eventHook} |`);
       lines.push(`| **Delivery footprint** | ${footprint} (${p.deliveryModel || "unknown"}) |`);
       lines.push(`| **Client industries** | ${p.clientIndustries || "Not specified"} |`);
-      lines.push(`| **Icebreaker available** | ${hasIB ? "Yes" : "No"} |`);
-      if (hasIB) lines.push(`| **Icebreaker** | ${p.icebreaker.substring(0, 200)}${p.icebreaker.length > 200 ? "..." : ""} |`);
+      lines.push(`| **Icebreaker** | ${p.icebreaker.trim().length > 10 ? p.icebreaker.substring(0, 200) + (p.icebreaker.length > 200 ? "..." : "") : ""} |`);
       lines.push(`| **Location** | ${p.location} |`);
       lines.push(`| **LinkedIn** | ${p.linkedinProfile} |`);
       lines.push(`| **Email** | ${p.email} |`);

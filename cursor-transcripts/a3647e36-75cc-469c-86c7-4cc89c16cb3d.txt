@@ -8640,3 +8640,165 @@ assistant:
   description: Convert final outreach to docx
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "$(cat <<'EOF'
+Run: generate-outreach.ts
+
+Regenerated personalised outreach for 25 prospects with full context cards (delivery footprint, client industries, LinkedIn activity, event, persona, icebreaker) and updated expert tone with Teleperformance hook and delivery-model tailoring.
+EOF
+)" && git push
+  description: Auto-commit and push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.docx`** is updated. Here's what's different now:
+
+**Each person has a full context card** so Calanthia knows exactly what she's dealing with before writing:
+
+| Field | Example |
+|---|---|
+| **Company** | CBE Companies |
+| **Persona** | Operations & Finance Leader |
+| **Active on LinkedIn** | No |
+| **Event** | CBAND Atlanta (Feb 26) |
+| **Delivery footprint** | Onshore-heavy (onshore) |
+| **Client industries** | Financial Services, Insurance, Telecom, Healthcare |
+| **Icebreaker available** | Yes / No |
+| **Icebreaker** | (the actual insight, if available) |
+
+**The messaging is now tailored by delivery model** — Amanda Jones at CBE (onshore-heavy) gets the "margins at 5-8% EBITDA" angle, while Mark D'Angola at Buwelo (offshore-heavy) gets the "protect your position, clients demanding AI" angle.
+
+**Touch 3 emails now weave in relevant case studies** based on the company's client industries — financial services BPOs get the Digital Bank Singapore story, telecom-serving BPOs get the Mexican telco story, etc.
+
+**Tone is warmer and expert-led** — "In my work with BPO leaders like Teleperformance..." and "I'd be happy to share more of what I'm seeing — would you be interested in a conversation?" instead of hard CTAs.
+
+Open it up and let me know how the tone feels now — happy to adjust further.
+
+user:
+<user_query>
+Okay, can you please also add whether or not they, me or Calanthea has a first or second degree connection with them? You can just write LinkedIn connection as the column and then under the detail you could say like Calanthea first degree or Alice first degree or the second degree or Calanthea second degree, Alice second degree. Hopefully that makes sense. Also, you don't need to say icebreaker available, yes, no, you just say icebreaker and then leave it blank if there's nothing available. Also, under event, you could just say, yeah, no, that's fine. 
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: head -1 "/Users/alicewyatt/Downloads/Top Contacts 2026 - Top Contacts.csv" | tr ',' '\n' | nl
+  description: Check connection columns in CSV
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvsql --query "SELECT \"Full Name\", \"First Degree Connection [Alice or Calanthia]\", \"Second Degree Connections [Alice only]\", \"Calanthia First Degree\", \"Calanthia Second Degree\" FROM stdin WHERE (\"Active on LinkedIn (last 90 days)\" = '1' OR \"Location\" LIKE '%Atlanta%' OR \"Location\" LIKE '%Georgia%' OR \"Location\" LIKE '%Florida%' OR \"Location\" LIKE '%North Carolina%' OR \"Location\" LIKE '%Tennessee%' OR \"Location\" LIKE '%Alabama%' OR \"Location\" LIKE '%Virginia%' OR \"Location\" LIKE '%Louisiana%') AND \"Full Name\" != ''" < "/Users/alicewyatt/Downloads/Top Contacts 2026 - Top Contacts.csv" | csvlook -l
+  description: Check connection data for prospects
+
+[Tool result] Shell
+
+assistant:
+Good — I can see the connection data. Now let me update the script to add the LinkedIn connection field and clean up the context card format.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:       const footprint = classifyDeliveryFootprint(p.deliveryModel);
+      const hasIB = p.icebreaker.trim().length > 10;
+
+      lines.push(`## ${i + 1}. ${p.fullName}`);
+      lines.push("");
+      lines.push(`| | |`);
+      lines.push(`|---|---|`);
+      lines.push(`| **Company** | ${p.company} |`);
+      lines.push(`| **Title** | ${p.jobTitle} |`);
+      lines.push(`| **Persona** | ${p.persona} |`);
+      lines.push(`| **Active on LinkedIn** | ${p.activeLinkedIn ? "Yes" : "No"} |`);
+      lines.push(`| **Event** | ${p.eventHook} |`);
+      lines.push(`| **Delivery footprint** | ${footprint} (${p.deliveryModel || "unknown"}) |`);
+      lines.push(`| **Client industries** | ${p.clientIndustries || "Not specified"} |`);
+      lines.push(`| **Icebreaker available** | ${hasIB ? "Yes" : "No"} |`);
+      if (hasIB) lines.push(`| **Icebreaker** | ${p.icebreaker.substring(0, 200)}${p.icebreaker.length > 200 ? "..." : ""} |`);
+      lines.push(`| **Location** | ${p.location} |`);
+      lines.push(`| **LinkedIn** | ${p.linkedinProfile} |`);
+      lines.push(`| **Email** | ${p.email} |`);
+  new_string:       const footprint = classifyDeliveryFootprint(p.deliveryModel);
+
+      // Build LinkedIn connection string
+      const connections: string[] = [];
+      if (p.firstDegree && p.firstDegree.toLowerCase() === "true") connections.push("Alice 1st degree");
+      if (p.calanthiaFirstDegree && p.calanthiaFirstDegree.toLowerCase() !== "false" && p.calanthiaFirstDegree.trim()) connections.push("Calanthia 1st degree");
+      if (p.secondDegree && p.secondDegree.trim()) connections.push(`Alice 2nd degree (${p.secondDegree.trim()})`);
+      if (p.calanthiaSecondDegree && p.calanthiaSecondDegree.trim() && !p.calanthiaSecondDegree.includes("No LinkedIn")) connections.push(`Calanthia 2nd degree (${p.calanthiaSecondDegree.trim()})`);
+      const connectionStr = connections.length > 0 ? connections.join("; ") : "None";
+
+      lines.push(`## ${i + 1}. ${p.fullName}`);
+      lines.push("");
+      lines.push(`| | |`);
+      lines.push(`|---|---|`);
+      lines.push(`| **Company** | ${p.company} |`);
+      lines.push(`| **Title** | ${p.jobTitle} |`);
+      lines.push(`| **Persona** | ${p.persona} |`);
+      lines.push(`| **Active on LinkedIn** | ${p.activeLinkedIn ? "Yes" : "No"} |`);
+      lines.push(`| **LinkedIn connection** | ${connectionStr} |`);
+      lines.push(`| **Event** | ${p.eventHook} |`);
+      lines.push(`| **Delivery footprint** | ${footprint} (${p.deliveryModel || "unknown"}) |`);
+      lines.push(`| **Client industries** | ${p.clientIndustries || "Not specified"} |`);
+      lines.push(`| **Icebreaker** | ${p.icebreaker.trim().length > 10 ? p.icebreaker.substring(0, 200) + (p.icebreaker.length > 200 ? "..." : "") : ""} |`);
+      lines.push(`| **Location** | ${p.location} |`);
+      lines.push(`| **LinkedIn** | ${p.linkedinProfile} |`);
+      lines.push(`| **Email** | ${p.email} |`);
+
+[Tool result] StrReplace
+
+assistant:
+Now add `calanthiaSecondDegree` and `secondDegree` to the Prospect interface and the mapping.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:   firstDegree: string;
+  calanthiaFirstDegree: string;
+  deliveryModel: string;
+  clientIndustries: string;
+}
+  new_string:   firstDegree: string;
+  secondDegree: string;
+  calanthiaFirstDegree: string;
+  calanthiaSecondDegree: string;
+  deliveryModel: string;
+  clientIndustries: string;
+}
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:         firstDegree: r["First Degree Connection [Alice or Calanthia]"] || "",
+        calanthiaFirstDegree: r["Calanthia First Degree"] || "",
+  new_string:         firstDegree: r["First Degree Connection [Alice or Calanthia]"] || "",
+        secondDegree: r["Second Degree Connections [Alice only]"] || "",
+        calanthiaFirstDegree: r["Calanthia First Degree"] || "",
+        calanthiaSecondDegree: r["Calanthia Second Degree"] || "",
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/generate-outreach.ts
+  description: Regenerate outreach with connections and clean context card
+  block_until_ms: 400000
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 1
+  limit: 45
+
+[Tool result] Read
+
+assistant:
+Let me check one with connections to make sure it's showing properly.
+[Tool call] Grep
+  pattern: LinkedIn connection.*degree
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+
+[Tool result] Grep
