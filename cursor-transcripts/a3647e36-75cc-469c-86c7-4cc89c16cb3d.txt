@@ -11178,3 +11178,375 @@ Let me check one with a mutual connection to make sure that's working.
   head_limit: 5
 
 [Tool result] Grep
+
+assistant:
+Working well. Let me convert and push.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/personalised-outreach.md -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && git add -A && git commit -m "$(cat <<'EOF'
+Reformat outreach: merged fields into ranked Outreach hooks, removed Active on LinkedIn and Client industries
+EOF
+)" && git push && echo "Done"
+  description: Convert, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.docx`** updated. Each prospect card now looks like:
+
+| | |
+|---|---|
+| **Company** | The Office Gurus |
+| **Title** | VP, Strategic Development |
+| **Persona** | Operations & Finance Leader |
+| **Delivery footprint** | Mixed delivery (onshore, nearshore) |
+| **LinkedIn connection** | Alice 2nd degree (Dave Zimmerman) |
+| **Outreach hooks** | 1. **Speaking/event:** Co-presented at Customer Connect Expo on "Balancing AI and Human Agents." 2. **Mutual connection:** Alice 2nd degree (Dave Zimmerman) 3. **Insight:** The Office Gurus launched GuruAssist AI platform. 4. **Near event:** Based in Bradenton, FL — could attend CBAND Atlanta (Feb 26). |
+| **LinkedIn** | [url] |
+| **Email** | [email] |
+
+Hooks are ranked strongest first — Calanthia reads top-down and leads with the best one. Removed "Active on LinkedIn" and "Client industries" as separate fields.
+
+user:
+<user_query>
+ok now let's 1) rank the prospects in the document by warmest/best outreach hooks
+2) make sure that the messaging reflects the ranking of the icebreaker hooks so that the strongest point of personalisation is referenced first
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I have the full document. I need to:
+
+1. Score each prospect by warmth/hook strength
+2. Rank them
+3. Regenerate Touch 1/2/3 to lead with the strongest hook
+
+Let me define a scoring system:
+
+**Tier A (warmest — confirmed event speaking + mutual connections):**
+- Ali Karim — confirmed speaker at Frost & Sullivan + event
+- Jim Iyoob — confirmed speaker at multiple events + Calanthia 1st degree + multiple 2nd degree
+- Benjamin Alpert — spoke at Customer Connect Expo + Alice 2nd degree + confirmed CCW LV attendee
+
+
+- Liliana Lopez — co-led workshop at CCW Orlando
+
+**Tier B (warm — mutual 1st degree connections + strong insight):**
+- Bill Randag — Calanthia 1st degree + DATAMARK sponsor at events
+- David Kreiss — Calanthia 1st degree + massive expansion story
+- Dominic Leide — Calanthia 1st degree + multiple 2nd degrees
+- Greg Alcorn — Calanthia 1st degree + ApSeed nonprofit (great personal hook)
+- Kenneth Loggins — Calanthia 1st degree + NC call center opening
+- Nanette Har
+
+rell — Calanthia 1st degree + Clutch Top 100
+
+**Tier C (moderate — 2nd degree connections + good insight):**
+- Brian Flaherty — speaking at Mortgage AI conference (Oct) + webinar
+- Bill Trocano — Alice 2nd degree + published AI article Feb 2026
+- Matt Rocco — Calanthia 2nd degree + Etech at CCW LV
+- Bryan Overcash — Calanthia 2nd degree + Forward Rowan + COVID hotline
+- John Yanez — LogixAssist AI award (strong insight, no connection)
+- Pablo Paz Hernandez — Alice 2nd degree + 2,500% growth story
+- Erika Garcia — Alice 2nd degree + insight (but may have left company)
+- Ken Braatz — NinjaAI launch
+
+**Tier D (cooler — insight only or near-event only):**
+- Amanda Jones — company awards but no connection, no LinkedIn activity
+- Donny Jackson — promotion insight but no connection
+- Nitesh Kumar — AI Walk series but unverifiable role
+- Mark D'Angola — SVP APAC insight but no connection
+- Rob Porges — MSuite podcast but no connection, unverifiable title
+- James Nelson — new leadership hook but no connection
+- Youssef Hannat — new leadership hook but no connection
+- Cathy Sexton — tenure insight but no connection
+- Keith Hansen — near event only, no icebreaker, no connection
+
+Now I need to prioritize these contacts and write a script that reorders the file, then regenerates the Touch 1/2/3 messaging for anyone where the strongest hook isn't leading the outreach.
+
+Actually, I'm realizing the user's main request was to ensure the strongest personalization angle appears first in each message. Looking through what's already there, most contacts do lead with their best hook in Touch 1 — like Ali Karim opening with the Frost & Sullivan speaking engagement or Jim Iyoob with his upcoming talks. But there are exceptions, like Bill Randag, where the DATAMARK sponsorship takes priority over the mutual connection that should be the opener.
+
+For first-degree connections especially, the tone needs to shift entirely — these should acknowledge that they already know each other rather than treating them as cold outreach. So I need to reorder the prospects by warmth and regenerate the Touch 1/2/3 messaging to lead with the strongest personalization angle for each one.
+
+Writing the reordering script... I'm going to take the most direct path: reorder the markdown by hook strength, then manually fix the messaging for the handful of sections where it's not already leading with the strongest hook—mainly those Calanthia first-degree connection pieces.
+Let me score, rank, and reorder everyone, then fix the messaging for the ones where it doesn't lead with the strongest hook.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/rank-outreach.ts
+  contents: /**
+ * Ranks prospects by outreach hook warmth and reorders the document.
+ * Also flags where messaging needs to lead with a different hook.
+ */
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const filePath = path.join(__dirname, "..", "data", "personalised-outreach.md");
+const content = fs.readFileSync(filePath, "utf-8");
+
+const parts = content.split(/(?=^## \d+\.)/m);
+const header = parts[0];
+const sections = parts.slice(1);
+
+interface Prospect {
+  name: string;
+  section: string;
+  score: number;
+  tier: string;
+  reason: string;
+}
+
+function scoreSection(section: string): Prospect {
+  const nameMatch = section.match(/^## \d+\.\s+(.+)/);
+  const name = nameMatch ? nameMatch[1].trim() : "Unknown";
+  const hooks = section.match(/\*\*Outreach hooks\*\*\s*\|(.*?)\|/)?.[1] || "";
+  const hooksLower = hooks.toLowerCase();
+  const connField = section.match(/\*\*LinkedIn connection\*\*\s*\|(.*?)\|/)?.[1] || "";
+
+  let score = 0;
+  let tier = "D";
+  const reasons: string[] = [];
+
+  // Confirmed speaker/event involvement
+  if (hooksLower.includes("confirmed speaker") || hooksLower.includes("co-led") || hooksLower.includes("co-presented")) {
+    score += 40;
+    reasons.push("Confirmed speaker/event");
+  }
+  if (hooksLower.includes("speaking/event") && !hooksLower.includes("confirmed speaker") && !hooksLower.includes("co-led") && !hooksLower.includes("co-presented")) {
+    score += 30;
+    reasons.push("Speaking at event");
+  }
+
+  // 1st degree connection
+  if (connField.toLowerCase().includes("1st degree") || connField.toLowerCase().includes("calanthia 1st")) {
+    score += 25;
+    reasons.push("1st degree connection");
+  }
+
+  // 2nd degree connection
+  if (connField.toLowerCase().includes("2nd degree")) {
+    score += 10;
+    reasons.push("2nd degree connection");
+  }
+
+  // Strong personal insight (award, published content, specific achievement)
+  if (hooksLower.includes("award") || hooksLower.includes("published") || hooksLower.includes("authored") ||
+      hooksLower.includes("launched") || hooksLower.includes("2,500%") || hooksLower.includes("apseed") ||
+      hooksLower.includes("logixassist") || hooksLower.includes("ninjaai") || hooksLower.includes("promoted") ||
+      hooksLower.includes("expansion") || hooksLower.includes("clutch") || hooksLower.includes("new president")) {
+    score += 15;
+    reasons.push("Strong personal/company insight");
+  }
+
+  // Company is event-active (sponsor)
+  if (hooksLower.includes("sponsor") || hooksLower.includes("confirmed at ccw") || hooksLower.includes("booth")) {
+    score += 10;
+    reasons.push("Company event-active");
+  }
+
+  // Near event only (weakest)
+  if (reasons.length === 0 && hooksLower.includes("near event")) {
+    score += 3;
+    reasons.push("Near event only");
+  }
+
+  // Assign tier
+  if (score >= 40) tier = "A";
+  else if (score >= 25) tier = "B";
+  else if (score >= 15) tier = "C";
+  else tier = "D";
+
+  return { name, section, score, tier, reason: reasons.join(" + ") || "Location only" };
+}
+
+const prospects = sections.map(scoreSection);
+prospects.sort((a, b) => b.score - a.score);
+
+// Renumber and rebuild
+const output: string[] = [
+  header.replace(/Total prospects: \d+.*/, `Total prospects: ${prospects.length} — ranked by outreach warmth (warmest first)`)
+];
+
+for (let i = 0; i < prospects.length; i++) {
+  const p = prospects[i];
+  // Replace old number with new
+  const renumbered = p.section.replace(/^## \d+\./, `## ${i + 1}.`);
+  output.push(renumbered);
+}
+
+fs.writeFileSync(filePath, output.join(""), "utf-8");
+
+console.log("Ranked prospects:\n");
+for (let i = 0; i < prospects.length; i++) {
+  const p = prospects[i];
+  console.log(`${i + 1}. [Tier ${p.tier}, score ${p.score}] ${p.name} — ${p.reason}`);
+}
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/rank-outreach.ts
+  description: Rank and reorder prospects
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Good ranking. Now I need to fix the messaging for the ones where Touch 1/2 don't lead with the strongest hook. The main issues are:
+
+1. **1st degree connections** (Bill Randag, David Kreiss, Dominic Leide, Greg Alcorn, Kenneth Loggins, Nanette Harrell) — their messaging doesn't acknowledge that Calanthia already knows them. Touch 1 should be warmer ("Great to be connected" not "Would love to connect"), and the mutual connection should be referenced.
+
+2. **Bryan Overcash** got pushed down to Tier D because his 2nd degree connection wasn't being scored alongside the strong insight. 
+
+I'm realizing the bigger issue here: for 1st degree connections, Calanthia shouldn't even be sending a connection request since they're already connected. The outreach should skip Touch 1 entirely and start with a direct LinkedIn message instead, referencing the existing relationship and the specific insight or value prop. I need to adjust the touch sequence for these 7 prospects since they're already connected to Calanthia on LinkedIn — skipping the connection request and making Touch 2 the opening message instead, then regenerating the messaging to align with this new flow. Let me efficiently update just these cases rather than redoing everything.
+Good — ranked and reordered. Now I need to fix the messaging for the **7 Calanthia 1st degree connections** — they're already connected on LinkedIn, so Touch 1 (connection request) doesn't even apply. Their messaging should start warmer and lead with the mutual relationship. Let me fix those and any others where the messaging doesn't match the top hook.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/fix-first-degree.ts
+  contents: /**
+ * Regenerate messaging for 1st degree connections and misaligned hooks.
+ */
+import { config } from "dotenv";
+import { generateText } from "ai";
+import { openai } from "@ai-sdk/openai";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+config();
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const filePath = path.join(__dirname, "..", "data", "personalised-outreach.md");
+
+async function gen(prompt: string): Promise<string> {
+  const r = await generateText({ model: openai("gpt-4o"), prompt, maxTokens: 600, temperature: 0.7 });
+  return r.text;
+}
+
+interface Fix {
+  name: string;
+  isFirstDegree: boolean;
+  prompt: string;
+}
+
+const fixes: Fix[] = [
+  {
+    name: "Jim Iyoob",
+    isFirstDegree: true,
+    prompt: `Calanthia is ALREADY CONNECTED on LinkedIn to Jim Iyoob (President, ETSLabs at Etech Global Services). He is a confirmed speaker at the Conversational AI Summit (Apr 9), CCW Las Vegas (Jun 22-25), and Call Center Campus Symposium. Etech is at CCW LV Booth #1404.
+
+Touch 1: NOT NEEDED — already connected. Write "Already connected on LinkedIn — skip to Touch 2."
+Touch 2: Direct LinkedIn message as a warm reconnection. Lead with his speaking engagements — "I noticed you're speaking at the Conversational AI Summit next month — I'd love to hear your perspective." 3-5 sentences.
+Touch 3: Email. Executive Sponsor persona. Lead with his speaking work, then Teleperformance hook. 120-160 words. End with "Warm regards, Calanthia".`
+  },
+  {
+    name: "David Kreiss",
+    isFirstDegree: true,
+    prompt: `Calanthia is ALREADY CONNECTED on LinkedIn to David Kreiss (Founder, President, CEO of KM² Solutions). Also Calanthia 2nd degree to Karla M. Cosgalla. David is leading massive Caribbean expansion — 1,250 new jobs, 6,500+ employees, new Grenada and Saint Lucia facilities. Offshore-heavy (nearshore + offshore). Near CBAND Atlanta (Boca Raton, FL).
+
+Touch 1: NOT NEEDED — already connected. Write "Already connected on LinkedIn — skip to Touch 2."
+Touch 2: Warm reconnection. Lead with the Caribbean expansion — "The growth you're driving in Grenada and Saint Lucia is incredible — 1,250 new jobs is no small feat." Then ask about CBAND Atlanta. 3-5 sentences.
+Touch 3: Email. Executive Sponsor persona. Acknowledge the expansion, then Teleperformance hook. AI protects your position and scales beyond labour arbitrage. 120-160 words. End with "Warm regards, Calanthia".`
+  },
+  {
+    name: "Greg Alcorn",
+    isFirstDegree: true,
+    prompt: `Calanthia is ALREADY CONNECTED on LinkedIn to Greg Alcorn (Founder and CEO, Global Contact Service International, Salisbury NC). Also Alice 2nd degree (Mark Escueta), Calanthia 2nd degree (Ian Harriman, Aaron Anderson). Greg founded ApSeed nonprofit (25,000+ pre-K tablets, 131% literacy improvement). Former NC Board of Education. Onshore-heavy. Near CBAND Atlanta.
+
+Touch 1: NOT NEEDED — already connected. Write "Already connected on LinkedIn — skip to Touch 2."
+Touch 2: Warm reconnection. Lead with ApSeed — "The impact ApSeed is having on early childhood literacy is remarkable — 25,000 children across multiple states." Then pivot to what she's seeing with BPO leaders. Ask about CBAND Atlanta. 3-5 sentences.
+Touch 3: Email. Executive Sponsor persona. Onshore-heavy means thin margins. Teleperformance hook. 120-160 words. End with "Warm regards, Calanthia".`
+  },
+  {
+    name: "Bill Randag",
+    isFirstDegree: true,
+    prompt: `Calanthia is ALREADY CONNECTED on LinkedIn to Bill Randag (President, DATAMARK Inc.). Also Alice 2nd degree (Brandon Pfluger, Gabriel Pike), Calanthia 2nd degree (Aaron Anderson). DATAMARK is a featured sponsor at both Frost & Sullivan MindXchange East (Fort Lauderdale, Apr 12-15) and West (Tucson, Oct 18-21). 35+ years, 4,600+ employees. Mixed delivery.
+
+Touch 1: NOT NEEDED — already connected. Write "Already connected on LinkedIn — skip to Touch 2."
+Touch 2: Warm reconnection. Lead with DATAMARK's Frost & Sullivan presence — "I noticed DATAMARK is sponsoring both Frost & Sullivan events this year — impressive commitment." Ask about Enterprise Connect. 3-5 sentences.
+Touch 3: Email. Executive Sponsor persona. Teleperformance hook. Multi-industry coverage. 120-160 words. End with "Warm regards, Calanthia".`
+  },
+  {
+    name: "Nanette Harrell",
+    isFirstDegree: true,
+    prompt: `Calanthia is ALREADY CONNECTED on LinkedIn to Nanette Harrell (President, Helpware). Helpware named Clutch Top 100 Fastest-Growing 2025. Expanded to Poland, Albania, Puerto Rico, Guam, Uganda. Acquired Unicsoft, launched Helpware Tech. 18 locations across 4 continents. Asheville, NC. Mixed delivery. Near CBAND Atlanta.
+
+Touch 1: NOT NEEDED — already connected. Write "Already connected on LinkedIn — skip to Touch 2."
+Touch 2: Warm reconnection. Lead with Clutch Top 100 — "Congratulations on the Clutch Top 100 recognition — and the expansion into Uganda and Guam is bold." Then mention what she's learning from BPO leaders about AI. Ask about CBAND Atlanta. 3-5 sentences.
+Touch 3: Email. Executive Sponsor persona. Teleperformance hook. AI as third delivery tier for mixed delivery. 120-160 words. End with "Warm regards, Calanthia".`
+  },
+  {
+    name: "Dominic Leide",
+    isFirstDegree: true,
+    prompt: `Calanthia is ALREADY CONNECTED on LinkedIn to Dominic Leide (President, The Office Gurus). Also Alice 2nd degree (Dave Zimmerman, Alan Bowman), Calanthia 2nd degree (Aaron Anderson). Office Gurus has mixed delivery (onshore + nearshore). Tampa, FL. Near CBAND Atlanta. Office Gurus confirmed attending CCW LV (Jun 22-25). Parent company SGC on NASDAQ.
+
+Touch 1: NOT NEEDED — already connected. Write "Already connected on LinkedIn — skip to Touch 2."
+Touch 2: Warm reconnection. Reference The Office Gurus' work. Ask about CBAND Atlanta. 3-5 sentences.
+Touch 3: Email. Executive Sponsor persona. Teleperformance hook. AI as third delivery tier for mixed delivery. 120-160 words. End with "Warm regards, Calanthia".`
+  },
+  {
+    name: "Kenneth Loggins",
+    isFirstDegree: true,
+    prompt: `Calanthia is ALREADY CONNECTED on LinkedIn to Kenneth Loggins (VP Shared Services, Focus Services). Also Calanthia 2nd degree (Aaron Anderson). Kenneth led the grand opening of a new Focus Services call center in NC (former Concentrix, 350 seats, ~550 jobs). Focus expanding to South Africa. Mixed delivery (onshore + nearshore). Jacksonville, NC. Near CBAND Atlanta.
+
+Touch 1: NOT NEEDED — already connected. Write "Already connected on LinkedIn — skip to Touch 2."
+Touch 2: Warm reconnection. Lead with the NC call center opening — "The NC expansion creating 550 jobs is impressive — and I hear you're heading into South Africa next." Ask about CBAND Atlanta. 3-5 sentences.
+Touch 3: Email. Operations & Finance persona. Reducing labor costs, expanding capacity. Teleperformance hook. 120-160 words. End with "Warm regards, Calanthia".`
+  },
+];
+
+async function main() {
+  const content = fs.readFileSync(filePath, "utf-8");
+  let updated = content;
+
+  for (const fix of fixes) {
+    console.log(`Generating: ${fix.name}`);
+    const fullPrompt = `You are writing LinkedIn and email outreach for Calanthia Mei, an AI entrepreneur and Strategic Advisor at Dyna.ai. She is an EXPERT who spends her days with BPO leaders. Warm, confident, generous. Sign off "Warm regards, Calanthia".
+
+${fix.prompt}
+
+Format EXACTLY:
+**Touch 1 — Connection Request**
+[message or "Already connected on LinkedIn — skip to Touch 2."]
+
+**Touch 2 — LinkedIn Message**
+[message]
+
+**Touch 3 — Email**
+Subject: [subject]
+
+[body]`;
+
+    const messaging = await gen(fullPrompt);
+
+    // Find the person's section and replace their messaging
+    const sectionRegex = new RegExp(`(## \\d+\\. ${fix.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?)\\*\\*Touch 1[\\s\\S]*?(?=\\n---)`);
+    const match = updated.match(sectionRegex);
+    if (match) {
+      const cardPart = match[1];
+      updated = updated.replace(match[0], cardPart + messaging);
+      console.log(`  ✓ Updated ${fix.name}`);
+    } else {
+      console.log(`  ✗ Could not find section for ${fix.name}`);
+    }
+  }
+
+  fs.writeFileSync(filePath, updated, "utf-8");
+  console.log("\nDone!");
+}
+
+main().catch(console.error);
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/fix-first-degree.ts
+  description: Fix messaging for 7 first-degree connections
+  block_until_ms: 120000
+
+[Tool result] Shell

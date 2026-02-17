@@ -1456,3 +1456,39 @@ The remaining 28 companies showed no relevant mentions across 1-11 pages scraped
 **Bottom line:** The strongest matches for restaurant & QSR specifically are **Nearsol**, **Hugo Inc**, **Quantanite**, **American Customer Care**, and **InfoCision**. ADEC Innovations is a niche case (sustainability for food service, not traditional BPO). ContactPoint360 and FlatWorld Solutions are worth a closer look given they list hospitality/food as verticals.
 
 Would you like me to dig deeper into any of these?
+
+user:
+<user_query>
+can you just share a summary with me so that I can share the summary easily with Calanthia
+</user_query>
+
+assistant:
+Here's a clean summary you can share:
+
+---
+
+**Restaurant & QSR Industry Check — 45 BPO Accounts**
+
+**Confirmed Restaurant / QSR / Food Service:**
+
+- **Nearsol** — Active QSR client; case study with "#1 Pizza Delivery Restaurant" (global fast service food delivery)
+- **Hugo Inc** — Food & Beverage clients; content references restaurants, pizza, drive-thru
+- **Quantanite** — Dedicated "Food Ordering & Delivery" vertical; "restaurant to doorstep"
+- **American Customer Care** — Food & Beverage listed as a dedicated industry vertical
+- **InfoCision** — Explicitly lists "Restaurants" and "Food & Beverages" as industries served
+- **ADEC Innovations** — "FoodChain" sustainability product for food service (not traditional BPO/CX)
+
+**Mention "Hospitality" but likely Travel/Hotels (worth a closer look):**
+
+- ContactPoint360 — Hospitality call center outsourcing page
+- FlatWorld Solutions — Lists "Food" and "Hospitality" as verticals
+- LiveOps — Travel & Hospitality industry page
+- SourceFit — Case study for hospitality tech SaaS platform
+- SupportYourApp — Hospitality & Travel customer service
+- The Office Gurus — Travel & Hospitality industry page
+
+**No restaurant/QSR mentions found on the remaining 33 accounts.**
+
+---
+
+Want me to save this to a file as well?
