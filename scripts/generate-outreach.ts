@@ -237,10 +237,47 @@ async function main() {
     return deliveryData.get(key) || manualDelivery[key] || { deliveryModel: "Unknown", clientIndustries: "" };
   }
 
+  // Exclusions: removed after web verification
+  const excludeNames = new Set([
+    "Pankaj Dhanuka",    // Wrong company — at Fusion CX, not ClearSource
+    "Demond Moore",      // Can't verify at Percepta
+    "Daniel Aristimuno", // Title unverifiable — listed as Site Director elsewhere
+    "Rodd Furlough",     // Can't verify at KM² Solutions
+  ]);
+
+  // Track Brian Flaherty to remove the duplicate
+  let brianFlahertySeen = false;
+
+  // Enriched icebreakers from web research (override CSV data)
+  const enrichedIcebreakers: Record<string, string> = {
+    "Amanda Jones": "CBE Companies won the 2025 BBB Torch Award for Ethics and the OIR Catalyst for Change Award for their CBE Cares community initiative. They also opened a new Philippines office in 2024.",
+    "Pablo Paz Hernandez": "First Contact BPO grew 2,500% in under a year after launching in 2023. His other company, Interactive Contact Center, was named one of CIOReview's Top 10 Contact Center Services in Latin America. YEC member.",
+    "Greg Alcorn": "Founded ApSeed, a nonprofit providing free pre-K tablets to 25,000+ disadvantaged children across NC, SC, NYC, and Africa — 131% literacy improvement in one school district. Former NC State Board of Education member. GCS was first to invest in Forward Rowan economic development initiative.",
+    "Bryan Overcash": "Co-founded GCS in 2001 with Greg Alcorn. CPA credential. Active in Forward Rowan economic development initiative. GCS managed the COVID Hotline for 68,000 MTA NYC Transit employees and helped process 700,000+ unemployment claims for NY State Dept of Labor.",
+    "Brian Flaherty": "Speaking at the Mortgage AI conference in October 2026 ('Staff vs AI vs Virtual Assistants: How You Can Manage The AI/Human Balance'). Recently presented a webinar with the Five Star Institute on mortgage operations outsourcing. Global Strategic is ISO 27001 certified.",
+    "Donny Jackson": "Promoted to RVP Business Operations - US as part of a major Helpware leadership restructuring. CEO Robert Nash specifically highlighted these appointments as key to the company's growth strategy. Experience across healthcare, retail, tech, and finance.",
+    "Nanette Harrell": "Helpware named one of Clutch's Top 100 Fastest-Growing Companies for 2025. Company expanded to Poland, Albania, Puerto Rico, Guam, and Uganda. Acquired Unicsoft and launched Helpware Tech division. Now operates from 18 locations across 4 continents.",
+    "John Yanez": "Promoted to COO at InteLogix. Their LogixAssist product won 'AI-based Customer Service Solution of the Year' at the 2025 AI Breakthrough Awards — 67-89% first-contact resolution increase, 40% training time reduction. InteLogix acquired Pioneer CX in Feb 2026 to expand into public sector/GovCX.",
+    "David Kreiss": "Massive Caribbean expansion — 1,250 new jobs across Grenada and Saint Lucia. New 8,000 sq ft Grenada facility (800 workforce), second Grenada site adding 650 jobs. KM² now has 6,500+ employees across six Caribbean countries. Celebrating 15th year in Grenada.",
+    "Ken Braatz": "Led the launch of SupportNinja's 'Outsourcing 2.0' AI suite (NinjaAI) in March 2025 — includes NinjaAI QA that reviews 100% of interactions vs the traditional 2-5%. Authored content on AI-powered QA. SupportNinja ranked #2653 on Inc. 5000 and named Outsource Partner of the Year 2025.",
+    "Benjamin Alpert": "Co-presented at Customer Connect Expo (April 2025, Las Vegas) on 'Balancing AI and Human Agents — The Future of Contact Centers' to 3,000+ CX leaders. The Office Gurus launched GuruAssist AI platform. Company named #1 Best Place to Work in call center industry in El Salvador two consecutive years.",
+    "Mark D'Angola": "Title is SVP & Country Head, Operations (APAC) at Buwelo — oversees call centers engaging 5M+ customers annually. 15+ years in BPO, prior Fortune 500 experience. Buwelo reports 94% client retention rate and attrition as low as 7%.",
+    "Rob Porges": "Shared Flatworld's 'Tech in Mortgage — Powered by MSuite' podcast highlighting AI-driven mortgage automation. Flatworld showcased MSuite at the MBA Servicing Conference in Dallas (Feb 2025). Company launched Flatworld.ai as a standalone AI transformation partner in June 2025.",
+    "Kenneth Loggins": "Gave reporters a tour during the grand opening of a new Focus Services call center in North Carolina (former Concentrix facility, 350 seats). Focus Services is expanding to South Africa. The NC expansion created ~550 jobs.",
+    "Erika Garcia": "Shared a post about joining Global Strategic during strong momentum and focusing on turning insights into strategies. Note: may have moved to White Glove Business Solutions — verify current role on LinkedIn before outreach.",
+    "Youssef Hannat": "Percepta just named Thomas Monaghan as new President (Feb 2026), replacing Karen Gurganious. New leadership = potential new priorities. Percepta is a TTEC/Ford JV with ~4,000 employees across 13 countries, focused on automotive CX.",
+  };
+
   const prospects: Prospect[] = records
     .filter((r: Record<string, string>) => {
       const name = (r["Full Name"] || "").trim();
       if (!name) return false;
+      if (excludeNames.has(name)) return false;
+      // Remove duplicate Brian Flaherty
+      if (name === "Brian Flaherty") {
+        if (brianFlahertySeen) return false;
+        brianFlahertySeen = true;
+      }
       const active = r["Active on LinkedIn (last 90 days)"] === "1" || r["Active on LinkedIn (last 90 days)"] === "True";
       const se = isSoutheastLocation(r["Location"] || "");
       return active || se;
@@ -251,6 +288,7 @@ async function main() {
       const lastName = r["Last Name"]?.trim() || "";
       const company = r["Company Name"] || "";
       const delivery = getDelivery(company);
+      const icebreaker = enrichedIcebreakers[fullName] || r["Icebreaker Insight"] || "";
       return {
         fullName,
         firstName,
@@ -262,7 +300,7 @@ async function main() {
         eventHook: assignEventHook(r["Location"] || ""),
         isSoutheast: isSoutheastLocation(r["Location"] || ""),
         activeLinkedIn: r["Active on LinkedIn (last 90 days)"] === "1" || r["Active on LinkedIn (last 90 days)"] === "True",
-        icebreaker: r["Icebreaker Insight"] || "",
+        icebreaker,
         summaryOfRole: r["Summary of Role"] || "",
         linkedinProfile: r["LinkedIn Profile"] || "",
         email: r["Contact Email"] || "",

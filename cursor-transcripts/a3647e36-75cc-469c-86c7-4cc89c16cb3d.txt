@@ -8802,3 +8802,468 @@ Let me check one with connections to make sure it's showing properly.
   path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
 
 [Tool result] Grep
+
+assistant:
+Connections are showing correctly. Let me convert and push.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/personalised-outreach.md -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && git add -A && git commit -m "$(cat <<'EOF'
+Run: generate-outreach.ts
+
+Added LinkedIn connection data (Alice/Calanthia 1st/2nd degree) to context cards. Cleaned up icebreaker field (blank when no data). Regenerated all 25 prospects.
+EOF
+)" && git push && echo "Done"
+  description: Convert, commit and push
+
+[Tool result] Shell
+
+assistant:
+Updated — **`~/Downloads/Personalised-Outreach.docx`** now has the full context card per person. Here's what each card looks like:
+
+| | |
+|---|---|
+| **Company** | Global Contact Service International |
+| **Title** | Founder and CEO |
+| **Persona
+
+user:
+<user_query>
+Can you also check with every prospect, make sure that the information we have on them is actually accurate. Search the web to see if there's anything else on those specific prospects. Make sure you definitely don't hallucinate. And just make sure that it's as personalised as possible with the icebreakers. Ideally populate anything that could be relevant for us to use. 
+</user_query>
+
+assistant:
+[Thinking] The user wants me to verify and enrich the prospect data for all 25 people by searching the web for each one. This is a significant task - 25 prospects to research. Let me think about the best approach.
+
+I should:
+1. For each prospect, search the web to verify their current role/company
+2. Look for recent LinkedIn activity, news, or relevant information
+3. Update/improve icebreakers based on what I find
+4. Make sure nothing is hallucinated - only use verified information
+5. Regenerate the outreach with the enriched data
+
+With 25 prospects, I should batch these efficiently. Let me use the Task tool to parallelize research, or use perplexity to search for each person.
+
+
+Actually, I'll start by pulling the full prospect list, then systematically search for each one using perplexity for quick lookups. I can parallelize this with the Task tool, running 4 searches at a time to move through all 25 efficiently.
+That's a big job — 25 prospects to verify and enrich. Let me split them into batches and research in parallel. I'll verify each person's current role, find any recent activity or news, and enrich icebreakers with real, verifiable information.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && csvsql --query "SELECT \"Full Name\", \"Job Title\", \"Company Name\", \"Icebreaker Insight\", \"LinkedIn Profile\" FROM stdin WHERE (\"Active on LinkedIn (last 90 days)\" = '1' OR \"Location\" LIKE '%Atlanta%' OR \"Location\" LIKE '%Georgia%' OR \"Location\" LIKE '%Florida%' OR \"Location\" LIKE '%North Carolina%' OR \"Location\" LIKE '%Tennessee%' OR \"Location\" LIKE '%Alabama%' OR \"Location\" LIKE '%Virginia%' OR \"Location\" LIKE '%Louisiana%') AND \"Full Name\" != ''" < "/Users/alicewyatt/Downloads/Top Contacts 2026 - Top Contacts.csv" 2>/dev/null | csvlook -l
+  description: Get full prospect list with icebreakers
+
+[Tool result] Shell
+
+assistant:
+[Thinking] OK, I have all 25 prospects who are in the outreach (the ones currently in the personalised outreach doc). But wait - looking at the list there are actually more than 25 here (53 rows). The script filters differently. Let me check which 25 are actually in the generated outreach document.
+
+Looking at the script output, the 25 are:
+1. Mark D'Angola - Buwelo
+2. Amanda Jones - CBE Companies
+3. Pankaj Dhanuka - Clearsource Bpo
+4. Pablo Paz Hernandez - First Contact BPO
+5. Rob Porges - Flatworld Solutions
+
+
+6. Nitesh Kumar - Flatworld Solutions
+7. Kenneth Loggins - Focus Services
+8. Bryan Overcash - Global Contact Service International
+9. Bucky Cline - Global Contact Service International
+10. Greg Alcorn - Global Contact Service International
+11. Brian Flaherty - Global Strategic (appears twice!)
+12. Erika Garcia - Global Strategic
+13. Donny Jackson - Helpware
+14. Nanette Harrell - Helpware
+15. John Yanez - Intelogix
+16. Keith Hansen - KM² Solutions
+17. Daniel Arist - KM² Solutions
+18. David Kreiss - KM² Solutions
+19. Rodd Furlough - KM² Solutions
+20. Youssef Hannat - Percepta
+21. Demond Moore - Percepta
+22. Ken Braatz - SupportNinja
+23. Benjamin Alpert - The Office Gurus
+24. Dominic Leide - The Office Gurus
+
+I've got 25 people to research (24 unique since Brian Flaherty appears twice), and I'm thinking about batching the web research using Task agents to work through them in parallel groups of about 6 each. But looking at what I already have, some contacts have decent icebreaker material already, so I should focus my research effort on the ones completely lacking background information.
+
+I've identified 13 prospects with no icebreaker data at all, and I should also double-check that the information I have on the other 12 is still current and accurate before reaching out. Let me get started on this research push.
+
+I'll spin up 4 parallel research agents to divide the workload, with each one handling about 6 people. They'll search for current role verification, recent LinkedIn activity or news mentions, potential icebreaker angles, and any other useful context that could help with outreach.
+I have 25 prospects to verify. Let me research them in parallel batches — verifying current roles and enriching icebreakers with real, current information.
+[Tool call] Task
+  description: Research prospects batch 1 (6 people)
+  subagent_type: generalPurpose
+  prompt: Research these 6 BPO industry executives. For each person, search the web to verify their current role and find any recent activity, news, or talking points I can use as an icebreaker. DO NOT make anything up — only report what you can verify.
+
+For each person, return:
+1. VERIFIED ROLE: Is this title/company still accurate? (Yes/No/Unable to verify)
+2. ICEBREAKER: Any recent LinkedIn posts, articles, news mentions, awards, speaking engagements, company news, or other specific things we could reference. If nothing found, say "Nothing found."
+3. COMPANY NEWS: Any recent notable news about their company.
+
+PEOPLE TO RESEARCH:
+
+1. Mark D'Angola — SVP Operations at Buwelo (Atlanta area)
+   LinkedIn: https://www.linkedin.com/in/mark-d-angola-29b8736/
+   Current icebreaker: "Congratulated colleague on 5-year milestone, liked posts about outsourcing tech and data security"
+
+2. Amanda Jones — VP Operations at CBE Companies (Clarksville, Tennessee)
+   LinkedIn: https://www.linkedin.com/in/amanda-jones-39497731/
+   Current icebreaker: NONE — need to find something
+
+3. Pankaj Dhanuka — CEO and President at Clearsource BPO (Suwanee, Georgia)
+   No LinkedIn URL available
+   Current icebreaker: NONE — need to find something
+
+4. Pablo Paz Hernandez — Co-Founder & CEO at First Contact BPO
+   LinkedIn: https://www.linkedin.com/in/pablo-paz-hernandez-760445127/
+   Current icebreaker: NONE — need to find something
+
+5. Rob Porges — Senior Partner at Flatworld Solutions
+   LinkedIn: https://www.linkedin.com/in/rob-porges-6132118/
+   Current icebreaker: "Commented on evaluating tech providers, shared Flatworld's 'Tech in Mortgage' podcast about AI-driven mortgage automation"
+
+6. Nitesh Kumar — VP at Flatworld Solutions (Alpharetta, Georgia)
+   LinkedIn: https://www.linkedin.com/in/nitesh-kumar-69328437/
+   Current icebreaker: "Involved in Flatworld AI's 'The AI Walk' series, spoken about AI empowering frontline contact center agents"
+
+Search for each person's name + company on the web. Check LinkedIn profiles if accessible. Return findings in a structured format.
+  readonly: true
+[Tool call] Task
+  description: Research prospects batch 2 (7 people)
+  subagent_type: generalPurpose
+  prompt: Research these 7 BPO industry executives. For each person, search the web to verify their current role and find any recent activity, news, or talking points I can use as an icebreaker. DO NOT make anything up — only report what you can verify.
+
+For each person, return:
+1. VERIFIED ROLE: Is this title/company still accurate? (Yes/No/Unable to verify)
+2. ICEBREAKER: Any recent LinkedIn posts, articles, news mentions, awards, speaking engagements, company news, or other specific things we could reference. If nothing found, say "Nothing found."
+3. COMPANY NEWS: Any recent notable news about their company.
+
+PEOPLE TO RESEARCH:
+
+1. Kenneth Loggins — VP Shared Services at Focus Services (North Carolina area)
+   LinkedIn: https://www.linkedin.com/in/kenneth-loggins-8a85807b
+   Current icebreaker: "Gave reporters a tour during grand opening of new Focus Services call center in NC"
+
+2. Bryan Overcash — Co-founder, CFO & COO at Global Contact Service International (Salisbury, NC)
+   LinkedIn: https://www.linkedin.com/in/bryan-overcash-b897a86/
+   Current icebreaker: NONE
+
+3. Bucky Cline — VP Organizational Development at Global Contact Service International
+   Current icebreaker: NONE
+
+4. Greg Alcorn — Founder and CEO at Global Contact Service International
+   Current icebreaker: NONE — but has Alice 2nd degree connection (Mark Escueta) and Calanthia 2nd degree (Ian Harriman, Aaron Anderson)
+
+5. Brian Flaherty — CEO at Global Strategic
+   Current icebreaker: NONE
+
+6. Erika Garcia — COO at Global Strategic (Miami, Florida)
+   LinkedIn: https://www.linkedin.com/in/erika-garcia-1a5861113/
+   Current icebreaker: "Shared a personal post about joining during a period of strong momentum and focusing on turning insights into strategies"
+
+7. Donny Jackson — Regional VP (US) at Helpware (Atlanta, Georgia)
+   Current icebreaker: NONE
+
+Search for each person's name + company on the web. Return findings in a structured format.
+  readonly: true
+[Tool call] Task
+  description: Research prospects batch 3 (6 people)
+  subagent_type: generalPurpose
+  prompt: Research these 6 BPO industry executives. For each person, search the web to verify their current role and find any recent activity, news, or talking points I can use as an icebreaker. DO NOT make anything up — only report what you can verify.
+
+For each person, return:
+1. VERIFIED ROLE: Is this title/company still accurate? (Yes/No/Unable to verify)
+2. ICEBREAKER: Any recent LinkedIn posts, articles, news mentions, awards, speaking engagements, company news, or other specific things we could reference. If nothing found, say "Nothing found."
+3. COMPANY NEWS: Any recent notable news about their company.
+
+PEOPLE TO RESEARCH:
+
+1. Nanette Harrell — President at Helpware
+   Current icebreaker: NONE
+
+2. John Yanez — COO at Intelogix (Tampa, Florida)
+   Current icebreaker: "Engaged with InteLogix and CEO posts about AI/tech-enabled customer service and CX modernization"
+
+3. Keith Hansen — VP of Project Management at KM² Solutions (Atlanta, Georgia)
+   Current icebreaker: NONE
+
+4. Daniel Aristimuno — EVP Customer Experience/LATAM Strategy at KM² Solutions
+   Current icebreaker: NONE
+
+5. David Kreiss — Founder, President, and CEO at KM² Solutions
+   LinkedIn: https://www.linkedin.com/in/david-kreiss-16723810
+   Current icebreaker: "Our new facility will allow us to better serve our customers and provide new career opportunities for the people of Grenada"
+
+6. Rodd Furlough — COO at KM² Solutions (Forsyth, Georgia)
+   Current icebreaker: NONE
+
+Search for each person's name + company on the web. Return findings in a structured format.
+  readonly: true
+[Tool call] Task
+  description: Research prospects batch 4 (6 people)
+  subagent_type: generalPurpose
+  prompt: Research these 6 BPO industry executives. For each person, search the web to verify their current role and find any recent activity, news, or talking points I can use as an icebreaker. DO NOT make anything up — only report what you can verify.
+
+For each person, return:
+1. VERIFIED ROLE: Is this title/company still accurate? (Yes/No/Unable to verify)
+2. ICEBREAKER: Any recent LinkedIn posts, articles, news mentions, awards, speaking engagements, company news, or other specific things we could reference. If nothing found, say "Nothing found."
+3. COMPANY NEWS: Any recent notable news about their company.
+
+PEOPLE TO RESEARCH:
+
+1. Youssef Hannat — VP of Global Operations at Percepta
+   LinkedIn: https://www.linkedin.com/in/youssefhannat/
+   Current icebreaker: NONE
+
+2. Demond Moore — Owner/Member at Percepta
+   LinkedIn: https://www.linkedin.com/in/demond-moore-535aa371/
+   Current icebreaker: NONE
+
+3. Ken Braatz — CTO at SupportNinja
+   LinkedIn: https://www.linkedin.com/in/ken-braatz-16580438/
+   Current icebreaker: "Engaged with content about practical AI adoption, choosing right applications to aggregate data for AI, cautioning against siloed tools"
+
+4. Benjamin Alpert — VP Strategic Development at The Office Gurus
+   LinkedIn: https://www.linkedin.com/in/benjamin-alpert-8014376/
+   Current icebreaker: "Authored LinkedIn articles in Feb-Mar 2025 about AI transforming outsourced contact centers and elevating industry-specific CX (financial/legal)"
+
+5. Dominic Leide — President at The Office Gurus
+   LinkedIn: https://www.linkedin.com/in/dominic-leide-7b0b096
+   Current icebreaker: NONE
+
+6. Demond Moore is listed as Owner/Member at Percepta. Percepta is a subsidiary of a larger company. Please also check: Is Percepta still operating independently? Who owns them? Any recent news?
+
+Search for each person's name + company on the web. Return findings in a structured format.
+  readonly: true
+
+[Tool result] Task
+
+[Tool result] Task
+
+[Tool result] Task
+
+[Tool result] Task
+
+assistant:
+[Thinking] Excellent — I have comprehensive research on all 25 prospects. Let me compile the key findings and flags:
+
+**Critical issues to fix:**
+1. **Pankaj Dhanuka** — WRONG COMPANY. He's at Fusion CX, not ClearSource BPO. Data error.
+2. **Erika Garcia** — Likely NO LONGER at Global Strategic. May have moved to White Glove Business Solutions.
+3. **Bucky Cline** — Unable to verify at GCS. Not on leadership page.
+4. **Demond Moore** — Unable to verify at Percepta. Unusual title "Owner/Member" for a JV.
+
+
+5. **Nitesh Kumar** — Unable to verify at Flatworld Solutions.
+6. **Keith Hansen** — Unable to verify at KM² Solutions.
+7. **Daniel Aristimuno** — Title may be different (was listed as Site Director, not EVP).
+8. **Rodd Furlough** — Unable to verify at KM² Solutions.
+
+I've also identified some strong new icebreakers: Amanda Jones at CBE has a BBB Torch Award and OIR Catalyst for Change Award, and Pablo Paz Hernandez at First Contact BPO was recognized as a CIOReview Top 10 leader with impressive 2,500% growth metrics. Greg's profile is still coming through.
+
+Looking at the rest of the prospects, I'm seeing a lot of compelling angles—Greg Alcorn's nonprofit work and education board involvement, Brian Flaherty's upcoming Mortgage AI conference speaking slot, Bryan Overcash's Forward Rowan initiative and CPA credentials. There's also Donny Jackson's recent promotion at Helpware, Nanette Harrell's company recognition as a Clutch Top 100, John Yanez's AI Breakthrough Award for LogixAssist and the Pioneer CX acquisition, David Kreiss's major Caribbean expansion with 1,250 new jobs, Ken Braatz's NinjaAI QA and Outsourcing 2.0 launch, and Benjamin Alpert speaking at Customer Connect Expo on balancing AI with human elements.
+
+Rob Porges is presenting MSuite at an MBA conference and launching Flatworld.ai, which rounds out the list nicely.
+
+I should compile these findings into a summary for Alice with any flags that came up, then create an enriched data file with all the updated icebreakers. After that I'll regenerate the outreach using the corrected and enriched information. This is getting substantial, so I'll present the findings first and get Alice's input on which flagged prospects to keep or remove before moving forward with regeneration.
+All 25 researched. Here's what I found — there are some important flags before I regenerate.
+
+**Data issues (need your call before re-running):**
+
+| Prospect | Issue | Recommendation |
+|---|---|---|
+| **Pankaj Dhanuka** | **Wrong company.** He's at Fusion CX, not ClearSource BPO. | Remove or re-target as Fusion CX (he's a strong prospect — CEO of the Year 2025, 3 major acquisitions) |
+| **Erika Garcia** | **Likely left Global Strategic.** Now appears to be at White Glove Business Solutions. | Remove or verify on LinkedIn first |
+| **Bucky Cline** | Not on GCS leadership page. Can't verify role. | Remove or verify on LinkedIn |
+| **Demond Moore** | Can't verify at Percepta. "Owner/Member" is unusual for a TTEC/Ford JV. | Remove or verify |
+| **Nitesh Kumar** | Can't verify VP title at Flatworld Solutions. Not on their team page. | Remove or verify |
+| **Keith Hansen** | Can't verify at KM² Solutions. No public profile. | Remove or verify |
+| **Daniel Aristimuno** | Title may be wrong — one source lists him as "Site Director", not EVP. | Verify on LinkedIn |
+| **Rodd Furlough** | Can't verify at KM² Solutions. No web presence. | Remove or verify |
+| **Brian Flaherty** | Appears **twice** in the list (duplicate). | Remove one |
+
+That's 8 flags out of 25. Up to you whether to remove them or verify on LinkedIn first.
+
+**Strong new icebreakers found:**
+
+| Prospect | New icebreaker material |
+|---|---|
+| **Amanda Jones** (CBE) | CBE won the 2025 BBB Torch Award for Ethics and the OIR Catalyst for Change Award. New Philippines office. |
+| **Pablo Paz Hernandez** (First Contact) | CIOReview Top 10 in Latin America. First Contact grew 2,500% in under a year. YEC member. |
+| **Greg Alcorn** (GCS) | Founded ApSeed nonprofit — free pre-K tablets for 25,000 kids. Former NC Board of Education member. Deeply involved in community. |
+| **Bryan Overcash** (GCS) | Forward Rowan economic development initiative — GCS was first to invest. CPA credential. |
+| **Brian Flaherty** (Global Strategic) | Speaking at Mortgage AI conference Oct 2026 ("Staff vs AI vs Virtual Assistants"). Recent Five Star Institute webinar. |
+| **Donny Jackson** (Helpware) | Promoted as part of major leadership restructuring. Healthcare, retail, tech, finance experience. |
+| **Nanette Harrell** (Helpware) | Helpware named Clutch Top 100 Fastest Growing 2025. Expanded to Uganda, Guam, Poland. |
+| **John Yanez** (InteLogix) | LogixAssist won AI Breakthrough Award 2025. Pioneer CX acquisition Feb 2026. 67-89% first-contact resolution increase. |
+| **David Kreiss** (KM²) | Massive Caribbean expansion — 1,250 new jobs, new Grenada and Saint Lucia facilities, 6,500+ total employees. |
+| **Ken Braatz** (SupportNinja) | Led launch of "Outsourcing 2.0" AI suite (NinjaAI). Authored content on AI-powered QA. Inc. 5000 #2653. |
+| **Benjamin Alpert** (Office Gurus) | Spoke at Customer Connect Expo Apr 2025: "Balancing AI and Human Agents." GuruAssist AI platform launch. |
+| **Mark D'Angola** (Buwelo) | Title correction: SVP & Country Head, APAC (not just "SVP Operations"). |
+| **Rob Porges** (Flatworld) | MSuite showcased at MBA Servicing conference. Flatworld launched Flatworld.ai (June 2025). |
+
+**All other roles verified as accurate.**
+
+Do you want me to:
+1. **Remove the 8 unverifiable/wrong prospects** and regenerate with the enriched icebreakers for the remaining 17?
+2. **Keep all 25** but flag the questionable ones, and regenerate with enriched data?
+3. **Something else?**
+
+user:
+<user_query>
+remove pankaj Dhanuka and Demon Moore and Daniel Aristimuno and Ross Furlough and one of the Brian's
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  offset: 80
+  limit: 40
+
+[Tool result] Read
+
+assistant:
+Now let me add an exclusion list and also bake the enriched icebreakers into the script so it uses the verified, web-researched data.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  offset: 140
+  limit: 80
+
+[Tool result] Read
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  offset: 220
+  limit: 130
+
+[Tool result] Read
+
+assistant:
+Now let me add the exclusion list and enriched icebreakers.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:   const prospects: Prospect[] = records
+    .filter((r: Record<string, string>) => {
+      const name = (r["Full Name"] || "").trim();
+      if (!name) return false;
+      const active = r["Active on LinkedIn (last 90 days)"] === "1" || r["Active on LinkedIn (last 90 days)"] === "True";
+      const se = isSoutheastLocation(r["Location"] || "");
+      return active || se;
+    })
+    .map((r: Record<string, string>) => {
+      const fullName = r["Full Name"].trim();
+      const firstName = r["First Name"]?.trim() || fullName.split(" ")[0];
+      const lastName = r["Last Name"]?.trim() || "";
+      const company = r["Company Name"] || "";
+      const delivery = getDelivery(company);
+      return {
+        fullName,
+        firstName,
+        lastName,
+        jobTitle: r["Job Title"] || "",
+        company,
+        location: r["Location"] || "",
+        persona: assignPersona(r["Job Title"] || ""),
+        eventHook: assignEventHook(r["Location"] || ""),
+        isSoutheast: isSoutheastLocation(r["Location"] || ""),
+        activeLinkedIn: r["Active on LinkedIn (last 90 days)"] === "1" || r["Active on LinkedIn (last 90 days)"] === "True",
+        icebreaker: r["Icebreaker Insight"] || "",
+        summaryOfRole: r["Summary of Role"] || "",
+        linkedinProfile: r["LinkedIn Profile"] || "",
+        email: r["Contact Email"] || "",
+        companyTenure: r["Company Tenure"] || "",
+        notableExperience: r["Notable Previous Experience"] || "",
+        firstDegree: r["First Degree Connection [Alice or Calanthia]"] || "",
+        secondDegree: r["Second Degree Connections [Alice only]"] || "",
+        calanthiaFirstDegree: r["Calanthia First Degree"] || "",
+        calanthiaSecondDegree: r["Calanthia Second Degree"] || "",
+        deliveryModel: delivery.deliveryModel,
+        clientIndustries: delivery.clientIndustries,
+      };
+    });
+  new_string:   // Exclusions: removed after web verification
+  const excludeNames = new Set([
+    "Pankaj Dhanuka",    // Wrong company — at Fusion CX, not ClearSource
+    "Demond Moore",      // Can't verify at Percepta
+    "Daniel Aristimuno", // Title unverifiable — listed as Site Director elsewhere
+    "Rodd Furlough",     // Can't verify at KM² Solutions
+  ]);
+
+  // Track Brian Flaherty to remove the duplicate
+  let brianFlahertySeen = false;
+
+  // Enriched icebreakers from web research (override CSV data)
+  const enrichedIcebreakers: Record<string, string> = {
+    "Amanda Jones": "CBE Companies won the 2025 BBB Torch Award for Ethics and the OIR Catalyst for Change Award for their CBE Cares community initiative. They also opened a new Philippines office in 2024.",
+    "Pablo Paz Hernandez": "First Contact BPO grew 2,500% in under a year after launching in 2023. His other company, Interactive Contact Center, was named one of CIOReview's Top 10 Contact Center Services in Latin America. YEC member.",
+    "Greg Alcorn": "Founded ApSeed, a nonprofit providing free pre-K tablets to 25,000+ disadvantaged children across NC, SC, NYC, and Africa — 131% literacy improvement in one school district. Former NC State Board of Education member. GCS was first to invest in Forward Rowan economic development initiative.",
+    "Bryan Overcash": "Co-founded GCS in 2001 with Greg Alcorn. CPA credential. Active in Forward Rowan economic development initiative. GCS managed the COVID Hotline for 68,000 MTA NYC Transit employees and helped process 700,000+ unemployment claims for NY State Dept of Labor.",
+    "Brian Flaherty": "Speaking at the Mortgage AI conference in October 2026 ('Staff vs AI vs Virtual Assistants: How You Can Manage The AI/Human Balance'). Recently presented a webinar with the Five Star Institute on mortgage operations outsourcing. Global Strategic is ISO 27001 certified.",
+    "Donny Jackson": "Promoted to RVP Business Operations - US as part of a major Helpware leadership restructuring. CEO Robert Nash specifically highlighted these appointments as key to the company's growth strategy. Experience across healthcare, retail, tech, and finance.",
+    "Nanette Harrell": "Helpware named one of Clutch's Top 100 Fastest-Growing Companies for 2025. Company expanded to Poland, Albania, Puerto Rico, Guam, and Uganda. Acquired Unicsoft and launched Helpware Tech division. Now operates from 18 locations across 4 continents.",
+    "John Yanez": "Promoted to COO at InteLogix. Their LogixAssist product won 'AI-based Customer Service Solution of the Year' at the 2025 AI Breakthrough Awards — 67-89% first-contact resolution increase, 40% training time reduction. InteLogix acquired Pioneer CX in Feb 2026 to expand into public sector/GovCX.",
+    "David Kreiss": "Massive Caribbean expansion — 1,250 new jobs across Grenada and Saint Lucia. New 8,000 sq ft Grenada facility (800 workforce), second Grenada site adding 650 jobs. KM² now has 6,500+ employees across six Caribbean countries. Celebrating 15th year in Grenada.",
+    "Ken Braatz": "Led the launch of SupportNinja's 'Outsourcing 2.0' AI suite (NinjaAI) in March 2025 — includes NinjaAI QA that reviews 100% of interactions vs the traditional 2-5%. Authored content on AI-powered QA. SupportNinja ranked #2653 on Inc. 5000 and named Outsource Partner of the Year 2025.",
+    "Benjamin Alpert": "Co-presented at Customer Connect Expo (April 2025, Las Vegas) on 'Balancing AI and Human Agents — The Future of Contact Centers' to 3,000+ CX leaders. The Office Gurus launched GuruAssist AI platform. Company named #1 Best Place to Work in call center industry in El Salvador two consecutive years.",
+    "Mark D'Angola": "Title is SVP & Country Head, Operations (APAC) at Buwelo — oversees call centers engaging 5M+ customers annually. 15+ years in BPO, prior Fortune 500 experience. Buwelo reports 94% client retention rate and attrition as low as 7%.",
+    "Rob Porges": "Shared Flatworld's 'Tech in Mortgage — Powered by MSuite' podcast highlighting AI-driven mortgage automation. Flatworld showcased MSuite at the MBA Servicing Conference in Dallas (Feb 2025). Company launched Flatworld.ai as a standalone AI transformation partner in June 2025.",
+    "Kenneth Loggins": "Gave reporters a tour during the grand opening of a new Focus Services call center in North Carolina (former Concentrix facility, 350 seats). Focus Services is expanding to South Africa. The NC expansion created ~550 jobs.",
+    "Erika Garcia": "Shared a post about joining Global Strategic during strong momentum and focusing on turning insights into strategies. Note: may have moved to White Glove Business Solutions — verify current role on LinkedIn before outreach.",
+    "Youssef Hannat": "Percepta just named Thomas Monaghan as new President (Feb 2026), replacing Karen Gurganious. New leadership = potential new priorities. Percepta is a TTEC/Ford JV with ~4,000 employees across 13 countries, focused on automotive CX.",
+  };
+
+  const prospects: Prospect[] = records
+    .filter((r: Record<string, string>) => {
+      const name = (r["Full Name"] || "").trim();
+      if (!name) return false;
+      if (excludeNames.has(name)) return false;
+      // Remove duplicate Brian Flaherty
+      if (name === "Brian Flaherty") {
+        if (brianFlahertySeen) return false;
+        brianFlahertySeen = true;
+      }
+      const active = r["Active on LinkedIn (last 90 days)"] === "1" || r["Active on LinkedIn (last 90 days)"] === "True";
+      const se = isSoutheastLocation(r["Location"] || "");
+      return active || se;
+    })
+    .map((r: Record<string, string>) => {
+      const fullName = r["Full Name"].trim();
+      const firstName = r["First Name"]?.trim() || fullName.split(" ")[0];
+      const lastName = r["Last Name"]?.trim() || "";
+      const company = r["Company Name"] || "";
+      const delivery = getDelivery(company);
+      const icebreaker = enrichedIcebreakers[fullName] || r["Icebreaker Insight"] || "";
+      return {
+        fullName,
+        firstName,
+        lastName,
+        jobTitle: r["Job Title"] || "",
+        company,
+        location: r["Location"] || "",
+        persona: assignPersona(r["Job Title"] || ""),
+        eventHook: assignEventHook(r["Location"] || ""),
+        isSoutheast: isSoutheastLocation(r["Location"] || ""),
+        activeLinkedIn: r["Active on LinkedIn (last 90 days)"] === "1" || r["Active on LinkedIn (last 90 days)"] === "True",
+        icebreaker,
+        summaryOfRole: r["Summary of Role"] || "",
+        linkedinProfile: r["LinkedIn Profile"] || "",
+        email: r["Contact Email"] || "",
+        companyTenure: r["Company Tenure"] || "",
+        notableExperience: r["Notable Previous Experience"] || "",
+        firstDegree: r["First Degree Connection [Alice or Calanthia]"] || "",
+        secondDegree: r["Second Degree Connections [Alice only]"] || "",
+        calanthiaFirstDegree: r["Calanthia First Degree"] || "",
+        calanthiaSecondDegree: r["Calanthia Second Degree"] || "",
+        deliveryModel: delivery.deliveryModel,
+        clientIndustries: delivery.clientIndustries,
+      };
+    });
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/generate-outreach.ts
+  description: Regenerate outreach — 5 removed, enriched icebreakers
+  block_until_ms: 400000
+
+[Tool result] Shell
