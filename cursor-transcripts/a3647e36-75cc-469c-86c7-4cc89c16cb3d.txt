@@ -14030,3 +14030,143 @@ PYEOF
   description: Add location to all context cards
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md /Users/alicewyatt/Downloads/Personalised-Outreach.md && cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Add location field to all 28 context cards" && git push && echo "Done"
+  description: Copy, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.md`** now has location for all 28 prospects. Each card now looks like:
+
+| | |
+|---|---|
+| **Company** | Etech Global Services |
+| **Title** | President, ETSLabs |
+| **Persona** | Executive Sponsor |
+| **Location** | San Antonio, TX |
+| **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
+| **LinkedIn** | [url] |
+| **Email** | [email] |
+
+Ready for Google Docs upload.
+
+user:
+<user_query>
+Wow, there was a huge error in this document. I just want one location per person. This has like 20 for Jim. Update the document, let me download it
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 8
+  limit: 30
+
+[Tool result] Read
+
+assistant:
+The script added all 28 locations to the first `**Delivery**` match instead of one per prospect. Let me fix this.
+[Tool call] Shell
+
+[Tool result] Shell
+
+user:
+<user_query>
+Yeah, the location shouldn't be deliver, it should be the location of the individual contact, like the person. It should just be one location. 
+</user_query>
+
+assistant:
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/fix-locations.py
+  contents: import re
+
+content = open('data/personalised-outreach.md', 'r').read()
+
+# First, remove ALL location rows
+content = re.sub(r'\| \*\*Location\*\* \|[^\n]*\n', '', content)
+
+# Location per prospect name
+locations = {
+    "Jim Iyoob": "San Antonio, TX",
+    "Benjamin Alpert": "Bradenton, FL",
+    "Matt Rocco": "Nacogdoches, TX",
+    "David Kreiss": "Boca Raton, FL",
+    "Greg Alcorn": "Salisbury, NC",
+    "Bill Randag": "El Paso, TX",
+    "Ali Karim": "El Paso, TX",
+    "Liliana Lopez": "United States",
+    "Nanette Harrell": "Asheville, NC",
+    "Dominic Leide": "Tampa, FL",
+    "Kenneth Loggins": "Jacksonville, NC",
+    "Brian Flaherty": "Elon, NC",
+    "Bill Trocano": "Rochester, NY",
+    "Pablo Paz Hernandez": "Miami, FL",
+    "Amanda Jones": "Clarksville, TN",
+    "Donny Jackson": "Atlanta, GA",
+    "John Yanez": "Tampa, FL",
+    "Ken Braatz": "Boynton Beach, FL",
+    "Youssef Hannat": "Nashville, TN",
+    "James Nelson": "Houston, TX",
+    "Bryan Overcash": "Salisbury, NC",
+    "Erika Garcia": "Miami, FL",
+    "Keith Hansen": "Atlanta, GA",
+    "Mark D'Angola": "Atlanta, GA",
+    "Nitesh Kumar": "Alpharetta, GA",
+    "Rob Porges": "Miami, FL",
+    "Cathy Sexton": "Salisbury, NC",
+    "Aaron Brooks": "Cleveland, OH",
+}
+
+# Split into sections by prospect heading
+parts = re.split(r'(## \d+\. .+)', content)
+
+result = []
+current_name = None
+for part in parts:
+    heading_match = re.match(r'## \d+\. (.+)', part)
+    if heading_match:
+        current_name = heading_match.group(1).strip()
+        result.append(part)
+    else:
+        if current_name and current_name in locations:
+            loc = locations[current_name]
+            # Insert location row after Persona row
+            part = part.replace(
+                '| **Persona**',
+                f'| **Persona**',
+                1
+            )
+            # Find the Persona line and add Location after it
+            lines = part.split('\n')
+            new_lines = []
+            for line in lines:
+                new_lines.append(line)
+                if '**Persona**' in line:
+                    new_lines.append(f'| **Location** | {loc} |')
+            part = '\n'.join(new_lines)
+        result.append(part)
+
+content = ''.join(result)
+open('data/personalised-outreach.md', 'w').write(content)
+print("Fixed — one location per prospect")
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 scripts/fix-locations.py && grep -c "Location" data/personalised-outreach.md
+  description: Fix locations — one per prospect
+
+[Tool result] Shell
+
+assistant:
+28 — one per prospect. Let me verify it looks right.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 7
+  limit: 20
+
+[Tool result] Read

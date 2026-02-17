@@ -12,33 +12,6 @@
 | **Title** | President, ETSLabs |
 | **Persona** | Executive Sponsor |
 | **Location** | San Antonio, TX |
-| **Location** | Bradenton, FL |
-| **Location** | Nacogdoches, TX |
-| **Location** | Boca Raton, FL |
-| **Location** | Salisbury, NC |
-| **Location** | El Paso, TX |
-| **Location** | El Paso, TX |
-| **Location** | United States |
-| **Location** | Asheville, NC |
-| **Location** | Tampa, FL |
-| **Location** | Jacksonville, NC |
-| **Location** | Elon, NC |
-| **Location** | Rochester, NY |
-| **Location** | Miami, FL |
-| **Location** | Clarksville, TN |
-| **Location** | Atlanta, GA |
-| **Location** | Tampa, FL |
-| **Location** | Boynton Beach, FL |
-| **Location** | Nashville, TN |
-| **Location** | Houston, TX |
-| **Location** | Salisbury, NC |
-| **Location** | Miami, FL |
-| **Location** | Atlanta, GA |
-| **Location** | Atlanta, GA |
-| **Location** | Alpharetta, GA |
-| **Location** | Miami, FL |
-| **Location** | Salisbury, NC |
-| **Location** | Cleveland, OH |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/jimiyoob |
 | **Email** | jim.iyoob@etechgs.com |
@@ -64,6 +37,7 @@
 | **Company** | The Office Gurus |
 | **Title** | Vice President, Strategic Development |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Bradenton, FL |
 | **Delivery** | Mixed delivery (onshore, nearshore) |
 | **LinkedIn** | https://www.linkedin.com/in/benjamin-alpert-8014376/ |
 | **Email** | balpert@theofficegurus.com |
@@ -90,6 +64,7 @@
 | **Company** | Etech Global Services |
 | **Title** | Chief Executive Officer |
 | **Persona** | Executive Sponsor |
+| **Location** | Nacogdoches, TX |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/matt-rocco-728ab46/ |
 | **Email** | matt.rocco@etechgs.com |
@@ -116,6 +91,7 @@
 | **Company** | KM² Solutions |
 | **Title** | Founder, President, and CEO |
 | **Persona** | Executive Sponsor |
+| **Location** | Boca Raton, FL |
 | **Delivery** | Offshore-heavy (nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/david-kreiss-16723810 |
 | **Email** | david.kreiss@km2solutions.com |
@@ -141,6 +117,7 @@
 | **Company** | Global Contact Service International |
 | **Title** | Founder and CEO |
 | **Persona** | Executive Sponsor |
+| **Location** | Salisbury, NC |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/galcorn |
 | **Email** | greg.alcorn@gcsagents.com |
@@ -166,6 +143,7 @@
 | **Company** | DATAMARK, Inc. |
 | **Title** | President |
 | **Persona** | Executive Sponsor |
+| **Location** | El Paso, TX |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/billrandag |
 | **Email** | bill.randag@datamark.net |
@@ -191,6 +169,7 @@
 | **Company** | DATAMARK, Inc. |
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
+| **Location** | El Paso, TX |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/mohammadalikarim/ |
 | **Email** | ali.karim@datamark.net |
@@ -215,6 +194,7 @@
 | **Company** | Liveops |
 | **Title** | Vice President of Technology | Cybersecurity | Innovation |
 | **Persona** | Technology Leader |
+| **Location** | United States |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/liliana-l-92035441/ |
 | **Email** | liliana.lopez@liveops.com |
@@ -240,6 +220,7 @@
 | **Company** | Helpware |
 | **Title** | President |
 | **Persona** | Executive Sponsor |
+| **Location** | Asheville, NC |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/nanetteharrell |
 | **Email** | n.harrell@helpware.com |
@@ -265,6 +246,7 @@
 | **Company** | The Office Gurus |
 | **Title** | President |
 | **Persona** | Executive Sponsor |
+| **Location** | Tampa, FL |
 | **Delivery** | Mixed delivery (onshore, nearshore) |
 | **LinkedIn** | https://www.linkedin.com/in/dominic-leide-7b0b096 |
 | **Email** | dleide@theofficegurus.com |
@@ -289,6 +271,7 @@
 | **Company** | Focus Services |
 | **Title** | Vice President, Shared Services |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Jacksonville, NC |
 | **Delivery** | Mixed delivery (onshore, nearshore) |
 | **LinkedIn** | https://www.linkedin.com/in/kenneth-loggins-8a85807b |
 | **Email** | kenneth@focusservices.com |
@@ -314,6 +297,7 @@
 | **Company** | Global Strategic |
 | **Title** | Chief Executive Officer |
 | **Persona** | Executive Sponsor |
+| **Location** | Elon, NC |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/brian-flaherty-343b091/ |
 | **Email** | brian.flaherty@globalstrategic.com |
@@ -339,6 +323,7 @@
 | **Company** | Liveops |
 | **Title** | Global Vice President, CX |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Rochester, NY |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/bill-trocano-9888891a/ |
 | **Email** | bill.trocano@liveops.com |
@@ -364,6 +349,7 @@
 | **Company** | First Contact BPO |
 | **Title** | Co-Founder & CEO |
 | **Persona** | Executive Sponsor |
+| **Location** | Miami, FL |
 | **Delivery** | Offshore-heavy (nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/pablo-paz-hernandez-760445127/ |
 | **Email** | pablo@firstcontactbpo.com |
@@ -389,6 +375,7 @@
 | **Company** | CBE Companies |
 | **Title** | Vice President, Operations |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Clarksville, TN |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/amanda-jones-39497731/ |
 | **Email** | amanda.jones@cbecompanies.com |
@@ -413,6 +400,7 @@
 | **Company** | Helpware |
 | **Title** | Regional Vice President (US) |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Atlanta, GA |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/donny-jackson-0b22a43b/ |
 | **Email** | donny.jackson@helpware.com |
@@ -437,6 +425,7 @@
 | **Company** | Intelogix |
 | **Title** | Chief Operating Officer |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Tampa, FL |
 | **Delivery** | Mixed delivery (onshore, nearshore) |
 | **LinkedIn** | https://www.linkedin.com/in/johnyanez/ |
 | **Email** | john.yanez@intelogix.com |
@@ -461,6 +450,7 @@
 | **Company** | SupportNinja |
 | **Title** | Chief Technology Officer |
 | **Persona** | Technology Leader |
+| **Location** | Boynton Beach, FL |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/ken-braatz-16580438/ |
 | **Email** | ken@supportninja.com |
@@ -485,6 +475,7 @@
 | **Company** | Percepta |
 | **Title** | Vice President of Global Operations |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Nashville, TN |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/youssefhannat/ |
 | **Email** | youssef.hannat@percepta.com |
@@ -509,6 +500,7 @@
 | **Company** | Percepta |
 | **Title** | Executive Director of Operations |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Houston, TX |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/james-nelson-0292b713/ |
 | **Email** | james.nelson@percepta.com |
@@ -533,6 +525,7 @@
 | **Company** | Global Contact Service International |
 | **Title** | Co-founder, CFO & COO |
 | **Persona** | Executive Sponsor |
+| **Location** | Salisbury, NC |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/bryan-overcash-b897a86/ |
 | **Email** | bryan.overcash@gcsagents.com |
@@ -558,6 +551,7 @@
 | **Company** | Global Strategic |
 | **Title** | Chief Operating Officer |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Miami, FL |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/erikagarciallaneza/ |
 | **Email** | erika.garcia@globalstrategic.com |
@@ -583,6 +577,7 @@
 | **Company** | KM² Solutions |
 | **Title** | Vice President of Project Management |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Atlanta, GA |
 | **Delivery** | Offshore-heavy (nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/keith-hansen-16313ab6/ |
 | **Email** | keith.hansen@km2solutions.com |
@@ -606,6 +601,7 @@
 | **Company** | Buwelo |
 | **Title** | Senior Vice President Operations |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Atlanta, GA |
 | **Delivery** | Offshore-heavy (nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/mark-d-angola-29b8736/ |
 | **Email** | markdangola@buwelo.com |
@@ -630,6 +626,7 @@
 | **Company** | Flatworld Solutions |
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Alpharetta, GA |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/nitesh-kumar-69328437/ |
 | **Email** | nitesh.kumar@flatworldsolutions.com |
@@ -654,6 +651,7 @@
 | **Company** | Flatworld Solutions |
 | **Title** | Senior Partner |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Miami, FL |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/rob-porges-6132118/ |
 | **Email** | rob.porges@flatworldsolutions.com |
@@ -678,6 +676,7 @@
 | **Company** | Harte Hanks |
 | **Title** | Senior Vice President, Financial Services |
 | **Persona** | Operations & Finance Leader |
+| **Location** | Salisbury, NC |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/cathy-sexton-5b119b2/ |
 | **Email** | cathy.sexton@hartehanks.com |
@@ -702,6 +701,7 @@
 | **Company** | InfoCision Management Corporation |
 | **Title** | Vice President, Call Center Technologies |
 | **Persona** | Technology Leader |
+| **Location** | Cleveland, OH |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/aaron-brooks-5377097/ |
 | **Email** | aaron.brooks@infocision.com |
