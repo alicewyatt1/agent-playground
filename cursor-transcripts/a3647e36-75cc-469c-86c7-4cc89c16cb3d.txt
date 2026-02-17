@@ -13563,3 +13563,44 @@ print('Fixed smart quote. Remaining:', content.count('admire'))
   description: Fix smart quote admired
 
 [Tool result] Shell
+
+assistant:
+Now convert and push.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/personalised-outreach.md -f markdown-yaml_metadata_block -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && git add -A && git commit -m "$(cat <<'EOF'
+Strip sycophantic language and fix speaker attribution
+
+Removed 33 instances of sycophantic words (impressive, remarkable, inspiring, truly, fascinating, etc). Fixed Calanthia incorrectly positioned as speaker — she is ATTENDING events, not speaking. Peer-to-peer tone throughout.
+EOF
+)" && git push && echo "Done"
+  description: Convert, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.docx`** cleaned up.
+
+**What I stripped:**
+- 33 instances of sycophantic language (impressive, remarkable, truly, inspiring, fascinating, admire, commendable, stellar, bold, incredible)
+- All remaining instances of Calanthia positioned as a speaker — she's **attending** Enterprise Connect, Frost & Sullivan MindXchange, and CCNG Atlanta
+- "Both of us speaking" → fixed to acknowledge she's attending, the prospect is speaking
+
+The tone should now read as peer-to-peer throughout. Ready for your review.
+
+user:
+<user_query>
+You can remove LinkedIn connection as a section, given that we talk about it in the hook. It's just a duplicate. 
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+content = open('data/personalised-outreach.md','r').read()
+import re
+content = re.sub(r'\| \*\*LinkedIn connection\*\* \|[^\n]*\n', '', content)
+open('data/personalised-outreach.md','w').write(content)
+print('Done')
+"
+  description: Remove LinkedIn connection field from all cards
+
+[Tool result] Shell

@@ -13,7 +13,6 @@
 | **Title** | President, ETSLabs |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
-| **LinkedIn connection** | Calanthia 1st degree; Alice 2nd degree (Mark Escueta; Alon Waks; +3 others); Calanthia 2nd degree (Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson) |
 | **Outreach hooks** | 1. **Speaking/event:** CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9, 2026). 2. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Mark Escueta; Alon Waks; +3 others); Calanthia 2nd degree (Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson) 3. **Insight:** speaking at CCW Las Vegas 2026 (Jun 22-25, workshop) and Call Center Campus Symposium (May 17-20,... 4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
 | **LinkedIn** | https://www.linkedin.com/in/jimiyoob |
 | **Email** | jim.iyoob@etechgs.com |
@@ -50,7 +49,6 @@ Calanthia
 | **Title** | Vice President, Strategic Development |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore) |
-| **LinkedIn connection** | Alice 2nd degree (Dave Zimmerman) |
 | **Outreach hooks** | 1. **Speaking/event:** Co-presented at Customer Connect Expo (April 2025, Las Vegas) on 'Balancing AI and Human Agents — The Future of Contact Centers' to 3,000+ CX leaders. 2. **Mutual connection:** Alice 2nd degree (Dave Zimmerman) 3. **Insight:** The Office Gurus launched GuruAssist AI platform.... 4. **Near event:** Based in Bradenton, Florida, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/benjamin-alpert-8014376/ |
 | **Email** | balpert@theofficegurus.com |
@@ -83,7 +81,6 @@ Calanthia
 | **Title** | Chief Executive Officer |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
-| **LinkedIn connection** | Calanthia 2nd degree (Ian Harriman; Tzvika Agassi) |
 | **Outreach hooks** | 1. **Speaking/event:** confirmed speaker at the Conversational AI Summit (Apr 9) and Ca. 2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi) 3. **Insight:** CEO of Etech Global Services. Etech is confirmed at CCW Las Vegas 2026 (Jun 22-25, Booth #1404) with a workshop. Jim Iyoob (Etech) is a .. 4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
 | **LinkedIn** | https://www.linkedin.com/in/matt-rocco-728ab46/ |
 | **Email** | matt.rocco@etechgs.com |
@@ -116,7 +113,6 @@ Calanthia
 | **Title** | Founder, President, and CEO |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Offshore-heavy (nearshore, offshore) |
-| **LinkedIn connection** | Calanthia 1st degree; Calanthia 2nd degree (Karla M. Cosgalla) |
 | **Outreach hooks** | 1. **Mutual connection:** Calanthia 1st degree; Calanthia 2nd degree (Karla M. Cosgalla) 2. **Insight:** Massive Caribbean expansion — 1,250 new jobs across Grenada and Saint Lucia. New 8,000 sq ft Grenada facility (800 workforce), second Grenada site adding 650 jobs. KM² now has 6,500+ employees across ... 3. **Near event:** Based in Boca Raton, Florida, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/david-kreiss-16723810 |
 | **Email** | david.kreiss@km2solutions.com |
@@ -152,7 +148,6 @@ Calanthia
 | **Title** | Founder and CEO |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Onshore-heavy (onshore) |
-| **LinkedIn connection** | Calanthia 1st degree; Alice 2nd degree (Mark Escueta); Calanthia 2nd degree (Ian Harriman; Aaron Anderson) |
 | **Outreach hooks** | 1. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Mark Escueta); Calanthia 2nd degree (Ian Harriman; Aaron Anderson) 2. **Insight:** Founded ApSeed, a nonprofit providing free pre-K tablets to 25,000+ disadvantaged children across NC, SC, NYC, and Africa — 131% literacy improvement in one school district. Former NC State Board of E... 3. **Near event:** Based in Salisbury, North Carolina, USA — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/galcorn |
 | **Email** | greg.alcorn@gcsagents.com |
@@ -190,7 +185,6 @@ Calanthia
 | **Title** | President |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
-| **LinkedIn connection** | Calanthia 1st degree; Alice 2nd degree (Brandon Pfluger, J.D.; Gabriel Pike; +1 other); Calanthia 2nd degree (Aaron Anderson) |
 | **Outreach hooks** | 1. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Brandon Pfluger, J.D.; Gabriel Pike; +1 other); Calanthia 2nd degree (Aaron Anderson) 2. **Insight:** President of DATAMARK. Company is a featured sponsor at both Frost & Sullivan MindXchange East (Fort Lauderdale, Apr 12-15) and West (Tucson, Oct 18-21) with multiple speakers. DATAMARK is one of the ... 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
 | **LinkedIn** | https://www.linkedin.com/in/billrandag |
 | **Email** | bill.randag@datamark.net |
@@ -226,7 +220,6 @@ Calanthia
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Speaking/event:** CONFIRMED SPEAKER at Frost & Sullivan Customer Contact MindXchange East (Fort Lauderdale, Apr 12-15): presenting 'AI That Works: Inside the Customer and Employee Experience' case history + facilitatin. 2. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
 | **LinkedIn** | https://www.linkedin.com/in/mohammadalikarim/ |
 | **Email** | ali.karim@datamark.net |
@@ -256,7 +249,6 @@ Calanthia
 | **Title** | Vice President of Technology | Cybersecurity | Innovation |
 | **Persona** | Technology Leader |
 | **Delivery footprint** | Mixed delivery (onshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Speaking/event:** Co-led an AI Maturity Workshop at CCW Orlando (Jan 2026) on operationalizing AI — moving from 'promising' to 'proven'. 2. **Insight:** shared thought leadership on sandboxing AI, real-time agent assist, and usin... 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
 | **LinkedIn** | https://www.linkedin.com/in/liliana-l-92035441/ |
 | **Email** | liliana.lopez@liveops.com |
@@ -288,7 +280,6 @@ Calanthia
 | **Title** | President |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
-| **LinkedIn connection** | Calanthia 1st degree |
 | **Outreach hooks** | 1. **Mutual connection:** Calanthia 1st degree 2. **Insight:** Helpware named one of Clutch's Top 100 Fastest-Growing Companies for 2025. Company expanded to Poland, Albania, Puerto Rico, Guam, and Uganda. Acquired Unicsoft and launched Helpware Tech division. No... 3. **Near event:** Based in Asheville, North Carolina, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/nanetteharrell |
 | **Email** | n.harrell@helpware.com |
@@ -322,7 +313,6 @@ Calanthia
 | **Title** | President |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore) |
-| **LinkedIn connection** | Calanthia 1st degree; Alice 2nd degree (Dave Zimmerman; Alan Bowman); Calanthia 2nd degree (Aaron Anderson) |
 | **Outreach hooks** | 1. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Dave Zimmerman; Alan Bowman); Calanthia 2nd degree (Aaron Anderson) 2. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/dominic-leide-7b0b096 |
 | **Email** | dleide@theofficegurus.com |
@@ -358,7 +348,6 @@ Calanthia
 | **Title** | Vice President, Shared Services |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore) |
-| **LinkedIn connection** | Calanthia 1st degree; Calanthia 2nd degree (Aaron Anderson) |
 | **Outreach hooks** | 1. **Mutual connection:** Calanthia 1st degree; Calanthia 2nd degree (Aaron Anderson) 2. **Insight:** Gave reporters a tour during the grand opening of a new Focus Services call center in North Carolina (former Concentrix facility, 350 seats). Focus Services is expanding to South Africa. The NC expans... 3. **Near event:** Based in Jacksonville, North Carolina, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/kenneth-loggins-8a85807b |
 | **Email** | kenneth@focusservices.com |
@@ -396,7 +385,6 @@ Calanthia
 | **Title** | Chief Executive Officer |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Mixed delivery (onshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Speaking/event:** Speaking at the Mortgage AI conference in October 2026 ('Staff vs AI vs Virtual Assistants: How You Can Manage The AI/Human Balance'). 2. **Insight:** Recently presented a webinar with the Five Star Institute on mort... 3. **Near event:** Based in Elon, North Carolina, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/brian-flaherty-343b091/ |
 | **Email** | brian.flaherty@globalstrategic.com |
@@ -426,7 +414,6 @@ Calanthia
 | **Title** | Global Vice President, CX |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, offshore) |
-| **LinkedIn connection** | Alice 2nd degree (Dave Zimmerman) |
 | **Outreach hooks** | 1. **Mutual connection:** Alice 2nd degree (Dave Zimmerman) 2. **Insight:** Published a LinkedIn article in Feb 2026 about how AI didn't replace humans during the holiday season but raised the bar for human agents. Global VP of CX at Liveops. Active interest in AI-enabled CX ... 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
 | **LinkedIn** | https://www.linkedin.com/in/bill-trocano-9888891a/ |
 | **Email** | bill.trocano@liveops.com |
@@ -457,7 +444,6 @@ Calanthia
 | **Title** | Co-Founder & CEO |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Offshore-heavy (nearshore, offshore) |
-| **LinkedIn connection** | Alice 2nd degree (Vineet Mehra) |
 | **Outreach hooks** | 1. **Mutual connection:** Alice 2nd degree (Vineet Mehra) 2. **Insight:** First Contact BPO grew 2,500% in under a year after launching in 2023. His other company, Interactive Contact Center, was named one of CIOReview's Top 10 Contact Center Services in Latin America. YEC ... 3. **Near event:** Based in Miami, Florida, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/pablo-paz-hernandez-760445127/ |
 | **Email** | pablo@firstcontactbpo.com |
@@ -488,7 +474,6 @@ Calanthia
 | **Title** | Vice President, Operations |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Onshore-heavy (onshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** CBE Companies won the 2025 BBB Torch Award for Ethics and the OIR Catalyst for Change Award for their CBE Cares community initiative. They also opened a new Philippines office in 2024. 2. **Near event:** Based in Clarksville, Tennessee, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/amanda-jones-39497731/ |
 | **Email** | amanda.jones@cbecompanies.com |
@@ -518,7 +503,6 @@ Calanthia
 | **Title** | Regional Vice President (US) |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** Promoted to RVP Business Operations - US as part of a major Helpware leadership restructuring. CEO Robert Nash specifically highlighted these appointments as key to the company's growth strategy. Expe... 2. **Near event:** Based in Atlanta, Georgia, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/donny-jackson-0b22a43b/ |
 | **Email** | donny.jackson@helpware.com |
@@ -548,7 +532,6 @@ Calanthia
 | **Title** | Chief Operating Officer |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** Promoted to COO at InteLogix. Their LogixAssist product won 'AI-based Customer Service Solution of the Year' at the 2025 AI Breakthrough Awards — 67-89% first-contact resolution increase, 40% training... 2. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/johnyanez/ |
 | **Email** | john.yanez@intelogix.com |
@@ -581,7 +564,6 @@ Calanthia
 | **Title** | Chief Technology Officer |
 | **Persona** | Technology Leader |
 | **Delivery footprint** | Onshore-heavy (onshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** Led the launch of SupportNinja's 'Outsourcing 2.0' AI suite (NinjaAI) in March 2025 — includes NinjaAI QA that reviews 100% of interactions vs the traditional 2-5%. Authored content on AI-powered QA. ... 2. **Near event:** Based in Boynton Beach, Florida, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/ken-braatz-16580438/ |
 | **Email** | ken@supportninja.com |
@@ -614,7 +596,6 @@ Calanthia
 | **Title** | Vice President of Global Operations |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Onshore-heavy (onshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** Percepta just named Thomas Monaghan as new President (Feb 2026), replacing Karen Gurganious. New leadership = potential new priorities. Percepta is a TTEC/Ford JV with ~4,000 employees across 13 count... 2. **Near event:** Based in Nashville, Tennessee, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/youssefhannat/ |
 | **Email** | youssef.hannat@percepta.com |
@@ -649,7 +630,6 @@ Calanthia
 | **Title** | Executive Director of Operations |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Onshore-heavy (onshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** Percepta just named Thomas Monaghan as new President (Feb 2026). New leadership = potential new priorities. Previously COO at District Photo Inc. 2. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
 | **LinkedIn** | https://www.linkedin.com/in/james-nelson-0292b713/ |
 | **Email** | james.nelson@percepta.com |
@@ -682,7 +662,6 @@ Calanthia
 | **Title** | Co-founder, CFO & COO |
 | **Persona** | Executive Sponsor |
 | **Delivery footprint** | Onshore-heavy (onshore) |
-| **LinkedIn connection** | Calanthia 2nd degree (Ian Harriman) |
 | **Outreach hooks** | 1. **Mutual connection:** Calanthia 2nd degree (Ian Harriman) 2. **Insight:** Co-founded GCS in 2001 with Greg Alcorn. CPA credential. Active in Forward Rowan economic development initiative. GCS managed the COVID Hotline for 68,000 MTA NYC Transit employees and helped process ... 3. **Near event:** Based in Salisbury, North Carolina, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/bryan-overcash-b897a86/ |
 | **Email** | bryan.overcash@gcsagents.com |
@@ -715,7 +694,6 @@ Calanthia
 | **Title** | Chief Operating Officer |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, offshore) |
-| **LinkedIn connection** | Alice 2nd degree (Susan Bean) |
 | **Outreach hooks** | 1. **Mutual connection:** Alice 2nd degree (Susan Bean) 2. **Insight:** Shared a post about joining Global Strategic during strong momentum and focusing on turning insights into strategies. Note: may have moved to White Glove Business Solutions — verify current role on Li... 3. **Near event:** Based in Miami, Florida, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/erikagarciallaneza/ |
 | **Email** | erika.garcia@globalstrategic.com |
@@ -745,7 +723,6 @@ Calanthia
 | **Title** | Vice President of Project Management |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Offshore-heavy (nearshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Near event:** Based in Atlanta, Georgia, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/keith-hansen-16313ab6/ |
 | **Email** | keith.hansen@km2solutions.com |
@@ -778,7 +755,6 @@ Calanthia
 | **Title** | Senior Vice President Operations |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Offshore-heavy (nearshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** Title is SVP & Country Head, Operations (APAC) at Buwelo — oversees call centers engaging 5M+ customers annually. 15+ years in BPO, prior Fortune 500 experience. Buwelo reports 94% client retention ra... 2. **Near event:** Based in Atlanta Metropolitan Area — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/mark-d-angola-29b8736/ |
 | **Email** | markdangola@buwelo.com |
@@ -808,7 +784,6 @@ Calanthia
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** He’s involved in Flatworld AI’s 'The AI Walk' series and has spoken about how AI empowers frontline contact center agents—automating routine work to speed resolution, boost agent performance, and lowe... 2. **Near event:** Based in Alpharetta, Georgia, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/nitesh-kumar-69328437/ |
 | **Email** | nitesh.kumar@flatworldsolutions.com |
@@ -840,7 +815,6 @@ Calanthia
 | **Title** | Senior Partner |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** Shared Flatworld's 'Tech in Mortgage — Powered by MSuite' podcast highlighting AI-driven mortgage automation. Flatworld showcased MSuite at the MBA Servicing Conference in Dallas (Feb 2025). Company l... 2. **Near event:** Based in Miami, Florida, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/rob-porges-6132118/ |
 | **Email** | rob.porges@flatworldsolutions.com |
@@ -874,7 +848,6 @@ Calanthia
 | **Title** | Senior Vice President, Financial Services |
 | **Persona** | Operations & Finance Leader |
 | **Delivery footprint** | Mixed delivery (onshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** 45+ years in direct marketing and financial services. At Harte Hanks since 2007. Catawba College alumna. Based in Salisbury, NC. 2. **Near event:** Based in Salisbury, North Carolina, United States — could attend CBAND Atlanta (Feb 26). |
 | **LinkedIn** | https://www.linkedin.com/in/cathy-sexton-5b119b2/ |
 | **Email** | cathy.sexton@hartehanks.com |
@@ -904,7 +877,6 @@ Calanthia
 | **Title** | Vice President, Call Center Technologies |
 | **Persona** | Technology Leader |
 | **Delivery footprint** | Mixed delivery (onshore, nearshore, offshore) |
-| **LinkedIn connection** | None |
 | **Outreach hooks** | 1. **Insight:** 24-year tenure at InfoCision — rose from IT Manager to VP. Focuses on transforming call center tech for scalability and productivity. InfoCision explicitly serves Restaurants & Food & Beverages verticals — strong match for Dyna's Pizza Hut Thailand case study. 2. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter. |
 | **LinkedIn** | https://www.linkedin.com/in/aaron-brooks-5377097/ |
 | **Email** | aaron.brooks@infocision.com |
