@@ -159,19 +159,22 @@ CASE STUDIES she can reference (use 1-2 relevant ones in Touch 3 based on what i
 
 KEY MESSAGING for Touch 3:
 - Your clients are demanding higher service quality at lower cost. The biggest BPOs are beginning to use AI to deliver both.
-- Don't have Teleperformance's budget and internal AI team? We bring the same Teleperformance-proven team and expertise to you.
-- Dyna delivers true end-to-end voice automation — not copilots or agent-assist tools.
-- We design bespoke solutions: script design, workflow implementation, continuous monitoring. No internal AI team required.
+- Don't have Teleperformance's budget and internal AI team? Don't worry, at Dyna, we bring Teleperformance-proven team and expertise to you.
+- Dyna delivers true end-to-end voice automation — AI agents that automate outbound and inbound calls from greeting to resolution independently. Not copilots or agent-assist tools.
+- We design bespoke solutions: script design, workflow implementation, continuous monitoring and optimization. No internal AI team required.
+- Multi-agent orchestration across multiple channels (voice and text), multiple use cases (inbound and outbound).
 - One AI partner covering multiple industries (telecom, travel, insurance, collections, etc.) — built for BPOs.
 - Every call tracked, every conversion measured, every result tied to revenue. You pay for results.
+- Battle-tested with international enterprises: Teleperformance, Toyota, HSBC (verbal only), Pizza Hut, major telecoms, digital banks.
+- For Technology Leaders specifically: lead with "Be the tech leader who leads your contact center into the AI era." Enterprise-grade solutions designed and deployed by dedicated industry experts. SaaS, private cloud, or on-prem.
 
 RULES:
 - Touch 1: NEVER mention Dyna, AI products, or anything that sounds like a pitch. This is just a human connecting with another human. Under 300 characters.
 - Touch 2: NEVER pitch. Position Calanthia as an expert spending time with BPO leaders. She's sharing what she's learning, comparing notes. She's curious about their world. 3-5 sentences, warm and conversational.
 - Touch 3: This is where the value prop comes in, but framed as sharing insights — "I've been working closely with BPO leaders on this exact challenge" not "we sell AI software." Weave in 1-2 relevant case studies naturally. Match the persona:
-  - Executive Sponsor: The Teleperformance hook — biggest BPOs using AI, you don't need their budget, we bring the same team to you. Scale without headcount.
-  - Operations & Finance Leader: Margin pressure, the capital gap, bespoke solutions, specific proof points from case studies. You pay for results.
-  - Technology Leader: The 60-80% problem, purpose-built platform, deployment flexibility, compliance, scales from pilot to production.
+  - Executive Sponsor: The Teleperformance hook — biggest BPOs using AI, "don't have Teleperformance's budget and internal AI team? Don't worry, we bring Teleperformance-proven team and expertise to you." AI agents that automate outbound and inbound calls from end to end, 24/7, scale without headcount.
+  - Operations & Finance Leader: Lead with REDUCING LABOR COSTS and expanding capacity — "fully automated AI agents allow you to scale on demand while reducing labor costs significantly." Industry competitive pressure to improve EBITDA margin. Bespoke solutions, specific proof points. You pay for results.
+  - Technology Leader: LEAD WITH ASPIRATION — "Be the tech leader who leads your contact center into the AI era." Then: enterprise-grade AI solutions designed and deployed for you by dedicated industry experts, no internal AI team needed. Multi-agent orchestration across voice AND text, inbound and outbound. Deployed via SaaS, private cloud, or on-prem. Battle-tested by enterprise (Teleperformance, Toyota, major telecoms). Can handle volume at scale. Do NOT lead with the 60-80% build problem — lead with the vision of being the AI leader.
 - ALSO tailor by delivery footprint:
   - Onshore-heavy: Margins are thin (5-8% EBITDA). AI transforms the unit economics. "You're paying $40-50K per seat onshore. AI runs at a fraction."
   - Offshore-heavy: Healthy margins from labour arbitrage, but threat is obsolescence. Clients demanding AI. "AI protects your position and scales beyond what labour arbitrage can deliver."

@@ -9698,3 +9698,162 @@ assistant:
   block_until_ms: 500000
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/personalised-outreach.md -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && git add -A && git commit -m "$(cat <<'EOF'
+Run: generate-outreach.ts
+
+Added 6 event-active contacts (DATAMARK: Ali Karim, Bill Randag; Etech: Matt Rocco, Jim Iyoob; Liveops: Liliana Lopez, Bill Trocano) with confirmed conference speaking/sponsor data. 26 total prospects.
+EOF
+)" && git push && echo "Done"
+  description: Convert, commit and push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.docx`** now has **26 prospects** (up from 20).
+
+**6 new contacts added:**
+
+| Person | Company | Why added | Event hook |
+|---|---|---|---|
+| **Ali Karim** | DATAMARK | Confirmed speaker at Frost & Sullivan East (Apr) + West (Oct) | Frost & Sullivan Fort Lauderdale (Apr 12-15) |
+| **Bill Randag** | DATAMARK | President; company is featured sponsor at both Frost & Sullivan events | Frost & Sullivan Fort Lauderdale (Apr 12-15) |
+| **Matt Rocco** | Etech Global Services | CEO; company at CCW LV (booth + workshop) | CCW Las Vegas (Jun 22-25) |
+| **Jim Iyoob** | Etech Global Services | Confirmed speaker at Conversational AI Summit + CCW LV + Call Center Campus | Conversational AI Summit (Apr 9) |
+| **Liliana Lopez** | Liveops | Co-led AI Maturity Workshop at CCW Orlando; active LinkedIn | Enterprise Connect (Mar 10-12) |
+| **Bill Trocano** | Liveops | Published AI article Feb 2026; active LinkedIn | Enterprise Connect (Mar 10-12) |
+
+Each has the full context card (persona, delivery footprint, client industries, LinkedIn connections, event, icebreaker with verified conference data) plus personalised Touch 1/2/3.
+
+**Also updated for existing contacts:**
+- **Benjamin Alpert** (The Office Gurus) — flagged as confirmed attendee at CCW Las Vegas
+- **Brian Flaherty** (Global Strategic) — Mortgage AI conference + Real Estate CFO West speaking slots already in his icebreaker
+
+user:
+<user_query>
+@/Users/alicewyatt/Downloads/US BPO Persona Map (2).pdf 
+
+ok we made some updates to the persona map but it's now finalised. can you take a look through and see if you think we should add or change anything to the messages for our top contacts based on this updated framework?
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/US BPO Persona Map (2).pdf
+
+[Tool result] Read
+
+assistant:
+[Thinking] Let me compare the new persona map (version 2) with the previous version (version 1) to identify what changed:
+
+**Changes I can see:**
+
+**Persona 1 (Executive Sponsor) — Core message:**
+- Old: "Your clients are demanding higher service quality at lower cost, and your competitors are beginning to use AI to deliver both."
+- New: Same opening, but now includes: "Don't have Teleperformance's budget and internal AI team? Don't worry, at Dyna, we bring Teleperformance-proven team and expert to you." — this is the hook we suggested!
+- Old: "We deploy AI agents for outbound and inbound operations that operate 24/7 and allow you to scale on demand without headcount."
+
+
+- New: "We deploy AI agents that automate your outbound and inbound calls from end to end that operate 24/7 and allow you to scale on demand without headcount." — added "automate" and "from end to end"
+
+**Persona 2 (Operations Leader) — What they care about:**
+- Old: "Protecting EBITDA: Severe margin pressure from rising labor and facilities costs; today, revenue growth largely requires adding headcount."
+- New: Added a fresh angle around reducing cost while expanding capacity through fully automated AI agents that scale on demand and cut labor costs significantly, then reframed the EBITDA protection point.
+- Old: "Staffing correctly" wording stays same
+
+**Persona 2 — Core message:**
+- Shifted from "Keep staffing lean, protect your margin" to "Reduce labor costs, improve your margin" — making the cost reduction benefit more explicit and actionable.
+
+**Persona 3 (Technology Leader) — What they care about:**
+- Removed the integrated tech stack angle and pivoted toward positioning as an AI-forward tech leader instead.
+
+**Persona 3 — Core message — COMPLETELY REWRITTEN:**
+- Restructured from a single long description into four numbered points that lead with an aspirational hook about being the tech leader driving AI adoption, then emphasize enterprise-grade solutions delivered by experts so they don't need to build an internal AI team.
+- Point 3 expands the scope to include both voice and text across multiple channels and use cases, with flexible deployment options.
+- Point 4 adds social proof through enterprise customer validation and scale capabilities.
+
+This represents a meaningful pivot for Persona 3 — moving away from pure technical positioning toward aspirational leadership messaging while broadening the channel scope beyond voice.
+
+For the outreach updates, Persona 1's core message now leads with the Teleperformance-proven team angle and end-to-end call automation, which is already largely reflected in current messaging.
+
+Persona 2 shifts to emphasize explicit cost reduction and EBITDA margin improvement as primary drivers, alongside the capacity expansion angle.
+
+Persona 3 needs the most significant refresh — the "be the tech leader" aspirational hook is central now, voice and text positioning is explicit, the "no internal AI team needed" benefit moves into prominence, and enterprise name-dropping becomes a key credibility signal.
+
+Now I need to identify which of the 26 prospects map to the Tech Leader persona so I can prioritize Touch 3 email updates. Looking at the list, Ken Braatz at SupportNinja as CTO would clearly fit, and I should scan for other C-level technical roles.
+
+The current prompt language for Technology Leaders focuses on the 60-80% problem and deployment flexibility, but that's outdated — I need to reframe it around the aspirational leadership angle, the multi-agent orchestration across voice and text, the hands-off deployment model, and enterprise validation. For Persona 2, the tweaks are smaller but important: shifting to "reduce labor costs" terminology and highlighting competitive EBITDA pressure.
+
+I'm deciding whether to regenerate all 26 outreach sequences or just update the personas and selectively refresh the Tech Leader emails.
+
+Since Alice confirmed the persona map is finalized, the Persona 3 changes are substantial enough to justify a full regeneration — it's worth the API cost and time to ensure consistency across all sequences.
+Let me compare the changes from the previous version.
+
+**Key changes I see in the finalised persona map:**
+
+**Persona 1 (Executive Sponsor):**
+- Core message now has the full Teleperformance hook baked in: "Don't worry, at Dyna, we bring Teleperformance-proven team and expert to you." 
+- "automate your outbound and inbound calls from end to end" — "from end to end" is new emphasis
+- Already largely reflected in our outreach. Minor wording alignment needed.
+
+**Persona 2 (Operations Leader):**
+- **New bullet:** "Reducing cost while expanding capacity: Fully automated AI agents allow you to scale on demand, while reducing labor costs significantly" — more direct about cost reduction
+- "Protect your margin" → "Reduce labor costs, improve your margin" — stronger language
+- Added "Industry competitive pressure to improve EBITDA margin to stay ahead of the curve"
+- Our current outreach uses softer language ("protect your margin", "keep staffing lean"). Should update to match the more direct cost-reduction framing.
+
+**Persona 3 (Technology Leader) — significant rewrite:**
+- **New aspirational hook:** "Be the tech leader who leads your contact center into the AI era" — this is a big tone shift from purely technical to ego/aspiration
+- "No internal AI team needed" now explicitly in the Tech Leader message (was only in general USPs)
+- **"Voice and text"** — previously just voice. Now multi-channel.
+- "Battle tested by enterprise (name drop here)" — explicit instruction to name-drop
+- Removed "integrated tech stack" and "total cost of ownership" as concerns; replaced with "Being seen as AI-forward tech leader, not left behind"
+
+The Persona 3 changes are the biggest. The old Tech Leader email led with the "60-80% build problem." The new framing leads with aspiration — "be the leader who brings AI to your contact center" — then backs it up with "we do it for you, battle-tested at enterprise scale." Different emotional register entirely.
+
+**My recommendation:** Yes, update the outreach. The Persona 2 cost-reduction language is stronger, and the Persona 3 rewrite changes the whole approach for tech leaders. Let me update the prompt and regenerate.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string:   - Executive Sponsor: The Teleperformance hook — biggest BPOs using AI, you don't need their budget, we bring the same team to you. Scale without headcount.
+  - Operations & Finance Leader: Margin pressure, the capital gap, bespoke solutions, specific proof points from case studies. You pay for results.
+  - Technology Leader: The 60-80% problem, purpose-built platform, deployment flexibility, compliance, scales from pilot to production.
+- ALSO tailor by delivery footprint:
+  new_string:   - Executive Sponsor: The Teleperformance hook — biggest BPOs using AI, "don't have Teleperformance's budget and internal AI team? Don't worry, we bring Teleperformance-proven team and expertise to you." AI agents that automate outbound and inbound calls from end to end, 24/7, scale without headcount.
+  - Operations & Finance Leader: Lead with REDUCING LABOR COSTS and expanding capacity — "fully automated AI agents allow you to scale on demand while reducing labor costs significantly." Industry competitive pressure to improve EBITDA margin. Bespoke solutions, specific proof points. You pay for results.
+  - Technology Leader: LEAD WITH ASPIRATION — "Be the tech leader who leads your contact center into the AI era." Then: enterprise-grade AI solutions designed and deployed for you by dedicated industry experts, no internal AI team needed. Multi-agent orchestration across voice AND text, inbound and outbound. Deployed via SaaS, private cloud, or on-prem. Battle-tested by enterprise (Teleperformance, Toyota, major telecoms). Can handle volume at scale. Do NOT lead with the 60-80% build problem — lead with the vision of being the AI leader.
+- ALSO tailor by delivery footprint:
+
+[Tool result] StrReplace
+
+assistant:
+Also update the key messaging section to match.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/scripts/generate-outreach.ts
+  old_string: KEY MESSAGING for Touch 3:
+- Your clients are demanding higher service quality at lower cost. The biggest BPOs are beginning to use AI to deliver both.
+- Don't have Teleperformance's budget and internal AI team? We bring the same Teleperformance-proven team and expertise to you.
+- Dyna delivers true end-to-end voice automation — not copilots or agent-assist tools.
+- We design bespoke solutions: script design, workflow implementation, continuous monitoring. No internal AI team required.
+- One AI partner covering multiple industries (telecom, travel, insurance, collections, etc.) — built for BPOs.
+- Every call tracked, every conversion measured, every result tied to revenue. You pay for results.
+  new_string: KEY MESSAGING for Touch 3:
+- Your clients are demanding higher service quality at lower cost. The biggest BPOs are beginning to use AI to deliver both.
+- Don't have Teleperformance's budget and internal AI team? Don't worry, at Dyna, we bring Teleperformance-proven team and expertise to you.
+- Dyna delivers true end-to-end voice automation — AI agents that automate outbound and inbound calls from greeting to resolution independently. Not copilots or agent-assist tools.
+- We design bespoke solutions: script design, workflow implementation, continuous monitoring and optimization. No internal AI team required.
+- Multi-agent orchestration across multiple channels (voice and text), multiple use cases (inbound and outbound).
+- One AI partner covering multiple industries (telecom, travel, insurance, collections, etc.) — built for BPOs.
+- Every call tracked, every conversion measured, every result tied to revenue. You pay for results.
+- Battle-tested with international enterprises: Teleperformance, Toyota, HSBC (verbal only), Pizza Hut, major telecoms, digital banks.
+- For Technology Leaders specifically: lead with "Be the tech leader who leads your contact center into the AI era." Enterprise-grade solutions designed and deployed by dedicated industry experts. SaaS, private cloud, or on-prem.
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/generate-outreach.ts
+  description: Regenerate with finalised persona map messaging
+  block_until_ms: 500000
+
+[Tool result] Shell
