@@ -44,7 +44,7 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** Co-presented at Customer Connect Expo (April 2025, Las Vegas) on 'Balancing AI and Human Agents — The Future of Contact Centers' to 3,000+ CX leaders.
+1. **Speaking/event:** Presented at Customer Connect Expo (April 2025, past) on 'Balancing AI and Human Agents — The Future of Contact Centers' to 3,000+ CX leaders.
 2. **Mutual connection:** Alice 2nd degree (Dave Zimmerman)
 3. **Insight:** The Office Gurus launched GuruAssist AI platform....
 4. **Near event:** Based in Bradenton, Florida, United States — could attend CBAND Atlanta (Feb 26).
@@ -201,7 +201,7 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** Co-led an AI Maturity Workshop at CCW Orlando (Jan 2026) on operationalizing AI — moving from 'promising' to 'proven'.
+1. **Speaking/event:** Led an AI Maturity Workshop at CCW Orlando (Jan 2026, past) on operationalizing AI — moving from 'promising' to 'proven'.
 2. **Insight:** shared thought leadership on sandboxing AI, real-time agent assist, and usin...
 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
