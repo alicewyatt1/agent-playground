@@ -4191,3 +4191,199 @@ assistant:
 > Our platform is enterprise-ready — used by the largest contact centers including Teleperformance. Deploy on cloud, on-prem, or hybrid. We run at 95%+ uptime with built-in compliance controls, content guardrails, and full audit trails. Deployments are API-first — integrates via SIP for telephony and API for CRM (Genesys, Cisco, Zendesk, and custom platforms). Secure by design, minimal internal engineering lift.
 
 [Tool result] StrReplace
+
+assistant:
+Now regenerate and commit.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/messaging-framework.md -f markdown -t docx -o /Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx && git add -A && git commit -m "Final persona refinements per Alice's review" && git push
+  description: Commit final persona updates
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+Done. All three personas updated with your versions. Docx regenerated at `/Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx`.
+
+user:
+<user_query>
+ @/Users/alicewyatt/Downloads/ICP.pdf Okay, you now have loads of context on my task. You have all of the information from Dyna. You have all of their case studies. You've got my call recordings. You've got the GLG expert recording, and I'm there, we've got three simple personas. I want you to go and look at the work that I've done. Then also look further afield at the internet, and then look very specific about how Dyna present themselves. And I want you to make updates to my ICP document. I want you to add context on the most relevant case studies. Spell it out really clearly which case study and why and any proof points. I also want you to confirm what they care about and have my formatting consistent in that box, in those boxes, across all three personas. And make sure it matches with how Dyno positions themselves in their messaging. They're going to use this to create the messaging. So do really thorough, good work. 
+
+Firstly, play back to me my prompt. Feel free to improve my prompt. I also don't want this document to be really unwieldy. I want it to be super clear. I don't want to miss anything obvious. And then, yeah, go ahead on with the task. 
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/ICP.pdf
+
+[Tool result] Read
+
+assistant:
+[Thinking] Now I have the ICP document that Alice has been working on in Google Docs. She wants me to:
+
+1. **Play back her prompt** and improve it
+2. **Update the ICP document** with:
+   - Most relevant case studies for each persona (with specific proof points)
+   - Confirm/refine "what they care about" with consistent formatting across all three
+   - Make sure it aligns with how Dyna positions themselves
+   - Keep it clear and not unwieldy
+   - Don't miss anything obvious
+
+Let me play back the prompt first, then do the work.
+
+**Playing back the prompt:**
+
+Alice wants me to:
+
+
+- Review her 3-page ICP document with three personas
+- Cross-reference it against all available context: Dyna's sales materials, case studies, product info, call transcripts, GLG expert conversation, narrative workshop, and web research
+- For each persona, confirm and refine what they care about with consistent formatting, ensure alignment with Dyna's actual positioning, and add the most relevant case studies with specific proof points explaining why each maps to that persona
+- Keep everything clear and concise without overcomplicating it
+- Standardize the "what they care about" section across all three personas to use the bold label: description format, since right now Persona 1 and 3 use plain text while Persona 2 uses bold labels
+- Map case studies to each persona with clear reasoning for the connection
+
+: Persona 1 (Executive Sponsor) needs enterprise credibility and commercial proof, so Teleperformance demonstrates scale, Digital Bank shows expansion potential, and IZZI proves measurable sales outcomes
+- Continue this pattern for Persona 2 (Operations) and beyond, selecting case studies that directly address what each role cares about most
+
+For the Operations/Finance leader, I'm highlighting IZZI's concrete campaign metrics, Megacable's volume and accuracy, Digital Bank's collections performance, Viraal's sophisticated segmentation strategy, and the Saudi airline's cost reduction—each showing operational excellence and financial impact.
+
+For the Technology leader, HSBC's head-to-head performance comparison against competitors, Digital Bank's reliability through expansion, the Saudi telco's complex integration requirements, and the platform's technical improvements all address security, uptime, and TCO concerns.
+
+Now I need to sharpen the Executive Sponsor's "what they care about" section to align with Dyna's positioning around AI Workforce and outcome accountability—focusing on competitive pressure, client retention through AI capabilities, and margin improvement rather than just feature delivery. I need to check what's actually missing from the ICP document against Dyna's materials — the case studies section is empty and needs proof points, plus I should soften that language about BPO client demands since Alice flagged it earlier, and update "scale infinitely" to "scale on demand" to match our earlier discussion. The Tech Leader persona also needs the integration point added and consistent formatting with bold labels. I'll provide her with the full updated document as clean copy she can paste back into Google Docs. I need to standardize the formatting across all three personas by using bold labels consistently, then fill in specific case studies with proof points that align with what each persona values. For the Executive Sponsor, I'm looking for big-name clients and clear business outcomes around revenue and margins. For Persona 3, I should add integration capabilities to their concerns since that came up in earlier discussion. Once I have the case studies mapped to each persona with their specific resonance points, I'll convert everything to a clean three-page document that Calanthia can use directly for outreach. For operations leaders, I need case studies that demonstrate volume capacity, accuracy metrics, and cost efficiency—proof that AI scales without creating operational risk. Megacable shows we can handle 10K+ daily interactions with 99% accuracy, while Viraal demonstrates sophisticated workflow design that respects operational complexity, and the airline example proves high success rates on transactional volume.
+
+For technical leaders, the focus shifts to system reliability and enterprise integration—they need to see that this architecture performs under load and plays well with existing infrastructure. HSBC's benchmark showing 98.6% factualness establishes that the system maintains accuracy at scale.
+
+The Saudi telco case demonstrates production-grade deployment with Cisco integration and local cloud options, while the Singapore bank shows 12 months of stable expansion across multiple products, proving the system doesn't break when moving from pilot to full production.
+
+Before finalizing, I'm checking alignment with Dyna's core positioning around "AI Workforce, Better Results" and outcome accountability. The messaging for each persona holds up—it focuses on the prospect's problem first, then introduces the solution using Dyna's language like "autopilot" and "capacity that doesn't churn." One adjustment: the mid-market section should soften the claim about clients "actively demanding" AI, since that's overstating demand at that tier. Now I'm ready to write the full document with consistent formatting and case studies integrated throughout.
+Here's your prompt played back and improved:
+
+**Task:** Update the 3-page ICP document so it's a complete, tight reference that Calanthia can use to create outreach messaging. Specifically:
+
+1. **Fill in "Most relevant case studies"** for each persona — specific case study name, key proof points, and a one-line note on WHY it resonates with that persona
+2. **Make "What they care about" formatting consistent** across all three personas (Persona 2's bold-label format applied to all three)
+3. **Cross-check against Dyna's actual materials** — case studies, product decks, company profile — to ensure proof points are accurate and messaging aligns with how Dyna positions themselves
+4. **Soften any claims not well-supported** for mid-market specifically (e.g., the "clients actively demanding AI" line in the pressures box)
+5. **Keep it concise** — same 3-page structure, same table format. Reference doc, not a playbook.
+
+Anything you'd add or change to that scope?
+
+Let me go ahead and execute. I'll create the full updated version as a docx you can paste into your Google Doc.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/data/icp-updated.md
+  contents: # ICP & Persona Reference
+
+| | |
+|---|---|
+| **ICP** | US mid-market BPOs, 1,000–5,000 employees, with contact centre operations |
+| **Three Personas** | Executive Sponsor · Operations Leader (+ Finance) · Technology Leader |
+| **Mid-market BPO pressures** | Mid-market BPOs are the most vulnerable to AI disruption: they lack the capital to build their own AI (unlike Teleperformance, who committed $185M to internal AI), but their clients are pushing for lower costs and better service — and competitors who adopt AI will deliver both. They need external AI partners. |
+| **Key differentiator** | One of the few companies that can deliver true autopilot at production scale — not copilots, not tools, full execution. |
+
+---
+
+## Persona 1: Executive Sponsor
+
+| | |
+|---|---|
+| **Titles** | CEO, Founder, Owner, Chairman, President, Co-Founder & CEO, Managing Partner |
+| **Role in deal** | Economic buyer. Owns capital allocation decisions. Final budget authority. Accountable to board/investors for margin expansion, competitive positioning, and long-term valuation. |
+
+**What they care about:**
+
+- **Staying competitive:** Clients are pushing for cost reductions and better service quality — BPOs that can't deliver both will lose contracts to those that can
+- **Market positioning:** Being seen as AI-forward, not left behind. The industry is moving and standing still is a risk.
+- **Client retention:** Some clients are starting to evaluate going direct to AI vendors or building their own capabilities, cutting the BPO out entirely
+- **Improving EBITDA:** Finding ways to structurally improve margins, not just incremental cost savings
+
+**Their success metrics:**
+
+Revenue growth, EBITDA margin, new client acquisition, client retention rate, AI strategy credibility with boards
+
+**Core message to them:**
+
+> Your clients want higher quality and lower cost — and your competitors are starting to use AI to deliver on that. The BPOs that move to AI autopilot now will win on cost and quality and keep those contracts. We deploy AI autopilot for outbound and inbound operations, allowing you to scale on demand without headcount.
+
+**Most relevant case studies:**
+
+| Case Study | Proof Points | Why It Resonates |
+|---|---|---|
+| **Teleperformance / Sands Macau** — Hotel booking confirmation | Multi-language AI voice bot deployed through the world's largest BPO for Sands hotel booking confirmations. English, Mandarin, and Cantonese. | **Name recognition.** If Teleperformance trusts Dyna to run voice AI for a marquee client like Sands, a mid-market CEO takes notice. Establishes enterprise credibility immediately. |
+| **IZZI (Mexican telco) — Telesales upsell** | 20K records processed. 136 closed sales. 4.7% conversion rate. Fully automated dual-agent model (promotion agent + validation agent). No human intervention during the call. | **AI can actually close sales.** This isn't just handling service calls — it's driving revenue. CEOs care about top-line growth, and this shows AI autopilot delivering real commercial outcomes. |
+| **Digital Bank Singapore — Collections** | Started with 2 voice agents for personal loan and credit card collections. 76% promise-to-pay rate. Expanded from pilot to multi-product deployment within 12 months. | **The pilot-to-scale story.** Shows the journey a CEO would be signing up for — start small, prove it works, expand across the business. Low risk, high upside. |
+
+---
+
+## Persona 2: Operations Leader (+ Finance)
+
+| | |
+|---|---|
+| **Titles** | COO, CFO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, VP Finance, Regional VP |
+| **Role in deal** | COO = Champion who drives evaluation and owns operational outcome. CFO = Margin holder who validates the business case and approves spend. |
+
+**What they care about:**
+
+- **Service quality:** Hitting client SLAs and conversion targets
+- **Protecting EBITDA:** High margin pressure from labour costs, and scaling revenue is dependent on scaling headcount
+- **Staffing correctly:** Overstaffing kills margin, understaffing kills SLAs; constant challenge given high annual attrition (20–30%+ is typical in the industry)
+- **Forecast accuracy:** Aligning workforce planning with unpredictable call / outbound volumes
+- **Avoiding operational disruption:** Ensuring any new innovation must not jeopardize existing SLAs or client relationships
+
+**Their success metrics:**
+
+EBITDA margin (by site, by client, by program), conversion rate (outbound), resolution rate, revenue per seat per year, daily volume capacity and utilisation rate, SLA adherence and client contract renewal rate
+
+**Core message to them:**
+
+> AI autopilot gives you capacity that doesn't churn, doesn't need ramping and meets SLAs. We deploy fully autonomous agents for outbound and inbound that run 24/7 in multiple languages alongside your existing team. You keep staffing lean, protect your margin and scale on demand without the hiring gamble. Your costs flex with your client's demand.
+
+**Most relevant case studies:**
+
+| Case Study | Proof Points | Why It Resonates |
+|---|---|---|
+| **Megacable (Mexican telco) — Package promotion** | 10K+ daily outbound volume. 99% tagging accuracy. Dual-agent model: promotion agent pitches, validation agent closes. 20K records across two groups. | **Volume and accuracy at scale.** A COO can directly benchmark this against their own outbound campaigns. 99% tagging accuracy means clean data and reliable reporting — no manual cleanup. |
+| **Viraal (Mexican fintech) — Collections** | Collections segmented by DPD bucket: predue (friendly tone), 1-30 days (empathetic), 31-60 (moderately firm), 61-90 (firm), 91+ (very firm). 57 payments recovered. 25% responder rate. | **Sophisticated operational design.** This isn't a blunt robo-dialer — it's tone-adapted by delinquency stage, exactly how an experienced collections ops leader would design it. Shows deep workflow expertise. |
+| **Digital Bank Singapore — Collections** | 76% promise-to-pay rate. 40% reach rate. 2-3K daily volume. Compliant with PDPA & MAS guidelines. Singlish tone-safe templates. | **Regulated environment, strong results.** A COO/CFO running collections needs to know this works in compliance-heavy contexts. The promise-to-pay rate is genuinely strong. |
+| **Airline Saudi Arabia — Flight booking & reschedule** | 85%+ booking success rate. 4K+ daily volume. 40% labour cost reduction. 1-week MVP delivery. | **Inbound proof point with clear cost impact.** Shows AI autopilot handles both outbound and inbound, and the 40% labour cost reduction is the kind of number a CFO wants to see. |
+
+---
+
+## Persona 3: Technology Leader
+
+| | |
+|---|---|
+| **Titles** | CTO, CIO, VP Technology, VP Engineering, VP Software Engineering, CISO, VP IT, VP Digital Innovation |
+| **Role in deal** | Technical gatekeeper. Blocks or approves based on feasibility, security, and integration. |
+
+**What they care about:**
+
+- **Security, data privacy, and compliance:** One breach and the company is done. PCI-DSS, HIPAA (depending on clients), state-level regulations.
+- **System reliability and uptime:** If the phones go down, nothing else matters. This is the baseline expectation.
+- **Integration with existing stack:** They're running Genesys, Amazon Connect, Zendesk, or similar. Anything new must work with what they have.
+- **Total cost of ownership:** Limited budget, small team, but expected to deliver innovation. They can't build like Teleperformance.
+
+**Their success metrics:**
+
+Integration time and deployment speed, uptime and system reliability, security incidents (zero tolerance)
+
+**Core message to them:**
+
+> Our platform is enterprise-ready — used by the largest contact centres including Teleperformance. Deploy on cloud, on-prem, or hybrid. We run at 95%+ uptime with built-in compliance controls, content guardrails, and full audit trails. Deployments are API-first — integrates via SIP for telephony and API for CRM (Genesys, Cisco, Zendesk, and custom platforms). Secure by design, minimal internal engineering lift.
+
+**Most relevant case studies:**
+
+| Case Study | Proof Points | Why It Resonates |
+|---|---|---|
+| **HSBC Copilot POC — Knowledge base & agent assist** | Head-to-head benchmark vs. a "global top vendor": 98.6% factualness (vs. 67.5%), 88.1% helpfulness (vs. 47.6%), 94.1% comprehensiveness (vs. 59.3%). FAQ latency ~0.5 seconds vs. 10-20 seconds. | **Concrete benchmark data.** CTOs love head-to-head comparisons. This proves Dyna's platform outperforms established competitors on the metrics that matter — accuracy, speed, and reliability. |
+| **Saudi Arabia telco (S-Telco) — AI agent marketplace** | Cisco systems integration. Local cloud deployment. Arabic + English language support. Suite of standardised AI agents deployed on telco marketplace. Copilot with script recommendations and 5-category issue tagging. | **Enterprise integration proof.** Shows the platform works inside complex enterprise infrastructure (Cisco), handles local deployment requirements, and supports multi-language at production scale. |
+| **Digital Bank Singapore — Pilot to expansion** | Started with 2 voice agents. Expanded across personal loans and credit cards over 12 months. PDPA & MAS compliant throughout. Continuous script refinement and quality review built in. | **Production stability over time.** A CTO's nightmare is a system that works in pilot and breaks in production. 12 months of continuous operation and expansion proves this runs reliably at scale. |
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/icp-updated.md -f markdown -t docx -o /Users/alicewyatt/Downloads/ICP-Updated.docx && echo "Done"
+  description: Convert ICP to docx
+
+[Tool result] Shell
