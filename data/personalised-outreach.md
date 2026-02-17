@@ -18,6 +18,9 @@
 | **LinkedIn** | https://www.linkedin.com/in/jimiyoob |
 | **Email** | jim.iyoob@etechgs.com |
 
+**Touch 1 — Connection Request**  
+Already connected on LinkedIn — skip to Touch 2.
+
 **Touch 2 — LinkedIn Message**
 
 Hi Jim, 
@@ -86,7 +89,7 @@ Calanthia
 | **Email** | matt.rocco@etechgs.com |
 
 **Touch 1 — Connection Request**  
-Hi Matt, I'm speaking at the Conversational AI Summit soon and have been collaborating with BPO leaders like your peers. Great to connect!
+Hey Matt, I see Etech is all over the conference circuit this year — CCW, the Conversational AI Summit. I work with BPO leaders on AI strategy. Would love to connect.
 
 **Touch 2 — LinkedIn Message**  
 Hi Matt,  
@@ -133,7 +136,7 @@ Subject: Navigating Expansion and Operational Excellence at KM²
 
 Hi David,
 
-I hope this note finds you well amidst your exciting expansion in Grenada and Saint Lucia. With KM² Solutions growing to over 6,500 employees, your leadership in scaling operations is truly commendable. Having been in strategic discussions with industry leaders like Teleperformance, I've observed valuable strategies for maintaining competitive positioning while scaling outbound operations. 
+Your expansion in Grenada and Saint Lucia. With KM² Solutions growing to over 6,500 employees, your leadership in scaling operations is truly commendable. Having been in strategic discussions with industry leaders like Teleperformance, I've observed valuable strategies for maintaining competitive positioning while scaling outbound operations. 
 
 I'm curious about your approach to balancing growth and efficiency, especially as you continue to expand in such dynamic markets. Let me know if any of this resonates—always happy to compare notes.
 
@@ -171,7 +174,7 @@ Subject: Insights from the Outbound Arena
 
 Hi Greg,
 
-I hope you're doing well. Reflecting on our shared network and your impressive work with ApSeed, I wanted to touch base on something I've been exploring lately—optimizing outbound operations. Having been in rooms with leaders at Teleperformance, I've seen firsthand the impact strategic adjustments can have on scale and competitive positioning. Your commitment to innovation and community impact makes me think you might have some valuable perspectives on this.
+Reflecting on your impressive work with ApSeed, I wanted to share something I've been exploring lately—optimizing outbound operations. Having been in rooms with leaders at Teleperformance, I've seen firsthand the impact strategic adjustments can have on scale and competitive positioning. Your commitment to innovation and community impact makes me think you might have some valuable perspectives on this.
 
 I'm around if you ever want to chat about this.
 
@@ -229,7 +232,7 @@ Calanthia
 | **Email** | ali.karim@datamark.net |
 
 **Touch 1 — Connection Request**  
-Hi Ali, I'll be speaking at the Frost & Sullivan MindXchange in April on AI in customer experiences. Since I'm meeting with several BPO leaders, it would be great to connect beforehand.
+Hi Ali, I saw you're presenting on AI at the Frost & Sullivan MindXchange in April — impressive. I spend my days working with BPO leaders on their AI strategy. Would love to connect.
 
 **Touch 2 — LinkedIn Message**  
 Hi Ali, I noticed you’re leading operations at DATAMARK and thought you might find the upcoming Frost & Sullivan event intriguing. I'm discussing AI's impact on customer and employee experiences. Does DATAMARK have initiatives in this area? Warm regards, Calanthia
@@ -258,32 +261,23 @@ Calanthia
 | **LinkedIn** | https://www.linkedin.com/in/liliana-l-92035441/ |
 | **Email** | liliana.lopez@liveops.com |
 
-Certainly! Here's a tailored outreach sequence for Calanthia Mei to connect with Liliana Lopez, Vice President of Technology at Liveops:
-
----
-
 **Touch 1 — Connection Request**  
-Hi Liliana, I recently co-led an AI Maturity Workshop at CCW Orlando on operationalizing AI. Would love to connect and share insights from those discussions.
-
----
+Hi Liliana, your AI Maturity Workshop at CCW Orlando on moving AI from "promising" to "proven" was spot on. I work with BPO leaders on exactly this. Would love to connect.
 
 **Touch 2 — LinkedIn Message**  
-Hi Liliana,  
-I hope this message finds you well. I recently co-led an AI Maturity Workshop at CCW Orlando focused on moving AI from 'promising' to 'proven.' Since I'm meeting with several BPO leaders at Enterprise Connect, I wondered if you'll also be there? It would be great to exchange insights. Warm regards, Calanthia
+Hi Liliana, your CCW Orlando workshop on operationalizing AI really resonated — that gap between "promising" and "proven" is exactly what I'm seeing with BPO leaders I work with, including the team at Teleperformance. Since I'm meeting with several of your peers at Enterprise Connect next month, I wondered if you'll also be there?
 
----
+Warm regards, Calanthia
 
 **Touch 3 — Email**  
-Subject: Leading AI Initiatives in BPO at Liveops
+Subject: What's actually working in AI for outbound voice
 
 Hi Liliana,
 
-I'm reaching out because I've been working closely with leaders like those at Teleperformance on enhancing outbound telesales operations through AI. Having co-led an AI Maturity Workshop at CCW Orlando, I've seen firsthand how the biggest BPOs are evolving. I thought you might be interested in what your peers are doing to stay ahead. Let me know if you'd like to hear more—happy to make time.
+Your CCW Orlando workshop on operationalizing AI is exactly the conversation I'm having with BPO leaders every day. Several operators I work with — including Teleperformance — are making the leap from agent-assist to fully automated outbound voice. The results on outbound telesales are genuinely surprising (one operator ran 10K daily calls at 99% accuracy with a fully automated dual-agent model). I thought you might be interested in what your peers are doing. Let me know if you'd like to hear more — happy to make time.
 
 Warm regards,  
 Calanthia
-
----
 
 ---
 ## 9. Nanette Harrell
@@ -348,7 +342,7 @@ Subject: Insights from the Field — A Thought to Share
 
 Hi Dominic,
 
-I hope this note finds you well. As someone who's spent time in rooms with leaders at Teleperformance, I’ve been reflecting on the unique dynamics of outbound operations, particularly in telesales and campaign management. It's intriguing how The Office Gurus has been positioning itself competitively within the industry.
+As someone who's spent time with leaders at Teleperformance, I’ve been reflecting on the unique dynamics of outbound operations, particularly in telesales and campaign management. It's intriguing how The Office Gurus has been positioning itself competitively within the industry.
 
 I'd be interested to hear your perspectives on scaling operations in today's market landscape. I think we'd have a good conversation about this—let me know.
 
@@ -411,7 +405,7 @@ Calanthia
 Hi Brian, I’m speaking at the Mortgage AI conference in October on managing the AI/human balance. I spend my days working with BPO leaders on their AI strategy. Great to connect!
 
 **Touch 2 — LinkedIn Message**  
-Hi Brian, I'm speaking at the Mortgage AI conference soon on AI/human balance. Since I'm meeting with a number of your peers there, I thought you might be interested in hearing what they're doing to evolve. Will you also be attending? Warm regards, Calanthia
+Hi Brian, your upcoming talk at the Mortgage AI conference on managing the AI/human balance is right on the money — it's the question every BPO leader I talk to is wrestling with. Since I'm meeting with a number of your peers around the same events, I thought you might be interested in what they're doing to evolve. Will you be at CBAND Atlanta on Feb 26? Warm regards, Calanthia
 
 **Touch 3 — Email**  
 Subject: Insights on AI Strategies in BPO  
@@ -674,7 +668,7 @@ Subject: Exploring AI in Outbound Operations with Percepta
 
 Hi James,
 
-With Thomas Monaghan now leading at Percepta, I'm curious about the potential shifts in your outbound operations focus. At Dyna.ai, I've seen several operators experiencing significant improvements in their telesales campaigns — like 10K daily calls with 99% accuracy. I work closely with teams at Teleperformance on similar initiatives. Curious what you think — let me know if you'd like to dig into this.
+With Thomas Monaghan now leading at Percepta, I'm curious about the potential shifts in your outbound operations focus. I've seen several operators experiencing significant improvements in their telesales campaigns — like 10K daily calls with 99% accuracy. I work closely with teams at Teleperformance on similar initiatives. Curious what you think — let me know if you'd like to dig into this.
 
 Warm regards,  
 Calanthia
