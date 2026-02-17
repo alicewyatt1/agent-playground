@@ -10921,3 +10921,260 @@ echo "Done: $(wc -l < /tmp/outreach-clean.md) lines"
   description: Append James Nelson and Cathy Sexton
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && cp /tmp/outreach-clean.md data/personalised-outreach.md && pandoc data/personalised-outreach.md -o data/Personalised-Outreach.docx && cp data/Personalised-Outreach.docx /Users/alicewyatt/Downloads/Personalised-Outreach.docx && git add -A && git commit -m "$(cat <<'EOF'
+Update outreach: remove Bucky Cline, add James Nelson (Percepta) and Cathy Sexton (Harte Hanks)
+
+27 total prospects. Updated to match Final top contacts master list.
+EOF
+)" && git push && echo "Done"
+  description: Replace file, convert, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done. **`~/Downloads/Personalised-Outreach.docx`** updated:
+
+- **Removed:** Bucky Cline
+- **Added:** James Nelson (Percepta, Ops persona, Houston TX, active LinkedIn) and Cathy Sexton (Harte Hanks, Finance persona, Salisbury NC, CBAND hook)
+- **Total:** 27 prospects
+
+user:
+<user_query>
+from the document, where you have an event filled in, does that mean we know that they are going? or that they might be likely to attend from their location?
+</user_query>
+
+assistant:
+It means they **might be likely to attend based on their location** — not that we know they're going. The logic is:
+
+- **Southeast contacts** (GA, NC, SC, TN, FL) → tagged with **CBAND Atlanta (Feb 26)** because they're close enough to potentially attend
+- **Everyone else in the US** → tagged with **Enterprise Connect (Mar 10-12, Las Vegas)** as the next major event
+
+We have **zero confirmed attendees** for either event — neither CCNG Atlanta nor Enterprise Connect publishes attendee lists. The event field is really "which event hook should Calanthia use as a conversation starter," not "confirmed attending."
+
+The only people with **confirmed event involvement** are the ones where it's in their icebreaker:
+- **Ali Karim** — confirmed speaker at Frost & Sullivan (Apr + Oct)
+- **Jim Iyoob** — confirmed speaker at Conversational AI Summit (Apr), CCW LV (Jun)
+- **Benjamin Alpert** — confirmed attending CCW LV (Jun)
+- **Brian Flaherty** — confirmed speaking at Mortgage AI conference (Oct)
+
+Want me to change the label to make this clearer? For example, I could split it into "**Event hook**" (the conversation starter to use) vs flagging confirmed attendance separately in the icebreaker where we actually know.
+
+user:
+<user_query>
+Yes, I think we should make this document easier to use. I think we should say icebreaker hooks. And then we have, for these, if they have any mutual connections, we list them there. If they're a first connection, we list them there. If they're speaking at one of our LinkedIn events, we list them there. And or if they're near, location-wise, one of the upcoming events, we list them there. And then any other relevant icebreakers we should also have in that box, so we can list them all in one box. What do you think? Do you think that's the easiest way of doing it? Or should we split out, like, active on LinkedIn? I basically want Kilanthea to be like, ah, this is the most relevant thing for me to reach out to them for. How do you think we should handle that in this document to make it really user-friendly, but in the right information and clear? Like for us, we don't care that they're in Atlanta if they're already speaking at an event that's way more important, so what do you reckon? 
+</user_query>
+
+assistant:
+Good thinking. Here's what I'd suggest:
+
+**One field called "Outreach hooks"** — ranked by strength, strongest first. Calanthia reads top-down and uses the best one. Like this:
+
+| | |
+|---|---|
+| **Company** | SupportNinja |
+| **Title** | Chief Technology Officer |
+| **Persona** | Technology Leader |
+| **LinkedIn connection** | None |
+| **Outreach hooks** | 1. Led launch of NinjaAI "Outsourcing 2.0" AI suite (Mar 2025) — reviews 100% of interactions vs traditional 2-5%. Strong peer talking point. 2. Near CBAND Atlanta (Feb 26) — Boynton Beach, FL. 3. Authored content on practical AI adoption, cautioning against siloed tools. |
+
+The ranking logic would be:
+
+1. **Confirmed speaking/sponsoring at event** (strongest — "I saw you're speaking at...")
+2. **Mutual connection** (warm intro — "We're both connected to...")
+3. **Recent LinkedIn activity or published content** (specific, shows you looked)
+4. **Company news** (awards, expansions, acquisitions)
+5. **Near an upcoming event** (weakest — just a conversation starter)
+
+So if someone is speaking at Frost & Sullivan AND near Atlanta AND has a mutual connection, all three go in the box but the speaking engagement is listed first because that's what Calanthia should lead with.
+
+**I'd drop "Active on LinkedIn" as a separate field** — it's not useful to Calanthia as a standalone fact. What matters is *what* they posted or engaged with, which goes into the hooks.
+
+**I'd keep as separate fields:**
+- Company, Title, Persona (she needs to know who she's talking to)
+- LinkedIn connection (separate because it affects *how* she reaches out, not just what she says)
+- LinkedIn profile + Email (practical, she needs to click)
+- Delivery footprint + Client industries (affects which case study and delivery-model line to use)
+
+So the card becomes:
+
+| | |
+|---|---|
+| **Company** | [company] |
+| **Title** | [title] |
+| **Persona** | [persona] |
+| **Delivery footprint** | [onshore/offshore/mixed] |
+| **Client industries** | [industries] |
+| **LinkedIn connection** | [1st/2nd degree or None] |
+| **Outreach hooks** | [ranked list, strongest first] |
+| **LinkedIn** | [url] |
+| **Email** | [email] |
+
+Clean, scannable, and Calanthia always knows what to lead with. Want me to update the doc with this format?
+
+user:
+<user_query>
+yes great. let's remove active on linkedin as a box. also remove client industries because they are not that accurate but keep delivery footprint
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 1
+  limit: 40
+
+[Tool result] Read
+
+assistant:
+I'll write a quick script to reformat all 27 context cards at once — merging the separate fields into the new format with ranked outreach hooks.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/reformat-outreach.ts
+  contents: /**
+ * Reformats the personalised outreach doc:
+ * - Removes "Active on LinkedIn" and "Client industries" fields
+ * - Merges Event, Icebreaker into ranked "Outreach hooks" field
+ * - Reorders fields for clarity
+ */
+import fs from "fs";
+import { fileURLToPath } from "url";
+import path from "path";
+import { config } from "dotenv";
+config();
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const filePath = path.join(__dirname, "..", "data", "personalised-outreach.md");
+const content = fs.readFileSync(filePath, "utf-8");
+
+const sections = content.split(/(?=^## \d+\.)/m);
+const header = sections[0];
+const prospects = sections.slice(1);
+
+const output: string[] = [header];
+
+for (const section of prospects) {
+  const lines = section.split("\n");
+
+  // Extract fields from the table
+  const getField = (label: string): string => {
+    const line = lines.find(l => l.includes(`**${label}**`));
+    if (!line) return "";
+    const match = line.match(/\*\*[^*]+\*\*\s*\|\s*(.*?)\s*\|?\s*$/);
+    return match ? match[1].trim() : "";
+  };
+
+  const heading = lines[0]; // ## N. Name
+  const company = getField("Company");
+  const title = getField("Title");
+  const persona = getField("Persona");
+  const linkedinConn = getField("LinkedIn connection");
+  const event = getField("Event");
+  const deliveryFootprint = getField("Delivery footprint");
+  const icebreaker = getField("Icebreaker");
+  const location = getField("Location");
+  const linkedin = getField("LinkedIn");
+  const email = getField("Email");
+
+  // Build ranked outreach hooks
+  const hooks: string[] = [];
+
+  // 1. Confirmed speaking/event involvement (from icebreaker text)
+  const iceLower = icebreaker.toLowerCase();
+  if (iceLower.includes("confirmed speaker") || iceLower.includes("co-led") || iceLower.includes("speaking at") || iceLower.includes("co-presented") || iceLower.includes("workshop")) {
+    // Extract the speaking bit
+    const speakingMatch = icebreaker.match(/(CONFIRMED SPEAKER[^.]+\.|Co-led[^.]+\.|Speaking at[^.]+\.|Co-presented[^.]+\.)/i);
+    if (speakingMatch) {
+      hooks.push(`**Speaking/event:** ${speakingMatch[1].trim()}`);
+    }
+  }
+
+  // 2. Mutual connections
+  if (linkedinConn && linkedinConn !== "None") {
+    hooks.push(`**Mutual connection:** ${linkedinConn}`);
+  }
+
+  // 3. LinkedIn activity / published content / company news from icebreaker
+  // Filter out the speaking bit we already extracted and any event-proximity info
+  let remainingIcebreaker = icebreaker;
+  // Remove the speaking match if we already used it
+  if (hooks.length > 0 && hooks[0].startsWith("**Speaking")) {
+    const speakingMatch = icebreaker.match(/(CONFIRMED SPEAKER[^.]+\.|Co-led[^.]+\.|Speaking at[^.]+\.|Co-presented[^.]+\.)/i);
+    if (speakingMatch) {
+      remainingIcebreaker = icebreaker.replace(speakingMatch[0], "").trim();
+    }
+  }
+  // Clean up leading "Also" or similar
+  remainingIcebreaker = remainingIcebreaker.replace(/^Also\s+/i, "").trim();
+
+  if (remainingIcebreaker.length > 10) {
+    hooks.push(`**Insight:** ${remainingIcebreaker}`);
+  }
+
+  // 4. Near upcoming event (weakest hook)
+  if (event.includes("CBAND")) {
+    hooks.push(`**Near event:** Based in ${location} — could attend CBAND Atlanta (Feb 26).`);
+  } else if (event.includes("Enterprise Connect")) {
+    hooks.push(`**Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.`);
+  }
+
+  const hooksStr = hooks.length > 0
+    ? hooks.map((h, i) => `${i + 1}. ${h}`).join(" ")
+    : "(No hooks found)";
+
+  // Find the messaging part (Touch 1, 2, 3)
+  const touchStart = lines.findIndex(l => l.startsWith("**Touch 1"));
+  const messagingLines = touchStart >= 0 ? lines.slice(touchStart) : [];
+
+  // Build new section
+  const newSection = [
+    heading,
+    "",
+    "| | |",
+    "|---|---|",
+    `| **Company** | ${company} |`,
+    `| **Title** | ${title} |`,
+    `| **Persona** | ${persona} |`,
+    `| **Delivery footprint** | ${deliveryFootprint} |`,
+    `| **LinkedIn connection** | ${linkedinConn} |`,
+    `| **Outreach hooks** | ${hooksStr} |`,
+    `| **LinkedIn** | ${linkedin} |`,
+    `| **Email** | ${email} |`,
+    "",
+    ...messagingLines,
+  ].join("\n");
+
+  output.push(newSection);
+}
+
+const result = output.join("");
+fs.writeFileSync(filePath, result, "utf-8");
+console.log("Done! Reformatted", prospects.length, "prospects");
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/reformat-outreach.ts
+  description: Reformat all context cards
+
+[Tool result] Shell
+
+assistant:
+Let me check the output looks right.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  offset: 1
+  limit: 55
+
+[Tool result] Read
+
+assistant:
+Let me check one with a mutual connection to make sure that's working.
+[Tool call] Grep
+  pattern: Mutual connection
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach.md
+  head_limit: 5
+
+[Tool result] Grep

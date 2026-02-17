@@ -652,3 +652,807 @@ Here are the results from scanning all 45 company websites. I've organized them 
 **Important caveat:** This scan only checked each company's **homepage content**. Some companies may list restaurant/QSR on deeper subpages (like `/industries` or `/solutions` pages) that weren't captured. If you want me to do a deeper crawl on any specific companies, let me know.
 
 The strongest matches for restaurant & QSR specifically are **InfoCision**, **Quantanite**, and **American Customer Care**. The "hospitality" mentions on the others are worth investigating further but may refer to travel/hotel rather than restaurant/QSR.
+
+user:
+<user_query>
+yes i want you to do a deeper crawl
+</user_query>
+
+assistant:
+[Thinking] The user wants me to do a deeper crawl on these 45 companies to check for restaurant/QSR mentions beyond just the homepage. I should update the script to crawl subpages, particularly industry/solutions pages, for each company. Let me modify the script to use Firecrawl's crawl functionality or at least scrape multiple pages per site.
+
+Let me think about the best approach:
+1. Use `mapUrl` to discover pages on each site, then scrape the ones that look relevant (industry, solutions pages)
+2. Use `crawlUrl` to do a broader crawl of each site
+
+Option 1 is more efficient - map the site first, filter for relevant-looking URLs, then scrape those. Let me do that.
+
+
+I'm weighing whether to use Firecrawl's search function within each site versus the map approach, but mapping first to discover URLs and then filtering for industry-related paths seems more cost-effective than doing a full crawl with a page limit, since mapping just discovers URLs without the scraping overhead.
+I'll update the script to do a deeper crawl — first mapping each site to discover subpages, then scraping industry/solutions pages for restaurant/QSR mentions.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/check-restaurant-qsr.ts
+  contents: import { config } from 'dotenv'
+import FirecrawlApp from '@mendable/firecrawl-js'
+
+config()
+
+const urls = [
+  'https://www.adec-innovations.com',
+  'http://www.americancustomercare.com',
+  'https://www.azpired.com',
+  'https://www.boldrimpact.com',
+  'https://www.buwelo.com',
+  'https://cbecompanies.com',
+  'https://clarkoutsourcing.com/',
+  'https://www.clearsourcebpo.com',
+  'https://contactpoint360.com',
+  'https://datamark.net',
+  'https://directinteractions.com',
+  'https://www.etechgs.com',
+  'https://www.firstcontactbpo.com/',
+  'https://www.flatworldsolutions.com',
+  'https://focusservices.com',
+  'https://gcsagents.com/',
+  'https://www.globalstrategic.com',
+  'https://www.goanswer.ai',
+  'https://hartehanks.com',
+  'https://helpware.com/',
+  'https://hugoinc.com',
+  'https://www.infocision.com',
+  'https://intelogix.com',
+  'https://km2solutions.com',
+  'https://liveops.com',
+  'https://www.marketstar.com',
+  'https://nearsol.com',
+  'https://nexrep.com',
+  'https://www.openaccessbpo.com',
+  'https://www.officebeacon.com',
+  'https://www.percepta.com',
+  'https://quantanite.com',
+  'https://sourcefit.com',
+  'https://supportninja.com',
+  'https://supportyourapp.com',
+  'https://supportzebra.com',
+  'https://thefunctionary.com',
+  'https://www.theofficegurus.com',
+  'https://www.unifycx.com',
+  'https://unity-connect.com',
+  'https://valorglobal.com',
+  'https://www.myvirtudesk.com',
+  'https://visayakpo.com',
+  'https://www.altaresources.com',
+  'https://www.integraglobalsolutions.com/',
+]
+
+const KEYWORDS = [
+  'restaurant',
+  'qsr',
+  'quick service restaurant',
+  'food service',
+  'foodservice',
+  'food & beverage',
+  'food and beverage',
+  'fast food',
+  'dining',
+  'food delivery',
+  'food ordering',
+  'pizza',
+  'fast casual',
+  'drive-thru',
+  'drive thru',
+]
+
+// Broader keywords - checked separately so we can differentiate
+const BROAD_KEYWORDS = ['hospitality', 'franchise']
+
+const app = new FirecrawlApp({
+  apiKey: process.env.FIRECRAWL_API_KEY!,
+})
+const firecrawl = app.v1
+
+interface PageMatch {
+  pageUrl: string
+  keywords: string[]
+  broadKeywords: string[]
+  contexts: string[]
+}
+
+interface Result {
+  url: string
+  company: string
+  pagesScraped: number
+  directMatch: boolean
+  broadMatch: boolean
+  matchedKeywords: string[]
+  broadMatchedKeywords: string[]
+  pageMatches: PageMatch[]
+  errors: string[]
+}
+
+function extractCompanyName(url: string): string {
+  const hostname = new URL(url).hostname
+    .replace(/^www\./, '')
+    .replace(/\.(com|net|ai|io).*$/, '')
+  return hostname
+}
+
+function isRelevantUrl(pageUrl: string): boolean {
+  const lower = pageUrl.toLowerCase()
+  const relevant = [
+    'industr',
+    'sector',
+    'solution',
+    'service',
+    'vertical',
+    'market',
+    'client',
+    'case-stud',
+    'portfolio',
+    'about',
+    'food',
+    'restaurant',
+    'qsr',
+    'hospitality',
+    'beverage',
+  ]
+  return relevant.some((r) => lower.includes(r))
+}
+
+function findMatches(
+  text: string,
+  keywords: string[]
+): { found: string[]; contexts: string[] } {
+  const lower = text.toLowerCase()
+  const found: string[] = []
+  const contexts: string[] = []
+
+  for (const kw of keywords) {
+    const idx = lower.indexOf(kw)
+    if (idx !== -1) {
+      found.push(kw)
+      const start = Math.max(0, idx - 80)
+      const end = Math.min(text.length, idx + kw.length + 80)
+      const snippet = text.slice(start, end).replace(/\s+/g, ' ').trim()
+      contexts.push(`"...${snippet}..."`)
+    }
+  }
+  return { found: [...new Set(found)], contexts: [...new Set(contexts)] }
+}
+
+async function deepCheckCompany(url: string): Promise<Result> {
+  const company = extractCompanyName(url)
+  const result: Result = {
+    url,
+    company,
+    pagesScraped: 0,
+    directMatch: false,
+    broadMatch: false,
+    matchedKeywords: [],
+    broadMatchedKeywords: [],
+    pageMatches: [],
+    errors: [],
+  }
+
+  // Step 1: Map the site to discover URLs
+  let pagesToScrape: string[] = [url]
+  try {
+    const mapResult = await firecrawl.mapUrl(url)
+    if (mapResult.success && mapResult.links) {
+      const relevant = mapResult.links.filter((link: string) =>
+        isRelevantUrl(link)
+      )
+      // Also check if any URLs themselves contain restaurant/QSR keywords
+      const keywordUrls = mapResult.links.filter((link: string) => {
+        const l = link.toLowerCase()
+        return KEYWORDS.some((kw) => l.includes(kw.replace(/\s+/g, '-')))
+          || KEYWORDS.some((kw) => l.includes(kw.replace(/\s+/g, '')))
+      })
+      pagesToScrape = [
+        ...new Set([url, ...relevant.slice(0, 8), ...keywordUrls]),
+      ]
+    }
+  } catch (err) {
+    result.errors.push(`map failed: ${(err as Error).message}`)
+  }
+
+  // Step 2: Scrape each relevant page
+  for (const pageUrl of pagesToScrape) {
+    try {
+      const response = await firecrawl.scrapeUrl(pageUrl, {
+        formats: ['markdown'],
+        onlyMainContent: true,
+        timeout: 20000,
+      })
+
+      if (!response.success || !response.markdown) continue
+      result.pagesScraped++
+
+      const direct = findMatches(response.markdown, KEYWORDS)
+      const broad = findMatches(response.markdown, BROAD_KEYWORDS)
+
+      if (direct.found.length > 0 || broad.found.length > 0) {
+        result.pageMatches.push({
+          pageUrl,
+          keywords: direct.found,
+          broadKeywords: broad.found,
+          contexts: [...direct.contexts, ...broad.contexts].slice(0, 3),
+        })
+      }
+
+      if (direct.found.length > 0) {
+        result.directMatch = true
+        result.matchedKeywords.push(...direct.found)
+      }
+      if (broad.found.length > 0) {
+        result.broadMatch = true
+        result.broadMatchedKeywords.push(...broad.found)
+      }
+    } catch {
+      // Skip failed pages silently
+    }
+  }
+
+  result.matchedKeywords = [...new Set(result.matchedKeywords)]
+  result.broadMatchedKeywords = [...new Set(result.broadMatchedKeywords)]
+
+  return result
+}
+
+async function main() {
+  console.log(
+    `Deep-crawling ${urls.length} companies for restaurant/QSR industry mentions...\n`
+  )
+
+  const results: Result[] = []
+
+  // Process in batches of 3 (deeper crawl = more API calls per company)
+  const batchSize = 3
+  for (let i = 0; i < urls.length; i += batchSize) {
+    const batch = urls.slice(i, i + batchSize)
+    console.log(
+      `Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(urls.length / batchSize)} (${batch.map((u) => extractCompanyName(u)).join(', ')})...`
+    )
+    const batchResults = await Promise.all(
+      batch.map((url) => deepCheckCompany(url))
+    )
+    results.push(...batchResults)
+
+    for (const r of batchResults) {
+      const icon = r.directMatch ? '✅' : r.broadMatch ? '🔶' : '❌'
+      const kws = [
+        ...r.matchedKeywords,
+        ...r.broadMatchedKeywords.map((k) => `(${k})`),
+      ]
+      console.log(
+        `  ${icon} ${r.company} [${r.pagesScraped} pages] ${kws.length > 0 ? `[${kws.join(', ')}]` : ''}`
+      )
+    }
+  }
+
+  // Summary
+  const directMatches = results.filter((r) => r.directMatch)
+  const broadOnly = results.filter((r) => !r.directMatch && r.broadMatch)
+  const noMatches = results.filter((r) => !r.directMatch && !r.broadMatch)
+
+  console.log('\n' + '='.repeat(90))
+  console.log('DEEP CRAWL RESULTS')
+  console.log('='.repeat(90))
+
+  console.log(
+    `\n✅ DIRECT RESTAURANT / QSR / FOOD SERVICE MENTIONS (${directMatches.length}):\n`
+  )
+  for (const r of directMatches) {
+    console.log(`  ${r.company} (${r.url})`)
+    console.log(`    Keywords: ${r.matchedKeywords.join(', ')}`)
+    console.log(`    Pages scraped: ${r.pagesScraped}`)
+    for (const pm of r.pageMatches) {
+      if (pm.keywords.length > 0) {
+        console.log(`    Found on: ${pm.pageUrl}`)
+        for (const ctx of pm.contexts.slice(0, 2)) {
+          console.log(`      ${ctx}`)
+        }
+      }
+    }
+    console.log()
+  }
+
+  console.log(
+    `\n🔶 BROAD "HOSPITALITY/FRANCHISE" ONLY — May be travel/hotels (${broadOnly.length}):\n`
+  )
+  for (const r of broadOnly) {
+    console.log(`  ${r.company} (${r.url})`)
+    console.log(`    Keywords: ${r.broadMatchedKeywords.join(', ')}`)
+    console.log(`    Pages scraped: ${r.pagesScraped}`)
+    for (const pm of r.pageMatches) {
+      console.log(`    Found on: ${pm.pageUrl}`)
+      for (const ctx of pm.contexts.slice(0, 2)) {
+        console.log(`      ${ctx}`)
+      }
+    }
+    console.log()
+  }
+
+  console.log(`\n❌ NO MATCHES FOUND (${noMatches.length}):\n`)
+  for (const r of noMatches) {
+    console.log(
+      `  ${r.company} (${r.url}) [${r.pagesScraped} pages scraped]${r.errors.length > 0 ? ' - ' + r.errors[0] : ''}`
+    )
+  }
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/check-restaurant-qsr.ts
+  description: Run deep crawl restaurant/QSR check
+  block_until_ms: 600000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The mapUrl function failed for all sites with "Cannot read properties of undefined (reading 'origin')". This is a Firecrawl SDK issue. The map function isn't working, so the deep crawl fell back to homepage-only scraping. Let me try a different approach.
+
+Instead of using mapUrl, let me try a different strategy:
+1. For each company, construct common subpage URLs like `/industries`, `/solutions`, `/services`, `/about`, `/sectors`, `/verticals`
+2. Scrape those pages directly
+3. Also use Google search via Perplexity to find specific industry pages
+
+Actually, the most effective approach would be to use Perplexity/web search to search for each company + "restaurant" or "QSR" to find any mentions. Let me do that for all companies, especially the ones that didn't have matches.
+
+
+I'll combine web search with direct URL attempts—using Perplexity to batch-search for each company alongside restaurant or QSR keywords, while also trying common industry page paths like `/industries` and `/solutions` for the ones that didn't match initially. I'll use Perplexity to search each company domain for restaurant or food service mentions, but since I have 36 companies to check, I should batch these searches in a script rather than making sequential API calls. My better approach is to parse the homepage for links to industry or solutions pages, follow those links, and scan the content for relevant keywords—this avoids the mapUrl complexity and gives me a more reliable way to find industry-specific pages.
+The site mapping failed due to a Firecrawl SDK issue. Let me take a better approach — I'll scrape the homepage, extract links to industry/solutions pages from the content, and follow those links.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/check-restaurant-qsr.ts
+  contents: import { config } from 'dotenv'
+import FirecrawlApp from '@mendable/firecrawl-js'
+
+config()
+
+const urls = [
+  'https://www.adec-innovations.com',
+  'http://www.americancustomercare.com',
+  'https://www.azpired.com',
+  'https://www.boldrimpact.com',
+  'https://www.buwelo.com',
+  'https://cbecompanies.com',
+  'https://clarkoutsourcing.com/',
+  'https://www.clearsourcebpo.com',
+  'https://contactpoint360.com',
+  'https://datamark.net',
+  'https://directinteractions.com',
+  'https://www.etechgs.com',
+  'https://www.firstcontactbpo.com/',
+  'https://www.flatworldsolutions.com',
+  'https://focusservices.com',
+  'https://gcsagents.com/',
+  'https://www.globalstrategic.com',
+  'https://www.goanswer.ai',
+  'https://hartehanks.com',
+  'https://helpware.com/',
+  'https://hugoinc.com',
+  'https://www.infocision.com',
+  'https://intelogix.com',
+  'https://km2solutions.com',
+  'https://liveops.com',
+  'https://www.marketstar.com',
+  'https://nearsol.com',
+  'https://nexrep.com',
+  'https://www.openaccessbpo.com',
+  'https://www.officebeacon.com',
+  'https://www.percepta.com',
+  'https://quantanite.com',
+  'https://sourcefit.com',
+  'https://supportninja.com',
+  'https://supportyourapp.com',
+  'https://supportzebra.com',
+  'https://thefunctionary.com',
+  'https://www.theofficegurus.com',
+  'https://www.unifycx.com',
+  'https://unity-connect.com',
+  'https://valorglobal.com',
+  'https://www.myvirtudesk.com',
+  'https://visayakpo.com',
+  'https://www.altaresources.com',
+  'https://www.integraglobalsolutions.com/',
+]
+
+const KEYWORDS = [
+  'restaurant',
+  'qsr',
+  'quick service restaurant',
+  'food service',
+  'foodservice',
+  'food & beverage',
+  'food and beverage',
+  'fast food',
+  'dining',
+  'food delivery',
+  'food ordering',
+  'pizza',
+  'fast casual',
+  'drive-thru',
+  'drive thru',
+]
+
+const BROAD_KEYWORDS = ['hospitality', 'franchise']
+
+const app = new FirecrawlApp({
+  apiKey: process.env.FIRECRAWL_API_KEY!,
+})
+const firecrawl = app.v1
+
+interface PageMatch {
+  pageUrl: string
+  keywords: string[]
+  broadKeywords: string[]
+  contexts: string[]
+}
+
+interface Result {
+  url: string
+  company: string
+  pagesScraped: number
+  directMatch: boolean
+  broadMatch: boolean
+  matchedKeywords: string[]
+  broadMatchedKeywords: string[]
+  pageMatches: PageMatch[]
+  errors: string[]
+}
+
+function extractCompanyName(url: string): string {
+  const hostname = new URL(url).hostname
+    .replace(/^www\./, '')
+    .replace(/\.(com|net|ai|io).*$/, '')
+  return hostname
+}
+
+function extractLinksFromMarkdown(
+  markdown: string,
+  baseUrl: string
+): string[] {
+  const linkRegex = /\[([^\]]*)\]\(([^)]+)\)/g
+  const links: string[] = []
+  const baseOrigin = new URL(baseUrl).origin
+
+  let match
+  while ((match = linkRegex.exec(markdown)) !== null) {
+    const linkText = match[1].toLowerCase()
+    let href = match[2]
+
+    // Only follow internal links
+    if (href.startsWith('/')) {
+      href = baseOrigin + href
+    }
+    if (!href.startsWith(baseOrigin)) continue
+
+    // Check if link text or URL suggests industry/solutions content
+    const relevant = [
+      'industr',
+      'sector',
+      'solution',
+      'vertical',
+      'market',
+      'about',
+      'service',
+      'food',
+      'restaurant',
+      'qsr',
+      'hospitality',
+      'beverage',
+      'client',
+      'case.stud',
+    ]
+    const combined = (linkText + ' ' + href).toLowerCase()
+    if (relevant.some((r) => combined.includes(r))) {
+      links.push(href)
+    }
+  }
+
+  return [...new Set(links)]
+}
+
+function findMatches(
+  text: string,
+  keywords: string[]
+): { found: string[]; contexts: string[] } {
+  const lower = text.toLowerCase()
+  const found: string[] = []
+  const contexts: string[] = []
+
+  for (const kw of keywords) {
+    let searchFrom = 0
+    while (searchFrom < lower.length) {
+      const idx = lower.indexOf(kw, searchFrom)
+      if (idx === -1) break
+      if (!found.includes(kw)) found.push(kw)
+      const start = Math.max(0, idx - 80)
+      const end = Math.min(text.length, idx + kw.length + 80)
+      const snippet = text.slice(start, end).replace(/\s+/g, ' ').trim()
+      contexts.push(`"...${snippet}..."`)
+      searchFrom = idx + kw.length
+    }
+  }
+  return { found: [...new Set(found)], contexts: [...new Set(contexts)] }
+}
+
+async function scrapePage(
+  url: string
+): Promise<{ success: boolean; markdown: string }> {
+  try {
+    const response = await firecrawl.scrapeUrl(url, {
+      formats: ['markdown'],
+      onlyMainContent: true,
+      timeout: 20000,
+    })
+    if (response.success && response.markdown) {
+      return { success: true, markdown: response.markdown }
+    }
+    return { success: false, markdown: '' }
+  } catch {
+    return { success: false, markdown: '' }
+  }
+}
+
+async function deepCheckCompany(url: string): Promise<Result> {
+  const company = extractCompanyName(url)
+  const result: Result = {
+    url,
+    company,
+    pagesScraped: 0,
+    directMatch: false,
+    broadMatch: false,
+    matchedKeywords: [],
+    broadMatchedKeywords: [],
+    pageMatches: [],
+    errors: [],
+  }
+
+  // Step 1: Scrape homepage
+  const homepage = await scrapePage(url)
+  if (!homepage.success) {
+    result.errors.push('homepage scrape failed')
+    return result
+  }
+  result.pagesScraped++
+
+  // Check homepage for keywords
+  const homeDirect = findMatches(homepage.markdown, KEYWORDS)
+  const homeBroad = findMatches(homepage.markdown, BROAD_KEYWORDS)
+
+  if (homeDirect.found.length > 0 || homeBroad.found.length > 0) {
+    result.pageMatches.push({
+      pageUrl: url,
+      keywords: homeDirect.found,
+      broadKeywords: homeBroad.found,
+      contexts: [...homeDirect.contexts, ...homeBroad.contexts].slice(0, 3),
+    })
+  }
+
+  if (homeDirect.found.length > 0) {
+    result.directMatch = true
+    result.matchedKeywords.push(...homeDirect.found)
+  }
+  if (homeBroad.found.length > 0) {
+    result.broadMatch = true
+    result.broadMatchedKeywords.push(...homeBroad.found)
+  }
+
+  // Step 2: Extract links to industry/solutions pages from homepage
+  const subLinks = extractLinksFromMarkdown(homepage.markdown, url)
+  const linksToScrape = subLinks.slice(0, 10) // Cap at 10 subpages
+
+  // Step 3: Scrape subpages in parallel (batches of 3)
+  for (let i = 0; i < linksToScrape.length; i += 3) {
+    const batch = linksToScrape.slice(i, i + 3)
+    const results = await Promise.all(batch.map((link) => scrapePage(link)))
+
+    for (let j = 0; j < results.length; j++) {
+      const pageResult = results[j]
+      const pageUrl = batch[j]
+      if (!pageResult.success) continue
+      result.pagesScraped++
+
+      const direct = findMatches(pageResult.markdown, KEYWORDS)
+      const broad = findMatches(pageResult.markdown, BROAD_KEYWORDS)
+
+      if (direct.found.length > 0 || broad.found.length > 0) {
+        result.pageMatches.push({
+          pageUrl,
+          keywords: direct.found,
+          broadKeywords: broad.found,
+          contexts: [...direct.contexts, ...broad.contexts].slice(0, 3),
+        })
+      }
+
+      if (direct.found.length > 0) {
+        result.directMatch = true
+        result.matchedKeywords.push(...direct.found)
+      }
+      if (broad.found.length > 0) {
+        result.broadMatch = true
+        result.broadMatchedKeywords.push(...broad.found)
+      }
+    }
+  }
+
+  result.matchedKeywords = [...new Set(result.matchedKeywords)]
+  result.broadMatchedKeywords = [...new Set(result.broadMatchedKeywords)]
+
+  return result
+}
+
+async function main() {
+  console.log(
+    `Deep-crawling ${urls.length} companies for restaurant/QSR industry mentions...\n`
+  )
+  console.log(
+    `Strategy: scrape homepage → extract industry/solutions links → scrape subpages\n`
+  )
+
+  const results: Result[] = []
+
+  // Process companies 2 at a time (each does multiple scrapes)
+  const batchSize = 2
+  for (let i = 0; i < urls.length; i += batchSize) {
+    const batch = urls.slice(i, i + batchSize)
+    console.log(
+      `[${i + 1}-${Math.min(i + batchSize, urls.length)}/${urls.length}] ${batch.map((u) => extractCompanyName(u)).join(', ')}...`
+    )
+    const batchResults = await Promise.all(
+      batch.map((url) => deepCheckCompany(url))
+    )
+    results.push(...batchResults)
+
+    for (const r of batchResults) {
+      const icon = r.directMatch ? '✅' : r.broadMatch ? '🔶' : '❌'
+      const kws = [
+        ...r.matchedKeywords,
+        ...r.broadMatchedKeywords.map((k) => `(${k})`),
+      ]
+      console.log(
+        `  ${icon} ${r.company} [${r.pagesScraped} pages] ${kws.length > 0 ? `[${kws.join(', ')}]` : ''}`
+      )
+    }
+  }
+
+  // Summary
+  const directMatches = results.filter((r) => r.directMatch)
+  const broadOnly = results.filter((r) => !r.directMatch && r.broadMatch)
+  const noMatches = results.filter((r) => !r.directMatch && !r.broadMatch)
+
+  console.log('\n' + '='.repeat(90))
+  console.log('DEEP CRAWL RESULTS')
+  console.log('='.repeat(90))
+
+  console.log(
+    `\n✅ DIRECT RESTAURANT / QSR / FOOD SERVICE MENTIONS (${directMatches.length}):\n`
+  )
+  for (const r of directMatches) {
+    console.log(`  ${r.company} (${r.url})`)
+    console.log(`    Direct keywords: ${r.matchedKeywords.join(', ')}`)
+    if (r.broadMatchedKeywords.length > 0)
+      console.log(`    Broad keywords: ${r.broadMatchedKeywords.join(', ')}`)
+    console.log(`    Pages scraped: ${r.pagesScraped}`)
+    for (const pm of r.pageMatches) {
+      if (pm.keywords.length > 0) {
+        console.log(`    📄 ${pm.pageUrl}`)
+        for (const ctx of pm.contexts.slice(0, 2)) {
+          console.log(`       ${ctx}`)
+        }
+      }
+    }
+    console.log()
+  }
+
+  console.log(
+    `\n🔶 BROAD "HOSPITALITY/FRANCHISE" ONLY — May be travel/hotels (${broadOnly.length}):\n`
+  )
+  for (const r of broadOnly) {
+    console.log(`  ${r.company} (${r.url})`)
+    console.log(`    Keywords: ${r.broadMatchedKeywords.join(', ')}`)
+    console.log(`    Pages scraped: ${r.pagesScraped}`)
+    for (const pm of r.pageMatches) {
+      console.log(`    📄 ${pm.pageUrl}`)
+      for (const ctx of pm.contexts.slice(0, 2)) {
+        console.log(`       ${ctx}`)
+      }
+    }
+    console.log()
+  }
+
+  console.log(`\n❌ NO MATCHES FOUND (${noMatches.length}):\n`)
+  for (const r of noMatches) {
+    console.log(
+      `  • ${r.company} (${r.url}) — ${r.pagesScraped} pages scraped${r.errors.length > 0 ? ' ⚠️ ' + r.errors[0] : ''}`
+    )
+  }
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/check-restaurant-qsr.ts
+  description: Run deep crawl with link following
+  block_until_ms: 900000
+
+[Tool result] Shell
+
+assistant:
+[Thinking] The deep crawl is done. Let me analyze the results carefully:
+
+**Direct matches (9):**
+1. **ADEC Innovations** - Found "food service" / "foodservice" on their sustainability/ESG solutions page - they have a "FoodChain" product for food service environmental management
+2. **American Customer Care** - "Food & Beverage" industry page for CPG/consumer products
+3. **Hugo Inc** - Multiple strong matches: Food & Beverage, restaurant, food service, pizza, drive-thru - very strong match
+4. **InfoCision** - Lists "Restaurants" and "Food & Beverages" as industries
+
+
+5. **KM2 Solutions** - The "qsr" match came from binary image data, not actual text, so that's a false positive
+6. **Nearsol** - Excellent match: "#1 Pizza Delivery Restaurant" and "food delivery" with a case study on a pizza delivery company
+7. **Quantanite** - "Food Ordering & Delivery" positioned as "restaurant to doorstep"
+8. **The Functionary** - "QSR" appears in binary image data, not real content, so this is also a false positive
+9. **Unity Connect** - "Pizza" shows up but in a cultural comparison about Mexican versus American food preferences, not as an industry they serve, making this a weak or false match
+
+I'm filtering out the clear false positives: KM2 Solutions and The Functionary both have matches buried in binary garbage, and Unity Connect's pizza reference is just cultural context. For the hospitality category, ContactPoint360 has a dedicated page for hospitality call center outsourcing that could still encompass restaurants.
+
+Looking at the other hospitality-related companies, FlatWorld Solutions stands out because they list both "Food" and "Hospitality" as separate industries on their call center services page, which suggests they actually serve food companies. LiveOps mentions travel and hospitality, SourceFit has a case study for a hospitality tech platform, SupportYourApp covers hospitality and travel customer service, and The Office Gurus handles travel and hospitality. Percepta's franchise dealerships reference is automotive, not restaurants, so that's a false positive. Office Beacon's mention is about SoFi Stadium events, which isn't restaurant industry either.
+
+Now I'm ready to compile the cleaned-up findings with the legitimate matches separated from the noise.
+The deep crawl scraped up to 11 pages per company (271 total pages across 45 sites). Let me clean up the results — a few matches are false positives from binary image data that I need to flag.
+
+Here are the findings:
+
+---
+
+## Confirmed Restaurant / QSR / Food Service (6 companies)
+
+| Company | URL | Evidence | Strength |
+|---------|-----|----------|----------|
+| **Nearsol** | nearsol.com | Case study: "World's #1 Pizza Delivery Restaurant" — global fast service food delivery company | **Strong** — active QSR client |
+| **Hugo Inc** | hugoinc.com | Food & Beverage industry clients, mentions of restaurant, pizza, drive-thru in content | **Strong** — multiple signals |
+| **Quantanite** | quantanite.com | Dedicated "Food Ordering & Delivery" industry page — "restaurant to doorstep" | **Strong** — dedicated vertical |
+| **American Customer Care** | americancustomercare.com | "Food & Beverage" listed as a dedicated industry vertical | **Moderate** — F&B vertical (may be CPG, not necessarily QSR) |
+| **InfoCision** | infocision.com | Lists "Restaurants" and "Food & Beverages" explicitly as industries served | **Moderate** — listed in industry dropdown |
+| **ADEC Innovations** | adec-innovations.com | "FoodChain" product for food service environmental/sustainability management | **Moderate** — food service sustainability, not CX/BPO |
+
+## Broad "Hospitality" Only — Likely Travel/Hotels (6 companies)
+
+These mention "hospitality" but in a travel/hotel context, not restaurant-specific:
+
+| Company | URL | Notes |
+|---------|-----|-------|
+| **ContactPoint360** | contactpoint360.com | Dedicated "Hospitality Call Center Outsourcing" page — could include restaurants |
+| **FlatWorld Solutions** | flatworldsolutions.com | Lists "Food" and "Hospitality" as separate icons — worth investigating |
+| **LiveOps** | liveops.com | "Travel and Hospitality" industry page |
+| **SourceFit** | sourcefit.com | Case study for "hospitality technology SaaS platform" |
+| **SupportYourApp** | supportyourapp.com | "Hospitality & Travel Customer Service" page |
+| **The Office Gurus** | theofficegurus.com | "Travel & Hospitality" industry page |
+
+## False Positives Filtered Out
+
+- **KM2 Solutions** — "qsr" matched inside binary image data, not actual content
+- **The Functionary** — same issue, "QSR" found in image binary garbage
+- **Unity Connect** — "pizza" mentioned in a cultural article about Mexican vs American food preferences, not as an industry served
+- **Percepta** — "franchise" matched but refers to automotive dealerships
+- **Office Beacon** — "hospitality" is about SoFi Stadium event hosting, not an industry vertical
+
+## No Restaurant/QSR Mentions (28 companies)
+
+The remaining 28 companies showed no relevant mentions across 1-11 pages scraped each.
+
+---
+
+**Bottom line:** The strongest matches for restaurant & QSR specifically are **Nearsol**, **Hugo Inc**, **Quantanite**, **American Customer Care**, and **InfoCision**. ADEC Innovations is a niche case (sustainability for food service, not traditional BPO). ContactPoint360 and FlatWorld Solutions are worth a closer look given they list hospitality/food as verticals.
+
+Would you like me to dig deeper into any of these?

@@ -61,23 +61,38 @@ const KEYWORDS = [
   'food and beverage',
   'fast food',
   'dining',
-  'hospitality',
   'food delivery',
+  'food ordering',
   'pizza',
-  'franchise',
+  'fast casual',
+  'drive-thru',
+  'drive thru',
 ]
+
+const BROAD_KEYWORDS = ['hospitality', 'franchise']
 
 const app = new FirecrawlApp({
   apiKey: process.env.FIRECRAWL_API_KEY!,
 })
 const firecrawl = app.v1
 
+interface PageMatch {
+  pageUrl: string
+  keywords: string[]
+  broadKeywords: string[]
+  contexts: string[]
+}
+
 interface Result {
   url: string
   company: string
-  hasRestaurantQSR: boolean
+  pagesScraped: number
+  directMatch: boolean
+  broadMatch: boolean
   matchedKeywords: string[]
-  context: string[]
+  broadMatchedKeywords: string[]
+  pageMatches: PageMatch[]
+  errors: string[]
 }
 
 function extractCompanyName(url: string): string {
@@ -87,115 +102,265 @@ function extractCompanyName(url: string): string {
   return hostname
 }
 
-function findKeywordMatches(
-  text: string
-): { keywords: string[]; contexts: string[] } {
-  const lower = text.toLowerCase()
-  const keywords: string[] = []
-  const contexts: string[] = []
+function extractLinksFromMarkdown(
+  markdown: string,
+  baseUrl: string
+): string[] {
+  const linkRegex = /\[([^\]]*)\]\(([^)]+)\)/g
+  const links: string[] = []
+  const baseOrigin = new URL(baseUrl).origin
 
-  for (const kw of KEYWORDS) {
-    const idx = lower.indexOf(kw)
-    if (idx !== -1) {
-      keywords.push(kw)
-      const start = Math.max(0, idx - 80)
-      const end = Math.min(text.length, idx + kw.length + 80)
-      const snippet = text.slice(start, end).replace(/\n/g, ' ').trim()
-      contexts.push(`...${snippet}...`)
+  let match
+  while ((match = linkRegex.exec(markdown)) !== null) {
+    const linkText = match[1].toLowerCase()
+    let href = match[2]
+
+    // Only follow internal links
+    if (href.startsWith('/')) {
+      href = baseOrigin + href
+    }
+    if (!href.startsWith(baseOrigin)) continue
+
+    // Check if link text or URL suggests industry/solutions content
+    const relevant = [
+      'industr',
+      'sector',
+      'solution',
+      'vertical',
+      'market',
+      'about',
+      'service',
+      'food',
+      'restaurant',
+      'qsr',
+      'hospitality',
+      'beverage',
+      'client',
+      'case.stud',
+    ]
+    const combined = (linkText + ' ' + href).toLowerCase()
+    if (relevant.some((r) => combined.includes(r))) {
+      links.push(href)
     }
   }
 
-  return { keywords: [...new Set(keywords)], contexts: [...new Set(contexts)] }
+  return [...new Set(links)]
 }
 
-async function scrapeUrl(url: string): Promise<Result> {
-  const company = extractCompanyName(url)
+function findMatches(
+  text: string,
+  keywords: string[]
+): { found: string[]; contexts: string[] } {
+  const lower = text.toLowerCase()
+  const found: string[] = []
+  const contexts: string[] = []
+
+  for (const kw of keywords) {
+    let searchFrom = 0
+    while (searchFrom < lower.length) {
+      const idx = lower.indexOf(kw, searchFrom)
+      if (idx === -1) break
+      if (!found.includes(kw)) found.push(kw)
+      const start = Math.max(0, idx - 80)
+      const end = Math.min(text.length, idx + kw.length + 80)
+      const snippet = text.slice(start, end).replace(/\s+/g, ' ').trim()
+      contexts.push(`"...${snippet}..."`)
+      searchFrom = idx + kw.length
+    }
+  }
+  return { found: [...new Set(found)], contexts: [...new Set(contexts)] }
+}
+
+async function scrapePage(
+  url: string
+): Promise<{ success: boolean; markdown: string }> {
   try {
     const response = await firecrawl.scrapeUrl(url, {
       formats: ['markdown'],
       onlyMainContent: true,
-      timeout: 30000,
+      timeout: 20000,
     })
+    if (response.success && response.markdown) {
+      return { success: true, markdown: response.markdown }
+    }
+    return { success: false, markdown: '' }
+  } catch {
+    return { success: false, markdown: '' }
+  }
+}
 
-    if (!response.success || !response.markdown) {
-      return {
-        url,
-        company,
-        hasRestaurantQSR: false,
-        matchedKeywords: [],
-        context: ['(scrape failed or no content)'],
+async function deepCheckCompany(url: string): Promise<Result> {
+  const company = extractCompanyName(url)
+  const result: Result = {
+    url,
+    company,
+    pagesScraped: 0,
+    directMatch: false,
+    broadMatch: false,
+    matchedKeywords: [],
+    broadMatchedKeywords: [],
+    pageMatches: [],
+    errors: [],
+  }
+
+  // Step 1: Scrape homepage
+  const homepage = await scrapePage(url)
+  if (!homepage.success) {
+    result.errors.push('homepage scrape failed')
+    return result
+  }
+  result.pagesScraped++
+
+  // Check homepage for keywords
+  const homeDirect = findMatches(homepage.markdown, KEYWORDS)
+  const homeBroad = findMatches(homepage.markdown, BROAD_KEYWORDS)
+
+  if (homeDirect.found.length > 0 || homeBroad.found.length > 0) {
+    result.pageMatches.push({
+      pageUrl: url,
+      keywords: homeDirect.found,
+      broadKeywords: homeBroad.found,
+      contexts: [...homeDirect.contexts, ...homeBroad.contexts].slice(0, 3),
+    })
+  }
+
+  if (homeDirect.found.length > 0) {
+    result.directMatch = true
+    result.matchedKeywords.push(...homeDirect.found)
+  }
+  if (homeBroad.found.length > 0) {
+    result.broadMatch = true
+    result.broadMatchedKeywords.push(...homeBroad.found)
+  }
+
+  // Step 2: Extract links to industry/solutions pages from homepage
+  const subLinks = extractLinksFromMarkdown(homepage.markdown, url)
+  const linksToScrape = subLinks.slice(0, 10) // Cap at 10 subpages
+
+  // Step 3: Scrape subpages in parallel (batches of 3)
+  for (let i = 0; i < linksToScrape.length; i += 3) {
+    const batch = linksToScrape.slice(i, i + 3)
+    const results = await Promise.all(batch.map((link) => scrapePage(link)))
+
+    for (let j = 0; j < results.length; j++) {
+      const pageResult = results[j]
+      const pageUrl = batch[j]
+      if (!pageResult.success) continue
+      result.pagesScraped++
+
+      const direct = findMatches(pageResult.markdown, KEYWORDS)
+      const broad = findMatches(pageResult.markdown, BROAD_KEYWORDS)
+
+      if (direct.found.length > 0 || broad.found.length > 0) {
+        result.pageMatches.push({
+          pageUrl,
+          keywords: direct.found,
+          broadKeywords: broad.found,
+          contexts: [...direct.contexts, ...broad.contexts].slice(0, 3),
+        })
+      }
+
+      if (direct.found.length > 0) {
+        result.directMatch = true
+        result.matchedKeywords.push(...direct.found)
+      }
+      if (broad.found.length > 0) {
+        result.broadMatch = true
+        result.broadMatchedKeywords.push(...broad.found)
       }
     }
-
-    const { keywords, contexts } = findKeywordMatches(response.markdown)
-
-    return {
-      url,
-      company,
-      hasRestaurantQSR: keywords.length > 0,
-      matchedKeywords: keywords,
-      context: contexts.length > 0 ? contexts : ['(no matches found)'],
-    }
-  } catch (err) {
-    return {
-      url,
-      company,
-      hasRestaurantQSR: false,
-      matchedKeywords: [],
-      context: [`(error: ${(err as Error).message})`],
-    }
   }
+
+  result.matchedKeywords = [...new Set(result.matchedKeywords)]
+  result.broadMatchedKeywords = [...new Set(result.broadMatchedKeywords)]
+
+  return result
 }
 
 async function main() {
   console.log(
-    `Checking ${urls.length} companies for restaurant/QSR industry mentions...\n`
+    `Deep-crawling ${urls.length} companies for restaurant/QSR industry mentions...\n`
+  )
+  console.log(
+    `Strategy: scrape homepage → extract industry/solutions links → scrape subpages\n`
   )
 
   const results: Result[] = []
 
-  // Process in batches of 5 to respect rate limits
-  const batchSize = 5
+  // Process companies 2 at a time (each does multiple scrapes)
+  const batchSize = 2
   for (let i = 0; i < urls.length; i += batchSize) {
     const batch = urls.slice(i, i + batchSize)
     console.log(
-      `Processing batch ${Math.floor(i / batchSize) + 1}/${Math.ceil(urls.length / batchSize)}...`
+      `[${i + 1}-${Math.min(i + batchSize, urls.length)}/${urls.length}] ${batch.map((u) => extractCompanyName(u)).join(', ')}...`
     )
-    const batchResults = await Promise.all(batch.map((url) => scrapeUrl(url)))
+    const batchResults = await Promise.all(
+      batch.map((url) => deepCheckCompany(url))
+    )
     results.push(...batchResults)
 
     for (const r of batchResults) {
-      const status = r.hasRestaurantQSR ? '✅' : '❌'
-      console.log(`  ${status} ${r.company} ${r.hasRestaurantQSR ? `[${r.matchedKeywords.join(', ')}]` : ''}`)
+      const icon = r.directMatch ? '✅' : r.broadMatch ? '🔶' : '❌'
+      const kws = [
+        ...r.matchedKeywords,
+        ...r.broadMatchedKeywords.map((k) => `(${k})`),
+      ]
+      console.log(
+        `  ${icon} ${r.company} [${r.pagesScraped} pages] ${kws.length > 0 ? `[${kws.join(', ')}]` : ''}`
+      )
     }
   }
 
   // Summary
-  const matches = results.filter((r) => r.hasRestaurantQSR)
-  const noMatches = results.filter((r) => !r.hasRestaurantQSR)
+  const directMatches = results.filter((r) => r.directMatch)
+  const broadOnly = results.filter((r) => !r.directMatch && r.broadMatch)
+  const noMatches = results.filter((r) => !r.directMatch && !r.broadMatch)
 
-  console.log('\n' + '='.repeat(80))
-  console.log('RESULTS SUMMARY')
-  console.log('='.repeat(80))
+  console.log('\n' + '='.repeat(90))
+  console.log('DEEP CRAWL RESULTS')
+  console.log('='.repeat(90))
 
   console.log(
-    `\n✅ COMPANIES WITH RESTAURANT/QSR MENTIONS (${matches.length}):\n`
+    `\n✅ DIRECT RESTAURANT / QSR / FOOD SERVICE MENTIONS (${directMatches.length}):\n`
   )
-  for (const r of matches) {
-    console.log(`  • ${r.company} (${r.url})`)
-    console.log(`    Keywords: ${r.matchedKeywords.join(', ')}`)
-    for (const ctx of r.context.slice(0, 2)) {
-      console.log(`    Context: ${ctx}`)
+  for (const r of directMatches) {
+    console.log(`  ${r.company} (${r.url})`)
+    console.log(`    Direct keywords: ${r.matchedKeywords.join(', ')}`)
+    if (r.broadMatchedKeywords.length > 0)
+      console.log(`    Broad keywords: ${r.broadMatchedKeywords.join(', ')}`)
+    console.log(`    Pages scraped: ${r.pagesScraped}`)
+    for (const pm of r.pageMatches) {
+      if (pm.keywords.length > 0) {
+        console.log(`    📄 ${pm.pageUrl}`)
+        for (const ctx of pm.contexts.slice(0, 2)) {
+          console.log(`       ${ctx}`)
+        }
+      }
     }
     console.log()
   }
 
-  console.log(`\n❌ NO RESTAURANT/QSR MENTIONS FOUND (${noMatches.length}):\n`)
-  for (const r of noMatches) {
-    console.log(`  • ${r.company} (${r.url})`)
-    if (r.context[0]?.includes('error') || r.context[0]?.includes('failed')) {
-      console.log(`    Note: ${r.context[0]}`)
+  console.log(
+    `\n🔶 BROAD "HOSPITALITY/FRANCHISE" ONLY — May be travel/hotels (${broadOnly.length}):\n`
+  )
+  for (const r of broadOnly) {
+    console.log(`  ${r.company} (${r.url})`)
+    console.log(`    Keywords: ${r.broadMatchedKeywords.join(', ')}`)
+    console.log(`    Pages scraped: ${r.pagesScraped}`)
+    for (const pm of r.pageMatches) {
+      console.log(`    📄 ${pm.pageUrl}`)
+      for (const ctx of pm.contexts.slice(0, 2)) {
+        console.log(`       ${ctx}`)
+      }
     }
+    console.log()
+  }
+
+  console.log(`\n❌ NO MATCHES FOUND (${noMatches.length}):\n`)
+  for (const r of noMatches) {
+    console.log(
+      `  • ${r.company} (${r.url}) — ${r.pagesScraped} pages scraped${r.errors.length > 0 ? ' ⚠️ ' + r.errors[0] : ''}`
+    )
   }
 }
 
