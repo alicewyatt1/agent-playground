@@ -3878,3 +3878,316 @@ assistant:
   new_string: > AI autopilot gives you capacity that doesn't churn, doesn't need ramping, and doesn't miss SLAs. We deploy full autonomous agents for outbound and inbound — telemarketing, collections, payment reminders, customer service, booking confirmations — that run 24/7, in multiple languages, alongside your existing team. You keep your staffing lean, protect your margin, and scale when you need to without the hiring gamble. You pay per outcome, not per seat — so your cost flexes with volume instead of sitting on your P&L whether the phones ring or not.
 
 [Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pandoc data/messaging-framework.md -f markdown -t docx -o /Users/alicewyatt/Downloads/US-BPO-Messaging-Framework.docx && git add -A && git commit -m "Rewrite Ops & Finance core message around their actual priorities" && git push
+  description: Commit updated core message
+  block_until_ms: 15000
+
+[Tool result] Shell
+
+assistant:
+Updated. The new core message maps directly to their five priorities:
+
+- **Service quality** → "doesn't miss SLAs"
+- **Protecting EBITDA** → "protect your margin", "cost flexes with volume instead of sitting on your P&L"
+- **Staffing correctly** → "keep your staffing lean", "without the hiring gamble"
+- **Forecast accuracy** → "scale when you need to", variable cost that flexes with volume
+- **Avoiding disruption** → "alongside your existing team"
+
+No speculative market claims, no stats from a single expert. Just what they care about, solved.
+
+user:
+<user_query>
+AI autopilot gives you capacity that doesn’t churn, doesn’t need ramping doesn’t miss SLAs. We deploy fully autonomous agents for outbound and inbound that run 24/7 in multiple languages alongside your existing team. You keep staffing lean, protect your margin and scale when you need to without the hiring gamble. Your cost flexes with your volume.
+
+is this good? 
+</user_query>
+
+assistant:
+Yes, that's tight. Every sentence earns its place — it hits all five of their priorities in plain language without overselling. The only thing I'd flag is "doesn't miss SLAs" is a bold claim. If you're comfortable standing behind that, keep it. If you want a touch more caution, you could say "and is built to hit your SLAs" — but honestly the current version reads better.
+
+Want me to update the framework with your version?
+
+user:
+<user_query>
+Protecting EBITDA: there is high margin pressure from labour costs and scaling revenue is dependent on scaling headcount
+
+is this good or is there a better way of putting it
+</user_query>
+
+assistant:
+[Thinking] The user is refining the "Protecting EBITDA" bullet point. Let me think about whether this is good or could be better.
+
+Current: "Protecting EBITDA: there is high margin pressure from labour costs and scaling revenue is dependent on scaling headcount"
+
+This is accurate but reads a bit like a description/observation rather than a sharp pain point. Let me think about what makes it better:
+
+1. The core insight is: labor is the biggest cost line, AND revenue growth is directly tied to adding more labor. This is the fundamental structural problem of the BPO model.
+2. It could be punchier.
+
+Some options:
+- "Protecting EBITDA: Labor is the biggest cost line, and revenue can only grow by adding more of it. Margin is structurally capped without a way to decouple revenue from headcount."
+
+The substance is right — that's the core structural problem of the BPO model. It could be a touch sharper though. Two options:
+
+**Option A (close to yours, tightened):**
+> Protecting EBITDA: Labor is the biggest cost line, and revenue only grows by adding more of it. Margin is structurally capped until you can decouple revenue from headcount.
+
+**Option B (punchier):**
+> Protecting EBITDA: Revenue scales linearly with headcount — more clients means more agents, more cost. Margin pressure from both sides: labor costs rising, client rates compressing.
+
+I like Option A because "decouple revenue from headcount" is essentially the setup for what AI autopilot solves — without saying it explicitly in the pain point. It lets the core message land the answer.
+
+user:
+<user_query>
+Persona 2
+Operations Leader (+ finance)
+Titles
+COO, CFO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, VP Finance, Regional VP
+Role in deal
+COO = champion who drives evaluation and owns operational outcome
+
+CFO = margin holder who validates the business case and approves spend
+What they care about
+Service quality: Hitting client SLAs and conversion targets
+
+Protecting EBITDA: there is high margin pressure from labour costs and scaling revenue is dependent on scaling headcount
+
+Staffing correctly: Overstaffing kills margin, understaffing kills SLAs; constant challenge given high annual attrition (20–30%+ is typical in the industry
+Forecast accuracy: Aligning workforce planning with unpredictable call / outbound volumes
+Avoiding operational disruption: Ensuring any new innovation must not jeopardize existing SLAs or client relationships.
+Their success metrics
+EBITDA margin (by site, by client, by program), conversion rate (outbound), resolution rate, revenue per seat per year, daily volume capacity and utilisation rate, SLA adherence and client contract renewal rate
+Core message to them
+AI autopilot gives you capacity that doesn’t churn, doesn’t need ramping and meets SLAs. We deploy fully autonomous agents for outbound and inbound that run 24/7 in multiple languages. You keep staffing lean, protect your margin and scale infinitely. Your costs flex with your client’s demand.
+
+Is this good and accurate?
+</user_query>
+
+assistant:
+This is strong. A few small notes:
+
+1. **"meets SLAs"** — good, better than "doesn't miss SLAs." More honest.
+2. **"scale infinitely"** — the one phrase I'd flag. It's technically true (AI doesn't have a headcount ceiling) but it sounds like marketing speak and might make a skeptical COO or CFO raise an eyebrow. "Scale without the hiring constraint" or "scale on demand" would feel more credible to this persona.
+3. **"Your costs flex with your client's demand"** — this is excellent. It's the outcome-based pricing pitch delivered in their language, not ours.
+4. **Success metrics** — accurate and tight. The only one I'd consider adding is **agent attrition rate** since you call it out as a major staffing challenge, but it's not essential since it's implied.
+
+The rest is accurate and reads like something written by someone who understands BPO operations, not by someone selling AI. Which is the point.
+
+Want me to update the framework with this version (with or without the "scale infinitely" tweak)?
+
+user:
+<user_query>
+for CTOs at Mid market BPOs, what are the overall things they care about? not specific to technology
+</user_query>
+
+assistant:
+[Tool call] user-perplexity-ask-perplexity_ask
+  messages: [{"role":"user","content":"What are the top priorities and concerns for CTOs and CIOs at mid-market US BPOs and contact centers (1,000-5,000 employees) in 2025-2026? Not just technology selection - what are their broader business concerns, their role in the organization, what pressures they face from the CEO and COO, and how they think about their responsibility to the business?"}]
+  search_context_size: high
+[Tool call] user-perplexity-ask-perplexity_ask
+  messages: [{"role":"user","content":"What is the role of the CTO or VP of Technology at a mid-market BPO or contact center company? What do they spend their time on day-to-day? What is their relationship with the COO and CEO? Are they mostly focused on internal infrastructure, client-facing technology, or both? What are their biggest frustrations?"}]
+  search_context_size: high
+
+[Tool result] user-perplexity-ask-perplexity_ask
+
+[Tool result] user-perplexity-ask-perplexity_ask
+
+assistant:
+[Thinking] Good research. Now let me also factor in what the GLG expert said about CTOs at BPOs:
+
+From the GLG interview:
+- "In my experience, they've been ones that have been bringing potential solutions to the table. You know, like, what is everybody else doing? What is out there? What can we implement? What should we be implementing?"
+- "But in my experience, they mostly spend time on internal infrastructure and make sure everything's working."
+- "Over the last five to seven years, they've had to spend a lot more time on security and compliance."
+- "They haven't been as involved in profitability and content negotiations, except for what technology they're going to use"
+
+
+- So a mid-market BPO CTO's role centers on maintaining infrastructure reliability across multiple sites, managing the growing demands of security and compliance, evaluating emerging technologies to recommend to leadership, and supporting client delivery operations—with the bulk of their time consumed by keeping systems running smoothly.
+- They operate under tight budget constraints and face constant pressure to innovate while managing existing systems, but they're not the economic decision-maker; instead, they function as the technical gatekeeper who can approve or block initiatives based on feasibility and safety.
+- What ultimately drives their priorities is operational continuity—any disruption to uptime or system reliability directly impacts client delivery and revenue.
+- Security and compliance consume enormous amounts of their attention because a single breach could be catastrophic for the business.
+- They're risk-averse about vendor selection after being overwhelmed by AI pitches, and they want to demonstrate strategic value to leadership by bringing vetted solutions to the executive table rather than just maintaining infrastructure.
+Based on research and what the GLG expert said about CTOs at BPOs, here's the picture:
+
+**The CTO at a mid-market BPO is not the decision maker. They're the evaluator/gatekeeper.** They bring solutions to the CEO and COO, and they can block a deal on technical grounds. Their day-to-day is less about strategy and more about keeping a complex, multi-site operation running. Here's what they actually care about:
+
+1. **Keeping operations running** — Uptime, reliability, no disruptions. If the phones go down or the CRM breaks, nothing else matters. This is the majority of their time.
+
+2. **Security and compliance** — One data breach and the company is done. PCI-DSS, HIPAA (if they serve healthcare), state-level regulations. The GLG expert said CTOs have spent "a lot more time on security and compliance" over the last 5-7 years — it's consuming their bandwidth.
+
+3. **Doing more with less** — Limited budget, small team, but the CEO expects innovation. They can't build like Teleperformance. They're stitching together tools and managing vendor relationships with constrained resources.
+
+4. **Not picking the wrong vendor** — The expert said CTOs were "overwhelmed with AI solutions" two years ago and are now waiting to see "who's going to be the industry standard" before committing. They don't want to invest in something that doesn't integrate or goes bankrupt in two years.
+
+5. **Proving their value to the exec team** — They want to be seen as strategic, not just infrastructure. Bringing a credible AI solution to the CEO/COO is how they earn that seat at the table.
+
+Want me to update the Technology Leader persona in the framework with this?
+
+user:
+<user_query>
+Persona 3
+Technology Leader
+Titles
+CTO, CIO, VP Technology, VP Engineering, VP Software Engineering, CISO, VP IT, VP Digital Innovation
+
+Role in deal
+Technical gatekeeper. Blocks or approves based on feasibility, security, and integration
+What they care about
+Security, data privacy and compliance
+System reliability and uptime
+Total cost of ownership
+Their success metrics
+Integration time and deployment speed, uptime and system reliability
+Core message to them
+Our platform is enterprise ready, used by the largest call centres including Teleperformance. Deploy on cloud, on-prem, or hybrid. We run at 95%+ uptime with built-in compliance controls, content guardrails, and full audit trails.
+
+Deployments are API-first, secure by design, and require minimal internal engineering lift.
+
+can you read through this and see what you think
+</user_query>
+
+assistant:
+This is clean and honest about what the CTO actually is in the deal — a gatekeeper, not a champion. A few thoughts:
+
+**What's good:**
+- "What they care about" is tight and accurate — security, uptime, TCO. That's their world.
+- Core message leads with credibility (Teleperformance, enterprise-ready) and then addresses their three concerns in order.
+- "Minimal internal engineering lift" is the right closer — it answers their unspoken fear of "this is going to land on my plate."
+
+**What I'd consider:**
+1. **"What they care about" could include one more: integration with existing stack.** The GLG expert said CTOs are "very protective of their tech stack." At mid-market BPOs they're running Genesys or Amazon Connect or Zendesk — they need to know this won't blow up what they've already built. Your core message mentions API-first, but the "what they care about" list doesn't explicitly call out integration.
+
+2. **Success metrics are thin.** You have integration time and uptime, which are right. But you could add: security incidents (zero tolerance), and number of vendor integrations maintained. These are what a CTO actually reports on.
+
+3. **Core message is solid but could be even more specific on integration.** "API-first" is good but generic. You could say "integrates via SIP for telephony and API for CRM — we've integrated with Genesys, Cisco, Zendesk, and custom platforms" to name the stacks they're likely running. That turns a generic claim into a credible one.
+
+4. **95%+ uptime** — worth checking with Dyna whether this is a number they stand behind publicly. If yes, keep it. If it's internal only, soften to "enterprise-grade uptime."
+
+None of these are must-haves — the persona works as-is. Want me to update the framework with your version as-is, or incorporate any of these tweaks?
+
+user:
+<user_query>
+k just edit it and send to me for me to copy and paste
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  offset: 63
+  limit: 5
+
+[Tool result] Read
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  offset: 108
+  limit: 100
+
+[Tool result] Read
+
+assistant:
+Now let me update all three personas with your versions plus the tweaks, and update the Ops & Finance core message to your latest.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ### Persona 2: Operations & Finance Leader
+
+**Titles:** COO, CFO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, VP Finance, Regional VP
+
+**Role in deal:** COO = Champion who drives the evaluation and owns operational outcome. CFO = Margin owner who validates the business case and approves spend. They work hand-in-hand daily on staffing, utilization, and cost management. Same messaging works for both.
+
+**What they care about:**
+- **Service quality** — Hitting client SLAs and conversion targets. This is the baseline requirement. Miss it and you lose the contract.
+- **Protecting EBITDA** — Improving margins and reducing cost-per-contact. Labor is ~2/3 of the contact center budget, so every efficiency gain or cost reduction flows almost directly to the bottom line.
+- **Staffing correctly** — Overstaffing kills margin. Understaffing kills SLAs. This is a constant balancing act made significantly harder by high annual attrition (20-30%+ is typical in the industry, with mid-market averaging ~37%). Each replacement costs $10-35K in recruiting, training, and ramp time.
+- **Forecast accuracy** — Aligning workforce planning with unpredictable call volumes and outbound campaign demands. Getting this wrong in either direction is expensive.
+- **Avoiding operational disruption** — Any new technology or process change must not jeopardize existing SLAs or client relationships. Innovation is welcome, but not at the cost of delivery stability.
+
+**Their success metrics:**
+- EBITDA margin (by site, by client, by program)
+- Agent attrition rate and time-to-fill
+- Cost per productive hour / cost per contact
+- Conversion rate, promise-to-pay rate, first call resolution
+- Schedule adherence and utilization rate
+- SLA performance and client contract renewal rate
+
+**Core message to them:**
+
+> AI autopilot gives you capacity that doesn't churn, doesn't need ramping, and doesn't miss SLAs. We deploy full autonomous agents for outbound and inbound — telemarketing, collections, payment reminders, customer service, booking confirmations — that run 24/7, in multiple languages, alongside your existing team. You keep your staffing lean, protect your margin, and scale when you need to without the hiring gamble. You pay per outcome, not per seat — so your cost flexes with volume instead of sitting on your P&L whether the phones ring or not.
+  new_string: ### Persona 2: Operations Leader (+ Finance)
+
+**Titles:** COO, CFO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, VP Finance, Regional VP
+
+**Role in deal:** COO = Champion who drives evaluation and owns operational outcome. CFO = Margin holder who validates the business case and approves spend.
+
+**What they care about:**
+- **Service quality** — Hitting client SLAs and conversion targets
+- **Protecting EBITDA** — High margin pressure from labour costs, and scaling revenue is dependent on scaling headcount
+- **Staffing correctly** — Overstaffing kills margin, understaffing kills SLAs; constant challenge given high annual attrition (20-30%+ is typical in the industry)
+- **Forecast accuracy** — Aligning workforce planning with unpredictable call / outbound volumes
+- **Avoiding operational disruption** — Ensuring any new innovation must not jeopardize existing SLAs or client relationships
+
+**Their success metrics:**
+- EBITDA margin (by site, by client, by program)
+- Conversion rate (outbound), resolution rate
+- Revenue per seat per year
+- Daily volume capacity and utilisation rate
+- SLA adherence and client contract renewal rate
+
+**Core message to them:**
+
+> AI autopilot gives you capacity that doesn't churn, doesn't need ramping and meets SLAs. We deploy fully autonomous agents for outbound and inbound that run 24/7 in multiple languages alongside your existing team. You keep staffing lean, protect your margin and scale on demand without the hiring gamble. Your costs flex with your client's demand.
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/messaging-framework.md
+  old_string: ### Persona 3: Technology Leader
+
+**Titles:** CTO, CIO, VP Technology, VP Engineering, VP Software Engineering, CISO, VP IT, VP Digital Innovation
+
+**Role in deal:** Technical gatekeeper. Blocks or approves based on feasibility, security, and integration.
+
+**What they care about:**
+- Integration with existing infrastructure (dialers, CRM, telephony)
+- Security, data privacy, and compliance
+- System reliability and uptime
+- Deployment flexibility (cloud vs. on-prem)
+- Build vs. buy — can we do this ourselves?
+
+**Their success metrics:**
+- Integration time and deployment speed
+- Uptime and system reliability
+- Security incidents (zero tolerance)
+- Total cost of ownership
+
+**Core message to them:**
+
+> Our platform is built for enterprise contact center operations — not a demo stitched together from open-source APIs. Agent Studio gives you low-code configuration, version control, one-click rollback, and continuous monitoring. Deploy on cloud, on-prem, or hybrid. We run at 95%+ uptime with built-in compliance controls, content guardrails, and full audit trails.
+  new_string: ### Persona 3: Technology Leader
+
+**Titles:** CTO, CIO, VP Technology, VP Engineering, VP Software Engineering, CISO, VP IT, VP Digital Innovation
+
+**Role in deal:** Technical gatekeeper. Blocks or approves based on feasibility, security, and integration.
+
+**What they care about:**
+- **Security, data privacy, and compliance** — One breach and the company is done. PCI-DSS, HIPAA (depending on clients), state-level regulations. This consumes a large share of their bandwidth.
+- **System reliability and uptime** — If the phones go down, nothing else matters. Keeping a multi-site, multi-channel operation running is the baseline expectation.
+- **Integration with existing stack** — They're running Genesys, Amazon Connect, Zendesk, or similar. Anything new must work with what they have, not replace it.
+- **Total cost of ownership** — Limited budget, small team, expected to deliver innovation. They can't build like Teleperformance.
+
+**Their success metrics:**
+- Integration time and deployment speed
+- Uptime and system reliability
+- Security incidents (zero tolerance)
+- Number of vendor integrations maintained
+
+**Core message to them:**
+
+> Our platform is enterprise-ready — used by the largest contact centers including Teleperformance. Deploy on cloud, on-prem, or hybrid. We run at 95%+ uptime with built-in compliance controls, content guardrails, and full audit trails. Deployments are API-first — integrates via SIP for telephony and API for CRM (Genesys, Cisco, Zendesk, and custom platforms). Secure by design, minimal internal engineering lift.
+
+[Tool result] StrReplace

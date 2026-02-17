@@ -106,30 +106,29 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 
 ---
 
-### Persona 2: Operations & Finance Leader
+### Persona 2: Operations Leader (+ Finance)
 
 **Titles:** COO, CFO, VP Operations, SVP Operations, VP Client Services, SVP Client Services, VP of Business Operations, EVP Operations, VP Client Solutions, VP Finance, Regional VP
 
-**Role in deal:** COO = Champion who drives the evaluation and owns operational outcome. CFO = Margin owner who validates the business case and approves spend. They work hand-in-hand daily on staffing, utilization, and cost management. Same messaging works for both.
+**Role in deal:** COO = Champion who drives evaluation and owns operational outcome. CFO = Margin holder who validates the business case and approves spend.
 
 **What they care about:**
-- **Service quality** — Hitting client SLAs and conversion targets. This is the baseline requirement. Miss it and you lose the contract.
-- **Protecting EBITDA** — Improving margins and reducing cost-per-contact. Labor is ~2/3 of the contact center budget, so every efficiency gain or cost reduction flows almost directly to the bottom line.
-- **Staffing correctly** — Overstaffing kills margin. Understaffing kills SLAs. This is a constant balancing act made significantly harder by high annual attrition (20-30%+ is typical in the industry, with mid-market averaging ~37%). Each replacement costs $10-35K in recruiting, training, and ramp time.
-- **Forecast accuracy** — Aligning workforce planning with unpredictable call volumes and outbound campaign demands. Getting this wrong in either direction is expensive.
-- **Avoiding operational disruption** — Any new technology or process change must not jeopardize existing SLAs or client relationships. Innovation is welcome, but not at the cost of delivery stability.
+- **Service quality** — Hitting client SLAs and conversion targets
+- **Protecting EBITDA** — High margin pressure from labour costs, and scaling revenue is dependent on scaling headcount
+- **Staffing correctly** — Overstaffing kills margin, understaffing kills SLAs; constant challenge given high annual attrition (20-30%+ is typical in the industry)
+- **Forecast accuracy** — Aligning workforce planning with unpredictable call / outbound volumes
+- **Avoiding operational disruption** — Ensuring any new innovation must not jeopardize existing SLAs or client relationships
 
 **Their success metrics:**
 - EBITDA margin (by site, by client, by program)
-- Agent attrition rate and time-to-fill
-- Cost per productive hour / cost per contact
-- Conversion rate, promise-to-pay rate, first call resolution
-- Schedule adherence and utilization rate
-- SLA performance and client contract renewal rate
+- Conversion rate (outbound), resolution rate
+- Revenue per seat per year
+- Daily volume capacity and utilisation rate
+- SLA adherence and client contract renewal rate
 
 **Core message to them:**
 
-> AI autopilot gives you capacity that doesn't churn, doesn't need ramping, and doesn't miss SLAs. We deploy full autonomous agents for outbound and inbound — telemarketing, collections, payment reminders, customer service, booking confirmations — that run 24/7, in multiple languages, alongside your existing team. You keep your staffing lean, protect your margin, and scale when you need to without the hiring gamble. You pay per outcome, not per seat — so your cost flexes with volume instead of sitting on your P&L whether the phones ring or not.
+> AI autopilot gives you capacity that doesn't churn, doesn't need ramping and meets SLAs. We deploy fully autonomous agents for outbound and inbound that run 24/7 in multiple languages alongside your existing team. You keep staffing lean, protect your margin and scale on demand without the hiring gamble. Your costs flex with your client's demand.
 
 **Pain points (ranked by urgency):**
 1. **HIGH:** Agent attrition bleeding money — ~37% annual turnover, $10-35K per replacement, constant cycle of hiring and retraining that never ends
@@ -168,21 +167,20 @@ These economics are powerful ammunition in conversations with CFOs and COOs.
 **Role in deal:** Technical gatekeeper. Blocks or approves based on feasibility, security, and integration.
 
 **What they care about:**
-- Integration with existing infrastructure (dialers, CRM, telephony)
-- Security, data privacy, and compliance
-- System reliability and uptime
-- Deployment flexibility (cloud vs. on-prem)
-- Build vs. buy — can we do this ourselves?
+- **Security, data privacy, and compliance** — One breach and the company is done. PCI-DSS, HIPAA (depending on clients), state-level regulations. This consumes a large share of their bandwidth.
+- **System reliability and uptime** — If the phones go down, nothing else matters. Keeping a multi-site, multi-channel operation running is the baseline expectation.
+- **Integration with existing stack** — They're running Genesys, Amazon Connect, Zendesk, or similar. Anything new must work with what they have, not replace it.
+- **Total cost of ownership** — Limited budget, small team, expected to deliver innovation. They can't build like Teleperformance.
 
 **Their success metrics:**
 - Integration time and deployment speed
 - Uptime and system reliability
 - Security incidents (zero tolerance)
-- Total cost of ownership
+- Number of vendor integrations maintained
 
 **Core message to them:**
 
-> Our platform is built for enterprise contact center operations — not a demo stitched together from open-source APIs. Agent Studio gives you low-code configuration, version control, one-click rollback, and continuous monitoring. Deploy on cloud, on-prem, or hybrid. We run at 95%+ uptime with built-in compliance controls, content guardrails, and full audit trails.
+> Our platform is enterprise-ready — used by the largest contact centers including Teleperformance. Deploy on cloud, on-prem, or hybrid. We run at 95%+ uptime with built-in compliance controls, content guardrails, and full audit trails. Deployments are API-first — integrates via SIP for telephony and API for CRM (Genesys, Cisco, Zendesk, and custom platforms). Secure by design, minimal internal engineering lift.
 
 **Pain points (ranked by urgency):**
 1. **HIGH:** Pressure from leadership to "do something with AI" without a reliable platform to deploy
