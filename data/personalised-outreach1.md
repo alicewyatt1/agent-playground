@@ -6,7 +6,7 @@
 
 ## 1. Benjamin Alpert
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | The Office Gurus |
 | **Title** | Vice President, Strategic Development |
@@ -32,7 +32,7 @@
 ---
 ## 2. Matt Rocco
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Etech Global Services |
 | **Title** | Chief Executive Officer |
@@ -58,7 +58,7 @@
 ---
 ## 3. David Kreiss
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | KM² Solutions |
 | **Title** | Founder, President, and CEO |
@@ -84,7 +84,7 @@
 ---
 ## 4. Greg Alcorn
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Global Contact Service International |
 | **Title** | Founder and CEO |
@@ -109,7 +109,7 @@
 ---
 ## 5. Bill Randag
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | DATAMARK, Inc. |
 | **Title** | President |
@@ -133,7 +133,7 @@
 ---
 ## 6. Ali Karim
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | DATAMARK, Inc. |
 | **Title** | Vice President |
@@ -156,7 +156,7 @@
 ---
 ## 7. Liliana Lopez
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Liveops |
 | **Title** | Vice President of Technology | Cybersecurity | Innovation |
@@ -181,7 +181,7 @@
 ---
 ## 8. Nanette Harrell
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Helpware |
 | **Title** | President |
@@ -205,7 +205,7 @@
 ---
 ## 9. Jim Iyoob
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Etech Global Services |
 | **Title** | President, ETSLabs |
@@ -232,7 +232,7 @@
 ---
 ## 10. Dominic Leide
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | The Office Gurus |
 | **Title** | President |
@@ -256,7 +256,7 @@
 ---
 ## 11. Kenneth Loggins
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Focus Services |
 | **Title** | Vice President, Shared Services |
@@ -281,7 +281,7 @@
 ---
 ## 12. Brian Flaherty
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Global Strategic |
 | **Title** | Chief Executive Officer |
@@ -306,7 +306,7 @@
 ---
 ## 13. Bill Trocano
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Liveops |
 | **Title** | Global Vice President, CX |
@@ -331,7 +331,7 @@
 ---
 ## 14. Pablo Paz Hernandez
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | First Contact BPO |
 | **Title** | Co-Founder & CEO |
@@ -356,7 +356,7 @@
 ---
 ## 15. Amanda Jones
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | CBE Companies |
 | **Title** | Vice President, Operations |
@@ -380,7 +380,7 @@
 ---
 ## 16. Donny Jackson
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Helpware |
 | **Title** | Regional Vice President (US) |
@@ -404,7 +404,7 @@
 ---
 ## 17. John Yanez
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Intelogix |
 | **Title** | Chief Operating Officer |
@@ -429,7 +429,7 @@
 ---
 ## 18. Ken Braatz
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | SupportNinja |
 | **Title** | Chief Technology Officer |
@@ -454,7 +454,7 @@
 ---
 ## 19. Youssef Hannat
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Percepta |
 | **Title** | Vice President of Global Operations |
@@ -478,7 +478,7 @@
 ---
 ## 20. James Nelson
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Percepta |
 | **Title** | Executive Director of Operations |
@@ -501,7 +501,7 @@
 ---
 ## 21. Bryan Overcash
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Global Contact Service International |
 | **Title** | Co-founder, CFO & COO |
@@ -526,7 +526,7 @@
 ---
 ## 22. Erika Garcia
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Global Strategic |
 | **Title** | Chief Operating Officer |
@@ -551,7 +551,7 @@
 ---
 ## 23. Keith Hansen
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | KM² Solutions |
 | **Title** | Vice President of Project Management |
@@ -574,7 +574,7 @@
 ---
 ## 24. Mark D'Angola
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Buwelo |
 | **Title** | Senior Vice President Operations |
@@ -598,7 +598,7 @@
 ---
 ## 25. Nitesh Kumar
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Flatworld Solutions |
 | **Title** | Vice President |
@@ -622,7 +622,7 @@
 ---
 ## 26. Rob Porges
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Flatworld Solutions |
 | **Title** | Senior Partner |
@@ -646,7 +646,7 @@
 ---
 ## 27. Cathy Sexton
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | Harte Hanks |
 | **Title** | Senior Vice President, Financial Services |
@@ -670,7 +670,7 @@
 ---
 ## 28. Aaron Brooks
 
-| | |
+| **Field** | **Detail** |
 |---|---|
 | **Company** | InfoCision Management Corporation |
 | **Title** | Vice President, Call Center Technologies |

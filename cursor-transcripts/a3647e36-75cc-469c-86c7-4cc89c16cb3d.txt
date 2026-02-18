@@ -20981,3 +20981,24 @@ Touch 2 is now a single line. Let me verify the full table structure looks right
   description: Check final table format
 
 [Tool result] Shell
+
+assistant:
+That's exactly right — all 4 touches in one continuous table, context card properly formatted with `| | |` header. Let me commit and push.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Collapse all Touch rows to single lines so table renders correctly in Google Docs" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. The file now has:
+
+- **Context card** — proper `| | |` / `|---|---|` header, all fields in the table
+- **Outreach hooks** — numbered list below the card
+- **One messaging table** with all 4 touches as single-line rows:
+  - `| **1** | LinkedIn connect | ... |`
+  - `| **2** | LinkedIn message | ... |`
+  - `| **3** | Email | ... |`
+  - `| **4** | Email | ... |` (Atlanta only)
+
+No content breaks out of the table. Should render cleanly in Google Docs.
