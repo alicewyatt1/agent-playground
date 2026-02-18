@@ -21472,3 +21472,324 @@ PYEOF
   description: Revert Touch 2 placeholder, keep Touch 3 updated
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Revert Touch 2 placeholder back to original — new placeholder only in Touch 3" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. Now:
+
+- **Touch 2:** `[Personalise here based on hooks above.]` — unchanged
+- **Touch 3:** `[If LinkedIn message already sent: 'To add more context to my LinkedIn message..' If not, personalise based on hooks above.]` — updated
+
+user:
+<user_query>
+ok now give me the most up to date doc
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md /Users/alicewyatt/Downloads/Personalised-Outreach-Final.md && echo "Done"
+  description: Copy to Downloads
+
+[Tool result] Shell
+
+assistant:
+**`~/Downloads/Personalised-Outreach-Final.md`** — ready to upload to Google Docs.
+
+user:
+<user_query>
+ok this looks great. one more update:
+
+I want you to add the following edits to the table so that Calanthia undrstands what to say to who when. is there a better way of saying this?
+
+Touch
+Day 1
+Same day as LinkedIn connection request is accepted
+If LI Request has been accepted, same day as LI message sent OR Day 2 if not
+
+</user_query>
+
+assistant:
+You want to add a "When to send" row to the messaging table. Here's a cleaner way to say it:
+
+| Touch | Channel | **When to send** | Message |
+|---|---|---|---|
+| **1** | LinkedIn connect | **Day 1** — send with connection request | ... |
+| **2** | LinkedIn message | **Same day** connection is accepted | ... |
+| **3** | Email | **Same day** as Touch 2 if LI accepted, otherwise **Day 2** | ... |
+| **4** | Email | **Same day** as Touch 3 (Atlanta only) | ... |
+
+Does that capture what you mean? And do you want the "When to send" as a column header in the table, or as a separate note above the table? The column approach keeps everything together and is cleanest for Calanthia to scan.
+
+user:
+<user_query>
+no dont worry about adding this for now.
+
+however, I do need you to do more enrichment.
+
+I need you to look at the client_industries column @/Users/alicewyatt/Downloads/for industries - Priority list (MM).csv 
+
+For each of our key contacts, I want you to look at the companies they work at and look at the client industries offered using the priorty list doc.
+
+I then want you to add a new row between location and LInkedin for ever person's profile summary on the personalised outreach document and call it: Relevant industries served (for case studies)
+
+and then for each person, add which industries the company services out of these. Don't be literal with text matching. If our document says telco then count it under Telecom, Energy and Utilities etc. If the company industry in the master doc says broad, then you can say 'Industry agnostic' in the field. If they serve QSR that can count as restaurant. however if they say finance dont count that as insurance.
+
+Telecom, Energy and Utilities
+Hospitality and Travel
+Insurance
+Lending
+Restaurant
+
+you can separate the indusries by commas in the table. 
+
+can you better write this propt before we run it
+</user_query>
+
+assistant:
+Here's a cleaner version of the prompt before we run it:
+
+---
+
+**Task:** For each of the 28 contacts in the outreach doc, look up which industries their company serves using the `client_industries` column in the priority list CSV. Then add a new row called **"Relevant industries served"** to their context card, between Location and LinkedIn.
+
+**Rules for matching:**
+- Only count these 5 target industries: **Telecom/Energy/Utilities**, **Hospitality & Travel**, **Insurance**, **Lending**, **Restaurant/QSR**
+- Match loosely — e.g. "telco" → Telecom, "QSR" or "food" → Restaurant, "travel" or "hotel" → Hospitality & Travel, "lending" or "mortgage" or "fintech" → Lending, "insurance" → Insurance
+- **Do not** conflate: "financial services" or "banking" alone does NOT count as Insurance or Lending unless explicitly stated
+- If the company serves a very broad range with no specific match, write **Industry agnostic**
+- If no relevant industries from our list, leave the field blank or write **None of target verticals**
+- Separate multiple matches with commas
+
+**Source:** `client_industries` column in the priority list CSV
+
+Does that capture it correctly? If so I'll run it.
+
+user:
+<user_query>
+Relevant industries served (case studies) - add the case studies bit in
+
+yes that's great. dont mess up the formatting of the table or the rest of the doc.
+</user_query>
+
+assistant:
+Let me first check the CSV structure and company names.
+[Tool call] Shell
+  command: head -2 "/Users/alicewyatt/Downloads/for industries - Priority list (MM).csv" | cat
+  description: Check CSV columns
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import csv, re
+
+# Load industry data from CSV
+industry_map = {}
+with open('/Users/alicewyatt/Downloads/for industries - Priority list (MM).csv') as f:
+    for row in csv.DictReader(f):
+        name = row.get('company_name','').strip().lower()
+        industries = row.get('client_industries','').strip().lower()
+        if name:
+            industry_map[name] = industries
+
+def map_industries(raw):
+    if not raw:
+        return ''
+    results = []
+    r = raw.lower()
+
+    telecom_kw = ['telecom','telco','telecommunication','wireless','cable','broadband','energy','utility','utilities','mvno']
+    hospitality_kw = ['hospitality','hotel','travel','airline','resort','cruise','tourism','vacation','lodging']
+    insurance_kw = ['insurance','insurer','insurtech']
+    lending_kw = ['lending','mortgage','loan','fintech','lender','credit','debt','collection','financial services','banking','payments','buy now','bnpl']
+    restaurant_kw = ['restaurant','qsr','food','dining','quick service','fast food','pizza','delivery']
+
+    if any(k in r for k in telecom_kw): results.append('Telecom, Energy & Utilities')
+    if any(k in r for k in hospitality_kw): results.append('Hospitality & Travel')
+    if any(k in r for k in insurance_kw): results.append('Insurance')
+    if any(k in r for k in lending_kw): results.append('Lending')
+    if any(k in r for k in restaurant_kw): results.append('Restaurant/QSR')
+
+    if not results:
+        # Check if broad/general
+        broad_kw = ['broad','all industries','general','multiple','various','diverse','agnostic']
+        if any(k in r for k in broad_kw) or len(r) > 100:
+            return 'Industry agnostic'
+        return ''
+    return ', '.join(results)
+
+# Company name to lookup key mapping for our 28 prospects
+company_lookup = {
+    "The Office Gurus": "the office gurus",
+    "Etech Global Services": "etech global services",
+    "KM² Solutions": "km² solutions",
+    "Global Contact Service International": "global contact service international",
+    "DATAMARK": "datamark, inc.",
+    "Liveops": "liveops",
+    "Helpware": "helpware",
+    "Focus Services": "focus services",
+    "Global Strategic": "global strategic business process solutions",
+    "First Contact BPO": "first contact bpo",
+    "CBE Companies": "cbe companies",
+    "InteLogix": "intelogix",
+    "SupportNinja": "supportninja",
+    "Percepta": "percepta",
+    "Buwelo": "buwelo",
+    "Flatworld Solutions": "flatworld solutions",
+    "Harte Hanks": "harte hanks",
+    "InfoCision Management Corporation": "infocision management corporation",
+    "KM² Solutions": "km² solutions",
+}
+
+# Print what we find for each company
+for display, lookup in company_lookup.items():
+    raw = industry_map.get(lookup, '')
+    # Try partial match if exact not found
+    if not raw:
+        for k, v in industry_map.items():
+            if lookup.split(',')[0] in k or k in lookup:
+                raw = v
+                break
+    mapped = map_industries(raw)
+    print(f"{display}: {mapped or '(no match)'}")
+    if not mapped:
+        print(f"  raw: {raw[:80]}")
+
+PYEOF
+  description: Test industry mapping for each company
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import csv
+industry_map = {}
+with open('/Users/alicewyatt/Downloads/for industries - Priority list (MM).csv') as f:
+    for row in csv.DictReader(f):
+        name = row.get('company_name','').strip().lower()
+        industries = row.get('client_industries','').strip()
+        if name:
+            industry_map[name] = industries
+
+# Check specific companies
+for c in ['global contact service international','gcs','percepta','first contact','buwelo','supportninja','helpware','global strategic']:
+    for k, v in industry_map.items():
+        if c in k:
+            print(f'{k}: {v[:100]}')
+"
+  description: Check raw industry data for missing companies
+
+[Tool result] Shell
+
+assistant:
+Good — now I have clean data. Let me refine the mappings and apply them:
+
+- **GCS International:** Insurance, Telecom (from "Insurance, Telecommunication")
+- **Percepta:** None of target verticals (automotive only)
+- **First Contact BPO:** No data → leave blank
+- **Buwelo:** None of target verticals (healthcare/retail)
+- **SupportNinja:** None of target verticals (SaaS/healthcare/AI)
+- **Helpware:** None of target verticals (healthcare/fintech/e-commerce)
+- **Global Strategic:** Lending (mortgage/real estate)
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+# Final verified industry mappings per company (from CSV data)
+industry_lookup = {
+    "The Office Gurus":                    "Telecom, Energy & Utilities, Hospitality & Travel, Lending",
+    "Etech Global Services":               "Telecom, Energy & Utilities, Hospitality & Travel, Insurance, Lending",
+    "KM² Solutions":                       "Telecom, Energy & Utilities, Hospitality & Travel, Insurance, Lending",
+    "Global Contact Service International":"Insurance, Telecom, Energy & Utilities",
+    "DATAMARK":                            "Telecom, Energy & Utilities, Insurance, Lending",
+    "Liveops":                             "Telecom, Energy & Utilities, Hospitality & Travel, Insurance, Lending",
+    "Helpware":                            "",
+    "Focus Services":                      "Telecom, Energy & Utilities, Insurance, Lending",
+    "Global Strategic":                    "Lending",
+    "First Contact BPO":                   "",
+    "CBE Companies":                       "Telecom, Energy & Utilities, Lending",
+    "InteLogix":                           "Telecom, Energy & Utilities, Hospitality & Travel, Lending",
+    "SupportNinja":                        "",
+    "Percepta":                            "",
+    "Buwelo":                              "",
+    "Flatworld Solutions":                 "Lending",
+    "Harte Hanks":                         "Industry agnostic",
+    "InfoCision Management Corporation":   "Telecom, Energy & Utilities, Restaurant/QSR, Lending",
+}
+
+# Map prospect name → company
+prospect_company = {
+    "Benjamin Alpert":     "The Office Gurus",
+    "Matt Rocco":          "Etech Global Services",
+    "David Kreiss":        "KM² Solutions",
+    "Greg Alcorn":         "Global Contact Service International",
+    "Bill Randag":         "DATAMARK",
+    "Ali Karim":           "DATAMARK",
+    "Liliana Lopez":       "Liveops",
+    "Nanette Harrell":     "Helpware",
+    "Jim Iyoob":           "Etech Global Services",
+    "Dominic Leide":       "The Office Gurus",
+    "Kenneth Loggins":     "Focus Services",
+    "Brian Flaherty":      "Global Strategic",
+    "Bill Trocano":        "Liveops",
+    "Pablo Paz Hernandez": "First Contact BPO",
+    "Amanda Jones":        "CBE Companies",
+    "Donny Jackson":       "Helpware",
+    "John Yanez":          "InteLogix",
+    "Ken Braatz":          "SupportNinja",
+    "Youssef Hannat":      "Percepta",
+    "James Nelson":        "Percepta",
+    "Bryan Overcash":      "Global Contact Service International",
+    "Erika Garcia":        "Global Strategic",
+    "Keith Hansen":        "KM² Solutions",
+    "Mark D'Angola":       "Buwelo",
+    "Nitesh Kumar":        "Flatworld Solutions",
+    "Rob Porges":          "Flatworld Solutions",
+    "Cathy Sexton":        "Harte Hanks",
+    "Aaron Brooks":        "InfoCision Management Corporation",
+}
+
+content = open('data/personalised-outreach1.md').read()
+lines = content.split('\n')
+output = []
+current_name = None
+updated = 0
+
+for line in lines:
+    m = re.match(r'^## \d+\. (.+)', line)
+    if m:
+        current_name = m.group(1).strip()
+
+    # Insert new row after the Location row
+    if current_name in prospect_company and line.startswith('| **Location**'):
+        company = prospect_company[current_name]
+        industries = industry_lookup.get(company, '')
+        display = industries if industries else '—'
+        output.append(line)
+        output.append(f'| **Relevant industries served (case studies)** | {display} |')
+        updated += 1
+    else:
+        output.append(line)
+
+result = '\n'.join(output)
+open('data/personalised-outreach1.md', 'w').write(result)
+print(f"Added industry row to {updated} prospects")
+PYEOF
+  description: Add Relevant industries served row to all context cards
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && head -22 data/personalised-outreach1.md
+  description: Verify output
+
+[Tool result] Shell

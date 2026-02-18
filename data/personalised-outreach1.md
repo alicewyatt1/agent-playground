@@ -12,6 +12,7 @@
 | **Title** | Vice President, Strategic Development |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Bradenton, FL |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore) |
 | **LinkedIn** | https://www.linkedin.com/in/benjamin-alpert-8014376/ |
 | **Email** | balpert@theofficegurus.com |
@@ -38,6 +39,7 @@
 | **Title** | Chief Executive Officer |
 | **Persona** | Executive Sponsor |
 | **Location** | Nacogdoches, TX |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Insurance, Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/matt-rocco-728ab46/ |
 | **Email** | matt.rocco@etechgs.com |
@@ -64,6 +66,7 @@
 | **Title** | Founder, President, and CEO |
 | **Persona** | Executive Sponsor |
 | **Location** | Boca Raton, FL |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Insurance, Lending |
 | **Delivery** | Offshore-heavy (nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/david-kreiss-16723810 |
 | **Email** | david.kreiss@km2solutions.com |
@@ -90,6 +93,7 @@
 | **Title** | Founder and CEO |
 | **Persona** | Executive Sponsor |
 | **Location** | Salisbury, NC |
+| **Relevant industries served (case studies)** | Insurance, Telecom, Energy & Utilities |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/galcorn |
 | **Email** | greg.alcorn@gcsagents.com |
@@ -115,6 +119,7 @@
 | **Title** | President |
 | **Persona** | Executive Sponsor |
 | **Location** | El Paso, TX |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Insurance, Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/billrandag |
 | **Email** | bill.randag@datamark.net |
@@ -139,6 +144,7 @@
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
 | **Location** | El Paso, TX |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Insurance, Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/mohammadalikarim/ |
 | **Email** | ali.karim@datamark.net |
@@ -162,6 +168,7 @@
 | **Title** | Vice President of Technology | Cybersecurity | Innovation |
 | **Persona** | Technology Leader |
 | **Location** | United States |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Insurance, Lending |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/liliana-l-92035441/ |
 | **Email** | liliana.lopez@liveops.com |
@@ -187,6 +194,7 @@
 | **Title** | President |
 | **Persona** | Executive Sponsor |
 | **Location** | Asheville, NC |
+| **Relevant industries served (case studies)** | — |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/nanetteharrell |
 | **Email** | n.harrell@helpware.com |
@@ -211,6 +219,7 @@
 | **Title** | President, ETSLabs |
 | **Persona** | Executive Sponsor |
 | **Location** | San Antonio, TX |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Insurance, Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/jimiyoob |
 | **Email** | jim.iyoob@etechgs.com |
@@ -238,6 +247,7 @@
 | **Title** | President |
 | **Persona** | Executive Sponsor |
 | **Location** | Tampa, FL |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore) |
 | **LinkedIn** | https://www.linkedin.com/in/dominic-leide-7b0b096 |
 | **Email** | dleide@theofficegurus.com |
@@ -262,6 +272,7 @@
 | **Title** | Vice President, Shared Services |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Jacksonville, NC |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Insurance, Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore) |
 | **LinkedIn** | https://www.linkedin.com/in/kenneth-loggins-8a85807b |
 | **Email** | kenneth@focusservices.com |
@@ -287,6 +298,7 @@
 | **Title** | Chief Executive Officer |
 | **Persona** | Executive Sponsor |
 | **Location** | Elon, NC |
+| **Relevant industries served (case studies)** | Lending |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/brian-flaherty-343b091/ |
 | **Email** | brian.flaherty@globalstrategic.com |
@@ -312,6 +324,7 @@
 | **Title** | Global Vice President, CX |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Rochester, NY |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Insurance, Lending |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/bill-trocano-9888891a/ |
 | **Email** | bill.trocano@liveops.com |
@@ -337,6 +350,7 @@
 | **Title** | Co-Founder & CEO |
 | **Persona** | Executive Sponsor |
 | **Location** | Miami, FL |
+| **Relevant industries served (case studies)** | — |
 | **Delivery** | Offshore-heavy (nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/pablo-paz-hernandez-760445127/ |
 | **Email** | pablo@firstcontactbpo.com |
@@ -362,6 +376,7 @@
 | **Title** | Vice President, Operations |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Clarksville, TN |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Lending |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/amanda-jones-39497731/ |
 | **Email** | amanda.jones@cbecompanies.com |
@@ -386,6 +401,7 @@
 | **Title** | Regional Vice President (US) |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Atlanta, GA |
+| **Relevant industries served (case studies)** | — |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/donny-jackson-0b22a43b/ |
 | **Email** | donny.jackson@helpware.com |
@@ -410,6 +426,7 @@
 | **Title** | Chief Operating Officer |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Tampa, FL |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore) |
 | **LinkedIn** | https://www.linkedin.com/in/johnyanez/ |
 | **Email** | john.yanez@intelogix.com |
@@ -435,6 +452,7 @@
 | **Title** | Chief Technology Officer |
 | **Persona** | Technology Leader |
 | **Location** | Boynton Beach, FL |
+| **Relevant industries served (case studies)** | — |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/ken-braatz-16580438/ |
 | **Email** | ken@supportninja.com |
@@ -460,6 +478,7 @@
 | **Title** | Vice President of Global Operations |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Nashville, TN |
+| **Relevant industries served (case studies)** | — |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/youssefhannat/ |
 | **Email** | youssef.hannat@percepta.com |
@@ -484,6 +503,7 @@
 | **Title** | Executive Director of Operations |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Houston, TX |
+| **Relevant industries served (case studies)** | — |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/james-nelson-0292b713/ |
 | **Email** | james.nelson@percepta.com |
@@ -507,6 +527,7 @@
 | **Title** | Co-founder, CFO & COO |
 | **Persona** | Executive Sponsor |
 | **Location** | Salisbury, NC |
+| **Relevant industries served (case studies)** | Insurance, Telecom, Energy & Utilities |
 | **Delivery** | Onshore-heavy (onshore) |
 | **LinkedIn** | https://www.linkedin.com/in/bryan-overcash-b897a86/ |
 | **Email** | bryan.overcash@gcsagents.com |
@@ -532,6 +553,7 @@
 | **Title** | Chief Operating Officer |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Miami, FL |
+| **Relevant industries served (case studies)** | Lending |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/erikagarciallaneza/ |
 | **Email** | erika.garcia@globalstrategic.com |
@@ -557,6 +579,7 @@
 | **Title** | Vice President of Project Management |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Atlanta, GA |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Insurance, Lending |
 | **Delivery** | Offshore-heavy (nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/keith-hansen-16313ab6/ |
 | **Email** | keith.hansen@km2solutions.com |
@@ -580,6 +603,7 @@
 | **Title** | Senior Vice President Operations |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Atlanta, GA |
+| **Relevant industries served (case studies)** | — |
 | **Delivery** | Offshore-heavy (nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/mark-d-angola-29b8736/ |
 | **Email** | markdangola@buwelo.com |
@@ -604,6 +628,7 @@
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Alpharetta, GA |
+| **Relevant industries served (case studies)** | Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/nitesh-kumar-69328437/ |
 | **Email** | nitesh.kumar@flatworldsolutions.com |
@@ -628,6 +653,7 @@
 | **Title** | Senior Partner |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Miami, FL |
+| **Relevant industries served (case studies)** | Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/rob-porges-6132118/ |
 | **Email** | rob.porges@flatworldsolutions.com |
@@ -652,6 +678,7 @@
 | **Title** | Senior Vice President, Financial Services |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Salisbury, NC |
+| **Relevant industries served (case studies)** | Industry agnostic |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/cathy-sexton-5b119b2/ |
 | **Email** | cathy.sexton@hartehanks.com |
@@ -676,6 +703,7 @@
 | **Title** | Vice President, Call Center Technologies |
 | **Persona** | Technology Leader |
 | **Location** | Cleveland, OH |
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Restaurant/QSR, Lending |
 | **Delivery** | Mixed delivery (onshore, nearshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/aaron-brooks-5377097/ |
 | **Email** | aaron.brooks@infocision.com |
