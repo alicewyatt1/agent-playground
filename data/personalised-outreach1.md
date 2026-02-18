@@ -6,6 +6,8 @@
 
 ## 1. Benjamin Alpert
 
+| | |
+|---|---|
 | **Company** | The Office Gurus |
 | **Title** | Vice President, Strategic Development |
 | **Persona** | Operations & Finance Leader |
@@ -54,6 +56,8 @@ Calanthia |
 ---
 ## 2. Matt Rocco
 
+| | |
+|---|---|
 | **Company** | Etech Global Services |
 | **Title** | Chief Executive Officer |
 | **Persona** | Executive Sponsor |
@@ -102,6 +106,8 @@ Calanthia |
 ---
 ## 3. David Kreiss
 
+| | |
+|---|---|
 | **Company** | KM² Solutions |
 | **Title** | Founder, President, and CEO |
 | **Persona** | Executive Sponsor |
@@ -150,6 +156,8 @@ Calanthia |
 ---
 ## 4. Greg Alcorn
 
+| | |
+|---|---|
 | **Company** | Global Contact Service International |
 | **Title** | Founder and CEO |
 | **Persona** | Executive Sponsor |
@@ -197,6 +205,8 @@ Calanthia |
 ---
 ## 5. Bill Randag
 
+| | |
+|---|---|
 | **Company** | DATAMARK, Inc. |
 | **Title** | President |
 | **Persona** | Executive Sponsor |
@@ -243,6 +253,8 @@ Calanthia |
 ---
 ## 6. Ali Karim
 
+| | |
+|---|---|
 | **Company** | DATAMARK, Inc. |
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
@@ -288,6 +300,8 @@ Calanthia |
 ---
 ## 7. Liliana Lopez
 
+| | |
+|---|---|
 | **Company** | Liveops |
 | **Title** | Vice President of Technology | Cybersecurity | Innovation |
 | **Persona** | Technology Leader |
@@ -332,6 +346,8 @@ Calanthia |
 ---
 ## 8. Nanette Harrell
 
+| | |
+|---|---|
 | **Company** | Helpware |
 | **Title** | President |
 | **Persona** | Executive Sponsor |
@@ -378,6 +394,8 @@ Calanthia |
 ---
 ## 9. Jim Iyoob
 
+| | |
+|---|---|
 | **Company** | Etech Global Services |
 | **Title** | President, ETSLabs |
 | **Persona** | Executive Sponsor |
@@ -427,6 +445,8 @@ Calanthia |
 ---
 ## 10. Dominic Leide
 
+| | |
+|---|---|
 | **Company** | The Office Gurus |
 | **Title** | President |
 | **Persona** | Executive Sponsor |
@@ -473,6 +493,8 @@ Calanthia |
 ---
 ## 11. Kenneth Loggins
 
+| | |
+|---|---|
 | **Company** | Focus Services |
 | **Title** | Vice President, Shared Services |
 | **Persona** | Operations & Finance Leader |
@@ -520,6 +542,8 @@ Calanthia |
 ---
 ## 12. Brian Flaherty
 
+| | |
+|---|---|
 | **Company** | Global Strategic |
 | **Title** | Chief Executive Officer |
 | **Persona** | Executive Sponsor |
@@ -567,6 +591,8 @@ Calanthia |
 ---
 ## 13. Bill Trocano
 
+| | |
+|---|---|
 | **Company** | Liveops |
 | **Title** | Global Vice President, CX |
 | **Persona** | Operations & Finance Leader |
@@ -614,6 +640,8 @@ Calanthia |
 ---
 ## 14. Pablo Paz Hernandez
 
+| | |
+|---|---|
 | **Company** | First Contact BPO |
 | **Title** | Co-Founder & CEO |
 | **Persona** | Executive Sponsor |
@@ -661,6 +689,8 @@ Calanthia |
 ---
 ## 15. Amanda Jones
 
+| | |
+|---|---|
 | **Company** | CBE Companies |
 | **Title** | Vice President, Operations |
 | **Persona** | Operations & Finance Leader |
@@ -707,6 +737,8 @@ Calanthia |
 ---
 ## 16. Donny Jackson
 
+| | |
+|---|---|
 | **Company** | Helpware |
 | **Title** | Regional Vice President (US) |
 | **Persona** | Operations & Finance Leader |
@@ -753,6 +785,8 @@ Calanthia |
 ---
 ## 17. John Yanez
 
+| | |
+|---|---|
 | **Company** | Intelogix |
 | **Title** | Chief Operating Officer |
 | **Persona** | Operations & Finance Leader |
@@ -800,6 +834,8 @@ Calanthia |
 ---
 ## 18. Ken Braatz
 
+| | |
+|---|---|
 | **Company** | SupportNinja |
 | **Title** | Chief Technology Officer |
 | **Persona** | Technology Leader |
@@ -844,6 +880,8 @@ Calanthia |
 ---
 ## 19. Youssef Hannat
 
+| | |
+|---|---|
 | **Company** | Percepta |
 | **Title** | Vice President of Global Operations |
 | **Persona** | Operations & Finance Leader |
@@ -890,6 +928,8 @@ Calanthia |
 ---
 ## 20. James Nelson
 
+| | |
+|---|---|
 | **Company** | Percepta |
 | **Title** | Executive Director of Operations |
 | **Persona** | Operations & Finance Leader |
@@ -935,6 +975,8 @@ Calanthia |
 ---
 ## 21. Bryan Overcash
 
+| | |
+|---|---|
 | **Company** | Global Contact Service International |
 | **Title** | Co-founder, CFO & COO |
 | **Persona** | Executive Sponsor |
@@ -982,6 +1024,8 @@ Calanthia |
 ---
 ## 22. Erika Garcia
 
+| | |
+|---|---|
 | **Company** | Global Strategic |
 | **Title** | Chief Operating Officer |
 | **Persona** | Operations & Finance Leader |
@@ -1029,6 +1073,8 @@ Calanthia |
 ---
 ## 23. Keith Hansen
 
+| | |
+|---|---|
 | **Company** | KM² Solutions |
 | **Title** | Vice President of Project Management |
 | **Persona** | Operations & Finance Leader |
@@ -1074,6 +1120,8 @@ Calanthia |
 ---
 ## 24. Mark D'Angola
 
+| | |
+|---|---|
 | **Company** | Buwelo |
 | **Title** | Senior Vice President Operations |
 | **Persona** | Operations & Finance Leader |
@@ -1120,6 +1168,8 @@ Calanthia |
 ---
 ## 25. Nitesh Kumar
 
+| | |
+|---|---|
 | **Company** | Flatworld Solutions |
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
@@ -1166,6 +1216,8 @@ Calanthia |
 ---
 ## 26. Rob Porges
 
+| | |
+|---|---|
 | **Company** | Flatworld Solutions |
 | **Title** | Senior Partner |
 | **Persona** | Operations & Finance Leader |
@@ -1212,6 +1264,8 @@ Calanthia |
 ---
 ## 27. Cathy Sexton
 
+| | |
+|---|---|
 | **Company** | Harte Hanks |
 | **Title** | Senior Vice President, Financial Services |
 | **Persona** | Operations & Finance Leader |
@@ -1258,6 +1312,8 @@ Calanthia |
 ---
 ## 28. Aaron Brooks
 
+| | |
+|---|---|
 | **Company** | InfoCision Management Corporation |
 | **Title** | Vice President, Call Center Technologies |
 | **Persona** | Technology Leader |
