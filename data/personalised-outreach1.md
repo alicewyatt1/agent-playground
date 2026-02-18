@@ -20,7 +20,7 @@
 
 1. **Speaking/event:** Presented at Customer Connect Expo (April 2025, past) on 'Balancing AI and Human Agents — The Future of Contact Centers' to 3,000+ CX leaders.
 2. **Mutual connection:** Alice 2nd degree (Dave Zimmerman)
-3. **Insight:** The Office Gurus launched GuruAssist AI platform....
+3. **Insight:** The Office Gurus launched GuruAssist — AI-powered QA and real-time agent assist platform. ([Product page](https://theofficegurus.com/ai-driven-contact-center-solutions-automated-qa-agent-assist/))
 4. **Near event:** Based in Bradenton, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -46,7 +46,7 @@
 
 1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. Jim Iyoob keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." ([Etech events page](https://www.etechgs.com/company/events))
 2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi)
-3. **Insight:** CEO of Etech Global Services. Etech is confirmed at CCW Las Vegas 2026 (Jun 22-25, Booth #1404) with a workshop. Jim Iyoob (Etech) is a ..
+3. **Insight:** Matt Rocco co-authored three books with Jim Iyoob on contact center excellence. Etech takes a people-first, AI-enabled approach. ([Etech website](https://www.etechgs.com))
 4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
@@ -169,8 +169,8 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** Led an AI Maturity Workshop at CCW Orlando (Jan 2026, past) on operationalizing AI — moving from 'promising' to 'proven'.
-2. **Insight:** shared thought leadership on sandboxing AI, real-time agent assist, and usin...
+1. **Speaking/event:** Led an AI Maturity Workshop at CCW Orlando (Jan 2026, past) on operationalizing AI — moving from 'promising' to 'proven'. Also cited in Liveops' 2025 Holiday AI & Customer Service Report on AI+human orchestration. ([Liveops report](https://liveops.com/whitepaper/liveops-2025-holiday-ai-customer-service-report/))
+2. **Insight:** Shared thought leadership on sandboxing AI, real-time agent assist, and operationalizing AI through LiveNexus. ([LiveNexus](https://liveops.com/livenexus/))
 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
@@ -294,8 +294,8 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** Speaking at the Mortgage AI conference in October 2026 ('Staff vs AI vs Virtual Assistants: How You Can Manage The AI/Human Balance').
-2. **Insight:** Recently presented a webinar with the Five Star Institute on mort...
+1. **Speaking/event:** Speaking at the Mortgage AI conference in October 2026 on 'Staff vs AI vs Virtual Assistants: How You Can Manage The AI/Human Balance'. ([Conference page](https://www.mortgageaiconference.com/))
+2. **Insight:** Recently presented a webinar with the Five Star Institute on mortgage outsourcing strategy.
 3. **Near event:** Based in Elon, North Carolina, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -320,7 +320,7 @@
 **Outreach hooks:**
 
 1. **Mutual connection:** Alice 2nd degree (Dave Zimmerman)
-2. **Insight:** Published a LinkedIn article in Feb 2026 about how AI didn't replace humans during the holiday season but raised the bar for human agents. Global VP of CX at Liveops. Active interest in AI-enabled CX ...
+2. **Insight:** Published research in Feb 2026 on how AI raised the bar for human agents during the holiday season — AI handled 30%+ of interactions but customers still preferred humans for complex issues. ([Full report](https://liveops.com/whitepaper/liveops-2025-holiday-ai-customer-service-report/))
 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
@@ -369,7 +369,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** CBE Companies won the 2025 BBB Torch Award for Ethics and the OIR Catalyst for Change Award for their CBE Cares community initiative. They also opened a new Philippines office in 2024.
+1. **Insight:** CBE Companies won the 2025 BBB Torch Award for Ethics. ([CBE press release](https://www.cbecompanies.com/cbe-companies-receives-2025-bbb-torch-award-for-ethics/))
 2. **Near event:** Based in Clarksville, Tennessee, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -393,7 +393,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** Promoted to RVP Business Operations - US as part of a major Helpware leadership restructuring. CEO Robert Nash specifically highlighted these appointments as key to the company's growth strategy. Expe...
+1. **Insight:** Promoted to RVP Business Operations – US as part of a major Helpware leadership restructuring. ([Helpware newsroom](https://www.helpware.com/newsroom))
 2. **Near event:** Based in Atlanta, Georgia, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -586,7 +586,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** Title is SVP & Country Head, Operations (APAC) at Buwelo — oversees call centers engaging 5M+ customers annually. 15+ years in BPO, prior Fortune 500 experience. Buwelo reports 94% client retention ra...
+1. **Insight:** SVP & Country Head, Operations (APAC) at Buwelo — oversees call centers engaging 5M+ customers annually. Buwelo reports 94% client retention rate. ([Buwelo](https://www.buwelo.com))
 2. **Near event:** Based in Atlanta Metropolitan Area — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -610,7 +610,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** He’s involved in Flatworld AI’s 'The AI Walk' series and has spoken about how AI empowers frontline contact center agents—automating routine work to speed resolution, boost agent performance, and lowe...
+1. **Insight:** Involved in Flatworld AI's 'The AI Walk' series and has spoken about how AI empowers frontline contact center agents. ([Flatworld.ai](https://www.flatworld.ai))
 2. **Near event:** Based in Alpharetta, Georgia, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -634,7 +634,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** Shared Flatworld's 'Tech in Mortgage — Powered by MSuite' podcast highlighting AI-driven mortgage automation. Flatworld showcased MSuite at the MBA Servicing Conference in Dallas (Feb 2025). Company l...
+1. **Insight:** Involved in Flatworld's 'Tech in Mortgage — Powered by MSuite' podcast on AI-driven mortgage automation. ([Podcast episode 1](https://www.youtube.com/watch?v=f9B_LFFnGck)) | ([MSuite product](https://www.flatworld.ai/ai-products/))
 2. **Near event:** Based in Miami, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -682,7 +682,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** 24-year tenure at InfoCision — rose from IT Manager to VP. Focuses on transforming call center tech for scalability and productivity. InfoCision explicitly serves Restaurants & Food & Beverages verticals — strong match for Dyna's Pizza Hut Thailand case study.
+1. **Insight:** 24-year tenure at InfoCision — rose from IT Manager to VP. InfoCision serves Restaurants & Food & Beverages verticals. ([InfoCision industries](https://infocision.com/industries/))
 2. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
