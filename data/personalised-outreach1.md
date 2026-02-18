@@ -16,6 +16,8 @@
 | **LinkedIn** | https://www.linkedin.com/in/jimiyoob |
 | **Email** | jim.iyoob@etechgs.com |
 
+**Note for Calanthia:** Jim is not a typical executive prospect. He runs ETS Labs (Etech's AI/innovation arm), keynotes on AI leadership, and is deeply technical. He doesn't need educating on AI or FOMO — he's already all-in. Treat this as a peer-to-peer conversation about what Dyna has built technically, and ask for his perspective genuinely. Different tone from every other prospect.
+
 **Outreach hooks:**
 
 1. **Speaking/event:** CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9). Also keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." Also leading CCW Las Vegas workshop (Jun 23) on turning CX challenges into growth using AI, analytics, and human intelligence.
@@ -25,24 +27,8 @@
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Already connected — skip to Touch 2. |
-| **2** | LinkedIn message | Jim — I noticed you're keynoting on 'Leadership Readiness in the Age of AI' at the Call Center Campus Symposium. That's the central question I'm working on with BPO leaders right now — what leadership actually looks like when AI handles the execution layer. I'm building voice AI for BPOs at Dyna (Teleperformance is already using us). I'll be at Enterprise Connect next month meeting with several BPO leaders on this. Will you be there? |
-| **3** | Email | [Personalise — use one of the hooks]
-
-For context, I've spent the past decade building and scaling tech companies in Silicon Valley. I was a founding member of PayPal Ventures and later co-founded and grew two tech companies through exit.
-
-I'm now building enterprise voice AI solutions at Dyna to fully automate inbound and outbound contact centre operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Dyna is already deployed in high-volume enterprise environments, including Teleperformance.
-
-We deploy enterprise-proven, fully automated AI agents that:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 with high uptime and accuracy without additional headcount
-- Bring proven operational and technical expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more use cases
-- Tie performance directly to measurable revenue and margin outcomes
-
-I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there? |
+| **2** | LinkedIn message | Jim — I've been following your work at ETS Labs and your keynote on 'Leadership Readiness in the Age of AI.' We're working on a related problem at Dyna: fully automated voice AI that handles entire calls end-to-end, not agent-assist. Already running for Teleperformance at scale. I'd be interested in your take on where the production gaps still are. I'll be at Enterprise Connect next month — will you be there? |
+| **3** | Email | Jim — given your work at ETS Labs, I wanted to reach out directly rather than go through the usual channels. At Dyna, we've built fully automated voice AI that manages entire calls independently — greeting to resolution — across inbound and outbound. Not copilot, not agent-assist. Full execution. We're already deployed at production scale with Teleperformance, across telecom, lending, insurance, travel, and restaurant verticals. Multi-agent orchestration, multi-language, enterprise-grade reliability. I imagine you've looked at this space closely. I'd be curious to hear where you think the real gaps are — and whether what we've built addresses any of them. I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there? |
 
 ---
 ## 2. Benjamin Alpert

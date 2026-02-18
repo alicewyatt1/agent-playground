@@ -16021,3 +16021,130 @@ Good — Jim Iyoob has custom Touch 2, correct "already connected" for Touch 1, 
   head_limit: 30
 
 [Tool result] Grep
+
+assistant:
+Everything checks out. Nanette (1st degree) gets "Already connected" + "Would be good to catch up there." Amanda (template) gets the CBAND connection request + template Touch 2 with placeholder. Both get the right persona email + CBAND CTA.
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md /Users/alicewyatt/Downloads/Personalised-Outreach.md && cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "$(cat <<'EOF'
+Final outreach doc: approved templates, 6 custom hooks, 22 templated
+
+Touch 1: 6 custom (Jim Iyoob, Ali Karim, Brian Flaherty, Liliana Lopez, Benjamin Alpert, Ken Braatz), 7 "already connected", 15 event template.
+Touch 2: 6 custom, 22 with placeholder for Calanthia to personalise.
+Touch 3: Approved persona email templates (Exec/Ops/Tech) with event CTAs.
+EOF
+)" && git push && echo "Done"
+  description: Copy, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.md`** is ready for Google Docs upload.
+
+**What's in the doc:**
+
+- 28 prospects, ranked warmest first
+- Context cards + outreach hooks (unchanged)
+- Touch 1/2/3 messaging populated
+
+**What's done (no action needed from you):**
+
+- All 28 Touch 1s: 6 custom, 7 "already connected", 15 event template
+- 6 custom Touch 2s (Jim Iyoob, Ali Karim, Brian Flaherty, Liliana Lopez, Benjamin Alpert, Ken Braatz) — each references their specific AI work/talk
+- All 28 Touch 3 emails: right persona template + right event CTA
+- Event CTAs correctly mapped (20 CBAND, 7 Enterprise Connect, 1 Frost & Sullivan)
+
+**What Calanthia needs to do:**
+
+- 22 Touch 2s have "[Personalise using hooks above]" — she writes one sentence using the hooks, the rest of the message is done
+- 28 Touch 3 emails have "[Personalise — use one of the hooks]" at the top — she writes one opening sentence per email
+
+user:
+<user_query>
+I think we need to change the messaging for the very first prospect, given he's like an AI absolute aficionado. He also works for like an AI lab in his company. I think we therefore that message and email and LinkedIn needs to be changed. 
+</user_query>
+
+assistant:
+You're right — Jim Iyoob isn't a typical CEO you need to educate about AI. He's the President of ETS Labs (Etech's AI/innovation arm), he keynotes on AI leadership, and he's deeply technical. The standard "executives are under pressure to improve margin" pitch would be tone-deaf to him.
+
+For someone like Jim, the messaging should be more peer-to-peer on the AI itself — what Dyna has built, how it works differently, why it's interesting technically. He already knows the market. He doesn't need the FOMO or the education. He needs to think "this person is building something I should know about."
+
+Here's my suggestion:
+
+**Touch 2 (LinkedIn message):**
+
+> Jim — I've been following your work at ETS Labs and your keynote on 'Leadership Readiness in the Age of AI.' We're working on a related problem at Dyna: fully automated voice AI that handles entire calls end-to-end, not agent-assist. Already running for Teleperformance at scale. I'd be interested in your take on where the production gaps still are. I'll be at Enterprise Connect next month — will you be there?
+
+**Touch 3 (Email):**
+
+> Jim — given your work at ETS Labs, I wanted to reach out directly rather than go through the usual channels.
+>
+> At Dyna, we've built fully automated voice AI that manages entire calls independently — greeting to resolution — across inbound and outbound. Not copilot, not agent-assist. Full execution.
+>
+> We're already deployed at production scale with Teleperformance, across telecom, lending, insurance, travel, and restaurant verticals. Multi-agent orchestration, multi-language, enterprise-grade reliability.
+>
+> I imagine you've looked at this space closely. I'd be curious to hear where you think the real gaps are — and whether what we've built addresses any of them.
+>
+> I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there?
+
+Different tone entirely — treats him as a technical peer, not a prospect to educate. Leads with the product, not the pain point. Asks for his perspective genuinely, because he'd actually have one worth hearing.
+
+Want me to put this in the doc?
+
+user:
+<user_query>
+Yes, and add a note on his profile, like note for Calanthea, and then explain why this prospect gets a slightly different approach. 
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  offset: 7
+  limit: 40
+
+[Tool result] Read
+
+assistant:
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  old_string: **Outreach hooks:**
+
+1. **Speaking/event:** CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9). Also keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." Also leading CCW Las Vegas workshop (Jun 23) on turning CX challenges into growth using AI, analytics, and human intelligence.
+2. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Mark Escueta; Alon Waks; +3 others)
+3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) — Calanthia attending.
+
+| Touch | Channel | Message |
+|---|---|---|
+| **1** | LinkedIn connect | Already connected — skip to Touch 2. |
+| **2** | LinkedIn message | Jim — I noticed you're keynoting on 'Leadership Readiness in the Age of AI' at the Call Center Campus Symposium. That's the central question I'm working on with BPO leaders right now — what leadership actually looks like when AI handles the execution layer. I'm building voice AI for BPOs at Dyna (Teleperformance is already using us). I'll be at Enterprise Connect next month meeting with several BPO leaders on this. Will you be there? |
+| **3** | Email | [Personalise — use one of the hooks]
+
+For context, I've spent the past decade building and scaling tech companies in Silicon Valley. I was a founding member of PayPal Ventures and later co-founded and grew two tech companies through exit.
+
+I'm now building enterprise voice AI solutions at Dyna to fully automate inbound and outbound contact centre operations.
+
+The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
+
+Dyna is already deployed in high-volume enterprise environments, including Teleperformance.
+
+We deploy enterprise-proven, fully automated AI agents that:
+- Run inbound and outbound calls end-to-end
+- Scale operations 24/7 with high uptime and accuracy without additional headcount
+- Bring proven operational and technical expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more use cases
+- Tie performance directly to measurable revenue and margin outcomes
+
+I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there? |
+  new_string: **Note for Calanthia:** Jim is not a typical executive prospect. He runs ETS Labs (Etech's AI/innovation arm), keynotes on AI leadership, and is deeply technical. He doesn't need educating on AI or FOMO — he's already all-in. Treat this as a peer-to-peer conversation about what Dyna has built technically, and ask for his perspective genuinely. Different tone from every other prospect.
+
+**Outreach hooks:**
+
+1. **Speaking/event:** CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9). Also keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." Also leading CCW Las Vegas workshop (Jun 23) on turning CX challenges into growth using AI, analytics, and human intelligence.
+2. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Mark Escueta; Alon Waks; +3 others)
+3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) — Calanthia attending.
+
+| Touch | Channel | Message |
+|---|---|---|
+| **1** | LinkedIn connect | Already connected — skip to Touch 2. |
+| **2** | LinkedIn message | Jim — I've been following your work at ETS Labs and your keynote on 'Leadership Readiness in the Age of AI.' We're working on a related problem at Dyna: fully automated voice AI that handles entire calls end-to-end, not agent-assist. Already running for Teleperformance at scale. I'd be interested in your take on where the production gaps still are. I'll be at Enterprise Connect next month — will you be there? |
+| **3** | Email | Jim — given your work at ETS Labs, I wanted to reach out directly rather than go through the usual channels. At Dyna, we've built fully automated voice AI that manages entire calls independently — greeting to resolution — across inbound and outbound. Not copilot, not agent-assist. Full execution. We're already deployed at production scale with Teleperformance, across telecom, lending, insurance, travel, and restaurant verticals. Multi-agent orchestration, multi-language, enterprise-grade reliability. I imagine you've looked at this space closely. I'd be curious to hear where you think the real gaps are — and whether what we've built addresses any of them. I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there? |
+
+[Tool result] StrReplace
