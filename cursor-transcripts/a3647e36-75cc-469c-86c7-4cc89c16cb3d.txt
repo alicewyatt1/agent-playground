@@ -20497,3 +20497,20 @@ for name, expected in [('Benjamin Alpert','operations leaders'), ('Matt Rocco','
   description: Verify correct persona template used
 
 [Tool result] Shell
+
+assistant:
+All correct. Let me commit.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Replace Touch 3 with final PDF email templates, persona-matched, first name added, event CTA correct" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. All 28 Touch 3 emails updated with the final PDF templates:
+
+- **Exec persona (10 people):** Matt Rocco, David Kreiss, Greg Alcorn, Bill Randag, Nanette Harrell, Jim Iyoob, Dominic Leide, Brian Flaherty, Pablo Paz Hernandez, Bryan Overcash → "executives I am working with are under pressure to improve margin..."
+- **Ops persona (15 people):** Benjamin Alpert, Ali Karim, Kenneth Loggins, Bill Trocano, Amanda Jones, Donny Jackson, John Yanez, Youssef Hannat, James Nelson, Erika Garcia, Keith Hansen, Mark D'Angola, Nitesh Kumar, Rob Porges, Cathy Sexton → "operations leaders I'm working with are trying to hit SLAs..."
+- **Tech persona (3 people):** Liliana Lopez, Ken Braatz, Aaron Brooks → "Enterprise-grade AI solutions designed and deployed by dedicated industry experts..."
+
+Each starts with "Hi [First Name]," followed by "[Personalise here based on hooks above.]" and ends with the correct event CTA.
