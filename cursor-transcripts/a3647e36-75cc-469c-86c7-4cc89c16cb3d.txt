@@ -21829,3 +21829,95 @@ assistant:
   url: https://www.hartehanks.com/
 
 [Tool result] WebFetch
+
+assistant:
+Harte Hanks explicitly serves: **Beauty, CPG, E-commerce, Entertainment, Financial Services, Healthcare, Retail, Technology**. None of our 5 target verticals (Telecom, Hospitality & Travel, Insurance, Lending, Restaurant/QSR). Let me update it.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+content = open('data/personalised-outreach1.md').read()
+content = content.replace(
+    '| **Relevant industries served (case studies)** | Industry agnostic |',
+    '| **Relevant industries served (case studies)** | — |'
+)
+open('data/personalised-outreach1.md', 'w').write(content)
+print('Updated')
+" && git add -A && git commit -m "Update Harte Hanks industries to none — serves beauty/CPG/retail/tech, not our target verticals" && git push && echo "Done"
+  description: Fix Harte Hanks industries
+
+[Tool result] Shell
+
+assistant:
+Done. Harte Hanks (Cathy Sexton) now shows `—` — their actual verticals are beauty, CPG, e-commerce, entertainment, healthcare, retail and technology. None match our target case study industries.
+
+user:
+<user_query>
+ok. cool. give me the latest doc then
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md /Users/alicewyatt/Downloads/Personalised-Outreach-Final.md && echo "Done"
+  description: Export latest to Downloads
+
+[Tool result] Shell
+
+assistant:
+**`~/Downloads/Personalised-Outreach-Final.md`** — ready to upload to Google Docs.
+
+user:
+<user_query>
+give me a summary of everything you have done today then. 
+</user_query>
+
+assistant:
+Here's a summary of everything built today:
+
+---
+
+## What was built today
+
+### 1. US BPO Persona Map (approved)
+- Finalised ICP, three personas (Executive Sponsor, Operations & Finance Leader, Technology Leader), Dyna USPs, and core messages
+- Exported as a clean document for Calanthia's approval
+
+### 2. Messaging Playbook
+- LinkedIn and email templates per persona
+- Decision trees for which hook to use
+- Objection handling, event hooks, delivery-model swap-in lines, case study reference table
+
+### 3. Personalised Outreach Document (28 prospects)
+**`data/personalised-outreach1.md`** — the main deliverable
+
+**Context card per prospect:**
+- Company, Title, Persona, Location, Delivery footprint
+- **Relevant industries served (case studies)** — matched to 5 target verticals (Telecom, Hospitality & Travel, Insurance, Lending, Restaurant/QSR) from master list CSV, verified against company websites
+- LinkedIn, Email
+
+**Outreach hooks per prospect** (ranked by warmth):
+- Speaking/event hooks with verified links to event pages
+- Award hooks (2025/2026 only) with press release links
+- Mutual connections
+- Insights with links to press releases or product pages
+- Near-event hook
+
+**Messaging table (4 touches):**
+- **Touch 1** — Standard connection request: "Hi [First Name], I've been following your work at [Company]. I lead the US market for Dyna AI..." — same for all non-connected
+- **Touch 2** — LinkedIn message: "[Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at [EVENT]? I lead the US market for Dyna AI (dyna.ai)..." — event-specific (CCNG Atlanta / Enterprise Connect / Frost & Sullivan)
+- **Touch 3** — Full email with persona-specific template (Exec / Ops / Tech) from final PDF, with `[If LinkedIn message already sent: 'To add more context...' If not, personalise based on hooks above.]` at the top, correct event CTA, and `<br>` paragraph spacing
+- **Touch 4** — Atlanta-only email from Alice: "Hi [First Name], I'm looking forward to getting out of the New York cold..." — for all 20 Southeast prospects
+
+**Other fixes made:**
+- All incorrect "Calanthia 1st degree" connection labels corrected — none are actually 1st degree
+- Verified links added to all hooks (press releases, award pages, event pages)
+- Blank table header rows fixed → `| **Field** | **Detail** |`
+- All touch rows collapsed to single lines so they render correctly in Google Docs
+- Jim Iyoob moved to position 9 with peer-to-peer messaging note for Calanthia
+- DATAMARK without "Inc."
+- 2024 awards removed, only 2025/2026 awards kept
+- Harte Hanks industries corrected after checking website (none of target verticals)
+
+---
+
+**What Calanthia still needs to do manually:**
+1. Fill in `[Personalise here based on hooks above.]` in Touch 2 (one sentence per person using the hooks)
+2. Fill in the personalisation line at the top of each Touch 3 email

@@ -1,0 +1,212 @@
+user:
+<user_query>
+@/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Priority list (MM).csv 
+Okay, I have got a list of top contacts, and I also have on this document and priority list MM. What I need to do for every contact on the top contacts list, I need you to look at which company they are part of, and then copy across every single column from my company priority list. So company name, website, company HQ, US HQ, USP, languages, AI, etc. for every single contact, such that my top contacts tab has all of the current information as well as all of the company information copied across for each contact. So you need to add extra columns on to the contact row. Does that make sense? Do you have any questions? 
+
+The reason why I'm doing this is so we can easily upload it into HubSpot, which treats contacts and accounts really separately, so we need to have contacts and accounts merged into one single sheet. 
+</user_query>
+
+assistant:
+[Thinking] The user wants to merge contact data with company data from a CSV file. Let me first look at the file to understand its structure.
+Let me first look at the CSV file to understand its structure.
+[Tool call] Shell
+  command: head -5 "/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Priority list (MM).csv" | cat
+  description: Preview CSV file headers and first rows
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: python3 -c "
+import csv
+with open('/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Priority list (MM).csv', 'r') as f:
+    reader = csv.DictReader(f)
+    print('COLUMNS:', reader.fieldnames)
+    rows = list(reader)
+    print('TOTAL ROWS:', len(rows))
+    # Check if there are multiple sheets / tabs indicators
+    print('First few company names:', [r.get('company_name','') for r in rows[:5]])
+"
+
+  description: Get column names and row count
+
+[Tool result] Shell
+
+assistant:
+[Thinking] I see that the CSV file has only one sheet visible - the "Priority list (MM)" sheet. The user mentioned a "top contacts" tab. Since this is a Google Sheets export (based on the filename pattern), it seems like only one tab was exported. Let me check if there are multiple sheets in this file or if there's another file with contacts.
+
+The file is named "Global Contact Center Market Map (Final) - Priority list (MM).csv" - this seems to be only the priority list tab. The user said they want to look at contacts list as well. Let me ask if they have a separate contacts CSV, or if the contacts are also in this file but we need to see them.
+
+
+Looking at the file path more carefully, it's clear this is just the priority list export. The user mentioned a separate top contacts list, so there's likely another CSV file in their Downloads folder that I should check for.
+I can see the priority list with 45 companies and 31 columns. But I only see one sheet here (the Priority list). You mentioned a "top contacts" tab — do you have that exported as a separate CSV as well? It looks like only the Priority list was exported from the spreadsheet.
+
+Could you also export the "Top Contacts" tab as a CSV from Google Sheets (File → Download → CSV), or share it another way? Once I have both files, I can merge them automatically — matching each contact to their company and appending all 31 company columns to each contact row, ready for HubSpot upload.
+
+user:
+<user_query>
+@/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Priority list (MM) (1).csv @/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts (1).csv 
+
+Okay, I've now shared with you the two relevant documents. 
+</user_query>
+
+assistant:
+[Thinking] Let me look at both files to understand their structure.
+Let me inspect both files first.
+[Tool call] Shell
+  command: python3 -c "
+import csv
+
+print('=== TOP CONTACTS ===')
+with open('/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts (1).csv', 'r') as f:
+    reader = csv.DictReader(f)
+    print('COLUMNS:', reader.fieldnames)
+    rows = list(reader)
+    print('TOTAL ROWS:', len(rows))
+    print('First 3 rows:')
+    for r in rows[:3]:
+        print(dict(r))
+"
+
+  description: Inspect Top Contacts CSV structure
+
+[Tool result] Shell
+
+assistant:
+[Thinking] Now I understand the structure. I need to:
+1. Match contacts to companies (by company name or domain)
+2. Add all 31 company columns to each contact row
+
+Let me check what company names look like in the priority list to figure out the matching strategy.
+[Tool call] Shell
+  command: python3 -c "
+import csv
+
+print('=== PRIORITY LIST COMPANY NAMES ===')
+with open('/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Priority list (MM) (1).csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+    print([r['company_name'] for r in rows])
+
+print()
+print('=== TOP CONTACTS COMPANY NAMES (unique) ===')
+with open('/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts (1).csv', 'r') as f:
+    reader = csv.DictReader(f)
+    rows = list(reader)
+    print(sorted(set(r['Company Name'] for r in rows)))
+"
+
+  description: Compare company names across both files
+
+[Tool result] Shell
+
+assistant:
+[Thinking] I can see that the company names mostly match, but there's one discrepancy:
+- Priority list has: "Clark Outsourcing", "Go Answer", "Nearsol Philippines Inc.", "Sourcefit Philippines Inc.", "SupportNinja", "Hugo Technologies Inc"
+- Top contacts has: "Alta Resources Corp." (slightly different from "Alta Resources") 
+
+And "Clark Outsourcing" and "Go Answer" are in the priority list but might not have contacts (or may not appear in top contacts with those exact names).
+
+Let me check which company names don't match to understand the edge cases.
+
+I'll also check if "Alta Resources Corp." vs "Alta Resources" is the only discrepancy, and handle it appropriately.
+
+
+I'll write a script that loads both datasets, creates a lookup dictionary from the priority list, then iterates through the contacts to merge in the corresponding company data. For the name mismatch between "Alta Resources Corp." and "Alta Resources", I'll handle that with a fuzzy match or explicit mapping.
+Good. The names mostly match up — I can see one slight difference: "Alta Resources Corp." in contacts vs "Alta Resources" in the priority list. I'll handle that with fuzzy matching. Let me write the merge script now.
+[Tool call] Write
+  path: /Users/alicewyatt/repos/agent-playground/scripts/merge-contacts-with-company-data.ts
+  contents: import { config } from 'dotenv'
+import fs from 'fs'
+import path from 'path'
+import { parse } from 'csv-parse/sync'
+import { stringify } from 'csv-stringify/sync'
+
+config()
+
+const PRIORITY_LIST_PATH = '/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Priority list (MM) (1).csv'
+const TOP_CONTACTS_PATH = '/Users/alicewyatt/Downloads/Global Contact Center Market Map (Final) - Top Contacts (1).csv'
+const OUTPUT_PATH = path.join(process.cwd(), 'data', 'contacts-with-company-data.csv')
+
+function normalize(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/[,\.]/g, '')
+    .replace(/\binc\b|\bcorp\b|\bllc\b|\bltd\b/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+async function main() {
+  const priorityRaw = fs.readFileSync(PRIORITY_LIST_PATH, 'utf-8')
+  const contactsRaw = fs.readFileSync(TOP_CONTACTS_PATH, 'utf-8')
+
+  const priorityList = parse(priorityRaw, { columns: true, skip_empty_lines: true }) as Record<string, string>[]
+  const contacts = parse(contactsRaw, { columns: true, skip_empty_lines: true }) as Record<string, string>[]
+
+  // Build lookup map: normalized name -> company row
+  const companyMap = new Map<string, Record<string, string>>()
+  for (const company of priorityList) {
+    companyMap.set(normalize(company.company_name), company)
+  }
+
+  // Prefix company columns to avoid clashing with contact columns
+  const companyColumns = Object.keys(priorityList[0]).map(col => `company_${col}`)
+
+  const merged: Record<string, string>[] = []
+  const unmatched = new Set<string>()
+
+  for (const contact of contacts) {
+    const key = normalize(contact['Company Name'])
+    const companyData = companyMap.get(key)
+
+    if (!companyData) {
+      unmatched.add(contact['Company Name'])
+    }
+
+    const mergedRow: Record<string, string> = { ...contact }
+    for (const col of Object.keys(priorityList[0])) {
+      mergedRow[`company_${col}`] = companyData ? companyData[col] : ''
+    }
+
+    merged.push(mergedRow)
+    console.log(`✓ ${contact['Full Name']} (${contact['Company Name']}) → ${companyData ? 'matched' : 'NO MATCH'}`)
+  }
+
+  const csv = stringify(merged, { header: true, columns: [...Object.keys(contacts[0]), ...companyColumns] })
+  fs.writeFileSync(OUTPUT_PATH, csv, 'utf-8')
+
+  console.log(`\n✅ Done! ${merged.length} contacts written to ${OUTPUT_PATH}`)
+  if (unmatched.size > 0) {
+    console.log(`\n⚠️  No company data found for these ${unmatched.size} company name(s):`)
+    for (const name of unmatched) console.log(`   - ${name}`)
+  }
+}
+
+main().catch(console.error)
+
+
+[Tool result] Write
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm install csv-parse csv-stringify 2>&1 | tail -5
+  description: Install CSV dependencies
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && pnpm start scripts/merge-contacts-with-company-data.ts
+  description: Run the merge script
+  block_until_ms: 30000
+
+[Tool result] Shell
+
+assistant:
+All 204 contacts matched perfectly. Now let me commit and then copy the output file to your Downloads folder for easy access.
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/contacts-with-company-data.csv /Users/alicewyatt/Downloads/contacts-with-company-data.csv && echo "Copied to Downloads"
+  description: Copy output CSV to Downloads folder
+
+[Tool result] Shell
