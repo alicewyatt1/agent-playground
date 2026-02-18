@@ -16609,3 +16609,152 @@ assistant:
   limit: 55
 
 [Tool result] Read
+
+assistant:
+Email is in the table, blank rows removed, context card is clean. Let me commit and push.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Put email back into table row, remove blank header rows from context cards" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. The file is `data/personalised-outreach1.md` in the repo. Each prospect now has:
+
+- Clean context card (no blank row at top)
+- Outreach hooks
+- 3-row messaging table — Touch 1, Touch 2, Touch 3 (email fully inside the cell with first name, personalisation hook placeholder, template, CTA, and sign-off)
+
+user:
+<user_query>
+Now the email's in the table, but you've totally changed the formatting of the first bit of the document. All I wanted was for you to remove the blank boxes at the very top, not delete the whole table. Redo it one more time.
+</user_query>
+
+assistant:
+I can see the issue — I accidentally removed the `| | |` header row from the context card table, breaking its formatting. Let me restore it.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+content = open('data/personalised-outreach1.md', 'r').read()
+
+# The context card tables lost their header row "| | |" and separator "|---|---|"
+# They now start directly with "| **Company** |" which breaks table rendering
+# Fix: add "| | |\n|---|---|\n" before each context card table
+
+# A context card table starts with "| **Company** |"
+content = re.sub(
+    r'(\n)((?=\| \*\*Company\*\* \|))',
+    r'\n| | |\n|---|---|\n',
+    content
+)
+
+open('data/personalised-outreach1.md', 'w').write(content)
+print("Done")
+PYEOF
+  description: Restore context card table headers
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  offset: 1
+  limit: 30
+
+[Tool result] Read
+
+assistant:
+Your message got prepended to the file accidentally. Let me fix that and restore the proper table headers.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+content = open('data/personalised-outreach1.md', 'r').read()
+
+# Remove the accidentally prepended user message
+content = content.replace("Now the email's in the table, but you've totally changed the formatting of the first bit of the document. All I wanted was for you to remove the blank boxes at the very top, not delete the whole table. Redo it one more time. \n", "")
+
+# Add proper table header before each context card
+import re
+content = re.sub(
+    r'(\n)((?=\| \*\*Company\*\* \|))',
+    '\n| | |\n|---|---|\n',
+    content
+)
+
+open('data/personalised-outreach1.md', 'w').write(content)
+print("Done")
+PYEOF
+  description: Remove stray text and fix table headers
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  offset: 1
+  limit: 20
+
+[Tool result] Read
+
+assistant:
+The user message is stuck at line 1. Let me use the Read tool to get the clean content and write a fresh version.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  offset: 2
+
+[Tool result] Read
+
+assistant:
+The content is all correct and complete. The issue is just line 1 has the stray user message text. Let me strip that and add back the proper `| | | / |---|---|` header to the context cards.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+with open('data/personalised-outreach1.md', 'r') as f:
+    lines = f.readlines()
+
+# Remove line 1 if it's the stray user message
+if lines and not lines[0].startswith('#'):
+    lines = lines[1:]
+
+content = ''.join(lines)
+
+# Restore | | | header row before each context card table
+# Context cards start with "| **Company** |" without a header above them
+content = re.sub(
+    r'(\n\n)((?=\| \*\*Company\*\* \|))',
+    '\n\n| | |\n|---|---|\n',
+    content
+)
+
+with open('data/personalised-outreach1.md', 'w') as f:
+    f.write(content)
+
+print("Done")
+PYEOF
+  description: Remove stray line, restore context card headers
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  offset: 1
+  limit: 20
+
+[Tool result] Read
+
+assistant:
+The stray line is baked into the file itself and my Python scripts keep not catching it. Let me write a clean version directly.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && tail -n +2 data/personalised-outreach1.md > /tmp/clean.md && mv /tmp/clean.md data/personalised-outreach1.md && head -5 data/personalised-outreach1.md
+  description: Strip first line and verify
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && sed -i '' '1s/^/# Personalised Outreach — Cohort 1\n/' data/personalised-outreach1.md && head -8 data/personalised-outreach1.md
+  description: Add title back and verify start
+
+[Tool result] Shell
