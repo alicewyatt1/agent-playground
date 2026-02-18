@@ -44,9 +44,9 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. Jim Iyoob keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." ([Etech events page](https://www.etechgs.com/company/events))
+1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. His colleague Jim Iyoob (President of ETSLabs, Etech's AI innovation arm) is also keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." ([Etech events page](https://www.etechgs.com/company/events))
 2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi)
-3. **Insight:** Matt Rocco co-authored three books with Jim Iyoob on contact center excellence.
+3. **Insight:** Matt co-authored three books on contact center excellence with Jim Iyoob — his long-time colleague and President of ETSLabs at Etech.
 4. **Award (2025):** ETSLabs (Etech's innovation arm) won the 2025 ICMI Global Contact Center Award for Best New Technology Solution for QEval®. ([Etech awards](https://www.etechgs.com/company/awards-and-recognition))
 4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 

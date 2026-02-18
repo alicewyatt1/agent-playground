@@ -19404,3 +19404,76 @@ print('Fixed')
 
 assistant:
 Done — both Ali Karim and Bill Randag's Touch 1 now read "at DATAMARK" rather than "at DATAMARK, Inc."
+
+user:
+<user_query>
+remove any award from 2024
+</user_query>
+
+assistant:
+The only 2024 award is The Office Gurus CCW Excellence Award, which appears for Benjamin Alpert and Dominic Leide.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import re
+content = open('data/personalised-outreach1.md').read()
+# Remove all lines containing Award (2024)
+content = re.sub(r'\n\d+\. \*\*Award \(2024\):\*\*[^\n]+', '', content)
+open('data/personalised-outreach1.md', 'w').write(content)
+print('Done')
+" && git add -A && git commit -m 'Remove 2024 awards from outreach hooks' && git push && echo 'Done'
+  description: Remove 2024 award hooks
+
+[Tool result] Shell
+
+assistant:
+Done — the 2024 CCW Excellence Award has been removed from both Benjamin Alpert and Dominic Leide's hooks.
+
+user:
+<user_query>
+in one person's hook, it says that 'Jim' is speaking but it's not clear why that's relevant to this person. Make sure it's clear that they are colleagues/why every hook is relevant
+</user_query>
+
+assistant:
+Let me find the instance where Jim Iyoob's speaking is mentioned in someone else's hook.
+[Tool call] Grep
+  pattern: Jim Iyoob
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  output_mode: content
+  -B: 2
+
+[Tool result] Grep
+
+assistant:
+That's Matt Rocco's hooks — Jim is mentioned there without context explaining who he is to Matt. Let me fix both instances.
+[Tool call] StrReplace
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  old_string: 1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. Jim Iyoob keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." ([Etech events page](https://www.etechgs.com/company/events))
+2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi)
+3. **Insight:** Matt Rocco co-authored three books with Jim Iyoob on contact center excellence.
+  new_string: 1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. His colleague Jim Iyoob (President of ETSLabs, Etech's AI innovation arm) is also keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." ([Etech events page](https://www.etechgs.com/company/events))
+2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi)
+3. **Insight:** Matt co-authored three books on contact center excellence with Jim Iyoob, his long-time colleague and President of ETSLabs at Etech.
+
+[Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+content = open('data/personalised-outreach1.md').read()
+
+content = content.replace(
+    'Jim Iyoob keynoting Call Center Campus Symposium (May 17-20) on \"Prickly Truths: Leadership Readiness in the Age of AI.\" ([Etech events page](https://www.etechgs.com/company/events))',
+    'His colleague Jim Iyoob (President of ETSLabs, Etech\\'s AI innovation arm) is also keynoting Call Center Campus Symposium (May 17-20) on \"Prickly Truths: Leadership Readiness in the Age of AI.\" ([Etech events page](https://www.etechgs.com/company/events))'
+)
+
+content = content.replace(
+    'Matt Rocco co-authored three books with Jim Iyoob on contact center excellence.',
+    'Matt co-authored three books on contact center excellence with Jim Iyoob — his long-time colleague and President of ETSLabs at Etech.'
+)
+
+open('data/personalised-outreach1.md', 'w').write(content)
+print('Fixed')
+"
+  description: Add context for Jim Iyoob references in Matt Rocco's hooks
+
+[Tool result] Shell
