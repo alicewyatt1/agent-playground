@@ -21,7 +21,8 @@
 1. **Speaking/event:** Presented at Customer Connect Expo (April 2025, past) on 'Balancing AI and Human Agents — The Future of Contact Centers' to 3,000+ CX leaders.
 2. **Mutual connection:** Alice 2nd degree (Dave Zimmerman)
 3. **Insight:** The Office Gurus launched GuruAssist — AI-powered QA and real-time agent assist platform. ([Product page](https://theofficegurus.com/ai-driven-contact-center-solutions-automated-qa-agent-assist/))
-4. **Near event:** Based in Bradenton, Florida, United States — could attend CBAND Atlanta (Feb 26).
+4. **Award (2024):** The Office Gurus won the CCW Excellence Awards Best of the Best Employee Experience Award and Honorable Mention for BPO of the Year. ([Announcement](https://theofficegurus.com/news/the-office-gurus-celebrates-success-at-the-ccw-excellence-awards/))
+5. **Near event:** Based in Bradenton, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
 |---|---|---|
@@ -46,7 +47,8 @@
 
 1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. Jim Iyoob keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." ([Etech events page](https://www.etechgs.com/company/events))
 2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi)
-3. **Insight:** Matt Rocco co-authored three books with Jim Iyoob on contact center excellence. Etech takes a people-first, AI-enabled approach. ([Etech website](https://www.etechgs.com))
+3. **Insight:** Matt Rocco co-authored three books with Jim Iyoob on contact center excellence.
+4. **Award (2025):** ETSLabs (Etech's innovation arm) won the 2025 ICMI Global Contact Center Award for Best New Technology Solution for QEval®. ([Etech awards](https://www.etechgs.com/company/awards-and-recognition))
 4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
@@ -72,7 +74,8 @@
 
 1. **Mutual connection:** Calanthia 2nd degree (Karla M. Cosgalla)
 2. **Insight:** Massive Caribbean expansion — 1,250 new jobs across Grenada and Saint Lucia, 6,500+ employees. ([Press release](https://km2solutions.com/resources/combined-growth/))
-3. **Near event:** Based in Boca Raton, Florida, United States — could attend CBAND Atlanta (Feb 26).
+3. **Award (2025):** KM² named to IAOP's Global Outsourcing 100 for the third consecutive year, achieving All Star status for the second year running. ([2025 Year in Review](https://km2solutions.com/resources/infographic2025/))
+4. **Near event:** Based in Boca Raton, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
 |---|---|---|
@@ -171,6 +174,7 @@
 
 1. **Speaking/event:** Led an AI Maturity Workshop at CCW Orlando (Jan 2026, past) on operationalizing AI — moving from 'promising' to 'proven'. Also cited in Liveops' 2025 Holiday AI & Customer Service Report on AI+human orchestration. ([Liveops report](https://liveops.com/whitepaper/liveops-2025-holiday-ai-customer-service-report/))
 2. **Insight:** Shared thought leadership on sandboxing AI, real-time agent assist, and operationalizing AI through LiveNexus. ([LiveNexus](https://liveops.com/livenexus/))
+3. **Award (2026):** Liveops won Gold + 3 Silver 2026 Stevie Awards — Gold for Customer Service Training/Coaching, Silver for Outsourcing Provider, Innovation in CX, Best CSAT Strategy. ([Press release](https://ipo.einnews.com/pr_news/887640783/liveops-earns-one-gold-and-three-2026-silver-stevie-awards))
 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
@@ -222,7 +226,8 @@
 
 1. **Speaking/event:** Keynoting Call Center Campus Symposium (May 17-20, Arizona) on "Prickly Truths: Leadership Readiness in the Age of AI." Also leading CCW Las Vegas workshop (Jun 23). ([Etech events page](https://www.etechgs.com/company/events))
 2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson); Alice 2nd degree (Mark Escueta; Alon Waks; +3 others)
-3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) — Calanthia attending.
+3. **Award (2025):** ETSLabs (Etech's innovation arm) won the 2025 ICMI Global Contact Center Award for Best New Technology Solution for QEval®. ([Etech awards](https://www.etechgs.com/company/awards-and-recognition))
+4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) — Calanthia attending.
 
 | Touch | Channel | Message |
 |---|---|---|
@@ -246,7 +251,8 @@
 **Outreach hooks:**
 
 1. **Mutual connection:** Alice 2nd degree (Dave Zimmerman; Alan Bowman); Calanthia 2nd degree (Aaron Anderson)
-2. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26).
+2. **Award (2024):** The Office Gurus won the CCW Excellence Awards Best of the Best Employee Experience Award and Honorable Mention for BPO of the Year. ([Announcement](https://theofficegurus.com/news/the-office-gurus-celebrates-success-at-the-ccw-excellence-awards/))
+3. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
 |---|---|---|
@@ -320,7 +326,8 @@
 **Outreach hooks:**
 
 1. **Mutual connection:** Alice 2nd degree (Dave Zimmerman)
-2. **Insight:** Published research in Feb 2026 on how AI raised the bar for human agents during the holiday season — AI handled 30%+ of interactions but customers still preferred humans for complex issues. ([Full report](https://liveops.com/whitepaper/liveops-2025-holiday-ai-customer-service-report/))
+2. **Award (2026):** Liveops won one Gold and three Silver 2026 Stevie Awards for Sales & Customer Service — Gold for Customer Service Training/Coaching Program of the Year, Silver for Outsourcing Provider of the Year, Innovation in Customer Service, and Best Customer Satisfaction Strategy. ([Press release](https://ipo.einnews.com/pr_news/887640783/liveops-earns-one-gold-and-three-2026-silver-stevie-awards))
+3. **Insight:** Published research in Feb 2026 on how AI raised the bar for human agents during the holiday season — AI handled 30%+ of interactions but customers still preferred humans for complex issues. ([Full report](https://liveops.com/whitepaper/liveops-2025-holiday-ai-customer-service-report/))
 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
@@ -418,6 +425,7 @@
 **Outreach hooks:**
 
 1. **Insight:** Promoted to COO at InteLogix. Their LogixAssist product won 'AI-based Customer Service Solution of the Year' at the 2025 AI Breakthrough Awards — 67-89% first-contact resolution increase, 40% training time reduction. ([Award announcement](https://intelogix.com/logixassist-named-ai-based-customer-service-solution-of-the-year/))
+2. **Award (2025):** InteLogix named Top 10 Global Information Security Team in the 2025 OnCon Icon Awards, alongside Cognizant and USAA. ([Press release](https://intelogix.com/news/intelogix-named-a-top-10-global-information-security-team-in-the-2025-oncon-icon-awards/))
 2. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -442,6 +450,7 @@
 **Outreach hooks:**
 
 1. **Insight:** Led launch of SupportNinja's 'Outsourcing 2.0' AI suite (NinjaAI QA, NinjaAI Notetaker, etc.) in March 2025 — NinjaAI QA reviews 100% of interactions vs the traditional 2-5%. ([Press release](https://www.supportninja.com/articles/support-ninja-announces-tech-enablement))
+2. **Award (2025):** SupportNinja named Outsource Partner of the Year – Business Services at the 2025 Excellence in Customer Service Awards. ([Announcement](https://www.supportninja.com/articles/supportninja-named-exceptional-customer-experience-outsource-partner))
 2. **Near event:** Based in Boynton Beach, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |

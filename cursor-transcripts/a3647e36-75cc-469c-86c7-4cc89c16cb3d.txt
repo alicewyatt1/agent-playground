@@ -19065,3 +19065,178 @@ print('Fixed')
   description: Fix Nitesh Kumar hook
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Add clickable links to all outreach hooks, fix remaining inaccuracies" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. Every outreach hook that has verifiable source material now has a clickable link. Here's a full summary of what was added or fixed:
+
+**Links added:**
+
+| Person | Hook | Link |
+|---|---|---|
+| Benjamin Alpert | GuruAssist AI platform | [theofficegurus.com/guruassist](https://theofficegurus.com/ai-driven-contact-center-solutions-automated-qa-agent-assist/) |
+| Matt Rocco | Etech events (CCW + Call Center Campus) | [etechgs.com/events](https://www.etechgs.com/company/events) |
+| Matt Rocco | Etech website | [etechgs.com](https://www.etechgs.com) |
+| David Kreiss | KM² Caribbean expansion | [km2solutions.com press release](https://km2solutions.com/resources/combined-growth/) |
+| Greg Alcorn | ApSeed nonprofit | [apseed.org](https://apseed.org) |
+| Bill Randag | Frost & Sullivan MindXchange East | [customercontactmindxchange.com/east](https://www.customercontactmindxchange.com/east/) |
+| Ali Karim | Frost & Sullivan + DATAMARK history | Both linked |
+| Jim Iyoob | Call Center Campus + CCW Las Vegas | [etechgs.com/events](https://www.etechgs.com/company/events) |
+| Liliana Lopez | Liveops 2025 Holiday AI Report + LiveNexus | Both linked |
+| Brian Flaherty | Mortgage AI Conference | [mortgageaiconference.com](https://www.mortgageaiconference.com/) |
+| Bill Trocano | Liveops Holiday AI research | [Liveops report](https://liveops.com/whitepaper/liveops-2025-holiday-ai-customer-service-report/) |
+| Nanette Harrell | Helpware Clutch Top 100 | [helpware.com/newsroom](https://www.helpware.com/newsroom/helpware-named-one-of-clutchs-top-100-fastest-growing-companies-for-2025) |
+| Amanda Jones | CBE Torch Award | [cbecompanies.com](https://www.cbecompanies.com/cbe-companies-receives-2025-bbb-torch-award-for-ethics/) |
+| Donny Jackson | Helpware newsroom | [helpware.com/newsroom](https://www.helpware.com/newsroom) |
+| John Yanez | LogixAssist AI Breakthrough Award | [intelogix.com](https://intelogix.com/logixassist-named-ai-based-customer-service-solution-of-the-year/) |
+| Ken Braatz | SupportNinja NinjaAI launch | [supportninja.com](https://www.supportninja.com/articles/support-ninja-announces-tech-enablement) |
+| Nitesh Kumar | Flatworld.ai | [flatworld.ai](https://www.flatworld.ai) |
+| Rob Porges | Tech in Mortgage podcast + MSuite | Both linked |
+| Youssef Hannat & James Nelson | Percepta leadership press release | [globenewswire.com](https://www.globenewswire.com/news-release/2026/02/03/3231075/...) |
+| Mark D'Angola | Buwelo website | [buwelo.com](https://www.buwelo.com) |
+| Aaron Brooks | InfoCision industries | [infocision.com/industries](https://infocision.com/industries/) |
+
+user:
+<user_query>
+ok can you search to see if any of these companies have won any other presitgious awards in 2026 and add that in as hooks with a link to a press release or article
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && grep "^## [0-9]" data/personalised-outreach1.md | sed 's/## [0-9]*\. //' | head -30
+  description: Get list of all 28 companies/people
+
+[Tool result] Shell
+
+assistant:
+[Tool call] user-perplexity-ask-perplexity_search
+  query: Etech Global Services award 2026
+  max_results: 3
+[Tool call] user-perplexity-ask-perplexity_search
+  query: KM2 Solutions award 2026
+  max_results: 3
+[Tool call] user-perplexity-ask-perplexity_search
+  query: Helpware award recognition 2026
+  max_results: 3
+[Tool call] user-perplexity-ask-perplexity_search
+  query: SupportNinja award 2026 recognition
+  max_results: 3
+[Tool call] user-perplexity-ask-perplexity_search
+  query: InteLogix award 2026
+  max_results: 3
+[Tool call] user-perplexity-ask-perplexity_search
+  query: The Office Gurus award 2026 recognition
+  max_results: 3
+[Tool call] user-perplexity-ask-perplexity_search
+  query: Liveops award 2026
+  max_results: 3
+[Tool call] user-perplexity-ask-perplexity_search
+  query: DATAMARK award recognition 2026
+  max_results: 3
+
+[Tool result] user-perplexity-ask-perplexity_search
+
+[Tool result] user-perplexity-ask-perplexity_search
+
+[Tool result] user-perplexity-ask-perplexity_search
+
+[Tool result] user-perplexity-ask-perplexity_search
+
+[Tool result] user-perplexity-ask-perplexity_search
+
+[Tool result] user-perplexity-ask-perplexity_search
+
+[Tool result] user-perplexity-ask-perplexity_search
+
+[Tool result] user-perplexity-ask-perplexity_search
+
+assistant:
+Excellent finds. Now let me apply all the new award hooks.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+content = open('data/personalised-outreach1.md').read()
+
+# Remove stray first line if present
+if not content.startswith('#'):
+    content = content[content.index('\n')+1:]
+
+# NEW AWARD HOOKS TO ADD
+
+# 1. Liveops — 2026 Stevie Awards (Gold + 3 Silver) — add to Bill Trocano and Liliana Lopez
+# Add after existing Liveops hooks
+
+liveops_award = "2. **Award (2026):** Liveops won one Gold and three Silver 2026 Stevie Awards for Sales & Customer Service — Gold for Customer Service Training/Coaching Program of the Year, Silver for Outsourcing Provider of the Year, Innovation in Customer Service, and Best Customer Satisfaction Strategy. ([Press release](https://ipo.einnews.com/pr_news/887640783/liveops-earns-one-gold-and-three-2026-silver-stevie-awards))"
+
+# Bill Trocano hooks
+content = content.replace(
+    "2. **Insight:** Published research in Feb 2026 on how AI raised the bar for human agents during the holiday season",
+    f"{liveops_award}\n3. **Insight:** Published research in Feb 2026 on how AI raised the bar for human agents during the holiday season"
+)
+
+# Liliana Lopez hooks — add the Stevie award too
+content = content.replace(
+    "1. **Speaking/event:** Led an AI Maturity Workshop at CCW Orlando (Jan 2026, past)",
+    f"1. **Speaking/event:** Led an AI Maturity Workshop at CCW Orlando (Jan 2026, past)"  # keep as is, add award below
+)
+content = content.replace(
+    "2. **Insight:** Shared thought leadership on sandboxing AI, real-time agent assist, and operationalizing AI through LiveNexus. ([LiveNexus](https://liveops.com/livenexus/))",
+    "2. **Insight:** Shared thought leadership on sandboxing AI, real-time agent assist, and operationalizing AI through LiveNexus. ([LiveNexus](https://liveops.com/livenexus/))\n3. **Award (2026):** Liveops won Gold + 3 Silver 2026 Stevie Awards — Gold for Customer Service Training/Coaching, Silver for Outsourcing Provider, Innovation in CX, Best CSAT Strategy. ([Press release](https://ipo.einnews.com/pr_news/887640783/liveops-earns-one-gold-and-three-2026-silver-stevie-awards))"
+)
+
+# 2. Etech — ICMI Global Contact Center Award 2025 for Best New Technology Solution (ETSLabs/QEval) — add to Matt Rocco and Jim Iyoob
+etech_award = "**Award (2025):** ETSLabs (Etech's innovation arm) won the 2025 ICMI Global Contact Center Award for Best New Technology Solution for QEval®. ([Etech awards page](https://www.etechgs.com/company/awards-and-recognition))"
+
+content = content.replace(
+    "3. **Insight:** Matt Rocco co-authored three books with Jim Iyoob on contact center excellence. Etech takes a people-first, AI-enabled approach. ([Etech website](https://www.etechgs.com))",
+    f"3. **Insight:** Matt Rocco co-authored three books with Jim Iyoob on contact center excellence.\n4. **Award (2025):** ETSLabs (Etech's innovation arm) won the 2025 ICMI Global Contact Center Award for Best New Technology Solution for QEval®. ([Etech awards](https://www.etechgs.com/company/awards-and-recognition))"
+)
+
+content = content.replace(
+    "2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson); Alice 2nd degree (Mark Escueta; Alon Waks; +3 others)\n3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) — Calanthia attending.",
+    "2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson); Alice 2nd degree (Mark Escueta; Alon Waks; +3 others)\n3. **Award (2025):** ETSLabs (Etech's innovation arm) won the 2025 ICMI Global Contact Center Award for Best New Technology Solution for QEval®. ([Etech awards](https://www.etechgs.com/company/awards-and-recognition))\n4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) — Calanthia attending."
+)
+
+# 3. KM2 — IAOP Global Outsourcing 100 for third consecutive year + All Star status — add to David Kreiss
+content = content.replace(
+    "2. **Insight:** Massive Caribbean expansion — 1,250 new jobs across Grenada and Saint Lucia, 6,500+ employees. ([Press release](https://km2solutions.com/resources/combined-growth/))\n3. **Near event:** Based in Boca Raton, Florida, United States — could attend CBAND Atlanta (Feb 26).",
+    "2. **Insight:** Massive Caribbean expansion — 1,250 new jobs across Grenada and Saint Lucia, 6,500+ employees. ([Press release](https://km2solutions.com/resources/combined-growth/))\n3. **Award (2025):** KM² named to IAOP's Global Outsourcing 100 for the third consecutive year, achieving All Star status for the second year running. ([2025 Year in Review](https://km2solutions.com/resources/infographic2025/))\n4. **Near event:** Based in Boca Raton, Florida, United States — could attend CBAND Atlanta (Feb 26)."
+)
+
+# 4. SupportNinja — 2025 Excellence in Customer Service Awards, Outsource Partner of the Year — add to Ken Braatz
+content = content.replace(
+    "1. **Insight:** Led launch of SupportNinja's 'Outsourcing 2.0' AI suite (NinjaAI QA, NinjaAI Notetaker, etc.) in March 2025 — NinjaAI QA reviews 100% of interactions vs the traditional 2-5%. ([Press release](https://www.supportninja.com/articles/support-ninja-announces-tech-enablement))",
+    "1. **Insight:** Led launch of SupportNinja's 'Outsourcing 2.0' AI suite (NinjaAI QA, NinjaAI Notetaker, etc.) in March 2025 — NinjaAI QA reviews 100% of interactions vs the traditional 2-5%. ([Press release](https://www.supportninja.com/articles/support-ninja-announces-tech-enablement))\n2. **Award (2025):** SupportNinja named Outsource Partner of the Year – Business Services at the 2025 Excellence in Customer Service Awards. ([Announcement](https://www.supportninja.com/articles/supportninja-named-exceptional-customer-experience-outsource-partner))"
+)
+
+# 5. InteLogix — Top 10 Global Information Security Team (OnCon Icon Awards 2025) — add to John Yanez
+content = content.replace(
+    "1. **Insight:** Promoted to COO at InteLogix. Their LogixAssist product won 'AI-based Customer Service Solution of the Year' at the 2025 AI Breakthrough Awards — 67-89% first-contact resolution increase, 40% training time reduction. ([Award announcement](https://intelogix.com/logixassist-named-ai-based-customer-service-solution-of-the-year/))",
+    "1. **Insight:** Promoted to COO at InteLogix. Their LogixAssist product won 'AI-based Customer Service Solution of the Year' at the 2025 AI Breakthrough Awards — 67-89% first-contact resolution increase, 40% training time reduction. ([Award announcement](https://intelogix.com/logixassist-named-ai-based-customer-service-solution-of-the-year/))\n2. **Award (2025):** InteLogix named Top 10 Global Information Security Team in the 2025 OnCon Icon Awards, alongside Cognizant and USAA. ([Press release](https://intelogix.com/news/intelogix-named-a-top-10-global-information-security-team-in-the-2025-oncon-icon-awards/))"
+)
+
+# 6. The Office Gurus — CCW Excellence Awards 2024: Best of the Best Employee Experience Award + BPO of the Year honorable mention — add to Benjamin Alpert and Dominic Leide
+tog_award = "**Award (2024):** The Office Gurus won the CCW Excellence Awards Best of the Best Employee Experience Award and received an Honorable Mention for BPO of the Year. ([Announcement](https://theofficegurus.com/news/the-office-gurus-celebrates-success-at-the-ccw-excellence-awards/))"
+
+content = content.replace(
+    "3. **Insight:** The Office Gurus launched GuruAssist — AI-powered QA and real-time agent assist platform. ([Product page](https://theofficegurus.com/ai-driven-contact-center-solutions-automated-qa-agent-assist/))\n4. **Near event:** Based in Bradenton, Florida, United States — could attend CBAND Atlanta (Feb 26).",
+    f"3. **Insight:** The Office Gurus launched GuruAssist — AI-powered QA and real-time agent assist platform. ([Product page](https://theofficegurus.com/ai-driven-contact-center-solutions-automated-qa-agent-assist/))\n4. **Award (2024):** The Office Gurus won the CCW Excellence Awards Best of the Best Employee Experience Award and Honorable Mention for BPO of the Year. ([Announcement](https://theofficegurus.com/news/the-office-gurus-celebrates-success-at-the-ccw-excellence-awards/))\n5. **Near event:** Based in Bradenton, Florida, United States — could attend CBAND Atlanta (Feb 26)."
+)
+
+# Dominic Leide
+content = content.replace(
+    "1. **Mutual connection:** Alice 2nd degree (Dave Zimmerman; Alan Bowman); Calanthia 2nd degree (Aaron Anderson)\n2. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26).",
+    "1. **Mutual connection:** Alice 2nd degree (Dave Zimmerman; Alan Bowman); Calanthia 2nd degree (Aaron Anderson)\n2. **Award (2024):** The Office Gurus won the CCW Excellence Awards Best of the Best Employee Experience Award and Honorable Mention for BPO of the Year. ([Announcement](https://theofficegurus.com/news/the-office-gurus-celebrates-success-at-the-ccw-excellence-awards/))\n3. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26)."
+)
+
+open('data/personalised-outreach1.md', 'w').write(content)
+print("Done — added award hooks for Liveops, Etech, KM2, SupportNinja, InteLogix, The Office Gurus")
+PYEOF
+  description: Add new award hooks to outreach doc
+
+[Tool result] Shell
