@@ -26,33 +26,9 @@
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Benjamin, I've been following your work at The Office Gurus. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Benjamin,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Benjamin, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Benjamin, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 2. Matt Rocco
 
@@ -77,32 +53,8 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Matt, I've been following your work at Etech Global Services. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Matt,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
-
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Matt, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 ---
 ## 3. David Kreiss
 
@@ -126,33 +78,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi David, I've been following your work at KM² Solutions. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi David,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi David, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi David, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 4. Greg Alcorn
 
@@ -175,33 +103,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Greg, I've been following your work at Global Contact Service International. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Greg,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Greg, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Greg, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 5. Bill Randag
 
@@ -224,32 +128,8 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Bill, I've been following your work at DATAMARK. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Bill,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
-
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Bill, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 ---
 ## 6. Ali Karim
 
@@ -271,32 +151,8 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Ali, I've been following your work at DATAMARK. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the Frost & Sullivan MindXchange in Fort Lauderdale in April? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Ali,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the Frost & Sullivan MindXchange in Fort Lauderdale in April meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
-
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the Frost & Sullivan MindXchange in Fort Lauderdale in April? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Ali, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the Frost & Sullivan MindXchange in Fort Lauderdale in April meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 ---
 ## 7. Liliana Lopez
 
@@ -320,29 +176,8 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Liliana, I've been following your work at Liveops. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Liliana,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to automate call center operations at production scale.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking for:
-- Enterprise-grade AI solutions designed and deployed by dedicated industry experts — no internal AI team required
-- Multi-agent orchestration across voice and text, inbound and outbound use cases
-- Flexible deployment (SaaS, private cloud, or on-prem) aligned to security and data residency requirements
-
-I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
-
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Liliana, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to automate call center operations at production scale. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking for: - Enterprise-grade AI solutions designed and deployed by dedicated industry experts — no internal AI team required - Multi-agent orchestration across voice and text, inbound and outbound use cases - Flexible deployment (SaaS, private cloud, or on-prem) aligned to security and data residency requirements I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 ---
 ## 8. Nanette Harrell
 
@@ -364,33 +199,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Nanette, I've been following your work at Helpware. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Nanette,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Nanette, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Nanette, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 9. Jim Iyoob
 
@@ -416,32 +227,8 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Jim, I've been following your work at Etech Global Services. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Jim,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
-
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Jim, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 ---
 ## 10. Dominic Leide
 
@@ -463,33 +250,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Dominic, I've been following your work at The Office Gurus. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Dominic,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Dominic, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Dominic, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 11. Kenneth Loggins
 
@@ -512,33 +275,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Kenneth, I've been following your work at Focus Services. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Kenneth,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Kenneth, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Kenneth, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 12. Brian Flaherty
 
@@ -561,33 +300,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Brian, I've been following your work at Global Strategic. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Brian,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Brian, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Brian, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 13. Bill Trocano
 
@@ -611,32 +326,8 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Bill, I've been following your work at Liveops. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Bill,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
-
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Bill, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 ---
 ## 14. Pablo Paz Hernandez
 
@@ -659,33 +350,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Pablo, I've been following your work at First Contact BPO. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Pablo,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Pablo, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Pablo, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 15. Amanda Jones
 
@@ -707,33 +374,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Amanda, I've been following your work at CBE Companies. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Amanda,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Amanda, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Amanda, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 16. Donny Jackson
 
@@ -755,33 +398,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Donny, I've been following your work at Helpware. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Donny,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Donny, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Donny, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 17. John Yanez
 
@@ -804,33 +423,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi John, I've been following your work at InteLogix. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi John,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi John, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi John, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 18. Ken Braatz
 
@@ -853,30 +448,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Ken, I've been following your work at SupportNinja. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Ken,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to automate call center operations at production scale.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking for:
-- Enterprise-grade AI solutions designed and deployed by dedicated industry experts — no internal AI team required
-- Multi-agent orchestration across voice and text, inbound and outbound use cases
-- Flexible deployment (SaaS, private cloud, or on-prem) aligned to security and data residency requirements
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Ken, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to automate call center operations at production scale. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking for: - Enterprise-grade AI solutions designed and deployed by dedicated industry experts — no internal AI team required - Multi-agent orchestration across voice and text, inbound and outbound use cases - Flexible deployment (SaaS, private cloud, or on-prem) aligned to security and data residency requirements I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Ken, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 19. Youssef Hannat
 
@@ -898,33 +472,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Youssef, I've been following your work at Percepta. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Youssef,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Youssef, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Youssef, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 20. James Nelson
 
@@ -946,32 +496,8 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi James, I've been following your work at Percepta. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi James,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
-
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi James, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 ---
 ## 21. Bryan Overcash
 
@@ -994,33 +520,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Bryan, I've been following your work at Global Contact Service International. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Bryan,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.
-
-The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Run inbound and outbound calls end-to-end
-- Scale operations 24/7 without additional headcount
-- Tie performance directly to revenue expansion and improved margins
-- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Bryan, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations. The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Run inbound and outbound calls end-to-end - Scale operations 24/7 without additional headcount - Tie performance directly to revenue expansion and improved margins - Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Bryan, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 22. Erika Garcia
 
@@ -1043,33 +545,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Erika, I've been following your work at Global Strategic. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Erika,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Erika, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Erika, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 23. Keith Hansen
 
@@ -1090,33 +568,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Keith, I've been following your work at KM² Solutions. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Keith,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Keith, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Keith, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 24. Mark D'Angola
 
@@ -1138,33 +592,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Mark, I've been following your work at Buwelo. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Mark,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Mark, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Mark, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 25. Nitesh Kumar
 
@@ -1186,33 +616,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Nitesh, I've been following your work at Flatworld Solutions. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Nitesh,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Nitesh, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Nitesh, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 26. Rob Porges
 
@@ -1234,33 +640,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Rob, I've been following your work at Flatworld Solutions. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Rob,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Rob, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Rob, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 27. Cathy Sexton
 
@@ -1282,33 +664,9 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Cathy, I've been following your work at Harte Hanks. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Cathy,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.
-
-The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:
-- Meaningful cost reduction without compromising service quality
-- Elastic agent capacity that doesn't churn or require ramp time
-- Fully automated voice AI agents running 24/7
-- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more
-
-I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Cathy, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: - Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 - Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 | **4** | Email | Hi Cathy, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice |
-
 ---
 ## 28. Aaron Brooks
 
@@ -1330,27 +688,6 @@ Calanthia |
 | Touch | Channel | Message |
 |---|---|---|
 | **1** | LinkedIn connect | Hi Aaron, I've been following your work at InfoCision. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading! |
-| **2** | LinkedIn message | [Personalise here based on hooks above.]
-
-It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI.
-
-I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
-
-If you're at the event, would you be interested in learning more? |
-| **3** | Email | Hi Aaron,
-
-[Personalise here based on hooks above.]
-
-I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to automate call center operations at production scale.
-
-Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking for:
-- Enterprise-grade AI solutions designed and deployed by dedicated industry experts — no internal AI team required
-- Multi-agent orchestration across voice and text, inbound and outbound use cases
-- Flexible deployment (SaaS, private cloud, or on-prem) aligned to security and data residency requirements
-
-I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there?
-
-Warm regards,
-Calanthia |
-
+| **2** | LinkedIn message | [Personalise here based on hooks above.] It's great to connect. I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI. I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. If you're at the event, would you be interested in learning more? | |
+| **3** | Email | Hi Aaron, [Personalise here based on hooks above.] I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna AI to automate call center operations at production scale. Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking for: - Enterprise-grade AI solutions designed and deployed by dedicated industry experts — no internal AI team required - Multi-agent orchestration across voice and text, inbound and outbound use cases - Flexible deployment (SaaS, private cloud, or on-prem) aligned to security and data residency requirements I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there? Warm regards, Calanthia | |
 ---
