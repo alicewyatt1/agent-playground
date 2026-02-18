@@ -16466,3 +16466,29 @@ Let me verify it looks right.
   limit: 45
 
 [Tool result] Read
+
+assistant:
+That's clean. Matt Rocco's email now shows: "Hi Matt," → "[Insert personalisation hook]" → full Executive template → Enterprise Connect CTA → "Warm regards, Calanthia". All clearly formatted and readable.
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md "/Users/alicewyatt/Downloads/Dyna-Outreach-Final-Feb18.md" && cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Restructure emails: full template with first name, personalisation slot, and CTA visible per prospect" && git push && echo "Done"
+  description: Copy, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Dyna-Outreach-Final-Feb18.md`** updated. Each prospect's email now clearly shows:
+
+```
+Hi [First Name],
+
+[Insert personalisation hook]
+
+[Full persona email template]
+
+[Specific event CTA for their location]
+
+Warm regards,
+Calanthia
+```
+
+No more content hidden inside table cells. The email is a standalone formatted block that Calanthia can read, personalise the hook, and send.
