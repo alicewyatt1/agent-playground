@@ -16148,3 +16148,66 @@ I'll be at Enterprise Connect in Las Vegas next month. Would you be interested i
 | **3** | Email | Jim — given your work at ETS Labs, I wanted to reach out directly rather than go through the usual channels. At Dyna, we've built fully automated voice AI that manages entire calls independently — greeting to resolution — across inbound and outbound. Not copilot, not agent-assist. Full execution. We're already deployed at production scale with Teleperformance, across telecom, lending, insurance, travel, and restaurant verticals. Multi-agent orchestration, multi-language, enterprise-grade reliability. I imagine you've looked at this space closely. I'd be curious to hear where you think the real gaps are — and whether what we've built addresses any of them. I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there? |
 
 [Tool result] StrReplace
+
+assistant:
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md /Users/alicewyatt/Downloads/Personalised-Outreach.md && cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Custom messaging for Jim Iyoob: peer-to-peer AI technical approach with note for Calanthia" && git push && echo "Done"
+  description: Copy, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach.md`** updated. Jim Iyoob's section now has:
+
+1. **A note for Calanthia** explaining why he gets a different approach — he runs an AI lab, keynotes on AI, he's technical, treat as peer not prospect
+2. **Custom Touch 2** — references ETS Labs and his keynote, asks for his perspective on production gaps, doesn't educate or pitch
+3. **Custom Touch 3** — leads with "given your work at ETS Labs, I wanted to reach out directly", describes what Dyna built technically, asks where he sees the gaps, Enterprise Connect CTA
+
+user:
+<user_query>
+Cool, and can you move him down the document so that it's not confusing for Calathea that she's supposed to be following like a flow and this one's totally different. Maybe move him to position 9 or something. Don't ask for his perspective on something, just still be consultative, Cananthi still wants to make him see if he's interested in our product. And don't use BDR language, like, I wanted to reach out directly. 
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+content = open('data/personalised-outreach1.md', 'r').read()
+import re
+
+# Split into header + sections
+parts = re.split(r'(?=## \d+\.)', content)
+header = parts[0]
+sections = parts[1:]
+
+# Find Jim Iyoob (currently #1) and remove him
+jim_section = None
+remaining = []
+for s in sections:
+    if s.startswith("## 1. Jim Iyoob"):
+        jim_section = s
+    else:
+        remaining.append(s)
+
+# Insert Jim at position 9 (index 8)
+remaining.insert(8, jim_section)
+
+# Renumber all sections
+output = [header]
+for i, s in enumerate(remaining):
+    renumbered = re.sub(r'^## \d+\.', f'## {i+1}.', s)
+    output.append(renumbered)
+
+content = ''.join(output)
+
+# Fix the messaging - remove "reach out directly" and "ask for perspective"
+content = content.replace(
+    "Jim — given your work at ETS Labs, I wanted to reach out directly rather than go through the usual channels. At Dyna, we've built fully automated voice AI that manages entire calls independently — greeting to resolution — across inbound and outbound. Not copilot, not agent-assist. Full execution. We're already deployed at production scale with Teleperformance, across telecom, lending, insurance, travel, and restaurant verticals. Multi-agent orchestration, multi-language, enterprise-grade reliability. I imagine you've looked at this space closely. I'd be curious to hear where you think the real gaps are — and whether what we've built addresses any of them. I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there?",
+    "Jim — given your work at ETS Labs, I thought this would be relevant. At Dyna, we've built fully automated voice AI that manages entire calls independently — greeting to resolution — across inbound and outbound. Not copilot, not agent-assist. Full execution. We're already deployed at production scale with Teleperformance, across telecom, lending, insurance, travel, and restaurant verticals. Multi-agent orchestration, multi-language, enterprise-grade reliability. I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there?"
+)
+
+open('data/personalised-outreach1.md', 'w').write(content)
+print("Done — Jim moved to position 9, messaging cleaned up")
+PYEOF
+  description: Move Jim to position 9, fix messaging
+
+[Tool result] Shell
