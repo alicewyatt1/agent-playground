@@ -8,8 +8,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | The Office Gurus |
 | **Title** | Vice President, Strategic Development |
 | **Persona** | Operations & Finance Leader |
@@ -34,8 +32,6 @@
 ---
 ## 2. Matt Rocco
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Etech Global Services |
@@ -64,8 +60,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | KM² Solutions |
 | **Title** | Founder, President, and CEO |
 | **Persona** | Executive Sponsor |
@@ -89,8 +83,6 @@
 ---
 ## 4. Greg Alcorn
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Global Contact Service International |
@@ -118,8 +110,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | DATAMARK, Inc. |
 | **Title** | President |
 | **Persona** | Executive Sponsor |
@@ -145,8 +135,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | DATAMARK, Inc. |
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
@@ -169,8 +157,6 @@
 ---
 ## 7. Liliana Lopez
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Liveops |
@@ -198,8 +184,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | Helpware |
 | **Title** | President |
 | **Persona** | Executive Sponsor |
@@ -223,8 +207,6 @@
 ---
 ## 9. Jim Iyoob
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Etech Global Services |
@@ -254,8 +236,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | The Office Gurus |
 | **Title** | President |
 | **Persona** | Executive Sponsor |
@@ -278,8 +258,6 @@
 ---
 ## 11. Kenneth Loggins
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Focus Services |
@@ -307,8 +285,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | Global Strategic |
 | **Title** | Chief Executive Officer |
 | **Persona** | Executive Sponsor |
@@ -332,8 +308,6 @@
 ---
 ## 13. Bill Trocano
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Liveops |
@@ -361,8 +335,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | First Contact BPO |
 | **Title** | Co-Founder & CEO |
 | **Persona** | Executive Sponsor |
@@ -386,8 +358,6 @@
 ---
 ## 15. Amanda Jones
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | CBE Companies |
@@ -414,8 +384,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | Helpware |
 | **Title** | Regional Vice President (US) |
 | **Persona** | Operations & Finance Leader |
@@ -438,8 +406,6 @@
 ---
 ## 17. John Yanez
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Intelogix |
@@ -466,8 +432,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | SupportNinja |
 | **Title** | Chief Technology Officer |
 | **Persona** | Technology Leader |
@@ -490,8 +454,6 @@
 ---
 ## 19. Youssef Hannat
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Percepta |
@@ -518,8 +480,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | Percepta |
 | **Title** | Executive Director of Operations |
 | **Persona** | Operations & Finance Leader |
@@ -542,8 +502,6 @@
 ---
 ## 21. Bryan Overcash
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Global Contact Service International |
@@ -571,8 +529,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | Global Strategic |
 | **Title** | Chief Operating Officer |
 | **Persona** | Operations & Finance Leader |
@@ -598,8 +554,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | KM² Solutions |
 | **Title** | Vice President of Project Management |
 | **Persona** | Operations & Finance Leader |
@@ -621,8 +575,6 @@
 ---
 ## 24. Mark D'Angola
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Buwelo |
@@ -649,8 +601,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | Flatworld Solutions |
 | **Title** | Vice President |
 | **Persona** | Operations & Finance Leader |
@@ -673,8 +623,6 @@
 ---
 ## 26. Rob Porges
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | Flatworld Solutions |
@@ -701,8 +649,6 @@
 
 | | |
 |---|---|
-| | |
-|---|---|
 | **Company** | Harte Hanks |
 | **Title** | Senior Vice President, Financial Services |
 | **Persona** | Operations & Finance Leader |
@@ -725,8 +671,6 @@
 ---
 ## 28. Aaron Brooks
 
-| | |
-|---|---|
 | | |
 |---|---|
 | **Company** | InfoCision Management Corporation |
