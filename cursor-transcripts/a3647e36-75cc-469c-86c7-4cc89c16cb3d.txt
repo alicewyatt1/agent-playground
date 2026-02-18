@@ -21192,3 +21192,77 @@ print(t3.group(1)[:300])
   description: Verify formatting of Touch 3
 
 [Tool result] Shell
+
+assistant:
+Good — `<br><br>` between every paragraph. Let me commit and push.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Add HTML br tags to Touch 3 emails for paragraph spacing in Google Docs" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. Each Touch 3 email now has `<br><br>` between paragraphs and `<br>` between bullet points, so when Google Docs renders it the spacing will match the format you showed:
+
+- "Hi [Name]," — blank line
+- "[Personalise here...]" — blank line
+- Intro paragraph — blank line
+- Body paragraph — blank line
+- Bullet list — blank line
+- CTA — blank line
+- "Warm regards, Calanthia"
+
+Re-upload the `.md` to Google Docs to see the updated formatting.
+
+user:
+<user_query>
+ok can you do the same for the touch 4 emails too?
+</user_query>
+
+assistant:
+Touch 4 is a short email — I'll just add `<br><br>` between the paragraphs.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+content = open('data/personalised-outreach1.md').read()
+
+atlanta_names = {
+    "Benjamin Alpert": "Benjamin", "David Kreiss": "David", "Greg Alcorn": "Greg",
+    "Nanette Harrell": "Nanette", "Dominic Leide": "Dominic", "Kenneth Loggins": "Kenneth",
+    "Brian Flaherty": "Brian", "Pablo Paz Hernandez": "Pablo", "Amanda Jones": "Amanda",
+    "Donny Jackson": "Donny", "John Yanez": "John", "Ken Braatz": "Ken",
+    "Youssef Hannat": "Youssef", "Bryan Overcash": "Bryan", "Erika Garcia": "Erika",
+    "Keith Hansen": "Keith", "Mark D'Angola": "Mark", "Nitesh Kumar": "Nitesh",
+    "Rob Porges": "Rob", "Cathy Sexton": "Cathy",
+}
+
+lines = content.split('\n')
+output = []
+current_name = None
+updated = 0
+
+for line in lines:
+    m = re.match(r'^## \d+\. (.+)', line)
+    if m:
+        current_name = m.group(1).strip()
+
+    if current_name in atlanta_names and line.startswith('| **4** | Email |'):
+        first_name = atlanta_names[current_name]
+        t4 = (f"Hi {first_name},<br><br>"
+              f"I'm looking forward to getting out of the New York cold and spending a few days in Atlanta!<br><br>"
+              f"Will you be at the CCNG networking event on Thursday?<br><br>"
+              f"If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call.<br><br>"
+              f"Thank you!<br>Alice")
+        output.append(f'| **4** | Email | {t4} |')
+        updated += 1
+    else:
+        output.append(line)
+
+result = '\n'.join(output)
+open('data/personalised-outreach1.md', 'w').write(result)
+print(f"Updated {updated} Touch 4 emails")
+PYEOF
+  description: Add br tags to Touch 4 emails
+
+[Tool result] Shell
