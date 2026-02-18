@@ -21361,3 +21361,49 @@ PYEOF
   description: Add br tags to Touch 2 messages
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Add br tags to Touch 2 LinkedIn messages for paragraph spacing" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. Touch 2 now renders with proper spacing:
+
+> [Personalise here based on hooks above.] It's great to connect.
+>
+> I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.
+>
+> I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents...
+>
+> If you're at the event, would you be interested in learning more?
+
+With the correct event name swapped in for each person.
+
+user:
+<user_query>
+ok now I need you to add this message to every touch 3 email:
+
+Hi [first name], [If LinkedIn message already sent: ‘To add more context to my LinkedIn message..' If not, personalise based on hooks above.] 
+
+instead of what it currently says which is personalise based on hooks above.
+
+repeat back my request to me 
+</user_query>
+
+assistant:
+You want to replace the current `[Personalise here based on hooks above.]` placeholder at the top of every Touch 3 email with:
+
+**`[If LinkedIn message already sent: 'To add more context to my LinkedIn message..' If not, personalise based on hooks above.]`**
+
+So each Touch 3 will start:
+
+> Hi [First Name],
+>
+> [If LinkedIn message already sent: 'To add more context to my LinkedIn message..' If not, personalise based on hooks above.]
+>
+> I've spent the last decade...
+
+The first name is already in the email. Just the placeholder text changes. Is that right?
