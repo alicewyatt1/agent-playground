@@ -44,7 +44,7 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. Jim Iyoob keynoting Call Center Campus Symposium on "Leadership Readiness in the Age of AI."
+1. **Speaking/event:** Etech confirmed at CCW Las Vegas (Jun 22-25, Booth #1404) with workshop on turning CX challenges into growth using AI + analytics. Jim Iyoob keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." ([Etech events page](https://www.etechgs.com/company/events))
 2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi)
 3. **Insight:** CEO of Etech Global Services. Etech is confirmed at CCW Las Vegas 2026 (Jun 22-25, Booth #1404) with a workshop. Jim Iyoob (Etech) is a ..
 4. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
@@ -70,8 +70,8 @@
 
 **Outreach hooks:**
 
-1. **Mutual connection:** Calanthia 1st degree; Calanthia 2nd degree (Karla M. Cosgalla)
-2. **Insight:** Massive Caribbean expansion — 1,250 new jobs across Grenada and Saint Lucia. New 8,000 sq ft Grenada facility (800 workforce), second Grenada site adding 650 jobs. KM² now has 6,500+ employees across ...
+1. **Mutual connection:** Calanthia 2nd degree (Karla M. Cosgalla)
+2. **Insight:** Massive Caribbean expansion — 1,250 new jobs across Grenada and Saint Lucia, 6,500+ employees. ([Press release](https://km2solutions.com/resources/combined-growth/))
 3. **Near event:** Based in Boca Raton, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -95,8 +95,8 @@
 
 **Outreach hooks:**
 
-1. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Mark Escueta); Calanthia 2nd degree (Ian Harriman; Aaron Anderson)
-2. **Insight:** Founded ApSeed, a nonprofit providing free pre-K tablets to 25,000+ disadvantaged children across NC, SC, NYC, and Africa — 131% literacy improvement in one school district. Former NC State Board of E...
+1. **Mutual connection:** Alice 2nd degree (Mark Escueta); Calanthia 2nd degree (Ian Harriman; Aaron Anderson)
+2. **Insight:** Founded ApSeed, a nonprofit providing free pre-K tablets to 25,000+ children across NC, SC, NYC, and Africa — improving kindergarten readiness by 131% in some districts. ([ApSeed website](https://apseed.org))
 3. **Near event:** Based in Salisbury, North Carolina, USA — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -120,8 +120,8 @@
 
 **Outreach hooks:**
 
-1. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Brandon Pfluger, J.D.; Gabriel Pike; +1 other); Calanthia 2nd degree (Aaron Anderson)
-2. **Insight:** President of DATAMARK. Company is a featured sponsor at both Frost & Sullivan MindXchange East (Fort Lauderdale, Apr 12-15) and West (Tucson, Oct 18-21) with multiple speakers. DATAMARK is one of the ...
+1. **Mutual connection:** Alice 2nd degree (Brandon Pfluger, J.D.; Gabriel Pike); Calanthia 2nd degree (Aaron Anderson)
+2. **Insight:** President of DATAMARK. Company is a featured sponsor at both Frost & Sullivan MindXchange East (Fort Lauderdale, Apr 12-15) ([event](https://www.customercontactmindxchange.com/east/)) and West (Tucson, Oct 18-21) with multiple speakers.
 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
@@ -145,7 +145,7 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** CONFIRMED SPEAKER at Frost & Sullivan Customer Contact MindXchange East (Fort Lauderdale, Apr 12-15): presenting 'AI That Works: Inside the Customer and Employee Experience' case history + facilitatin.
+1. **Speaking/event:** CONFIRMED SPEAKER at Frost & Sullivan Customer Contact MindXchange East (Fort Lauderdale, Apr 12-15). DATAMARK's track record at this event: ([DATAMARK blog](https://www.datamark.net/datamark-will-be-at-customer-contact-east/)) | Event page: [customercontactmindxchange.com/east](https://www.customercontactmindxchange.com/east/)
 2. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
@@ -194,7 +194,7 @@
 
 **Outreach hooks:**
 
-2. **Insight:** Helpware named one of Clutch's Top 100 Fastest-Growing Companies for 2025. Company expanded to Poland, Albania, Puerto Rico, Guam, and Uganda. Acquired Unicsoft and launched Helpware Tech division. No...
+2. **Insight:** Helpware named one of Clutch's Top 100 Fastest-Growing Companies for 2025. Expanded to Poland, Albania, Puerto Rico, Guam, and Uganda. ([Press release](https://www.helpware.com/newsroom/helpware-named-one-of-clutchs-top-100-fastest-growing-companies-for-2025))
 3. **Near event:** Based in Asheville, North Carolina, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -220,7 +220,7 @@
 
 **Outreach hooks:**
 
-1. **Speaking/event:** CONFIRMED SPEAKER at Conversational AI & Contact Center Innovation Summit (Virtual, Apr 9). Also keynoting Call Center Campus Symposium (May 17-20) on "Prickly Truths: Leadership Readiness in the Age of AI." Also leading CCW Las Vegas workshop (Jun 23) on turning CX challenges into growth using AI, analytics, and human intelligence.
+1. **Speaking/event:** Keynoting Call Center Campus Symposium (May 17-20, Arizona) on "Prickly Truths: Leadership Readiness in the Age of AI." Also leading CCW Las Vegas workshop (Jun 23). ([Etech events page](https://www.etechgs.com/company/events))
 2. **Mutual connection:** Calanthia 2nd degree (Ian Harriman; Tzvika Agassi; Omair T; Aaron Anderson); Alice 2nd degree (Mark Escueta; Alon Waks; +3 others)
 3. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) — Calanthia attending.
 
@@ -245,7 +245,7 @@
 
 **Outreach hooks:**
 
-1. **Mutual connection:** Calanthia 1st degree; Alice 2nd degree (Dave Zimmerman; Alan Bowman); Calanthia 2nd degree (Aaron Anderson)
+1. **Mutual connection:** Alice 2nd degree (Dave Zimmerman; Alan Bowman); Calanthia 2nd degree (Aaron Anderson)
 2. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -269,7 +269,7 @@
 
 **Outreach hooks:**
 
-1. **Mutual connection:** Calanthia 1st degree; Calanthia 2nd degree (Aaron Anderson)
+1. **Mutual connection:** Calanthia 2nd degree (Aaron Anderson)
 2. **Insight:** Gave reporters a tour during the grand opening of a new Focus Services call center in North Carolina (former Concentrix facility, 350 seats). Focus Services is expanding to South Africa. The NC expans...
 3. **Near event:** Based in Jacksonville, North Carolina, United States — could attend CBAND Atlanta (Feb 26).
 
@@ -417,7 +417,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** Promoted to COO at InteLogix. Their LogixAssist product won 'AI-based Customer Service Solution of the Year' at the 2025 AI Breakthrough Awards — 67-89% first-contact resolution increase, 40% training...
+1. **Insight:** Promoted to COO at InteLogix. Their LogixAssist product won 'AI-based Customer Service Solution of the Year' at the 2025 AI Breakthrough Awards — 67-89% first-contact resolution increase, 40% training time reduction. ([Award announcement](https://intelogix.com/logixassist-named-ai-based-customer-service-solution-of-the-year/))
 2. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -441,7 +441,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** Led the launch of SupportNinja's 'Outsourcing 2.0' AI suite (NinjaAI) in March 2025 — includes NinjaAI QA that reviews 100% of interactions vs the traditional 2-5%. Authored content on AI-powered QA. ...
+1. **Insight:** Led launch of SupportNinja's 'Outsourcing 2.0' AI suite (NinjaAI QA, NinjaAI Notetaker, etc.) in March 2025 — NinjaAI QA reviews 100% of interactions vs the traditional 2-5%. ([Press release](https://www.supportninja.com/articles/support-ninja-announces-tech-enablement))
 2. **Near event:** Based in Boynton Beach, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -465,7 +465,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** Percepta just named Thomas Monaghan as new President (Feb 2026), replacing Karen Gurganious. New leadership = potential new priorities. Percepta is a TTEC/Ford JV with ~4,000 employees across 13 count...
+1. **Insight:** Percepta named Thomas Monaghan as new President (Feb 2026), replacing Karen Gurganious. TTEC/Ford JV with ~4,000 employees across 13 countries. ([Press release](https://www.globenewswire.com/news-release/2026/02/03/3231075/0/en/Percepta-Announces-Leadership-Transition-as-President-Karen-Gurganious-Steps-Down-TTEC-Executive-Thomas-Monaghan-Named-Successor.html))
 2. **Near event:** Based in Nashville, Tennessee, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -489,7 +489,7 @@
 
 **Outreach hooks:**
 
-1. **Insight:** Percepta just named Thomas Monaghan as new President (Feb 2026). New leadership = potential new priorities. Previously COO at District Photo Inc.
+1. **Insight:** Percepta named Thomas Monaghan as new President (Feb 2026). New leadership = potential new priorities. ([Press release](https://www.globenewswire.com/news-release/2026/02/03/3231075/0/en/Percepta-Announces-Leadership-Transition-as-President-Karen-Gurganious-Steps-Down-TTEC-Executive-Thomas-Monaghan-Named-Successor.html))
 2. **Near event:** Enterprise Connect (Mar 10-12, Las Vegas) as conversation starter.
 
 | Touch | Channel | Message |
