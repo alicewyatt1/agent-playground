@@ -678,7 +678,7 @@
 | **Title** | Senior Vice President, Financial Services |
 | **Persona** | Operations & Finance Leader |
 | **Location** | Salisbury, NC |
-| **Relevant industries served (case studies)** | Industry agnostic |
+| **Relevant industries served (case studies)** | — |
 | **Delivery** | Mixed delivery (onshore, offshore) |
 | **LinkedIn** | https://www.linkedin.com/in/cathy-sexton-5b119b2/ |
 | **Email** | cathy.sexton@hartehanks.com |

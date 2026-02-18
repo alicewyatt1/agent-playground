@@ -21793,3 +21793,39 @@ assistant:
   description: Verify output
 
 [Tool result] Shell
+
+assistant:
+Clean — new row sits between Location and Delivery, table format intact. Let me commit and export.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Add Relevant industries served (case studies) row to all 28 context cards" && git push && cp data/personalised-outreach1.md /Users/alicewyatt/Downloads/Personalised-Outreach-Final.md && echo "Done"
+  description: Commit, push, export
+
+[Tool result] Shell
+
+assistant:
+Done — **`~/Downloads/Personalised-Outreach-Final.md`** updated. The new row is in each context card:
+
+| **Relevant industries served (case studies)** | Telecom, Energy & Utilities, Hospitality & Travel, Lending |
+
+A few notable results:
+- **Percepta, Buwelo, SupportNinja, Helpware, First Contact BPO** → `—` (no match to target verticals)
+- **Global Strategic** → `Lending` (mortgage/real estate focused)
+- **InfoCision** → `Telecom, Energy & Utilities, Restaurant/QSR, Lending` (explicitly serves restaurants)
+- **Harte Hanks** → `Industry agnostic`
+
+user:
+<user_query>
+ok can you look at Harte Hans' website and actually check which of those verticals it does serve
+</user_query>
+
+assistant:
+[Tool call] WebFetch
+  url: https://www.hartehanks.com/industries/
+
+[Tool result] WebFetch
+
+assistant:
+[Tool call] WebFetch
+  url: https://www.hartehanks.com/
+
+[Tool result] WebFetch
