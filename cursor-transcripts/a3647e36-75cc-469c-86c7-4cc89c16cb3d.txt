@@ -21002,3 +21002,193 @@ Done. The file now has:
   - `| **4** | Email | ... |` (Atlanta only)
 
 No content breaks out of the table. Should render cleanly in Google Docs.
+
+user:
+[Image]
+<image_files>
+The following images were provdied by the user and saved to the workspace for future use:
+1. /Users/alicewyatt/.cursor/projects/Users-alicewyatt-repos-agent-playground/assets/image-25b8fe68-22f8-41a4-98e2-46e4fc22065d.png
+
+These images can be copied for use in other locations.
+</image_files>
+<user_query>
+
+it still has a blank row at the top. can you see that? why is that and can you fix it
+</user_query>
+
+assistant:
+Yes — that blank row is the `| | |` header itself rendering as an empty row in Google Docs. It's necessary for markdown tables to have a header row, but the values in it are blank so it shows as empty.
+
+The fix is to give it actual header text — "Field" and "Detail" — or just remove it entirely and use a different markdown table format where the first data row acts as the header.
+
+The cleanest fix: use the first row as `| | |` but make it invisible by putting a non-breaking space, OR simply remove the `| | |` row and keep just the `|---|---|` separator, which some markdown renderers accept.
+
+But actually the simplest fix for Google Docs is to **not use a header row at all** and just start with the data. Let me remove just the `| | |` line but keep the `|---|---|` separator — Google Docs should still render it as a table.
+
+Actually — the cleanest approach is just to remove both `| | |` and `|---|---|` and use a pipe-delimited format that doesn't need a header row, or make the header row say something useful like `**Field**` and `**Value**`.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import re
+content = open('data/personalised-outreach1.md').read()
+# Replace the blank header row with one that has content
+content = content.replace('| | |\n|---|---|\n', '| **Field** | **Detail** |\n|---|---|\n')
+open('data/personalised-outreach1.md', 'w').write(content)
+print('Done:', content.count('| **Field** | **Detail** |'), 'headers updated')
+" && git add -A && git commit -m "Replace blank table header row with Field/Detail headers" && git push && echo "Done"
+  description: Replace blank header with Field/Detail
+
+[Tool result] Shell
+
+assistant:
+Done. The blank row now reads **Field** | **Detail** instead of empty cells — so in Google Docs it will show as a proper bolded header row rather than a blank one. Re-upload the `.md` file to Google Docs to see the fix.
+
+user:
+<user_query>
+ok. now i need to to change the formatting of the emails. it has removed the spacing and i need it to put the spacing back in so that the emails appear like this:
+
+Hi Benjamin, 
+
+[Personalise here based on hooks above.] 
+
+I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. 
+
+I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers. The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes. 
+
+Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to: 
+- Meaningful cost reduction without compromising service quality - Elastic agent capacity that doesn't churn or require ramp time - Fully automated voice AI agents running 24/7 
+- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more 
+
+I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there? 
+
+Warm regards, 
+Calanthia
+
+can you change the formatting in the table so the emails have appropriate paragraphing and spacing. you can look at the pdf i sent to see how to do it
+
+</user_query>
+
+assistant:
+The problem is that markdown tables can't have line breaks inside cells when rendered in Google Docs. The solution is to use `<br>` HTML tags to force line breaks within the table cell — Google Docs respects these when importing markdown.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+with open('data/personalised-outreach1.md') as f:
+    content = f.read()
+
+# Rebuild Touch 3 content for each persona with <br><br> paragraph breaks
+EXEC = ("Hi {name},<br><br>"
+        "[Personalise here based on hooks above.]<br><br>"
+        "I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits.<br><br>"
+        "I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.<br><br>"
+        "The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.<br><br>"
+        "Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:<br>"
+        "- Run inbound and outbound calls end-to-end<br>"
+        "- Scale operations 24/7 without additional headcount<br>"
+        "- Tie performance directly to revenue expansion and improved margins<br>"
+        "- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals<br><br>"
+        "{cta}<br><br>"
+        "Warm regards,<br>Calanthia")
+
+OPS = ("Hi {name},<br><br>"
+       "[Personalise here based on hooks above.]<br><br>"
+       "I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits.<br><br>"
+       "I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.<br><br>"
+       "The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.<br><br>"
+       "Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:<br>"
+       "- Meaningful cost reduction without compromising service quality<br>"
+       "- Elastic agent capacity that doesn't churn or require ramp time<br>"
+       "- Fully automated voice AI agents running 24/7<br>"
+       "- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more<br><br>"
+       "{cta}<br><br>"
+       "Warm regards,<br>Calanthia")
+
+TECH = ("Hi {name},<br><br>"
+        "[Personalise here based on hooks above.]<br><br>"
+        "I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits.<br><br>"
+        "I'm now bringing best-in-class enterprise AI solutions at Dyna AI to automate call center operations at production scale.<br><br>"
+        "Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking for:<br>"
+        "- Enterprise-grade AI solutions designed and deployed by dedicated industry experts — no internal AI team required<br>"
+        "- Multi-agent orchestration across voice and text, inbound and outbound use cases<br>"
+        "- Flexible deployment (SaaS, private cloud, or on-prem) aligned to security and data residency requirements<br><br>"
+        "{cta}<br><br>"
+        "Warm regards,<br>Calanthia")
+
+CTA = {
+    "CBAND": "I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?",
+    "EC":    "I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there?",
+    "FS":    "I'll be at the Frost & Sullivan MindXchange in Fort Lauderdale in April meeting with a few BPO leaders. Would you be interested in meeting there?",
+}
+
+prospects = {
+    "Benjamin Alpert":     ("ops",  "CBAND", "Benjamin"),
+    "Matt Rocco":          ("exec", "EC",    "Matt"),
+    "David Kreiss":        ("exec", "CBAND", "David"),
+    "Greg Alcorn":         ("exec", "CBAND", "Greg"),
+    "Bill Randag":         ("exec", "EC",    "Bill"),
+    "Ali Karim":           ("ops",  "FS",    "Ali"),
+    "Liliana Lopez":       ("tech", "EC",    "Liliana"),
+    "Nanette Harrell":     ("exec", "CBAND", "Nanette"),
+    "Jim Iyoob":           ("exec", "EC",    "Jim"),
+    "Dominic Leide":       ("exec", "CBAND", "Dominic"),
+    "Kenneth Loggins":     ("ops",  "CBAND", "Kenneth"),
+    "Brian Flaherty":      ("exec", "CBAND", "Brian"),
+    "Bill Trocano":        ("ops",  "EC",    "Bill"),
+    "Pablo Paz Hernandez": ("exec", "CBAND", "Pablo"),
+    "Amanda Jones":        ("ops",  "CBAND", "Amanda"),
+    "Donny Jackson":       ("ops",  "CBAND", "Donny"),
+    "John Yanez":          ("ops",  "CBAND", "John"),
+    "Ken Braatz":          ("tech", "CBAND", "Ken"),
+    "Youssef Hannat":      ("ops",  "CBAND", "Youssef"),
+    "James Nelson":        ("ops",  "EC",    "James"),
+    "Bryan Overcash":      ("exec", "CBAND", "Bryan"),
+    "Erika Garcia":        ("ops",  "CBAND", "Erika"),
+    "Keith Hansen":        ("ops",  "CBAND", "Keith"),
+    "Mark D'Angola":       ("ops",  "CBAND", "Mark"),
+    "Nitesh Kumar":        ("ops",  "CBAND", "Nitesh"),
+    "Rob Porges":          ("ops",  "CBAND", "Rob"),
+    "Cathy Sexton":        ("ops",  "CBAND", "Cathy"),
+    "Aaron Brooks":        ("tech", "EC",    "Aaron"),
+}
+
+lines = content.split('\n')
+output = []
+current_name = None
+updated = 0
+
+for line in lines:
+    m = re.match(r'^## \d+\. (.+)', line)
+    if m:
+        current_name = m.group(1).strip()
+
+    if current_name in prospects and line.startswith('| **3** | Email |'):
+        persona, event, first_name = prospects[current_name]
+        template = EXEC if persona == "exec" else OPS if persona == "ops" else TECH
+        body = template.format(name=first_name, cta=CTA[event])
+        output.append(f'| **3** | Email | {body} |')
+        updated += 1
+    else:
+        output.append(line)
+
+result = '\n'.join(output)
+with open('data/personalised-outreach1.md', 'w') as f:
+    f.write(result)
+
+print(f"Updated {updated} Touch 3 emails with <br> paragraph formatting")
+PYEOF
+  description: Add HTML br tags for paragraph spacing in Touch 3 emails
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import re
+content = open('data/personalised-outreach1.md').read()
+sec = re.search(r'## 1\. Benjamin.+?(?=## 2\.)', content, re.DOTALL)
+t3 = re.search(r'\| \*\*3\*\* \| Email \| (.{0,300})', sec.group())
+print(t3.group(1)[:300])
+"
+  description: Verify formatting of Touch 3
+
+[Tool result] Shell
