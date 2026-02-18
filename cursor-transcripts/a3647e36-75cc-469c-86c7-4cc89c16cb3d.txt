@@ -19240,3 +19240,125 @@ PYEOF
   description: Add new award hooks to outreach doc
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Add 2025-2026 award hooks: Liveops (Stevie Gold+3 Silver), Etech (ICMI Best New Tech), KM2 (IAOP Global 100 All Star), SupportNinja (Outsource Partner of Year), InteLogix (OnCon Top 10 Security), The Office Gurus (CCW Best EX)" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. Here are the new award hooks added, all with press release links:
+
+| Company | Person | Award | Link |
+|---|---|---|---|
+| **Liveops** | Bill Trocano + Liliana Lopez | 2026 Stevie Awards: Gold (Customer Service Training) + 3 Silver (Outsourcing Provider, Innovation, Best CSAT) | [Press release](https://ipo.einnews.com/pr_news/887640783/liveops-earns-one-gold-and-three-2026-silver-stevie-awards) |
+| **Etech Global Services** | Matt Rocco + Jim Iyoob | 2025 ICMI Global Contact Center Award: Best New Technology Solution (ETSLabs/QEval®) | [Awards page](https://www.etechgs.com/company/awards-and-recognition) |
+| **KM² Solutions** | David Kreiss | IAOP Global Outsourcing 100 — third consecutive year, All Star status second year running | [2025 Year in Review](https://km2solutions.com/resources/infographic2025/) |
+| **SupportNinja** | Ken Braatz | 2025 Excellence in Customer Service Awards: Outsource Partner of the Year – Business Services | [Announcement](https://www.supportninja.com/articles/supportninja-named-exceptional-customer-experience-outsource-partner) |
+| **InteLogix** | John Yanez | 2025 OnCon Icon Awards: Top 10 Global Information Security Team (alongside Cognizant & USAA) | [Press release](https://intelogix.com/news/intelogix-named-a-top-10-global-information-security-team-in-the-2025-oncon-icon-awards/) |
+| **The Office Gurus** | Benjamin Alpert + Dominic Leide | CCW Excellence Awards: Best of the Best Employee Experience Award + BPO of the Year Honorable Mention | [Announcement](https://theofficegurus.com/news/the-office-gurus-celebrates-success-at-the-ccw-excellence-awards/) |
+
+The other companies (GCS, Focus Services, Global Strategic, Helpware, Percepta, Flatworld, CBE, Buwelo, InfoCision, Harte Hanks) had no verifiable 2025-2026 industry awards in public search results.
+
+user:
+<user_query>
+can you make sure you add the year of the awards and relevant links
+</user_query>
+
+assistant:
+Let me check what's already in the file and what's missing years/links.
+[Tool call] Grep
+  pattern: \*\*Award
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+
+[Tool result] Grep
+
+assistant:
+All awards already have years (2024, 2025, or 2026) and clickable links. Everything looks correct. The file is up to date — no changes needed.
+
+user:
+<user_query>
+ok now I need you to input this into Linkedin touch 1 connect for every person who isn't already connected to Calanthia. I want you to add their first name and company name in place of the []. do you understand my request?
+
+Hi [first name], I’ve been following your work at [Company name]. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading!
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  offset: 1
+  limit: 30
+
+[Tool result] Read
+
+assistant:
+Yes — I understand. For every person where Touch 1 currently has a custom message (not "Already connected"), I'll replace it with the template using their first name and company. I'll leave the "Already connected" ones untouched since they're already connected to Calanthia.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+with open('data/personalised-outreach1.md') as f:
+    content = f.read()
+
+# Remove stray first line
+if not content.startswith('#'):
+    content = content[content.index('\n')+1:]
+
+# Split into sections
+parts = re.split(r'(?=^## \d+\.)', content, flags=re.MULTILINE)
+header = parts[0]
+sections = parts[1:]
+
+output = [header]
+
+for section in sections:
+    # Extract name and company
+    name_match = re.match(r'## \d+\. (.+)', section)
+    company_match = re.search(r'\*\*Company\*\* \| (.+?) \|', section)
+    
+    if not name_match or not company_match:
+        output.append(section)
+        continue
+    
+    full_name = name_match.group(1).strip()
+    first_name = full_name.split()[0]
+    company = company_match.group(1).strip()
+    
+    # Check if already connected (Touch 1 says "Already connected")
+    if 'Already connected' in section:
+        output.append(section)
+        continue
+    
+    # Build the new Touch 1 message
+    new_t1 = f"Hi {first_name}, I've been following your work at {company}. I lead the US market for Dyna AI, focused on enterprise voice AI for BPOs, including Teleperformance. Would be great to connect and compare notes on where AI + contact center is heading!"
+    
+    # Replace the Touch 1 message in the table
+    # Pattern: | **1** | LinkedIn connect | [anything] |
+    section = re.sub(
+        r'(\| \*\*1\*\* \| LinkedIn connect \| )(.+?)( \|)',
+        lambda m: m.group(1) + new_t1 + m.group(3),
+        section
+    )
+    
+    output.append(section)
+
+result = ''.join(output)
+with open('data/personalised-outreach1.md', 'w') as f:
+    f.write(result)
+
+print("Done")
+PYEOF
+  description: Apply standard Touch 1 template to all non-connected prospects
+
+[Tool result] Shell
+
+assistant:
+Let me verify a few to make sure it looks right.
+[Tool call] Grep
+  pattern: \| \*\*1\*\* \| LinkedIn connect \|
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  head_limit: 10
+
+[Tool result] Grep
