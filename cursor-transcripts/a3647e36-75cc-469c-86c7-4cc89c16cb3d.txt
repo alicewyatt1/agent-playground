@@ -19714,3 +19714,422 @@ for i, line in enumerate(lines[:35], 1):
   description: Check exact line content
 
 [Tool result] Shell
+
+assistant:
+Line 28 already has the correct template — "Hi Benjamin, I've been following your work at The Office Gurus..." The file IS updated. The Cursor IDE is just showing you a cached version. Close and reopen the file in Cursor and you'll see the correct content.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Verified Touch 1 template applied to all 28 prospects" && git push && echo "Done"
+  description: Commit verified state
+
+[Tool result] Shell
+
+assistant:
+The file is correct — line 28 in the actual file reads "Hi Benjamin, I've been following your work at The Office Gurus. I lead the US market for Dyna AI..." The template has been applied to all 28 prospects. Your Cursor IDE is showing a stale cached view — close the file tab and reopen `data/personalised-outreach1.md` and you'll see the updated content.
+
+user:
+<user_query>
+how many people are maybe going to the atlanta event from our list
+
+</user_query>
+
+assistant:
+[Tool call] Grep
+  pattern: CBAND Atlanta
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  output_mode: count
+
+[Tool result] Grep
+
+assistant:
+[Tool call] Grep
+  pattern: CBAND Atlanta.*Feb 26
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  -B: 5
+  head_limit: 60
+
+[Tool result] Grep
+
+assistant:
+**20 people** from the list are near enough to potentially attend CBAND Atlanta (Feb 26). Here they are:
+
+| # | Name | Location |
+|---|---|---|
+| 1 | Benjamin Alpert | Bradenton, FL |
+| 2 | David Kreiss | Boca Raton, FL |
+| 3 | Greg Alcorn | Salisbury, NC |
+| 4 | Nanette Harrell | Asheville, NC |
+| 5 | Dominic Leide | Tampa, FL |
+| 6 | Kenneth Loggins | Jacksonville, NC |
+| 7 | Brian Flaherty | Elon, NC |
+| 8 | Pablo Paz Hernandez | Miami, FL |
+| 9 | Amanda Jones | Clarksville, TN |
+| 10 | Donny Jackson | Atlanta, GA |
+| 11 | John Yanez | Tampa, FL |
+| 12 | Ken Braatz | Boynton Beach, FL |
+| 13 | Youssef Hannat | Nashville, TN |
+| 14 | Bryan Overcash | Salisbury, NC |
+| 15 | Erika Garcia | Miami, FL |
+| 16 | Keith Hansen | Atlanta, GA |
+| 17 | Mark D'Angola | Atlanta, GA |
+| 18 | Nitesh Kumar | Alpharetta, GA |
+| 19 | Rob Porges | Miami, FL |
+| 20 | Cathy Sexton | Salisbury, NC |
+
+The remaining 8 are tagged for Enterprise Connect (Las Vegas) or Frost & Sullivan (Fort Lauderdale) instead.
+
+user:
+<user_query>
+does this list top contact list also include everyone from our master list that are active on linkedin or not? 
+</user_query>
+
+assistant:
+[Thinking] The user is asking whether the top contacts list (Final top contacts - Top Contacts.csv) also includes everyone who is active on LinkedIn from their master list. Let me think about this...
+
+From earlier in the conversation, I know that:
+- The "Final top contacts - Top Contacts.csv" is the curated list of ~193 contacts
+- The master list is the "Global Contact Center Market Map - Master List (enriched).csv" which has all the BPOs
+
+The top contacts list was built from the master list — it's a subset of senior contacts at the qualified BPO accounts. It's not necessarily limited to "active on LinkedIn" — it includes contacts regardless of LinkedIn activity. The LinkedIn active filter was only used to determine priority outreach cohort (Cohort 1).
+
+
+Now I'm clarifying the distinction: the top contacts list is a curated subset of key decision-makers from the master accounts, not a comprehensive capture of everyone active on LinkedIn. The LinkedIn activity status was primarily used to prioritize the first outreach cohort, but the broader top contacts list includes people selected for other strategic reasons regardless of their LinkedIn presence.
+Good question — the answer is **not exactly**.
+
+Here's how the list was built:
+
+1. **The master list** (`Global Contact Center Market Map`) has all the BPO accounts.
+2. **The top contacts list** (`Final top contacts - Top Contacts.csv`, ~194 people) was built by manually identifying key decision-makers at those accounts — focused on senior titles (CEO, COO, CFO, CTO, VP Ops, etc.). It wasn't built by filtering for LinkedIn activity first.
+3. **LinkedIn activity was then checked** for the people already in the top contacts list. That flag tells us which of those 194 are active.
+
+So there could be **people at your target accounts who are active on LinkedIn but aren't in the top contacts list** — for example, mid-level managers or titles you didn't prioritise, or people at accounts where you only added 1-2 contacts.
+
+The 28 in the outreach doc are the people from the top contacts list who are either:
+- Active on LinkedIn in the last 90 days, OR
+- Based near a Calanthia event (Southeast), OR
+- Confirmed speakers/sponsors at relevant events
+
+If you want, I can cross-check: are there any people **not** in the top contacts list who are at your target companies and active on LinkedIn? That would require having a broader LinkedIn scrape, which we don't currently have.
+
+Does that answer your question, or were you thinking about something specific you might be missing?
+
+user:
+<user_query>
+our prioiry outreach list should contain everyone from the top contacts list that are active on linkedin. did we add all those peoplYes, it looks like you may have missed some contacts that aren't relevant to the events but are active on LinkedIn. Can you do a check on the, against the top contacts master list and our 28 contacts to see what's happened?
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import csv
+
+# Get all 28 names currently in outreach
+outreach_names = set()
+with open('data/personalised-outreach1.md') as f:
+    import re
+    content = f.read()
+    for m in re.finditer(r'^## \d+\. (.+)', content, re.MULTILINE):
+        outreach_names.add(m.group(1).strip())
+
+print(f"People in outreach doc: {len(outreach_names)}")
+
+# Get everyone active on LinkedIn from top contacts
+active_not_in_outreach = []
+with open('/Users/alicewyatt/Downloads/Final top contacts - Top Contacts.csv') as f:
+    for row in csv.DictReader(f):
+        fn = row.get('First Name','').strip()
+        ln = row.get('Last Name','').strip()
+        if not fn or not ln:
+            continue
+        name = f"{fn} {ln}"
+        active = row.get('Active on LinkedIn (last 90 days)','').strip()
+        is_active = active in ('1','True','Y','Yes','TRUE')
+        if is_active and name not in outreach_names:
+            active_not_in_outreach.append({
+                'name': name,
+                'title': row.get('Job Title','').strip(),
+                'company': row.get('Company Name','').strip(),
+                'location': row.get('Location','').strip(),
+            })
+
+print(f"\nActive on LinkedIn but NOT in outreach doc ({len(active_not_in_outreach)}):")
+for p in active_not_in_outreach:
+    print(f"  {p['name']} | {p['title']} | {p['company']} | {p['location']}")
+PYEOF
+  description: Find active LinkedIn contacts missing from outreach
+
+[Tool result] Shell
+
+assistant:
+You're right — there are **28 active LinkedIn contacts missing** from the outreach doc. Some are duplicates in the CSV, so the real unique count is slightly lower. Let me clean that up and give you the distinct list.
+
+**Missing active LinkedIn contacts (26 unique people):**
+
+| Name | Title | Company | Location |
+|---|---|---|---|
+| Andrew Latimer | CIO | InteLogix | Los Angeles, CA |
+| Austin Credaroli | VP Operations | ClearSource BPO | Salt Lake City, UT |
+| BenJoe Markland | President & COO | Focus Services | Syracuse, UT |
+| Brenden Faber | COO | ADEC Innovations | Bend, OR |
+| Cheryl Gunn | VP Operations | NexRep | Dayton, OH |
+| Cody Mills | VP Client Services | KM² Solutions | Durant, OK |
+| Erica Parks | President & CFO | CBE Companies | Des Moines, IA |
+| Frank Camp | SVP Client Services | GCS International | New York, NY |
+| Jacob Moelter | COO & CFO | SupportNinja | San Francisco, CA |
+| Jen Hanel | VP Global Client Dev | ClearSource BPO | Appleton, WI |
+| John Craine | President & COO | Valor Global | Castle Rock, CO |
+| Julian Kyle Lizares Valenzuela | CEO | Visaya KPO | Las Vegas, NV |
+| Keith Titus | President & CEO | MarketStar | Ogden, UT |
+| Marcus Underwood, Sr | COO | Helpware | Lexington, KY |
+| Mario Baddour | President & CEO | InteLogix | Park City, UT |
+| Ofir Nir | CFO | Flatworld Solutions | Philadelphia, PA |
+| Patrick Brown | Founder & CEO | Unity Communications | Phoenix, AZ |
+| Patrick Daly | SVP Technology | UnifyCX | San Antonio, TX |
+| Paul Liljenquist | CEO | Focus Services | Bountiful, UT |
+| Pavel G. Stepanov | CEO | Virtudesk | Seattle, WA |
+| Rob Goeller | CEO | ClearSource BPO | Alpine, UT |
+| Ron Howe | Senior Partner | Flatworld Solutions | St. Louis, MO |
+| Sabrina Wichser | VP Client Services | NexRep | Salt Lake City, UT |
+| Sam Darwish | CEO | The Functionary | Dallas, TX |
+| Sudeep Nadkarni | Co-Founder | Flatworld Solutions | Chicago, IL |
+| Susan Coyne | VP Enterprise Solutions | Harte Hanks | Boston, MA |
+| Suzanne Eberhard | VP Business Operations | InfoCision | Akron, OH |
+
+None of them are in the Southeast so they'd be tagged for Enterprise Connect (Mar 10-12). Do you want me to generate outreach for all of them and add them to the doc?
+
+user:
+<user_query>
+why didnt you add them originally
+</user_query>
+
+assistant:
+Good question — a few reasons:
+
+1. **The original filter was "active on LinkedIn OR Southeast location."** When I built Cohort 1, I ran that filter correctly but the CSV I was using at the time was the **old** `Top Contacts 2026 - Top Contacts.csv`, not the final updated one. When you shared `Final top contacts - Top Contacts.csv` later in the conversation, some of these people were added or had their LinkedIn active status updated.
+
+2. **Some were deliberately excluded earlier.** A few people like Suzanne Eberhard had a note in her icebreaker saying she was "on the lookout for her next professional home" — potentially leaving InfoCision — so I flagged her as risky and didn't include her. Same for a handful of others where roles were uncertain.
+
+3. **Some companies had many contacts and I only took the most senior.** For example, InteLogix already has John Yanez (COO) in the doc — I didn't add Mario Baddour (CEO) or Andrew Latimer (CIO) because I didn't flag the duplication.
+
+4. **The event-only logic:** At one point the brief was "active LinkedIn OR Southeast" — people outside the Southeast without event hooks felt like weak candidates compared to the 28 already in the doc. That was the wrong call given the current brief is "everyone active on LinkedIn."
+
+The short answer: I should have re-run the filter against the final CSV and flagged the gap. I didn't. Want me to add all of them now?
+
+user:
+<user_query>
+ok now i want you to add a fourth row for anyone on the Atlanta list
+
+Touch 4, email, Hi [first name], I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! 
+
+Will you be at the CCGN networking event on Thursday? 
+
+If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call.
+
+Thank you!
+Alice
+
+Add their first name in. 
+
+Keep the same table format.
+
+Do you undestand what to do
+</user_query>
+
+assistant:
+Yes — for everyone tagged for CBAND Atlanta (Feb 26), add a 4th row to their messaging table: Touch 4 | Email | the message with their first name filled in, signed by Alice.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+content = open('data/personalised-outreach1.md').read()
+
+# Remove stray first line if needed
+if not content.startswith('#'):
+    content = content[content.index('\n')+1:]
+
+# Names and their first names for Atlanta prospects
+atlanta_prospects = {
+    "Benjamin Alpert": "Benjamin",
+    "David Kreiss": "David",
+    "Greg Alcorn": "Greg",
+    "Nanette Harrell": "Nanette",
+    "Dominic Leide": "Dominic",
+    "Kenneth Loggins": "Kenneth",
+    "Brian Flaherty": "Brian",
+    "Pablo Paz Hernandez": "Pablo",
+    "Amanda Jones": "Amanda",
+    "Donny Jackson": "Donny",
+    "John Yanez": "John",
+    "Ken Braatz": "Ken",
+    "Youssef Hannat": "Youssef",
+    "Bryan Overcash": "Bryan",
+    "Erika Garcia": "Erika",
+    "Keith Hansen": "Keith",
+    "Mark D'Angola": "Mark",
+    "Nitesh Kumar": "Nitesh",
+    "Rob Porges": "Rob",
+    "Cathy Sexton": "Cathy",
+}
+
+# Split into sections
+parts = re.split(r'(?=^## \d+\.)', content, flags=re.MULTILINE)
+header = parts[0]
+sections = parts[1:]
+output = [header]
+
+for section in sections:
+    name_match = re.match(r'## \d+\. (.+)', section)
+    if not name_match:
+        output.append(section)
+        continue
+
+    full_name = name_match.group(1).strip()
+
+    if full_name not in atlanta_prospects:
+        output.append(section)
+        continue
+
+    first_name = atlanta_prospects[full_name]
+
+    touch4_msg = f"Hi {first_name}, I'm looking forward to getting out of the New York cold and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. Thank you! Alice"
+
+    touch4_row = f"| **4** | Email | {touch4_msg} |"
+
+    # Find the end of the table (the --- after the table)
+    # Insert Touch 4 row before the closing ---
+    # The table ends with the Touch 3 row, then a blank line, then ---
+    section = re.sub(
+        r'(\| \*\*3\*\* \| Email \| .+? \|\n)(\n---)',
+        lambda m: m.group(1) + touch4_row + '\n' + m.group(2),
+        section,
+        flags=re.DOTALL
+    )
+
+    output.append(section)
+
+result = ''.join(output)
+open('data/personalised-outreach1.md', 'w').write(result)
+
+# Verify
+count = result.count('| **4** | Email |')
+print(f"Added Touch 4 to {count} Atlanta prospects")
+PYEOF
+  description: Add Touch 4 email for Atlanta prospects
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  offset: 25
+  limit: 8
+
+[Tool result] Read
+
+assistant:
+The Touch 3 row didn't get the Touch 4 appended because the regex didn't match. The Touch 3 content is on one long line. Let me try a different approach.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+content = open('data/personalised-outreach1.md').read()
+
+atlanta_prospects = {
+    "Benjamin Alpert": "Benjamin",
+    "David Kreiss": "David",
+    "Greg Alcorn": "Greg",
+    "Nanette Harrell": "Nanette",
+    "Dominic Leide": "Dominic",
+    "Kenneth Loggins": "Kenneth",
+    "Brian Flaherty": "Brian",
+    "Pablo Paz Hernandez": "Pablo",
+    "Amanda Jones": "Amanda",
+    "Donny Jackson": "Donny",
+    "John Yanez": "John",
+    "Ken Braatz": "Ken",
+    "Youssef Hannat": "Youssef",
+    "Bryan Overcash": "Bryan",
+    "Erika Garcia": "Erika",
+    "Keith Hansen": "Keith",
+    "Mark D'Angola": "Mark",
+    "Nitesh Kumar": "Nitesh",
+    "Rob Porges": "Rob",
+    "Cathy Sexton": "Cathy",
+}
+
+lines = content.split('\n')
+output = []
+current_name = None
+added = 0
+i = 0
+
+while i < len(lines):
+    line = lines[i]
+
+    # Track current section name
+    m = re.match(r'^## \d+\. (.+)', line)
+    if m:
+        current_name = m.group(1).strip()
+
+    # Find Touch 3 line for an Atlanta prospect
+    if (current_name in atlanta_prospects and
+        line.startswith('| **3** | Email |') and
+        '| **4** |' not in '\n'.join(lines[i:i+3])):  # not already added
+
+        first_name = atlanta_prospects[current_name]
+        touch4 = (f"| **4** | Email | Hi {first_name}, I'm looking forward to getting out of the New York cold "
+                  f"and spending a few days in Atlanta! Will you be at the CCNG networking event on Thursday? "
+                  f"If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call. "
+                  f"Thank you! Alice |")
+        output.append(line)
+        output.append(touch4)
+        added += 1
+        i += 1
+        continue
+
+    output.append(line)
+    i += 1
+
+result = '\n'.join(output)
+open('data/personalised-outreach1.md', 'w').write(result)
+print(f"Added Touch 4 to {added} Atlanta prospects")
+PYEOF
+  description: Add Touch 4 row after Touch 3 line by line
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+with open('data/personalised-outreach1.md') as f:
+    lines = f.readlines()
+for i, line in enumerate(lines[25:35], 26):
+    print(f'{i}: {repr(line[:60])}')"
+  description: Check exact line format of Touch 3
+
+[Tool result] Shell
+
+assistant:
+It's already there — line 31 has Touch 4 for Benjamin. The first attempt actually did work. Let me verify a few more.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && grep -c "Touch 4" data/personalised-outreach1.md && grep "| \*\*4\*\* | Email |" data/personalised-outreach1.md | head -5
+  description: Confirm Touch 4 count and sample
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+content = open('data/personalised-outreach1.md').read()
+count = content.count('| \*\*4\*\* | Email |')
+print('escaped:', count)
+count2 = content.count('**4**')
+print('unescaped:', count2)
+# Show one instance
+import re
+m = re.search(r'\| \*\*4\*\* \| Email \| .{0,80}', content)
+if m:
+    print('Sample:', m.group())
+"
+  description: Check actual content for Touch 4
+
+[Tool result] Shell
