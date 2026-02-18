@@ -16211,3 +16211,258 @@ PYEOF
   description: Move Jim to position 9, fix messaging
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md /Users/alicewyatt/Downloads/Personalised-Outreach.md && cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Move Jim Iyoob to position 9, remove BDR language and perspective-asking" && git push && echo "Done"
+  description: Copy, commit, push
+
+[Tool result] Shell
+
+assistant:
+Done — `~/Downloads/Personalised-Outreach.md` updated.
+
+- Jim is now **#9** (after the 8 standard warm prospects)
+- Removed "I wanted to reach out directly rather than go through the usual channels"
+- Removed "I'd be curious to hear where you think the real gaps are"
+- Now reads: "given your work at ETS Labs, I thought this would be relevant" → describes what Dyna built → CTA
+- Note for Calanthia still there explaining the different approach
+
+user:
+<user_query>
+ok now give me the doc
+</user_query>
+
+assistant:
+It's already in your Downloads — **`~/Downloads/Personalised-Outreach.md`**. Ready to upload to Google Docs.
+
+user:
+<user_query>
+can you rename it coz i cant find it in my versions 
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cp /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md "/Users/alicewyatt/Downloads/Dyna-Outreach-Final-Feb18.md" && echo "Done"
+  description: Copy with new name
+
+[Tool result] Shell
+
+assistant:
+**`~/Downloads/Dyna-Outreach-Final-Feb18.md`** — should be easy to spot now.
+
+user:
+<user_query>
+No, this isn't right. I need you to actually add the email template into the email section. Write the first name, then do a space which says insert personalization hook, then add the corresponding email template, and then write the last call to action based on which event they're in. I can't see this reflected in the document. 
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  offset: 48
+  limit: 30
+
+[Tool result] Read
+
+assistant:
+I see the issue — the email template is spilling outside the table row, so it doesn't render properly. The whole email needs to be inside the table cell. Let me restructure so Touch 3 is clearly formatted with the first name, personalisation placeholder, full template, and CTA all in one clean block.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+content = open('data/personalised-outreach1.md', 'r').read()
+
+# The problem: the email template is outside the table.
+# Solution: put the email as a separate clearly formatted block BELOW the table,
+# with the first name, personalisation slot, full template, and CTA all visible.
+
+# Email templates
+EMAIL_EXEC = """Hi {first_name},
+
+[Insert personalisation hook]
+
+For context, I've spent the past decade building and scaling tech companies in Silicon Valley. I was a founding member of PayPal Ventures and later co-founded and grew two tech companies through exit.
+
+I'm now building enterprise voice AI solutions at Dyna to fully automate inbound and outbound contact centre operations.
+
+The executives I am working with are under pressure to improve margin while maintaining service quality, but without the capital or internal AI teams of the largest BPOs.
+
+Dyna is already deployed in high-volume enterprise environments, including Teleperformance.
+
+We deploy enterprise-proven, fully automated AI agents that:
+- Run inbound and outbound calls end-to-end
+- Scale operations 24/7 with high uptime and accuracy without additional headcount
+- Bring proven operational and technical expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more use cases
+- Tie performance directly to measurable revenue and margin outcomes
+
+{cta}
+
+Warm regards,
+Calanthia"""
+
+EMAIL_OPS = """Hi {first_name},
+
+[Insert personalisation hook]
+
+For context, I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna to improve operational performance and efficiency at call centers.
+
+The Operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.
+
+Dyna is already deployed in high-volume enterprise environments, including Teleperformance and delivers:
+- Meaningful cost reduction without compromising service quality
+- Elastic agent capacity that doesn't churn or require ramp time
+- Fully automated voice AI agents running 24/7 with high uptime and accuracy
+- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and other high-volume industry use cases
+
+{cta}
+
+Warm regards,
+Calanthia"""
+
+EMAIL_TECH = """Hi {first_name},
+
+[Insert personalisation hook]
+
+I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. I'm now bringing best-in-class enterprise AI solutions at Dyna to automate call center operations at production scale.
+
+Our voice AI solutions have already been deployed in high-volume enterprise environments — including with Teleperformance — across Telecom, Lending, Insurance, Consumer Goods, Travel and Restaurant industries. We handle millions of interactions while maintaining enterprise-grade security, reliability and uptime.
+
+Tech leaders are working with us when they want:
+- Enterprise-grade AI solutions designed and deployed by dedicated industry experts — no internal AI team required
+- Multi-agent orchestration across voice and text, inbound and outbound use cases
+- Flexible deployment (SaaS, private cloud, or on-prem) aligned to security and data residency requirements
+
+{cta}
+
+Warm regards,
+Calanthia"""
+
+EMAIL_JIM = """Hi Jim,
+
+Given your work at ETS Labs, I thought this would be relevant.
+
+At Dyna, we've built fully automated voice AI that manages entire calls independently — greeting to resolution — across inbound and outbound. Not copilot, not agent-assist. Full execution.
+
+We're already deployed at production scale with Teleperformance, across telecom, lending, insurance, travel, and restaurant verticals. Multi-agent orchestration, multi-language, enterprise-grade reliability.
+
+I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there?
+
+Warm regards,
+Calanthia"""
+
+CTA_CBAND = "I'll be at the CCNG event in Atlanta on Feb 26 meeting with a number of BPO leaders. Would you be interested in meeting there?"
+CTA_EC = "I'll be at Enterprise Connect in Las Vegas next month. Would you be interested in meeting there?"
+CTA_FS = "I'll be at the Frost & Sullivan MindXchange in Fort Lauderdale in April. Would you be interested in meeting there?"
+
+# Prospect data: name -> (first_name, persona, event)
+prospects = {
+    "Benjamin Alpert": ("Benjamin", "ops", "CBAND"),
+    "Matt Rocco": ("Matt", "exec", "EC"),
+    "David Kreiss": ("David", "exec", "CBAND"),
+    "Greg Alcorn": ("Greg", "exec", "CBAND"),
+    "Bill Randag": ("Bill", "exec", "EC"),
+    "Ali Karim": ("Ali", "ops", "FS"),
+    "Liliana Lopez": ("Liliana", "tech", "EC"),
+    "Nanette Harrell": ("Nanette", "exec", "CBAND"),
+    "Jim Iyoob": ("Jim", "jim", "EC"),
+    "Dominic Leide": ("Dominic", "exec", "CBAND"),
+    "Kenneth Loggins": ("Kenneth", "ops", "CBAND"),
+    "Brian Flaherty": ("Brian", "exec", "CBAND"),
+    "Bill Trocano": ("Bill", "ops", "EC"),
+    "Pablo Paz Hernandez": ("Pablo", "exec", "CBAND"),
+    "Amanda Jones": ("Amanda", "ops", "CBAND"),
+    "Donny Jackson": ("Donny", "ops", "CBAND"),
+    "John Yanez": ("John", "ops", "CBAND"),
+    "Ken Braatz": ("Ken", "tech", "CBAND"),
+    "Youssef Hannat": ("Youssef", "ops", "CBAND"),
+    "James Nelson": ("James", "ops", "EC"),
+    "Bryan Overcash": ("Bryan", "exec", "CBAND"),
+    "Erika Garcia": ("Erika", "ops", "CBAND"),
+    "Keith Hansen": ("Keith", "ops", "CBAND"),
+    "Mark D'Angola": ("Mark", "ops", "CBAND"),
+    "Nitesh Kumar": ("Nitesh", "ops", "CBAND"),
+    "Rob Porges": ("Rob", "ops", "CBAND"),
+    "Cathy Sexton": ("Cathy", "ops", "CBAND"),
+    "Aaron Brooks": ("Aaron", "tech", "EC"),
+}
+
+# Split into sections
+parts = re.split(r'(?=## \d+\.)', content)
+header = parts[0]
+sections = parts[1:]
+
+output = [header]
+
+for section in sections:
+    name_match = re.match(r'## \d+\. (.+)', section)
+    if not name_match:
+        output.append(section)
+        continue
+    
+    name = name_match.group(1).strip()
+    p = prospects.get(name)
+    if not p:
+        output.append(section)
+        continue
+    
+    first_name, persona, event = p
+    cta = CTA_CBAND if event == "CBAND" else CTA_EC if event == "EC" else CTA_FS
+    
+    # Pick email template
+    if persona == "jim":
+        email = EMAIL_JIM
+    elif persona == "exec":
+        email = EMAIL_EXEC.format(first_name=first_name, cta=cta)
+    elif persona == "tech":
+        email = EMAIL_TECH.format(first_name=first_name, cta=cta)
+    else:
+        email = EMAIL_OPS.format(first_name=first_name, cta=cta)
+    
+    # Find where the old email content starts (after "| **3** | Email |")
+    # Remove everything from "| **3**" to the next "---"
+    # Then rebuild with table rows for Touch 1 and 2, and email as a separate block
+    
+    # Find the table start
+    table_start = section.find("| Touch |")
+    if table_start < 0:
+        output.append(section)
+        continue
+    
+    # Get everything before the table (context card + hooks)
+    card = section[:table_start]
+    
+    # Extract Touch 1 and Touch 2 from the existing table
+    t1_match = re.search(r'\| \*\*1\*\* \| LinkedIn connect \| (.+?) \|', section)
+    t2_match = re.search(r'\| \*\*2\*\* \| LinkedIn message \| (.+?) \|', section)
+    
+    t1 = t1_match.group(1).strip() if t1_match else ""
+    t2 = t2_match.group(1).strip() if t2_match else ""
+    
+    # Rebuild section
+    new_section = card
+    new_section += "| Touch | Channel | Message |\n"
+    new_section += "|---|---|---|\n"
+    new_section += f"| **1** | LinkedIn connect | {t1} |\n"
+    new_section += f"| **2** | LinkedIn message | {t2} |\n"
+    new_section += "\n**Touch 3 — Email:**\n\n"
+    new_section += email + "\n\n"
+    new_section += "---\n"
+    
+    output.append(new_section)
+
+result = ''.join(output)
+open('data/personalised-outreach1.md', 'w').write(result)
+print("Done — emails now fully formatted with name, hook placeholder, template, and CTA")
+PYEOF
+  description: Restructure emails as formatted blocks
+
+[Tool result] Shell
+
+assistant:
+Let me verify it looks right.
+[Tool call] Read
+  path: /Users/alicewyatt/repos/agent-playground/data/personalised-outreach1.md
+  offset: 46
+  limit: 45
+
+[Tool result] Read
