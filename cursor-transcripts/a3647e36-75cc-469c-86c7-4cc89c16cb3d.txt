@@ -20321,3 +20321,179 @@ for name, expected in [('Benjamin Alpert','Atlanta'), ('Matt Rocco','Enterprise 
   description: Verify correct event in each Touch 2
 
 [Tool result] Shell
+
+assistant:
+All correct. Let me commit.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Replace Touch 2 with approved template, event-specific for all 28 prospects (CBAND/EC/FS)" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. All 28 Touch 2 messages updated. The template is:
+
+> [Personalise here based on hooks above.]
+>
+> It's great to connect. I wondered if you'll be at the **[EVENT]**? I'll be there meeting with a few contact center leaders who are interested in voice AI.
+>
+> I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.
+>
+> If you're at the event, would you be interested in learning more?
+
+Swapped by event:
+- **20 Atlanta people** → "CCNG meetup in Atlanta"
+- **7 Enterprise Connect people** → "Enterprise Connect in Las Vegas next month"
+- **1 Frost & Sullivan person** (Ali Karim) → "Frost & Sullivan MindXchange in Fort Lauderdale in April"
+
+user:
+<user_query>
+@/Users/alicewyatt/Downloads/final template.pdf Okay, next, I need you to input each of these email templates to the relevant persona in the email touch three and add it to our document. So replace what's actually there, put this in, and add their name. 
+
+do you understand
+</user_query>
+
+assistant:
+[Tool call] Read
+  path: /Users/alicewyatt/Downloads/final template.pdf
+
+[Tool result] Read
+
+assistant:
+Yes — I understand. Three templates (Executive, Operations, Tech), each with `[Personalisation - use one of the hooks]` at the top and a `[Personalisation - see call to action options]` or equivalent at the bottom. I'll replace the current Touch 3 content for each prospect with the correct persona template, adding their first name as the salutation. The call to action at the bottom stays as the event CTA already in the doc.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+content = open('data/personalised-outreach1.md').read()
+
+# Templates from the PDF (without salutation — we add "Hi [Name]," separately)
+EXEC = ("I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. "
+        "I'm now bringing best-in-class enterprise AI solutions at Dyna AI to fully automate call center inbound and outbound operations.\n\n"
+        "The executives I am working with are under pressure to improve margin while maintaining service quality, "
+        "but without the capital or internal AI teams of the largest BPOs.\n\n"
+        "Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:\n"
+        "- Run inbound and outbound calls end-to-end\n"
+        "- Scale operations 24/7 without additional headcount\n"
+        "- Tie performance directly to revenue expansion and improved margins\n"
+        "- Deploy use-case proven AI across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants and other high-volume verticals")
+
+OPS = ("I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. "
+       "I'm now bringing best-in-class enterprise AI solutions at Dyna AI to improve operational performance and efficiency at call centers.\n\n"
+       "The operations leaders I'm working with are trying to hit SLAs and conversion targets while managing high churn, rising labor costs, and unpredictable volumes.\n\n"
+       "Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking to:\n"
+       "- Meaningful cost reduction without compromising service quality\n"
+       "- Elastic agent capacity that doesn't churn or require ramp time\n"
+       "- Fully automated voice AI agents running 24/7\n"
+       "- Deep operational expertise across Telecom, Lending, Insurance, Consumer Goods, Travel, Restaurants, and more")
+
+TECH = ("I've spent the last decade founding and scaling technology businesses in Silicon Valley through two exits. "
+        "I'm now bringing best-in-class enterprise AI solutions at Dyna AI to automate call center operations at production scale.\n\n"
+        "Already used by Teleperformance, Dyna AI is now bringing voice AI solutions to all contact centers looking for:\n"
+        "- Enterprise-grade AI solutions designed and deployed by dedicated industry experts — no internal AI team required\n"
+        "- Multi-agent orchestration across voice and text, inbound and outbound use cases\n"
+        "- Flexible deployment (SaaS, private cloud, or on-prem) aligned to security and data residency requirements")
+
+# Persona and event per prospect
+prospects = {
+    "Benjamin Alpert":     ("ops",  "CBAND", "Benjamin"),
+    "Matt Rocco":          ("exec", "EC",    "Matt"),
+    "David Kreiss":        ("exec", "CBAND", "David"),
+    "Greg Alcorn":         ("exec", "CBAND", "Greg"),
+    "Bill Randag":         ("exec", "EC",    "Bill"),
+    "Ali Karim":           ("ops",  "FS",    "Ali"),
+    "Liliana Lopez":       ("tech", "EC",    "Liliana"),
+    "Nanette Harrell":     ("exec", "CBAND", "Nanette"),
+    "Jim Iyoob":           ("exec", "EC",    "Jim"),
+    "Dominic Leide":       ("exec", "CBAND", "Dominic"),
+    "Kenneth Loggins":     ("ops",  "CBAND", "Kenneth"),
+    "Brian Flaherty":      ("exec", "CBAND", "Brian"),
+    "Bill Trocano":        ("ops",  "EC",    "Bill"),
+    "Pablo Paz Hernandez": ("exec", "CBAND", "Pablo"),
+    "Amanda Jones":        ("ops",  "CBAND", "Amanda"),
+    "Donny Jackson":       ("ops",  "CBAND", "Donny"),
+    "John Yanez":          ("ops",  "CBAND", "John"),
+    "Ken Braatz":          ("tech", "CBAND", "Ken"),
+    "Youssef Hannat":      ("ops",  "CBAND", "Youssef"),
+    "James Nelson":        ("ops",  "EC",    "James"),
+    "Bryan Overcash":      ("exec", "CBAND", "Bryan"),
+    "Erika Garcia":        ("ops",  "CBAND", "Erika"),
+    "Keith Hansen":        ("ops",  "CBAND", "Keith"),
+    "Mark D'Angola":       ("ops",  "CBAND", "Mark"),
+    "Nitesh Kumar":        ("ops",  "CBAND", "Nitesh"),
+    "Rob Porges":          ("ops",  "CBAND", "Rob"),
+    "Cathy Sexton":        ("ops",  "CBAND", "Cathy"),
+    "Aaron Brooks":        ("tech", "EC",    "Aaron"),
+}
+
+CTA = {
+    "CBAND": "I'll be at the CCNG event in Atlanta on Feb 26 meeting with a few BPO leaders. Would you be interested in meeting there?\n\nWarm regards,\nCalanthia",
+    "EC":    "I'll be at Enterprise Connect in Las Vegas next month meeting with a few BPO leaders. Would you be interested in meeting there?\n\nWarm regards,\nCalanthia",
+    "FS":    "I'll be at the Frost & Sullivan MindXchange in Fort Lauderdale in April meeting with a few BPO leaders. Would you be interested in meeting there?\n\nWarm regards,\nCalanthia",
+}
+
+lines = content.split('\n')
+output = []
+current_name = None
+updated = 0
+
+for line in lines:
+    m = re.match(r'^## \d+\. (.+)', line)
+    if m:
+        current_name = m.group(1).strip()
+
+    if current_name in prospects and line.startswith('| **3** | Email |'):
+        persona, event, first_name = prospects[current_name]
+        body = EXEC if persona == "exec" else OPS if persona == "ops" else TECH
+        cta = CTA[event]
+        full_email = (f"Hi {first_name},\n\n"
+                      f"[Personalise here based on hooks above.]\n\n"
+                      f"{body}\n\n"
+                      f"{cta}")
+        output.append(f'| **3** | Email | {full_email} |')
+        updated += 1
+    else:
+        output.append(line)
+
+result = '\n'.join(output)
+open('data/personalised-outreach1.md', 'w').write(result)
+print(f"Updated Touch 3 for {updated} prospects")
+PYEOF
+  description: Replace Touch 3 with final PDF templates
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import re
+content = open('data/personalised-outreach1.md').read()
+for name in ['Benjamin Alpert', 'Matt Rocco', 'Ken Braatz']:
+    sec = re.search(rf'## \d+\. {re.escape(name)}.+?(?=## \d+\.|\Z)', content, re.DOTALL)
+    if sec:
+        t3 = re.search(r'\| \*\*3\*\* \| Email \| (.{0,200})', sec.group())
+        if t3:
+            print(f'{name}:')
+            print(t3.group(1)[:180])
+            print()
+"
+  description: Spot-check 3 prospects across personas
+
+[Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+import re
+content = open('data/personalised-outreach1.md').read()
+for name, expected in [('Benjamin Alpert','operations leaders'), ('Matt Rocco','executives I am'), ('Ken Braatz','Enterprise-grade')]:
+    sec = re.search(rf'## \d+\. {re.escape(name)}.+?(?=## \d+\.|\Z)', content, re.DOTALL)
+    if sec:
+        t3 = re.search(r'\| \*\*3\*\* \| Email \| (.+?) \|', sec.group(), re.DOTALL)
+        if t3:
+            found = expected in t3.group(1)
+            print(f'{name}: correct template? {found}')
+"
+  description: Verify correct persona template used
+
+[Tool result] Shell
