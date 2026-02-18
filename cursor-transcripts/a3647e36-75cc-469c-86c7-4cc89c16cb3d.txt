@@ -19362,3 +19362,25 @@ Let me verify a few to make sure it looks right.
   head_limit: 10
 
 [Tool result] Grep
+
+assistant:
+One thing — "DATAMARK, Inc.." has a double period. Let me fix that.
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+content = open('data/personalised-outreach1.md').read()
+content = content.replace('at DATAMARK, Inc..', 'at DATAMARK, Inc.')
+open('data/personalised-outreach1.md', 'w').write(content)
+print('Fixed')
+" && git add -A && git commit -m "Apply standard Touch 1 template to all non-connected prospects with first name and company" && git push && echo "Done"
+  description: Fix double period and commit
+
+[Tool result] Shell
+
+assistant:
+Done. Every non-connected prospect now has the standard Touch 1 with their first name and company filled in. For example:
+
+- **Benjamin Alpert:** "Hi Benjamin, I've been following your work at The Office Gurus..."
+- **Ali Karim:** "Hi Ali, I've been following your work at DATAMARK, Inc...."
+- **Brian Flaherty:** "Hi Brian, I've been following your work at Global Strategic..."
+
+The "Already connected" prospects (those who Calanthia is already connected to on LinkedIn) were left untouched since they skip straight to Touch 2.
