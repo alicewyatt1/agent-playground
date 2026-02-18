@@ -21,7 +21,6 @@
 1. **Speaking/event:** Presented at Customer Connect Expo (April 2025, past) on 'Balancing AI and Human Agents — The Future of Contact Centers' to 3,000+ CX leaders.
 2. **Mutual connection:** Alice 2nd degree (Dave Zimmerman)
 3. **Insight:** The Office Gurus launched GuruAssist — AI-powered QA and real-time agent assist platform. ([Product page](https://theofficegurus.com/ai-driven-contact-center-solutions-automated-qa-agent-assist/))
-4. **Award (2024):** The Office Gurus won the CCW Excellence Awards Best of the Best Employee Experience Award and Honorable Mention for BPO of the Year. ([Announcement](https://theofficegurus.com/news/the-office-gurus-celebrates-success-at-the-ccw-excellence-awards/))
 5. **Near event:** Based in Bradenton, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |
@@ -251,7 +250,6 @@
 **Outreach hooks:**
 
 1. **Mutual connection:** Alice 2nd degree (Dave Zimmerman; Alan Bowman); Calanthia 2nd degree (Aaron Anderson)
-2. **Award (2024):** The Office Gurus won the CCW Excellence Awards Best of the Best Employee Experience Award and Honorable Mention for BPO of the Year. ([Announcement](https://theofficegurus.com/news/the-office-gurus-celebrates-success-at-the-ccw-excellence-awards/))
 3. **Near event:** Based in Tampa, Florida, United States — could attend CBAND Atlanta (Feb 26).
 
 | Touch | Channel | Message |

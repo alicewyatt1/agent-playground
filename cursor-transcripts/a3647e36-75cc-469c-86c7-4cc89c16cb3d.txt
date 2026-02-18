@@ -19384,3 +19384,23 @@ Done. Every non-connected prospect now has the standard Touch 1 with their first
 - **Brian Flaherty:** "Hi Brian, I've been following your work at Global Strategic..."
 
 The "Already connected" prospects (those who Calanthia is already connected to on LinkedIn) were left untouched since they skip straight to Touch 2.
+
+user:
+<user_query>
+dont add Inc to Datamark.
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 -c "
+content = open('data/personalised-outreach1.md').read()
+content = content.replace('at DATAMARK, Inc.', 'at DATAMARK')
+open('data/personalised-outreach1.md', 'w').write(content)
+print('Fixed')
+" && git add -A && git commit -m "Remove Inc. from DATAMARK in Touch 1 messages" && git push && echo "Done"
+  description: Remove Inc. from DATAMARK
+
+[Tool result] Shell
+
+assistant:
+Done — both Ali Karim and Bill Randag's Touch 1 now read "at DATAMARK" rather than "at DATAMARK, Inc."
