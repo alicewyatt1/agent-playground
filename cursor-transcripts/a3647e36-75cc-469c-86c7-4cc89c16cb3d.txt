@@ -21266,3 +21266,98 @@ PYEOF
   description: Add br tags to Touch 4 emails
 
 [Tool result] Shell
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && git add -A && git commit -m "Add br tags to Touch 4 Atlanta emails for paragraph spacing" && git push && echo "Done"
+  description: Commit and push
+
+[Tool result] Shell
+
+assistant:
+Done. Touch 4 now reads:
+
+> Hi [Name],
+>
+> I'm looking forward to getting out of the New York cold and spending a few days in Atlanta!
+>
+> Will you be at the CCNG networking event on Thursday?
+>
+> If not, but you'd still like to learn about Dyna AI's voice AI solution, then we can hop on a quick call.
+>
+> Thank you!
+> Alice
+
+user:
+<user_query>
+ok and i need spacing for this (and the variants for the other events)
+
+[Personalise here based on hooks above.] It's great to connect. 
+
+I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI. 
+
+I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead. 
+
+If you're at the event, would you be interested in learning more?
+</user_query>
+
+assistant:
+[Tool call] Shell
+  command: cd /Users/alicewyatt/repos/agent-playground && python3 << 'PYEOF'
+import re
+
+content = open('data/personalised-outreach1.md').read()
+
+T2_CBAND = ("[Personalise here based on hooks above.] It's great to connect.<br><br>"
+            "I wondered if you'll be at the CCNG meetup in Atlanta? I'll be there meeting with a few contact center leaders who are interested in voice AI.<br><br>"
+            "I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.<br><br>"
+            "If you're at the event, would you be interested in learning more?")
+
+T2_EC = ("[Personalise here based on hooks above.] It's great to connect.<br><br>"
+         "I wondered if you'll be at Enterprise Connect in Las Vegas next month? I'll be there meeting with a few contact center leaders who are interested in voice AI.<br><br>"
+         "I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.<br><br>"
+         "If you're at the event, would you be interested in learning more?")
+
+T2_FS = ("[Personalise here based on hooks above.] It's great to connect.<br><br>"
+         "I wondered if you'll be at the Frost & Sullivan MindXchange in Fort Lauderdale in April? I'll be there meeting with a few contact center leaders who are interested in voice AI.<br><br>"
+         "I lead the US market for Dyna AI (https://dyna.ai/) which offers fully automated voice AI agents for inbound and outbound calls. It is used by the giants like Teleperformance and increasingly forward-looking mid market contact centers looking to get ahead.<br><br>"
+         "If you're at the event, would you be interested in learning more?")
+
+events = {
+    "Benjamin Alpert": "CBAND", "David Kreiss": "CBAND", "Greg Alcorn": "CBAND",
+    "Bill Randag": "EC", "Ali Karim": "FS", "Liliana Lopez": "EC",
+    "Nanette Harrell": "CBAND", "Jim Iyoob": "EC", "Dominic Leide": "CBAND",
+    "Kenneth Loggins": "CBAND", "Brian Flaherty": "CBAND", "Bill Trocano": "EC",
+    "Pablo Paz Hernandez": "CBAND", "Amanda Jones": "CBAND", "Donny Jackson": "CBAND",
+    "John Yanez": "CBAND", "Ken Braatz": "CBAND", "Youssef Hannat": "CBAND",
+    "James Nelson": "EC", "Bryan Overcash": "CBAND", "Erika Garcia": "CBAND",
+    "Keith Hansen": "CBAND", "Mark D'Angola": "CBAND", "Nitesh Kumar": "CBAND",
+    "Rob Porges": "CBAND", "Cathy Sexton": "CBAND", "Aaron Brooks": "EC",
+    "Matt Rocco": "EC",
+}
+
+lines = content.split('\n')
+output = []
+current_name = None
+updated = 0
+
+for line in lines:
+    m = re.match(r'^## \d+\. (.+)', line)
+    if m:
+        current_name = m.group(1).strip()
+
+    if current_name in events and line.startswith('| **2** | LinkedIn message |'):
+        event = events[current_name]
+        t2 = T2_CBAND if event == "CBAND" else T2_EC if event == "EC" else T2_FS
+        output.append(f'| **2** | LinkedIn message | {t2} |')
+        updated += 1
+    else:
+        output.append(line)
+
+result = '\n'.join(output)
+open('data/personalised-outreach1.md', 'w').write(result)
+print(f"Updated {updated} Touch 2 messages with br spacing")
+PYEOF
+  description: Add br tags to Touch 2 messages
+
+[Tool result] Shell
