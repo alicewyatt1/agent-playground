@@ -48,4 +48,4 @@ coverage/
 tmp/
 temp/ 
 
-.venv/
+.venv/gmail-tokens.json
