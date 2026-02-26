@@ -20,7 +20,10 @@ const TOKENS_PATH = path.join(__dirname, '../gmail-tokens.json')
 
 const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 
-const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
+const SCOPES = [
+  'https://www.googleapis.com/auth/gmail.readonly',
+  'https://www.googleapis.com/auth/calendar.readonly',
+]
 
 const authUrl = oauth2Client.generateAuthUrl({
   access_type: 'offline',
@@ -58,8 +61,7 @@ const server = http.createServer(async (req, res) => {
 
     console.log('✅ Authorization successful!')
     console.log(`Tokens saved to: ${TOKENS_PATH}`)
-    console.log('\nYou can now run the tax search script:')
-    console.log('  pnpm start scripts/gmail-tax-search.ts\n')
+    console.log('\nAuthorized scopes: Gmail (readonly) + Google Calendar (readonly)\n')
 
     server.close()
   } catch (err) {
