@@ -46,6 +46,12 @@ coverage/
 
 # Temporary folders
 tmp/
-temp/ 
+temp/
 
-.venv/gmail-tokens.json
+.venv/
+
+# Credentials & tokens
+gmail-tokens.json
+
+# Raw data cache (contains private email content)
+data/travel-raw-2025.json
